@@ -1,0 +1,12 @@
+#show_version=5
+- duration: 1
+  lights:
+    gi_leftsling: blue
+- duration: 1
+  lights:
+    l_collect4: blue 
+    l_collect7: blue
+- duration: 1
+  lights:
+    l_collect5: blue
+    l_collect8: blue

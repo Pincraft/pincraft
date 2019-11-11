@@ -1,0 +1,546 @@
+#config_version=5
+mode:
+    start_events: ball_starting
+    priority: 100
+   # code: base.Base
+
+#Shots
+shots:
+  spinner:
+    switch: s_spinner
+  captiveball:
+    switch: s_captiveball
+  centertarget:
+    switch: s_centertarget
+
+  #these are world specific, maybe move to world controller
+  collectitem1:
+    switch: s_collectitem1
+  collectitem2:
+    switch: s_collectitem2
+  collectitem3:
+    switch: s_collectitem3
+  collectitem4:
+    switch: s_collectitem4
+  collectitem5:
+    switch: s_collectitem5
+
+event_player:
+  collectitem1_hit:
+    item_collected
+  collectitem2_hit:
+    item_collected
+  collectitem4_hit:
+    item_collected
+  collectitem5_hit:
+    item_collected
+
+#Player Variables
+variable_player:
+  collectitem1_hit:
+    score: 10000
+    bonus_items: 1
+  collectitem2_hit:
+    score: 10000
+    bonus_items: 1
+  collectitem3_hit:
+    score: 10000
+  collectitem4_hit:
+    score: 10000
+    bonus_items: 1
+  collectitem5_hit:
+    score: 10000
+    bonus_items: 1
+
+  drop_target_dt_drop1_down:
+    score: 1000
+    creeper: 1
+  drop_target_dt_drop2_down:
+    score: 1000
+    skeleton: 1
+  drop_target_dt_drop3_down:
+    score: 1000
+    creeper: 1
+  drop_target_dt_drop4_down:
+    score: 1000
+    creeper: 1
+  drop_target_dt_drop5_down:
+    score: 1000
+    skeleton: 1
+  drop_target_dt_drop6_down:
+    score: 1000
+    creeper: 1
+  drop_target_bank_dtb_main_bank_down:
+    score: 10000
+  s_right_outlane_active:
+    score: 5000
+  s_centertarget_active:
+    score: 10000
+  s_rightsling_active:
+    score: 100
+  s_leftsling_active:
+    score: 100
+  s_bumperrail_active:
+    score: 50
+  s_scoup_active:
+    score: 5000
+ 
+  s_topkicker_active:
+    score: 5000
+  s_captiveball_active:
+    score: 100000
+  s_whitedot1_active:
+    score: 100
+  s_whitedot2_active:
+    score: 100
+  s_whitedot3_active:
+    score: 100
+  s_whitedot4_active:
+    score: 100
+  s_bluetarget1_active:
+    score: 5000
+  s_bluetarget2_active:
+    score: 5000
+  s_bluetarget3_active:
+    score: 5000
+  s_collectitem1_active:
+    score: 1000
+    #earth: 1
+  s_collectitem2_active:
+    score: 1000
+    #stone: 1
+  s_collectitem3_active:
+    score: 5000
+  s_collectitem4_active:
+    score: 1000
+    #wood: 1
+  s_collect_active:
+    score: 1000
+    #ore: 1
+
+sound_player:
+  s_collectitem1_active: collect_tool
+  s_collectitem2_active: collect_tool
+  s_collectitem3_active: collect_tool
+  s_collectitem4_active: collect_tool
+  s_collectitem5_active: collect_tool
+  s_rightinlane_active: lane_swish
+  s_rightoutlane_active: lane_swish
+  s_leftinlane_active: lane_swish
+  s_leftoutlane_active: lane_swish
+  s_spinner_active: clock_tick
+  mode_base_started:
+    basemode_music:
+      action: play
+      loops: -1
+      mode_end_action: stop 
+  world1_completed:
+    basemode_music:
+      action: play
+      loops: -1
+      mode_end_action: stop 
+  world2_completed:
+    basemode_music:
+      action: play
+      loops: -1
+      mode_end_action: stop 
+ # nightmode_failed:
+ #   basemode_music:
+ #     action: play
+ #     loops: -1
+ #     mode_end_action: stop 
+ # multiball_mb_nightmode_ended:
+ #   basemode_music:
+ #     action: play
+ #     loops: -1
+ #     mode_end_action: stop 
+                
+slides:
+  slide_base:
+    priority: 100
+    widgets:
+      - type: text
+        text: (score)
+        number_grouping: true
+        min_digits: 2
+        font_name: lazer84
+        font_size: 100
+      - type: text
+        text: "Shoot  Center  to  Start  World"
+        font_name: lazer84
+        font_size: 50
+        y: 200
+        anchor_x: center
+        anchor_y: bottom
+      - type: text
+        text: PLAYER (number)
+        y: 10
+        x: 10
+        font_name: lazer84
+        font_size: 50
+        anchor_x: left
+        anchor_y: bottom
+      - type: text
+        text: BALL (ball)
+        y: 10
+        x: right-10
+        anchor_x: right
+        anchor_y: bottom
+        font_name: lazer84
+        font_size: 50
+      - type: image
+        image: pincraft_logo
+
+slide_player:
+  mode_base_started: slide_base
+
+show_player:
+  spinner_hit:
+    show_spinnerhit:
+      loops: 0
+      speed: 10
+  captiveball_hit:
+    show_captiveballhit:
+      loops: 0
+      speed: 10
+  mode_base_started:
+    show_dropcreepers:
+      loops: 0
+      speed: 1
+    
+light_player:
+  mode_base_started:
+    lgi:
+      color: white
+    lfeature: off
+  spinner_hit{device.counters.counter_nightmode.value>=4}:
+    l_spinner1: orange
+  spinner_hit{device.counters.counter_nightmode.value>=8}:
+    l_spinner2: yellow
+    l_spinner1: yellow
+  spinner_hit{device.counters.counter_nightmode.value>=12}:
+    l_spinner3: orange
+    l_spinner2: orange
+    l_spinner1: orange
+  spinner_hit{device.counters.counter_nightmode.value>=16}:
+    l_spinner3: blue 
+    l_spinner2: blue 
+    l_spinner1: blue
+    l_spinner4: blue 
+
+  #BONUS ROUND 0 to 12
+  item_collected{current_player.bonus_items>=1 and current_player.bonus_items<=11}:
+    l_collect1: green
+  item_collected{current_player.bonus_items>=2 and current_player.bonus_items<=11}:
+    l_collect2: green
+  item_collected{current_player.bonus_items>=3 and current_player.bonus_items<=11}:
+    l_collect3: green
+  item_collected{current_player.bonus_items>=4 and current_player.bonus_items<=11}:
+    l_collect4: green
+  item_collected{current_player.bonus_items>=5 and current_player.bonus_items<=11}:
+    l_collect5: green
+  item_collected{current_player.bonus_items>=6 and current_player.bonus_items<=11}:
+    l_collect6: green
+  item_collected{current_player.bonus_items>=7 and current_player.bonus_items<=11}:
+    l_collect7: green
+  item_collected{current_player.bonus_items>=8 and current_player.bonus_items<=11}:
+    l_collect8: green
+  item_collected{current_player.bonus_items>=9 and current_player.bonus_items<=11}:
+    l_collect9: green
+  item_collected{current_player.bonus_items>=10 and current_player.bonus_items<=11}:
+    l_collect10: green
+  item_collected{current_player.bonus_items>=11 and current_player.bonus_items<=11}:
+    l_collect11: green
+  item_collected{current_player.bonus_items==12}:
+    l_collect1: off
+    l_collect2: off
+    l_collect3: off
+    l_collect4: off
+    l_collect5: off
+    l_collect6: off
+    l_collect7: off
+    l_collect8: off
+    l_collect9: off
+    l_collect10: off
+    l_collect11: off
+
+  #BONUS ROUND 13 to 24
+  item_collected{current_player.bonus_items>=13 and current_player.bonus_items<=23}:
+    l_collect1: yellow
+  item_collected{current_player.bonus_items>=14 and current_player.bonus_items<=23}:
+    l_collect2: yellow
+  item_collected{current_player.bonus_items>=15 and current_player.bonus_items<=23}:
+    l_collect3: yellow
+  item_collected{current_player.bonus_items>=16 and current_player.bonus_items<=23}:
+    l_collect4: yellow
+  item_collected{current_player.bonus_items>=17 and current_player.bonus_items<=23}:
+    l_collect5: yellow
+  item_collected{current_player.bonus_items>=18 and current_player.bonus_items<=23}:
+    l_collect6: yellow
+  item_collected{current_player.bonus_items>=19 and current_player.bonus_items<=23}:
+    l_collect7: yellow
+  item_collected{current_player.bonus_items>=20 and current_player.bonus_items<=23}:
+    l_collect8: yellow
+  item_collected{current_player.bonus_items>=21 and current_player.bonus_items<=23}:
+    l_collect9: yellow
+  item_collected{current_player.bonus_items>=22 and current_player.bonus_items<=23}:
+    l_collect10: yellow
+  item_collected{current_player.bonus_items>=23 and current_player.bonus_items<=23}:
+    l_collect11: yellow
+  item_collected{current_player.bonus_items==24}:
+    l_collect1: off
+    l_collect2: off
+    l_collect3: off
+    l_collect4: off
+    l_collect5: off
+    l_collect6: off
+    l_collect7: off
+    l_collect8: off
+    l_collect9: off
+    l_collect10: off
+    l_collect11: off
+
+ #BONUS ROUND 25 to 36
+  item_collected{current_player.bonus_items>=25 and current_player.bonus_items<=35}:
+    l_collect1: blue
+  item_collected{current_player.bonus_items>=26 and current_player.bonus_items<=35}:
+    l_collect2: blue
+  item_collected{current_player.bonus_items>=27 and current_player.bonus_items<=35}:
+    l_collect3: blue
+  item_collected{current_player.bonus_items>=28 and current_player.bonus_items<=35}:
+    l_collect4: blue
+  item_collected{current_player.bonus_items>=29 and current_player.bonus_items<=35}:
+    l_collect5: blue
+  item_collected{current_player.bonus_items>=30 and current_player.bonus_items<=35}:
+    l_collect6: blue
+  item_collected{current_player.bonus_items>=31 and current_player.bonus_items<=35}:
+    l_collect7: blue
+  item_collected{current_player.bonus_items>=32 and current_player.bonus_items<=35}:
+    l_collect8: blue
+  item_collected{current_player.bonus_items>=33 and current_player.bonus_items<=35}:
+    l_collect9: blue
+  item_collected{current_player.bonus_items>=34 and current_player.bonus_items<=35}:
+    l_collect10: blue
+  item_collected{current_player.bonus_items>=35 and current_player.bonus_items<=35}:
+    l_collect11: blue
+  item_collected{current_player.bonus_items==36}:
+    l_collect1: off
+    l_collect2: off
+    l_collect3: off
+    l_collect4: off
+    l_collect5: off
+    l_collect6: off
+    l_collect7: off
+    l_collect8: off
+    l_collect9: off
+    l_collect10: off
+    l_collect11: off
+
+ #BONUS ROUND 37 to 48
+  item_collected{current_player.bonus_items>=37 and current_player.bonus_items<=47}:
+    l_collect1: red
+  item_collected{current_player.bonus_items>=38 and current_player.bonus_items<=47}:
+    l_collect2: red
+  item_collected{current_player.bonus_items>=39 and current_player.bonus_items<=47}:
+    l_collect3: red
+  item_collected{current_player.bonus_items>=40 and current_player.bonus_items<=47}:
+    l_collect4: red
+  item_collected{current_player.bonus_items>=41 and current_player.bonus_items<=47}:
+    l_collect5: red
+  item_collected{current_player.bonus_items>=42 and current_player.bonus_items<=47}:
+    l_collect6: red
+  item_collected{current_player.bonus_items>=43 and current_player.bonus_items<=47}:
+    l_collect7: red
+  item_collected{current_player.bonus_items>=44 and current_player.bonus_items<=47}:
+    l_collect8: red
+  item_collected{current_player.bonus_items>=45 and current_player.bonus_items<=47}:
+    l_collect9: red
+  item_collected{current_player.bonus_items>=46 and current_player.bonus_items<=47}:
+    l_collect10: red
+  item_collected{current_player.bonus_items>=47 and current_player.bonus_items<=47}:
+    l_collect11: red
+  item_collected{current_player.bonus_items==48}:
+    l_collect1: off
+    l_collect2: off
+    l_collect3: off
+    l_collect4: off
+    l_collect5: off
+    l_collect6: off
+    l_collect7: off
+    l_collect8: off
+    l_collect9: off
+    l_collect10: off
+    l_collect11: off
+
+#BONUS ROUND 49 to 60
+  item_collected{current_player.bonus_items>=49 and current_player.bonus_items<=60}:
+    l_collect1: purple
+  item_collected{current_player.bonus_items>=50 and current_player.bonus_items<=60}:
+    l_collect2: purple
+  item_collected{current_player.bonus_items>=51 and current_player.bonus_items<=60}:
+    l_collect3: purple
+  item_collected{current_player.bonus_items>=52 and current_player.bonus_items<=60}:
+    l_collect4: purple
+  item_collected{current_player.bonus_items>=53 and current_player.bonus_items<=60}:
+    l_collect5: purple
+  item_collected{current_player.bonus_items>=54 and current_player.bonus_items<=60}:
+    l_collect6: purple
+  item_collected{current_player.bonus_items>=55 and current_player.bonus_items<=60}:
+    l_collect7: purple
+  item_collected{current_player.bonus_items>=56 and current_player.bonus_items<=60}:
+    l_collect8: purple
+  item_collected{current_player.bonus_items>=57 and current_player.bonus_items<=60}:
+    l_collect9: purple
+  item_collected{current_player.bonus_items>=58 and current_player.bonus_items<=60}:
+    l_collect10: purple
+  item_collected{current_player.bonus_items>=59 and current_player.bonus_items<=60}:
+    l_collect11: purple
+  item_collected{current_player.bonus_items==60}:
+    l_collect1: purple
+    l_collect2: purple
+    l_collect3: purple
+    l_collect4: purple
+    l_collect5: purple
+    l_collect6: purple
+    l_collect7: purple
+    l_collect8: purple
+    l_collect9: purple
+    l_collect10: purple
+    l_collect11: purple
+
+  item_collected{current_player.bonus_items>=12}:
+   l_collect12: green
+  item_collected{current_player.bonus_items>=24}:
+   l_collect13: yellow
+  item_collected{current_player.bonus_items>=36}:
+   l_collect14: blue
+  item_collected{current_player.bonus_items>=48}:
+   l_collect15: red
+  item_collected{current_player.bonus_items>=60}:
+   l_collect16: purple
+
+ # nightmode_success:
+ #   l_spinner1: purple
+ #   l_spinner2: purple
+ #   l_spinner3: purple
+ #   l_spinner4: purple
+ # nightmode_failed:
+ #   l_spinner1: off
+ #   l_spinner2: off
+ #   l_spinner3: off
+ #   l_spinner4: off
+ # mode_night_stopped:
+ #   l_spinner1: off
+ #   l_spinner2: off
+ #   l_spinner3: off
+ #   l_spinner4: off
+
+
+counters:
+   counter_nightmode:
+      count_events: spinner_hit
+      starting_count: 0
+      count_interval: 1
+      count_complete_value: 20
+      restart_events: nightmode_failed, mode_night_stopped
+      persist_state: true
+
+#This is for achieving the worlds
+achievements:
+  world1:
+    show_tokens:
+      light: l_world1
+      color: green
+    show_when_selected: show_flashcolor 
+    show_when_started: show_fadecolor
+    show_when_completed: show_solidcolor 
+    events_when_started: award_world1
+    reset_events: reset_worlds
+    enable_events: mode_base_started
+    complete_events: world1_completed
+    events_when_completed: rotate_mission_rotator, light_mission_select
+    restart_on_next_ball_when_started: true
+    enable_on_next_ball_when_enabled: true
+  world2:
+    show_tokens:
+      light: l_world2
+      color: yellow
+    show_when_selected: show_flashcolor 
+    show_when_started: show_fadecolor
+    show_when_completed: show_solidcolor 
+    events_when_started: award_world2
+    reset_events: reset_worlds
+    enable_events: world1_completed
+    complete_events: world2_completed
+    events_when_completed: rotate_mission_rotator, light_mission_select
+    restart_on_next_ball_when_started: true
+    enable_on_next_ball_when_enabled: true
+  world3:
+    show_tokens:
+      light: l_world3
+      color: blue
+    show_when_selected: show_flashcolor 
+    show_when_started: show_fadecolor
+    show_when_completed: show_solidcolor 
+    events_when_started: award_world3
+    reset_events: reset_worlds
+    enable_events: world2_completed
+    complete_events: world3_completed
+    events_when_completed: rotate_mission_rotator, light_mission_select
+    restart_on_next_ball_when_started: true
+    enable_on_next_ball_when_enabled: true
+  world4:
+    show_tokens:
+      light: l_world4
+      color: brown
+    show_when_selected: show_flashcolor 
+    show_when_started: show_fadecolor
+    show_when_completed: show_solidcolor 
+    events_when_started: award_world4
+    reset_events: reset_worlds
+    enable_events: world3_completed
+    complete_events: world4_completed
+    events_when_completed: rotate_mission_rotator, light_mission_select
+    restart_on_next_ball_when_started: true
+    enable_on_next_ball_when_enabled: true
+  world5:
+    show_tokens:
+      light: l_world5
+      color: red
+    show_when_selected: show_flashcolor 
+    show_when_started: show_fadecolor
+    show_when_completed: show_solidcolor 
+    events_when_started: award_world5
+    reset_events: reset_worlds
+    enable_events: world4_completed
+    complete_events: world5_completed
+    events_when_completed: rotate_mission_rotator, light_mission_select
+    restart_on_next_ball_when_started: true
+    enable_on_next_ball_when_enabled: true
+  world6:
+    show_tokens:
+      light: l_world6
+      color: purple
+    show_when_selected: show_flashcolor 
+    show_when_started: show_fadecolor
+    show_when_completed: show_solidcolor 
+    events_when_started: award_world6
+    reset_events: reset_worlds
+    enable_events: world5_completed
+    complete_events: world6_completed
+    events_when_completed: rotate_mission_rotator, light_mission_select
+    restart_on_next_ball_when_started: true
+    enable_on_next_ball_when_enabled: true
+
+achievement_groups:
+  worlds:
+    achievements: world1, world2, world3, world5, world6, world6
+    show_tokens:
+      light: l_worldtarget
+    show_when_enabled: flash
+    start_selected_events: centertarget_hit
+    events_when_enabled: mission_rotator_ready
+    auto_select: true
+    disable_while_achievement_started: true 
+    enable_while_no_achievement_started: true
+    rotate_right_events: rotate_mission_rotator

@@ -1,0 +1,20 @@
+#show_version=5
+- duration: 1  
+- duration: .25
+  coils:
+    c_drop_target1_drop: pulse
+- duration: .25
+  coils:
+    c_drop_target2_drop: pulse
+- duration: .25
+  coils:
+    c_drop_target3_drop: pulse
+- duration: .25
+  coils:
+    c_drop_target4_drop: pulse
+- duration: .25
+  coils:
+    c_drop_target5_drop: pulse
+- duration: .25
+  coils:
+    c_drop_target6_drop: pulse

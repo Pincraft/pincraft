@@ -1,0 +1,49 @@
+#show_version=5
+- duration: 1
+  lights:
+    lfeature: 
+      color: green
+      fade: 200ms
+    lgi:
+      color: green
+      fade: 200ms 
+- duration: 1
+  lights:
+    lfeature:
+      color: yellow
+      fade: 200ms
+    lgi:
+      color: yellow
+      fade: 200ms
+- duration: 1
+  lights:
+    lfeature:
+      color: blue
+      fade: 200ms
+    lgi:
+      color: blue
+      fade: 200ms
+- duration: 1
+  lights:
+    lfeature:
+      color: brown
+      fade: 200ms
+    lgi:
+      color: brown
+      fade: 200ms
+- duration: 1
+  lights:
+    lfeature:
+      color: red
+      fade: 200ms
+    lgi:
+      color: red
+      fade: 200ms
+- duration: 1
+  lights:
+    lfeature:
+      color: purple
+      fade: 200ms
+    lgi:
+      color: purple
+      fade: 200ms

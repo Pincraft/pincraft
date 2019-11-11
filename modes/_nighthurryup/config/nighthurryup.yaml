@@ -1,0 +1,131 @@
+#config_version=5
+mode:
+    priority: 1000
+    start_events: logicblock_counter_nightmode_complete
+    stop_events: nightmode_failed, nightmode_success
+
+
+state_machines:
+   nightmode_successful:
+        states:
+            start:
+                label: Night Mode Ready
+                events_when_started: divertercontrol_leftloop_disable, divertercontrol_rightloop_disable
+            success:
+                label: Night Mode successful
+                events_when_started: nightmode_success
+            failed:
+                label: Night Mode failed
+                events_when_started: nightmode_failed, divertercontrol_leftloop_closed, divertercontrol_rightloop_enable
+        transitions:
+            - source: start
+              target: success
+              events: balldevice_bd_topkicker_ball_enter
+            - source: start
+              target: failed
+              events: timer_nightmodehurry_stopped
+
+
+
+#Player Variables
+
+#play hurry up sound effect
+sound_player:
+  mode_nighthurryup_started:
+    basemode_music:  
+      action: stop
+    world1mode_music:
+      action: stop
+    nighthurryup_music:
+      action: play
+      loops: -1
+      mode_end_action: stop 
+
+
+#lower the drop target 
+coil_player:
+  mode_nighthurryup_started:
+    c_upperdrop_drop:
+      action: pulse
+
+timers:
+  nightmodehurry:
+    start_value: 30
+    end_value: 0
+    direction: down
+    tick_interval: 1s
+    control_events:
+      - action: start
+        event: mode_nighthurryup_started
+
+variable_player:
+  timer_nightmodehurry_started:
+    timeleft: 
+      int: 30
+      action: set
+  timer_nightmodehurry_tick:
+    timeleft: 
+      int: -1
+      action: add
+
+slides:
+  slide_nightmode:
+    priority: 200
+    widgets:
+      - type: text
+        text: (score)
+        number_grouping: true
+        min_digits: 2
+        font_name: lazer84
+        font_size: 75
+      - type: text
+        text: NIGHT MODE READY
+        font_name: lazer84
+        font_size: 60
+        anchor_y: middle
+        anchor_x: middle
+        y: center+100
+        x: center
+      - type: text
+        text: (timeleft)
+        font_name: lazer84
+        font_size: 60
+        anchor_y: middle
+        anchor_x: middle
+        y: center+200
+        x: center
+     
+      - type: text
+        text: PLAYER (number)
+        y: 10
+        x: 10
+        font_name: lazer84
+        font_size: 50
+        anchor_x: left
+        anchor_y: bottom
+      - type: text
+        text: BALL (ball)
+        y: 10
+        x: right-10
+        anchor_x: right
+        anchor_y: bottom
+        font_name: lazer84
+        font_size: 50
+
+
+
+        
+
+        
+slide_player:
+  mode_nighthurryup_started: slide_nightmode
+
+#play cool hurry up lights   
+show_player:
+  mode_nighthurryup_started:
+    nighthurryupshow:
+      loops: -1
+      speed: 1
+    nighthurrystrobeshow:
+      loops: -1
+      speed: 4

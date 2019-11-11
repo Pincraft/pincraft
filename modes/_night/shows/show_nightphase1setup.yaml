@@ -1,0 +1,19 @@
+#show_version=5
+- duration: 1  
+  coils:
+    c_drop_target_reset: pulse
+- duration: .25
+  coils:
+    c_drop_target1_drop: pulse
+- duration: .25
+  coils:
+    c_drop_target3_drop: pulse
+- duration: .25
+  coils:
+    c_drop_target4_drop: pulse
+- duration: .25
+  coils:
+    c_drop_target6_drop: pulse
+- duration: .25
+  events:
+    nightphase1setup_complete

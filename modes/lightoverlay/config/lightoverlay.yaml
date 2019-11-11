@@ -1,0 +1,74 @@
+#config_version=5
+mode:
+    start_events: ball_starting
+    stop_events: ball_ended
+    priority: 2000
+
+#Shots
+shots:
+  popbumper1:
+    switch: s_popbumper1
+  popbumper2:
+    switch: s_popbumper2
+  popbumper3:
+    switch: s_popbumper3
+  leftslingshot:
+    switch: s_leftsling
+  rightslingshot:
+    switch: s_rightsling
+
+event_player:
+  balldevice_bd_scoop_ball_eject_attempt:
+    scoup_eject_show
+
+#queue_relay_player:
+#    balldevice_bd_scoop_ball_eject_attempt:
+#        post: scoup_eject_show
+
+show_player:
+  scoup_eject_show:
+    show_scoupeject:
+      loops: 0
+      speed: 40
+      show_tokens:
+        color: white
+  popbumper1_hit: 
+    show_popbumper1hit:
+      loops: 0
+      speed: 10
+  popbumper2_hit: 
+    show_popbumper2hit:
+      loops: 0
+      speed: 10
+  popbumper3_hit:
+    show_popbumper3hit:
+      loops: 0
+      speed: 10
+  leftslingshot_hit: 
+    show_leftslinghit:
+      loops: 0
+      speed: 20
+  rightslingshot_hit: 
+    show_rightslinghit:
+      loops: 0
+      speed: 20
+
+variable_player:
+  popbumper1_hit: 
+    score: 1000
+  popbumper2_hit: 
+    score: 1000
+  popbumper3_hit:
+    score: 1000
+  leftslingshot_hit: 
+    score: 1000
+  rightslingshot_hit: 
+    score: 1000
+
+sound_player:
+  s_popbumper1_active: bounce_kick
+  s_popbumper2_active: bounce_kick
+  s_popbumper3_active: bounce_kick
+  s_leftsling_active: bounce_kick
+  s_rightsling_active: bounce_kick
+  balldevice_bd_scoop_ball_eject_attempt: lane_swish

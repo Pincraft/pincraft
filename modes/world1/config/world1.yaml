@@ -1,0 +1,191 @@
+#config_version=5
+mode:
+    start_events: award_world1
+    stop_events: world1_completed
+    priority: 500
+    #code: world1.World1
+
+
+
+variable_player:
+  logicblock_earth_counter_updated:
+    earth_counter_count:
+      int: value
+      action: set
+  logicblock_stone_counter_updated:
+    stone_counter_count:
+      int: value
+      action: set
+  logicblock_wood_counter_updated:
+    wood_counter_count:
+      int: value
+      action: set
+  logicblock_ore_counter_updated:
+    ore_counter_count:
+      int: value
+      action: set
+
+event_player:
+  itemcheckcomplete{device.counters.earth_counter.value == 0 and device.counters.stone_counter.value == 0 and device.counters.wood_counter.value == 0 and device.counters.ore_counter.value == 0}:
+    world1_completed
+
+counters:
+  earth_counter:
+    count_events: collectitem1_hit
+    reset_on_complete: False
+    starting_count: 2
+    count_complete_value: 0
+    direction: down
+    persist_state: true
+    events_when_complete: itemcheckcomplete
+  stone_counter:
+    count_events: collectitem2_hit
+    reset_on_complete: False
+    starting_count: 2
+    count_complete_value: 0
+    direction: down
+    persist_state: true
+    events_when_complete: itemcheckcomplete
+  wood_counter:
+    count_events: collectitem4_hit
+    reset_on_complete: False
+    starting_count: 2
+    count_complete_value: 0
+    direction: down
+    persist_state: true
+    events_when_complete: itemcheckcomplete
+  ore_counter:
+    count_events: collectitem5_hit
+    reset_on_complete: False
+    starting_count: 2
+    count_complete_value: 0
+    direction: down
+    persist_state: true
+    events_when_complete: itemcheckcomplete
+
+light_player:
+ mode_world1_started:
+    l_collectitem1: GREEN
+    l_collectitem2: GRAY
+    #l_collectitem3: RED
+    l_collectitem4: BROWN
+    l_collectitem5: SLATEGRAY
+  
+#play hurry up sound effect
+sound_player:
+  mode_world1_started:
+    basemode_music:
+      action: stop
+    world1mode_music:
+      action: play
+      loops: -1
+      mode_end_action: stop 
+
+slides:
+  slide_world1:
+    priority: 100
+    widgets:
+      - type: text
+        text: (score)
+        number_grouping: true
+        min_digits: 2
+        font_name: lazer84
+        font_size: 100
+      - type: text
+        text: "World 1"
+        font_name: lazer84
+        font_size: 50
+        y: 200
+        anchor_x: center
+        anchor_y: bottom
+      - type: text
+        text: PLAYER (number)
+        y: 10
+        x: 10
+        font_name: lazer84
+        font_size: 50
+        anchor_x: left
+        anchor_y: bottom
+      - type: text
+        text: BALL (ball)
+        y: 10
+        x: right-10
+        anchor_x: right
+        anchor_y: bottom
+        font_name: lazer84
+        font_size: 50
+
+      - type: text
+        text: Dirt
+        anchor_y: bottom
+        anchor_x: middle
+        y: 75
+        x: center-300
+        font_name: Arial
+        font_size: 40
+      - type: text
+        text: (player|earth_counter_count)
+        anchor_y: bottom
+        anchor_x: middle
+        y: 125
+        x: center-300
+        font_name: Arial
+        font_size: 40
+
+      - type: text
+        text: Stone
+        anchor_y: bottom
+        anchor_x: middle
+        y: 75
+        x: center-150
+        font_name: Arial
+        font_size: 40
+      - type: text
+        text: (player|stone_counter_count)
+        anchor_y: bottom
+        anchor_x: middle
+        y: 125
+        x: center-150
+        font_name: Arial
+        font_size: 40
+
+      - type: text
+        text: Wood
+        anchor_y: bottom
+        anchor_x: middle
+        y: 75
+        x: center
+        font_name: Arial
+        font_size: 40
+      - type: text
+        text: (player|wood_counter_count)
+        anchor_y: bottom
+        anchor_x: middle
+        y: 125
+        x: center
+        font_name: Arial
+        font_size: 40
+
+      - type: text
+        text: Ore
+        anchor_y: bottom
+        anchor_x: middle
+        y: 75
+        x: center+150
+        font_name: Arial
+        font_size: 40
+      - type: text
+        text: (player|ore_counter_count)
+        anchor_y: bottom
+        anchor_x: middle
+        y: 125
+        x: center+150
+        font_name: Arial
+        font_size: 40
+      - type: image
+        image: pincraft_logo
+
+slide_player:
+  mode_world1_started: slide_world1
+
+

@@ -1,0 +1,232 @@
+#config_version=5
+mode:
+    start_events: nightmode_success
+    stop_events: multiball_mb_nightmode_ended
+    priority: 1000
+
+#play hurry up sound effect
+sound_player:
+  mode_night_started:
+    nightmode_music:
+      action: play
+      loops: -1
+      mode_end_action: stop 
+
+multiballs:
+    mb_nightmode:
+        ball_count: 2
+        ball_count_type: total
+        shoot_again: 0s
+        start_events: mode_night_started
+        ball_locks: bd_topkicker
+
+slides:
+  slide_night:
+    priority: 200
+    widgets:
+      - type: text
+        text: (score)
+        number_grouping: true
+        min_digits: 2
+        font_name: lazer84
+        font_size: 75
+      - type: text
+        text: NIGHT MODE
+        font_name: lazer84
+        font_size: 60
+        anchor_y: middle
+        anchor_x: middle
+        y: center+100
+        x: center
+     
+      - type: text
+        text: PLAYER (number)
+        y: 10
+        x: 10
+        font_name: lazer84
+        font_size: 50
+        anchor_x: left
+        anchor_y: bottom
+      - type: text
+        text: BALL (ball)
+        y: 10
+        x: right-10
+        anchor_x: right
+        anchor_y: bottom
+        font_name: lazer84
+        font_size: 50
+
+slide_player:
+  mode_night_started: slide_night
+
+#Setup Diverter Controls
+event_player:
+  mode_night_started:
+    divertercontrol_rightloop_enable, divertercontrol_leftloop_enabled
+  multiball_mb_nightmode_ended:
+    divertercontrol_rightloop_enable, divertercontrol_leftloop_closed
+
+show_player:
+  mode_night_started:
+    show_nightsetup:
+      loops: -1
+      speed: 4
+  nightmb_phase1_started:
+    show_nightphase1setup:
+      loops: 0
+      speed: 1
+    show_nightsetup:
+      loops: -1
+      speed: 4
+  nightmb_phase2_started:
+    show_nightphase2setup:
+      loops: 0
+      speed: 1
+    show_nightsetup:
+      loops: -1
+      speed: 2
+  nightmb_phase3_started:
+    show_nightphase3setup:
+      loops: 0
+      speed: 1
+    show_nightsetup:
+      loops: -1
+      speed: 1
+  nightmb_jackpot_active:
+    show_nightjackpotready:
+      loops: -1
+      speed: 1
+
+light_player:
+  nightmb_phase1_active:
+    l_droparrow: green
+  nightmb_phase2_active:
+    l_droparrow: yellow
+  nightmb_phase3_active:
+    l_droparrow: red
+
+state_machines:
+   nightmb_state:
+        states:
+            start:
+              label: Skill shot ready
+            phase1started:
+              events_when_started: nightmb_phase1_started
+            phase1running:
+              events_when_started: nightmb_phase1_active
+            phase2start:
+              events_when_started: nightmb_phase2_started
+            phase2running:
+              events_when_started: nightmb_phase2_active
+            phase3start:
+              events_when_started: nightmb_phase3_started
+            phase3running:
+              events_when_started: nightmb_phase3_active
+            jackpotrunning:
+              events_when_started: nightmb_jackpot_active
+        transitions:
+            - source: start
+              target: phase1started 
+              events: mode_night_started
+            - source: phase1started
+              target: phase1running 
+              events: nightphase1setup_complete
+            - source: phase1running
+              target: phase2start 
+              events: mbskeletons_complete
+            - source: phase2start
+              target: phase2running 
+              events: nightphase2setup_complete
+            - source: phase2running
+              target: phase3start
+              events: mbcreepers_complete
+            - source: phase3start
+              target: phase3running 
+              events: nightphase3setup_complete
+            - source: phase3running
+              target: jackpotrunning
+              events: mballdrops_complete
+            - source: jackpotrunning
+              target: phase1started
+              events: mb_jackpot_hit, mb_superjackpot_hit
+
+shot_profiles:
+  mbtarget:
+    states:
+        - name: flashing  # step 2
+          show: flash
+        - name: lit  # step 3
+          show: on
+    loop: no
+
+variable_player:
+  mb_jackpot_hit:
+    score: 1000000
+  mb_superjackpot_hit:
+    score: 10000000
+
+shots:
+  mb_jackpot:
+    switch: s_centertarget
+    profile: mbtarget
+    show_tokens:
+      light: l_worldtarget
+    disable_events: mode_night_started, nightmb_phase1_started
+    enable_events: nightmb_jackpot_active
+  mb_superjackpot:
+    switch: s_captiveball
+    profile: mbtarget
+    show_tokens:
+      light: l_captiveball2
+    disable_events: mode_night_started, nightmb_phase1_started
+    enable_events: nightmb_jackpot_active
+  mb_drop1:
+    switch: s_drop1  
+    profile: mbtarget
+    show_tokens:
+      light: l_drop1
+    reset_events: nightmb_phase1_started, nightmb_phase2_started, nightmb_phase3_started
+  mb_drop2:
+    switch: s_drop2
+    profile: mbtarget
+    show_tokens:
+      light: l_drop2
+    reset_events: nightmb_phase1_started, nightmb_phase2_started, nightmb_phase3_started
+  mb_drop3:
+    switch: s_drop3
+    profile: mbtarget
+    show_tokens:
+      light: l_drop3
+    reset_events: nightmb_phase1_started, nightmb_phase2_started, nightmb_phase3_started
+  mb_drop4:
+    switch: s_drop4
+    profile: mbtarget
+    show_tokens:
+      light: l_drop4
+    reset_events: nightmb_phase1_started, nightmb_phase2_started, nightmb_phase3_started
+  mb_drop5:
+    switch: s_drop5
+    profile: mbtarget
+    show_tokens:
+      light: l_drop5
+    reset_events: nightmb_phase1_started, nightmb_phase2_started, nightmb_phase3_started
+  mb_drop6:
+    switch: s_drop6
+    profile: mbtarget
+    show_tokens:
+      light: l_drop6
+    reset_events: nightmb_phase1_started, nightmb_phase2_started, nightmb_phase3_started
+
+shot_groups:
+  mbskeletons:
+    shots: mb_drop2, mb_drop5
+    disable_events: mode_night_started
+    enable_events: nightmb_phase1_started
+  mbcreepers:
+    shots: mb_drop1, mb_drop3, mb_drop4, mb_drop6
+    disable_events: mode_night_started
+    enable_events: nightmb_phase2_started
+  mballdrops:
+    shots: mb_drop1, mb_drop2, mb_drop3, mb_drop4, mb_drop5, mb_drop6
+    disable_events: mode_night_started
+    enable_events: nightmb_phase3_started

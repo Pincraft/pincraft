@@ -1,0 +1,291 @@
+#show_version=5
+- duration: 1
+  lights:
+    lfeature: off 
+    lgi:
+        color: white
+    l_collect1: 
+        color: (color)
+        fade: 200ms
+    l_bonus2x:
+        color: (color)
+        fade: 200ms
+    l_tool1:
+        color: (color)
+        fade: 200ms
+    l_drop1:
+        color: (color)
+        fade: 200ms
+    l_leftoutlane:
+        color: (color)
+        fade: 200ms
+- duration: 1
+  lights:
+    lfeature: off
+    l_collect2: 
+        color: (color)
+        fade: 200ms
+    l_bonus3x:
+        color: (color)
+        fade: 200ms
+    l_tool2:
+        color: (color)
+        fade: 200ms
+    l_collectitem1:
+        color: (color)
+        fade: 200ms
+    l_rightinlane:
+        color: (color)
+        fade: 200ms
+- duration: 1
+  lights:
+    lfeature: off
+    l_collect3:
+        color: (color)
+        fade: 200ms
+    l_bonus4x:
+        color: (color)
+        fade: 200ms
+    l_tool3:
+        color: (color)
+        fade: 200ms
+    l_drop2:
+        color: (color)
+        fade: 200ms
+    l_rightoutlane:
+        color: (color)
+        fade: 200ms
+- duration: 1
+  lights:
+    lfeature: off
+    l_collect4:
+        color: (color)
+        fade: 200ms
+    l_bonus5x:
+        color: (color)
+        fade: 200ms
+    l_tool4:
+        color: (color)
+        fade: 200ms
+    l_collectitem2:
+        color: (color)
+        fade: 200ms
+    l_leftoutlane:
+        color: (color)
+        fade: 200ms
+- duration: 1
+  lights:
+    lfeature: off
+    l_collect5:
+        color: (color)
+        fade: 200ms
+    l_bonus2x:
+        color: (color)
+        fade: 200ms
+    l_tool1:
+        color: (color)
+        fade: 200ms
+    l_drop3:
+        color: (color)
+        fade: 200ms
+    l_rightinlane:
+        color: (color)
+        fade: 200ms
+- duration: 1
+  lights:
+    lfeature: off
+    l_collect6:
+        color: (color)
+        fade: 200ms
+    l_bonus3x:
+        color: (color)
+        fade: 200ms
+    l_tool2:
+        color: (color)
+        fade: 200ms
+    l_collectitem3:
+        color: (color)
+        fade: 200ms
+    l_rightoutlane:
+        color: (color)
+        fade: 200ms
+- duration: 1
+  lights:
+    lfeature: off
+    l_collect7:
+        color: (color)  
+        fade: 200ms
+    l_bonus4x:
+        color: (color)
+        fade: 200ms
+    l_tool3:
+        color: (color)
+        fade: 200ms
+    l_drop4:
+        color: (color)
+        fade: 200ms
+    l_leftoutlane:
+        color: (color)
+        fade: 200ms
+- duration: 1
+  lights:
+    lfeature: off
+    l_collect8:
+        color: (color)
+        fade: 200ms
+    l_bonus5x:
+        color: (color)
+        fade: 200ms
+    l_tool4:
+        color: (color)
+        fade: 200ms
+    l_collectitem4:
+        color: (color)
+        fade: 200ms
+    l_rightinlane:
+        color: (color)
+        fade: 200ms
+- duration: 1
+  lights:
+    lfeature: off
+    l_collect9:
+        color: (color)
+        fade: 200ms
+    l_bonus2x:
+        color: (color)
+        fade: 200ms
+    l_tool1:
+        color: (color)
+        fade: 200ms
+    l_drop5:
+        color: (color)
+        fade: 200ms
+    l_rightoutlane:
+        color: (color)
+        fade: 200ms
+- duration: 1
+  lights:
+    lfeature: off
+    l_collect10:
+        color: (color)
+        fade: 200ms
+    l_bonus3x:
+        color: (color)
+        fade: 200ms
+    l_tool2:
+        color: (color)
+        fade: 200ms
+    l_collectitem5:
+        color: (color)
+        fade: 200ms
+    l_leftoutlane:
+        color: (color)
+        fade: 200ms
+- duration: 1
+  lights:
+    lfeature: off
+    l_collect11: 
+        color: (color)
+        fade: 200ms
+    l_bonus4x:
+        color: (color)
+        fade: 200ms
+    l_tool3:
+        color: (color)
+        fade: 200ms
+    l_drop6:
+        color: (color)
+        fade: 200ms
+    l_rightinlane:
+        color: (color)
+        fade: 200ms
+- duration: 1
+  lights:
+    lfeature: off
+    l_collect12:
+        color: (color)
+        fade: 200ms
+    l_bonus5x:
+        color: (color)
+        fade: 200ms
+    l_tool4:
+        color: (color)
+        fade: 200ms
+    l_droparrow:
+        color: (color)
+        fade: 200ms
+    l_rightoutlane:
+        color: (color)
+        fade: 200ms
+- duration: 1
+  lights:
+    lfeature: off
+    l_collect13:
+        color: (color)
+        fade: 200ms
+    l_bonus2x:
+        color: (color)
+        fade: 200ms
+    l_tool1:
+        color: (color)
+        fade: 200ms
+    l_droparrow:
+        color: off
+        fade: 200ms
+    l_leftoutlane:
+        color: (color)
+        fade: 200ms
+- duration: 1
+  lights:
+    lfeature: off
+    l_collect14:
+        color: (color)
+        fade: 200ms
+    l_bonus3x:
+        color: (color)
+        fade: 200ms
+    l_tool2:
+        color: (color)
+        fade: 200ms
+    l_droparrow:
+        color: (color)
+        fade: 200ms
+    l_rightinlane:
+        color: (color)
+        fade: 200ms
+- duration: 1
+  lights:
+    lfeature: off
+    l_collect15:
+        color: (color)
+        fade: 200ms
+    l_bonus4x:
+        color: (color)
+        fade: 200ms
+    l_tool3:
+        color: (color)
+        fade: 200ms
+    l_droparrow:
+        color: off
+        fade: 200ms
+    l_rightoutlane:
+        color: (color)
+        fade: 200ms
+- duration: 1
+  lights:
+    lfeature: off
+    l_collect16:
+        color: (color)
+        fade: 200ms
+    l_bonus5x:
+        color: (color)
+        fade: 200ms
+    l_tool4:
+        color: (color)
+        fade: 200ms
+    l_droparrow:
+        color: (color)
+        fade: 200ms
+    l_leftoutlane:
+        color: (color)
+        fade: 200ms

@@ -1,0 +1,24 @@
+#show_version=5
+- duration: .5
+  lights:
+    lgi: off
+    lfeature: off
+    l_locate1: 
+      color: red
+    l_locate2:
+      color: green
+    l_locate3:
+      color: blue
+    l_locate4: 
+      color: white
+
+- duration: .5
+  lights:
+    l_locate1: 
+      color: off
+    l_locate2:
+      color: off
+    l_locate3:
+      color: off
+    l_locate4: 
+      color: off

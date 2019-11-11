@@ -1,0 +1,19 @@
+#show_version=5
+- duration: 1
+  lights:
+    l_captiveballhit: white
+- duration: 1
+  lights:
+    l_captiveballhit: off 
+- duration: 1
+  lights:
+    l_captiveballhit: white
+- duration: 1
+  lights:
+    l_captiveballhit: off 
+- duration: 1
+  lights:
+    l_captiveballhit: white
+- duration: 1
+  lights:
+    l_captiveballhit: off 

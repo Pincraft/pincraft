@@ -1,0 +1,54 @@
+#config_version=5
+mode:
+    start_events: ball_starting
+    stop_events: ball_ended
+    priority: 200
+
+timers:
+  close_gate:
+    start_value: 0
+    end_value: 20
+    direction: up
+    tick_interval: 1s
+    control_events:
+      - action: start
+        event: mode_skillshot_stopped
+  warn_gate:
+    start_value: 0
+    end_value: 10
+    direction: up
+    tick_interval: 1s
+    control_events:
+      - action: start
+        event: timer_close_gate_stopped
+
+coil_player:
+  timer_warn_gate_stopped:
+    c_lanegate:
+      action: enable
+
+sound_player:
+  timer_warn_gate_tick: clock_tick
+
+
+light_player:
+  mode_outlanegate_started:
+    l_rightoutlane:
+      color: green
+  timer_close_gate_started:
+    l_rightoutlane: 
+      color: green
+      fade: 200ms 
+  timer_warn_gate_stopped:
+    l_rightoutlane: 
+      color: red 
+      fade: 200ms
+
+show_player:
+  timer_warn_gate_started:
+    show_blinklight:
+      loops: 9 
+      speed: 1
+      show_tokens:
+        led: l_rightoutlane
+        color: orange

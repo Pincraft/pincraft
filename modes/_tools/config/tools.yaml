@@ -1,0 +1,121 @@
+#config_version=5
+mode:
+  start_events: mode_base_started
+  stop_events: mode_base_stopped
+  priority: 300
+
+shots:
+  tool1:
+    switch: s_tooltarget1
+    show_tokens:
+      light: l_toolcollect1
+  tool2:
+    switch: s_tooltarget2
+    show_tokens:
+      light: l_toolcollect2
+  tool3:
+    switch: s_tooltarget3
+    show_tokens:
+      light: l_toolcollect3
+
+  craft1: 
+    switch: s_whitedot1
+    show_tokens:
+      light: l_craft1
+  craft2:
+    switch: s_whitedot2
+    show_tokens:
+      light: l_craft2
+  craft3:
+    switch: s_whitedot3
+    show_tokens:
+      light: l_craft3
+  craft4:
+    switch: s_whitedot4
+    show_tokens:
+      light: l_craft4
+
+
+shot_groups:
+  toolcollect:
+    shots: tool1, tool2, tool3
+    enable_events: start_collect_tools
+    restart_events: restart_collect_tools
+    disable_events: disable_collect_tools
+  craftcollect:
+    shots: craft1, craft2, craft3, craft4
+    enable_events: crafting_enabled
+    disable_events: mode_tools_started
+
+sound_player:
+  s_tooltarget1_active: collect_tool
+  s_tooltarget2_active: collect_tool
+  s_tooltarget3_active: collect_tool
+
+light_player:
+  light_onetool:
+    l_tool1ready: darkblue
+  light_twotools:
+    l_tool2ready: darkblue
+  light_threetools:
+    l_tool3ready: darkblue
+  light_fourtools:
+    l_toolcollect1: darkblue
+    l_toolcollect2: darkblue
+    l_toolcollect3: darkblue
+  crafting_enabled:
+    l_craftlit: white
+
+
+state_machines:
+  tools_ready:
+    states:
+      start:
+        label: No Tools Are Ready
+        events_when_started: start_collect_tools
+      onetoolready:
+        label: One Tool Is Ready
+        events_when_started: tool_collected, restart_collect_tools, light_onetool, divertercontrol_leftloop_disable
+      twotoolsready:
+        label: Two Tools Are Ready
+        events_when_started: restart_collect_tools, light_twotools
+      threetoolsready:
+        label: Three Tools Are Ready
+        events_when_started: restart_collect_tools, light_threetools
+      fourtoolsready:
+        label: Four Tools Are Ready
+        events_when_started: disable_collect_tools, light_fourtools
+    transitions:
+      - source: start
+        target: onetoolready
+        events: toolcollect_complete 
+      - source: onetoolready
+        target: twotoolsready
+        events: toolcollect_complete
+      - source: twotoolsready
+        target: threetoolsready
+        events: toolcollect_complete
+      - source: threetoolsready
+        target: fourtoolsready
+        events: toolcollect_complete
+
+  craft_ready:
+    states:
+      start:
+        label: Craft Table is not Ready
+      craftenabled:
+        label: Tool is Ready
+        events_when_started: crafting_enabled
+      craftready:
+        label: Craft Table is Ready
+        events_when_started: crafting_ready
+    transitions:
+      - source: start
+        target: craftenabled
+        events: tool_collected
+      - source: craftenabled
+        target: craftready
+        events: craftcollect_complete
+
+
+      

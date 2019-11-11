@@ -1,0 +1,11 @@
+#show_version=5
+- duration: 1
+  lights:
+    l_spinnerflash1: white
+- duration: 1
+  lights:
+    l_spinnerflash1: off 
+    l_spinnerflash2: white
+- duration: 1
+  lights:
+    l_spinnerflash2: off

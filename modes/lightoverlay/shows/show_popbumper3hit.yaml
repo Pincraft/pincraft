@@ -1,0 +1,7 @@
+#show_version=5
+- duration: 1
+  lights:
+    l_popbumper3: blue
+- duration: 1
+  lights:
+    l_popbumper3: white

@@ -1,0 +1,54 @@
+#show_version=5
+- duration: 1
+  lights:
+    l_spinner1:
+        color: yellow
+        fade: 100ms
+    l_spinner4: off
+    lcraft:
+      color: yellow
+      fade: 100ms
+    l_tool3ready:
+      color: yellow
+      fade: 100ms
+    gi_specialitem2: white
+- duration: 1
+  lights:
+    l_spinner2:
+      color: yellow
+      fade: 100ms
+    l_spinner1: off 
+    lcraft:
+      color: off
+      fade: 100ms
+
+    l_tool1ready:
+      color: yellow
+      fade: 100ms
+    l_tool3ready: off
+- duration: 1
+  lights:
+    l_spinner3:
+        color: yellow
+        fade: 100ms
+    l_spinner2: off
+    lcraft:
+      color: yellow
+      fade: 100ms
+    l_toolcollect1:
+      color: yellow
+      fade: 100ms
+    l_tool1ready: off
+- duration: 1
+  lights:
+    l_spinner4:
+        color: yellow
+        fade: 100ms
+    l_spinner3: off
+    lcraft:
+      color: off
+      fade: 100ms
+    gi_specialitem2:
+      color: yellow
+      fade: 100ms 
+    l_toolcollect1: off

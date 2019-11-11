@@ -1,0 +1,40 @@
+#show_version=5
+- duration: 1
+  lights:
+    gi_scoup: (color)
+- duration: 1
+  lights:
+    l_tool3: (color) 
+- duration: 1
+  lights:
+    l_tool4: (color) 
+- duration: 1
+  lights:
+    l_world3: (color) 
+- duration: 1
+  lights:
+    l_world2: (color) 
+    l_world4: (color) 
+- duration: 1
+  lights:
+    l_worldtarget: (color) 
+- duration: 1
+  lights:
+    l_world1: (color) 
+    l_world5: (color)     
+- duration: 1
+  lights:
+    l_world6: (color) 
+- duration: 1
+  lights:
+    l_collectitem1: (color)     
+    l_collectitem2: (color)     
+    l_collectitem3: (color)     
+    l_collectitem4: (color)     
+- duration: 1
+  lights:
+    l_drop1: (color)     
+    l_drop2: (color)     
+    l_drop3: (color)     
+    l_drop4: (color)     
+    l_drop5: (color)     

@@ -1,0 +1,168 @@
+#config_version=5
+mode:
+    start_events: mode_base_started
+    stop_events: mode_base_stopped
+    priority: 2000
+
+
+#+ Loops Disabled / left gate is closed (drop target stays up all times)
+
+#+ left loop is enabled (drop target down, right gate open)
+
+#+ right loop is enabled (left gate open, drop target down)
+
+#+ both loops enabled
+
+
+
+#+ crafting is enabled (no gates open, drop target down)
+
+#+ mode start is enabled  (left loop to diverter to scoop)
+
+
+
+
+state_machines:
+  leftloop_state:
+    persist_state: true
+    states:
+      start:
+        label: Left Loop Start
+      closed:
+        label: Left Loop Door Closed
+        events_when_started: leftloop_closed, leftloop_statechange, divertercontrol_disableleftloop
+      disabled:
+        label: Left Loop Door Open / Loop Disabled
+        events_when_started: leftloop_disabled, leftloop_statechange, diverter_dropupperdrop
+      enabled:
+        label: Left Loop Door Open / Loop Enabled
+        events_when_started: leftloop_enabled, leftloop_statechange, diverter_dropupperdrop
+      travel:
+        label: Left Loop Door Open / Loop Enabled / Diverter Enabled
+        events_when_started: leftloop_travel, leftloop_statechange, diverter_dropupperdrop
+    transitions:
+      - source: start                         #Inital State
+        target: closed
+        events: mode_divertercontrol_started
+      - source: disabled,enabled,travel       #Close Left Loop
+        target: closed
+        events: divertercontrol_leftloop_close
+      - source: closed,enabled,travel         #Disable Left Loop
+        target: disabled
+        events: divertercontrol_leftloop_disable 
+      - source: closed,disabled,travel         #Enable Left Loop
+        target: enabled
+        events: divertercontrol_leftloop_enable 
+      - source: closed,disabled,enabled         #Travel Left Loop
+        target: travel
+        events: divertercontrol_leftloop_travel
+      
+  rightloop_state:
+    persist_state: true
+    states:
+      start:
+        label: Right Loop Start 
+      disabled:
+        label: Right Loop Disabled
+        events_when_started: rightloop_disabled, rightloop_statechange
+      enabled:
+        label: Right Loop Enabled
+        events_when_started: rightloop_enabled, rightloop_statechange
+    transitions:
+      - source: start
+        target: enabled
+        events: mode_divertercontrol_started
+      - source: enabled                     #Disable Right Loop
+        target: disabled
+        events: divertercontrol_rightloop_disable
+      - source: disabled                    #Enable Right Loop
+        target: enabled
+        events: divertercontrol_rightloop_enable
+
+light_player:
+  leftloop_statechange{current_player.state_machine_leftloop_state=="closed"}:
+    gi_specialitem2: red
+  leftloop_statechange{current_player.state_machine_leftloop_state=="disabled"}:
+    gi_specialitem2: purple
+  leftloop_statechange{current_player.state_machine_leftloop_state=="enabled"}:
+    gi_specialitem2: green 
+  leftloop_statechange{current_player.state_machine_leftloop_state=="travel"}:
+    gi_specialitem2: blue
+
+  rightloop_statechange{current_player.state_machine_rightloop_state=="disabled"}:
+    gi_captivetop: purple
+  rightloop_statechange{current_player.state_machine_rightloop_state=="enabled"}:
+    gi_captivetop: green
+
+timers:
+  #Left Drop Target Down
+  leftdropreset:
+    start_value: 0
+    end_value: 1
+    direction: up
+    control_events:
+      - action: start
+        event: divertercontrol_disableleftloop
+      - action: restart
+        event: drop_target_dt_upperdrop_down
+      - action: restart
+        event: diverter_rightloophit
+
+  #Right Loop Events
+  leftgateclose:
+    start_value: 0
+    end_value: 1
+    direction: up
+    control_events:
+      - action: restart
+        event: diverter_rightloophit
+      
+  #Left Loop Events
+  rightgateclose:
+    start_value: 0
+    end_value: 1
+    direction: up
+    control_events:
+      - action: restart
+        event: diverter_leftloophit
+
+coil_player:
+  diverter_rightloophit:
+    c_upperleftgate: enable
+  timer_leftgateclose_complete:
+    c_upperleftgate: disable
+
+  diverter_leftloophit:
+    c_upperrightgate: enable
+  timer_rightgateclose_complete:
+    c_upperrightgate: disable
+
+shots:
+  loopright:
+    switch: s_loopright
+  loopleft:
+    switch: s_loopleft
+
+#mode_diverter_resetstates
+event_player:
+  mode_divertercontrol_started:
+    rightloop_statechange, leftloop_statechange
+
+  #Left Loop Disabled Events
+  timer_leftdropreset_complete{current_player.state_machine_leftloop_state=="closed"}:
+    diverter_resetupperdrop
+  
+  #Left Loop Enabled Events
+  divertercontrol_enableleftloop:
+    diverter_dropupperdrop
+
+  #Right Loop Hit Events:
+  loopright_hit{current_player.state_machine_rightloop_state=="enabled"}: diverter_rightloophit, diverter_dropupperdrop
+ 
+  #Left Loop Hit Events:
+  loopleft_hit{current_player.state_machine_leftloop_state=="enabled"}: diverter_leftloophit
+  loopleft_hit{current_player.state_machine_leftloop_state=="travel"}: diverter_leftloophit, diverter_leftlooptravelhit
+
+
+     
+

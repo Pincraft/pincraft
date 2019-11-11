@@ -1,0 +1,205 @@
+#show_version=5
+- duration: 1
+  lights:
+    lcollect: 
+        color: purple
+        fade: 1000ms
+    lcollectitem:
+        color: purple
+        fade: 1000ms
+    ldrop:
+        color: purple
+        fade: 1000ms
+- duration: 1  
+  lights:
+    l_drop6: 
+        color: off
+        fade: 1000ms
+- duration: 1  
+  lights:
+    l_collectitem5: 
+        color: off
+        fade: 1000ms
+- duration: 1  
+  lights:
+    l_drop5: 
+        color: off
+        fade: 1000ms
+- duration: 1  
+  lights:
+    l_collectitem4: 
+        color: off
+        fade: 1000ms
+- duration: 1  
+  lights:
+    l_drop4: 
+        color: off
+        fade: 1000ms
+- duration: 1  
+  lights:
+    l_collectitem3: 
+        color: off
+        fade: 1000ms
+- duration: 1  
+  lights:
+    l_drop3: 
+        color: off
+        fade: 1000ms
+- duration: 1  
+  lights:
+    l_collectitem2: 
+        color: off
+        fade: 1000ms
+- duration: 1  
+  lights:
+    l_drop2: 
+        color: off
+        fade: 1000ms
+- duration: 1  
+  lights:
+    l_collectitem1: 
+        color: off
+        fade: 1000ms
+- duration: 1
+  lights:
+    l_drop1: 
+        color: off
+        fade: 1000ms
+- duration: 1  
+  lights:
+    l_collect16: 
+        color: off
+        fade: 1000ms
+- duration: 1  
+  lights:
+    l_collect15:
+        color: off
+        fade: 1000ms
+- duration: 1  
+  lights:
+    l_collect14:
+        color: off
+        fade: 1000ms
+- duration: 1
+  lights:
+    l_collect13:
+        color: off
+        fade: 1000ms
+- duration: 1 
+  lights:
+    l_collect12:
+        color: off
+        fade: 1000ms
+- duration: 1
+  lights:
+    l_collect11:
+        color: off
+        fade: 1000ms
+- duration: 1 
+  lights:
+    l_collect10:
+        color: off
+        fade: 1000ms
+- duration: 1
+  lights:
+    l_collect9:
+        color: off
+        fade: 1000ms
+- duration: 1 
+  lights:
+    l_collect8:
+        color: off
+        fade: 1000ms
+- duration: 1 
+  lights:
+    l_collect7:
+        color: off
+        fade: 1000ms
+- duration: 1 
+  lights:
+    l_collect6:
+        color: off
+        fade: 1000ms
+- duration: 1 
+  lights:
+    l_collect5: 
+        color: off
+        fade: 1000ms
+- duration: 1 
+  lights:
+    l_collect4:
+        color: off
+        fade: 1000ms
+- duration: 1
+  lights:
+    l_collect3:
+        color: off
+        fade: 1000ms
+- duration: 1
+  lights:
+    l_collect2:
+        color: off
+        fade: 1000ms
+- duration: 1
+  lights:
+    l_collect1:
+        color: off
+        fade: 1000ms
+- duration: .5
+  lights:
+    lcollect: 
+        color: red
+        fade: 500ms
+    lcollectitem:
+        color: red
+        fade: 500ms
+    ldrop:
+        color: red
+        fade: 500ms
+    lgi:
+        color: red
+        fade: 500ms
+
+- duration: .5
+  lights:
+    lcollect: 
+        color: off
+        fade: 500ms
+    lcollectitem:
+        color: off
+        fade: 500ms
+    ldrop:
+        color: off
+        fade: 500ms
+    lgi:
+        color: white
+        fade: 500ms
+- duration: .5
+  lights:
+    lcollect: 
+        color: red
+        fade: 500ms
+    lcollectitem:
+        color: red
+        fade: 500ms
+    ldrop:
+        color: red
+        fade: 500ms
+    lgi:
+        color: red
+        fade: 500ms
+- duration: 10
+  lights:
+    lcollect: 
+        color: off
+        fade: 500ms
+    lcollectitem:
+        color: off
+        fade: 500ms
+    ldrop:
+        color: off
+        fade: 500ms
+    lgi:
+        color: white
+        fade: 500ms
+

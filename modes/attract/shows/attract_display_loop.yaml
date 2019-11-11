@@ -1,0 +1,42 @@
+#show_version=5
+
+- duration: 3s
+  slides:
+    pincraft_welcome:
+      widgets:
+      - type: Text
+        text: PRESS  START
+        font_name: lazer84
+        font_size: 100
+        animations:
+          pre_show_slide:
+            - property: opacity
+              value: 0
+              duration: .5s
+            - property: opacity
+              value: 1
+              duration: .5s
+              repeat: -1
+      - type: image
+        image: pincraft_logo
+      transition:
+         type: push
+         duration: 1s
+         direction: left
+      
+
+- duration: 3
+  slides:
+    mission_pinball:
+      widgets:
+      - type: Text
+        text: "Created by\nConnor and Brian Smith"
+        font_size: 60
+        font_name: lazer84
+        color: white
+      - type: image
+        image: pincraft_logo
+      transition:
+         type: move_in
+         duration: 1s
+         direction: top

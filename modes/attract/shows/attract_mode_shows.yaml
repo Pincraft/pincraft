@@ -1,0 +1,57 @@
+#show_version=5
+# - duration: 10s
+#   lights:
+#     lgi: off
+#     lfeature: off 
+#     llocate: purple
+- duration: 60s
+  shows:
+    attract_show_alllights:
+      loops: -1
+- duration: 0.1s
+  lights:
+    lfeature: off
+    lgi: off
+- duration: 2.6s
+  shows:
+      attract_show_strobelights:
+        loops: 1
+        speed: 6
+        show_tokens:
+          color: green
+- duration: 2.6s
+  shows:
+      attract_show_strobelights:
+        loops: 1
+        speed: 6
+        show_tokens:
+          color: brown
+- duration: 2.6s
+  shows:
+      attract_show_strobelights:
+        loops: 1
+        speed: 6
+        show_tokens:
+          color: red
+- duration: 2.6s
+  shows:
+      attract_show_strobelights:
+        loops: 1
+        speed: 6
+        show_tokens:
+          color: blue
+- duration: 2.6s
+  shows:
+      attract_show_strobelights:
+        loops: 1
+        speed: 6
+        show_tokens:
+          color: orange
+- duration: 2.6s
+  shows:
+      attract_show_strobelights:
+        loops: 1
+        speed: 6
+        show_tokens:
+          color: purple
+
