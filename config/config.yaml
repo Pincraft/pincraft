@@ -26,10 +26,10 @@ window:
   height: 768
   title: Pincraft
   resizable: false
-  fullscreen: true
-  borderless: true
+  fullscreen: false
+ # borderless: true
   exit_on_escape: true
-  source_display: lcd
+  #source_display: lcd
 
 # SWITCH CONFIGURATION
 #--------------------------------------------
