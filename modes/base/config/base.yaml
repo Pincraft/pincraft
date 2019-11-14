@@ -13,18 +13,6 @@ shots:
   centertarget:
     switch: s_centertarget
 
-  #these are world specific, maybe move to world controller
-  collectitem1:
-    switch: s_collectitem1
-  collectitem2:
-    switch: s_collectitem2
-  collectitem3:
-    switch: s_collectitem3
-  collectitem4:
-    switch: s_collectitem4
-  collectitem5:
-    switch: s_collectitem5
-
 event_player:
   collectitem1_hit:
     item_collected

@@ -1163,9 +1163,71 @@ sounds:
 # PLAYER VARIABLES
 #--------------------------------------------
 player_vars:
+  #World Variables
   world_color:  #sets color of world for accent colors
     initial_value: "white"
     value_type: str
+
+  world_name:
+    initial_value: "none"
+    value_type: str
+
+  world_id:
+    initial_value: 0
+    value_type: int
+
+  #Item 1 Variables
+  world_item1_name:
+    initial_value: "none"
+    value_type: str
+
+  world_item1_color:
+    initial_value: "white"
+    value_type: str
+
+  world_item1_needed:
+    initial_value: 0
+    value_type: int
+
+  #Item 2 Variables
+  world_item2_name:
+    initial_value: "none"
+    value_type: str
+
+  world_item2_color:
+    initial_value: "white"
+    value_type: str
+
+  world_item2_needed:
+    initial_value: 0
+    value_type: int
+
+  #Item 3 Variables
+  world_item3_name:
+    initial_value: "none"
+    value_type: str
+
+  world_item3_color:
+    initial_value: "white"
+    value_type: str
+
+  world_item3_needed:
+    initial_value: 0
+    value_type: int
+
+  #Item 4 Variables
+  world_item4_name:
+    initial_value: "none"
+    value_type: str
+
+  world_item4_color:
+    initial_value: "white"
+    value_type: str
+
+  world_item4_needed:
+    initial_value: 0
+    value_type: int
+
 
   bonus_items:
     initial_value: 0
@@ -1234,6 +1296,7 @@ modes:
   - lightoverlay
   - skillshot
   - outlanegate
+  - worldcontroller
   - world1
   - world2
   - bonus
