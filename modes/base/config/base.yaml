@@ -522,7 +522,7 @@ achievements:
 
 achievement_groups:
   worlds:
-    achievements: world1, world2, world3, world5, world6, world6
+    achievements: world1, world2, world3, world4, world5, world6
     show_tokens:
       light: l_worldtarget
     show_when_enabled: flash

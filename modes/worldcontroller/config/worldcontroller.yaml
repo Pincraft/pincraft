@@ -27,7 +27,8 @@ counters:
     persist_state: true
     events_when_complete: itemcheckcomplete
     multiple_hit_window: 500ms
-    reset_events: mode_worldcontroller_started
+    reset_events: world_started
+    enable_events: mode_worldcontroller_started
   wc_item2_counter:
     count_events: collectitem2_hit
     reset_on_complete: False
@@ -37,7 +38,8 @@ counters:
     persist_state: true
     events_when_complete: itemcheckcomplete
     multiple_hit_window: 500ms
-    reset_events: mode_worldcontroller_started
+    reset_events: world_started
+    enable_events: mode_worldcontroller_started
   wc_item3_counter:
     count_events: collectitem4_hit
     reset_on_complete: False
@@ -47,7 +49,8 @@ counters:
     persist_state: true
     events_when_complete: itemcheckcomplete
     multiple_hit_window: 500ms
-    reset_events: mode_worldcontroller_started
+    reset_events: world_started
+    enable_events: mode_worldcontroller_started
   wc_item4_counter:
     count_events: collectitem5_hit
     reset_on_complete: False
@@ -57,8 +60,8 @@ counters:
     persist_state: true
     events_when_complete: itemcheckcomplete
     multiple_hit_window: 500ms
-    reset_events: mode_worldcontroller_started
-
+    reset_events: world_started
+    enable_events: mode_worldcontroller_started
 
 variable_player:
   logicblock_wc_item1_counter_updated:
@@ -80,28 +83,28 @@ variable_player:
   
 
 
-  event_player:
-    itemcheckcomplete{current_player.world_id==1 and device.counters.wc_item1_counter.value == 0 and device.counters.wc_item2_counter.value == 0 and device.counters.wc_item3_counter.value == 0 and device.counters.wc_item4_counter.value == 0}:
-      world1_completed
-    # itemcheckcomplete{current_player.world_id==2 and device.counters.wc_item1_counter.value == 0 and device.counters.wc_item2_counter.value == 0 and device.counters.wc_item3_counter.value == 0 and device.counters.wc_item4_counter.value == 0}:
-    #   world2_completed
-    # itemcheckcomplete{current_player.world_id==3 and device.counters.wc_item1_counter.value == 0 and device.counters.wc_item2_counter.value == 0 and device.counters.wc_item3_counter.value == 0 and device.counters.wc_item4_counter.value == 0}:
-    #   world3_completed
-    # itemcheckcomplete{current_player.world_id==4 and device.counters.wc_item1_counter.value == 0 and device.counters.wc_item2_counter.value == 0 and device.counters.wc_item3_counter.value == 0 and device.counters.wc_item4_counter.value == 0}:
-    #   world4_completed
-    # itemcheckcomplete{current_player.world_id==5 and device.counters.wc_item1_counter.value == 0 and device.counters.wc_item2_counter.value == 0 and device.counters.wc_item3_counter.value == 0 and device.counters.wc_item4_counter.value == 0}:
-    #   world5_completed
-    # itemcheckcomplete{current_player.world_id==6 and device.counters.wc_item1_counter.value == 0 and device.counters.wc_item2_counter.value == 0 and device.counters.wc_item3_counter.value == 0 and device.counters.wc_item4_counter.value == 0}:
-    #   world6_completed
+event_player:
+  itemcheckcomplete{current_player.world_id==1 and current_player.wc_item1_counter_count == 0 and current_player.wc_item2_counter_count == 0 and current_player.wc_item3_counter_count == 0 and current_player.wc_item4_counter_count == 0}:
+    world1_completed
+  itemcheckcomplete{current_player.world_id==2 and current_player.wc_item1_counter_count == 0 and current_player.wc_item2_counter_count == 0 and current_player.wc_item3_counter_count == 0 and current_player.wc_item4_counter_count == 0}:
+    world2_completed
+  itemcheckcomplete{current_player.world_id==3 and current_player.wc_item1_counter_count == 0 and current_player.wc_item2_counter_count == 0 and current_player.wc_item3_counter_count == 0 and current_player.wc_item4_counter_count == 0}:
+    world3_completed
+  itemcheckcomplete{current_player.world_id==4 and current_player.wc_item1_counter_count == 0 and current_player.wc_item2_counter_count == 0 and current_player.wc_item3_counter_count == 0 and current_player.wc_item4_counter_count == 0}:
+    world4_completed
+  itemcheckcomplete{current_player.world_id==5 and current_player.wc_item1_counter_count == 0 and current_player.wc_item2_counter_count == 0 and current_player.wc_item3_counter_count == 0 and current_player.wc_item4_counter_count == 0}:
+    world5_completed
+  itemcheckcomplete{current_player.world_id==6 and current_player.wc_item1_counter_count == 0 and current_player.wc_item2_counter_count == 0 and current_player.wc_item3_counter_count == 0 and current_player.wc_item4_counter_count == 0}:
+    world6_completed
 
 
-# light_player:
-#  mode_worldcontroller_started:
-#     l_collectitem1: current_player.world_item1_color
-#     l_collectitem2: current_player.world_item2_color
-#     l_collectitem3: RED
-#     l_collectitem4: current_player.world_item3_color
-#     l_collectitem5: current_player.world_item4_color
+light_player:
+ mode_world1_started:
+    l_collectitem1: GREEN
+    l_collectitem2: GRAY
+    l_collectitem3: RED
+    l_collectitem4: BROWN
+    l_collectitem5: SLATEGRAY
   
 #play hurry up sound effect
 sound_player:

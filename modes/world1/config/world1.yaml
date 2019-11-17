@@ -64,4 +64,6 @@ variable_player:
       int: 2
       action: set
   
-
+event_player:
+  mode_world1_started:
+    world_started
