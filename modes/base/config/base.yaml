@@ -42,22 +42,16 @@ variable_player:
 
   drop_target_dt_drop1_down:
     score: 1000
-    creeper: 1
   drop_target_dt_drop2_down:
     score: 1000
-    skeleton: 1
   drop_target_dt_drop3_down:
     score: 1000
-    creeper: 1
   drop_target_dt_drop4_down:
     score: 1000
-    creeper: 1
   drop_target_dt_drop5_down:
     score: 1000
-    skeleton: 1
   drop_target_dt_drop6_down:
     score: 1000
-    creeper: 1
   drop_target_bank_dtb_main_bank_down:
     score: 10000
   s_right_outlane_active:

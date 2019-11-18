@@ -99,7 +99,7 @@ event_player:
 
 
 light_player:
- mode_world1_started:
+ mode_worldcontroller_started:
     l_collectitem1: GREEN
     l_collectitem2: GRAY
     l_collectitem3: RED
@@ -126,101 +126,114 @@ slides:
   wc_slide_world:
     priority: 100
     widgets:
-      - type: text
-        text: (score)
-        number_grouping: true
-        min_digits: 2
-        font_name: lazer84
-        font_size: 100
-      - type: text
-        text: (player|world_name)
-        font_name: lazer84
-        font_size: 50
-        y: 200
-        anchor_x: center
-        anchor_y: bottom
-      - type: text
-        text: PLAYER (number)
-        y: 10
-        x: 10
-        font_name: lazer84
-        font_size: 50
-        anchor_x: left
-        anchor_y: bottom
-      - type: text
-        text: BALL (ball)
-        y: 10
-        x: right-10
-        anchor_x: right
-        anchor_y: bottom
-        font_name: lazer84
-        font_size: 50
-      - type: text
-        text: (player|world_item1_name)
-        anchor_y: bottom
-        anchor_x: middle
-        y: 75
-        x: center-300
-        font_name: Arial
-        font_size: 40
-      - type: text
-        text: (player|wc_item1_counter_count)
-        anchor_y: bottom
-        anchor_x: middle
-        y: 125
-        x: center-300
-        font_name: Arial
-        font_size: 40
-      - type: text
-        text: (player|world_item2_name)
-        anchor_y: bottom
-        anchor_x: middle
-        y: 75
-        x: center-150
-        font_name: Arial
-        font_size: 40
-      - type: text
-        text: (player|wc_item2_counter_count)
-        anchor_y: bottom
-        anchor_x: middle
-        y: 125
-        x: center-150
-        font_name: Arial
-        font_size: 40
-      - type: text
-        text: (player|world_item3_name)
-        anchor_y: bottom
-        anchor_x: middle
-        y: 75
-        x: center
-        font_name: Arial
-        font_size: 40
-      - type: text
-        text: (player|wc_item3_counter_count)
-        anchor_y: bottom
-        anchor_x: middle
-        y: 125
-        x: center
-        font_name: Arial
-        font_size: 40
-      - type: text
-        text: (player|world_item4_name)
-        anchor_y: bottom
-        anchor_x: middle
-        y: 75
-        x: center+150
-        font_name: Arial
-        font_size: 40
-      - type: text
-        text: (player|wc_item4_counter_count)
-        anchor_y: bottom
-        anchor_x: middle
-        y: 125
-        x: center+150
-        font_name: Arial
-        font_size: 40
+      # - type: text
+      #   text: (score)
+      #   number_grouping: true
+      #   min_digits: 2
+      #   font_name: lazer84
+      #   font_size: 100
+      # - type: text
+      #   text: (player|world_name)
+      #   font_name: lazer84
+      #   font_size: 50
+      #   y: 200
+      #   anchor_x: center
+      #   anchor_y: bottom
+      # - type: text
+      #   text: PLAYER (number)
+      #   y: 10
+      #   x: 10
+      #   font_name: lazer84
+      #   font_size: 50
+      #   anchor_x: left
+      #   anchor_y: bottom
+      # - type: text
+      #   text: BALL (ball)
+      #   y: 10
+      #   x: right-10
+      #   anchor_x: right
+      #   anchor_y: bottom
+      #   font_name: lazer84
+      #   font_size: 50
+      # - type: text
+      #   text: (player|world_item1_name)
+      #   anchor_y: bottom
+      #   anchor_x: middle
+      #   y: 75
+      #   x: center-300
+      #   font_name: Arial
+      #   font_size: 40
+      # - type: text
+      #   text: (player|wc_item1_counter_count)
+      #   anchor_y: bottom
+      #   anchor_x: middle
+      #   y: 125
+      #   x: center-300
+      #   font_name: Arial
+      #   font_size: 40
+      # - type: text
+      #   text: (player|world_item2_name)
+      #   anchor_y: bottom
+      #   anchor_x: middle
+      #   y: 75
+      #   x: center-150
+      #   font_name: Arial
+      #   font_size: 40
+      # - type: text
+      #   text: (player|wc_item2_counter_count)
+      #   anchor_y: bottom
+      #   anchor_x: middle
+      #   y: 125
+      #   x: center-150
+      #   font_name: Arial
+      #   font_size: 40
+      # - type: text
+      #   text: (player|world_item3_name)
+      #   anchor_y: bottom
+      #   anchor_x: middle
+      #   y: 75
+      #   x: center
+      #   font_name: Arial
+      #   font_size: 40
+      # - type: text
+      #   text: (player|wc_item3_counter_count)
+      #   anchor_y: bottom
+      #   anchor_x: middle
+      #   y: 125
+      #   x: center
+      #   font_name: Arial
+      #   font_size: 40
+      # - type: text
+      #   text: (player|world_item4_name)
+      #   anchor_y: bottom
+      #   anchor_x: middle
+      #   y: 75
+      #   x: center+150
+      #   font_name: Arial
+      #   font_size: 40
+      # - type: text
+      #   text: (player|wc_item4_counter_count)
+      #   anchor_y: bottom
+      #   anchor_x: middle
+      #   y: 125
+      #   x: center+150
+      #   font_name: Arial
+      #   font_size: 40
       - type: image
-        image: pincraft_logo
+        image: item_background
+        anchor_x: left
+        anchor_y: top
+        y: top+625
+        x: left+860
+
+      - type: image
+        image: score_background
+        anchor_x: left
+        anchor_y: top
+        y: top+500
+        x: left+5
+      - type: image
+        image: world1_background
 
 slide_player:
   mode_worldcontroller_started: wc_slide_world

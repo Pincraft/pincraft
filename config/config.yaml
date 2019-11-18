@@ -1228,39 +1228,11 @@ player_vars:
     initial_value: 0
     value_type: int
 
-
+  #Bonus
   bonus_items:
     initial_value: 0
     value_type: int
-  creeper:
-    initial_value: 0
-    value_type: int
-  skeleton:
-    initial_value: 0
-    value_type: int
-#  timeleft:
-#    initial_value: 0
-#    value_type: int
-#Time of Day
-#  time:
-#    initial_value: "6:00 AM"
-#    value_type: str
-#  hourofday:
-#    initial_value: 6
-#    value_type: float
-  # Inventory 
-  earth:
-    initial_value: 0
-    value_type: int
-  stone:
-    initial_value: 0
-    value_type: int
-  wood:
-    initial_value: 0
-    value_type: int
-  ore:
-    initial_value: 0
-    value_type: int
+
   #Tools
   shovel:
     initial_value: 1
@@ -1284,7 +1256,7 @@ slides:
       - type: text
         font_name: lazer84
         font_size: 70
-        text: "Pincraft Loading...\nPlease Wait..."
+        text: "Pincraft"
           
 slide_player:
   init_done: welcome_slide
