@@ -2,7 +2,6 @@
 mode:
     start_events: ball_starting
     priority: 100
-   # code: base.Base
 
 #Shots
 shots:
@@ -22,6 +21,22 @@ event_player:
     item_collected
   collectitem5_hit:
     item_collected
+  logicblock_counter_helpermode_complete:
+    helpermode_ready
+
+
+multiball_locks:
+   helperlock:
+     balls_to_lock: 1
+     lock_devices: bd_topkicker 
+     enable_events: helpermode_ready
+
+multiballs:
+   mb_helper:
+     ball_count: 2
+     ball_locks: bd_topkicker
+     enable_events: helpermode_ready
+     start_events: multiball_lock_helperlock_full
 
 #Player Variables
 variable_player:
@@ -111,6 +126,8 @@ sound_player:
   s_leftinlane_active: lane_swish
   s_leftoutlane_active: lane_swish
   s_spinner_active: clock_tick
+
+  #MUSIC
   mode_base_started:
     basemode_music:
       action: play
@@ -141,26 +158,56 @@ slides:
   slide_base:
     priority: 100
     widgets:
-      - type: text
-        text: (score)
+      - type: text        #PLAYER 1 SCORE
+        text: PLAYER 1 - (player1|score)
         number_grouping: true
         min_digits: 2
-        font_name: lazer84
-        font_size: 100
+        font_name: ARLRDBD
+        font_size: 25
+        y: bottom+260
+        x: left+50
+        z: 100
+        anchor_x: left
+        anchor_y: top
+      - type: text        #PLAYER 2 SCORE
+        text: PLAYER 2 - (player2|score)
+        number_grouping: true
+        min_digits: 2
+        font_name: ARLRDBD
+        font_size: 25
+        y: bottom+200
+        x: left+50
+        z: 100
+        anchor_x: left
+        anchor_y: top
+      - type: text        #PLAYER 3 SCORE
+        text: PLAYER 3 - (player3|score)
+        number_grouping: true
+        min_digits: 2
+        font_name: ARLRDBD
+        font_size: 25
+        y: bottom+140
+        x: left+50
+        z: 100
+        anchor_x: left
+        anchor_y: top
+      - type: text        #PLAYER 4 SCORE
+        text: PLAYER 4 - (player4|score)
+        number_grouping: true
+        min_digits: 2
+        font_name: ARLRDBD
+        font_size: 25
+        y: bottom+80
+        x: left+50
+        z: 100
+        anchor_x: left
+        anchor_y: top
       - type: text
         text: "Shoot  Center  to  Start  World"
         font_name: lazer84
         font_size: 50
         y: 200
         anchor_x: center
-        anchor_y: bottom
-      - type: text
-        text: PLAYER (number)
-        y: 10
-        x: 10
-        font_name: lazer84
-        font_size: 50
-        anchor_x: left
         anchor_y: bottom
       - type: text
         text: BALL (ball)
@@ -170,6 +217,13 @@ slides:
         anchor_y: bottom
         font_name: lazer84
         font_size: 50
+      - type: image
+        image: score_background
+        anchor_x: left
+        anchor_y: bottom
+        y: bottom+15
+        x: left+15
+        z: 10
       - type: image
         image: pincraft_logo
 
@@ -195,16 +249,16 @@ light_player:
     lgi:
       color: white
     lfeature: off
-  spinner_hit{device.counters.counter_nightmode.value>=4}:
+  spinner_hit{device.counters.counter_helpermode.value>=4}:
     l_spinner1: orange
-  spinner_hit{device.counters.counter_nightmode.value>=8}:
+  spinner_hit{device.counters.counter_helpermode.value>=8}:
     l_spinner2: yellow
     l_spinner1: yellow
-  spinner_hit{device.counters.counter_nightmode.value>=12}:
+  spinner_hit{device.counters.counter_helpermode.value>=12}:
     l_spinner3: orange
     l_spinner2: orange
     l_spinner1: orange
-  spinner_hit{device.counters.counter_nightmode.value>=16}:
+  spinner_hit{device.counters.counter_helpermode.value>=16}:
     l_spinner3: blue 
     l_spinner2: blue 
     l_spinner1: blue
@@ -401,30 +455,25 @@ light_player:
   item_collected{current_player.bonus_items>=60}:
    l_collect16: purple
 
- # nightmode_success:
- #   l_spinner1: purple
- #   l_spinner2: purple
- #   l_spinner3: purple
- #   l_spinner4: purple
- # nightmode_failed:
- #   l_spinner1: off
- #   l_spinner2: off
- #   l_spinner3: off
- #   l_spinner4: off
- # mode_night_stopped:
- #   l_spinner1: off
- #   l_spinner2: off
- #   l_spinner3: off
- #   l_spinner4: off
+  multiball_mb_helper_started:
+    l_spinner1: purple
+    l_spinner2: purple
+    l_spinner3: purple
+    l_spinner4: purple
+  multiball_mb_helper_ended:
+    l_spinner1: off
+    l_spinner2: off
+    l_spinner3: off
+    l_spinner4: off
 
 
 counters:
-   counter_nightmode:
+   counter_helpermode:
       count_events: spinner_hit
       starting_count: 0
       count_interval: 1
       count_complete_value: 20
-      restart_events: nightmode_failed, mode_night_stopped
+      restart_events: multiball_mb_helper_ended
       persist_state: true
 
 #This is for achieving the worlds
