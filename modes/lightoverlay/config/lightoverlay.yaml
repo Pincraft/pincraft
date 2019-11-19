@@ -20,12 +20,18 @@ shots:
 event_player:
   balldevice_bd_scoop_ball_eject_attempt:
     scoup_eject_show
+  balldevice_bd_topkicker_ball_eject_attempt:
+    topkicker_eject_show
 
 #queue_relay_player:
 #    balldevice_bd_scoop_ball_eject_attempt:
 #        post: scoup_eject_show
 
 show_player:
+  topkicker_eject_show:
+    show_topkicker:
+      loops: 0
+      speed: 10
   scoup_eject_show:
     show_scoupeject:
       loops: 0

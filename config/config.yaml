@@ -1140,23 +1140,39 @@ sounds:
     volume: 1
   #MUSIC TRACKS
   basemode_music:
-    file: basemode.wav
+    file: basemode.flac
     volume: 0.50
     loops: -1
   world1mode_music:
-    file: world1mode.wav
+    file: world1mode.flac
     volume: 0.50
     loops: -1
   world2mode_music:
-    file: world2mode.wav
+    file: world2mode.flac
     volume: 0.50
     loops: -1
+  world3mode_music:
+    file: world3mode.wav
+    volume: 0.50
+    loops: -1
+  world4mode_music:
+    file: world4mode.wav
+    volume: 0.50
+    loops: -1
+  world5mode_music:
+    file: world5mode.wav
+    volume: 0.50
+    loops: -1
+  world6mode_music:
+    file: world6mode.wav
+    volume: 0.60
+    loops: -1
   nightmode_music:
-    file: nightmode_kit.wav
+    file: nightmode_kit.flac
     volume: 0.50
     loops: -1
   nighthurryup_music:
-    file: nighthurryup.wav
+    file: nighthurryup.flac
     volume: 1
     loops: -1
 

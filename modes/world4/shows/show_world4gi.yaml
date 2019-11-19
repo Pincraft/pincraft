@@ -1,0 +1,19 @@
+#show_version=5
+- duration: 1
+  lights:
+    gi_loopupperright: 
+      color: brown
+    gi_loopupperleft:
+      color: brown
+    gi_captivebottom:
+      color: brown
+    l_popbumper1:
+      color: brown
+    l_popbumper2:
+      color: brown
+    l_popbumper3:
+      color: brown
+    gi_drop4:
+      color: brown
+    gi_drop1:
+      color: brown

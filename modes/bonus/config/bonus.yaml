@@ -1,12 +1,14 @@
 #config_version=5
-
+mode:
+  priority: 20000
+  
 mode_settings:
-   display_delay_ms: 2s
-   hurry_up_delay_ms: 0
-   bonus_entries:
-    - event: bonus_items
-      score: 1000
-      player_score_entry: bonus_items
+  display_delay_ms: 2s
+  hurry_up_delay_ms: 0
+  bonus_entries:
+  - event: bonus_items
+    score: 1000
+    player_score_entry: bonus_items
 
 slide_player:
    mode_bonus_started: bonus_start_slide

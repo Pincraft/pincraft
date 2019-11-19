@@ -4,7 +4,11 @@ mode:
     stop_events: world6_completed
     priority: 500
 
-
+show_player:
+  mode_world6_started:  #Setup GI Light Show
+    show_world6gi:
+      loops: -1
+      speed: 1
 
 variable_player:
   #setup environment variables
@@ -28,7 +32,7 @@ variable_player:
       string: "GREEN"
       action: set 
     world_item1_needed:
-      int: 64
+      int: 6
       action: set
 
     #Item 2 Settings
@@ -39,7 +43,7 @@ variable_player:
       string: "GRAY"
       action: set 
     world_item2_needed:
-      int: 64
+      int: 6
       action: set
 
     #Item 3 Settings
@@ -50,7 +54,7 @@ variable_player:
       string: "BROWN"
       action: set 
     world_item3_needed:
-      int: 64
+      int: 6
       action: set
 
     #Item 4 Settings
@@ -61,7 +65,7 @@ variable_player:
       string: "SLATEGRAY"
       action: set 
     world_item4_needed:
-      int: 64
+      int: 6
       action: set
   
 

@@ -1,9 +1,3 @@
 player1_score:
   expire: !!null 'null'
-  value: 1328200
-player2_score:
-  expire: !!null 'null'
-  value: 160800
-player3_score:
-  expire: !!null 'null'
-  value: 479900
+  value: 1120950

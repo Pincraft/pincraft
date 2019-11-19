@@ -121,6 +121,26 @@ sound_player:
       action: play
       loops: -1
       mode_end_action: stop 
+  mode_worldcontroller_started{current_player.world_id==3}:
+    world3mode_music:
+      action: play
+      loops: -1
+      mode_end_action: stop 
+  mode_worldcontroller_started{current_player.world_id==4}:
+    world4mode_music:
+      action: play
+      loops: -1
+      mode_end_action: stop 
+  mode_worldcontroller_started{current_player.world_id==5}:
+    world5mode_music:
+      action: play
+      loops: -1
+      mode_end_action: stop 
+  mode_worldcontroller_started{current_player.world_id==6}:
+    world6mode_music:
+      action: play
+      loops: -1
+      mode_end_action: stop 
 
 slides:
   wc_slide_world:
@@ -128,6 +148,8 @@ slides:
     widgets:
       - type: text        #PLAYER 1 SCORE
         text: PLAYER 1 - (player1|score)
+        number_grouping: true
+        min_digits: 2
         font_name: ARLRDBD
         font_size: 25
         y: bottom+260
@@ -137,6 +159,8 @@ slides:
         anchor_y: top
       - type: text        #PLAYER 2 SCORE
         text: PLAYER 2 - (player2|score)
+        number_grouping: true
+        min_digits: 2
         font_name: ARLRDBD
         font_size: 25
         y: bottom+200
@@ -146,6 +170,8 @@ slides:
         anchor_y: top
       - type: text        #PLAYER 3 SCORE
         text: PLAYER 3 - (player3|score)
+        number_grouping: true
+        min_digits: 2
         font_name: ARLRDBD
         font_size: 25
         y: bottom+140
@@ -155,6 +181,8 @@ slides:
         anchor_y: top
       - type: text        #PLAYER 4 SCORE
         text: PLAYER 4 - (player4|score)
+        number_grouping: true
+        min_digits: 2
         font_name: ARLRDBD
         font_size: 25
         y: bottom+80
@@ -226,7 +254,7 @@ slides:
         anchor_x: center
         anchor_y: bottom
       - type: text        #ITEM 4 NEEDED
-        text: (player|wc_item5_counter_count)
+        text: (player|wc_item4_counter_count)
         font_name: ARLRDBD
         font_size: 25
         y: bottom+24
