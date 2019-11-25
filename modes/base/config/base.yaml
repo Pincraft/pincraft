@@ -23,20 +23,25 @@ event_player:
     item_collected
   logicblock_counter_helpermode_complete:
     helpermode_ready
-
+  sw_playfield_active_active{device.multiball_locks.helperlock.locked_balls==1 and device.multiball_locks.helperlock.enabled}:
+    start_mbhelper_multiball
 
 multiball_locks:
    helperlock:
      balls_to_lock: 1
+     locked_ball_counting_strategy: physical_only
      lock_devices: bd_topkicker 
      enable_events: helpermode_ready
+     disable_events: start_mbhelper_multiball
+     #reset_all_counts_events: start_mbhelper_multiball
 
 multiballs:
    mb_helper:
      ball_count: 2
      ball_locks: bd_topkicker
      enable_events: helpermode_ready
-     start_events: multiball_lock_helperlock_full
+     start_events: start_mbhelper_multiball
+     shoot_again: 0s
 
 #Player Variables
 variable_player:
