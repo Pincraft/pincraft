@@ -25,7 +25,7 @@
          direction: left
       
 
-- duration: 3
+- duration: 3s
   slides:
     mission_pinball:
       widgets:
@@ -34,6 +34,74 @@
         font_size: 60
         font_name: lazer84
         color: white
+      - type: image
+        image: pincraft_logo
+      transition:
+         type: move_in
+         duration: 1s
+         direction: top
+
+
+- duration: 3s
+  slides:
+    mission_pinball:
+      widgets:
+      - type: Text
+        text: "Previous Scores"
+        font_size: 60
+        font_name: lazer84
+        color: white
+      - type: text        #PLAYER 1 SCORE
+        text: PLAYER 1 - (machine|player1_score)
+        number_grouping: true
+        min_digits: 2
+        font_name: ARLRDBD
+        font_size: 25
+        y: bottom+260
+        x: left+50
+        z: 100
+        anchor_x: left
+        anchor_y: top
+      - type: text        #PLAYER 2 SCORE
+        text: PLAYER 2 - (machine|player2_score)
+        number_grouping: true
+        min_digits: 2
+        font_name: ARLRDBD
+        font_size: 25
+        y: bottom+200
+        x: left+50
+        z: 100
+        anchor_x: left
+        anchor_y: top
+      - type: text        #PLAYER 3 SCORE
+        text: PLAYER 3 - (machine|player3_score)
+        number_grouping: true
+        min_digits: 2
+        font_name: ARLRDBD
+        font_size: 25
+        y: bottom+140
+        x: left+50
+        z: 100
+        anchor_x: left
+        anchor_y: top
+      - type: text        #PLAYER 4 SCORE
+        text: PLAYER 4 - (machine|player4_score)
+        number_grouping: true
+        min_digits: 2
+        font_name: ARLRDBD
+        font_size: 25
+        y: bottom+80
+        x: left+50
+        z: 100
+        anchor_x: left
+        anchor_y: top
+      - type: image
+        image: score_background
+        anchor_x: left
+        anchor_y: bottom
+        y: bottom+15
+        x: left+15
+        z: 10
       - type: image
         image: pincraft_logo
       transition:

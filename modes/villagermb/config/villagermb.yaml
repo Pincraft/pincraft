@@ -1,0 +1,57 @@
+#config_version=5
+mode:
+    start_events: multiball_villagermb_started
+    stop_events: multiball_villagermb_ended, ball_ending
+    priority: 1000
+
+show_player:
+  mode_villagermb_started:
+    villagembshow:
+      loops: -1
+      speed: 10
+
+#play hurry up sound effect
+sound_player:
+  mode_villagermb_started:
+    basemode_music:
+      action: stop
+    world1mode_music:
+      action: stop
+    world2mode_music:
+      action: stop
+    world3mode_music:
+      action: stop
+    villagermb_music:
+      action: play
+      loops: -1
+      mode_end_action: stop
+      priority: 1
+  sw_playfield_active_active:
+    villagersp: 
+      action: play
+      loops: 1
+
+
+timers:
+  villagersounds:
+    start_value: 0
+    end_value: 1000
+    direction: up
+    tick_interval: 1s
+    restart_on_complete: true
+    control_events:
+      - action: start
+        event: mode_villagermb_started
+      - action: stop
+        event: mode_villagermb_ending
+
+variable_player:
+  mode_villagermb_started:
+    multiplier_mb:
+      int: 2
+      action: set
+  mode_villagermb_ending:
+    multiplier_mb:
+      int: 1
+      action: set
+

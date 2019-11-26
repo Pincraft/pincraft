@@ -21,104 +21,110 @@ event_player:
     item_collected
   collectitem5_hit:
     item_collected
-  logicblock_counter_helpermode_complete:
-    helpermode_ready
-  sw_playfield_active_active{device.multiball_locks.helperlock.locked_balls==1 and device.multiball_locks.helperlock.enabled}:
-    start_mbhelper_multiball
+  logicblock_counter_villagermultiball_complete:
+    villagermultiball_ready
+  sw_playfield_active_active{device.multiball_locks.villagerlock.locked_balls==1 and device.multiball_locks.villagerlock.enabled}:
+    start_villager_multiball
+
+counters:
+   counter_villagermultiball:
+      count_events: spinner_hit
+      starting_count: 0
+      count_interval: 1
+      count_complete_value: 20
+      restart_events: multiball_villagermb_ended
+      persist_state: true
 
 multiball_locks:
-   helperlock:
+   villagerlock:
      balls_to_lock: 1
      locked_ball_counting_strategy: physical_only
      lock_devices: bd_topkicker 
-     enable_events: helpermode_ready
-     disable_events: start_mbhelper_multiball
-     #reset_all_counts_events: start_mbhelper_multiball
+     enable_events: villagermultiball_ready
+     disable_events: start_villager_multiball
 
 multiballs:
-   mb_helper:
+   villagermb:
      ball_count: 2
      ball_locks: bd_topkicker
-     enable_events: helpermode_ready
-     start_events: start_mbhelper_multiball
+     enable_events: villagermultiball_ready
+     start_events: start_villager_multiball
      shoot_again: 0s
 
 #Player Variables
 variable_player:
+  spinner_hit:
+    score: 1000 * current_player.multiplier_mb
   collectitem1_hit:
-    score: 10000
+    score: 10000 * current_player.multiplier_mb
     bonus_items: 1
   collectitem2_hit:
-    score: 10000
+    score: 10000 * current_player.multiplier_mb
     bonus_items: 1
   collectitem3_hit:
-    score: 10000
+    score: 10000 * current_player.multiplier_mb
   collectitem4_hit:
-    score: 10000
+    score: 10000 * current_player.multiplier_mb
     bonus_items: 1
   collectitem5_hit:
-    score: 10000
+    score: 10000 * current_player.multiplier_mb
     bonus_items: 1
 
   drop_target_dt_drop1_down:
-    score: 1000
+    score: 1000 * current_player.multiplier_mb
   drop_target_dt_drop2_down:
-    score: 1000
+    score: 1000 * current_player.multiplier_mb
   drop_target_dt_drop3_down:
-    score: 1000
+    score: 1000 * current_player.multiplier_mb
   drop_target_dt_drop4_down:
-    score: 1000
+    score: 1000 * current_player.multiplier_mb
   drop_target_dt_drop5_down:
-    score: 1000
+    score: 1000 * current_player.multiplier_mb
   drop_target_dt_drop6_down:
-    score: 1000
+    score: 1000 * current_player.multiplier_mb
   drop_target_bank_dtb_main_bank_down:
-    score: 10000
+    score: 10000 * current_player.multiplier_mb
   s_right_outlane_active:
-    score: 5000
+    score: 5000 * current_player.multiplier_mb
   s_centertarget_active:
-    score: 10000
+    score: 10000 * current_player.multiplier_mb
   s_rightsling_active:
-    score: 100
+    score: 100 * current_player.multiplier_mb
   s_leftsling_active:
-    score: 100
+    score: 100 * current_player.multiplier_mb
   s_bumperrail_active:
-    score: 50
+    score: 50 * current_player.multiplier_mb
   s_scoup_active:
-    score: 5000
+    score: 5000 * current_player.multiplier_mb
  
   s_topkicker_active:
-    score: 5000
+    score: 5000 * current_player.multiplier_mb
   s_captiveball_active:
-    score: 100000
+    score: 100000 * current_player.multiplier_mb
   s_whitedot1_active:
-    score: 100
+    score: 100 * current_player.multiplier_mb
   s_whitedot2_active:
-    score: 100
+    score: 100 * current_player.multiplier_mb
   s_whitedot3_active:
-    score: 100
+    score: 100 * current_player.multiplier_mb
   s_whitedot4_active:
-    score: 100
+    score: 100 * current_player.multiplier_mb
   s_bluetarget1_active:
-    score: 5000
+    score: 5000 * current_player.multiplier_mb
   s_bluetarget2_active:
-    score: 5000
+    score: 5000 * current_player.multiplier_mb
   s_bluetarget3_active:
-    score: 5000
+    score: 5000 * current_player.multiplier_mb
   s_collectitem1_active:
-    score: 1000
-    #earth: 1
+    score: 1000 * current_player.multiplier_mb
   s_collectitem2_active:
-    score: 1000
-    #stone: 1
+    score: 1000 * current_player.multiplier_mb
   s_collectitem3_active:
-    score: 5000
+    score: 5000 * current_player.multiplier_mb
   s_collectitem4_active:
-    score: 1000
-    #wood: 1
+    score: 1000 * current_player.multiplier_mb
   s_collect_active:
-    score: 1000
-    #ore: 1
+    score: 1000 * current_player.multiplier_mb
 
 sound_player:
   s_collectitem1_active: collect_tool
@@ -148,21 +154,23 @@ sound_player:
       action: play
       loops: -1
       mode_end_action: stop 
- # nightmode_failed:
- #   basemode_music:
- #     action: play
- #     loops: -1
- #     mode_end_action: stop 
- # multiball_mb_nightmode_ended:
- #   basemode_music:
- #     action: play
- #     loops: -1
- #     mode_end_action: stop 
                 
 slides:
   slide_base:
     priority: 100
     widgets:
+      - type: text        #PLAYER 1 SCORE
+        text: MB - (player|multiplier_mb)x
+        number_grouping: true
+        min_digits: 2
+        font_name: ARLRDBD
+        font_size: 25
+        y: top-50
+        x: right-100
+        z: 100
+        anchor_x: left
+        anchor_y: top
+
       - type: text        #PLAYER 1 SCORE
         text: PLAYER 1 - (player1|score)
         number_grouping: true
@@ -254,16 +262,16 @@ light_player:
     lgi:
       color: white
     lfeature: off
-  spinner_hit{device.counters.counter_helpermode.value>=4}:
+  spinner_hit{device.counters.counter_villagermultiball.value>=4}:
     l_spinner1: orange
-  spinner_hit{device.counters.counter_helpermode.value>=8}:
+  spinner_hit{device.counters.counter_villagermultiball.value>=8}:
     l_spinner2: yellow
     l_spinner1: yellow
-  spinner_hit{device.counters.counter_helpermode.value>=12}:
+  spinner_hit{device.counters.counter_villagermultiball.value>=12}:
     l_spinner3: orange
     l_spinner2: orange
     l_spinner1: orange
-  spinner_hit{device.counters.counter_helpermode.value>=16}:
+  spinner_hit{device.counters.counter_villagermultiball.value>=16}:
     l_spinner3: blue 
     l_spinner2: blue 
     l_spinner1: blue
@@ -460,26 +468,19 @@ light_player:
   item_collected{current_player.bonus_items>=60}:
    l_collect16: purple
 
-  multiball_mb_helper_started:
+  multiball_villagermb_started:
     l_spinner1: purple
     l_spinner2: purple
     l_spinner3: purple
     l_spinner4: purple
-  multiball_mb_helper_ended:
+  multiball_villagermb_ended:
     l_spinner1: off
     l_spinner2: off
     l_spinner3: off
     l_spinner4: off
 
 
-counters:
-   counter_helpermode:
-      count_events: spinner_hit
-      starting_count: 0
-      count_interval: 1
-      count_complete_value: 20
-      restart_events: multiball_mb_helper_ended
-      persist_state: true
+
 
 #This is for achieving the worlds
 achievements:

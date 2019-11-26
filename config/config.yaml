@@ -74,19 +74,24 @@ switches:
     tags: s_playfield, s_drop
   s_leftinlane:
     number: A1-B0-0
-    tags: s_playfield, s_drop
+    tags: playfield_active, s_playfield, s_drop
 
 #P1 - Bank 1
   s_collectitem1:
     number: A1-B1-7
+    tags: playfield_active
   s_collectitem2:
     number: A1-B1-6
+    tags: playfield_active
   s_collectitem3:
     number: A1-B1-5
+    tags: playfield_active
   s_collectitem4:
     number: A1-B1-4
+    tags: playfield_active
   s_collectitem5:
     number: A1-B1-3
+    tags: playfield_active
  
 #P2 - Bank 0
   s_plungerlane:
@@ -1138,6 +1143,19 @@ sounds:
   lane_swish:
     file: lane_swish.wav
     volume: 1
+  villager_accept:
+    file: village_accept.wav
+    volume: 1
+  villager_deny:
+    file: village_deny.wav
+    volume: 1
+  villager_idle:
+    file: village_idle.wav
+    volume: 1
+  villager_trade:
+    file: village_trade.wav
+    volume: 1
+
   #MUSIC TRACKS
   basemode_music:
     file: basemode.flac
@@ -1175,10 +1193,31 @@ sounds:
     file: nighthurryup.flac
     volume: 1
     loops: -1
+  villagermb_music:
+    file: villagermb.flac
+    volume: 0.80
+    loops: -1
+
+# SOUND POOLS
+#--------------------------------------------
+sound_pools:
+  villagersp:
+    type: random_force_all
+    track: sfx
+    sounds:
+      - villager_accept
+      - villager_deny
+      - villager_idle
+      - villager_trade
 
 # PLAYER VARIABLES
 #--------------------------------------------
 player_vars:
+  #Multiball Multiplier
+  multiplier_mb:
+    initial_value: 1
+    value_type: int
+
   #World Variables
   world_color:  #sets color of world for accent colors
     initial_value: "white"
@@ -1292,6 +1331,7 @@ modes:
   - world5
   - world6
   - bonus
+  - villagermb
  # - nighthurryup
  # - night
  # - tools
