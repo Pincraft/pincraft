@@ -1,7 +1,7 @@
 #config_version=5
 mode:
     start_events: mode_world1_started, mode_world2_started, mode_world3_started, mode_world4_started, mode_world5_started, mode_world6_started
-    stop_events: world1_completed, world2_completed, world3_completed, world4_completed, world5_completed, world6_completed
+    stop_events: mode_world1_ending, mode_world2_ending, mode_world3_ending, mode_world4_ending, mode_world5_ending, mode_world6_ending
     priority: 550
 
 shots:
@@ -85,6 +85,7 @@ variable_player:
 
 event_player:
   itemcheckcomplete{current_player.world_id==1 and current_player.wc_item1_counter_count == 0 and current_player.wc_item2_counter_count == 0 and current_player.wc_item3_counter_count == 0 and current_player.wc_item4_counter_count == 0}:
+    #divertercontrol_leftloop_travel
     world1_completed
   itemcheckcomplete{current_player.world_id==2 and current_player.wc_item1_counter_count == 0 and current_player.wc_item2_counter_count == 0 and current_player.wc_item3_counter_count == 0 and current_player.wc_item4_counter_count == 0}:
     world2_completed
@@ -327,101 +328,6 @@ slides:
       - type: image
         image: world1_background
         z: 0
-
-      # - type: text
-      #   text: (score)
-      #   number_grouping: true
-      #   min_digits: 2
-      #   font_name: lazer84
-      #   font_size: 100
-      # - type: text
-      #   text: (player|world_name)
-      #   font_name: lazer84
-      #   font_size: 50
-      #   y: 200
-      #   anchor_x: center
-      #   anchor_y: bottom
-      # - type: text
-      #   text: PLAYER (number)
-      #   y: 10
-      #   x: 10
-      #   font_name: lazer84
-      #   font_size: 50
-      #   anchor_x: left
-      #   anchor_y: bottom
-      # - type: text
-      #   text: BALL (ball)
-      #   y: 10
-      #   x: right-10
-      #   anchor_x: right
-      #   anchor_y: bottom
-      #   font_name: lazer84
-      #   font_size: 50
-      # - type: text
-      #   text: (player|world_item1_name)
-      #   anchor_y: bottom
-      #   anchor_x: middle
-      #   y: 75
-      #   x: center-300
-      #   font_name: Arial
-      #   font_size: 40
-      # - type: text
-      #   text: (player|wc_item1_counter_count)
-      #   anchor_y: bottom
-      #   anchor_x: middle
-      #   y: 125
-      #   x: center-300
-      #   font_name: Arial
-      #   font_size: 40
-      # - type: text
-      #   text: (player|world_item2_name)
-      #   anchor_y: bottom
-      #   anchor_x: middle
-      #   y: 75
-      #   x: center-150
-      #   font_name: Arial
-      #   font_size: 40
-      # - type: text
-      #   text: (player|wc_item2_counter_count)
-      #   anchor_y: bottom
-      #   anchor_x: middle
-      #   y: 125
-      #   x: center-150
-      #   font_name: Arial
-      #   font_size: 40
-      # - type: text
-      #   text: (player|world_item3_name)
-      #   anchor_y: bottom
-      #   anchor_x: middle
-      #   y: 75
-      #   x: center
-      #   font_name: Arial
-      #   font_size: 40
-      # - type: text
-      #   text: (player|wc_item3_counter_count)
-      #   anchor_y: bottom
-      #   anchor_x: middle
-      #   y: 125
-      #   x: center
-      #   font_name: Arial
-      #   font_size: 40
-      # - type: text
-      #   text: (player|world_item4_name)
-      #   anchor_y: bottom
-      #   anchor_x: middle
-      #   y: 75
-      #   x: center+150
-      #   font_name: Arial
-      #   font_size: 40
-      # - type: text
-      #   text: (player|wc_item4_counter_count)
-      #   anchor_y: bottom
-      #   anchor_x: middle
-      #   y: 125
-      #   x: center+150
-      #   font_name: Arial
-      #   font_size: 40
-     
 
 slide_player:
   mode_worldcontroller_started: wc_slide_world

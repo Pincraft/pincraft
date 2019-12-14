@@ -136,7 +136,10 @@ sound_player:
   s_rightoutlane_active: lane_swish
   s_leftinlane_active: lane_swish
   s_leftoutlane_active: lane_swish
-  s_spinner_active: clock_tick
+  s_spinner_active: 
+    villagersp: 
+      action: play
+      loops: 1
 
   #MUSIC
   mode_base_started:
@@ -495,7 +498,7 @@ achievements:
     reset_events: reset_worlds
     enable_events: mode_base_started
     complete_events: world1_completed
-    events_when_completed: rotate_mission_rotator, light_mission_select
+    events_when_completed: rotate_mission_rotator, start_world
     restart_on_next_ball_when_started: true
     enable_on_next_ball_when_enabled: true
   world2:
@@ -509,7 +512,7 @@ achievements:
     reset_events: reset_worlds
     enable_events: world1_completed
     complete_events: world2_completed
-    events_when_completed: rotate_mission_rotator, light_mission_select
+    events_when_completed: rotate_mission_rotator, start_world
     restart_on_next_ball_when_started: true
     enable_on_next_ball_when_enabled: true
   world3:
@@ -523,7 +526,7 @@ achievements:
     reset_events: reset_worlds
     enable_events: world2_completed
     complete_events: world3_completed
-    events_when_completed: rotate_mission_rotator, light_mission_select
+    events_when_completed: rotate_mission_rotator, start_world
     restart_on_next_ball_when_started: true
     enable_on_next_ball_when_enabled: true
   world4:
@@ -537,7 +540,7 @@ achievements:
     reset_events: reset_worlds
     enable_events: world3_completed
     complete_events: world4_completed
-    events_when_completed: rotate_mission_rotator, light_mission_select
+    events_when_completed: rotate_mission_rotator, start_world
     restart_on_next_ball_when_started: true
     enable_on_next_ball_when_enabled: true
   world5:
@@ -551,7 +554,7 @@ achievements:
     reset_events: reset_worlds
     enable_events: world4_completed
     complete_events: world5_completed
-    events_when_completed: rotate_mission_rotator, light_mission_select
+    events_when_completed: rotate_mission_rotator, start_world
     restart_on_next_ball_when_started: true
     enable_on_next_ball_when_enabled: true
   world6:
@@ -565,19 +568,19 @@ achievements:
     reset_events: reset_worlds
     enable_events: world5_completed
     complete_events: world6_completed
-    events_when_completed: rotate_mission_rotator, light_mission_select
+    events_when_completed: rotate_mission_rotator, start_world
     restart_on_next_ball_when_started: true
     enable_on_next_ball_when_enabled: true
 
 achievement_groups:
   worlds:
     achievements: world1, world2, world3, world4, world5, world6
-    show_tokens:
-      light: l_worldtarget
-    show_when_enabled: flash
-    start_selected_events: centertarget_hit
+   # show_tokens:
+   #   light: l_worldtarget
+   # show_when_enabled: flash
+    start_selected_events: mode_base_started, start_world
     events_when_enabled: mission_rotator_ready
     auto_select: true
-    disable_while_achievement_started: true 
     enable_while_no_achievement_started: true
     rotate_right_events: rotate_mission_rotator
+
