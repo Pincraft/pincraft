@@ -280,197 +280,6 @@ light_player:
     l_spinner1: blue
     l_spinner4: blue 
 
-  #BONUS ROUND 0 to 12
-  item_collected{current_player.bonus_items>=1 and current_player.bonus_items<=11}:
-    l_collect1: green
-  item_collected{current_player.bonus_items>=2 and current_player.bonus_items<=11}:
-    l_collect2: green
-  item_collected{current_player.bonus_items>=3 and current_player.bonus_items<=11}:
-    l_collect3: green
-  item_collected{current_player.bonus_items>=4 and current_player.bonus_items<=11}:
-    l_collect4: green
-  item_collected{current_player.bonus_items>=5 and current_player.bonus_items<=11}:
-    l_collect5: green
-  item_collected{current_player.bonus_items>=6 and current_player.bonus_items<=11}:
-    l_collect6: green
-  item_collected{current_player.bonus_items>=7 and current_player.bonus_items<=11}:
-    l_collect7: green
-  item_collected{current_player.bonus_items>=8 and current_player.bonus_items<=11}:
-    l_collect8: green
-  item_collected{current_player.bonus_items>=9 and current_player.bonus_items<=11}:
-    l_collect9: green
-  item_collected{current_player.bonus_items>=10 and current_player.bonus_items<=11}:
-    l_collect10: green
-  item_collected{current_player.bonus_items>=11 and current_player.bonus_items<=11}:
-    l_collect11: green
-  item_collected{current_player.bonus_items==12}:
-    l_collect1: off
-    l_collect2: off
-    l_collect3: off
-    l_collect4: off
-    l_collect5: off
-    l_collect6: off
-    l_collect7: off
-    l_collect8: off
-    l_collect9: off
-    l_collect10: off
-    l_collect11: off
-
-  #BONUS ROUND 13 to 24
-  item_collected{current_player.bonus_items>=13 and current_player.bonus_items<=23}:
-    l_collect1: yellow
-  item_collected{current_player.bonus_items>=14 and current_player.bonus_items<=23}:
-    l_collect2: yellow
-  item_collected{current_player.bonus_items>=15 and current_player.bonus_items<=23}:
-    l_collect3: yellow
-  item_collected{current_player.bonus_items>=16 and current_player.bonus_items<=23}:
-    l_collect4: yellow
-  item_collected{current_player.bonus_items>=17 and current_player.bonus_items<=23}:
-    l_collect5: yellow
-  item_collected{current_player.bonus_items>=18 and current_player.bonus_items<=23}:
-    l_collect6: yellow
-  item_collected{current_player.bonus_items>=19 and current_player.bonus_items<=23}:
-    l_collect7: yellow
-  item_collected{current_player.bonus_items>=20 and current_player.bonus_items<=23}:
-    l_collect8: yellow
-  item_collected{current_player.bonus_items>=21 and current_player.bonus_items<=23}:
-    l_collect9: yellow
-  item_collected{current_player.bonus_items>=22 and current_player.bonus_items<=23}:
-    l_collect10: yellow
-  item_collected{current_player.bonus_items>=23 and current_player.bonus_items<=23}:
-    l_collect11: yellow
-  item_collected{current_player.bonus_items==24}:
-    l_collect1: off
-    l_collect2: off
-    l_collect3: off
-    l_collect4: off
-    l_collect5: off
-    l_collect6: off
-    l_collect7: off
-    l_collect8: off
-    l_collect9: off
-    l_collect10: off
-    l_collect11: off
-
- #BONUS ROUND 25 to 36
-  item_collected{current_player.bonus_items>=25 and current_player.bonus_items<=35}:
-    l_collect1: blue
-  item_collected{current_player.bonus_items>=26 and current_player.bonus_items<=35}:
-    l_collect2: blue
-  item_collected{current_player.bonus_items>=27 and current_player.bonus_items<=35}:
-    l_collect3: blue
-  item_collected{current_player.bonus_items>=28 and current_player.bonus_items<=35}:
-    l_collect4: blue
-  item_collected{current_player.bonus_items>=29 and current_player.bonus_items<=35}:
-    l_collect5: blue
-  item_collected{current_player.bonus_items>=30 and current_player.bonus_items<=35}:
-    l_collect6: blue
-  item_collected{current_player.bonus_items>=31 and current_player.bonus_items<=35}:
-    l_collect7: blue
-  item_collected{current_player.bonus_items>=32 and current_player.bonus_items<=35}:
-    l_collect8: blue
-  item_collected{current_player.bonus_items>=33 and current_player.bonus_items<=35}:
-    l_collect9: blue
-  item_collected{current_player.bonus_items>=34 and current_player.bonus_items<=35}:
-    l_collect10: blue
-  item_collected{current_player.bonus_items>=35 and current_player.bonus_items<=35}:
-    l_collect11: blue
-  item_collected{current_player.bonus_items==36}:
-    l_collect1: off
-    l_collect2: off
-    l_collect3: off
-    l_collect4: off
-    l_collect5: off
-    l_collect6: off
-    l_collect7: off
-    l_collect8: off
-    l_collect9: off
-    l_collect10: off
-    l_collect11: off
-
- #BONUS ROUND 37 to 48
-  item_collected{current_player.bonus_items>=37 and current_player.bonus_items<=47}:
-    l_collect1: red
-  item_collected{current_player.bonus_items>=38 and current_player.bonus_items<=47}:
-    l_collect2: red
-  item_collected{current_player.bonus_items>=39 and current_player.bonus_items<=47}:
-    l_collect3: red
-  item_collected{current_player.bonus_items>=40 and current_player.bonus_items<=47}:
-    l_collect4: red
-  item_collected{current_player.bonus_items>=41 and current_player.bonus_items<=47}:
-    l_collect5: red
-  item_collected{current_player.bonus_items>=42 and current_player.bonus_items<=47}:
-    l_collect6: red
-  item_collected{current_player.bonus_items>=43 and current_player.bonus_items<=47}:
-    l_collect7: red
-  item_collected{current_player.bonus_items>=44 and current_player.bonus_items<=47}:
-    l_collect8: red
-  item_collected{current_player.bonus_items>=45 and current_player.bonus_items<=47}:
-    l_collect9: red
-  item_collected{current_player.bonus_items>=46 and current_player.bonus_items<=47}:
-    l_collect10: red
-  item_collected{current_player.bonus_items>=47 and current_player.bonus_items<=47}:
-    l_collect11: red
-  item_collected{current_player.bonus_items==48}:
-    l_collect1: off
-    l_collect2: off
-    l_collect3: off
-    l_collect4: off
-    l_collect5: off
-    l_collect6: off
-    l_collect7: off
-    l_collect8: off
-    l_collect9: off
-    l_collect10: off
-    l_collect11: off
-
-#BONUS ROUND 49 to 60
-  item_collected{current_player.bonus_items>=49 and current_player.bonus_items<=60}:
-    l_collect1: purple
-  item_collected{current_player.bonus_items>=50 and current_player.bonus_items<=60}:
-    l_collect2: purple
-  item_collected{current_player.bonus_items>=51 and current_player.bonus_items<=60}:
-    l_collect3: purple
-  item_collected{current_player.bonus_items>=52 and current_player.bonus_items<=60}:
-    l_collect4: purple
-  item_collected{current_player.bonus_items>=53 and current_player.bonus_items<=60}:
-    l_collect5: purple
-  item_collected{current_player.bonus_items>=54 and current_player.bonus_items<=60}:
-    l_collect6: purple
-  item_collected{current_player.bonus_items>=55 and current_player.bonus_items<=60}:
-    l_collect7: purple
-  item_collected{current_player.bonus_items>=56 and current_player.bonus_items<=60}:
-    l_collect8: purple
-  item_collected{current_player.bonus_items>=57 and current_player.bonus_items<=60}:
-    l_collect9: purple
-  item_collected{current_player.bonus_items>=58 and current_player.bonus_items<=60}:
-    l_collect10: purple
-  item_collected{current_player.bonus_items>=59 and current_player.bonus_items<=60}:
-    l_collect11: purple
-  item_collected{current_player.bonus_items==60}:
-    l_collect1: purple
-    l_collect2: purple
-    l_collect3: purple
-    l_collect4: purple
-    l_collect5: purple
-    l_collect6: purple
-    l_collect7: purple
-    l_collect8: purple
-    l_collect9: purple
-    l_collect10: purple
-    l_collect11: purple
-
-  item_collected{current_player.bonus_items>=12}:
-   l_collect12: green
-  item_collected{current_player.bonus_items>=24}:
-   l_collect13: yellow
-  item_collected{current_player.bonus_items>=36}:
-   l_collect14: blue
-  item_collected{current_player.bonus_items>=48}:
-   l_collect15: red
-  item_collected{current_player.bonus_items>=60}:
-   l_collect16: purple
-
   multiball_villagermb_started:
     l_spinner1: purple
     l_spinner2: purple
@@ -481,9 +290,6 @@ light_player:
     l_spinner2: off
     l_spinner3: off
     l_spinner4: off
-
-
-
 
 #This is for achieving the worlds
 achievements:
@@ -575,12 +381,199 @@ achievements:
 achievement_groups:
   worlds:
     achievements: world1, world2, world3, world4, world5, world6
-   # show_tokens:
-   #   light: l_worldtarget
-   # show_when_enabled: flash
     start_selected_events: mode_base_started, start_world
     events_when_enabled: mission_rotator_ready
     auto_select: true
     enable_while_no_achievement_started: true
     rotate_right_events: rotate_mission_rotator
+
+
+slides:
+  base_pincraft_slide:
+    priority: 100
+    widgets:
+      - type: text        #PLAYER 1 SCORE
+        text: MB - (player|multiplier_mb)x
+        number_grouping: true
+        min_digits: 2
+        font_name: ARLRDBD
+        font_size: 25
+        y: top-50
+        x: right-100
+        z: 100
+        anchor_x: left
+        anchor_y: top
+      - type: text        #PLAYER 1 SCORE
+        text: PLAYER 1 - (player1|score)
+        number_grouping: true
+        min_digits: 2
+        font_name: ARLRDBD
+        font_size: 25
+        y: bottom+260
+        x: left+50
+        z: 100
+        anchor_x: left
+        anchor_y: top
+      - type: text        #PLAYER 2 SCORE
+        text: PLAYER 2 - (player2|score)
+        number_grouping: true
+        min_digits: 2
+        font_name: ARLRDBD
+        font_size: 25
+        y: bottom+200
+        x: left+50
+        z: 100
+        anchor_x: left
+        anchor_y: top
+      - type: text        #PLAYER 3 SCORE
+        text: PLAYER 3 - (player3|score)
+        number_grouping: true
+        min_digits: 2
+        font_name: ARLRDBD
+        font_size: 25
+        y: bottom+140
+        x: left+50
+        z: 100
+        anchor_x: left
+        anchor_y: top
+      - type: text        #PLAYER 4 SCORE
+        text: PLAYER 4 - (player4|score)
+        number_grouping: true
+        min_digits: 2
+        font_name: ARLRDBD
+        font_size: 25
+        y: bottom+80
+        x: left+50
+        z: 100
+        anchor_x: left
+        anchor_y: top
+      - type: text        #TOOL 1 MULTIPLIER
+        text: 1x
+        font_name: ARLRDBD
+        font_size: 25
+        y: top-188
+        x: right-60
+        z: 100
+        anchor_x: center
+        anchor_y: top
+      - type: text        #TOOL 2 MULTIPLIER
+        text: 1x
+        font_name: ARLRDBD
+        font_size: 25
+        y: top-302
+        x: right-60
+        z: 100
+        anchor_x: center
+        anchor_y: top
+      - type: text        #TOOL 3 MULTIPLIER
+        text: 1x
+        font_name: ARLRDBD
+        font_size: 25
+        y: top-416
+        x: right-60
+        z: 100
+        anchor_x: center
+        anchor_y: top
+      - type: text        #TOOL 3 MULTIPLIER
+        text: 1x
+        font_name: ARLRDBD
+        font_size: 25
+        y: top-530
+        x: right-60
+        z: 100
+        anchor_x: center
+        anchor_y: top
+      - type: text        #ITEM 1 NEEDED
+        text: (player|wc_item1_counter_count)
+        font_name: ARLRDBD
+        font_size: 25
+        y: bottom+24
+        x: right-462
+        z: 100
+        anchor_x: center
+        anchor_y: bottom
+      - type: text        #ITEM 2 NEEDED
+        text: (player|wc_item2_counter_count)
+        font_name: ARLRDBD
+        font_size: 25
+        y: bottom+24
+        x: right-373
+        z: 100
+        anchor_x: center
+        anchor_y: bottom
+      - type: text        #ITEM 3 NEEDED
+        text: (player|wc_item3_counter_count)
+        font_name: ARLRDBD
+        font_size: 25
+        y: bottom+24
+        x: right-284
+        z: 100
+        anchor_x: center
+        anchor_y: bottom
+      - type: text        #ITEM 4 NEEDED
+        text: (player|wc_item4_counter_count)
+        font_name: ARLRDBD
+        font_size: 25
+        y: bottom+24
+        x: right-196
+        z: 100
+        anchor_x: center
+        anchor_y: bottom
+      - type: text        #BALL TEXT
+        text: BALL (ball)
+        font_name: ARLRDBD
+        font_size: 25
+        y: bottom+50
+        x: right-60
+        z: 100
+        anchor_x: center
+        anchor_y: bottom
+      - type: image        #BALL1
+        image: heart_empty
+        anchor_x: right
+        anchor_y: bottom
+        y: bottom+15
+        x: right-15
+        z: 10
+      - type: image        #BALL2
+        image: heart_full
+        anchor_x: right
+        anchor_y: bottom
+        y: bottom+15
+        x: right-45 
+        z: 10
+      - type: image        #BALL3
+        image: heart_full
+        anchor_x: right
+        anchor_y: bottom
+        y: bottom+15
+        x: right-75 
+        z: 10
+      - type: image        #TOOL BACKGROUND
+        image: tool_background
+        anchor_x: right
+        anchor_y: bottom
+        y: bottom+200
+        x: right-15
+        z: 10
+      - type: image        #ITEM BACKGROUND
+        image: item_background
+        anchor_x: left
+        anchor_y: bottom
+        y: bottom+15
+        x: left+860
+        z: 10
+      - type: image        #SCORE BACKGROUND
+        image: score_background
+        anchor_x: left
+        anchor_y: bottom
+        y: bottom+15
+        x: left+15
+        z: 10
+      - type: image        #WORLD BACKGROUND
+        image: world1_background
+        z: 0
+
+slide_player:
+  mode_base_started: base_pincraft_slide
 

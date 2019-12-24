@@ -1331,8 +1331,10 @@ modes:
   - world5
   - world6
   - bonus
+  - bonusdisplay
   - villagermb
-  - divertercontrol
+
+ # - divertercontrol
  # - nighthurryup
  # - night
  # - tools
