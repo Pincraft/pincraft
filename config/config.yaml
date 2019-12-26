@@ -1134,69 +1134,87 @@ sounds:
   bounce_kick:
     file: bounce_kick.wav
     volume: 0.85
+    track: sfx
   clock_tick:
     file: clock_tick.wav
     volume: 1
+    track: sfx
   collect_tool:
     file: collect_tool.wav
     volume: 1
+    track: sfx
   lane_swish:
     file: lane_swish.wav
     volume: 1
+    track: sfx
   villager_accept:
     file: village_accept.wav
     volume: 1
+    track: sfx
   villager_deny:
     file: village_deny.wav
     volume: 1
+    track: sfx
   villager_idle:
     file: village_idle.wav
     volume: 1
+    track: sfx
   villager_trade:
     file: village_trade.wav
     volume: 1
+    track: sfx
 
   #MUSIC TRACKS
   basemode_music:
     file: basemode.flac
     volume: 0.50
     loops: -1
+    track: music
   world1mode_music:
     file: world1mode.flac
     volume: 0.50
     loops: -1
+    track: music
   world2mode_music:
     file: world2mode.flac
     volume: 0.50
     loops: -1
+    track: music
   world3mode_music:
     file: world3mode.wav
     volume: 0.50
     loops: -1
+    track: music
   world4mode_music:
     file: world4mode.wav
     volume: 0.50
     loops: -1
+    track: music
   world5mode_music:
     file: world5mode.wav
     volume: 0.50
     loops: -1
+    track: music
   world6mode_music:
     file: world6mode.wav
     volume: 0.60
     loops: -1
+    track: music
   nightmode_music:
     file: nightmode_kit.flac
     volume: 0.50
     loops: -1
+    track: music
   nighthurryup_music:
     file: nighthurryup.flac
     volume: 1
     loops: -1
+    track: music
   villagermb_music:
     file: villagermb.flac
     volume: 0.80
     loops: -1
+    track: music
 
 # SOUND POOLS
 #--------------------------------------------

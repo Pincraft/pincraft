@@ -25,6 +25,8 @@ event_player:
     villagermultiball_ready
   sw_playfield_active_active{device.multiball_locks.villagerlock.locked_balls==1 and device.multiball_locks.villagerlock.enabled}:
     start_villager_multiball
+  ball_started:
+    item_collected
 
 counters:
    counter_villagermultiball:
@@ -32,7 +34,7 @@ counters:
       starting_count: 0
       count_interval: 1
       count_complete_value: 20
-      restart_events: multiball_villagermb_ended
+      restart_events: mode_villagermb_ended
       persist_state: true
 
 multiball_locks:
@@ -123,6 +125,8 @@ variable_player:
     score: 5000 * current_player.multiplier_mb
   s_collectitem4_active:
     score: 1000 * current_player.multiplier_mb
+  s_collectitem5_active:
+    score: 1000 * current_player.multiplier_mb
   s_collect_active:
     score: 1000 * current_player.multiplier_mb
 
@@ -158,105 +162,18 @@ sound_player:
       loops: -1
       mode_end_action: stop 
                 
-slides:
-  slide_base:
-    priority: 100
-    widgets:
-      - type: text        #PLAYER 1 SCORE
-        text: MB - (player|multiplier_mb)x
-        number_grouping: true
-        min_digits: 2
-        font_name: ARLRDBD
-        font_size: 25
-        y: top-50
-        x: right-100
-        z: 100
-        anchor_x: left
-        anchor_y: top
-
-      - type: text        #PLAYER 1 SCORE
-        text: PLAYER 1 - (player1|score)
-        number_grouping: true
-        min_digits: 2
-        font_name: ARLRDBD
-        font_size: 25
-        y: bottom+260
-        x: left+50
-        z: 100
-        anchor_x: left
-        anchor_y: top
-      - type: text        #PLAYER 2 SCORE
-        text: PLAYER 2 - (player2|score)
-        number_grouping: true
-        min_digits: 2
-        font_name: ARLRDBD
-        font_size: 25
-        y: bottom+200
-        x: left+50
-        z: 100
-        anchor_x: left
-        anchor_y: top
-      - type: text        #PLAYER 3 SCORE
-        text: PLAYER 3 - (player3|score)
-        number_grouping: true
-        min_digits: 2
-        font_name: ARLRDBD
-        font_size: 25
-        y: bottom+140
-        x: left+50
-        z: 100
-        anchor_x: left
-        anchor_y: top
-      - type: text        #PLAYER 4 SCORE
-        text: PLAYER 4 - (player4|score)
-        number_grouping: true
-        min_digits: 2
-        font_name: ARLRDBD
-        font_size: 25
-        y: bottom+80
-        x: left+50
-        z: 100
-        anchor_x: left
-        anchor_y: top
-      - type: text
-        text: "Shoot  Center  to  Start  World"
-        font_name: lazer84
-        font_size: 50
-        y: 200
-        anchor_x: center
-        anchor_y: bottom
-      - type: text
-        text: BALL (ball)
-        y: 10
-        x: right-10
-        anchor_x: right
-        anchor_y: bottom
-        font_name: lazer84
-        font_size: 50
-      - type: image
-        image: score_background
-        anchor_x: left
-        anchor_y: bottom
-        y: bottom+15
-        x: left+15
-        z: 10
-      - type: image
-        image: pincraft_logo
-
-slide_player:
-  mode_base_started: slide_base
 
 show_player:
   spinner_hit:
-    show_spinnerhit:
+    show_spinnerhit:    #Spinner Hit Flashed
       loops: 0
       speed: 10
-  captiveball_hit:
+  captiveball_hit:    
     show_captiveballhit:
       loops: 0
       speed: 10
   mode_base_started:
-    show_dropcreepers:
+    show_dropcreepers:  #Drop the Creepers
       loops: 0
       speed: 1
     
@@ -279,7 +196,6 @@ light_player:
     l_spinner2: blue 
     l_spinner1: blue
     l_spinner4: blue 
-
   multiball_villagermb_started:
     l_spinner1: purple
     l_spinner2: purple

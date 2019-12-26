@@ -5,7 +5,6 @@ mode:
     priority: 550
 
 shots:
-  #these are world specific, maybe move to world controller
   collectitem1:
     switch: s_collectitem1
   collectitem2:
