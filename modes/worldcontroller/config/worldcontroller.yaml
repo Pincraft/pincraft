@@ -27,7 +27,7 @@ counters:
     events_when_complete: itemcheckcomplete
     multiple_hit_window: 500ms
     reset_events: world_started
-    enable_events: mode_worldcontroller_started
+    enable_events: world_started
   wc_item2_counter:
     count_events: collectitem2_hit
     reset_on_complete: False
@@ -38,7 +38,7 @@ counters:
     events_when_complete: itemcheckcomplete
     multiple_hit_window: 500ms
     reset_events: world_started
-    enable_events: mode_worldcontroller_started
+    enable_events: world_started
   wc_item3_counter:
     count_events: collectitem4_hit
     reset_on_complete: False
@@ -49,7 +49,7 @@ counters:
     events_when_complete: itemcheckcomplete
     multiple_hit_window: 500ms
     reset_events: world_started
-    enable_events: mode_worldcontroller_started
+    enable_events: world_started
   wc_item4_counter:
     count_events: collectitem5_hit
     reset_on_complete: False
@@ -60,7 +60,7 @@ counters:
     events_when_complete: itemcheckcomplete
     multiple_hit_window: 500ms
     reset_events: world_started
-    enable_events: mode_worldcontroller_started
+    enable_events: world_started
 
 variable_player:
   logicblock_wc_item1_counter_updated:
@@ -107,40 +107,32 @@ light_player:
     l_collectitem5: SLATEGRAY
   
 #play hurry up sound effect
-sound_player:
-  mode_worldcontroller_started:
-    basemode_music:
-      action: stop
-  mode_worldcontroller_started{current_player.world_id==1}:
-    world1mode_music:
-      action: play
-      loops: -1
-      mode_end_action: stop 
-  mode_worldcontroller_started{current_player.world_id==2}:
-    world2mode_music:
-      action: play
-      loops: -1
-      mode_end_action: stop 
-  mode_worldcontroller_started{current_player.world_id==3}:
-    world3mode_music:
-      action: play
-      loops: -1
-      mode_end_action: stop 
-  mode_worldcontroller_started{current_player.world_id==4}:
-    world4mode_music:
-      action: play
-      loops: -1
-      mode_end_action: stop 
-  mode_worldcontroller_started{current_player.world_id==5}:
-    world5mode_music:
-      action: play
-      loops: -1
-      mode_end_action: stop 
-  mode_worldcontroller_started{current_player.world_id==6}:
-    world6mode_music:
-      action: play
-      loops: -1
-      mode_end_action: stop 
+# sound_player:
+#   world_started{current_player.world_id==2}:
+#     world2mode_music:
+#       action: play
+#       loops: -1
+#       mode_end_action: stop 
+#   world_started{current_player.world_id==3}:
+#     world3mode_music:
+#       action: play
+#       loops: -1
+#       mode_end_action: stop 
+#   world_started{current_player.world_id==4}:
+#     world4mode_music:
+#       action: play
+#       loops: -1
+#       mode_end_action: stop 
+#   world_started{current_player.world_id==5}:
+#     world5mode_music:
+#       action: play
+#       loops: -1
+#       mode_end_action: stop 
+#   world_started{current_player.world_id==6}:
+#     world6mode_music:
+#       action: play
+#       loops: -1
+#       mode_end_action: stop 
 
 
 

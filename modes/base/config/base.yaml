@@ -34,7 +34,7 @@ counters:
       starting_count: 0
       count_interval: 1
       count_complete_value: 20
-      restart_events: mode_villagermb_ended
+      restart_events: mode_villagermb_ended, ball_started
       persist_state: true
 
 multiball_locks:
@@ -146,21 +146,21 @@ sound_player:
       loops: 1
 
   #MUSIC
-  mode_base_started:
-    basemode_music:
-      action: play
-      loops: -1
-      mode_end_action: stop 
-  world1_completed:
-    basemode_music:
-      action: play
-      loops: -1
-      mode_end_action: stop 
-  world2_completed:
-    basemode_music:
-      action: play
-      loops: -1
-      mode_end_action: stop 
+  # mode_base_started:
+  #   basemode_music:
+  #     action: play
+  #     loops: -1
+  #     mode_end_action: stop 
+  # world1_completed:
+  #   basemode_music:
+  #     action: play
+  #     loops: -1
+  #     mode_end_action: stop 
+  # world2_completed:
+  #   basemode_music:
+  #     action: play
+  #     loops: -1
+  #     mode_end_action: stop 
                 
 
 show_player:

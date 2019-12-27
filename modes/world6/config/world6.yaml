@@ -10,6 +10,18 @@ show_player:
       loops: -1
       speed: 1
 
+sound_player:
+  world_started:
+    world6mode_music:
+      action: play
+      loops: -1
+      mode_end_action: stop
+  multiball_villagermb_ended:
+    world6mode_music:
+      action: play
+      loops: -1
+      mode_end_action: stop
+
 variable_player:
   #setup environment variables
   mode_world6_started:  

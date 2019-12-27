@@ -21,6 +21,12 @@ sound_player:
       action: stop
     world3mode_music:
       action: stop
+    world4mode_music:
+      action: stop
+    world5mode_music:
+      action: stop
+    world6mode_music:
+      action: stop
     villagermb_music:
       action: play
       loops: -1
