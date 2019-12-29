@@ -98,41 +98,15 @@ event_player:
     world6_completed
 
 
-light_player:
- mode_worldcontroller_started:
-    l_collectitem1: GREEN
-    l_collectitem2: GRAY
-    l_collectitem3: RED
-    l_collectitem4: BROWN
-    l_collectitem5: SLATEGRAY
+# light_player:
+#  mode_worldcontroller_started:
+#     l_collectitem1: GREEN
+#     l_collectitem2: GRAY
+#     l_collectitem3: RED
+#     l_collectitem4: BROWN
+#     l_collectitem5: SLATEGRAY
   
-#play hurry up sound effect
-# sound_player:
-#   world_started{current_player.world_id==2}:
-#     world2mode_music:
-#       action: play
-#       loops: -1
-#       mode_end_action: stop 
-#   world_started{current_player.world_id==3}:
-#     world3mode_music:
-#       action: play
-#       loops: -1
-#       mode_end_action: stop 
-#   world_started{current_player.world_id==4}:
-#     world4mode_music:
-#       action: play
-#       loops: -1
-#       mode_end_action: stop 
-#   world_started{current_player.world_id==5}:
-#     world5mode_music:
-#       action: play
-#       loops: -1
-#       mode_end_action: stop 
-#   world_started{current_player.world_id==6}:
-#     world6mode_music:
-#       action: play
-#       loops: -1
-#       mode_end_action: stop 
+
 
 
 

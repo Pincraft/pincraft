@@ -38,26 +38,5 @@ sound_player:
       loops: 1
 
 
-timers:
-  villagersounds:
-    start_value: 0
-    end_value: 1000
-    direction: up
-    tick_interval: 1s
-    restart_on_complete: true
-    control_events:
-      - action: start
-        event: mode_villagermb_started
-      - action: stop
-        event: mode_villagermb_ending
 
-variable_player:
-  mode_villagermb_started:
-    multiplier_mb:
-      int: 2
-      action: set
-  mode_villagermb_ending:
-    multiplier_mb:
-      int: 1
-      action: set
 
