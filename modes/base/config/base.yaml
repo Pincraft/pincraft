@@ -34,7 +34,7 @@ counters:
       starting_count: 0
       count_interval: 1
       count_complete_value: 20
-      restart_events: mode_villagermb_ended, ball_started
+      restart_events: multiball_villagermb_ended, ball_started
       persist_state: true
 
 multiball_locks:
