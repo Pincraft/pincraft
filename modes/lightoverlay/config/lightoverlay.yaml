@@ -28,6 +28,14 @@ event_player:
 #        post: scoup_eject_show
 
 show_player:
+  spinner_hit:
+    show_spinnerhit:    #Spinner Hit Flashed
+      loops: 0
+      speed: 10
+  captiveball_hit:      #Captival Ball Hit Flashed
+    show_captiveballhit:
+      loops: 0
+      speed: 10
   topkicker_eject_show:
     show_topkicker:
       loops: 0

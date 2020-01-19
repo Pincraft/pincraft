@@ -69,8 +69,18 @@ variable_player:
       int: 1
       action: set
 
-  spinner_hit:
+  #SPINNER SCORING
+  spinner_hit{device.counters.counter_villagermultiball.value<4}: #LEVEL 100
+    score: 100 * current_player.multiplier_mb
+  spinner_hit{device.counters.counter_villagermultiball.value>=4}: #LEVEL 1000
     score: 1000 * current_player.multiplier_mb
+  spinner_hit{device.counters.counter_villagermultiball.value>=8}: #LEVEL 2000
+    score: 2000 * current_player.multiplier_mb
+  spinner_hit{device.counters.counter_villagermultiball.value>=12}: #LEVEL 3000
+    score: 3000 * current_player.multiplier_mb
+  spinner_hit{device.counters.counter_villagermultiball.value>=16}: #LEVEL 4000
+    score: 4000 * current_player.multiplier_mb
+
   collectitem1_hit:
     score: 10000 * current_player.multiplier_mb
     bonus_items: 1
@@ -158,34 +168,8 @@ sound_player:
     villagersp: 
       action: play
       loops: 1
-
-  #MUSIC
-  # mode_base_started:
-  #   basemode_music:
-  #     action: play
-  #     loops: -1
-  #     mode_end_action: stop 
-  # world1_completed:
-  #   basemode_music:
-  #     action: play
-  #     loops: -1
-  #     mode_end_action: stop 
-  # world2_completed:
-  #   basemode_music:
-  #     action: play
-  #     loops: -1
-  #     mode_end_action: stop 
-                
-
+      
 show_player:
-  spinner_hit:
-    show_spinnerhit:    #Spinner Hit Flashed
-      loops: 0
-      speed: 10
-  captiveball_hit:    
-    show_captiveballhit:
-      loops: 0
-      speed: 10
   mode_base_started:
     show_dropcreepers:  #Drop the Creepers
       loops: 0
@@ -197,24 +181,24 @@ light_player:
       color: white
     lfeature: off
   spinner_hit{device.counters.counter_villagermultiball.value>=4}:
-    l_spinner1: orange
+    l_spinner1: green
   spinner_hit{device.counters.counter_villagermultiball.value>=8}:
-    l_spinner2: yellow
-    l_spinner1: yellow
+    l_spinner2: green
+    #l_spinner1: yellow
   spinner_hit{device.counters.counter_villagermultiball.value>=12}:
-    l_spinner3: orange
-    l_spinner2: orange
-    l_spinner1: orange
+    l_spinner3: green
+    #l_spinner2: orange
+    #l_spinner1: orange
   spinner_hit{device.counters.counter_villagermultiball.value>=16}:
-    l_spinner3: blue 
-    l_spinner2: blue 
-    l_spinner1: blue
-    l_spinner4: blue 
+    #l_spinner3: blue 
+    #l_spinner2: blue 
+    #l_spinner1: blue
+    l_spinner4: green 
   multiball_villagermb_started:
-    l_spinner1: purple
-    l_spinner2: purple
-    l_spinner3: purple
-    l_spinner4: purple
+    #l_spinner1: purple
+   # l_spinner2: purple
+   # l_spinner3: purple
+    l_spinner4: green
   multiball_villagermb_ended:
     l_spinner1: off
     l_spinner2: off
