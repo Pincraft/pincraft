@@ -10,6 +10,21 @@ show_player:
       loops: -1
       speed: 10
 
+variable_player:
+  village_jackpot_hit:
+    score: 1000000
+
+shots:
+  village_jackpot:
+    switch: s_captiveball
+    profile: flash
+    show_tokens:
+      leds: l_captivejackpot
+    
+event_player:
+  mode_villagermb_started:
+    outlanegate_restart
+
 #play hurry up sound effect
 sound_player:
   mode_villagermb_started:

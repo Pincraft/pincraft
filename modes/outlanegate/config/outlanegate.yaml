@@ -13,19 +13,24 @@ timers:
     control_events:
       - action: start
         event: mode_skillshot_stopped
+      - action: restart
+        event: outlanegate_restart
   warn_gate:
     start_value: 0
     end_value: 10
     direction: up
     tick_interval: 1s
     control_events:
-      - action: start
+      - action: restart
         event: timer_close_gate_stopped
 
 coil_player:
   timer_warn_gate_stopped:
     c_lanegate:
       action: enable
+  outlanegate_restart:
+    c_lanegate:
+      action: disable
 
 sound_player:
   timer_warn_gate_tick: clock_tick

@@ -98,13 +98,13 @@ event_player:
     world6_completed
 
 
-# light_player:
-#  mode_worldcontroller_started:
-#     l_collectitem1: GREEN
-#     l_collectitem2: GRAY
-#     l_collectitem3: RED
-#     l_collectitem4: BROWN
-#     l_collectitem5: SLATEGRAY
+light_player:
+ mode_worldcontroller_started:
+    l_collectitem1: GREEN
+    l_collectitem2: GRAY
+    l_collectitem3: RED
+    l_collectitem4: BROWN
+    l_collectitem5: SLATEGRAY
   
 
 

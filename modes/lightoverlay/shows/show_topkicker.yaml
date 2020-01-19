@@ -1,10 +1,10 @@
 #show_version=5
 - duration: 1
   lights:
-    l_captiveball3: blue
+    l_captivemultiball: blue
 - duration: 1
   lights:
-    l_captiveball2: blue 
+    l_captivejackpot: blue 
 - duration: 1
   lights:
-    l_captiveball1: blue
+    l_captiveextraball: blue

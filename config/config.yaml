@@ -656,21 +656,21 @@ lights:
     platform_settings:
       polarity: True
   
-  l_captiveball3:
+  l_captivemultiball:
     type: rgb
     tags: lfeature, lcaptiveball
     number: 4-39-40-41
     platform_settings:
       polarity: True
 
-  l_captiveball2:
+  l_captivejackpot:
     type: rgb
     tags: lfeature, lcaptiveball
     number: 4-42-43-44
     platform_settings:
       polarity: True
 
-  l_captiveball1:
+  l_captiveextraball:
     type: rgb
     tags: lfeature, lcaptiveball
     number: 4-45-46-47
