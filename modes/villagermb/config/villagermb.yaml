@@ -15,7 +15,7 @@ variable_player:
     score: 1000000
 
 shots:
-  village_jackpot:
+  villager_jackpot:
     switch: s_captiveball
     profile: flash
     show_tokens:
@@ -27,6 +27,8 @@ event_player:
 
 #play hurry up sound effect
 sound_player:
+  villager_jackpot_hit:
+    villager_jackpot
   mode_villagermb_started:
     basemode_music:
       action: stop

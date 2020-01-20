@@ -1131,6 +1131,19 @@ assets:
             track: voice
 
 sounds:
+  villager_multiball:
+    file: VillagerMultiball.wav
+    volume: 0.85
+    track: voice
+  villager_multiball_ready:
+    file: VillagerMultiballReady.wav
+    volume: 0.85
+    track: voice
+  villager_jackpot:
+    file: VillagerJackpot.wav
+    volume: 1
+    track: voice
+
   #SOUND EFFECTS
   bounce_kick:
     file: bounce_kick.wav

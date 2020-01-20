@@ -1,6 +1,6 @@
 events:
   game_ended: 60
-  game_started: 225
+  game_started: 233
 player:
   score:
     average: 1248053.7878787878
@@ -17,71 +17,72 @@ player:
     - 1433200
     total: 66
 shots:
-  captiveball: 130
+  captiveball: 144
   centertarget: 1359
   collectitem1: 1979
   collectitem2: 1865
-  collectitem3: 778
-  collectitem4: 1698
-  collectitem5: 1660
-  leftslingshot: 1061
+  collectitem3: 781
+  collectitem4: 1701
+  collectitem5: 1661
+  leftslingshot: 1063
   loopleft: 155
   loopright: 97
-  popbumper1: 980
-  popbumper2: 1185
-  popbumper3: 1547
-  rightslingshot: 546
-  skill_scoup: 106
-  spinner: 4767
-  village_jackpot: 14
+  popbumper1: 995
+  popbumper2: 1205
+  popbumper3: 1561
+  rightslingshot: 547
+  skill_scoup: 108
+  spinner: 5007
+  village_jackpot: 22
+  villager_jackpot: 6
 switches:
-  s_bumperrail: 311
-  s_captiveball: 130
+  s_bumperrail: 316
+  s_captiveball: 144
   s_centertarget: 1394
   s_collectitem1: 2744
   s_collectitem2: 2626
-  s_collectitem3: 1006
-  s_collectitem4: 2464
-  s_collectitem5: 2428
+  s_collectitem3: 1009
+  s_collectitem4: 2467
+  s_collectitem5: 2429
   s_credit_right: 0
-  s_drop1: 446
-  s_drop2: 694
-  s_drop3: 1986
-  s_drop4: 426
-  s_drop5: 1175
-  s_drop6: 624
-  s_left_flipper: 5458
+  s_drop1: 454
+  s_drop2: 707
+  s_drop3: 2009
+  s_drop4: 434
+  s_drop5: 1197
+  s_drop6: 635
+  s_left_flipper: 5466
   s_leftinlane: 68
   s_leftoutlane: 149
-  s_leftsling: 1061
+  s_leftsling: 1063
   s_loopleft: 371
-  s_loopright: 603
+  s_loopright: 621
   s_maint: 0
-  s_plungerlane: 757
-  s_popbumper1: 980
-  s_popbumper2: 1185
-  s_popbumper3: 1547
-  s_right_flipper: 4558
+  s_plungerlane: 776
+  s_popbumper1: 995
+  s_popbumper2: 1205
+  s_popbumper3: 1561
+  s_right_flipper: 4564
   s_rightinlane: 0
   s_rightoutlane: 89
-  s_rightsling: 546
-  s_scoup: 325
-  s_spinner: 4768
+  s_rightsling: 547
+  s_scoup: 329
+  s_spinner: 5008
   s_start: 21
   s_tilt: 0
   s_tooltarget1: 321
   s_tooltarget2: 328
   s_tooltarget3: 187
-  s_topbumperleft: 277
-  s_topbumperright: 445
-  s_topkicker: 1210
-  s_trough1: 612
-  s_trough2: 535
-  s_trough3: 523
-  s_trough4: 419
-  s_troughjam: 541
+  s_topbumperleft: 290
+  s_topbumperright: 466
+  s_topkicker: 1256
+  s_trough1: 627
+  s_trough2: 550
+  s_trough3: 534
+  s_trough4: 425
+  s_troughjam: 557
   s_upperdrop: 115
-  s_whitedot1: 122
-  s_whitedot2: 122
-  s_whitedot3: 163
-  s_whitedot4: 159
+  s_whitedot1: 127
+  s_whitedot2: 129
+  s_whitedot3: 168
+  s_whitedot4: 165

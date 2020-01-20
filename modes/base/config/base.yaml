@@ -24,7 +24,7 @@ event_player:
   logicblock_counter_villagermultiball_complete:
     villagermultiball_ready
   sw_playfield_active_active{device.multiball_locks.villagerlock.locked_balls==1 and device.multiball_locks.villagerlock.enabled}:
-    start_villager_multiball
+    villagermultiball_start
   ball_started:
     item_collected
 
@@ -43,14 +43,14 @@ multiball_locks:
      locked_ball_counting_strategy: physical_only
      lock_devices: bd_topkicker 
      enable_events: villagermultiball_ready
-     disable_events: start_villager_multiball
+     disable_events: villagermultiball_start
 
 multiballs:
    villagermb:
      ball_count: 2
      ball_locks: bd_topkicker
      enable_events: villagermultiball_ready
-     start_events: start_villager_multiball
+     start_events: villagermultiball_start
      shoot_again: 0s
 
 #Player Variables
@@ -72,11 +72,11 @@ variable_player:
   #SPINNER SCORING
   spinner_hit{device.counters.counter_villagermultiball.value<4}: #LEVEL 100
     score: 100 * current_player.multiplier_mb
-  spinner_hit{device.counters.counter_villagermultiball.value>=4}: #LEVEL 1000
+  spinner_hit{device.counters.counter_villagermultiball.value>=4 and device.counters.counter_villagermultiball.value<8}: #LEVEL 1000
     score: 1000 * current_player.multiplier_mb
-  spinner_hit{device.counters.counter_villagermultiball.value>=8}: #LEVEL 2000
+  spinner_hit{device.counters.counter_villagermultiball.value>=8 and device.counters.counter_villagermultiball.value<12}: #LEVEL 2000
     score: 2000 * current_player.multiplier_mb
-  spinner_hit{device.counters.counter_villagermultiball.value>=12}: #LEVEL 3000
+  spinner_hit{device.counters.counter_villagermultiball.value>=12 and device.counters.counter_villagermultiball.value<16}: #LEVEL 3000
     score: 3000 * current_player.multiplier_mb
   spinner_hit{device.counters.counter_villagermultiball.value>=16}: #LEVEL 4000
     score: 4000 * current_player.multiplier_mb
@@ -168,6 +168,11 @@ sound_player:
     villagersp: 
       action: play
       loops: 1
+  #VILLAGER MULTIBALL
+  villagermultiball_ready:
+    villager_multiball_ready
+  multiball_lock_villagerlock_locked_ball:
+    villager_multiball
       
 show_player:
   mode_base_started:
@@ -180,24 +185,24 @@ light_player:
     lgi:
       color: white
     lfeature: off
-  spinner_hit{device.counters.counter_villagermultiball.value>=4}:
+  spinner_hit{device.counters.counter_villagermultiball.value>=4 and device.counters.counter_villagermultiball.value<8}: #LEVEL 1000
     l_spinner1: green
-  spinner_hit{device.counters.counter_villagermultiball.value>=8}:
+  spinner_hit{device.counters.counter_villagermultiball.value>=8 and device.counters.counter_villagermultiball.value<12}: #LEVEL 1000
     l_spinner2: green
-    #l_spinner1: yellow
-  spinner_hit{device.counters.counter_villagermultiball.value>=12}:
+    l_spinner1: off
+  spinner_hit{device.counters.counter_villagermultiball.value>=12 and device.counters.counter_villagermultiball.value<16}: #LEVEL 1000
     l_spinner3: green
-    #l_spinner2: orange
-    #l_spinner1: orange
+    l_spinner2: off
+    l_spinner1: off
   spinner_hit{device.counters.counter_villagermultiball.value>=16}:
-    #l_spinner3: blue 
-    #l_spinner2: blue 
-    #l_spinner1: blue
+    l_spinner3: off 
+    l_spinner2: off 
+    l_spinner1: off
     l_spinner4: green 
   multiball_villagermb_started:
-    #l_spinner1: purple
-   # l_spinner2: purple
-   # l_spinner3: purple
+    l_spinner1: green
+    l_spinner2: green
+    l_spinner3: green
     l_spinner4: green
   multiball_villagermb_ended:
     l_spinner1: off
