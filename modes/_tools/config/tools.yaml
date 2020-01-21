@@ -75,7 +75,7 @@ state_machines:
         events_when_started: start_collect_tools
       onetoolready:
         label: One Tool Is Ready
-        events_when_started: tool_collected, restart_collect_tools, light_onetool, divertercontrol_leftloop_disable
+        events_when_started: tool_collected, restart_collect_tools, light_onetool
       twotoolsready:
         label: Two Tools Are Ready
         events_when_started: restart_collect_tools, light_twotools

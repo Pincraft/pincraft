@@ -84,7 +84,6 @@ variable_player:
 
 event_player:
   itemcheckcomplete{current_player.world_id==1 and current_player.wc_item1_counter_count == 0 and current_player.wc_item2_counter_count == 0 and current_player.wc_item3_counter_count == 0 and current_player.wc_item4_counter_count == 0}:
-    #divertercontrol_leftloop_travel
     world1_completed
   itemcheckcomplete{current_player.world_id==2 and current_player.wc_item1_counter_count == 0 and current_player.wc_item2_counter_count == 0 and current_player.wc_item3_counter_count == 0 and current_player.wc_item4_counter_count == 0}:
     world2_completed

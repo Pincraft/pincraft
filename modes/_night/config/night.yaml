@@ -59,12 +59,6 @@ slides:
 slide_player:
   mode_night_started: slide_night
 
-#Setup Diverter Controls
-event_player:
-  mode_night_started:
-    divertercontrol_rightloop_enable, divertercontrol_leftloop_enabled
-  multiball_mb_nightmode_ended:
-    divertercontrol_rightloop_enable, divertercontrol_leftloop_closed
 
 show_player:
   mode_night_started:

@@ -10,13 +10,13 @@ state_machines:
         states:
             start:
                 label: Night Mode Ready
-                events_when_started: divertercontrol_leftloop_disable, divertercontrol_rightloop_disable
+      
             success:
                 label: Night Mode successful
                 events_when_started: nightmode_success
             failed:
                 label: Night Mode failed
-                events_when_started: nightmode_failed, divertercontrol_leftloop_closed, divertercontrol_rightloop_enable
+         
         transitions:
             - source: start
               target: success
