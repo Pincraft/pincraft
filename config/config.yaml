@@ -1250,6 +1250,10 @@ player_vars:
     initial_value: 1
     value_type: int
 
+  villager_jackpot:
+    initial_value: 1
+    value_type: int
+
   #World Variables
   world_color:  #sets color of world for accent colors
     initial_value: "white"

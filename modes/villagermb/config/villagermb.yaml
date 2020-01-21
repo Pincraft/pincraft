@@ -11,8 +11,24 @@ show_player:
       speed: 10
 
 variable_player:
-  village_jackpot_hit:
-    score: 1000000
+  mode_villagermb_started:
+    villager_jackpot:
+      int: 1000000
+      action: set
+  villager_jackpot_hit:
+    score: 
+      int: current_player.villager_jackpot
+      block: true
+    villager_jackpot:
+      int: 1000000
+      action: set
+  villager_spinner_hit:
+    score: 
+      int: 10000
+      block: true
+    villager_jackpot:
+      int: 100000
+      action: add
 
 shots:
   villager_jackpot:
@@ -20,6 +36,8 @@ shots:
     profile: flash
     show_tokens:
       leds: l_captivejackpot
+  villager_spinner:
+    switch: s_spinner
     
 event_player:
   mode_villagermb_started:
