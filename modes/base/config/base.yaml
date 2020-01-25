@@ -11,6 +11,26 @@ shots:
     switch: s_captiveball
   centertarget:
     switch: s_centertarget
+  collectitem1:
+    switch: s_collectitem1
+    show_tokens:
+      leds: l_collectitem1
+  collectitem2:
+    switch: s_collectitem2
+    show_tokens:
+      leds: l_collectitem2
+  collectitem3:
+    switch: s_collectitem3
+    show_tokens:
+      leds: l_collectitem3
+  collectitem4:
+    switch: s_collectitem4
+    show_tokens:
+      leds: l_collectitem4
+  collectitem5:
+    switch: s_collectitem5
+    show_tokens:
+      leds: l_collectitem5
 
 event_player:
   collectitem1_hit:
@@ -203,7 +223,7 @@ achievements:
     show_when_selected: show_flashcolor 
     show_when_started: show_fadecolor
     show_when_completed: show_solidcolor 
-    events_when_started: award_world1
+    events_when_started: world1_starting
     reset_events: reset_worlds
     enable_events: mode_base_started
     complete_events: world1_completed
@@ -409,7 +429,7 @@ slides:
         anchor_x: center
         anchor_y: top
       - type: text        #ITEM 1 NEEDED
-        text: (player|wc_item1_counter_count)
+        text: (player|world_item1_remaining)
         font_name: ARLRDBD
         font_size: 25
         y: bottom+24
@@ -418,7 +438,7 @@ slides:
         anchor_x: center
         anchor_y: bottom
       - type: text        #ITEM 2 NEEDED
-        text: (player|wc_item2_counter_count)
+        text: (player|world_item2_remaining)
         font_name: ARLRDBD
         font_size: 25
         y: bottom+24
@@ -427,7 +447,7 @@ slides:
         anchor_x: center
         anchor_y: bottom
       - type: text        #ITEM 3 NEEDED
-        text: (player|wc_item3_counter_count)
+        text: (player|world_item3_remaining)
         font_name: ARLRDBD
         font_size: 25
         y: bottom+24
@@ -436,7 +456,7 @@ slides:
         anchor_x: center
         anchor_y: bottom
       - type: text        #ITEM 4 NEEDED
-        text: (player|wc_item4_counter_count)
+        text: (player|world_item4_remaining)
         font_name: ARLRDBD
         font_size: 25
         y: bottom+24

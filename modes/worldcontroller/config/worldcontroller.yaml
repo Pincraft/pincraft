@@ -1,20 +1,10 @@
 #config_version=5
 mode:
-    start_events: mode_world1_started, mode_world2_started, mode_world3_started, mode_world4_started, mode_world5_started, mode_world6_started
-    stop_events: mode_world1_ending, mode_world2_ending, mode_world3_ending, mode_world4_ending, mode_world5_ending, mode_world6_ending
+    start_events:  mode_world2_started, mode_world3_started, mode_world4_started, mode_world5_started, mode_world6_started
+    stop_events:  mode_world2_ending, mode_world3_ending, mode_world4_ending, mode_world5_ending, mode_world6_ending
     priority: 550
 
-shots:
-  collectitem1:
-    switch: s_collectitem1
-  collectitem2:
-    switch: s_collectitem2
-  collectitem3:
-    switch: s_collectitem3
-  collectitem4:
-    switch: s_collectitem4
-  collectitem5:
-    switch: s_collectitem5
+
 
 counters:
   wc_item1_counter:
@@ -95,15 +85,6 @@ event_player:
     world5_completed
   itemcheckcomplete{current_player.world_id==6 and current_player.wc_item1_counter_count == 0 and current_player.wc_item2_counter_count == 0 and current_player.wc_item3_counter_count == 0 and current_player.wc_item4_counter_count == 0}:
     world6_completed
-
-
-light_player:
- mode_worldcontroller_started:
-    l_collectitem1: GREEN
-    l_collectitem2: GRAY
-    l_collectitem3: RED
-    l_collectitem4: BROWN
-    l_collectitem5: SLATEGRAY
   
 
 
