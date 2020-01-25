@@ -96,20 +96,6 @@ variable_player:
     score: 10000 * current_player.multiplier_mb
     bonus_items: 1
 
-  drop_target_dt_drop1_down:
-    score: 1000 * current_player.multiplier_mb
-  drop_target_dt_drop2_down:
-    score: 1000 * current_player.multiplier_mb
-  drop_target_dt_drop3_down:
-    score: 1000 * current_player.multiplier_mb
-  drop_target_dt_drop4_down:
-    score: 1000 * current_player.multiplier_mb
-  drop_target_dt_drop5_down:
-    score: 1000 * current_player.multiplier_mb
-  drop_target_dt_drop6_down:
-    score: 1000 * current_player.multiplier_mb
-  drop_target_bank_dtb_main_bank_down:
-    score: 10000 * current_player.multiplier_mb
   s_right_outlane_active:
     score: 5000 * current_player.multiplier_mb
   s_centertarget_active:
@@ -125,8 +111,6 @@ variable_player:
  
   s_topkicker_active:
     score: 5000 * current_player.multiplier_mb
-  s_captiveball_active:
-    score: 100000 * current_player.multiplier_mb
   s_whitedot1_active:
     score: 100 * current_player.multiplier_mb
   s_whitedot2_active:
@@ -311,6 +295,28 @@ slides:
   base_pincraft_slide:
     priority: 100
     widgets:
+      - type: text        #VILLAGER JACKPOT
+        text: Villager Jackpot - (player|villager_jackpot)
+        number_grouping: true
+        min_digits: 2
+        font_name: ARLRDBD
+        font_size: 25
+        y: top-50
+        x: left+100
+        z: 100
+        anchor_x: left
+        anchor_y: top
+      - type: text        #WORLD JACKPOT
+        text: World Jackpot - (player|world_jackpot)
+        number_grouping: true
+        min_digits: 2
+        font_name: ARLRDBD
+        font_size: 25
+        y: top-100
+        x: left+100
+        z: 100
+        anchor_x: left
+        anchor_y: top
       - type: text        #MULTIBALL MULTIPLIER
         text: MB - (player|multiplier_mb)x
         number_grouping: true

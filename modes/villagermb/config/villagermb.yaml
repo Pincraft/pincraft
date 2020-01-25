@@ -22,7 +22,7 @@ variable_player:
     villager_jackpot:
       int: 1000000
       action: set
-  villager_spinner_hit:
+  spinner_hit:
     score: 
       int: 10000
       block: true
@@ -36,8 +36,6 @@ shots:
     profile: flash
     show_tokens:
       leds: l_captivejackpot
-  villager_spinner:
-    switch: s_spinner
     
 event_player:
   mode_villagermb_started:
