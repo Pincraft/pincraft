@@ -1,6 +1,6 @@
 #config_version=5
 mode:
-    start_events: world1_starting
+    start_events: world1_started
     stop_events: world1_completed
     priority: 500
 
@@ -11,7 +11,7 @@ show_player:
       speed: 1
 
 sound_player:
-  world_started:
+  mode_world1_started:
     world1mode_music:
       action: play
       loops: -1
@@ -107,7 +107,7 @@ counters:
     persist_state: true
     events_when_complete: w1_itemcheckcomplete
     multiple_hit_window: 500ms
-    enable_events: world1_started
+    enable_events: mode_world1_started
   wc1_item2_counter:
     count_events: collectitem2_hit
     reset_on_complete: False
@@ -117,7 +117,7 @@ counters:
     persist_state: true
     events_when_complete: w1_itemcheckcomplete
     multiple_hit_window: 500ms
-    enable_events: world1_started
+    enable_events: mode_world1_started
   wc1_item3_counter:
     count_events: collectitem4_hit
     reset_on_complete: False
@@ -127,7 +127,7 @@ counters:
     persist_state: true
     events_when_complete: w1_itemcheckcomplete
     multiple_hit_window: 500ms
-    enable_events: world1_started
+    enable_events: mode_world1_started
   wc1_item4_counter:
     count_events: collectitem5_hit
     reset_on_complete: False
@@ -137,7 +137,7 @@ counters:
     persist_state: true
     events_when_complete: w1_itemcheckcomplete
     multiple_hit_window: 500ms
-    enable_events: world1_started
+    enable_events: mode_world1_started
 
 event_player:
   mode_world1_started:
