@@ -175,8 +175,8 @@ sound_player:
   #VILLAGER MULTIBALL
   villagermultiball_ready:
     villager_multiball_ready
-  multiball_lock_villagerlock_locked_ball:
-    villager_multiball
+  #multiball_lock_villagerlock_locked_ball:     #COMMENTED OUT SINCE I DONT THINK THIS DOES ANYTHING
+  #  villager_multiball
       
 show_player:
   mode_base_started:
@@ -223,7 +223,7 @@ achievements:
     show_when_selected: show_flashcolor 
     show_when_started: show_fadecolor
     show_when_completed: show_solidcolor 
-    events_when_started: world1_started
+    events_when_started: world1_start
     reset_events: reset_worlds
     enable_events: mode_base_started
     complete_events: world1_completed

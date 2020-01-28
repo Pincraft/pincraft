@@ -1343,6 +1343,9 @@ player_vars:
   bonus_items:
     initial_value: 0
     value_type: int
+  bonus_multiplier:
+    initial_value: 1
+    value_type: int
 
   #Tools
   shovel:

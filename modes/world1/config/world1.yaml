@@ -1,6 +1,6 @@
 #config_version=5
 mode:
-    start_events: world1_started
+    start_events: world1_start
     stop_events: world1_completed
     priority: 500
 
@@ -101,7 +101,7 @@ counters:
   wc1_item1_counter:
     count_events: collectitem1_hit
     reset_on_complete: False
-    starting_count: 2
+    starting_count: current_player.world_item1_needed
     count_complete_value: 0
     direction: down
     persist_state: true
@@ -111,7 +111,7 @@ counters:
   wc1_item2_counter:
     count_events: collectitem2_hit
     reset_on_complete: False
-    starting_count: 2
+    starting_count: current_player.world_item2_needed
     count_complete_value: 0
     direction: down
     persist_state: true
@@ -121,7 +121,7 @@ counters:
   wc1_item3_counter:
     count_events: collectitem4_hit
     reset_on_complete: False
-    starting_count: 2
+    starting_count: current_player.world_item3_needed
     count_complete_value: 0
     direction: down
     persist_state: true
@@ -131,7 +131,7 @@ counters:
   wc1_item4_counter:
     count_events: collectitem5_hit
     reset_on_complete: False
-    starting_count: 2
+    starting_count: current_player.world_item4_needed
     count_complete_value: 0
     direction: down
     persist_state: true
@@ -143,4 +143,4 @@ event_player:
   mode_world1_started:
     world1_started
   w1_itemcheckcomplete{current_player.world_item1_remaining == 0 and current_player.world_item2_remaining == 0 and current_player.world_item3_remaining == 0 and current_player.world_item4_remaining == 0}:
-    world1_readytocomplete
+    world1_collected
