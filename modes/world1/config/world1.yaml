@@ -101,7 +101,7 @@ counters:
   wc1_item1_counter:
     count_events: collectitem1_hit
     reset_on_complete: False
-    starting_count: current_player.world_item1_needed
+    starting_count: 2
     count_complete_value: 0
     direction: down
     persist_state: true
@@ -111,7 +111,7 @@ counters:
   wc1_item2_counter:
     count_events: collectitem2_hit
     reset_on_complete: False
-    starting_count: current_player.world_item2_needed
+    starting_count: 2
     count_complete_value: 0
     direction: down
     persist_state: true
@@ -121,7 +121,7 @@ counters:
   wc1_item3_counter:
     count_events: collectitem4_hit
     reset_on_complete: False
-    starting_count: current_player.world_item3_needed
+    starting_count: 2
     count_complete_value: 0
     direction: down
     persist_state: true
@@ -131,7 +131,7 @@ counters:
   wc1_item4_counter:
     count_events: collectitem5_hit
     reset_on_complete: False
-    starting_count: current_player.world_item4_needed
+    starting_count: 2
     count_complete_value: 0
     direction: down
     persist_state: true
@@ -142,5 +142,26 @@ counters:
 event_player:
   mode_world1_started:
     world1_started
+    w1_itemcheckcomplete
   w1_itemcheckcomplete{current_player.world_item1_remaining == 0 and current_player.world_item2_remaining == 0 and current_player.world_item3_remaining == 0 and current_player.world_item4_remaining == 0}:
     world1_collected
+
+  w1_itemcheckcomplete{current_player.world_item1_remaining > 0}:
+    collectitem1_enabled
+  w1_itemcheckcomplete{current_player.world_item1_remaining == 0}:
+    collectitem1_disabled
+  
+  w1_itemcheckcomplete{current_player.world_item2_remaining > 0}:
+    collectitem2_enabled
+  w1_itemcheckcomplete{current_player.world_item2_remaining == 0}:
+    collectitem2_disabled
+
+  w1_itemcheckcomplete{current_player.world_item3_remaining > 0}:
+    collectitem3_enabled
+  w1_itemcheckcomplete{current_player.world_item3_remaining == 0}:
+    collectitem3_disabled
+
+  w1_itemcheckcomplete{current_player.world_item4_remaining > 0}:
+    collectitem4_enabled
+  w1_itemcheckcomplete{current_player.world_item4_remaining == 0}:
+    collectitem4_disabled

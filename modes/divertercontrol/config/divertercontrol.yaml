@@ -1,26 +1,16 @@
 #config_version=5
 mode:
     start_events: mode_base_started
-    stop_events: mode_base_stopped
+    stop_events: mode_base_ended
     priority: 2000
 
-
 #+ Loops Disabled / left gate is closed (drop target stays up all times)
-
 #+ left loop is enabled (drop target down, right gate open)
-
 #+ right loop is enabled (left gate open, drop target down)
-
 #+ both loops enabled
 
-
-
 #+ crafting is enabled (no gates open, drop target down)
-
 #+ mode start is enabled  (left loop to diverter to scoop)
-
-
-
 
 state_machines:
   leftloop_state:
@@ -143,11 +133,19 @@ shots:
   loopleft:
     switch: s_loopleft
 
+sequence_shots:
+  looplefttoright:
+      switch_sequence: s_loopleft, s_loopright
+      sequence_timeout: 2s  
+
 #mode_diverter_resetstates
 event_player:
+  ball_starting:
+    divertercontrol_checkworldstate
   mode_divertercontrol_started:
-    rightloop_statechange, leftloop_statechange
-
+    #rightloop_statechange
+    #leftloop_statechange
+    divertercontrol_checkworldstate
   #Left Loop Disabled Events
   timer_leftdropreset_complete{current_player.state_machine_leftloop_state=="closed"}:
     diverter_resetupperdrop
@@ -167,3 +165,43 @@ event_player:
 # WE WILL CONTROL ALL DIVERTER CONTROL ACTIVITIES HERE     
 #======================================================
 
+  multiball_villagermb_ended:
+    divertercontrol_checkworldstate
+  #world1_started:
+  #  divertercontrol_checkworldstate
+  world1_collected:
+    divertercontrol_checkworldstate
+
+  #Villager Multiball Tangent
+  #<< Villager Multiball Ready
+  villagermultiball_ready:
+    divertercontrol_leftloop_disable
+    divertercontrol_rightloop_disable
+  #<< Villager Multiball Started
+  villagermultiball_start:
+    divertercontrol_leftloop_close
+    divertercontrol_rightloop_enable
+  divertercontrol_checkworldstate:
+    divertercontrol_leftloop_close
+    divertercontrol_rightloop_close
+  #>> Village Multiball Return All Items Collected (World Collected)
+  divertercontrol_checkworldstate{multiplier_mb==2}:
+    divertercontrol_leftloop_close
+    divertercontrol_rightloop_enable
+  divertercontrol_checkworldstate{multiplier_mb==1 and current_player.world_item1_remaining == 0 and current_player.world_item2_remaining == 0 and current_player.world_item3_remaining == 0 and current_player.world_item4_remaining == 0}:
+    divertercontrol_leftloop_travel
+    divertercontrol_rightloop_enable
+  #>> Village Multiball Return Not All Items Collected (World Started)
+  divertercontrol_checkworldstate{multiplier_mb==1 and (current_player.world_item1_remaining > 0 or current_player.world_item2_remaining > 0 or current_player.world_item3_remaining > 0 or current_player.world_item4_remaining > 0)}:
+    divertercontrol_leftloop_close
+    divertercontrol_rightloop_enable
+
+#BUGS:
+# - VILLAGER QUALIFIED  BUT BALL DRAIN DOES NOT RESTORE STATE
+# - FINISHING WORLD WHILE VILLAGER QUALIFIED CHANGES STATE 
+
+  #Night Mode Tangent
+
+
+
+  #Tools Tangent

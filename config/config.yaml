@@ -1392,8 +1392,8 @@ modes:
   - bonus
   - bonusdisplay
   - villagermb
-
- # - divertercontrol
+  - divertercontrol
+  
  # - nighthurryup
  # - night
  # - tools

@@ -15,10 +15,14 @@ shots:
     switch: s_collectitem1
     show_tokens:
       leds: l_collectitem1
+    enable_events: collectitem1_enabled
+    disable_events: collectitem1_disabled
   collectitem2:
     switch: s_collectitem2
     show_tokens:
       leds: l_collectitem2
+    enable_events: collectitem2_enabled
+    disable_events: collectitem2_disabled
   collectitem3:
     switch: s_collectitem3
     show_tokens:
@@ -27,10 +31,14 @@ shots:
     switch: s_collectitem4
     show_tokens:
       leds: l_collectitem4
+    enable_events: collectitem3_enabled
+    disable_events: collectitem3_disabled
   collectitem5:
     switch: s_collectitem5
     show_tokens:
       leds: l_collectitem5
+    enable_events: collectitem4_enabled
+    disable_events: collectitem4_disabled
 
 event_player:
   collectitem1_hit:
@@ -77,8 +85,11 @@ multiballs:
 variable_player:
   #MULTIBALL MULTIPLIER
   ball_started:     #RESET ON BALL START
-    multiplier_mb:
+    multiplier_mb:  #RESET MULTIBALL MULTIPLIER TO NONE
       int: 1
+      action: set
+    bonus_items:  #RESET BONUS COUNT ON END OF EACH BALL
+      int: 0
       action: set
   multiball_villagermb_started: #VILLAGER MULTIBALL STARTED
     multiplier_mb:
