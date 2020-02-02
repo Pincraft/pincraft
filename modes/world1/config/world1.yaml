@@ -145,6 +145,7 @@ event_player:
     w1_itemcheckcomplete
   w1_itemcheckcomplete{current_player.world_item1_remaining == 0 and current_player.world_item2_remaining == 0 and current_player.world_item3_remaining == 0 and current_player.world_item4_remaining == 0}:
     world1_collected
+    nightmode_ready
 
   w1_itemcheckcomplete{current_player.world_item1_remaining > 0}:
     collectitem1_enabled

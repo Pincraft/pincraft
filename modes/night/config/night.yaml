@@ -1,24 +1,18 @@
 #config_version=5
 mode:
-    start_events: nightmode_success
-    stop_events: multiball_mb_nightmode_ended
+    start_events: multiball_nightmb_started
+    stop_events: multiball_nightmb_ended, ball_ending
     priority: 1000
 
 #play hurry up sound effect
 sound_player:
   mode_night_started:
+    world1mode_music:
+      action: stop
     nightmode_music:
       action: play
       loops: -1
       mode_end_action: stop 
-
-multiballs:
-    mb_nightmode:
-        ball_count: 2
-        ball_count_type: total
-        shoot_again: 0s
-        start_events: mode_night_started
-        ball_locks: bd_topkicker
 
 slides:
   slide_night:
@@ -58,7 +52,6 @@ slides:
 
 slide_player:
   mode_night_started: slide_night
-
 
 show_player:
   mode_night_started:
@@ -103,7 +96,7 @@ state_machines:
    nightmb_state:
         states:
             start:
-              label: Skill shot ready
+              label: Night Mode Started
             phase1started:
               events_when_started: nightmb_phase1_started
             phase1running:
@@ -171,7 +164,7 @@ shots:
     switch: s_captiveball
     profile: mbtarget
     show_tokens:
-      light: l_captiveball2
+      light: l_jackpot
     disable_events: mode_night_started, nightmb_phase1_started
     enable_events: nightmb_jackpot_active
   mb_drop1:
@@ -224,3 +217,7 @@ shot_groups:
     shots: mb_drop1, mb_drop2, mb_drop3, mb_drop4, mb_drop5, mb_drop6
     disable_events: mode_night_started
     enable_events: nightmb_phase3_started
+
+event_player:
+  mode_night_started:
+    outlanegate_restart

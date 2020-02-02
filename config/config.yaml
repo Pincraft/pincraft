@@ -1393,9 +1393,8 @@ modes:
   - bonusdisplay
   - villagermb
   - divertercontrol
-  
- # - nighthurryup
- # - night
+  - night
+
  # - tools
 
   
