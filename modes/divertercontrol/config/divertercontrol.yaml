@@ -143,8 +143,8 @@ event_player:
   ball_starting:
     divertercontrol_checkworldstate
   mode_divertercontrol_started:
-    #rightloop_statechange
-    #leftloop_statechange
+    rightloop_statechange
+    leftloop_statechange
     divertercontrol_checkworldstate
   #Left Loop Disabled Events
   timer_leftdropreset_complete{current_player.state_machine_leftloop_state=="closed"}:
@@ -167,8 +167,8 @@ event_player:
 
   multiball_villagermb_ended:
     divertercontrol_checkworldstate
-  #world1_started:
-  #  divertercontrol_checkworldstate
+  world1_started:
+    divertercontrol_checkworldstate
   world1_collected:
     divertercontrol_checkworldstate
 
@@ -181,9 +181,6 @@ event_player:
   villagermultiball_start:
     divertercontrol_leftloop_close
     divertercontrol_rightloop_enable
-  divertercontrol_checkworldstate:
-    divertercontrol_leftloop_close
-    divertercontrol_rightloop_close
   #>> Village Multiball Return All Items Collected (World Collected)
   divertercontrol_checkworldstate{current_player.multiplier_mb==2}:
     divertercontrol_leftloop_close
@@ -195,10 +192,6 @@ event_player:
   divertercontrol_checkworldstate{current_player.multiplier_mb==1 and (current_player.world_item1_remaining > 0 or current_player.world_item2_remaining > 0 or current_player.world_item3_remaining > 0 or current_player.world_item4_remaining > 0)}:
     divertercontrol_leftloop_close
     divertercontrol_rightloop_enable
-
-#BUGS:
-# - VILLAGER QUALIFIED  BUT BALL DRAIN DOES NOT RESTORE STATE
-# - FINISHING WORLD WHILE VILLAGER QUALIFIED CHANGES STATE 
 
   #Night Mode Tangent
 
