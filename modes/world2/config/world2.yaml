@@ -10,18 +10,6 @@ show_player:
       loops: -1
       speed: 1
 
-sound_player:
-  world_started:
-    world2mode_music:
-      action: play
-      loops: -1
-      mode_end_action: stop
-  multiball_villagermb_ended:
-    world2mode_music:
-      action: play
-      loops: -1
-      mode_end_action: stop
-
 variable_player:
   #setup environment variables
   mode_world2_started:  
@@ -80,6 +68,90 @@ variable_player:
       int: 2
       action: set
   
+
+  logicblock_wc2_item1_counter_updated:
+    world_item1_remaining:
+      int: value
+      action: set
+  logicblock_wc2_item2_counter_updated:
+    world_item2_remaining:
+      int: value
+      action: set
+  logicblock_wc2_item3_counter_updated:
+    world_item3_remaining:
+      int: value
+      action: set
+  logicblock_wc2_item4_counter_updated:
+    world_item4_remaining:
+      int: value
+      action: set
+
+counters:
+  wc2_item1_counter:
+    count_events: collectitem1_hit
+    reset_on_complete: False
+    starting_count: 4
+    count_complete_value: 0
+    direction: down
+    persist_state: true
+    events_when_complete: w2_itemcheckcomplete
+    multiple_hit_window: 500ms
+    enable_events: mode_world2_started
+  wc2_item2_counter:
+    count_events: collectitem2_hit
+    reset_on_complete: False
+    starting_count: 4
+    count_complete_value: 0
+    direction: down
+    persist_state: true
+    events_when_complete: w2_itemcheckcomplete
+    multiple_hit_window: 500ms
+    enable_events: mode_world2_started
+  wc2_item3_counter:
+    count_events: collectitem3_hit
+    reset_on_complete: False
+    starting_count: 4
+    count_complete_value: 0
+    direction: down
+    persist_state: true
+    events_when_complete: w2_itemcheckcomplete
+    multiple_hit_window: 500ms
+    enable_events: mode_world2_started
+  wc2_item4_counter:
+    count_events: collectitem4_hit
+    reset_on_complete: False
+    starting_count: 4
+    count_complete_value: 0
+    direction: down
+    persist_state: true
+    events_when_complete: w2_itemcheckcomplete
+    multiple_hit_window: 500ms
+    enable_events: mode_world2_started
+
 event_player:
   mode_world2_started:
-    world_started
+    world2_started
+    w2_itemcheckcomplete
+
+  w2_itemcheckcomplete{current_player.world_item1_remaining == 0 and current_player.world_item2_remaining == 0 and current_player.world_item3_remaining == 0 and current_player.world_item4_remaining == 0}:
+    world2_collected
+
+  w2_itemcheckcomplete{current_player.world_item1_remaining > 0}:
+    collectitem1_enabled
+  w2_itemcheckcomplete{current_player.world_item1_remaining == 0}:
+    collectitem1_disabled
+  
+  w2_itemcheckcomplete{current_player.world_item2_remaining > 0}:
+    collectitem2_enabled
+  w2_itemcheckcomplete{current_player.world_item2_remaining == 0}:
+    collectitem2_disabled
+
+  w2_itemcheckcomplete{current_player.world_item3_remaining > 0}:
+    collectitem3_enabled
+  w2_itemcheckcomplete{current_player.world_item3_remaining == 0}:
+    collectitem3_disabled
+
+  w2_itemcheckcomplete{current_player.world_item4_remaining > 0}:
+    collectitem4_enabled
+  w2_itemcheckcomplete{current_player.world_item4_remaining == 0}:
+    collectitem4_disabled

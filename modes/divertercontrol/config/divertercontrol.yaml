@@ -165,12 +165,35 @@ event_player:
 # WE WILL CONTROL ALL DIVERTER CONTROL ACTIVITIES HERE     
 #======================================================
 
-  multiball_villagermb_ended:
-    divertercontrol_checkworldstate
+
+
   world1_started:
     divertercontrol_checkworldstate
   world1_collected:
     divertercontrol_checkworldstate
+
+  world2_started:
+    divertercontrol_checkworldstate
+  world2_collected:
+    divertercontrol_checkworldstate
+
+  world3_started:
+    divertercontrol_checkworldstate
+  world3_collected:
+    divertercontrol_checkworldstate
+
+  world4_started:
+    divertercontrol_checkworldstate
+  world4_collected:
+    divertercontrol_checkworldstate
+
+  world5_started:
+    divertercontrol_checkworldstate
+  world5_collected:
+    divertercontrol_checkworldstate
+
+
+
 
   #Villager Multiball Tangent
   #<< Villager Multiball Ready
@@ -181,6 +204,10 @@ event_player:
   villagermultiball_start:
     divertercontrol_leftloop_close
     divertercontrol_rightloop_enable
+  
+ 
+  
+
   #>> Village Multiball Return All Items Collected (World Collected)
   divertercontrol_checkworldstate{current_player.multiplier_mb==2}:
     divertercontrol_leftloop_close
@@ -195,6 +222,16 @@ event_player:
 
   #Night Mode Tangent
 
+  multiball_villagermb_ended:
+    divertercontrol_checkworldstate
+  multiball_nightmb_ended:
+    divertercontrol_checkworldstate
 
+  nightmode_ready:
+    divertercontrol_leftloop_close
+    divertercontrol_rightloop_enable
+  nightmode_start:
+    divertercontrol_leftloop_close
+    divertercontrol_rightloop_enable
 
   #Tools Tangent

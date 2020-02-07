@@ -9,18 +9,6 @@ show_player:
     show_world1gi:
       loops: -1
       speed: 1
-
-sound_player:
-  mode_world1_started:
-    world1mode_music:
-      action: play
-      loops: -1
-      mode_end_action: stop
-  multiball_villagermb_ended:
-    world1mode_music:
-      action: play
-      loops: -1
-      mode_end_action: stop
       
 variable_player:
   #setup environment variables
@@ -119,7 +107,7 @@ counters:
     multiple_hit_window: 500ms
     enable_events: mode_world1_started
   wc1_item3_counter:
-    count_events: collectitem4_hit
+    count_events: collectitem3_hit
     reset_on_complete: False
     starting_count: 2
     count_complete_value: 0
@@ -129,7 +117,7 @@ counters:
     multiple_hit_window: 500ms
     enable_events: mode_world1_started
   wc1_item4_counter:
-    count_events: collectitem5_hit
+    count_events: collectitem4_hit
     reset_on_complete: False
     starting_count: 2
     count_complete_value: 0
@@ -143,9 +131,9 @@ event_player:
   mode_world1_started:
     world1_started
     w1_itemcheckcomplete
+
   w1_itemcheckcomplete{current_player.world_item1_remaining == 0 and current_player.world_item2_remaining == 0 and current_player.world_item3_remaining == 0 and current_player.world_item4_remaining == 0}:
     world1_collected
-    nightmode_ready
 
   w1_itemcheckcomplete{current_player.world_item1_remaining > 0}:
     collectitem1_enabled

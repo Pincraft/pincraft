@@ -23,17 +23,19 @@ shots:
       leds: l_collectitem2
     enable_events: collectitem2_enabled
     disable_events: collectitem2_disabled
-  collectitem3:
+  collectitem_special:
     switch: s_collectitem3
     show_tokens:
       leds: l_collectitem3
-  collectitem4:
+    enable_events: collectitem_special_enabled
+    disable_events: collectitem2_special_disabled
+  collectitem3:
     switch: s_collectitem4
     show_tokens:
       leds: l_collectitem4
     enable_events: collectitem3_enabled
     disable_events: collectitem3_disabled
-  collectitem5:
+  collectitem4:
     switch: s_collectitem5
     show_tokens:
       leds: l_collectitem5
@@ -60,7 +62,19 @@ event_player:
   ball_started:
     item_collected
   
-  
+  #ENABLE NIGHTMODE
+  world1_collected:
+    nightmode_ready
+  world2_collected:
+    nightmode_ready
+  world3_collected:
+    nightmode_ready
+  world4_collected:
+    nightmode_ready
+  world5_collected:
+    nightmode_ready
+  world6_collected:
+    nightmode_ready
 
   #COMPLETE WORLDS WHEN NIGHT MODE STARTS
   multiball_nightmb_started{current_player.world_id==1}:
@@ -239,7 +253,11 @@ show_player:
     show_dropcreepers:  #Drop the Creepers
       loops: 0
       speed: 1
-    
+  multiball_villagermb_ended:
+    show_dropcreepers:  #Drop the Creepers
+      loops: 0
+      speed: 1
+      
 light_player:
   mode_base_started:
     lgi:
