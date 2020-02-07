@@ -1,6 +1,6 @@
 #config_version=5
 mode:
-    start_events: world1_start
+    start_events: world1_started
     stop_events: world1_completed
     priority: 500
 
