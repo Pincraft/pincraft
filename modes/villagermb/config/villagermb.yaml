@@ -46,8 +46,6 @@ sound_player:
   villager_jackpot_hit:
     villager_jackpot
   mode_villagermb_started:
-    basemode_music:
-      action: stop
     world1mode_music:
       action: stop
     world2mode_music:

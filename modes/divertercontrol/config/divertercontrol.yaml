@@ -227,9 +227,9 @@ event_player:
   multiball_nightmb_ended:
     divertercontrol_checkworldstate
 
-  nightmode_ready:
-    divertercontrol_leftloop_close
-    divertercontrol_rightloop_enable
+  #nightmode_ready:
+  #  divertercontrol_leftloop_close
+  #  divertercontrol_rightloop_enable
   nightmode_start:
     divertercontrol_leftloop_close
     divertercontrol_rightloop_enable

@@ -952,22 +952,22 @@ coils:
     default_pulse_ms: 45
   c_drop_target1_drop:
     number: A1-B0-2
-    default_pulse_ms: 20
+    default_pulse_ms: 30
   c_drop_target2_drop:
     number: A1-B0-3
-    default_pulse_ms: 20
+    default_pulse_ms: 30
   c_drop_target3_drop:
     number: A1-B0-4
-    default_pulse_ms: 20
+    default_pulse_ms: 30
   c_drop_target4_drop:
     number: A1-B0-5
-    default_pulse_ms: 20
+    default_pulse_ms: 30
   c_drop_target5_drop:
     number: A1-B0-6
-    default_pulse_ms: 20
+    default_pulse_ms: 30
   c_drop_target6_drop:
     number: A1-B0-7
-    default_pulse_ms: 20
+    default_pulse_ms: 30
 
  
 
@@ -1257,6 +1257,15 @@ player_vars:
   world_jackpot:
     initial_value: 1
     value_type: int
+
+  world_jackpot_base:
+    initial_value: 1
+    value_type: int
+
+  worlds_traveled:
+    initial_value: 1
+    value_type: int
+  
 
   #World Variables
   world_color:  #sets color of world for accent colors

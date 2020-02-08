@@ -51,7 +51,7 @@ slides:
         font_size: 50
 
 slide_player:
-  mode_night_started: slide_night
+  #mode_night_started: slide_night
 
 show_player:
   mode_night_started:
@@ -164,7 +164,7 @@ shots:
     switch: s_captiveball
     profile: mbtarget
     show_tokens:
-      light: l_jackpot
+      light: l_captivejackpot
     disable_events: mode_night_started, nightmb_phase1_started
     enable_events: nightmb_jackpot_active
   mb_drop1:

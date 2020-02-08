@@ -253,7 +253,7 @@ show_player:
     show_dropcreepers:  #Drop the Creepers
       loops: 0
       speed: 1
-  multiball_villagermb_ended:
+  multiball_nightmb_ended:
     show_dropcreepers:  #Drop the Creepers
       loops: 0
       speed: 1
@@ -401,7 +401,7 @@ slides:
         anchor_x: left
         anchor_y: top
       - type: text        #WORLD JACKPOT
-        text: World Jackpot - (player|world_jackpot)
+        text: World Jackpot - (player|world_jackpot_base) x Items (player|bonus_items) x Traveled (player|worlds_traveled) x MB (player|multiplier_mb) = (player|world_jackpot)
         number_grouping: true
         min_digits: 2
         font_name: ARLRDBD

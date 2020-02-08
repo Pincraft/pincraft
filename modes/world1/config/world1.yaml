@@ -9,7 +9,19 @@ show_player:
     show_world1gi:
       loops: -1
       speed: 1
-      
+
+sound_player:
+  mode_world1_started:
+    world1mode_music:
+      action: play
+      loops: -1
+      mode_end_action: stop
+  mode_villagermb_stopped:
+    world1mode_music:
+      action: play
+      loops: -1
+      mode_end_action: stop
+
 variable_player:
   #setup environment variables
   mode_world1_started:  
