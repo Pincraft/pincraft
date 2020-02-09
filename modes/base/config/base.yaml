@@ -75,7 +75,7 @@ event_player:
   #RECALCULATE WORLD JACKPOT
   player_world_jackpot_base:
     recalculate_worldjackpot
-  player_bonus_items:
+  player_worlds_items:
     recalculate_worldjackpot
   player_worlds_traveled:
     recalculate_worldjackpot
@@ -94,21 +94,6 @@ event_player:
   #START NIGHT MULTIBALL ON PLUNGE
   sw_playfield_active_active{device.multiball_locks.nightlock.locked_balls==1 and device.multiball_locks.nightlock.enabled}:
     nightmode_start
-
-  
-  #ENABLE NIGHTMODE - Now done in Diverter Control
-  #world1_collected:
-   # nightmode_ready
-  #world2_collected:
-    #nightmode_ready
-  #world3_collected:
-    #nightmode_ready
-  #world4_collected:
-    #nightmode_ready
-  #world5_collected:
-    #nightmode_ready
-
-  
 
   #COMPLETE WORLDS WHEN NIGHT MODE STARTS
   multiball_nightmb_started{current_player.world_id==1}:
@@ -139,8 +124,16 @@ event_player:
   multiball_nightmb_ended{current_player.world_id==5}:
     world6_start
 
-  #DISABLE AND RE-ENABLE NIGHT MODE ON VILLAGER TANGENT
-  # night mode disabled / ready is re-enabled in diverter control
+  world1_collected:
+    nightmode_ready
+  world2_collected:
+    nightmode_ready
+  world3_collected:
+    nightmode_ready
+  world4_collected:
+    nightmode_ready
+  world5_collected:
+    nightmode_ready
 
 counters:
    counter_villagermultiball:
@@ -149,7 +142,7 @@ counters:
       count_interval: 1
       count_complete_value: 20
       restart_events: multiball_nightmb_ended,multiball_villagermb_ended, ball_started
-      disable_events: nightmode_ready
+      #disable_events: nightmode_ready
       enable_events: ball_started
       persist_state: true
 
@@ -159,7 +152,7 @@ multiball_locks:
      locked_ball_counting_strategy: physical_only
      lock_devices: bd_topkicker 
      enable_events: villagermultiball_ready
-     disable_events: villagermultiball_start, nightmode_ready
+     disable_events: villagermultiball_start, villager_disable
    nightlock:
      balls_to_lock: 1
      locked_ball_counting_strategy: physical_only
@@ -208,6 +201,15 @@ variable_player:
     multiplier_mb:
       int: 1
       action: set
+  multiball_nightmb_started: #NIGHT MULTIBALL STARTED
+    multiplier_mb:
+      int: 2
+      action: set
+  multiball_nightmb_ended: #VILLAGER MULTIBALL ENDED
+    world_jackpot_worlds: 1  #FOR WORLD JACKPOT / INCREASE WORLDS TRAVELED
+    multiplier_mb:
+      int: 1
+      action: set
 
   #WORLD JACKPOT
   recalculate_worldjackpot:
@@ -226,8 +228,7 @@ variable_player:
     world_jackpot_items:
       int: 1
       action: set
-  multiball_nightmb_ended:
-    world_jackpot_worlds: 1
+
 
   #SPINNER SCORING
   spinner_hit{device.counters.counter_villagermultiball.value<4}: #LEVEL 100

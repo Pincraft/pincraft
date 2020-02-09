@@ -91,57 +91,57 @@ light_player:
     l_droparrow: red
 
 state_machines:
-   nightmb_state:
-        states:
-            start:
-              label: Night Mode Started
-            phase1started:
-              events_when_started: nightmb_phase1_started
-            phase1running:
-              events_when_started: nightmb_phase1_active
-            phase2start:
-              events_when_started: nightmb_phase2_started
-            phase2running:
-              events_when_started: nightmb_phase2_active
-            phase3start:
-              events_when_started: nightmb_phase3_started
-            phase3running:
-              events_when_started: nightmb_phase3_active
-            jackpotrunning:
-              events_when_started: nightmb_jackpot_active
-        transitions:
-            - source: start
-              target: phase1started 
-              events: mode_night_started
-            - source: phase1started
-              target: phase1running 
-              events: nightphase1setup_complete
-            - source: phase1running
-              target: phase2start 
-              events: mbskeletons_complete
-            - source: phase2start
-              target: phase2running 
-              events: nightphase2setup_complete
-            - source: phase2running
-              target: phase3start
-              events: mbcreepers_complete
-            - source: phase3start
-              target: phase3running 
-              events: nightphase3setup_complete
-            - source: phase3running
-              target: jackpotrunning
-              events: mballdrops_complete
-            - source: jackpotrunning
-              target: phase1started
-              events: mb_jackpot_hit, mb_superjackpot_hit
+  nightmb_state:
+    states:
+      start:
+        label: Night Mode Started
+      phase1started:
+        events_when_started: nightmb_phase1_started
+      phase1running:
+        events_when_started: nightmb_phase1_active
+      phase2start:
+        events_when_started: nightmb_phase2_started
+      phase2running:
+        events_when_started: nightmb_phase2_active
+      phase3start:
+        events_when_started: nightmb_phase3_started
+      phase3running:
+        events_when_started: nightmb_phase3_active
+      jackpotrunning:
+        events_when_started: nightmb_jackpot_active
+    transitions:
+      - source: start
+        target: phase1started 
+        events: mode_night_started
+      - source: phase1started
+        target: phase1running 
+        events: nightphase1setup_complete
+      - source: phase1running
+        target: phase2start 
+        events: mbskeletons_complete
+      - source: phase2start
+        target: phase2running 
+        events: nightphase2setup_complete
+      - source: phase2running
+        target: phase3start
+        events: mbcreepers_complete
+      - source: phase3start
+        target: phase3running 
+        events: nightphase3setup_complete
+      - source: phase3running
+        target: jackpotrunning
+        events: mballdrops_complete
+      - source: jackpotrunning
+        target: phase1started
+        events: mb_jackpot_hit, mb_superjackpot_hit
 
 shot_profiles:
   mbtarget:
     states:
-        - name: flashing  # step 2
-          show: flash
-        - name: lit  # step 3
-          show: on
+      - name: flashing  # step 2
+        show: flash
+      - name: lit  # step 3
+        show: on
     loop: no
 
 variable_player:

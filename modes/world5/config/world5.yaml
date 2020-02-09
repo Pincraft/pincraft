@@ -16,7 +16,7 @@ sound_player:
       action: play
       loops: -1
       mode_end_action: stop
-  mode_villagermb_ended:
+  mode_villagermb_stopped:
     world5mode_music:
       action: play
       loops: -1
