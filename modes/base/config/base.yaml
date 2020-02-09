@@ -3,14 +3,25 @@ mode:
     start_events: ball_starting
     priority: 100
 
+shot_profiles:
+    flashjackpot:
+        states:
+          - name: lit
+            show: "flash"
+
 #Shots
 shots:
   spinner:
     switch: s_spinner
   captiveball:
     switch: s_captiveball
-  centertarget:
+  world_jackpot:
     switch: s_centertarget
+    profile: flashjackpot
+    show_tokens:
+      leds: l_worldtarget
+    enable_events: world_jackpot_enable
+    disable_events: world_jackpot_disable
   collectitem1:
     switch: s_collectitem1
     show_tokens:
@@ -43,6 +54,11 @@ shots:
     disable_events: collectitem4_disabled
 
 event_player:
+  #BALL STARTING EVENTS
+  ball_started:
+    item_collected
+    recalculate_worldjackpot
+
   collectitem1_hit:
     item_collected
   collectitem2_hit:
@@ -53,14 +69,30 @@ event_player:
     item_collected
   logicblock_counter_villagermultiball_complete:
     villagermultiball_ready
+
+  #RECALCULATE WORLD JACKPOT
+  player_world_jackpot_base:
+    recalculate_worldjackpot
+  player_bonus_items:
+    recalculate_worldjackpot
+  player_worlds_traveled:
+    recalculate_worldjackpot
+  player_multiplier_mb:
+    recalculate_worldjackpot
+  world_jackpot_hit:
+    recalculate_worldjackpot
+  recalculate_worldjackpot{current_player.world_jackpot < 100000}:
+    world_jackpot_disable
+  recalculate_worldjackpot{current_player.world_jackpot > 100000}:
+    world_jackpot_enable
+   
   #START VILLAGER MULTIBALL ON PLUNGE
   sw_playfield_active_active{device.multiball_locks.villagerlock.locked_balls==1 and device.multiball_locks.villagerlock.enabled}:
     villagermultiball_start
   #START NIGHT MULTIBALL ON PLUNGE
   sw_playfield_active_active{device.multiball_locks.nightlock.locked_balls==1 and device.multiball_locks.nightlock.enabled}:
     nightmode_start
-  ball_started:
-    item_collected
+
   
   #ENABLE NIGHTMODE
   world1_collected:
@@ -152,6 +184,12 @@ variable_player:
     bonus_items:  #RESET BONUS COUNT ON END OF EACH BALL
       int: 0
       action: set
+    world_jackpot_worlds:  #RESET WORLDS TRAVELED
+      int: 1
+      action: set
+    world_jackpot_base:  #RESET WORLD JACKPOT BASE
+      int: 10000
+      action: set
   multiball_villagermb_started: #VILLAGER MULTIBALL STARTED
     multiplier_mb:
       int: 2
@@ -161,37 +199,71 @@ variable_player:
       int: 1
       action: set
 
+  #WORLD JACKPOT
+  recalculate_worldjackpot:
+    world_jackpot:
+      int: current_player.world_jackpot_base * current_player.world_jackpot_items * current_player.world_jackpot_worlds * current_player.multiplier_mb
+      action: set
+
+  world_jackpot_hit:
+    score: current_player.world_jackpot_base
+    world_jackpot_base:
+      int: 10000
+      action: set
+    world_jackpot_worlds:
+      int: 1
+      action: set
+    world_jackpot_items:
+      int: 1
+      action: set
+  multiball_nightmb_ended:
+    world_jackpot_worlds: 1
+
   #SPINNER SCORING
   spinner_hit{device.counters.counter_villagermultiball.value<4}: #LEVEL 100
     score: 100 * current_player.multiplier_mb
+    world_jackpot_base: 1000
   spinner_hit{device.counters.counter_villagermultiball.value>=4 and device.counters.counter_villagermultiball.value<8}: #LEVEL 1000
     score: 1000 * current_player.multiplier_mb
+    world_jackpot_base: 1000
   spinner_hit{device.counters.counter_villagermultiball.value>=8 and device.counters.counter_villagermultiball.value<12}: #LEVEL 2000
     score: 2000 * current_player.multiplier_mb
+    world_jackpot_base: 1000
   spinner_hit{device.counters.counter_villagermultiball.value>=12 and device.counters.counter_villagermultiball.value<16}: #LEVEL 3000
     score: 3000 * current_player.multiplier_mb
+    world_jackpot_base: 1000
   spinner_hit{device.counters.counter_villagermultiball.value>=16}: #LEVEL 4000
     score: 4000 * current_player.multiplier_mb
+    world_jackpot_base: 1000
 
   collectitem1_hit:
     score: 10000 * current_player.multiplier_mb
     bonus_items: 1
+    world_jackpot_items: 1
+    world_jackpot_base: 1000
   collectitem2_hit:
     score: 10000 * current_player.multiplier_mb
     bonus_items: 1
+    world_jackpot_items: 1
+    world_jackpot_base: 1000
   collectitem3_hit:
     score: 10000 * current_player.multiplier_mb
+    world_jackpot_base: 1000
   collectitem4_hit:
     score: 10000 * current_player.multiplier_mb
     bonus_items: 1
+    world_jackpot_items: 1
+    world_jackpot_base: 1000
   collectitem5_hit:
     score: 10000 * current_player.multiplier_mb
     bonus_items: 1
+    world_jackpot_items: 1
+    world_jackpot_base: 1000
 
   s_right_outlane_active:
     score: 5000 * current_player.multiplier_mb
-  s_centertarget_active:
-    score: 10000 * current_player.multiplier_mb
+  #s_centertarget_active:
+  #  score: 10000 * current_player.multiplier_mb
   s_rightsling_active:
     score: 100 * current_player.multiplier_mb
   s_leftsling_active:
@@ -217,25 +289,26 @@ variable_player:
     score: 5000 * current_player.multiplier_mb
   s_bluetarget3_active:
     score: 5000 * current_player.multiplier_mb
-  s_collectitem1_active:
-    score: 1000 * current_player.multiplier_mb
-  s_collectitem2_active:
-    score: 1000 * current_player.multiplier_mb
-  s_collectitem3_active:
-    score: 5000 * current_player.multiplier_mb
-  s_collectitem4_active:
-    score: 1000 * current_player.multiplier_mb
-  s_collectitem5_active:
-    score: 1000 * current_player.multiplier_mb
+  #s_collectitem1_active:
+  #  score: 1000 * current_player.multiplier_mb
+  #s_collectitem2_active:
+  #  score: 1000 * current_player.multiplier_mb
+  #s_collectitem3_active:
+  #  score: 5000 * current_player.multiplier_mb
+  #s_collectitem4_active:
+  #  score: 1000 * current_player.multiplier_mb
+  #s_collectitem5_active:
+  #  score: 1000 * current_player.multiplier_mb
   s_collect_active:
     score: 1000 * current_player.multiplier_mb
 
 sound_player:
-  s_collectitem1_active: collect_tool
-  s_collectitem2_active: collect_tool
-  s_collectitem3_active: collect_tool
-  s_collectitem4_active: collect_tool
-  s_collectitem5_active: collect_tool
+  world_jackpot_hit: world_jackpot
+  collectitem1_hit: collect_tool
+  collectitem2_hit: collect_tool
+  collectitem3_hit: collect_tool
+  collectitem4_hit: collect_tool
+  collectitem5_hit: collect_tool
   s_rightinlane_active: lane_swish
   s_rightoutlane_active: lane_swish
   s_leftinlane_active: lane_swish
@@ -401,7 +474,7 @@ slides:
         anchor_x: left
         anchor_y: top
       - type: text        #WORLD JACKPOT
-        text: World Jackpot - (player|world_jackpot_base) x Items (player|bonus_items) x Traveled (player|worlds_traveled) x MB (player|multiplier_mb) = (player|world_jackpot)
+        text: World Jackpot - (player|world_jackpot_base) x Items (player|world_jackpot_items) x Traveled (player|world_jackpot_worlds) x MB (player|multiplier_mb) = (player|world_jackpot)
         number_grouping: true
         min_digits: 2
         font_name: ARLRDBD

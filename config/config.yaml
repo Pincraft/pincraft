@@ -1143,6 +1143,10 @@ sounds:
     file: VillagerJackpot.wav
     volume: 1
     track: voice
+  world_jackpot:
+    file: WorldJackpot.wav
+    volume: 1
+    track: voice
 
   #SOUND EFFECTS
   bounce_kick:
@@ -1255,17 +1259,20 @@ player_vars:
     value_type: int
 
   world_jackpot:
-    initial_value: 1
+    initial_value: 0
     value_type: int
 
   world_jackpot_base:
-    initial_value: 1
+    initial_value: 0
     value_type: int
 
-  worlds_traveled:
-    initial_value: 1
+  world_jackpot_worlds:
+    initial_value: 0
     value_type: int
   
+  world_jackpot_items:
+    initial_value: 0
+    value_type: int
 
   #World Variables
   world_color:  #sets color of world for accent colors
