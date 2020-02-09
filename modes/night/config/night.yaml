@@ -7,8 +7,6 @@ mode:
 #play hurry up sound effect
 sound_player:
   mode_night_started:
-    world1mode_music:
-      action: stop
     nightmode_music:
       action: play
       loops: -1

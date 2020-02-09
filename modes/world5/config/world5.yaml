@@ -1,6 +1,6 @@
 #config_version=5
 mode:
-    start_events: award_world5
+    start_events: world5_started
     stop_events: world5_completed
     priority: 500
 
@@ -11,19 +11,19 @@ show_player:
       speed: 1
 
 sound_player:
-  world_started:
+  mode_world5_started:
     world5mode_music:
       action: play
       loops: -1
       mode_end_action: stop
-  multiball_villagermb_ended:
+  mode_villagermb_ended:
     world5mode_music:
       action: play
       loops: -1
       mode_end_action: stop
 
 variable_player:
-  #setup environment variables
+ #setup environment variables
   mode_world5_started:  
     #World Settings
     world_id:
@@ -79,8 +79,90 @@ variable_player:
     world_item4_needed:
       int: 5
       action: set
-  
+
+  logicblock_wc5_item1_counter_updated:
+    world_item1_remaining:
+      int: value
+      action: set
+  logicblock_wc5_item2_counter_updated:
+    world_item2_remaining:
+      int: value
+      action: set
+  logicblock_wc5_item3_counter_updated:
+    world_item3_remaining:
+      int: value
+      action: set
+  logicblock_wc5_item4_counter_updated:
+    world_item4_remaining:
+      int: value
+      action: set
+
+counters:
+  wc5_item1_counter:
+    count_events: collectitem1_hit
+    reset_on_complete: False
+    starting_count: 5
+    count_complete_value: 0
+    direction: down
+    persist_state: true
+    events_when_complete: w5_itemcheckcomplete
+    multiple_hit_window: 500ms
+    enable_events: mode_world5_started
+  wc5_item2_counter:
+    count_events: collectitem2_hit
+    reset_on_complete: False
+    starting_count: 5
+    count_complete_value: 0
+    direction: down
+    persist_state: true
+    events_when_complete: w5_itemcheckcomplete
+    multiple_hit_window: 500ms
+    enable_events: mode_world5_started
+  wc5_item3_counter:
+    count_events: collectitem3_hit
+    reset_on_complete: False
+    starting_count: 5
+    count_complete_value: 0
+    direction: down
+    persist_state: true
+    events_when_complete: w5_itemcheckcomplete
+    multiple_hit_window: 500ms
+    enable_events: mode_world5_started
+  wc5_item4_counter:
+    count_events: collectitem4_hit
+    reset_on_complete: False
+    starting_count: 5
+    count_complete_value: 0
+    direction: down
+    persist_state: true
+    events_when_complete: w5_itemcheckcomplete
+    multiple_hit_window: 500ms
+    enable_events: mode_world5_started
 
 event_player:
   mode_world5_started:
-    world_started
+    world5_started
+    w5_itemcheckcomplete
+
+  w5_itemcheckcomplete{current_player.world_item1_remaining == 0 and current_player.world_item2_remaining == 0 and current_player.world_item3_remaining == 0 and current_player.world_item4_remaining == 0}:
+    world5_collected
+
+  w5_itemcheckcomplete{current_player.world_item1_remaining > 0}:
+    collectitem1_enabled
+  w5_itemcheckcomplete{current_player.world_item1_remaining == 0}:
+    collectitem1_disabled
+  
+  w5_itemcheckcomplete{current_player.world_item2_remaining > 0}:
+    collectitem2_enabled
+  w5_itemcheckcomplete{current_player.world_item2_remaining == 0}:
+    collectitem2_disabled
+
+  w5_itemcheckcomplete{current_player.world_item3_remaining > 0}:
+    collectitem3_enabled
+  w5_itemcheckcomplete{current_player.world_item3_remaining == 0}:
+    collectitem3_disabled
+
+  w5_itemcheckcomplete{current_player.world_item4_remaining > 0}:
+    collectitem4_enabled
+  w5_itemcheckcomplete{current_player.world_item4_remaining == 0}:
+    collectitem4_disabled

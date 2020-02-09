@@ -44,7 +44,7 @@ variable_player:
       string: "GREEN"
       action: set 
     world_item1_needed:
-      int: 2
+      int: 1
       action: set
 
     #Item 2 Settings
@@ -55,7 +55,7 @@ variable_player:
       string: "GRAY"
       action: set 
     world_item2_needed:
-      int: 2
+      int: 1
       action: set
 
     #Item 3 Settings
@@ -66,7 +66,7 @@ variable_player:
       string: "BROWN"
       action: set 
     world_item3_needed:
-      int: 2
+      int: 1
       action: set
 
     #Item 4 Settings
@@ -77,7 +77,7 @@ variable_player:
       string: "SLATEGRAY"
       action: set 
     world_item4_needed:
-      int: 2
+      int: 1
       action: set
 
   logicblock_wc1_item1_counter_updated:
@@ -101,7 +101,7 @@ counters:
   wc1_item1_counter:
     count_events: collectitem1_hit
     reset_on_complete: False
-    starting_count: 2
+    starting_count: 1
     count_complete_value: 0
     direction: down
     persist_state: true
@@ -111,7 +111,7 @@ counters:
   wc1_item2_counter:
     count_events: collectitem2_hit
     reset_on_complete: False
-    starting_count: 2
+    starting_count: 1
     count_complete_value: 0
     direction: down
     persist_state: true
@@ -121,7 +121,7 @@ counters:
   wc1_item3_counter:
     count_events: collectitem3_hit
     reset_on_complete: False
-    starting_count: 2
+    starting_count: 1
     count_complete_value: 0
     direction: down
     persist_state: true
@@ -131,7 +131,7 @@ counters:
   wc1_item4_counter:
     count_events: collectitem4_hit
     reset_on_complete: False
-    starting_count: 2
+    starting_count: 1
     count_complete_value: 0
     direction: down
     persist_state: true
