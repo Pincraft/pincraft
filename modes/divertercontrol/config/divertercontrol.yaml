@@ -164,7 +164,8 @@ event_player:
 #======================================================
 # WE WILL CONTROL ALL DIVERTER CONTROL ACTIVITIES HERE     
 #======================================================
-
+  ball_started:
+    divertercontrol_checkworldstate
   world1_started:
     divertercontrol_checkworldstate
   world1_collected:
@@ -205,7 +206,11 @@ event_player:
   #<< Villager Multiball Started
   villagermultiball_start:
    divertercontrol_checkworldstate
-  
+  villagermb_disable:
+    divertercontrol_checkworldstate
+
+  nightmode_ready:
+    divertercontrol_checkworldstate
   nightmode_start:
     divertercontrol_checkworldstate
   
