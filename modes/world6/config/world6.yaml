@@ -1,6 +1,6 @@
 #config_version=5
 mode:
-    start_events: award_world6
+    start_events: world6_started
     stop_events: world6_completed
     priority: 500
 
@@ -11,20 +11,20 @@ show_player:
       speed: 1
 
 sound_player:
-  world_started:
+  mode_world6_started:
     world6mode_music:
       action: play
       loops: -1
       mode_end_action: stop
-  multiball_villagermb_ended:
+  mode_villagermb_stopped:
     world6mode_music:
       action: play
       loops: -1
       mode_end_action: stop
 
 variable_player:
-  #setup environment variables
-  mode_world6_started:  
+ #setup environment variables
+  mode_world5_started:  
     #World Settings
     world_id:
       int: 6
@@ -33,7 +33,7 @@ variable_player:
       string: "World 6"
       action: set
     world_color: 
-      string: "PURPLE"
+      string: "RED"
       action: set
 
     #Item 1 Settings
@@ -44,7 +44,7 @@ variable_player:
       string: "GREEN"
       action: set 
     world_item1_needed:
-      int: 6
+      int: 5
       action: set
 
     #Item 2 Settings
@@ -55,7 +55,7 @@ variable_player:
       string: "GRAY"
       action: set 
     world_item2_needed:
-      int: 6
+      int: 5
       action: set
 
     #Item 3 Settings
@@ -66,7 +66,7 @@ variable_player:
       string: "BROWN"
       action: set 
     world_item3_needed:
-      int: 6
+      int: 5
       action: set
 
     #Item 4 Settings
@@ -77,10 +77,14 @@ variable_player:
       string: "SLATEGRAY"
       action: set 
     world_item4_needed:
-      int: 6
+      int: 5
       action: set
-  
+
+
+
+
 
 event_player:
   mode_world6_started:
-    world_started
+    world6_started
+   

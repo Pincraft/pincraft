@@ -309,16 +309,6 @@ variable_player:
     score: 5000 * current_player.multiplier_mb
   s_bluetarget3_active:
     score: 5000 * current_player.multiplier_mb
-  #s_collectitem1_active:
-  #  score: 1000 * current_player.multiplier_mb
-  #s_collectitem2_active:
-  #  score: 1000 * current_player.multiplier_mb
-  #s_collectitem3_active:
-  #  score: 5000 * current_player.multiplier_mb
-  #s_collectitem4_active:
-  #  score: 1000 * current_player.multiplier_mb
-  #s_collectitem5_active:
-  #  score: 1000 * current_player.multiplier_mb
   s_collect_active:
     score: 1000 * current_player.multiplier_mb
 

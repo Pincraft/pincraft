@@ -63,6 +63,9 @@ sound_player:
       loops: -1
       mode_end_action: stop
       priority: 1
+    villager_multiball:
+      action: play
+      loops: 0
   sw_playfield_active_active:
     villagersp: 
       action: play
