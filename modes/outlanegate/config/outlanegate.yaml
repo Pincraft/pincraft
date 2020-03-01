@@ -23,13 +23,31 @@ timers:
     control_events:
       - action: restart
         event: timer_close_gate_stopped
+  open_left_gate:
+    start_value: 0
+    end_value: 1
+    direction: up
+    tick_interval: 1s
+    control_events:
+      - action: restart
+        event: s_leftinlane_active
 
 coil_player:
   timer_warn_gate_stopped:
-    c_lanegate:
+    c_rightinlanegate:
       action: enable
+    #c_leftinlanegate:
+    #  action: enable
   outlanegate_restart:
-    c_lanegate:
+    c_rightinlanegate:
+      action: disable
+    c_leftinlanegate:
+      action: disable
+  s_leftinlane_active:
+    c_leftinlanegate:
+      action: enable 
+  timer_open_left_gate_stopped:
+    c_leftinlanegate:
       action: disable
 
 sound_player:
@@ -40,12 +58,20 @@ light_player:
   mode_outlanegate_started:
     l_rightoutlane:
       color: green
+    l_leftgate:
+      color: green
   timer_close_gate_started:
     l_rightoutlane: 
       color: green
       fade: 200ms 
+    l_leftgate:
+      color: green
+      fade: 200ms 
   timer_warn_gate_stopped:
     l_rightoutlane: 
+      color: red 
+      fade: 200ms
+    l_leftgate: 
       color: red 
       fade: 200ms
 

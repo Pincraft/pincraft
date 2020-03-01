@@ -11,7 +11,12 @@ sound_player:
       action: play
       loops: -1
       mode_end_action: stop 
-
+  mb_drop2_hit: zombie_death
+  mb_drop5_hit: zombie_death
+  mb_drop1_hit: creeper_death
+  mb_drop3_hit: creeper_death
+  mb_drop4_hit: creeper_death
+  mb_drop6_hit: creeper_death
 slides:
   slide_night:
     priority: 200
@@ -145,17 +150,24 @@ shot_profiles:
     loop: no
 
 variable_player:
-  mb_jackpot_hit:
+  mbskeletons_complete:
+    score: 500000
+  mbcreepers_complete:
+    score: 750000
+  mballdrops_complete:
     score: 1000000
+
+  mb_jackpot_hit:
+    score: 5000000
   mb_superjackpot_hit:
     score: 10000000
 
 shots:
   mb_jackpot:
-    switch: s_centertarget
+    switch: s_collectitem3
     profile: mbtarget
     show_tokens:
-      light: l_worldtarget
+      light: l_collectitem3
     disable_events: mode_night_started, nightmb_phase1_started
     enable_events: nightmb_jackpot_active
   mb_superjackpot:

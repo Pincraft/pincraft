@@ -7,6 +7,13 @@
     lgi:
       color: green
       fade: 200ms 
+    l_world1: green
+    l_world2: off
+    l_world3: off
+    l_world4: off
+    l_world5: off
+    l_world6: off
+    l_worldtarget: off
 - duration: 1
   lights:
     lfeature:
@@ -15,6 +22,13 @@
     lgi:
       color: yellow
       fade: 200ms
+    l_world1: off
+    l_world2: yellow
+    l_world3: off
+    l_world4: off
+    l_world5: off
+    l_world6: off
+    l_worldtarget: off
 - duration: 1
   lights:
     lfeature:
@@ -23,6 +37,13 @@
     lgi:
       color: blue
       fade: 200ms
+    l_world1: off
+    l_world2: off
+    l_world3: blue
+    l_world4: off
+    l_world5: off
+    l_world6: off
+    l_worldtarget: off
 - duration: 1
   lights:
     lfeature:
@@ -31,6 +52,13 @@
     lgi:
       color: brown
       fade: 200ms
+    l_world1: off
+    l_world2: off
+    l_world3: off
+    l_world4: brown
+    l_world5: off
+    l_world6: off
+    l_worldtarget: off
 - duration: 1
   lights:
     lfeature:
@@ -39,6 +67,13 @@
     lgi:
       color: red
       fade: 200ms
+    l_world1: off
+    l_world2: off
+    l_world3: off
+    l_world4: off
+    l_world5: red
+    l_world6: off
+    l_worldtarget: off
 - duration: 1
   lights:
     lfeature:
@@ -47,3 +82,10 @@
     lgi:
       color: purple
       fade: 200ms
+    l_world1: off
+    l_world2: off
+    l_world3: off
+    l_world4: off
+    l_world5: off
+    l_world6: purple
+    l_worldtarget: off

@@ -543,9 +543,9 @@ lights:
     platform_settings:
       polarity: True
 
-  gi_leftflipper:
+  l_leftgate:
     type: rgb
-    tags: lgi
+    tags: lfeature
     number: 3-60-61-62
     platform_settings:
       polarity: True
@@ -907,7 +907,7 @@ coils:
 
   #Orange Coil Loom
     #gates
-  c_lanegate:
+  c_rightinlanegate:
     number: A0-B1-2
     allow_enable: true
   c_upperleftgate:
@@ -922,8 +922,9 @@ coils:
   c_flipper_left_hold:
     number: A0-B1-4
     allow_enable: true 
-
-  # A0-B1-5: Currently Empty
+  c_leftinlanegate:
+    number: A0-B1-5
+    allow_enable: true
   # A0-B1-6: Currently Empty
   # A0-B1-7: Currently Empty
 
@@ -1189,6 +1190,14 @@ sounds:
     track: sfx
   villager_trade:
     file: village_trade.wav
+    volume: 1
+    track: sfx
+  zombie_death:
+    file: zombie_death.wav
+    volume: 1
+    track: sfx
+  creeper_death:
+    file: creeper_death.wav
     volume: 1
     track: sfx
 
