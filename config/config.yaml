@@ -1192,6 +1192,18 @@ sounds:
     file: village_trade.wav
     volume: 1
     track: sfx
+  meatextraball_cow:
+    file: meatextraball_cow.wav
+    volume: 1
+    track: sfx
+  meatextraball_pig:
+    file: meatextraball_pig.wav
+    volume: 1
+    track: sfx
+  meatextraball_chicken:
+    file: meatextraball_chicken.wav
+    volume: 1
+    track: sfx
   zombie_death:
     file: zombie_death.wav
     volume: 1
@@ -1264,6 +1276,13 @@ sound_pools:
       - villager_deny
       - villager_idle
       - villager_trade
+  meatextraballsp:
+    type: random_force_all
+    track: sfx
+    sounds:
+      - meatextraball_cow
+      - meatextraball_pig
+      - meatextraball_chicken
 
 # PLAYER VARIABLES
 #--------------------------------------------
