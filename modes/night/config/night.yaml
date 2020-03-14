@@ -17,6 +17,14 @@ sound_player:
   mb_drop3_hit: creeper_death
   mb_drop4_hit: creeper_death
   mb_drop6_hit: creeper_death
+
+  nightmb_phase1_active: night_mode_started
+  nightmb_phase2_active: night_zombie_jackpot
+  nightmb_phase3_active: night_creeper_jackpot
+  nightmb_jackpot_active: night_all_jackpot
+  mb_jackpot_hit: night_super_jackpot
+  mb_superjackpot_hit: night_mega_jackpot
+
 slides:
   slide_night:
     priority: 200
