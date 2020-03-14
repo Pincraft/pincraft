@@ -41,12 +41,6 @@ shots:
       leds: l_collectitem2
     enable_events: collectitem2_enabled
     disable_events: collectitem2_disabled
-  collectitem_special:
-    switch: s_collectitem3
-    show_tokens:
-      leds: l_collectitem3
-    enable_events: collectitem_special_enabled
-    disable_events: collectitem_special_disabled
   collectitem3:
     switch: s_collectitem4
     show_tokens:
@@ -59,6 +53,7 @@ shots:
       leds: l_collectitem5
     enable_events: collectitem4_enabled
     disable_events: collectitem4_disabled
+  # Collect Item Special moved to Extra Ball Mode
 
 event_player:
   #BALL STARTING EVENTS
@@ -79,9 +74,7 @@ event_player:
   #ENABLE VILLAGER MULTIBALL 
   logicblock_counter_villagermultiball_complete:
     villagermultiball_ready
-  logicblock_counter_meatextraball_complete:
-    - collectitem_special_disabled
-    - award_meatextraball
+
 
   
 
@@ -165,13 +158,6 @@ counters:
       count_complete_value: 20
       restart_events: multiball_nightmb_ended,multiball_villagermb_ended, ball_started
       disable_events: villagermb_disable
-      enable_events: mode_base_started
-      persist_state: true
-   counter_meatextraball:
-      count_events: collectitem_special_hit
-      starting_count: 0
-      count_interval: 1
-      count_complete_value: 10
       enable_events: mode_base_started
       persist_state: true
 
@@ -333,6 +319,7 @@ variable_player:
     score: 1000 * current_player.multiplier_mb
 
 sound_player:
+  skill_success: skillshot_awarded
   world_jackpot_hit: world_jackpot
   collectitem1_hit: collect_tool
   collectitem2_hit: collect_tool
@@ -344,11 +331,6 @@ sound_player:
   s_leftinlane_active: lane_swish
   s_leftoutlane_active: lane_swish
 
-  #EXTRA BALL
-  collectitem_special_hit:
-    meatextraballsp: 
-      action: play
-      loops: 1
   #VILLAGER MULTIBALL
   s_spinner_active: 
     villagersp: 
@@ -402,8 +384,7 @@ light_player:
     l_spinner2: off
     l_spinner3: off
     l_spinner4: off
-  extra_ball_meatextraball_awarded:
-    l_shootagain: white
+
 
 #This is for achieving the worlds
 achievements:
@@ -524,17 +505,6 @@ slides:
         font_name: ARLRDBD
         font_size: 25
         y: top-100
-        x: left+100
-        z: 100
-        anchor_x: left
-        anchor_y: top
-      - type: text        #WORLD JACKPOT
-        text: Extra Ball Progress - (player|counters.counter_extraball.value)
-        number_grouping: true
-        min_digits: 2
-        font_name: ARLRDBD
-        font_size: 25
-        y: top-150
         x: left+100
         z: 100
         anchor_x: left

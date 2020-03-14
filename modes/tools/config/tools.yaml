@@ -51,6 +51,7 @@ sound_player:
   s_tooltarget1_active: collect_tool
   s_tooltarget2_active: collect_tool
   s_tooltarget3_active: collect_tool
+  crafting_enabled: craft_ready
 
 light_player:
   light_onetool:

@@ -1142,6 +1142,14 @@ assets:
             track: voice
 
 sounds:
+  ################   VOICES ####################
+  #-- Skill Shots
+  skillshot_awarded:
+    file: SkillShotAwarded.wav
+    volume: 1
+    track: voice
+
+  #-- Villager Multiball
   villager_multiball:
     file: VillagerMultiball.wav
     volume: 0.85
@@ -1154,12 +1162,60 @@ sounds:
     file: VillagerJackpot.wav
     volume: 1
     track: voice
+
+  #-- Worlds
   world_jackpot:
     file: WorldJackpot.wav
     volume: 1
     track: voice
+  travel_ready:
+    file: TravelReady.wav
+    volume: 1
+    track: voice
 
-  #SOUND EFFECTS
+  #-- Extra Ball
+  extraball_lit:
+    file: ExtraBallLit.wav
+    volume: 1
+    track: voice
+  extraball_awarded:
+    file: ExtraBallAwarded.wav
+    volume: 1
+    track: voice
+
+  #-- Night Mode
+  night_mode_started:
+    file: NightModeStarted.wav
+    volume: 1
+    track: voice
+  night_zombie_jackpot:
+    file: NightZombieJackpot.wav
+    volume: 1
+    track: voice
+  night_creeper_jackpot:
+    file: NightCreeperJackpot.wav
+    volume: 1
+    track: voice
+  night_all_jackpot:
+    file: NightAllJackpot.wav
+    volume: 1
+    track: voice
+  night_super_jackpot:
+    file: NightSuperJackpot.wav
+    volume: 1
+    track: voice
+  night_mega_jackpot:
+    file: NightMegaJackpot.wav
+    volume: 1
+    track: voice
+  
+  #-- Tools
+  craft_ready:
+    file: CraftReady.wav
+    volume: 1
+    track: voice
+
+  ##############  SOUND EFFECTS ############
   bounce_kick:
     file: bounce_kick.wav
     volume: 0.85
@@ -1448,5 +1504,6 @@ modes:
   - night
   - divertercontrol
   - tools
+  - extraball
 
   
