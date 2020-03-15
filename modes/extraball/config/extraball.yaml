@@ -4,6 +4,15 @@ mode:
     stop_events: ball_ended
     priority: 1000
 
+shot_profiles:
+  sp_extraball:
+    states:
+      - name: flashing  # step 2
+        show: flash
+      - name: lit  # step 3
+        show: on
+    loop: no
+
 shots:
   collectitem_special:
     switch: s_collectitem3
@@ -13,6 +22,11 @@ shots:
     disable_events: collectitem_special_disabled
   award_extraball:
     switch: s_captiveball
+    enable_events: meatextraball_light
+    disable_events: meatextraball_award
+    show_tokens:
+      leds: l_captiveextraball
+    profile: sp_extraball
 
 counters:
    counter_meatextraball:
@@ -24,16 +38,19 @@ counters:
       persist_state: true
 
 event_player:
+  award_extraball_hit:
+    meatextraball_award
   logicblock_counter_meatextraball_complete:
     - collectitem_special_disabled
-    - award_meatextraball
+    - meatextraball_light
 
 sound_player:
   collectitem_special_hit:
     meatextraballsp: 
       action: play
       loops: 1
-  extra_ball_meatextraball_awarded: extraball_awarded    #extraball_lit
+  meatextraball_award: extraball_awarded
+  meatextraball_light: extraball_lit
 
 light_player:
   extra_ball_meatextraball_awarded:

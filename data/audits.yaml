@@ -1,6 +1,6 @@
 events:
   game_ended: 99
-  game_started: 423
+  game_started: 424
 player:
   score:
     average: 4871176.363636365
@@ -17,15 +17,15 @@ player:
     - 7301350
     total: 110
 shots:
-  award_extraball: 26
-  captiveball: 364
+  award_extraball: 27
+  captiveball: 368
   centertarget: 1541
-  collectitem1: 2560
-  collectitem2: 2436
+  collectitem1: 2561
+  collectitem2: 2437
   collectitem3: 1314
   collectitem4: 2281
   collectitem5: 1881
-  collectitem_special: 102
+  collectitem_special: 112
   craft1: 19
   craft2: 16
   craft3: 19
@@ -41,11 +41,11 @@ shots:
   mb_drop6: 200
   mb_jackpot: 8
   mb_superjackpot: 16
-  popbumper1: 1941
-  popbumper2: 2495
-  popbumper3: 3560
+  popbumper1: 1942
+  popbumper2: 2497
+  popbumper3: 3563
   rightslingshot: 1211
-  skill_scoup: 200
+  skill_scoup: 201
   spinner: 10686
   tool1: 184
   tool2: 283
@@ -55,21 +55,21 @@ shots:
   villager_spinner: 114
   world_jackpot: 112
 switches:
-  s_bumperrail: 588
-  s_captiveball: 364
+  s_bumperrail: 589
+  s_captiveball: 368
   s_centertarget: 2093
-  s_collectitem1: 3859
-  s_collectitem2: 3617
-  s_collectitem3: 1769
+  s_collectitem1: 3860
+  s_collectitem2: 3618
+  s_collectitem3: 1801
   s_collectitem4: 3458
   s_collectitem5: 3336
   s_credit_right: 0
-  s_drop1: 1078
-  s_drop2: 1675
-  s_drop3: 3738
-  s_drop4: 1052
-  s_drop5: 2634
-  s_drop6: 1525
+  s_drop1: 1079
+  s_drop2: 1676
+  s_drop3: 3743
+  s_drop4: 1053
+  s_drop5: 2635
+  s_drop6: 1526
   s_left_flipper: 12013
   s_leftinlane: 412
   s_leftoutlane: 273
@@ -77,31 +77,31 @@ switches:
   s_loopleft: 1457
   s_loopright: 1535
   s_maint: 0
-  s_plungerlane: 1541
-  s_popbumper1: 1941
-  s_popbumper2: 2495
-  s_popbumper3: 3560
+  s_plungerlane: 1545
+  s_popbumper1: 1942
+  s_popbumper2: 2497
+  s_popbumper3: 3563
   s_right_flipper: 9730
   s_rightinlane: 0
   s_rightoutlane: 197
   s_rightsling: 1211
-  s_scoup: 769
+  s_scoup: 770
   s_spinner: 10688
   s_start: 28
   s_tilt: 0
   s_tooltarget1: 625
   s_tooltarget2: 783
   s_tooltarget3: 508
-  s_topbumperleft: 530
-  s_topbumperright: 820
+  s_topbumperleft: 531
+  s_topbumperright: 821
   s_topkicker: 1992
-  s_trough1: 1289
-  s_trough2: 1099
-  s_trough3: 1053
+  s_trough1: 1290
+  s_trough2: 1100
+  s_trough3: 1054
   s_trough4: 828
-  s_troughjam: 1106
+  s_troughjam: 1107
   s_upperdrop: 858
   s_whitedot1: 228
   s_whitedot2: 221
   s_whitedot3: 299
-  s_whitedot4: 279
+  s_whitedot4: 280

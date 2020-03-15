@@ -13,7 +13,7 @@ shot_profiles:
 extra_balls:
   meatextraball:
     enabled: true
-    award_events: award_meatextraball
+    award_events: meatextraball_award
     max_per_game: 2
 
 #Shots
