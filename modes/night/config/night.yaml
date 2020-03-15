@@ -238,4 +238,8 @@ shot_groups:
 
 event_player:
   mode_night_started:
-    outlanegate_restart
+    outlanegate_close
+  mb_jackpot_hit:
+    outlanegate_open
+  mb_super_jackpot_hit:
+    outlanegate_open

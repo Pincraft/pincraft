@@ -1343,6 +1343,10 @@ sound_pools:
 # PLAYER VARIABLES
 #--------------------------------------------
 player_vars:
+  gate_open:
+    initial_value: 0
+    value_type: int
+
   #Multiball Multiplier
   multiplier_mb:
     initial_value: 1

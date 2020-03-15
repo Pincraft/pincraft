@@ -58,10 +58,11 @@ shots:
 event_player:
   #BALL STARTING EVENTS
   ball_started:
+    outlanegate_close
     item_collected
     recalculate_worldjackpot
     collectitem_special_enabled
-
+  
   collectitem1_hit:
     item_collected
   collectitem2_hit:
@@ -119,6 +120,9 @@ event_player:
     world1_start
 
   #ENABLE NEXT WORLDS WHEN NIGHT MODE RETURNS
+  multiball_nightmb_ended:
+    outlanegate_open
+
   multiball_nightmb_ended{current_player.world_id==1}:
     world2_start
   multiball_nightmb_ended{current_player.world_id==2}:
@@ -149,6 +153,9 @@ event_player:
   multiball_villagermb_ended{current_player.world_item1_remaining == 0 and current_player.world_item2_remaining == 0 and current_player.world_item3_remaining == 0 and current_player.world_item4_remaining == 0}:
     nightmode_ready
     villagermb_disable
+
+  multiball_villagermb_ended{current_player.worlds_traveled>1}:
+    outlanegate_open
 
 counters:
    counter_villagermultiball:

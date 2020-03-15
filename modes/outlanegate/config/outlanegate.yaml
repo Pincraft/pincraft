@@ -5,16 +5,6 @@ mode:
     priority: 200
 
 timers:
-  close_gate:
-    start_value: 0
-    end_value: 20
-    direction: up
-    tick_interval: 1s
-    control_events:
-      - action: start
-        event: mode_skillshot_stopped
-      - action: restart
-        event: outlanegate_restart
   warn_gate:
     start_value: 0
     end_value: 10
@@ -22,7 +12,7 @@ timers:
     tick_interval: 1s
     control_events:
       - action: restart
-        event: timer_close_gate_stopped
+        event: outlanegate_open
   open_left_gate:
     start_value: 0
     end_value: 1
@@ -30,20 +20,27 @@ timers:
     tick_interval: 1s
     control_events:
       - action: restart
-        event: s_leftinlane_active
+        event: leftgate_open
+
+event_player:
+  s_leftinlane_active{current_player.gate_open==1}:
+    leftgate_open
 
 coil_player:
   timer_warn_gate_stopped:
     c_rightinlanegate:
       action: enable
-    #c_leftinlanegate:
-    #  action: enable
-  outlanegate_restart:
+  outlanegate_close:
     c_rightinlanegate:
       action: disable
     c_leftinlanegate:
+      action: disable 
+  outlanegate_open:    #request to open gate, but not yet finished
+    c_rightinlanegate:
       action: disable
-  s_leftinlane_active:
+    c_leftinlanegate:
+      action: disable  
+  leftgate_open:
     c_leftinlanegate:
       action: enable 
   timer_open_left_gate_stopped:
@@ -53,20 +50,31 @@ coil_player:
 sound_player:
   timer_warn_gate_tick: clock_tick
 
+variable_player:
+  outlanegate_close:      #request to close gate, but not yet finished
+    gate_open:
+      int: 0
+      action: set
+  outlanegate_open:    
+    gate_open:
+      int: 0
+      action: set
+  timer_warn_gate_stopped:
+    gate_open:
+      int: 1
+      action: set
 
 light_player:
-  mode_outlanegate_started:
+  outlanegate_close:
     l_rightoutlane:
       color: green
     l_leftgate:
       color: green
-  timer_close_gate_started:
-    l_rightoutlane: 
+  outlanegate_open:
+    l_rightoutlane:
       color: green
-      fade: 200ms 
     l_leftgate:
       color: green
-      fade: 200ms 
   timer_warn_gate_stopped:
     l_rightoutlane: 
       color: red 
