@@ -57,7 +57,7 @@ shots:
 
 event_player:
   #BALL STARTING EVENTS
-  ball_started:
+  mode_base_started:
     outlanegate_close
     item_collected
     recalculate_worldjackpot
@@ -77,14 +77,13 @@ event_player:
     villagermultiball_ready
 
 
-  
 
   #RECALCULATE WORLD JACKPOT
   player_world_jackpot_base:
     recalculate_worldjackpot
-  player_worlds_items:
+  player_world_jackpot_items:
     recalculate_worldjackpot
-  player_worlds_traveled:
+  player_world_jackpot_worlds:
     recalculate_worldjackpot
   player_multiplier_mb:
     recalculate_worldjackpot
@@ -154,8 +153,11 @@ event_player:
     nightmode_ready
     villagermb_disable
 
-  multiball_villagermb_ended{current_player.worlds_traveled>1}:
+  multiball_villagermb_ended{current_player.world_jackpot_worlds>1}:
     outlanegate_open
+
+  multiball_villagermb_ended{current_player.world_jackpot_worlds==1}:
+    outlanegate_close
 
 counters:
    counter_villagermultiball:
@@ -163,7 +165,7 @@ counters:
       starting_count: 0
       count_interval: 1
       count_complete_value: 20
-      restart_events: multiball_nightmb_ended,multiball_villagermb_ended, ball_started
+      restart_events: multiball_nightmb_ended,multiball_villagermb_ended, mode_base_started
       disable_events: villagermb_disable
       enable_events: mode_base_started
       persist_state: true
@@ -199,7 +201,7 @@ multiballs:
 #Player Variables
 variable_player:
   #MULTIBALL MULTIPLIER
-  ball_started:     #RESET ON BALL START
+  mode_base_started:     #RESET ON BALL START
     multiplier_mb:  #RESET MULTIBALL MULTIPLIER TO NONE
       int: 1
       action: set

@@ -7,12 +7,14 @@ mode:
 timers:
   warn_gate:
     start_value: 0
-    end_value: 10
+    end_value: 6
     direction: up
     tick_interval: 1s
     control_events:
       - action: restart
         event: outlanegate_open
+      - action: stop
+        event: outlanegate_close
   open_left_gate:
     start_value: 0
     end_value: 1
@@ -21,6 +23,7 @@ timers:
     control_events:
       - action: restart
         event: leftgate_open
+
 
 event_player:
   s_leftinlane_active{current_player.gate_open==1}:
@@ -91,3 +94,4 @@ show_player:
       show_tokens:
         led: l_rightoutlane
         color: orange
+  
