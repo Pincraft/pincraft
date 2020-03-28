@@ -30,7 +30,7 @@ event_player:
     leftgate_open
 
 coil_player:
-  timer_warn_gate_stopped:
+  timer_warn_gate_complete:
     c_rightinlanegate:
       action: enable
   outlanegate_close:
@@ -46,7 +46,7 @@ coil_player:
   leftgate_open:
     c_leftinlanegate:
       action: enable 
-  timer_open_left_gate_stopped:
+  timer_open_left_gate_complete:
     c_leftinlanegate:
       action: disable
 
@@ -62,7 +62,7 @@ variable_player:
     gate_open:
       int: 0
       action: set
-  timer_warn_gate_stopped:
+  timer_warn_gate_complete:
     gate_open:
       int: 1
       action: set
@@ -78,7 +78,7 @@ light_player:
       color: green
     l_leftgate:
       color: green
-  timer_warn_gate_stopped:
+  timer_warn_gate_complete:
     l_rightoutlane: 
       color: red 
       fade: 200ms
