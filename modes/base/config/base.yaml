@@ -5,9 +5,13 @@ mode:
 
 shot_profiles:
     flashjackpot:
-        states:
-          - name: lit
-            show: "flash"
+      states:
+        - name: lit
+          show: "flash"
+    collectshot:
+      states:
+        - name: lit
+          show: on
 
 #Extra Balls
 extra_balls:
@@ -31,24 +35,28 @@ shots:
     disable_events: world_jackpot_disable
   collectitem1:
     switch: s_collectitem1
+    profile: collectshot
     show_tokens:
       leds: l_collectitem1
     enable_events: collectitem1_enabled
     disable_events: collectitem1_disabled
   collectitem2:
     switch: s_collectitem2
+    profile: collectshot
     show_tokens:
       leds: l_collectitem2
     enable_events: collectitem2_enabled
     disable_events: collectitem2_disabled
   collectitem3:
     switch: s_collectitem4
+    profile: collectshot
     show_tokens:
       leds: l_collectitem4
     enable_events: collectitem3_enabled
     disable_events: collectitem3_disabled
   collectitem4:
     switch: s_collectitem5
+    profile: collectshot
     show_tokens:
       leds: l_collectitem5
     enable_events: collectitem4_enabled
@@ -574,7 +582,7 @@ slides:
         anchor_x: left
         anchor_y: top
       - type: text        #TOOL 1 MULTIPLIER
-        text: 1x
+        text: (player|sword) x
         font_name: ARLRDBD
         font_size: 25
         y: top-188
@@ -583,7 +591,7 @@ slides:
         anchor_x: center
         anchor_y: top
       - type: text        #TOOL 2 MULTIPLIER
-        text: 1x
+        text: (player|pickaxe) x
         font_name: ARLRDBD
         font_size: 25
         y: top-302
@@ -592,7 +600,7 @@ slides:
         anchor_x: center
         anchor_y: top
       - type: text        #TOOL 3 MULTIPLIER
-        text: 1x
+        text: (player|axe) x
         font_name: ARLRDBD
         font_size: 25
         y: top-416
@@ -600,8 +608,8 @@ slides:
         z: 100
         anchor_x: center
         anchor_y: top
-      - type: text        #TOOL 3 MULTIPLIER
-        text: 1x
+      - type: text        #TOOL 4 MULTIPLIER
+        text: (player|shovel) x
         font_name: ARLRDBD
         font_size: 25
         y: top-530

@@ -12,10 +12,15 @@ shot_profiles:
       - name: lit  # step 3
         show: on
     loop: no
+  collectebshot:
+      states:
+        - name: lit
+          show: on
 
 shots:
   collectitem_special:
     switch: s_collectitem3
+    profile: collectebshot
     show_tokens:
       leds: l_collectitem3
     enable_events: collectitem_special_enabled
