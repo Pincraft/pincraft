@@ -35,6 +35,47 @@ shots:
     show_tokens:
       light: l_craft4
 
+variable_player:
+  #mode_tools_started:
+
+  crafting_awarded{current_player.tools_ready>=1 and current_player.tools_collected < 1}:
+    shovel: 1
+    tools_collected: 1
+  crafting_awarded{current_player.tools_ready>=2 and current_player.tools_collected < 2}:
+    axe: 1
+    tools_collected: 1
+  crafting_awarded{current_player.tools_ready>=3 and current_player.tools_collected < 3}:
+    pickaxe: 1
+    tools_collected: 1
+  crafting_awarded{current_player.tools_ready==4}:
+    sword: 1
+    tools_collected: 1
+
+
+
+  recalculate_tools:
+    tools_ready: 1      #increase tool count by 1
+
+  tool_level_complete:  #Increase Bonus Multiplier
+    bonus_multiplier: 1
+
+  reset_tool_variables:
+    tools_ready:
+      int: 0
+      action: set
+    tools_collected:
+      int: 0
+      action: set
+
+  craftcollect_complete:
+    crafting_enabled:
+      int: 1
+      action: set
+
+  crafting_disable:
+    crafting_enabled: 
+      int: 0
+      action: set
 
 shot_groups:
   toolcollect:
@@ -44,28 +85,36 @@ shot_groups:
     disable_events: disable_collect_tools
   craftcollect:
     shots: craft1, craft2, craft3, craft4
-    enable_events: crafting_enabled
-    disable_events: mode_tools_started
+    enable_events: crafting_lit
+    reset_events: crafting_awarded
+    disable_events: mode_tools_started, crafting_disable
 
 sound_player:
-  s_tooltarget1_active: collect_tool
-  s_tooltarget2_active: collect_tool
-  s_tooltarget3_active: collect_tool
-  crafting_enabled: craft_ready
+  tool1_hit: collect_tool
+  tool2_hit: collect_tool
+  tool3_hit: collect_tool
+  crafting_lit: craft_ready
 
 light_player:
-  light_onetool:
+  display_tools{current_player.tools_ready==0}:
+    l_tool1ready: off
+    l_tool2ready: off
+    l_tool3ready: off
+  display_tools{current_player.tools_ready>=1}:
     l_tool1ready: darkblue
-  light_twotools:
+  display_tools{current_player.tools_ready>=2}:
     l_tool2ready: darkblue
-  light_threetools:
+  display_tools{current_player.tools_ready>=3}:
     l_tool3ready: darkblue
-  light_fourtools:
+  display_tools{current_player.tools_ready==4}:
     l_toolcollect1: darkblue
     l_toolcollect2: darkblue
     l_toolcollect3: darkblue
-  crafting_enabled:
+
+  crafting_lit:
     l_craftlit: white
+  crafting_disable:
+    l_craftlit: off
 
   display_tools{current_player.shovel==1}:
     l_tool1: Brown
@@ -118,74 +167,67 @@ light_player:
     l_bonus4x: off
     l_bonus5x: off
   display_tools{current_player.bonus_multiplier==3}:
-    l_bonus2x: MidnightBlue
+    l_bonus2x: off
     l_bonus3x: Silver
     l_bonus4x: off
     l_bonus5x: off
   display_tools{current_player.bonus_multiplier==4}:
-    l_bonus2x: MidnightBlue
-    l_bonus3x: Silver
+    l_bonus2x: off
+    l_bonus3x: off
     l_bonus4x: Yellow
     l_bonus5x: off
   display_tools{current_player.bonus_multiplier==5}:
-    l_bonus2x: MidnightBlue
-    l_bonus3x: Silver
-    l_bonus4x: Yellow
+    l_bonus2x: off
+    l_bonus3x: off
+    l_bonus4x: off
     l_bonus5x: Teal
 
 event_player:
   mode_tools_started:
-    display_tools
+    - display_tools
 
-state_machines:
-  tools_ready:
-    states:
-      start:
-        label: No Tools Are Ready
-        events_when_started: start_collect_tools
-      onetoolready:
-        label: One Tool Is Ready
-        events_when_started: tool_collected, restart_collect_tools, light_onetool
-      twotoolsready:
-        label: Two Tools Are Ready
-        events_when_started: restart_collect_tools, light_twotools
-      threetoolsready:
-        label: Three Tools Are Ready
-        events_when_started: restart_collect_tools, light_threetools
-      fourtoolsready:
-        label: Four Tools Are Ready
-        events_when_started: disable_collect_tools, light_fourtools
-    transitions:
-      - source: start
-        target: onetoolready
-        events: toolcollect_complete 
-      - source: onetoolready
-        target: twotoolsready
-        events: toolcollect_complete
-      - source: twotoolsready
-        target: threetoolsready
-        events: toolcollect_complete
-      - source: threetoolsready
-        target: fourtoolsready
-        events: toolcollect_complete
+  mode_tools_started{current_player.crafting_enabled==0}:
+    - crafting_disable
+  mode_tools_started{current_player.crafting_enabled==1}:
+    - crafting_lit
 
-  craft_ready:
-    states:
-      start:
-        label: Craft Table is not Ready
-      craftenabled:
-        label: Tool is Ready
-        events_when_started: crafting_enabled
-      craftready:
-        label: Craft Table is Ready
-        events_when_started: crafting_ready
-    transitions:
-      - source: start
-        target: craftenabled
-        events: tool_collected
-      - source: craftenabled
-        target: craftready
-        events: craftcollect_complete
+  toolcollect_complete:
+    - recalculate_tools
+    - tool_collected
+    - crafting_lit
+
+  
+  #CRAFTING!!!
+  balldevice_bd_topkicker_ball_enter{current_player.crafting_enabled==1}:
+    - crafting_awarded
+    - display_tools
+    - crafting_disable
+    - check_craftingcomplete
+
+  #Check if all 4 tools are collected
+  check_craftingcomplete{current_player.tools_collected==4 and current_player.bonus_multiplier<5}:
+    - crafting_disable
+    - tool_level_complete
+    - reset_tool_variables
+    - restart_collect_tools
+    - display_tools
+
+  check_craftingcomplete{current_player.tools_collected==4 and current_player.bonus_multiplier==5}:
+    - crafting_disable
+    - tool_level_complete
+    - reset_tool_variables
+    - disable_collect_tools
+    - display_tools
+
+  tool_collected:
+    - display_tools
+  
+  #Allow the user to collect additional tools up to 4
+  tool_collected{current_player.tools_ready<4}:
+    restart_collect_tools
+  tool_collected{current_player.tools_ready==4}:
+    disable_collect_tools
+
 
 
       

@@ -1,4 +1,3 @@
 *.log
-data/audits.yaml
-data/machine_vars.yaml
+data/*
 sounds/*
