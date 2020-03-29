@@ -95,21 +95,33 @@ sound_player:
   tool3_hit: collect_tool
   crafting_lit: craft_ready
 
+# show_player:
+#   display_tools{current_player.tools_ready==4}:
+#     show_toolsready:
+#       show_tokens:
+#         color: darkblue
+#       loops: -1
+#       speed: 1
+#       action: play
+#   crafting_disable:
+#     show_toolsready:
+#       action: stop
+
 light_player:
-  display_tools{current_player.tools_ready==0}:
+  display_tools:
     l_tool1ready: off
     l_tool2ready: off
     l_tool3ready: off
-  display_tools{current_player.tools_ready>=1}:
+  display_tools{current_player.tools_ready==1}:
     l_tool1ready: darkblue
-  display_tools{current_player.tools_ready>=2}:
+  display_tools{current_player.tools_ready==2}:
     l_tool2ready: darkblue
-  display_tools{current_player.tools_ready>=3}:
+  display_tools{current_player.tools_ready==3}:
     l_tool3ready: darkblue
   display_tools{current_player.tools_ready==4}:
-    l_toolcollect1: darkblue
-    l_toolcollect2: darkblue
-    l_toolcollect3: darkblue
+    l_tool1ready: darkblue
+    l_tool2ready: darkblue
+    l_tool3ready: darkblue
 
   crafting_lit:
     l_craftlit: white
@@ -226,7 +238,9 @@ event_player:
   tool_collected{current_player.tools_ready<4}:
     restart_collect_tools
   tool_collected{current_player.tools_ready==4}:
-    disable_collect_tools
+    - disable_collect_tools
+
+  
 
 
 

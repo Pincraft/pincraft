@@ -1,0 +1,11 @@
+#show_version=5
+- duration: 1
+  lights:
+    l_tool1ready: (color)-f900ms
+    l_tool2ready: (color)-f900ms
+    l_tool3ready: (color)-f900ms
+- duration: 1
+  lights:
+    l_tool1ready: off-f900ms
+    l_tool2ready: off-f900ms
+    l_tool3ready: off-f900ms
