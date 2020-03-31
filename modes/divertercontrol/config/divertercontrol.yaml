@@ -143,9 +143,8 @@ event_player:
   ball_starting:
     divertercontrol_checkworldstate
   mode_divertercontrol_started:
-  #  rightloop_statechange
-  #  leftloop_statechange
     divertercontrol_checkworldstate
+
   #Left Loop Disabled Events
   timer_leftdropreset_complete{current_player.state_machine_leftloop_state=="closed"}:
     diverter_resetupperdrop
@@ -218,18 +217,15 @@ event_player:
   divertercontrol_checkworldstate{current_player.multiplier_mb==2}:
     divertercontrol_leftloop_close
     divertercontrol_rightloop_enable
-  #  nightmode_disable
 
   divertercontrol_checkworldstate{current_player.world_id > 0 and current_player.multiplier_mb==1 and current_player.world_item1_remaining == 0 and current_player.world_item2_remaining == 0 and current_player.world_item3_remaining == 0 and current_player.world_item4_remaining == 0}:
     divertercontrol_leftloop_travel
     divertercontrol_rightloop_enable
-   # nightmode_ready
 
   #>> Village Multiball Return Not All Items Collected (World Started)
   divertercontrol_checkworldstate{current_player.multiplier_mb==1 and (current_player.world_item1_remaining > 0 or current_player.world_item2_remaining > 0 or current_player.world_item3_remaining > 0 or current_player.world_item4_remaining > 0)}:
     divertercontrol_leftloop_close
     divertercontrol_rightloop_enable
-  #  nightmode_disable
 
 
 

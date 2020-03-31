@@ -25,7 +25,7 @@ sound_player:
 
 variable_player:
   #setup environment variables
-  mode_world3_started:  
+  mode_world3_started{current_player.world3_setup==0}:  
     #World Settings
     world_id:
       int: 3
@@ -44,8 +44,8 @@ variable_player:
     world_item1_color:
       string: "BLUE"
       action: set 
-    world_item1_needed:
-      int: 3
+    world_item1_remaining:
+      int: 9
       action: set
 
     #Item 2 Settings
@@ -55,8 +55,8 @@ variable_player:
     world_item2_color:
       string: "GRAY"
       action: set 
-    world_item2_needed:
-      int: 3
+    world_item2_remaining:
+      int: 9
       action: set
 
     #Item 3 Settings
@@ -66,8 +66,8 @@ variable_player:
     world_item3_color:
       string: "BROWN"
       action: set 
-    world_item3_needed:
-      int: 3
+    world_item3_remaining:
+      int: 9
       action: set
 
     #Item 4 Settings
@@ -77,93 +77,13 @@ variable_player:
     world_item4_color:
       string: "SLATEGRAY"
       action: set 
-    world_item4_needed:
-      int: 3
-      action: set
-
-  logicblock_wc3_item1_counter_updated:
-    world_item1_remaining:
-      int: value
-      action: set
-  logicblock_wc3_item2_counter_updated:
-    world_item2_remaining:
-      int: value
-      action: set
-  logicblock_wc3_item3_counter_updated:
-    world_item3_remaining:
-      int: value
-      action: set
-  logicblock_wc3_item4_counter_updated:
     world_item4_remaining:
-      int: value
+      int: 9
       action: set
 
-counters:
-  wc3_item1_counter:
-    count_events: collectitem1_hit
-    reset_on_complete: False
-    starting_count: 3
-    count_complete_value: 0
-    direction: down
-    persist_state: true
-    events_when_complete: w3_itemcheckcomplete
-    multiple_hit_window: 500ms
-    enable_events: mode_world3_started
-  wc3_item2_counter:
-    count_events: collectitem2_hit
-    reset_on_complete: False
-    starting_count: 3
-    count_complete_value: 0
-    direction: down
-    persist_state: true
-    events_when_complete: w3_itemcheckcomplete
-    multiple_hit_window: 500ms
-    enable_events: mode_world3_started
-  wc3_item3_counter:
-    count_events: collectitem3_hit
-    reset_on_complete: False
-    starting_count: 3
-    count_complete_value: 0
-    direction: down
-    persist_state: true
-    events_when_complete: w3_itemcheckcomplete
-    multiple_hit_window: 500ms
-    enable_events: mode_world3_started
-  wc3_item4_counter:
-    count_events: collectitem4_hit
-    reset_on_complete: False
-    starting_count: 3
-    count_complete_value: 0
-    direction: down
-    persist_state: true
-    events_when_complete: w3_itemcheckcomplete
-    multiple_hit_window: 500ms
-    enable_events: mode_world3_started
+    #Mark World as Setup
+    world3_setup: 1
 
 event_player:
-  mode_world3_started:
-    world3_started
-    w3_itemcheckcomplete
-
-  w3_itemcheckcomplete{current_player.world_item1_remaining == 0 and current_player.world_item2_remaining == 0 and current_player.world_item3_remaining == 0 and current_player.world_item4_remaining == 0}:
+   world_collected:
     world3_collected
-
-  w3_itemcheckcomplete{current_player.world_item1_remaining > 0}:
-    collectitem1_enabled
-  w3_itemcheckcomplete{current_player.world_item1_remaining == 0}:
-    collectitem1_disabled
-  
-  w3_itemcheckcomplete{current_player.world_item2_remaining > 0}:
-    collectitem2_enabled
-  w3_itemcheckcomplete{current_player.world_item2_remaining == 0}:
-    collectitem2_disabled
-
-  w3_itemcheckcomplete{current_player.world_item3_remaining > 0}:
-    collectitem3_enabled
-  w3_itemcheckcomplete{current_player.world_item3_remaining == 0}:
-    collectitem3_disabled
-
-  w3_itemcheckcomplete{current_player.world_item4_remaining > 0}:
-    collectitem4_enabled
-  w3_itemcheckcomplete{current_player.world_item4_remaining == 0}:
-    collectitem4_disabled

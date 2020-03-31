@@ -1385,6 +1385,26 @@ player_vars:
     initial_value: 0
     value_type: int
 
+  world1_setup:
+    initial_value: 0
+    value_type: int
+
+  world2_setup:
+    initial_value: 0
+    value_type: int
+
+  world3_setup:
+    initial_value: 0
+    value_type: int
+
+  world4_setup:
+    initial_value: 0
+    value_type: int
+
+  world5_setup:
+    initial_value: 0
+    value_type: int
+
   #Item 1 Variables
   world_item1_name:
     initial_value: "none"
@@ -1393,10 +1413,6 @@ player_vars:
   world_item1_color:
     initial_value: "white"
     value_type: str
-
-  world_item1_needed:
-    initial_value: 0
-    value_type: int
 
   world_item1_remaining:
     initial_value: 0
@@ -1411,10 +1427,6 @@ player_vars:
     initial_value: "white"
     value_type: str
 
-  world_item2_needed:
-    initial_value: 0
-    value_type: int
-
   world_item2_remaining:
     initial_value: 0
     value_type: int
@@ -1428,10 +1440,6 @@ player_vars:
     initial_value: "white"
     value_type: str
 
-  world_item3_needed:
-    initial_value: 0
-    value_type: int
-
   world_item3_remaining:
     initial_value: 0
     value_type: int
@@ -1444,10 +1452,6 @@ player_vars:
   world_item4_color:
     initial_value: "white"
     value_type: str
-
-  world_item4_needed:
-    initial_value: 0
-    value_type: int
 
   world_item4_remaining:
     initial_value: 0
@@ -1518,6 +1522,7 @@ modes:
   - world4
   - world5
   - world6
+  - worldcontroller
   - bonus
   - bonusdisplay
   - villagermb

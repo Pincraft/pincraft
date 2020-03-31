@@ -1,93 +1,121 @@
 #config_version=5
 mode:
-    start_events:  mode_world2_started, mode_world3_started, mode_world4_started, mode_world5_started, mode_world6_started
-    stop_events:  mode_world2_ending, mode_world3_ending, mode_world4_ending, mode_world5_ending, mode_world6_ending
+    start_events:  mode_world1_started, mode_world2_started, mode_world3_started, mode_world4_started, mode_world5_started
+    stop_events:  mode_world1_stopped, mode_world2_stopped, mode_world3_stopped, mode_world4_stopped, mode_world5_stopped
     priority: 550
 
+shot_profiles:
+  collectshot:
+    states:
+      - name: lit
+        show: on
 
+shots:
+  collectitem1:
+    switch: s_collectitem1
+    profile: collectshot
+    show_tokens:
+      leds: l_collectitem1
+    enable_events: collectitem1_enabled
+    disable_events: collectitem1_disabled
+  collectitem2:
+    switch: s_collectitem2
+    profile: collectshot
+    show_tokens:
+      leds: l_collectitem2
+    enable_events: collectitem2_enabled
+    disable_events: collectitem2_disabled
+  collectitem3:
+    switch: s_collectitem4
+    profile: collectshot
+    show_tokens:
+      leds: l_collectitem4
+    enable_events: collectitem3_enabled
+    disable_events: collectitem3_disabled
+  collectitem4:
+    switch: s_collectitem5
+    profile: collectshot
+    show_tokens:
+      leds: l_collectitem5
+    enable_events: collectitem4_enabled
+    disable_events: collectitem4_disabled
 
-counters:
-  wc_item1_counter:
-    count_events: collectitem1_hit
-    reset_on_complete: False
-    starting_count: current_player.world_item1_needed
-    count_complete_value: 0
-    direction: down
-    persist_state: true
-    events_when_complete: itemcheckcomplete
-    multiple_hit_window: 500ms
-    reset_events: world_started
-    enable_events: world_started
-  wc_item2_counter:
-    count_events: collectitem2_hit
-    reset_on_complete: False
-    starting_count: current_player.world_item2_needed
-    count_complete_value: 0
-    direction: down
-    persist_state: true
-    events_when_complete: itemcheckcomplete
-    multiple_hit_window: 500ms
-    reset_events: world_started
-    enable_events: world_started
-  wc_item3_counter:
-    count_events: collectitem4_hit
-    reset_on_complete: False
-    starting_count: current_player.world_item3_needed
-    count_complete_value: 0
-    direction: down
-    persist_state: true
-    events_when_complete: itemcheckcomplete
-    multiple_hit_window: 500ms
-    reset_events: world_started
-    enable_events: world_started
-  wc_item4_counter:
-    count_events: collectitem5_hit
-    reset_on_complete: False
-    starting_count: current_player.world_item4_needed
-    count_complete_value: 0
-    direction: down
-    persist_state: true
-    events_when_complete: itemcheckcomplete
-    multiple_hit_window: 500ms
-    reset_events: world_started
-    enable_events: world_started
 
 variable_player:
-  logicblock_wc_item1_counter_updated:
-    wc_item1_counter_count:
-      int: value
-      action: set
-  logicblock_wc_item2_counter_updated:
-    wc_item2_counter_count:
-      int: value
-      action: set
-  logicblock_wc_item3_counter_updated:
-    wc_item3_counter_count:
-      int: value
-      action: set
-  logicblock_wc_item4_counter_updated:
-    wc_item4_counter_count:
-      int: value
-      action: set
-  
+ #COLLECT ITEM 1 HIT
+  collectitem1_hit:
+    world_item1_remaining: -1 * current_player.shovel
 
+  collectitem1_hit{current_player.world_item1_remaining < 0}:
+    world_item1_remaining:
+      int: 0
+      action: set
+
+  #COLLECT ITEM 2 HIT
+  collectitem2_hit:
+    world_item2_remaining: -1 * current_player.pickaxe
+
+  collectitem2_hit{current_player.world_item2_remaining < 0}:
+    world_item2_remaining:
+      int: 0
+      action: set
+
+  #COLLECT ITEM 3 HIT
+  collectitem3_hit:
+    world_item3_remaining: -1 * current_player.pickaxe
+
+  collectitem3_hit{current_player.world_item3_remaining < 0}:
+    world_item3_remaining:
+      int: 0
+      action: set
+
+  #COLLECT ITEM 4 HIT
+  collectitem4_hit:
+    world_item4_remaining: -1 * current_player.axe
+
+  collectitem4_hit{current_player.world_item4_remaining < 0}:
+    world_item4_remaining:
+      int: 0
+      action: set
 
 event_player:
-  itemcheckcomplete{current_player.world_id==1 and current_player.wc_item1_counter_count == 0 and current_player.wc_item2_counter_count == 0 and current_player.wc_item3_counter_count == 0 and current_player.wc_item4_counter_count == 0}:
-    world1_completed
-  itemcheckcomplete{current_player.world_id==2 and current_player.wc_item1_counter_count == 0 and current_player.wc_item2_counter_count == 0 and current_player.wc_item3_counter_count == 0 and current_player.wc_item4_counter_count == 0}:
-    world2_completed
-  itemcheckcomplete{current_player.world_id==3 and current_player.wc_item1_counter_count == 0 and current_player.wc_item2_counter_count == 0 and current_player.wc_item3_counter_count == 0 and current_player.wc_item4_counter_count == 0}:
-    world3_completed
-  itemcheckcomplete{current_player.world_id==4 and current_player.wc_item1_counter_count == 0 and current_player.wc_item2_counter_count == 0 and current_player.wc_item3_counter_count == 0 and current_player.wc_item4_counter_count == 0}:
-    world4_completed
-  itemcheckcomplete{current_player.world_id==5 and current_player.wc_item1_counter_count == 0 and current_player.wc_item2_counter_count == 0 and current_player.wc_item3_counter_count == 0 and current_player.wc_item4_counter_count == 0}:
-    world5_completed
-  itemcheckcomplete{current_player.world_id==6 and current_player.wc_item1_counter_count == 0 and current_player.wc_item2_counter_count == 0 and current_player.wc_item3_counter_count == 0 and current_player.wc_item4_counter_count == 0}:
-    world6_completed
+  mode_worldcontroller_started:
+    world_itemcheckcomplete
+
+  collectitem1_hit:
+    world_itemcheckcomplete
+
+  collectitem2_hit:
+    world_itemcheckcomplete
+
+  collectitem3_hit:
+    world_itemcheckcomplete
+
+  collectitem4_hit:
+    world_itemcheckcomplete
+
+
+  world_itemcheckcomplete{current_player.world_item1_remaining == 0 and current_player.world_item2_remaining == 0 and current_player.world_item3_remaining == 0 and current_player.world_item4_remaining == 0}:
+    world_collected
+
+  world_itemcheckcomplete{current_player.world_item1_remaining > 0}:
+    collectitem1_enabled
+  world_itemcheckcomplete{current_player.world_item1_remaining == 0}:
+    collectitem1_disabled
   
+  world_itemcheckcomplete{current_player.world_item2_remaining > 0}:
+    collectitem2_enabled
+  world_itemcheckcomplete{current_player.world_item2_remaining == 0}:
+    collectitem2_disabled
 
+  world_itemcheckcomplete{current_player.world_item3_remaining > 0}:
+    collectitem3_enabled
+  world_itemcheckcomplete{current_player.world_item3_remaining == 0}:
+    collectitem3_disabled
 
-
+  world_itemcheckcomplete{current_player.world_item4_remaining > 0}:
+    collectitem4_enabled
+  world_itemcheckcomplete{current_player.world_item4_remaining == 0}:
+    collectitem4_disabled
 
 

@@ -4,14 +4,10 @@ mode:
     priority: 100
 
 shot_profiles:
-    flashjackpot:
-      states:
-        - name: lit
-          show: "flash"
-    collectshot:
-      states:
-        - name: lit
-          show: on
+  flashjackpot:
+    states:
+      - name: lit
+        show: "flash"
 
 #Extra Balls
 extra_balls:
@@ -33,34 +29,7 @@ shots:
       leds: l_worldtarget
     enable_events: world_jackpot_enable
     disable_events: world_jackpot_disable
-  collectitem1:
-    switch: s_collectitem1
-    profile: collectshot
-    show_tokens:
-      leds: l_collectitem1
-    enable_events: collectitem1_enabled
-    disable_events: collectitem1_disabled
-  collectitem2:
-    switch: s_collectitem2
-    profile: collectshot
-    show_tokens:
-      leds: l_collectitem2
-    enable_events: collectitem2_enabled
-    disable_events: collectitem2_disabled
-  collectitem3:
-    switch: s_collectitem4
-    profile: collectshot
-    show_tokens:
-      leds: l_collectitem4
-    enable_events: collectitem3_enabled
-    disable_events: collectitem3_disabled
-  collectitem4:
-    switch: s_collectitem5
-    profile: collectshot
-    show_tokens:
-      leds: l_collectitem5
-    enable_events: collectitem4_enabled
-    disable_events: collectitem4_disabled
+ 
   # Collect Item Special moved to Extra Ball Mode
 
 event_player:
