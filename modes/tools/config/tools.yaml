@@ -195,13 +195,13 @@ light_player:
     l_bonus5x: Teal
 
 event_player:
-  mode_tools_started:
-    - display_tools
-
   mode_tools_started{current_player.crafting_enabled==0}:
     - crafting_disable
+    - display_tools
+
   mode_tools_started{current_player.crafting_enabled==1}:
     - crafting_lit
+    - display_tools
 
   toolcollect_complete:
     - recalculate_tools

@@ -45,6 +45,10 @@ variable_player:
  #COLLECT ITEM 1 HIT
   collectitem1_hit:
     world_item1_remaining: -1 * current_player.shovel
+    score: 10000 * current_player.shovel * current_player.multiplier_mb
+    bonus_items: 1 * current_player.shovel
+    world_jackpot_items: 1 * current_player.shovel
+    world_jackpot_base: 1000 * current_player.shovel
 
   collectitem1_hit{current_player.world_item1_remaining < 0}:
     world_item1_remaining:
@@ -54,6 +58,10 @@ variable_player:
   #COLLECT ITEM 2 HIT
   collectitem2_hit:
     world_item2_remaining: -1 * current_player.pickaxe
+    score: 10000 * current_player.multiplier_mb * current_player.pickaxe
+    bonus_items: 1* current_player.multiplier_mb
+    world_jackpot_items: 1* current_player.multiplier_mb
+    world_jackpot_base: 1000* current_player.multiplier_mb
 
   collectitem2_hit{current_player.world_item2_remaining < 0}:
     world_item2_remaining:
@@ -63,6 +71,10 @@ variable_player:
   #COLLECT ITEM 3 HIT
   collectitem3_hit:
     world_item3_remaining: -1 * current_player.pickaxe
+    score: 10000 * current_player.pickaxe * current_player.multiplier_mb
+    bonus_items: 1 * current_player.pickaxe
+    world_jackpot_items: 1 * current_player.pickaxe
+    world_jackpot_base: 1000 * current_player.pickaxe
 
   collectitem3_hit{current_player.world_item3_remaining < 0}:
     world_item3_remaining:
@@ -72,11 +84,18 @@ variable_player:
   #COLLECT ITEM 4 HIT
   collectitem4_hit:
     world_item4_remaining: -1 * current_player.axe
-
+    score: 10000 * current_player.axe * current_player.multiplier_mb
+    bonus_items: 1 * current_player.axe
+    world_jackpot_items: 1 * current_player.axe
+    world_jackpot_base: 1000 * current_player.axe
+    
   collectitem4_hit{current_player.world_item4_remaining < 0}:
     world_item4_remaining:
       int: 0
       action: set
+
+  #TODO: Bug - Will receive move items and points than available items 
+
 
 event_player:
   mode_worldcontroller_started:

@@ -248,34 +248,8 @@ variable_player:
     score: 4000 * current_player.multiplier_mb
     world_jackpot_base: 1000
 
-  collectitem1_hit:
-    score: 10000 * current_player.multiplier_mb
-    bonus_items: 1
-    world_jackpot_items: 1
-    world_jackpot_base: 1000
-  collectitem2_hit:
-    score: 10000 * current_player.multiplier_mb
-    bonus_items: 1
-    world_jackpot_items: 1
-    world_jackpot_base: 1000
-  collectitem3_hit:
-    score: 10000 * current_player.multiplier_mb
-    world_jackpot_base: 1000
-  collectitem4_hit:
-    score: 10000 * current_player.multiplier_mb
-    bonus_items: 1
-    world_jackpot_items: 1
-    world_jackpot_base: 1000
-  collectitem5_hit:
-    score: 10000 * current_player.multiplier_mb
-    bonus_items: 1
-    world_jackpot_items: 1
-    world_jackpot_base: 1000
-
   s_right_outlane_active:
     score: 5000 * current_player.multiplier_mb
-  #s_centertarget_active:
-  #  score: 10000 * current_player.multiplier_mb
   s_rightsling_active:
     score: 100 * current_player.multiplier_mb
   s_leftsling_active:
