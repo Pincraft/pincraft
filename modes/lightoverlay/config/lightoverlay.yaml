@@ -66,6 +66,35 @@ show_player:
     show_rightslinghit:
       loops: 0
       speed: 20
+  s_whitedot1_active:
+    show_singlelight:
+      loops: 0
+      speed: 5
+      show_tokens:
+        light: l_craft1
+        color: blue
+  s_whitedot2_active:
+    show_singlelight:
+      loops: 0
+      speed: 5
+      show_tokens:
+        light: l_craft2
+        color: blue
+  s_whitedot3_active:
+    show_singlelight:
+      loops: 0
+      speed: 5
+      show_tokens:
+        light: l_craft3
+        color: blue
+  s_whitedot4_active:
+    show_singlelight:
+      loops: 0
+      speed: 5
+      show_tokens:
+        light: l_craft4
+        color: blue
+
 
 variable_player:
   popbumper1_hit: 

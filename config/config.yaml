@@ -1496,6 +1496,10 @@ player_vars:
     initial_value: 0
     value_type: int
 
+  crafting_ready:
+    initial_value: 0
+    value_type: int
+
 # SLIDES CONFIGURATION
 #--------------------------------------------
 slides:

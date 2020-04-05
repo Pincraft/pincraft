@@ -4,20 +4,42 @@ mode:
     stop_events: mode_base_ended
     priority: 2000
 
-#+ Loops Disabled / left gate is closed (drop target stays up all times)
-#+ left loop is enabled (drop target down, right gate open)
-#+ right loop is enabled (left gate open, drop target down)
-#+ both loops enabled
+#STATES:
+# World Travel
+#   - Left Loop Open / Drop Down Down
+#   - Right Loop Open
+#   - Travel Diverter Enabled      
 
-#+ crafting is enabled (no gates open, drop target down)
-#+ mode start is enabled  (left loop to diverter to scoop)
+# World Villager
+#   - Left Loop Closed / Drop Down Down
+#   - Right Loop Closed
+
+# World Tools
+#    - Left Loop Closed / Drop Down Down
+#    - Right Loop Open    
+
+# World Running
+#    - Left Loop Closed / Drop Down Up
+#    - Right Loop Open
+
+# Multiball Villager
+#   - Left Loop Closed / Drop Down Up
+#   - Right Loop Open
+
+# Multiball Night
+#   - Left Loop Open
+#   - Right Loop Open
+
+# Multiball End
+
 
 state_machines:
-  diverter_status:
+  diverterstate:
     persist_state: true
     states:
       start:
         label: No State Initalized
+        events_when_started: divertercontrol_statechange
       world_travel:
         label: Travel is enabled to next world
         events_when_started: divertercontrol_statechange, divertercontrol_worldtravel_enabled
@@ -40,6 +62,9 @@ state_machines:
         label: End Mode is running
         events_when_started: divertercontrol_statechange, divertercontrol_multiball_endmode_enabled
     transitions:
+      - source: start
+        target: start
+        events: mode_divertercontrol_started
       - source: start, world_villager, world_tools, world_running, multiball_villager, multiball_night, multiball_endmode       #world_travel
         target: world_travel
         events: divertercontrol_worldtravel_requested
@@ -121,33 +146,45 @@ state_machines:
 
 #DEBUGGING LIGHT PLAYER TO CHECK MODES
 light_player:
-  divertercontrol_statechange{current_player.state_machine_diverter_status_state=="start":
-    gi_specialitem2: white
-    gi_captivetop: white
-  divertercontrol_statechange{current_player.state_machine_diverter_status_state=="world_travel":
+  #Start State
+  divertercontrol_statechange{current_player.state_machine_diverterstate=="start"}:
+    gi_specialitem2: yellow
+    gi_captivetop: yellow
+
+  #World Travel
+  divertercontrol_statechange{current_player.state_machine_diverterstate=="world_travel"}:
     gi_specialitem2: blue
     gi_captivetop: white
-  divertercontrol_statechange{current_player.state_machine_diverter_status_state=="world_villager":
+
+  #World Villager
+  divertercontrol_statechange{current_player.state_machine_diverterstate=="world_villager"}:
     gi_specialitem2: purple
     gi_captivetop: white
-  divertercontrol_statechange{current_player.state_machine_diverter_status_state=="world_tools":
+  
+  #World Tools
+  divertercontrol_statechange{current_player.state_machine_diverterstate=="world_tools"}:
     gi_specialitem2: yellow
     gi_captivetop: white
-  divertercontrol_statechange{current_player.state_machine_diverter_status_state=="world_running":
+  
+  #World Running
+  divertercontrol_statechange{current_player.state_machine_diverterstate=="world_running"}:
     gi_specialitem2: green
     gi_captivetop: white
-  divertercontrol_statechange{current_player.state_machine_diverter_status_state=="multiball_villager":
+
+  #Multiball Villager
+  divertercontrol_statechange{current_player.state_machine_diverterstate=="multiball_villager"}:
     gi_specialitem2: white
     gi_captivetop: purple
-  divertercontrol_statechange{current_player.state_machine_diverter_status_state=="multiball_night":
+
+  #Multiball Night
+  divertercontrol_statechange{current_player.state_machine_diverterstate=="multiball_night"}:
     gi_specialitem2: white
     gi_captivetop: blue
-  divertercontrol_statechange{current_player.state_machine_diverter_status_state=="multiball_endmode":
+  
+  #Multiball End
+  divertercontrol_statechange{current_player.state_machine_diverterstate=="multiball_endmode"}:
     gi_specialitem2: white
     gi_captivetop: red
-
-
-
 
 #light_player:
   # leftloop_statechange{current_player.state_machine_leftloop_state=="closed"}:
@@ -236,10 +273,8 @@ event_player:
 #======================================================
 # WE WILL CONTROL ALL DIVERTER CONTROL ACTIVITIES HERE     
 #======================================================
-  ball_starting:
-    divertercontrol_checkworldstate
   mode_divertercontrol_started:
-    divertercontrol_checkworldstate
+    - divertercontrol_checkworldstate
 
 #check the following:
 # -------------------------------------
@@ -252,7 +287,7 @@ event_player:
   multiball_nightmb_ended:
     divertercontrol_checkworldstate
 
-# Is Villager MB Running?
+ # Is Villager MB Running?
   multiball_villagermb_started:
     divertercontrol_multiball_villager_requested
   multiball_villagermb_ended:
@@ -263,15 +298,17 @@ event_player:
 # -------------------------------------
 
 # Is Travel Ready?
-  divertercontrol_checkworldstate{current_player.world_id > 0 and current_player.multiplier_mb==1 and current_player.world_item1_remaining == 0 and current_player.world_item2_remaining == 0 and current_player.world_item3_remaining == 0 and current_player.world_item4_remaining == 0}:
+  divertercontrol_checkworldstate{current_player.multiplier_mb==1 and current_player.world_id > 0 and current_player.world_item1_remaining == 0 and current_player.world_item2_remaining == 0 and current_player.world_item3_remaining == 0 and current_player.world_item4_remaining == 0}:
     divertercontrol_worldtravel_requested
 
 # Is Villager MB Ready?
   villagermultiball_ready{current_player.world_item1_remaining > 0 or current_player.world_item2_remaining > 0 or current_player.world_item3_remaining > 0 or current_player.world_item4_remaining > 0}:
     divertercontrol_worldvillager_requested
+
 # Is Tools Ready?
-  crafting_lit{current_player.diverter_status_state=="world_running"}:                           #TODO: THIS WILL NOT WORK
+  crafting_lit{current_player.multiplier_mb==1 and current_player.diverter_status_state=="world_running"}:                           #TODO: THIS WILL NOT WORK
     divertercontrol_worldtools_requested 
+    
 # -> None Ready?
 
 

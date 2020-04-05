@@ -50,7 +50,7 @@ event_player:
     item_collected
 
   #ENABLE VILLAGER MULTIBALL 
-  logicblock_counter_villagermultiball_complete:
+  logicblock_counter_villagermultiball_complete{current_player.world_item1_remaining > 0 or current_player.world_item2_remaining > 0 or current_player.world_item3_remaining > 0 or current_player.world_item4_remaining > 0}:
     villagermultiball_ready
 
 
@@ -465,6 +465,17 @@ slides:
         font_name: ARLRDBD
         font_size: 25
         y: top-100
+        x: left+100
+        z: 100
+        anchor_x: left
+        anchor_y: top
+      - type: text        #WORLD JACKPOT
+        text: Crafting Enabled - (player|crafting_enabled) | Crafting Ready - (player|crafting_ready)
+        number_grouping: true
+        min_digits: 2
+        font_name: ARLRDBD
+        font_size: 25
+        y: top-150
         x: left+100
         z: 100
         anchor_x: left
