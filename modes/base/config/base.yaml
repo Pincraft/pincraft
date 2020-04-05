@@ -110,6 +110,9 @@ event_player:
   multiball_nightmb_ended{current_player.world_id==5}:
     world6_start
 
+  world_collected{current_player.multiplier_mb==1}:
+    nightmode_ready
+    villagermb_disable
   world1_collected{current_player.multiplier_mb==1}:
     nightmode_ready
     villagermb_disable
@@ -314,6 +317,10 @@ light_player:
     lgi:
       color: white
     lfeature: off
+  world1_collected:
+    l_spinnerflash1: red
+  world_collected:
+    l_spinnerflash2: red
   spinner_hit{device.counters.counter_villagermultiball.value>=4 and device.counters.counter_villagermultiball.value<8}: #LEVEL 1000
     l_spinner1: green
     l_spinner2: off

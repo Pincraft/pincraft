@@ -27,7 +27,7 @@ mode:
 #   - Right Loop Open
 
 # Multiball Night
-#   - Left Loop Open
+#   - Left Loop Open / Drop Down Down
 #   - Right Loop Open
 
 # Multiball End
@@ -87,61 +87,7 @@ state_machines:
         target: multiball_endmode
         events: divertercontrol_multiball_endmode_requested
 
-  # leftloop_state:
-  #   persist_state: true
-  #   states:
-  #     start:
-  #       label: Left Loop Start
-  #     closed:
-  #       label: Left Loop Door Closed
-  #       events_when_started: leftloop_closed, leftloop_statechange, divertercontrol_disableleftloop
-  #     disabled:
-  #       label: Left Loop Door Open / Loop Disabled
-  #       events_when_started: leftloop_disabled, leftloop_statechange, diverter_dropupperdrop
-  #     enabled:
-  #       label: Left Loop Door Open / Loop Enabled
-  #       events_when_started: leftloop_enabled, leftloop_statechange, diverter_dropupperdrop
-  #     travel:
-  #       label: Left Loop Door Open / Loop Enabled / Diverter Enabled
-  #       events_when_started: leftloop_travel, leftloop_statechange, diverter_dropupperdrop
-  #   transitions:
-  #     - source: start                         #Inital State
-  #       target: closed
-  #       events: mode_divertercontrol_started
-  #     - source: disabled,enabled,travel       #Close Left Loop
-  #       target: closed
-  #       events: divertercontrol_leftloop_close
-  #     - source: closed,enabled,travel         #Disable Left Loop
-  #       target: disabled
-  #       events: divertercontrol_leftloop_disable 
-  #     - source: closed,disabled,travel         #Enable Left Loop
-  #       target: enabled
-  #       events: divertercontrol_leftloop_enable 
-  #     - source: closed,disabled,enabled         #Travel Left Loop
-  #       target: travel
-  #       events: divertercontrol_leftloop_travel
-      
-  # rightloop_state:
-  #   persist_state: true
-  #   states:
-  #     start:
-  #       label: Right Loop Start 
-  #     disabled:
-  #       label: Right Loop Disabled
-  #       events_when_started: rightloop_disabled, rightloop_statechange
-  #     enabled:
-  #       label: Right Loop Enabled
-  #       events_when_started: rightloop_enabled, rightloop_statechange
-  #   transitions:
-  #     - source: start
-  #       target: enabled
-  #       events: mode_divertercontrol_started
-  #     - source: enabled                     #Disable Right Loop
-  #       target: disabled
-  #       events: divertercontrol_rightloop_disable
-  #     - source: disabled                    #Enable Right Loop
-  #       target: enabled
-  #       events: divertercontrol_rightloop_enable
+
 
 
 #DEBUGGING LIGHT PLAYER TO CHECK MODES
@@ -201,79 +147,106 @@ light_player:
   # rightloop_statechange{current_player.state_machine_rightloop_state=="enabled"}:
   #   gi_captivetop: green
 
-# timers:
-#   #Left Drop Target Down
-#   leftdropreset:
-#     start_value: 0
-#     end_value: 1
-#     direction: up
-#     control_events:
-#       - action: start
-#         event: divertercontrol_disableleftloop
-#       - action: restart
-#         event: drop_target_dt_upperdrop_down
-#       - action: restart
-#         event: diverter_rightloophit
+timers:
+  #CHECK STATE EVERY SECOND TO ADJUST DIVERTERS
+  checkstate:
+    start_value: 0
+    end_value: 1000
+    direction: up
+    control_events:
+      - action: start
+        event: mode_divertercontrol_started
+      - action: restart
+        event: timer_checkstate_complete
 
-#   #Right Loop Events
-#   leftgateclose:
-#     start_value: 0
-#     end_value: 1
-#     direction: up
-#     control_events:
-#       - action: restart
-#         event: diverter_rightloophit
+  #Left Drop Target Down
+  leftdropreset:
+    start_value: 0
+    end_value: 1
+    direction: up
+    control_events:
+      - action: restart
+        event: drop_target_dt_upperdrop_down
+      - action: restart
+        event: diverter_rightloophit
+
+  #Right Loop Events
+  leftgateclose:
+    start_value: 0
+    end_value: 1
+    direction: up
+    control_events:
+      - action: restart
+        event: diverter_rightloophit
       
-#   #Left Loop Events
-#   rightgateclose:
-#     start_value: 0
-#     end_value: 1
-#     direction: up
-#     control_events:
-#       - action: restart
-#         event: diverter_leftloophit
+  #Left Loop Events
+  rightgateclose:
+    start_value: 0
+    end_value: 1
+    direction: up
+    control_events:
+      - action: restart
+        event: diverter_leftloophit
 
-# coil_player:
-#   diverter_rightloophit:
-#     c_upperleftgate: enable
-#   timer_leftgateclose_complete:
-#     c_upperleftgate: disable
+coil_player:
+  diverter_rightloophit:
+    c_upperleftgate: enable
+  timer_leftgateclose_complete:
+    c_upperleftgate: disable
 
-#   diverter_leftloophit:
-#     c_upperrightgate: enable
-#   timer_rightgateclose_complete:
-#     c_upperrightgate: disable
+  diverter_leftloophit:
+    c_upperrightgate: enable
+  timer_rightgateclose_complete:
+    c_upperrightgate: disable
 
-# shots:
-#   loopright:
-#     switch: s_loopright
-#   loopleft:
-#     switch: s_loopleft
+shots:
+  loopright:
+    switch: s_loopright
+  loopleft:
+    switch: s_loopleft
 
 event_player:
   #======================================================
   # LOOP CONTROL EVENTS    
   #======================================================
 
-  # #Left Loop Disabled Events
-  # timer_leftdropreset_complete{current_player.state_machine_leftloop_state=="closed"}:
-  #   diverter_resetupperdrop
+  #Left Loop Drop Reset Events
+  timer_leftdropreset_complete{current_player.state_machine_diverterstate=="world_running"}: diverter_resetupperdrop
+  timer_leftdropreset_complete{current_player.state_machine_diverterstate=="multiball_villager"}: diverter_resetupperdrop
   
-  # #Left Loop Enabled Events
-  # divertercontrol_enableleftloop:
-  #   diverter_dropupperdrop
+  #Left Loop Drop Up Events
+  divertercontrol_statechange{current_player.state_machine_diverterstate=="world_running"}: diverter_resetupperdrop
+  divertercontrol_statechange{current_player.state_machine_diverterstate=="multiball_villager"}: diverter_resetupperdrop
 
-  # #Right Loop Hit Events:
-  # loopright_hit{current_player.state_machine_rightloop_state=="enabled"}: diverter_rightloophit, diverter_dropupperdrop
+  #Left Loop Drop Down Events
+  divertercontrol_statechange{current_player.state_machine_diverterstate=="world_travel"}: 
+    - diverter_dropupperdrop
+    - diverter_travel_enabled
+  divertercontrol_statechange{current_player.state_machine_diverterstate=="world_villager"}: diverter_dropupperdrop
+  divertercontrol_statechange{current_player.state_machine_diverterstate=="world_tools"}: diverter_dropupperdrop
+  divertercontrol_statechange{current_player.state_machine_diverterstate=="multiball_night"}: diverter_dropupperdrop
+
+  #Right Loop Hit Events:
+  loopright_hit{current_player.state_machine_diverterstate=="world_travel"}: diverter_rightloophit, diverter_dropupperdrop
+  loopright_hit{current_player.state_machine_diverterstate=="world_tools"}: diverter_rightloophit, diverter_dropupperdrop
+  loopright_hit{current_player.state_machine_diverterstate=="world_running"}: diverter_rightloophit, diverter_dropupperdrop
+  loopright_hit{current_player.state_machine_diverterstate=="multiball_villager"}: diverter_rightloophit, diverter_dropupperdrop
+  loopright_hit{current_player.state_machine_diverterstate=="multiball_night"}: diverter_rightloophit, diverter_dropupperdrop
  
-  # #Left Loop Hit Events:
-  # loopleft_hit{current_player.state_machine_leftloop_state=="enabled"}: diverter_leftloophit
-  # loopleft_hit{current_player.state_machine_leftloop_state=="travel"}: diverter_leftloophit, diverter_leftlooptravelhit
+  #Left Loop Hit Events:
+  loopleft_hit{current_player.state_machine_diverterstate=="multiball_night"}: diverter_leftloophit
+  loopleft_hit{current_player.state_machine_diverterstate=="world_travel"}: diverter_leftloophit, diverter_leftlooptravelhit
+
+  #DIVERTER CONTROL
+  divertercontrol_statechange{current_player.state_machine_diverterstate!="world_travel"}:
+    diverter_travel_disabled
+
 
 #======================================================
 # WE WILL CONTROL ALL DIVERTER CONTROL ACTIVITIES HERE     
 #======================================================
   mode_divertercontrol_started:
+    - divertercontrol_statechange
     - divertercontrol_checkworldstate
 
 #check the following:
@@ -306,75 +279,18 @@ event_player:
     divertercontrol_worldvillager_requested
 
 # Is Tools Ready?
-  crafting_lit{current_player.multiplier_mb==1 and current_player.diverter_status_state=="world_running"}:                           #TODO: THIS WILL NOT WORK
+  divertercontrol_checkworldstate{current_player.multiplier_mb==1 and current_player.crafting_enabled==1}:                           #TODO: THIS WILL NOT WORK
     divertercontrol_worldtools_requested 
-    
+
 # -> None Ready?
+  divertercontrol_checkworldstate{current_player.multiplier_mb==1 and current_player.world_id > 0 and current_player.crafting_enabled==0 and (current_player.world_item1_remaining > 0 or current_player.world_item2_remaining > 0 or current_player.world_item3_remaining > 0 or current_player.world_item4_remaining > 0)}:
+    divertercontrol_worldrunning_requested
 
+  #CHECK STATE AT INTERVAL
+  timer_checkstate_tick:
+    divertercontrol_checkworldstate
 
-  # ball_started:
-  #   divertercontrol_checkworldstate
-  # world1_started:
-  #   divertercontrol_checkworldstate
-  # world1_collected:
-  #   divertercontrol_checkworldstate
-
-  # world2_started:
-  #   divertercontrol_checkworldstate
-  # world2_collected:
-  #   divertercontrol_checkworldstate
-
-  # world3_started:
-  #   divertercontrol_checkworldstate
-  # world3_collected:
-  #   divertercontrol_checkworldstate
-
-  # world4_started:
-  #   divertercontrol_checkworldstate
-  # world4_collected:
-  #   divertercontrol_checkworldstate
-
-  # world5_started:
-  #   divertercontrol_checkworldstate
-  # world5_collected:
-  #   divertercontrol_checkworldstate
-
-  # multiball_villagermb_ended:
-  #   divertercontrol_checkworldstate
-  # multiball_nightmb_ended:
-  #   divertercontrol_checkworldstate
-
-
-  # #Villager Multiball Tangent
-  # #<< Villager Multiball Ready
-  # villagermultiball_ready:
-  #   divertercontrol_leftloop_disable
-  #   divertercontrol_rightloop_disable
-
-  # #<< Villager Multiball Started
-  # villagermultiball_start:
-  #  divertercontrol_checkworldstate
-  # villagermb_disable:
-  #   divertercontrol_checkworldstate
-
-  # nightmode_ready:
-  #   divertercontrol_checkworldstate
-  # nightmode_start:
-  #   divertercontrol_checkworldstate
-  
-  # #>> MULTIBALL IS RUNNING (NIGHT OR VILLAGE MULTIBALL)
-  # divertercontrol_checkworldstate{current_player.multiplier_mb==2}:
-  #   divertercontrol_leftloop_close
-  #   divertercontrol_rightloop_enable
-
-  # divertercontrol_checkworldstate{current_player.world_id > 0 and current_player.multiplier_mb==1 and current_player.world_item1_remaining == 0 and current_player.world_item2_remaining == 0 and current_player.world_item3_remaining == 0 and current_player.world_item4_remaining == 0}:
-  #   divertercontrol_leftloop_travel
-  #   divertercontrol_rightloop_enable
-
-  # #>> Village Multiball Return Not All Items Collected (World Started)
-  # divertercontrol_checkworldstate{current_player.multiplier_mb==1 and (current_player.world_item1_remaining > 0 or current_player.world_item2_remaining > 0 or current_player.world_item3_remaining > 0 or current_player.world_item4_remaining > 0)}:
-  #   divertercontrol_leftloop_close
-  #   divertercontrol_rightloop_enable
+ 
 
 
 
