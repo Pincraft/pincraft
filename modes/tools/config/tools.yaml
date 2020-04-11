@@ -1,7 +1,7 @@
 #config_version=5
 mode:
-  start_events: mode_base_started
-  stop_events: mode_base_stopped
+  start_events: mode_base_started, multiball_nightmb_ended
+  stop_events: mode_base_stopped, multiball_nightmb_started
   priority: 300
 
 #TODO: Should not be able to collect level 6 tools

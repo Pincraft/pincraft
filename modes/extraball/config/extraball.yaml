@@ -1,7 +1,7 @@
 #config_version=5
 mode:
-    start_events: ball_starting
-    stop_events: ball_ended
+    start_events: ball_starting, multiball_nightmb_ended
+    stop_events: ball_ended, multiball_nightmb_started
     priority: 1000
 
 shot_profiles:
@@ -48,7 +48,7 @@ event_player:
   logicblock_counter_meatextraball_complete:
     - collectitem_special_disabled
     - meatextraball_light
-
+  
 sound_player:
   collectitem_special_hit:
     meatextraballsp: 
