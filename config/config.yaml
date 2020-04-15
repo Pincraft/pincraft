@@ -14,6 +14,13 @@ playfields:
     tags: default
     default_source_device: bd_trough        #this was changed from bd_plunger
 
+p_roc:
+   pd_led_boards:
+    5:
+      use_ws281x_0: True
+      use_ws281x_1: False
+      use_ws281x_2: False
+
 # DISPLAY CONFIGURATION
 #--------------------------------------------
 displays:
@@ -850,6 +857,142 @@ lights:
       polarity: True
   
   #Note: 71-83 are not in use
+
+  #=====================================================================
+  # SERIAL LEDS START HERE                                             #
+  #=====================================================================
+
+  # l_undercab1:
+  #   type: rgb
+  #   tags: lundercab
+  #   number: 5-103-104-105
+
+
+  l_undercab1:
+    type: rgb
+    tags: lundercab, lundercab_odd, lundercab_chase1
+    number: 5-101-100-102
+
+  l_undercab2:
+    type: rgb
+    tags: lundercab, lundercab_even, lundercab_chase2
+    number: 5-104-103-105
+
+  l_undercab3:
+    type: rgb
+    tags: lundercab, lundercab_odd, lundercab_chase3
+    number: 5-107-106-108
+
+  l_undercab4:
+    type: rgb
+    tags: lundercab, lundercab_even, lundercab_chase4
+    number: 5-110-109-111
+
+  l_undercab5:
+    type: rgb
+    tags: lundercab, lundercab_odd, lundercab_chase5
+    number: 5-113-112-114
+
+  l_undercab6:
+    type: rgb
+    tags: lundercab, lundercab_even, lundercab_chase6
+    number: 5-116-115-117
+
+  l_undercab7:
+    type: rgb
+    tags: lundercab, lundercab_odd, lundercab_chase1
+    number: 5-119-118-120
+
+  l_undercab8:
+    type: rgb
+    tags: lundercab, lundercab_even, lundercab_chase2
+    number: 5-122-121-123
+
+  l_undercab9:
+    type: rgb
+    tags: lundercab, lundercab_odd, lundercab_chase3
+    number: 5-125-124-126
+
+  l_undercab10:
+    type: rgb
+    tags: lundercab, lundercab_even, lundercab_chase4
+    number: 5-128-127-129
+
+  l_undercab11:
+    type: rgb
+    tags: lundercab, lundercab_odd, lundercab_chase5
+    number: 5-131-130-132
+
+  l_undercab12:
+    type: rgb
+    tags: lundercab, lundercab_even, lundercab_chase6
+    number: 5-134-133-135
+  
+  l_undercab13:
+    type: rgb
+    tags: lundercab, lundercab_odd, lundercab_chase1
+    number: 5-137-136-138
+
+  l_undercab14:
+    type: rgb
+    tags: lundercab, lundercab_even, lundercab_chase2
+    number: 5-140-139-141
+
+  l_undercab15:
+    type: rgb
+    tags: lundercab, lundercab_odd, lundercab_chase3
+    number: 5-143-142-144
+
+  l_undercab16:
+    type: rgb
+    tags: lundercab, lundercab_even, lundercab_chase4
+    number: 5-146-145-147
+
+  l_undercab17:
+    type: rgb
+    tags: lundercab, lundercab_odd, lundercab_chase5
+    number: 5-149-148-150
+
+  l_undercab18:
+    type: rgb
+    tags: lundercab, lundercab_even, lundercab_chase6
+    number: 5-152-151-153
+
+  l_undercab19:
+    type: rgb
+    tags: lundercab, lundercab_odd, lundercab_chase1
+    number: 5-155-154-156
+
+  l_undercab20:
+    type: rgb
+    tags: lundercab, lundercab_even, lundercab_chase2
+    number: 5-158-157-159
+
+  l_undercab21:
+    type: rgb
+    tags: lundercab, lundercab_odd, lundercab_chase3
+    number: 5-161-160-162
+
+  l_undercab22:
+    type: rgb
+    tags: lundercab, lundercab_even, lundercab_chase4
+    number: 5-164-163-165
+
+  l_undercab23:
+    type: rgb
+    tags: lundercab, lundercab_odd, lundercab_chase5
+    number: 5-167-166-168
+
+  l_undercab24:
+    type: rgb
+    tags: lundercab, lundercab_even, lundercab_chase6
+    number: 5-170-169-171
+
+  l_undercab25:
+    type: rgb
+    tags: lundercab, lundercab_odd
+    number: 5-173-172-174
+
 
 #=======================================================================
 #=======================================================================
