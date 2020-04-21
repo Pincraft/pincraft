@@ -10,6 +10,11 @@ show_player:
       loops: -1
       speed: 1
 
+light_player:
+  mode_world2_started:
+    lbackboxeven: yellow
+    lundercab: yellow
+
 sound_player:
   mode_world2_started:
     world2mode_music:

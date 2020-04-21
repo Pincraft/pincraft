@@ -2,7 +2,10 @@
 - duration: 1
   lights:
     lundercab: off
+    lbackbox: off
+    lactionbar: off
     lundercab_chase1: (color)
+    lbackbox_chasearound1: (color)
     lfeature: off 
     lgi:
         color: white
@@ -24,8 +27,11 @@
 - duration: 1
   lights:
     lundercab: off
+    lbackbox: off
+    lactionbar: off
     lundercab_chase2: (color)
-    lfeature: off
+    lbackbox_chasearound2: (color)
+    lfeature: off 
     l_collect2: 
         color: (color)
         fade: 200ms
@@ -44,8 +50,11 @@
 - duration: 1
   lights:
     lundercab: off
+    lbackbox: off
+    lactionbar: off
     lundercab_chase3: (color)
-    lfeature: off
+    lbackbox_chasearound3: (color)
+    lfeature: off 
     l_collect3:
         color: (color)
         fade: 200ms
@@ -64,8 +73,11 @@
 - duration: 1
   lights:
     lundercab: off
+    lbackbox: off
+    lactionbar: off
     lundercab_chase4: (color)
-    lfeature: off
+    lbackbox_chasearound4: (color)
+    lfeature: off 
     l_collect4:
         color: (color)
         fade: 200ms
@@ -84,8 +96,11 @@
 - duration: 1
   lights:
     lundercab: off
-    lundercab_chase5: (color)
-    lfeature: off
+    lbackbox: off
+    lactionbar: off
+    lundercab_chase1: (color)
+    lbackbox_chasearound1: (color)
+    lfeature: off 
     l_collect5:
         color: (color)
         fade: 200ms
@@ -104,8 +119,11 @@
 - duration: 1
   lights:
     lundercab: off
-    lundercab_chase6: (color)
-    lfeature: off
+    lbackbox: off
+    lactionbar: off
+    lundercab_chase2: (color)
+    lbackbox_chasearound2: (color)
+    lfeature: off 
     l_collect6:
         color: (color)
         fade: 200ms
@@ -124,8 +142,11 @@
 - duration: 1
   lights:
     lundercab: off
-    lundercab_chase1: (color)
-    lfeature: off
+    lbackbox: off
+    lactionbar: off
+    lundercab_chase3: (color)
+    lbackbox_chasearound3: (color)
+    lfeature: off 
     l_collect7:
         color: (color)  
         fade: 200ms
@@ -144,8 +165,11 @@
 - duration: 1
   lights:
     lundercab: off
-    lundercab_chase2: (color)
-    lfeature: off
+    lbackbox: off
+    lactionbar: off
+    lundercab_chase4: (color)
+    lbackbox_chasearound4: (color)
+    lfeature: off 
     l_collect8:
         color: (color)
         fade: 200ms
@@ -164,8 +188,11 @@
 - duration: 1
   lights:
     lundercab: off
-    lundercab_chase3: (color)
-    lfeature: off
+    lbackbox: off
+    lactionbar: off
+    lundercab_chase1: (color)
+    lbackbox_chasearound1: (color)
+    lfeature: off 
     l_collect9:
         color: (color)
         fade: 200ms
@@ -184,8 +211,11 @@
 - duration: 1
   lights:
     lundercab: off
-    lundercab_chase4: (color)
-    lfeature: off
+    lbackbox: off
+    lactionbar: off
+    lundercab_chase2: (color)
+    lbackbox_chasearound2: (color)
+    lfeature: off 
     l_collect10:
         color: (color)
         fade: 200ms
@@ -204,8 +234,11 @@
 - duration: 1
   lights:
     lundercab: off
-    lundercab_chase5: (color)
-    lfeature: off
+    lbackbox: off
+    lactionbar: off
+    lundercab_chase3: (color)
+    lbackbox_chasearound3: (color)
+    lfeature: off 
     l_collect11: 
         color: (color)
         fade: 200ms
@@ -224,8 +257,11 @@
 - duration: 1
   lights:
     lundercab: off
-    lundercab_chase6: (color)
-    lfeature: off
+    lbackbox: off
+    lactionbar: off
+    lundercab_chase4: (color)
+    lbackbox_chasearound4: (color)
+    lfeature: off 
     l_collect12:
         color: (color)
         fade: 200ms
@@ -244,8 +280,11 @@
 - duration: 1
   lights:
     lundercab: off
+    lbackbox: off
+    lactionbar: off
     lundercab_chase1: (color)
-    lfeature: off
+    lbackbox_chasearound1: (color)
+    lfeature: off 
     l_collect13:
         color: (color)
         fade: 200ms
@@ -264,8 +303,11 @@
 - duration: 1
   lights:
     lundercab: off
+    lbackbox: off
+    lactionbar: off
     lundercab_chase2: (color)
-    lfeature: off
+    lbackbox_chasearound2: (color)
+    lfeature: off 
     l_collect14:
         color: (color)
         fade: 200ms
@@ -284,8 +326,11 @@
 - duration: 1
   lights:
     lundercab: off
+    lbackbox: off
+    lactionbar: off
     lundercab_chase3: (color)
-    lfeature: off
+    lbackbox_chasearound3: (color)
+    lfeature: off 
     l_collect15:
         color: (color)
         fade: 200ms
@@ -304,8 +349,11 @@
 - duration: 1
   lights:
     lundercab: off
+    lbackbox: off
+    lactionbar: off
     lundercab_chase4: (color)
-    lfeature: off
+    lbackbox_chasearound4: (color)
+    lfeature: off 
     l_collect16:
         color: (color)
         fade: 200ms

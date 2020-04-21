@@ -10,6 +10,11 @@ show_player:
       loops: -1
       speed: 1
 
+light_player:
+  mode_world6_started:
+    lbackbox: purple
+    lundercab: purple
+
 sound_player:
   mode_world6_started:
     world6mode_music:
