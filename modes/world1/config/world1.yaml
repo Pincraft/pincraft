@@ -13,7 +13,7 @@ show_player:
 light_player:
   mode_world1_started:
     lbackbox: green
-    lundercab: green
+    lundercab: green  
 
 sound_player:
   mode_world1_started:

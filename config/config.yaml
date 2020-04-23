@@ -1754,21 +1754,6 @@ diverters:
     enable_events: diverter_travel_enabled
     disable_events: diverter_travel_disabled
 
-#   left_diverter:
-#     activation_coil: c_upperleftgate
-#     type: hold
-#     activation_time: 2s
-#     activation_switches: s_loopright
-#     enable_events: ball_started
-#     disable_events: ball_ended
-#   left_diverter_drop:
-#     activation_coil: c_upperdrop_drop
-#     deactivation_coil: c_upperdrop_reset
-#     type: pulse
-#     activation_time: 2s
-#     activation_switches: s_loopright
-#     enable_events: ball_started
-#     disable_events: ball_ended
       
 # DROP TARGET CONFIGURATION
 #--------------------------------------------
@@ -1777,26 +1762,33 @@ drop_targets:
     switch: s_drop1
     reset_coil: c_drop_target_reset
     knockdown_coil: c_drop_target1_drop
+    knockdown_events: drop_drop1
   dt_drop2:
     switch: s_drop2
     reset_coil: c_drop_target_reset
     knockdown_coil: c_drop_target2_drop
+    knockdown_events: drop_drop2
   dt_drop3:
     switch: s_drop3
     reset_coil: c_drop_target_reset
     knockdown_coil: c_drop_target3_drop
+    knockdown_events: drop_drop3
   dt_drop4:
     switch: s_drop4
     reset_coil: c_drop_target_reset
     knockdown_coil: c_drop_target4_drop
+    knockdown_events: drop_drop4
   dt_drop5:
     switch: s_drop5
     reset_coil: c_drop_target_reset
     knockdown_coil: c_drop_target5_drop
+    knockdown_events: drop_drop5
   dt_drop6:
     switch: s_drop6
     reset_coil: c_drop_target_reset
     knockdown_coil: c_drop_target6_drop
+    knockdown_events: drop_drop6
+  
   dt_upperdrop:
     switch: s_upperdrop
     reset_coil: c_upperdrop_reset
@@ -1804,11 +1796,6 @@ drop_targets:
     knockdown_events: diverter_dropupperdrop
     reset_events: diverter_resetupperdrop
 
-#drop_target_banks:
-#  dtb_main_bank:
-#      drop_targets: dt_drop1, dt_drop2, dt_drop3, dt_drop4, dt_drop5, dt_drop6
-#      reset_coils: c_drop_target_reset
-#      reset_on_complete: 1s
 
 # SOUND CONFIGURATION
 #--------------------------------------------
@@ -2002,11 +1989,7 @@ sounds:
     volume: 0.50
     loops: -1
     track: music
-  world6mode_music:
-    file: world6mode.wav
-    volume: 0.60
-    loops: -1
-    track: music
+
   nightmode_music:
     file: nightmode_kit.flac
     volume: 0.50
@@ -2020,6 +2003,30 @@ sounds:
   villagermb_music:
     file: villagermb.flac
     volume: 0.80
+    loops: -1
+    track: music
+
+  endmode_prepare_music:
+    file: endmode_prepare.wav
+    volume: 1
+    loops: -1
+    track: music
+
+  endmode_battle_music:
+    file: endmode_battle.wav
+    volume: 1
+    loops: -1
+    track: music
+
+  endmode_victory1_music:
+    file: endmode_victory1.wav
+    volume: 1
+    loops: -1
+    track: music
+
+  endmode_victory2_music:
+    file: endmode_victory2.wav
+    volume: 1
     loops: -1
     track: music
 
@@ -2220,14 +2227,13 @@ slide_player:
 modes:
   - base
   - lightoverlay
-  - skillshot
   - outlanegate
   - world1
   - world2
   - world3
   - world4
   - world5
-  - world6
+  - theend
   - worldcontroller
   - bonus
   - bonusdisplay
@@ -2236,5 +2242,5 @@ modes:
   - divertercontrol
   - tools
   - extraball
-
+  - skillshot
   

@@ -1,6 +1,6 @@
 #config_version=5
 mode:
-    start_events: ball_starting, multiball_nightmb_ended
+    start_events: ball_started, multiball_nightmb_ended
     stop_events: ball_ended, multiball_nightmb_started
     priority: 1000
 

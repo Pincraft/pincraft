@@ -101,6 +101,10 @@ variable_player:
 
 
 event_player:
+
+  mode_base_started:
+    world_itemcheckcomplete
+
   mode_worldcontroller_started:
     world_itemcheckcomplete
 
@@ -117,7 +121,7 @@ event_player:
     world_itemcheckcomplete
 
 
-  world_itemcheckcomplete{current_player.world_item1_remaining == 0 and current_player.world_item2_remaining == 0 and current_player.world_item3_remaining == 0 and current_player.world_item4_remaining == 0}:
+  world_itemcheckcomplete{current_player.world_item1_remaining <= 0 and current_player.world_item2_remaining <= 0 and current_player.world_item3_remaining <= 0 and current_player.world_item4_remaining <= 0}:
     world_collected
 
   world_itemcheckcomplete{current_player.world_item1_remaining > 0}:
