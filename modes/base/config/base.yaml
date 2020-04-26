@@ -107,8 +107,8 @@ event_player:
     outlanegate_open
 
   multiball_nightmb_ended{current_player.world_id==1}:
-    theend_start
-    #world2_start   
+    #theend_start
+    world2_start   
   multiball_nightmb_ended{current_player.world_id==2}:
     world3_start   
   multiball_nightmb_ended{current_player.world_id==3}:

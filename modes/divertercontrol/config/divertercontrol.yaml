@@ -189,8 +189,10 @@ event_player:
   #CHECK STATE AT INTERVAL
   timer_checkdiverterstate_tick:
     - divertercontrol_checkworldstate
-    - divertercontrol_adjustlights
 
+  #CHECK STATE WHEN VILLAGER READY
+  villagermultiball_ready:
+    - divertercontrol_checkworldstate
  
 
 
