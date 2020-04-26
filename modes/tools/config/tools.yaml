@@ -79,6 +79,13 @@ variable_player:
   recalculate_tools:
     tools_ready: 1      #increase tool count by 1
 
+  #Lite Crafting Full if all 4 tools are ready to be collected
+  recalculate_tools{current_player.tools_ready==4}:
+    crafting_full:
+      int: 1
+      action: set
+    
+
   tool_level_complete{current_player.bonus_multiplier<5}:  #Increase Bonus Multiplier
     bonus_multiplier: 1
 
@@ -105,6 +112,9 @@ variable_player:
       int: 0
       action: set
     crafting_ready:
+      int: 0
+      action: set
+    crafting_full:
       int: 0
       action: set
 
@@ -250,13 +260,6 @@ event_player:
     - reset_tool_variables
     - restart_collect_tools
     - display_tools
-
-  # check_craftingcomplete{current_player.tools_collected==4 and current_player.bonus_multiplier==5}:
-  #   - crafting_disable
-  #   - tool_level_complete
-  #   - reset_tool_variables
-  #   - disable_collect_tools
-  #   - display_tools
 
   tool_collected:
     - display_tools

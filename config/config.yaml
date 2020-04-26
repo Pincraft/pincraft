@@ -1809,15 +1809,15 @@ sound_system:
        music:
           type: standard
           simultaneous_sounds: 1
-          volume: 0.5
+          volume: .75
        voice:
           type: standard
           simultaneous_sounds: 1
-          volume: 0.7
+          volume: 1
        sfx:
           type: standard
           simultaneous_sounds: 8
-          volume: 0.4
+          volume: .8
 
 assets:
     sounds:
@@ -2056,9 +2056,17 @@ player_vars:
     initial_value: 0
     value_type: int
 
+  diverter_state:
+    initial_value: "start"
+    value_type: str
+
   #Multiball Multiplier
   multiplier_mb:
     initial_value: 1
+    value_type: int
+
+  villagermb_ready:
+    initial_value: 0
     value_type: int
 
   villager_jackpot:
@@ -2206,6 +2214,14 @@ player_vars:
     value_type: int
 
   crafting_ready:
+    initial_value: 0
+    value_type: int
+
+  crafting_full:
+    initial_value: 0
+    value_type: int
+
+  travel_enabled:
     initial_value: 0
     value_type: int
 

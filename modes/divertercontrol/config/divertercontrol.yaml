@@ -3,153 +3,93 @@ mode:
     start_events: mode_base_started
     stop_events: mode_base_ended
     priority: 2000
+    code: divertercontrol.Base
 
-#STATES:
-# World Travel
+# DIVERTER CONTROL STATES:
+# ======== ======= ======
+
+# START ("start")
+#   - Diverter control has just started and state is not yet determined
+
+# WORLD TRAVEL ("worldtravel")
 #   - Left Loop Open / Drop Down Down
 #   - Right Loop Open
-#   - Travel Diverter Enabled      
+#   - Travel Diverter Enabled 
 
-# World Villager
+# WORLD VILLAGER MB READY ("worldvillager")
 #   - Left Loop Closed / Drop Down Down
 #   - Right Loop Closed
 
-# World Tools
+# WORLD TOOLS FULL AND READY TO BE COLLECTED ("worldtoolsfull")
 #    - Left Loop Closed / Drop Down Down
-#    - Right Loop Open    
+#    - Right Loop Open 
 
-# World Running
+# WORLD TOOLS PARTIAL AND READY TO BE COLLECTED ("worldtools")
+#    - Left Loop Closed / Drop Down Up
+#    - Right Loop Closed 
+
+# WORLD IDLE ("worldidle")
 #    - Left Loop Closed / Drop Down Up
 #    - Right Loop Open
 
-# Multiball Villager
+# MULTIBALL VILLAGER RUNNING ("multiballvillager")
 #   - Left Loop Closed / Drop Down Up
 #   - Right Loop Open
 
-# Multiball Night
+# MULTIBALL NIGHT RUNNING ("multiballnight")
 #   - Left Loop Open / Drop Down Down
 #   - Right Loop Open
 
-# Multiball End
+# MULTIBALL END RUNNING ("theend")
+#   - Left Loop Open / Drop Down Down
+#   - Right Loop Open
 
 
-state_machines:
-  diverterstate:
-    persist_state: true
-    states:
-      start:
-        label: No State Initalized
-        events_when_started: divertercontrol_statechange
-      world_travel:
-        label: Travel is enabled to next world
-        events_when_started: divertercontrol_statechange, divertercontrol_worldtravel_enabled
-      world_villager:
-        label:  Villager Multiball is to be collected
-        events_when_started: divertercontrol_statechange, divertercontrol_worldvillager_enabled
-      world_tools:
-        label: Tools are ready to be collected
-        events_when_started: divertercontrol_statechange, divertercontrol_worldtools_enabled
-      world_running:
-        label: A world is running, but travel is not eabled and tools is not enabled
-        events_when_started: divertercontrol_statechange, divertercontrol_worldrunning_enabled
-      multiball_villager:
-        label: Villager MB is Running
-        events_when_started: divertercontrol_statechange, divertercontrol_multiball_villager_enabled
-      multiball_night:
-        label: Night MB is running
-        events_when_started: divertercontrol_statechange, divertercontrol_multiball_night_enabled
-      multiball_endmode:
-        label: End Mode is running
-        events_when_started: divertercontrol_statechange, divertercontrol_multiball_endmode_enabled
-    transitions:
-      - source: start
-        target: start
-        events: mode_divertercontrol_started
-      - source: start, world_villager, world_tools, world_running, multiball_villager, multiball_night, multiball_endmode       #world_travel
-        target: world_travel
-        events: divertercontrol_worldtravel_requested
-      - source: start, world_travel, world_tools, world_running, multiball_villager, multiball_night, multiball_endmode         #world_villager
-        target: world_villager
-        events: divertercontrol_worldvillager_requested
-      - source: start, world_travel, world_villager, world_running, multiball_villager, multiball_night, multiball_endmode      #world_tools
-        target: world_tools
-        events: divertercontrol_worldtools_requested
-      - source: start, world_travel, world_villager, world_tools, multiball_villager, multiball_night, multiball_endmode        #world_villager
-        target: world_running
-        events: divertercontrol_worldrunning_requested
-      - source: start, world_travel, world_villager, world_tools, world_running, multiball_night, multiball_endmode             #multiball_villager
-        target: multiball_villager
-        events: divertercontrol_multiball_villager_requested
-      - source: start, world_travel, world_villager, world_tools, world_running, multiball_villager, multiball_endmode          #multiball_night
-        target: multiball_night
-        events: divertercontrol_multiball_night_requested
-      - source: start, world_travel, world_villager, world_tools, world_running, multiball_villager, multiball_night            #multiball_endmode
-        target: multiball_endmode
-        events: divertercontrol_multiball_endmode_requested
-
-
-
-
-#DEBUGGING LIGHT PLAYER TO CHECK MODES
 light_player:
-  #Start State
-  divertercontrol_statechange{current_player.state_machine_diverterstate=="start"}:
-    gi_specialitem2: yellow
-    gi_captivetop: yellow
+  #Villager MB
+  divertercontrol_statechanged{current_player.diverter_state=="multiballvillager"}:
+    gi_loopupperleft: red
+    gi_loopupperright: green
 
-  #World Travel
-  divertercontrol_statechange{current_player.state_machine_diverterstate=="world_travel"}:
-    gi_specialitem2: blue
-    gi_captivetop: white
+  #Night MB
+  divertercontrol_statechanged{current_player.diverter_state=="multiballnight"}:
+    gi_loopupperleft: green
+    gi_loopupperright: green
 
-  #World Villager
-  divertercontrol_statechange{current_player.state_machine_diverterstate=="world_villager"}:
-    gi_specialitem2: purple
-    gi_captivetop: white
+  #THE END
+  divertercontrol_statechanged{current_player.diverter_state=="theend"}:
+    gi_loopupperleft: green
+    gi_loopupperright: green
+
+  #WORLD TRAVEL
+  divertercontrol_statechanged{current_player.diverter_state=="worldtravel"}:
+    gi_loopupperleft: blue
+    gi_loopupperright: red
+
+  #WORLD VILLAGER MB
+  divertercontrol_statechanged{current_player.diverter_state=="worldvillager"}:
+    gi_loopupperleft: purple
+    gi_loopupperright: purple
+
+  #WORLD TOOLS FULL
+  divertercontrol_statechanged{current_player.diverter_state=="worldtoolsfull"}:
+    gi_loopupperleft: yellow
+    gi_loopupperright: yellow
+
+  #WORLD TOOLS PARTIAL
+  divertercontrol_statechanged{current_player.diverter_state=="worldtools"}:
+    gi_loopupperleft: red
+    gi_loopupperright: yellow
+
+  #WORLD IDLE
+  divertercontrol_statechanged{current_player.diverter_state=="worldidle"}:
+    gi_loopupperleft: red
+    gi_loopupperright: green
   
-  #World Tools
-  divertercontrol_statechange{current_player.state_machine_diverterstate=="world_tools"}:
-    gi_specialitem2: yellow
-    gi_captivetop: white
-  
-  #World Running
-  divertercontrol_statechange{current_player.state_machine_diverterstate=="world_running"}:
-    gi_specialitem2: green
-    gi_captivetop: white
-
-  #Multiball Villager
-  divertercontrol_statechange{current_player.state_machine_diverterstate=="multiball_villager"}:
-    gi_specialitem2: white
-    gi_captivetop: purple
-
-  #Multiball Night
-  divertercontrol_statechange{current_player.state_machine_diverterstate=="multiball_night"}:
-    gi_specialitem2: white
-    gi_captivetop: blue
-  
-  #Multiball End
-  divertercontrol_statechange{current_player.state_machine_diverterstate=="multiball_endmode"}:
-    gi_specialitem2: white
-    gi_captivetop: red
-
-#light_player:
-  # leftloop_statechange{current_player.state_machine_leftloop_state=="closed"}:
-  #   gi_specialitem2: red
-  # leftloop_statechange{current_player.state_machine_leftloop_state=="disabled"}:
-  #   gi_specialitem2: purple
-  # leftloop_statechange{current_player.state_machine_leftloop_state=="enabled"}:
-  #   gi_specialitem2: green 
-  # leftloop_statechange{current_player.state_machine_leftloop_state=="travel"}:
-  #   gi_specialitem2: blue
-
-  # rightloop_statechange{current_player.state_machine_rightloop_state=="disabled"}:
-  #   gi_captivetop: purple
-  # rightloop_statechange{current_player.state_machine_rightloop_state=="enabled"}:
-  #   gi_captivetop: green
 
 timers:
   #CHECK STATE EVERY SECOND TO ADJUST DIVERTERS
-  checkstate:
+  checkdiverterstate:
     start_value: 0
     end_value: 1000
     direction: up
@@ -157,7 +97,7 @@ timers:
       - action: start
         event: mode_divertercontrol_started
       - action: restart
-        event: timer_checkstate_complete
+        event: timer_checkdiverterstate_complete
 
   #Left Drop Target Down
   leftdropreset:
@@ -211,84 +151,45 @@ event_player:
   #======================================================
 
   #Left Loop Drop Reset Events
-  timer_leftdropreset_complete{current_player.state_machine_diverterstate=="world_running"}: diverter_resetupperdrop
-  timer_leftdropreset_complete{current_player.state_machine_diverterstate=="multiball_villager"}: diverter_resetupperdrop
+  timer_leftdropreset_complete{current_player.diverter_state=="worldidle"}: diverter_resetupperdrop
+  timer_leftdropreset_complete{current_player.diverter_state=="worldtools"}: diverter_resetupperdrop
+  timer_leftdropreset_complete{current_player.diverter_state=="multiballvillager"}: diverter_resetupperdrop
   
   #Left Loop Drop Up Events
-  divertercontrol_statechange{current_player.state_machine_diverterstate=="world_running"}: diverter_resetupperdrop
-  divertercontrol_statechange{current_player.state_machine_diverterstate=="multiball_villager"}: diverter_resetupperdrop
+  divertercontrol_statechanged{current_player.diverter_state=="worldidle"}: diverter_resetupperdrop
+  divertercontrol_statechanged{current_player.diverter_state=="worldtools"}: diverter_resetupperdrop
+  divertercontrol_statechanged{current_player.diverter_state=="multiballvillager"}: diverter_resetupperdrop
 
   #Left Loop Drop Down Events
-  divertercontrol_statechange{current_player.state_machine_diverterstate=="world_travel"}: 
-    - diverter_dropupperdrop
-    - diverter_travel_enabled
-  divertercontrol_statechange{current_player.state_machine_diverterstate=="world_villager"}: diverter_dropupperdrop
-  divertercontrol_statechange{current_player.state_machine_diverterstate=="world_tools"}: diverter_dropupperdrop
-  divertercontrol_statechange{current_player.state_machine_diverterstate=="multiball_night"}: diverter_dropupperdrop
+  divertercontrol_statechanged{current_player.diverter_state=="worldtravel"}: diverter_dropupperdrop
+  divertercontrol_statechanged{current_player.diverter_state=="worldvillager"}: diverter_dropupperdrop
+  divertercontrol_statechanged{current_player.diverter_state=="worldtoolsfull"}: diverter_dropupperdrop
+  divertercontrol_statechanged{current_player.diverter_state=="multiballnight"}: diverter_dropupperdrop
 
   #Right Loop Hit Events:
-  loopright_hit{current_player.state_machine_diverterstate=="world_travel"}: diverter_rightloophit, diverter_dropupperdrop
-  loopright_hit{current_player.state_machine_diverterstate=="world_tools"}: diverter_rightloophit, diverter_dropupperdrop
-  loopright_hit{current_player.state_machine_diverterstate=="world_running"}: diverter_rightloophit, diverter_dropupperdrop
-  loopright_hit{current_player.state_machine_diverterstate=="multiball_villager"}: diverter_rightloophit, diverter_dropupperdrop
-  loopright_hit{current_player.state_machine_diverterstate=="multiball_night"}: diverter_rightloophit, diverter_dropupperdrop
+  loopright_hit{current_player.diverter_state=="worldidle"}: diverter_rightloophit, diverter_dropupperdrop
+  loopright_hit{current_player.diverter_state=="multiballnight"}: diverter_rightloophit, diverter_dropupperdrop
+  loopright_hit{current_player.diverter_state=="multiballvillager"}: diverter_rightloophit, diverter_dropupperdrop
  
   #Left Loop Hit Events:
-  loopleft_hit{current_player.state_machine_diverterstate=="multiball_night"}: diverter_leftloophit
-  loopleft_hit{current_player.state_machine_diverterstate=="world_travel"}: diverter_leftloophit, diverter_leftlooptravelhit
+  loopleft_hit{current_player.diverter_state=="multiballnight"}: diverter_leftloophit
+  loopleft_hit{current_player.diverter_state=="worldtravel"}: diverter_leftloophit, diverter_leftlooptravelhit
 
-  #DIVERTER CONTROL
-  divertercontrol_statechange{current_player.state_machine_diverterstate!="world_travel"}:
+  #DIVERTER CONTROLS
+  divertercontrol_statechanged.1{current_player.diverter_state=="worldtravel"}:
+    diverter_travel_enabled
+
+  divertercontrol_statechanged.2{current_player.diverter_state!="worldtravel"}:
     diverter_travel_disabled
 
 
-#======================================================
-# WE WILL CONTROL ALL DIVERTER CONTROL ACTIVITIES HERE     
-#======================================================
   mode_divertercontrol_started:
-    - divertercontrol_statechange
     - divertercontrol_checkworldstate
 
-#check the following:
-# -------------------------------------
-# | MULTIBALL RUNNING                 | 
-# -------------------------------------
-
-# Is Night Mode Running?
-  multiball_nightmb_started:
-    divertercontrol_multiball_night_requested
-  multiball_nightmb_ended:
-    divertercontrol_checkworldstate
-
- # Is Villager MB Running?
-  multiball_villagermb_started:
-    divertercontrol_multiball_villager_requested
-  multiball_villagermb_ended:
-    divertercontrol_checkworldstate
-
-# -------------------------------------
-# | NO MULTIBALLS RUNNING             | 
-# -------------------------------------
-
-# Is Travel Ready?
-  divertercontrol_checkworldstate{current_player.multiplier_mb==1 and current_player.world_id > 0 and current_player.world_item1_remaining == 0 and current_player.world_item2_remaining == 0 and current_player.world_item3_remaining == 0 and current_player.world_item4_remaining == 0}:
-    divertercontrol_worldtravel_requested
-
-# Is Villager MB Ready?
-  villagermultiball_ready{current_player.world_item1_remaining > 0 or current_player.world_item2_remaining > 0 or current_player.world_item3_remaining > 0 or current_player.world_item4_remaining > 0}:
-    divertercontrol_worldvillager_requested
-
-# Is Tools Ready?
-  divertercontrol_checkworldstate{current_player.multiplier_mb==1 and current_player.crafting_enabled==1}:                           #TODO: THIS WILL NOT WORK
-    divertercontrol_worldtools_requested 
-
-# -> None Ready?
-  divertercontrol_checkworldstate{current_player.multiplier_mb==1 and current_player.world_id > 0 and current_player.crafting_enabled==0 and (current_player.world_item1_remaining > 0 or current_player.world_item2_remaining > 0 or current_player.world_item3_remaining > 0 or current_player.world_item4_remaining > 0)}:
-    divertercontrol_worldrunning_requested
-
   #CHECK STATE AT INTERVAL
-  timer_checkstate_tick:
-    divertercontrol_checkworldstate
+  timer_checkdiverterstate_tick:
+    - divertercontrol_checkworldstate
+    - divertercontrol_adjustlights
 
  
 

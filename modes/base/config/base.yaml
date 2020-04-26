@@ -224,21 +224,52 @@ variable_player:
     world_jackpot_items:  #RESET WORLD JACKPOT ITEMS
       int: 0
       action: set
+    villagermb_ready:
+      int: 0
+      action: set
+    travel_enabled:
+      int: 0
+      action: set
+
   multiball_villagermb_started: #VILLAGER MULTIBALL STARTED
     multiplier_mb:
       int: 2
       action: set
+    villagermb_ready:
+      int: 0
+      action: set
+
   multiball_villagermb_ended: #VILLAGER MULTIBALL ENDED
     multiplier_mb:
       int: 1
       action: set
+
+  villagermb_disable:
+    villagermb_ready:
+      int: 0
+      action: set
+
+  nightmode_ready:
+    travel_enabled:
+      int: 1
+      action: set
+
   multiball_nightmb_started: #NIGHT MULTIBALL STARTED
     multiplier_mb:
       int: 2
       action: set
+
   multiball_nightmb_ended: #VILLAGER MULTIBALL ENDED
     world_jackpot_worlds: 1  #FOR WORLD JACKPOT / INCREASE WORLDS TRAVELED
     multiplier_mb:
+      int: 1
+      action: set
+    travel_enabled:
+      int: 0
+      action: set
+
+  villagermultiball_ready:
+    villagermb_ready:
       int: 1
       action: set
 
@@ -500,7 +531,7 @@ slides:
         anchor_x: left
         anchor_y: top
       - type: text        #WORLD JACKPOT
-        text: Crafting Enabled - (player|crafting_enabled) | Crafting Ready - (player|crafting_ready)
+        text: Crafting Enabled - (player|crafting_enabled) | Crafting Full - (player|crafting_full) | Crafting Ready - (player|crafting_ready) | Villager MB Ready - (player|villagermb_ready) | Travel Ready - (player|travel_enabled)
         number_grouping: true
         min_digits: 2
         font_name: ARLRDBD
@@ -510,6 +541,18 @@ slides:
         z: 100
         anchor_x: left
         anchor_y: top
+      - type: text        #WORLD JACKPOT
+        text: Diverter State - (player|diverter_state)
+        number_grouping: true
+        min_digits: 2
+        font_name: ARLRDBD
+        font_size: 25
+        y: top-200
+        x: left+100
+        z: 100
+        anchor_x: left
+        anchor_y: top
+  
       - type: text        #MULTIBALL MULTIPLIER
         text: MB - (player|multiplier_mb)x
         number_grouping: true
