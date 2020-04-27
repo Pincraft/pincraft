@@ -1,8 +1,10 @@
 #config_version=5
 mode:
-  start_events: mode_base_started
-  stop_events: mode_base_stopped
+  start_events: mode_base_started, multiball_nightmb_ended
+  stop_events: mode_base_stopped, multiball_nightmb_started
   priority: 300
+
+#TODO: Should not be able to collect level 6 tools
 
 shots:
   tool1:
@@ -38,25 +40,53 @@ shots:
 variable_player:
   #mode_tools_started:
 
-  crafting_awarded{current_player.tools_ready>=1 and current_player.tools_collected < 1}:
+  crafting_awarded{current_player.bonus_multiplier==5 and current_player.tools_ready>=1 and current_player.tools_collected < 1}:
+    score: 1000000
+    world_jackpot_base: 100000
+    tools_collected: 1
+  crafting_awarded{current_player.bonus_multiplier==5 and current_player.tools_ready>=2 and current_player.tools_collected < 2}:
+    score: 1000000
+    world_jackpot_base: 100000
+    tools_collected: 1
+  crafting_awarded{current_player.bonus_multiplier==5 and current_player.tools_ready>=3 and current_player.tools_collected < 3}:
+    score: 1000000
+    world_jackpot_base: 100000
+    tools_collected: 1   
+  crafting_awarded{current_player.bonus_multiplier==5 and current_player.tools_ready==4}:
+    score: 1000000
+    world_jackpot_base: 100000
+    tools_collected: 1
+
+  crafting_awarded{current_player.bonus_multiplier<5 and current_player.tools_ready>=1 and current_player.tools_collected < 1}:
     shovel: 1
     tools_collected: 1
-  crafting_awarded{current_player.tools_ready>=2 and current_player.tools_collected < 2}:
+    world_jackpot_base: 1000
+  crafting_awarded{current_player.bonus_multiplier<5 and current_player.tools_ready>=2 and current_player.tools_collected < 2}:
     axe: 1
     tools_collected: 1
-  crafting_awarded{current_player.tools_ready>=3 and current_player.tools_collected < 3}:
+    world_jackpot_base: 1000
+  crafting_awarded{current_player.bonus_multiplier<5 and current_player.tools_ready>=3 and current_player.tools_collected < 3}:
     pickaxe: 1
     tools_collected: 1
-  crafting_awarded{current_player.tools_ready==4}:
+    world_jackpot_base: 1000
+  crafting_awarded{current_player.bonus_multiplier<5 and current_player.tools_ready==4}:
     sword: 1
     tools_collected: 1
+    world_jackpot_base: 1000
 
 
 
   recalculate_tools:
     tools_ready: 1      #increase tool count by 1
 
-  tool_level_complete:  #Increase Bonus Multiplier
+  #Lite Crafting Full if all 4 tools are ready to be collected
+  recalculate_tools{current_player.tools_ready==4}:
+    crafting_full:
+      int: 1
+      action: set
+    
+
+  tool_level_complete{current_player.bonus_multiplier<5}:  #Increase Bonus Multiplier
     bonus_multiplier: 1
 
   reset_tool_variables:
@@ -68,12 +98,23 @@ variable_player:
       action: set
 
   craftcollect_complete:
+   crafting_ready:
+      int: 1
+      action: set
+
+  crafting_lit:
     crafting_enabled:
       int: 1
       action: set
 
   crafting_disable:
     crafting_enabled: 
+      int: 0
+      action: set
+    crafting_ready:
+      int: 0
+      action: set
+    crafting_full:
       int: 0
       action: set
 
@@ -87,25 +128,13 @@ shot_groups:
     shots: craft1, craft2, craft3, craft4
     enable_events: crafting_lit
     reset_events: crafting_awarded
-    disable_events: mode_tools_started, crafting_disable
+    disable_events: crafting_disable
 
 sound_player:
   tool1_hit: collect_tool
   tool2_hit: collect_tool
   tool3_hit: collect_tool
-  crafting_lit: craft_ready
-
-# show_player:
-#   display_tools{current_player.tools_ready==4}:
-#     show_toolsready:
-#       show_tokens:
-#         color: darkblue
-#       loops: -1
-#       speed: 1
-#       action: play
-#   crafting_disable:
-#     show_toolsready:
-#       action: stop
+  crafting_lit{current_player.tools_ready<=1}: craft_ready
 
 light_player:
   display_tools:
@@ -207,28 +236,29 @@ event_player:
     - recalculate_tools
     - tool_collected
     - crafting_lit
+   
 
+  multiball_nightmb_ended{current_player.crafting_enabled==1}:
+    - crafting_lit
+    - display_tools
+
+  multiball_villagermb_ended{current_player.crafting_enabled==1}:
+    - crafting_lit
+    - display_tools
   
   #CRAFTING!!!
-  balldevice_bd_topkicker_ball_enter{current_player.crafting_enabled==1}:
+  balldevice_bd_topkicker_ball_enter{current_player.crafting_ready==1}:
     - crafting_awarded
     - display_tools
     - crafting_disable
     - check_craftingcomplete
 
   #Check if all 4 tools are collected
-  check_craftingcomplete{current_player.tools_collected==4 and current_player.bonus_multiplier<5}:
+  check_craftingcomplete{current_player.tools_collected==4}:
     - crafting_disable
     - tool_level_complete
     - reset_tool_variables
     - restart_collect_tools
-    - display_tools
-
-  check_craftingcomplete{current_player.tools_collected==4 and current_player.bonus_multiplier==5}:
-    - crafting_disable
-    - tool_level_complete
-    - reset_tool_variables
-    - disable_collect_tools
     - display_tools
 
   tool_collected:
@@ -236,7 +266,7 @@ event_player:
   
   #Allow the user to collect additional tools up to 4
   tool_collected{current_player.tools_ready<4}:
-    restart_collect_tools
+    - restart_collect_tools
   tool_collected{current_player.tools_ready==4}:
     - disable_collect_tools
 

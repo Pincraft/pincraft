@@ -10,6 +10,11 @@ show_player:
       loops: -1
       speed: 1
 
+light_player:
+  mode_world4_started:
+    lbackbox: brown
+    lundercab: brown
+
 sound_player:
   mode_world4_started:
     world4mode_music:

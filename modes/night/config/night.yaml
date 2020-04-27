@@ -65,6 +65,48 @@ slide_player:
   #mode_night_started: slide_night
 
 show_player:
+  mb_drop1_hit:
+    show_flashactionbareven:
+      show_tokens:
+        color: green
+      loops: 0
+      speed: 4
+  
+  mb_drop2_hit:
+    show_flashactionbarodd:
+      show_tokens:
+        color: purple
+      loops: 0
+      speed: 4
+  
+  mb_drop3_hit:
+    show_flashactionbareven:
+      show_tokens:
+        color: green
+      loops: 0
+      speed: 4
+
+  mb_drop4_hit:
+    show_flashactionbareven:
+      show_tokens:
+        color: green
+      loops: 0
+      speed: 4
+
+  mb_drop5_hit:
+    show_flashactionbarodd:
+      show_tokens:
+        color: purple
+      loops: 0
+      speed: 4
+
+  mb_drop6_hit:
+    show_flashactionbareven:
+      show_tokens:
+        color: green
+      loops: 0
+      speed: 4
+    
   mode_night_started:
     show_nightsetup:
       loops: -1

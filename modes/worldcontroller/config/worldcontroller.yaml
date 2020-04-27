@@ -4,6 +4,9 @@ mode:
     stop_events:  mode_world1_stopped, mode_world2_stopped, mode_world3_stopped, mode_world4_stopped, mode_world5_stopped
     priority: 550
 
+
+# TODO: Travel was disable between balls
+
 shot_profiles:
   collectshot:
     states:
@@ -58,10 +61,10 @@ variable_player:
   #COLLECT ITEM 2 HIT
   collectitem2_hit:
     world_item2_remaining: -1 * current_player.pickaxe
-    score: 10000 * current_player.multiplier_mb * current_player.pickaxe
-    bonus_items: 1* current_player.multiplier_mb
-    world_jackpot_items: 1* current_player.multiplier_mb
-    world_jackpot_base: 1000* current_player.multiplier_mb
+    score: 10000 * current_player.pickaxe * current_player.multiplier_mb 
+    bonus_items: 1  * current_player.pickaxe 
+    world_jackpot_items: 1  * current_player.pickaxe 
+    world_jackpot_base: 1000 * current_player.pickaxe 
 
   collectitem2_hit{current_player.world_item2_remaining < 0}:
     world_item2_remaining:
@@ -98,6 +101,10 @@ variable_player:
 
 
 event_player:
+
+  mode_base_started:
+    world_itemcheckcomplete
+
   mode_worldcontroller_started:
     world_itemcheckcomplete
 
@@ -114,7 +121,7 @@ event_player:
     world_itemcheckcomplete
 
 
-  world_itemcheckcomplete{current_player.world_item1_remaining == 0 and current_player.world_item2_remaining == 0 and current_player.world_item3_remaining == 0 and current_player.world_item4_remaining == 0}:
+  world_itemcheckcomplete{current_player.world_item1_remaining <= 0 and current_player.world_item2_remaining <= 0 and current_player.world_item3_remaining <= 0 and current_player.world_item4_remaining <= 0}:
     world_collected
 
   world_itemcheckcomplete{current_player.world_item1_remaining > 0}:

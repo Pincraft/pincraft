@@ -47,24 +47,27 @@ event_player:
 sound_player:
   villager_jackpot_hit:
     villager_jackpot
-  mode_villagermb_started:
+  mode_villagermb_started{current_player.world_id==1}:
     world1mode_music:
       action: stop
+  mode_villagermb_started{current_player.world_id==2}:
     world2mode_music:
       action: stop
+  mode_villagermb_started{current_player.world_id==3}:
     world3mode_music:
       action: stop
+  mode_villagermb_started{current_player.world_id==4}:
     world4mode_music:
       action: stop
+  mode_villagermb_started{current_player.world_id==5}:
     world5mode_music:
       action: stop
-    world6mode_music:
-      action: stop
+  mode_villagermb_started:
     villagermb_music:
       action: play
       loops: -1
       mode_end_action: stop
-      priority: 1
+  mode_villagermb_started.1:
     villager_multiball:
       action: play
       loops: 0

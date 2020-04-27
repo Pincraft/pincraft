@@ -1,6 +1,15 @@
 #show_version=5
 - duration: 1
   lights:
+    lundercab: 
+      color: green
+      fade: 200ms
+    lbackbox:
+      color: green
+      fade: 200ms
+    lactionbar:
+      color: green
+      fade: 200ms
     lfeature: 
       color: green
       fade: 200ms
@@ -16,6 +25,15 @@
     l_worldtarget: off
 - duration: 1
   lights:
+    lundercab: 
+      color: yellow
+      fade: 200ms
+    lbackbox:
+      color: yellow
+      fade: 200ms
+    lactionbar:
+      color: yellow
+      fade: 200ms
     lfeature:
       color: yellow
       fade: 200ms
@@ -31,6 +49,15 @@
     l_worldtarget: off
 - duration: 1
   lights:
+    lundercab: 
+      color: blue
+      fade: 200ms
+    lbackbox:
+      color: blue
+      fade: 200ms
+    lactionbar:
+      color: blue
+      fade: 200ms
     lfeature:
       color: blue
       fade: 200ms
@@ -46,6 +73,15 @@
     l_worldtarget: off
 - duration: 1
   lights:
+    lundercab: 
+      color: brown
+      fade: 200ms
+    lbackbox:
+      color: brown
+      fade: 200ms
+    lactionbar:
+      color: brown
+      fade: 200ms
     lfeature:
       color: brown
       fade: 200ms
@@ -61,6 +97,15 @@
     l_worldtarget: off
 - duration: 1
   lights:
+    lundercab: 
+      color: red
+      fade: 200ms
+    lbackbox:
+      color: red
+      fade: 200ms
+    lactionbar:
+      color: red
+      fade: 200ms
     lfeature:
       color: red
       fade: 200ms
@@ -76,6 +121,15 @@
     l_worldtarget: off
 - duration: 1
   lights:
+    lundercab: 
+      color: purple
+      fade: 200ms
+    lbackbox:
+      color: purple
+      fade: 200ms
+    lactionbar:
+      color: purple
+      fade: 200ms
     lfeature:
       color: purple
       fade: 200ms

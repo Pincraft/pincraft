@@ -1,0 +1,41 @@
+#config_version=5
+mode:
+    start_events: theend_started
+    stop_events: theend_completed
+    priority: 500
+
+show_player:
+  mode_theend_started:  #Setup GI Light Show
+    show_theendgi:
+      loops: -1
+      speed: 1
+
+event_player:
+  mode_theend_started:
+    theendmultiball_ready
+  mode_base_started:
+    theendmultiball_ready
+
+light_player:
+  mode_theend_started:
+    lbackbox: purple
+    lundercab: purple
+
+sound_player:
+  mode_theend_started:
+    endmode_prepare_music:
+      action: play
+      loops: -1
+      mode_end_action: stop
+  theendmultiball_start:
+     endmode_prepare_music: stop
+     endmode_battle_music:
+      action: play
+      loops: -1
+      mode_end_action: stop
+
+
+ 
+
+
+

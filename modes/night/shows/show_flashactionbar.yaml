@@ -1,0 +1,10 @@
+#show_version=5
+- duration: .5
+  lights:
+    lactionbar:
+      color: (color)
+- duration: .5
+  lights:
+    lactionbar:
+      color: black
+      fade: 500ms

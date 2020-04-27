@@ -4,9 +4,21 @@
     lgi:
       color: blue
       fade: 500ms
+    lbackbox:
+      color: blue
+      fade: 500ms
+    lundercab:
+      color: blue
+      fade: 500ms
 - duration: 1
   lights:
     lgi:
+      color: purple
+      fade: 500ms
+    lbackbox:
+      color: purple
+      fade: 500ms
+    lundercab:
       color: purple
       fade: 500ms
 

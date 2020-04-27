@@ -10,6 +10,11 @@ show_player:
       loops: -1
       speed: 1
 
+light_player:
+  mode_world3_started:
+    lbackbox: blue
+    lundercab: blue
+
 sound_player:
   mode_world3_started:
     world3mode_music:

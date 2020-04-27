@@ -10,6 +10,11 @@ show_player:
       loops: -1
       speed: 1
 
+light_player:
+  mode_world5_started:
+    lbackbox: red
+    lundercab: red
+
 sound_player:
   mode_world5_started:
     world5mode_music:
