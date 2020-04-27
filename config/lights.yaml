@@ -1,0 +1,1341 @@
+#+----------------------------------------------------------------------------+
+#| LIGHT CONFIG                                                               |
+#+----------------------------------------------------------------------------+
+lights:
+
+  #+-------------------------------+
+  #|  Light Board 1                |
+  #+-------------------------------+
+  gi_drop4:
+    type: rgb
+    platform: p3_roc
+    tags: lgi, lgidrop
+    number: 2-0-1-2
+    platform_settings:
+      polarity: True
+
+  gi_drop3:
+    type: rgb
+    platform: p3_roc
+    tags: lgi, lgidrop
+    number: 2-3-4-5
+    platform_settings:
+      polarity: True
+
+  gi_drop2:
+    type: rgb
+    platform: p3_roc
+    tags: lgi, lgidrop
+    number: 2-6-7-8
+    platform_settings:
+      polarity: True
+
+  gi_drop1:
+    type: rgb
+    platform: p3_roc
+    tags: lgi, lgidrop
+    number: 2-9-10-11
+    platform_settings:
+      polarity: True
+
+  l_collect14:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lcollect
+    number: 2-12-13-14
+    platform_settings:
+      polarity: True
+
+  l_collect13:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lcollect
+    number: 2-15-16-17
+    platform_settings:
+      polarity: True
+
+  l_collect12:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lcollect
+    number: 2-18-19-20
+    platform_settings:
+      polarity: True
+
+  l_leftoutlane:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, llanes
+    number: 2-21-22-23
+    platform_settings:
+      polarity: True
+
+  l_drop2:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, ldrop
+    number: 2-24-25-26
+    platform_settings:
+      polarity: True
+
+  l_collectitem2:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, ldrop
+    number: 2-27-28-29
+    platform_settings:
+      polarity: True
+
+  l_collectitem1:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lcollectitem
+    number: 2-30-31-32
+    platform_settings:
+      polarity: True
+
+  l_drop1:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, ldrop
+    number: 2-33-34-35
+    platform_settings:
+      polarity: True
+
+  l_collectitem4:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lcollectitem
+    number: 2-36-37-38
+    platform_settings:
+      polarity: True
+
+  l_drop4:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, ldrop
+    number: 2-39-40-41
+    platform_settings:
+      polarity: True
+
+  l_collectitem3:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lcollectitem
+    number: 2-42-43-44
+    platform_settings:
+      polarity: True
+
+  l_drop3:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, ldrop
+    number: 2-45-46-47
+    platform_settings:
+      polarity: True
+
+  l_drop5:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, ldrop
+    number: 2-48-49-50
+    platform_settings:
+      polarity: True
+
+  l_collectitem5:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lcollectitem
+    number: 2-51-52-53
+    platform_settings:
+      polarity: True
+
+  l_drop6:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, ldrop
+    number: 2-54-55-56
+    platform_settings:
+      polarity: True
+
+  l_droparrow:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature
+    number: 2-57-58-59
+    platform_settings:
+      polarity: True
+
+  l_world2:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lworld
+    number: 2-60-61-62
+    platform_settings:
+      polarity: True
+  
+  l_world3:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lworld
+    number: 2-63-64-65
+    platform_settings:
+      polarity: True
+
+  l_worldtarget:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lworld
+    number: 2-66-67-68
+    platform_settings:
+      polarity: True
+
+  l_world4:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lworld
+    number: 2-69-70-71
+    platform_settings:
+      polarity: True
+
+  l_shootagain:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lworld
+    number: 2-72-73-74
+    platform_settings:
+      polarity: True
+  
+  l_world1:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature
+    number: 2-75-76-77
+    platform_settings:
+      polarity: True
+
+  l_world6:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lworld
+    number: 2-78-79-80
+    platform_settings:
+      polarity: True
+
+  l_world5:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lworld
+    number: 2-81-82-83
+    platform_settings:
+      polarity: True
+
+  #+-------------------------------+
+  #|  Light Board 2                |
+  #+-------------------------------+
+  l_tool2:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, ltool
+    number: 3-0-1-2
+    platform_settings:
+      polarity: True
+
+  l_rightinlane:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, llanes
+    number: 3-3-4-5
+    platform_settings:
+      polarity: True
+
+  l_rightoutlane:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, llanes
+    number: 3-6-7-8
+    platform_settings:
+      polarity: True
+
+  gi_scoup:
+    type: rgb
+    platform: p3_roc
+    tags: lgi
+    number: 3-9-10-11
+    platform_settings:
+      polarity: True
+
+  l_tool1:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, ltool
+    number: 3-12-13-14
+    platform_settings:
+      polarity: True
+
+  l_collect11:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lcollect
+    number: 3-15-16-17
+    platform_settings:
+      polarity: True
+
+  l_collect10:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lcollect
+    number: 3-18-19-20
+    platform_settings:
+      polarity: True
+
+  l_collect9:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lcollect
+    number: 3-21-22-23
+    platform_settings:
+      polarity: True
+
+  l_bonus4x:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lbonus
+    number: 3-24-25-26
+    platform_settings:
+      polarity: True
+
+  l_bonus5x:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lbonus
+    number: 3-27-28-29
+    platform_settings:
+      polarity: True
+
+  gi_rightflipper:
+    type: rgb
+    platform: p3_roc
+    tags: lgi
+    number: 3-30-31-32
+    platform_settings:
+      polarity: True
+
+  gi_rightsling:
+    type: rgb
+    platform: p3_roc
+    tags: lgi
+    number: 3-33-34-35
+    platform_settings:
+      polarity: True
+
+  l_collect1:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lcollect
+    number: 3-36-37-38
+    platform_settings:
+      polarity: True
+
+  l_bonus2x:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lbonus
+    number: 3-39-40-41
+    platform_settings:
+      polarity: True
+
+  l_bonus3x:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lbonus
+    number: 3-42-43-44
+    platform_settings:
+      polarity: True
+
+  l_collect6:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lcollect
+    number: 3-45-46-47
+    platform_settings:
+      polarity: True
+
+  l_collect3:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lcollect
+    number: 3-48-49-50
+    platform_settings:
+      polarity: True
+
+  l_collect5:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lcollect
+    number: 3-51-52-53
+    platform_settings:
+      polarity: True
+
+  l_collect2:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lcollect
+    number: 3-54-55-56
+    platform_settings:
+      polarity: True
+
+  l_collect4:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lcollect
+    number: 3-57-58-59
+    platform_settings:
+      polarity: True
+
+  l_leftgate:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature
+    number: 3-60-61-62
+    platform_settings:
+      polarity: True
+
+  gi_leftsling:
+    type: rgb
+    platform: p3_roc
+    tags: lgi
+    number: 3-63-64-65
+    platform_settings:
+      polarity: True
+
+  l_collect7:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lcollect
+    number: 3-66-67-68
+    platform_settings:
+      polarity: True
+
+  l_collect8:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lcollect
+    number: 3-69-70-71
+    platform_settings:
+      polarity: True
+
+  l_collect15:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lcollect
+    number: 3-72-73-74
+    platform_settings:
+      polarity: True
+
+  l_collect16:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lcollect
+    number: 3-75-76-77
+    platform_settings:
+      polarity: True
+
+  l_tool4:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, ltool
+    number: 3-78-79-80
+    platform_settings:
+      polarity: True
+
+  l_tool3:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, ltool
+    number: 3-81-82-83
+    platform_settings:
+      polarity: True
+
+  #+-------------------------------+
+  #|  Light Board 3                |
+  #+-------------------------------+
+
+  #note: 0-11 are not in use
+  l_spinner1:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lspinner
+    number: 4-12-13-14
+    platform_settings:
+      polarity: True
+  
+  l_spinner2:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lspinner
+    number: 4-15-16-17
+    platform_settings:
+      polarity: True
+
+  l_spinner3:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lspinner
+    number: 4-18-19-20
+    platform_settings:
+      polarity: True
+
+  l_spinner4:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lspinner
+    number: 4-21-22-23
+    platform_settings:
+      polarity: True
+
+  l_spinnerflash1:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lspinnerflash
+    number: 4-24-25-26
+    platform_settings:
+      polarity: True
+
+  l_spinnerflash2:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lspinnerflash
+    number: 4-27-28-29
+    platform_settings:
+      polarity: True
+
+  gi_spinner:
+    type: rgb
+    platform: p3_roc
+    tags: lgi
+    number: 4-30-31-32
+    platform_settings:
+      polarity: True
+
+  #note: 33-35 not in use
+  
+  gi_specialitem1:
+    type: rgb
+    platform: p3_roc
+    tags: lgi
+    number: 4-36-37-38
+    platform_settings:
+      polarity: True
+  
+  l_captivemultiball:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lcaptiveball
+    number: 4-39-40-41
+    platform_settings:
+      polarity: True
+
+  l_captivejackpot:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lcaptiveball
+    number: 4-42-43-44
+    platform_settings:
+      polarity: True
+
+  l_captiveextraball:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lcaptiveball
+    number: 4-45-46-47
+    platform_settings:
+      polarity: True
+
+  #Note: 48-59 not in use
+
+  l_popbumper3:
+    type: rgb
+    platform: p3_roc
+    tags: lgi
+    number: 4-48-49-50
+    platform_settings:
+      polarity: True
+  
+  l_popbumper2:
+    type: rgb
+    platform: p3_roc
+    tags: lgi
+    number: 4-51-52-53
+    platform_settings:
+      polarity: True
+  
+  l_popbumper1:
+    type: rgb
+    platform: p3_roc
+    tags: lgi
+    number: 4-54-55-56
+    platform_settings:
+      polarity: True
+  
+  l_popbumper4:
+    type: rgb
+    platform: p3_roc
+    tags: lgi
+    number: 4-57-58-59
+    platform_settings:
+      polarity: True
+
+  gi_loopupperright:
+    type: rgb
+    platform: p3_roc
+    tags: lgi
+    number: 4-60-61-62
+    platform_settings:
+      polarity: True
+  
+  gi_captivetop:
+    type: rgb
+    platform: p3_roc
+    tags: lgi
+    number: 4-63-64-65
+    platform_settings:
+      polarity: True
+
+  gi_captivebottom:
+    type: rgb
+    platform: p3_roc
+    tags: lgi
+    number: 4-66-67-68
+    platform_settings:
+      polarity: True
+
+  l_captiveballhit:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature
+    number: 4-69-70-71
+    platform_settings:
+      polarity: True
+
+  #Note: 72-83 Not in Use
+
+  #+-------------------------------+
+  #|  Light Board 4                |
+  #+-------------------------------+
+
+  #Note: 0-11 Not In Use
+  
+  l_craft4:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lcraft
+    number: 5-12-13-14
+    platform_settings:
+      polarity: True
+  
+  l_craft3:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lcraft
+    number: 5-15-16-17
+    platform_settings:
+      polarity: True
+
+  l_craftlit:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lcraft
+    number: 5-18-19-20
+    platform_settings:
+      polarity: True
+
+  l_craft2:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lcraft
+    number: 5-21-22-23
+    platform_settings:
+      polarity: True
+
+  gi_loopupperleft:
+    type: rgb
+    platform: p3_roc
+    tags: lgi
+    number: 5-24-25-26
+    platform_settings:
+      polarity: True
+  
+  #Note: 27-29 is not active
+
+  gi_specialitem2:
+    type: rgb
+    platform: p3_roc
+    tags: lgi
+    number: 5-30-31-32
+    platform_settings:
+      polarity: True
+
+  l_craft1:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, lcraft
+    number: 5-33-34-35
+    platform_settings:
+      polarity: True
+
+  l_toolcollect2:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, ltoolcollect
+    number: 5-36-37-38
+    platform_settings:
+      polarity: True
+  
+  l_toolcollect3:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, ltoolcollect
+    number: 5-39-40-41
+    platform_settings:
+      polarity: True
+
+  l_tool3ready:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature
+    number: 5-42-43-44
+    platform_settings:
+      polarity: True
+
+  l_tool2ready:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature
+    number: 5-45-46-47
+    platform_settings:
+      polarity: True
+
+  #Note: 48-59 Not In Use
+    
+  #Note: 63-68 Not In Use
+
+  l_tool1ready:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature
+    number: 5-66-67-68
+    platform_settings:
+      polarity: True
+
+  l_toolcollect1:
+    type: rgb
+    platform: p3_roc
+    tags: lfeature, ltoolcollect
+    number: 5-69-70-71
+    platform_settings:
+      polarity: True
+  
+  #Note: 71-83 are not in use
+
+  #=====================================================================
+  # SERIAL LEDS START HERE                                             #
+  #=====================================================================
+
+  l_undercab1:
+    type: rgb
+    tags: lundercab, lundercab_odd, lundercab_chase1
+    number: 0-0
+    platform: fadecandy
+    
+  l_undercab2:
+    type: rgb
+    tags: lundercab, lundercab_even, lundercab_chase2
+    number: 0-1
+    platform: fadecandy
+
+  l_undercab3:
+    type: rgb
+    tags: lundercab, lundercab_odd, lundercab_chase3
+    number: 0-2
+    platform: fadecandy
+
+  l_undercab4:
+    type: rgb
+    tags: lundercab, lundercab_even, lundercab_chase4
+    number: 0-3
+    platform: fadecandy
+
+  l_undercab5:
+    type: rgb
+    tags: lundercab, lundercab_odd, lundercab_chase1
+    number: 0-4
+    platform: fadecandy
+
+  l_undercab6:
+    type: rgb
+    tags: lundercab, lundercab_even, lundercab_chase2
+    number: 0-5
+    platform: fadecandy
+
+  l_undercab7:
+    type: rgb
+    tags: lundercab, lundercab_odd, lundercab_chase3
+    number: 0-6
+    platform: fadecandy
+
+  l_undercab8:
+    type: rgb
+    tags: lundercab, lundercab_even, lundercab_chase4
+    number: 0-7
+    platform: fadecandy
+
+  l_undercab9:
+    type: rgb
+    tags: lundercab, lundercab_odd, lundercab_chase1
+    number: 0-8
+    platform: fadecandy
+
+  l_undercab10:
+    type: rgb
+    tags: lundercab, lundercab_even, lundercab_chase2
+    number: 0-9
+    platform: fadecandy
+
+  l_undercab11:
+    type: rgb
+    tags: lundercab, lundercab_odd, lundercab_chase3
+    number: 0-10
+    platform: fadecandy
+
+  l_undercab12:
+    type: rgb
+    tags: lundercab, lundercab_even, lundercab_chase4
+    number: 0-11
+    platform: fadecandy
+
+  l_undercab13:
+    type: rgb
+    tags: lundercab, lundercab_odd, lundercab_chase1
+    number: 0-12
+    platform: fadecandy
+
+  l_undercab14:
+    type: rgb
+    tags: lundercab, lundercab_even, lundercab_chase2
+    number: 0-13
+    platform: fadecandy
+
+  l_undercab15:
+    type: rgb
+    tags: lundercab, lundercab_odd, lundercab_chase3
+    number: 0-14
+    platform: fadecandy
+
+  l_undercab16:
+    type: rgb
+    tags: lundercab, lundercab_even, lundercab_chase4
+    number: 0-15
+    platform: fadecandy
+
+  l_undercab17:
+    type: rgb
+    tags: lundercab, lundercab_odd, lundercab_chase1
+    number: 0-16
+    platform: fadecandy
+
+  l_undercab18:
+    type: rgb
+    tags: lundercab, lundercab_even, lundercab_chase2
+    number: 0-17
+    platform: fadecandy
+
+  l_undercab19:
+    type: rgb
+    tags: lundercab, lundercab_odd, lundercab_chase3
+    number: 0-18
+    platform: fadecandy
+
+  l_undercab20:
+    type: rgb
+    tags: lundercab, lundercab_even, lundercab_chase4
+    number: 0-19
+    platform: fadecandy
+
+  l_undercab21:
+    type: rgb
+    tags: lundercab, lundercab_odd, lundercab_chase1
+    number: 0-20
+    platform: fadecandy
+
+  l_undercab22:
+    type: rgb
+    tags: lundercab, lundercab_even, lundercab_chase2
+    number: 0-21
+    platform: fadecandy
+
+  l_undercab23:
+    type: rgb
+    tags: lundercab, lundercab_odd, lundercab_chase3
+    number: 0-22
+    platform: fadecandy
+
+  l_undercab24:
+    type: rgb
+    tags: lundercab, lundercab_even, lundercab_chase4
+    number: 0-23
+    platform: fadecandy
+
+  l_undercab25:
+    type: rgb
+    tags: lundercab, lundercab_odd
+    number: 0-24
+    platform: fadecandy
+
+
+  l_backboxleft1:
+    type: rgb
+    tags: lbackbox, lbackboxodd, lbackbox_chase2, lbackbox_chasearound2
+    number: 0-64
+    platform: fadecandy
+
+  l_backboxleft2:
+    type: rgb
+    tags: lbackbox, lbackboxeven, lbackbox_chase3, lbackbox_chasearound3
+    number: 0-65
+    platform: fadecandy
+
+  l_backboxleft3:
+    type: rgb
+    tags: lbackbox, lbackboxodd, lbackbox_chase4, lbackbox_chasearound4
+    number: 0-66
+    platform: fadecandy
+
+  l_backboxleft4:
+    type: rgb
+    tags: lbackbox, lbackboxeven, lbackbox_chase1, lbackbox_chasearound1
+    number: 0-67
+    platform: fadecandy
+
+  l_backboxleft5:
+    type: rgb
+    tags: lbackbox, lbackboxodd, lbackbox_chase2, lbackbox_chasearound2
+    number: 0-68
+    platform: fadecandy
+
+  l_backboxleft6:
+    type: rgb
+    tags: lbackbox, lbackboxeven, lbackbox_chase3, lbackbox_chasearound3
+    number: 0-69
+    platform: fadecandy
+
+  l_backboxleft7:
+    type: rgb
+    tags: lbackbox, lbackboxodd, lbackbox_chase4, lbackbox_chasearound4
+    number: 0-70
+    platform: fadecandy
+
+  l_backboxleft8:
+    type: rgb
+    tags: lbackbox, lbackboxeven, lbackbox_chase1, lbackbox_chasearound1
+    number: 0-71
+    platform: fadecandy
+
+  l_backboxleft9:
+    type: rgb
+    tags: lbackbox, lbackboxodd, lbackbox_chase2, lbackbox_chasearound2
+    number: 0-72
+    platform: fadecandy
+
+  l_backboxleft10:
+    type: rgb
+    tags: lbackbox, lbackboxeven, lbackbox_chase3, lbackbox_chasearound3
+    number: 0-73
+    platform: fadecandy
+
+  l_backboxleft11:
+    type: rgb
+    tags: lbackbox, lbackboxodd, lbackbox_chase4, lbackbox_chasearound4
+    number: 0-74
+    platform: fadecandy
+
+  l_backboxleft12:
+    type: rgb
+    tags: lbackbox, lbackboxeven, lbackbox_chase1, lbackbox_chasearound1
+    number: 0-75
+    platform: fadecandy
+
+  l_backboxleft13:
+    type: rgb
+    tags: lbackbox, lbackboxodd, lbackbox_chase2, lbackbox_chasearound2
+    number: 0-76
+    platform: fadecandy
+
+  l_backboxleft14:
+    type: rgb
+    tags: lbackbox, lbackboxeven, lbackbox_chase3, lbackbox_chasearound3
+    number: 0-77
+    platform: fadecandy
+
+  l_backboxleft15:
+    type: rgb
+    tags: lbackbox, lbackboxodd, lbackbox_chase4, lbackbox_chasearound4
+    number: 0-78
+    platform: fadecandy
+
+  l_backboxleft16:
+    type: rgb
+    tags: lbackbox, lbackboxeven, lbackbox_chase1, lbackbox_chasearound1
+    number: 0-79
+    platform: fadecandy
+
+  l_backboxleft17:
+    type: rgb
+    tags: lbackbox, lbackboxodd, lbackbox_chase2, lbackbox_chasearound2
+    number: 0-80
+    platform: fadecandy
+
+  l_backboxleft18:
+    type: rgb
+    tags: lbackbox, lbackboxeven, lbackbox_chase3, lbackbox_chasearound3
+    number: 0-81
+    platform: fadecandy
+
+  l_backboxleft19:
+    type: rgb
+    tags: lbackbox, lbackboxodd, lbackbox_chase4, lbackbox_chasearound4
+    number: 0-82
+    platform: fadecandy
+
+  l_actionbar1:
+    type: rgb
+    tags: lactionbar, lactionbarodd, lactionbar_chase1, lbackbox_chasearound1
+    number: 0-83
+    platform: fadecandy
+
+  l_actionbar2:
+    type: rgb
+    tags: lactionbar, lactionbareven, lactionbar_chase2, lbackbox_chasearound2
+    number: 0-84
+    platform: fadecandy
+
+  l_actionbar3:
+    type: rgb
+    tags: lactionbar, lactionbarodd, lactionbar_chase3, lbackbox_chasearound3
+    number: 0-85
+    platform: fadecandy
+
+  l_actionbar4:
+    type: rgb
+    tags: lactionbar, lactionbareven, lactionbar_chase4, lbackbox_chasearound4
+    number: 0-86
+    platform: fadecandy
+
+  l_actionbar5:
+    type: rgb
+    tags: lactionbar, lactionbarodd, lactionbar_chase1, lbackbox_chasearound1
+    number: 0-87
+    platform: fadecandy
+
+  l_actionbar6:
+    type: rgb
+    tags: lactionbar, lactionbareven, lactionbar_chase2, lbackbox_chasearound2
+    number: 0-88
+    platform: fadecandy
+
+  l_actionbar7:
+    type: rgb
+    tags: lactionbar, lactionbarodd, lactionbar_chase3, lbackbox_chasearound3
+    number: 0-89
+    platform: fadecandy
+
+  l_actionbar8:
+    type: rgb
+    tags: lactionbar, lactionbareven, lactionbar_chase4, lbackbox_chasearound4
+    number: 0-90
+    platform: fadecandy
+
+  l_actionbar9:
+    type: rgb
+    tags: lactionbar, lactionbarodd, lactionbar_chase1, lbackbox_chasearound1
+    number: 0-91
+    platform: fadecandy
+
+  l_actionbar10:
+    type: rgb
+    tags: lactionbar, lactionbareven, lactionbar_chase2, lbackbox_chasearound2
+    number: 0-92
+    platform: fadecandy
+
+  l_actionbar11:
+    type: rgb
+    tags: lactionbar, lactionbarodd, lactionbar_chase3, lbackbox_chasearound3
+    number: 0-93
+    platform: fadecandy
+
+  l_actionbar12:
+    type: rgb
+    tags: lactionbar, lactionbareven, lactionbar_chase4, lbackbox_chasearound4
+    number: 0-94
+    platform: fadecandy
+
+  l_actionbar13:
+    type: rgb
+    tags: lactionbar, lactionbarodd, lactionbar_chase1, lbackbox_chasearound1
+    number: 0-95
+    platform: fadecandy
+
+  l_actionbar14:
+    type: rgb
+    tags: lactionbar, lactionbareven, lactionbar_chase2, lbackbox_chasearound2
+    number: 0-96
+    platform: fadecandy
+
+  l_actionbar15:
+    type: rgb
+    tags: lactionbar, lactionbarodd, lactionbar_chase3, lbackbox_chasearound3
+    number: 0-97
+    platform: fadecandy
+
+  l_actionbar16:
+    type: rgb
+    tags: lactionbar, lactionbareven, lactionbar_chase4, lbackbox_chasearound4
+    number: 0-98
+    platform: fadecandy
+
+  l_actionbar17:
+    type: rgb
+    tags: lactionbar, lactionbarodd, lactionbar_chase1, lbackbox_chasearound1
+    number: 0-99
+    platform: fadecandy
+
+  l_actionbar18:
+    type: rgb
+    tags: lactionbar, lactionbareven, lactionbar_chase2, lbackbox_chasearound2
+    number: 0-100
+    platform: fadecandy
+
+  l_actionbar19:
+    type: rgb
+    tags: lactionbar, lactionbarodd, lactionbar_chase3, lbackbox_chasearound3
+    number: 0-101
+    platform: fadecandy
+
+  l_actionbar20:
+    type: rgb
+    tags: lactionbar, lactionbareven, lactionbar_chase4, lbackbox_chasearound4
+    number: 0-102
+    platform: fadecandy
+
+  l_actionbar21:
+    type: rgb
+    tags: lactionbar, lactionbarodd, lactionbar_chase1, lbackbox_chasearound1
+    number: 0-103
+    platform: fadecandy
+
+  l_actionbar22:
+    type: rgb
+    tags: lactionbar, lactionbareven, lactionbar_chase2, lbackbox_chasearound2
+    number: 0-104
+    platform: fadecandy
+
+  l_actionbar23:
+    type: rgb
+    tags: lactionbar, lactionbarodd, lactionbar_chase3, lbackbox_chasearound3
+    number: 0-105
+    platform: fadecandy
+
+  l_actionbar24:
+    type: rgb
+    tags: lactionbar, lactionbareven, lactionbar_chase4, lbackbox_chasearound4
+    number: 0-106
+    platform: fadecandy
+
+  l_actionbar25:
+    type: rgb
+    tags: lactionbar, lactionbarodd, lactionbar_chase1, lbackbox_chasearound1
+    number: 0-107
+    platform: fadecandy
+
+  l_actionbar26:
+    type: rgb
+    tags: lactionbar, lactionbareven, lactionbar_chase2, lbackbox_chasearound2
+    number: 0-108
+    platform: fadecandy
+
+  l_actionbar27:
+    type: rgb
+    tags: lactionbar, lactionbarodd, lactionbar_chase3, lbackbox_chasearound3
+    number: 0-109
+    platform: fadecandy
+
+  l_actionbar28:
+    type: rgb
+    tags: lactionbar, lactionbareven, lactionbar_chase4, lbackbox_chasearound4
+    number: 0-110
+    platform: fadecandy
+
+  l_actionbar29:
+    type: rgb
+    tags: lactionbar, lactionbarodd, lactionbar_chase1, lbackbox_chasearound1
+    number: 0-111
+    platform: fadecandy
+
+  l_actionbar30:
+    type: rgb
+    tags: lactionbar, lactionbareven, lactionbar_chase2, lbackbox_chasearound2
+    number: 0-112
+    platform: fadecandy
+
+  l_actionbar31:
+    type: rgb
+    tags: lactionbar, lactionbarodd, lactionbar_chase3, lbackbox_chasearound3
+    number: 0-113
+    platform: fadecandy
+
+  l_actionbar32:
+    type: rgb
+    tags: lactionbar, lactionbareven, lactionbar_chase4, lbackbox_chasearound4
+    number: 0-114
+    platform: fadecandy
+
+  l_actionbar33:
+    type: rgb
+    tags: lactionbar, lactionbarodd, lactionbar_chase1, lbackbox_chasearound1
+    number: 0-115
+    platform: fadecandy
+
+  l_actionbar34:
+    type: rgb
+    tags: lactionbar, lactionbareven, lactionbar_chase2, lbackbox_chasearound2
+    number: 0-116
+    platform: fadecandy
+
+  l_actionbar35:
+    type: rgb
+    tags: lactionbar, lactionbarodd, lactionbar_chase3, lbackbox_chasearound3
+    number: 0-117
+    platform: fadecandy
+
+  l_actionbar36:
+    type: rgb
+    tags: lactionbar, lactionbareven, lactionbar_chase4, lbackbox_chasearound4
+    number: 0-118
+    platform: fadecandy
+
+  l_actionbar37:
+    type: rgb
+    tags: lactionbar, lactionbarodd, lactionbar_chase1, lbackbox_chasearound1
+    number: 0-119
+    platform: fadecandy
+
+
+  l_backboxright19:
+    type: rgb
+    tags: lbackbox, lbackboxodd, lbackbox_chase4, lbackbox_chasearound2
+    number: 0-128
+    platform: fadecandy
+
+  l_backboxright18:
+    type: rgb
+    tags: lbackbox, lbackboxeven, lbackbox_chase3, lbackbox_chasearound3
+    number: 0-129
+    platform: fadecandy
+
+  l_backboxright17:
+    type: rgb
+    tags: lbackbox, lbackboxodd, lbackbox_chase2, lbackbox_chasearound4
+    number: 0-130
+    platform: fadecandy
+
+  l_backboxright16:
+    type: rgb
+    tags: lbackbox, lbackboxeven, lbackbox_chase1, lbackbox_chasearound1
+    number: 0-131
+    platform: fadecandy
+
+  l_backboxright15:
+    type: rgb
+    tags: lbackbox, lbackboxodd, lbackbox_chase4, lbackbox_chasearound2
+    number: 0-132
+    platform: fadecandy
+
+  l_backboxright14:
+    type: rgb
+    tags: lbackbox, lbackboxeven, lbackbox_chase3, lbackbox_chasearound3
+    number: 0-133
+    platform: fadecandy
+
+  l_backboxright13:
+    type: rgb
+    tags: lbackbox, lbackboxodd, lbackbox_chase2, lbackbox_chasearound4
+    number: 0-134
+    platform: fadecandy
+
+  l_backboxright12:
+    type: rgb
+    tags: lbackbox, lbackboxeven, lbackbox_chase1, lbackbox_chasearound1
+    number: 0-135
+    platform: fadecandy
+
+  l_backboxright11:
+    type: rgb
+    tags: lbackbox, lbackboxodd, lbackbox_chase4, lbackbox_chasearound2
+    number: 0-136
+    platform: fadecandy
+
+  l_backboxright10:
+    type: rgb
+    tags: lbackbox, lbackboxeven, lbackbox_chase3, lbackbox_chasearound3
+    number: 0-137
+    platform: fadecandy
+
+  l_backboxright9:
+    type: rgb
+    tags: lbackbox, lbackboxodd, lbackbox_chase2, lbackbox_chasearound4
+    number: 0-138
+    platform: fadecandy
+
+  l_backboxright8:
+    type: rgb
+    tags: lbackbox, lbackboxeven, lbackbox_chase1, lbackbox_chasearound1
+    number: 0-139
+    platform: fadecandy
+
+  l_backboxright7:
+    type: rgb
+    tags: lbackbox, lbackboxodd, lbackbox_chase4, lbackbox_chasearound2
+    number: 0-140
+    platform: fadecandy
+
+  l_backboxright6:
+    type: rgb
+    tags: lbackbox, lbackboxeven, lbackbox_chase3, lbackbox_chasearound3
+    number: 0-141
+    platform: fadecandy
+
+  l_backboxright5:
+    type: rgb
+    tags: lbackbox, lbackboxodd, lbackbox_chase2, lbackbox_chasearound4
+    number: 0-142
+    platform: fadecandy
+
+  l_backboxright4:
+    tags: lbackbox, lbackboxeven, lbackbox_chase1, lbackbox_chasearound1
+    number: 0-143
+    platform: fadecandy
+
+  l_backboxright3:
+    tags: lbackbox, lbackboxodd, lbackbox_chase4, lbackbox_chasearound2
+    number: 0-144
+    platform: fadecandy
+
+  l_backboxright2:
+    tags: lbackbox, lbackboxeven, lbackbox_chase3, lbackbox_chasearound3
+    number: 0-145
+    platform: fadecandy
+
+  l_backboxright1:
+    tags: lbackbox, lbackboxodd, lbackbox_chase2, lbackbox_chasearound4
+    number: 0-146
+    platform: fadecandy
