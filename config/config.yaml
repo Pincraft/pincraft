@@ -12,7 +12,7 @@ hardware:
 playfields:
   playfield:
     tags: default
-    default_source_device: bd_trough        #this was changed from bd_plunger
+    default_source_device: bd_plunger        #this was changed from bd_plunger / reverted back
 
 # DISPLAY CONFIGURATION
 #--------------------------------------------
@@ -1027,6 +1027,7 @@ ball_devices:
   bd_plunger:
     ball_switches: s_plungerlane
     mechanical_eject: true
+    eject_timeouts: 3s
   bd_scoop:
     ball_switches: s_scoup
     eject_coil: c_scoop_eject
