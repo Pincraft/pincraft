@@ -1804,7 +1804,7 @@ sound_system:
     channels: 2
     enabled: True
     frequency: 44100
-    master_volume: 0.75
+    master_volume: 1
     tracks:
        music:
           type: standard
