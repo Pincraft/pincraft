@@ -137,17 +137,17 @@ sound_player:
   crafting_lit{current_player.tools_ready<=1}: craft_ready
 
 light_player:
-  display_tools:
+  tools_updated:
     l_tool1ready: off
     l_tool2ready: off
     l_tool3ready: off
-  display_tools{current_player.tools_ready==1}:
+  tools_updated{current_player.tools_ready==1}:
     l_tool1ready: darkblue
-  display_tools{current_player.tools_ready==2}:
+  tools_updated{current_player.tools_ready==2}:
     l_tool2ready: darkblue
-  display_tools{current_player.tools_ready==3}:
+  tools_updated{current_player.tools_ready==3}:
     l_tool3ready: darkblue
-  display_tools{current_player.tools_ready==4}:
+  tools_updated{current_player.tools_ready==4}:
     l_tool1ready: darkblue
     l_tool2ready: darkblue
     l_tool3ready: darkblue
@@ -157,80 +157,14 @@ light_player:
   crafting_disable:
     l_craftlit: off
 
-  display_tools{current_player.shovel==1}:
-    l_tool1: Brown
-  display_tools{current_player.axe==1}:
-    l_tool2: Brown
-  display_tools{current_player.pickaxe==1}:
-    l_tool3: Brown
-  display_tools{current_player.sword==1}:
-    l_tool4: Brown
-
-  display_tools{current_player.shovel==2}:
-    l_tool1: MidnightBlue
-  display_tools{current_player.axe==2}:
-    l_tool2: MidnightBlue
-  display_tools{current_player.pickaxe==2}:
-    l_tool3: MidnightBlue
-  display_tools{current_player.sword==2}:
-    l_tool4: MidnightBlue
-
-  display_tools{current_player.shovel==3}:
-    l_tool1: Silver
-  display_tools{current_player.axe==3}:
-    l_tool2: Silver
-  display_tools{current_player.pickaxe==3}:
-    l_tool3: Silver
-  display_tools{current_player.sword==3}:
-    l_tool4: Silver
-
-  display_tools{current_player.shovel==4}:
-    l_tool1: Yellow
-  display_tools{current_player.axe==4}:
-    l_tool2: Yellow
-  display_tools{current_player.pickaxe==4}:
-    l_tool3: Yellow
-  display_tools{current_player.sword==4}:
-    l_tool4: Yellow
-
-  display_tools{current_player.shovel==5}:
-    l_tool1: Teal
-  display_tools{current_player.axe==5}:
-    l_tool2: Teal
-  display_tools{current_player.pickaxe==5}:
-    l_tool3: Teal
-  display_tools{current_player.sword==5}:
-    l_tool4: Teal
-
-  display_tools{current_player.bonus_multiplier==2}:
-    l_bonus2x: MidnightBlue
-    l_bonus3x: off
-    l_bonus4x: off
-    l_bonus5x: off
-  display_tools{current_player.bonus_multiplier==3}:
-    l_bonus2x: off
-    l_bonus3x: Silver
-    l_bonus4x: off
-    l_bonus5x: off
-  display_tools{current_player.bonus_multiplier==4}:
-    l_bonus2x: off
-    l_bonus3x: off
-    l_bonus4x: Yellow
-    l_bonus5x: off
-  display_tools{current_player.bonus_multiplier==5}:
-    l_bonus2x: off
-    l_bonus3x: off
-    l_bonus4x: off
-    l_bonus5x: Teal
-
 event_player:
   mode_tools_started{current_player.crafting_enabled==0}:
     - crafting_disable
-    - display_tools
+    - tools_updated
 
   mode_tools_started{current_player.crafting_enabled==1}:
     - crafting_lit
-    - display_tools
+    - tools_updated
 
   toolcollect_complete:
     - recalculate_tools
@@ -240,16 +174,16 @@ event_player:
 
   multiball_nightmb_ended{current_player.crafting_enabled==1}:
     - crafting_lit
-    - display_tools
+    - tools_updated
 
   multiball_villagermb_ended{current_player.crafting_enabled==1}:
     - crafting_lit
-    - display_tools
+    - tools_updated
   
   #CRAFTING!!!
   balldevice_bd_topkicker_ball_enter{current_player.crafting_ready==1}:
     - crafting_awarded
-    - display_tools
+    - tools_updated
     - crafting_disable
     - check_craftingcomplete
 
@@ -259,10 +193,10 @@ event_player:
     - tool_level_complete
     - reset_tool_variables
     - restart_collect_tools
-    - display_tools
+    - tools_updated
 
   tool_collected:
-    - display_tools
+    - tools_updated
   
   #Allow the user to collect additional tools up to 4
   tool_collected{current_player.tools_ready<4}:

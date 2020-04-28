@@ -2254,10 +2254,12 @@ modes:
   - worldcontroller
   - bonus
   - bonusdisplay
+  - tools
+  - tooldisplay
   - villagermb
   - night
   - divertercontrol
-  - tools
+  
   - extraball
   - skillshot
   

@@ -594,7 +594,6 @@ widgets:
       z: 100
       anchor_x: left
       anchor_y: top
-
     - type: text        #WORLD JACKPOT
       text: Diverter State - (player|diverter_state)
       number_grouping: true
@@ -606,6 +605,8 @@ widgets:
       z: 100
       anchor_x: left
       anchor_y: top
+
+ 
 
 slides:
   base_pincraft_slide:
@@ -664,42 +665,7 @@ slides:
       z: 100
       anchor_x: left
       anchor_y: top
-    - type: text        #TOOL 1 MULTIPLIER
-      text: (player|sword) x
-      font_name: ARLRDBD
-      font_size: 25
-      y: top-188
-      x: right-60
-      z: 100
-      anchor_x: center
-      anchor_y: top
-    - type: text        #TOOL 2 MULTIPLIER
-      text: (player|pickaxe) x
-      font_name: ARLRDBD
-      font_size: 25
-      y: top-302
-      x: right-60
-      z: 100
-      anchor_x: center
-      anchor_y: top
-    - type: text        #TOOL 3 MULTIPLIER
-      text: (player|axe) x
-      font_name: ARLRDBD
-      font_size: 25
-      y: top-416
-      x: right-60
-      z: 100
-      anchor_x: center
-      anchor_y: top
-    - type: text        #TOOL 4 MULTIPLIER
-      text: (player|shovel) x
-      font_name: ARLRDBD
-      font_size: 25
-      y: top-530
-      x: right-60
-      z: 100
-      anchor_x: center
-      anchor_y: top
+   
     - type: text        #ITEM 1 NEEDED
       text: (player|world_item1_remaining)
       font_name: ARLRDBD
@@ -766,13 +732,7 @@ slides:
       y: bottom+15
       x: right-75 
       z: 10
-    - type: image        #TOOL BACKGROUND
-      image: tool_background
-      anchor_x: right
-      anchor_y: bottom
-      y: bottom+200
-      x: right-15
-      z: 10
+    
     - type: image        #ITEM BACKGROUND
       image: item_background
       anchor_x: left

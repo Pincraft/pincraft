@@ -1,6 +1,6 @@
 events:
   game_ended: 157
-  game_started: 708
+  game_started: 714
 player:
   score:
     average: 8342119.7674418595
@@ -64,12 +64,12 @@ switches:
   s_collectitem4: 4676
   s_collectitem5: 4500
   s_credit_right: 0
-  s_drop1: 1997
-  s_drop2: 3116
-  s_drop3: 8046
-  s_drop4: 1960
-  s_drop5: 4582
-  s_drop6: 2797
+  s_drop1: 2001
+  s_drop2: 3122
+  s_drop3: 8061
+  s_drop4: 1964
+  s_drop5: 4589
+  s_drop6: 2801
   s_left_flipper: 24025
   s_leftinlane: 677
   s_leftoutlane: 478
@@ -77,7 +77,7 @@ switches:
   s_loopleft: 3173
   s_loopright: 2794
   s_maint: 0
-  s_plungerlane: 2539
+  s_plungerlane: 2543
   s_popbumper1: 3412
   s_popbumper2: 4874
   s_popbumper3: 6469
@@ -95,11 +95,11 @@ switches:
   s_topbumperleft: 1028
   s_topbumperright: 1549
   s_topkicker: 4040
-  s_trough1: 2235
-  s_trough2: 1885
-  s_trough3: 1807
+  s_trough1: 2239
+  s_trough2: 1889
+  s_trough3: 1811
   s_trough4: 1469
-  s_troughjam: 1903
+  s_troughjam: 1907
   s_upperdrop: 1710
   s_whitedot1: 826
   s_whitedot2: 853

@@ -1,0 +1,255 @@
+#config_version=5
+mode:
+  start_events: mode_base_started
+  stop_events: mode_base_stopped
+  priority: 300
+
+#TODO: Should not be able to collect level 6 tools
+
+widgets:
+  widget_tooldisplay:
+    - type: image        #TOOL BACKGROUND
+      image: tool_background
+      anchor_x: right
+      anchor_y: bottom
+      y: bottom+200
+      x: right-15
+      z: 10
+    - type: text        #TOOL 1 MULTIPLIER
+      text: (player|sword) x
+      font_name: ARLRDBD
+      font_size: 25
+      y: top-188
+      x: right-60
+      z: 100
+      anchor_x: center
+      anchor_y: top
+    - type: text        #TOOL 2 MULTIPLIER
+      text: (player|pickaxe) x
+      font_name: ARLRDBD
+      font_size: 25
+      y: top-302
+      x: right-60
+      z: 100
+      anchor_x: center
+      anchor_y: top
+    - type: text        #TOOL 3 MULTIPLIER
+      text: (player|axe) x
+      font_name: ARLRDBD
+      font_size: 25
+      y: top-416
+      x: right-60
+      z: 100
+      anchor_x: center
+      anchor_y: top
+    - type: text        #TOOL 4 MULTIPLIER
+      text: (player|shovel) x
+      font_name: ARLRDBD
+      font_size: 25
+      y: top-530
+      x: right-60
+      z: 100
+      anchor_x: center
+      anchor_y: top
+  widget_toolsword:
+    - type: image     
+      image: Sword_Small_1x
+      anchor_x: center
+      anchor_y: center
+      y: top-150
+      x: right-60
+      z: 200    
+  widget_toolpickaxe:
+    - type: image     
+      image: PickAxe_Small_1x
+      anchor_x: center
+      anchor_y: center
+      y: top-260
+      x: right-60
+      z: 200
+  widget_toolaxe:
+    - type: image     
+      image: Axe_Small_1x
+      anchor_x: center
+      anchor_y: center
+      y: top-375
+      x: right-60
+      z: 200
+  widget_toolshovel:
+    - type: image     
+      image: Shovel_Small_1x
+      anchor_x: center
+      anchor_y: center
+      y: top-490
+      x: right-60
+      z: 200
+
+widget_player:
+  mode_tooldisplay_started:
+    widget_tooldisplay
+    widget_toolshovel
+    widget_toolaxe
+    widget_toolpickaxe
+    widget_toolsword
+    
+  tools_updated:
+    widget_toolshovel{current_player.shovel==1}:
+      action: update
+      widget_settings:
+        image: Shovel_Small_1x
+    widget_toolshovel{current_player.shovel==2}:
+      action: update
+      widget_settings:
+        image: Shovel_Small_2x
+    widget_toolshovel{current_player.shovel==3}:
+      action: update
+      widget_settings:
+        image: Shovel_Small_3x
+    widget_toolshovel{current_player.shovel==4}:
+      action: update
+      widget_settings:
+        image: Shovel_Small_4x
+    widget_toolshovel{current_player.shovel==5}:
+      action: update
+      widget_settings:
+        image: Shovel_Small_5x
+
+    widget_toolpickaxe{current_player.pickaxe==1}:
+      action: update
+      widget_settings:
+        image: PickAxe_Small_1x
+    widget_toolpickaxe{current_player.pickaxe==2}:
+      action: update
+      widget_settings:
+        image: PickAxe_Small_2x
+    widget_toolpickaxe{current_player.pickaxe==3}:
+      action: update
+      widget_settings:
+        image: PickAxe_Small_3x
+    widget_toolpickaxe{current_player.pickaxe==4}:
+      action: update
+      widget_settings:
+        image: PickAxe_Small_4x
+    widget_toolpickaxe{current_player.pickaxe==5}:
+      action: update
+      widget_settings:
+        image: PickAxe_Small_5x
+
+    widget_toolaxe{current_player.axe==1}:
+      action: update
+      widget_settings:
+        image: Axe_Small_1x
+    widget_toolaxe{current_player.axe==2}:
+      action: update
+      widget_settings:
+        image: Axe_Small_2x
+    widget_toolaxe{current_player.axe==3}:
+      action: update
+      widget_settings:
+        image: Axe_Small_3x
+    widget_toolaxe{current_player.axe==4}:
+      action: update
+      widget_settings:
+        image: Axe_Small_4x
+    widget_toolaxe{current_player.axe==5}:
+      action: update
+      widget_settings:
+        image: Axe_Small_5x
+
+    widget_toolsword{current_player.sword==1}:
+      action: update
+      widget_settings:
+        image: Sword_Small_1x
+    widget_toolsword{current_player.sword==2}:
+      action: update
+      widget_settings:
+        image: Sword_Small_2x
+    widget_toolsword{current_player.sword==3}:
+      action: update
+      widget_settings:
+        image: Sword_Small_3x
+    widget_toolsword{current_player.sword==4}:
+      action: update
+      widget_settings:
+        image: Sword_Small_4x
+    widget_toolsword{current_player.sword==5}:
+      action: update
+      widget_settings:
+        image: Sword_Small_5x
+
+light_player:
+  tools_updated{current_player.shovel==1}:
+    l_tool1: Brown
+  tools_updated{current_player.axe==1}:
+    l_tool2: Brown
+  tools_updated{current_player.pickaxe==1}:
+    l_tool3: Brown
+  tools_updated{current_player.sword==1}:
+    l_tool4: Brown
+
+  tools_updated{current_player.shovel==2}:
+    l_tool1: MidnightBlue
+  tools_updated{current_player.axe==2}:
+    l_tool2: MidnightBlue
+  tools_updated{current_player.pickaxe==2}:
+    l_tool3: MidnightBlue
+  tools_updated{current_player.sword==2}:
+    l_tool4: MidnightBlue
+
+  tools_updated{current_player.shovel==3}:
+    l_tool1: Silver
+  tools_updated{current_player.axe==3}:
+    l_tool2: Silver
+  tools_updated{current_player.pickaxe==3}:
+    l_tool3: Silver
+  tools_updated{current_player.sword==3}:
+    l_tool4: Silver
+
+  tools_updated{current_player.shovel==4}:
+    l_tool1: Yellow
+  tools_updated{current_player.axe==4}:
+    l_tool2: Yellow
+  tools_updated{current_player.pickaxe==4}:
+    l_tool3: Yellow
+  tools_updated{current_player.sword==4}:
+    l_tool4: Yellow
+
+  tools_updated{current_player.shovel==5}:
+    l_tool1: Teal
+  tools_updated{current_player.axe==5}:
+    l_tool2: Teal
+  tools_updated{current_player.pickaxe==5}:
+    l_tool3: Teal
+  tools_updated{current_player.sword==5}:
+    l_tool4: Teal
+
+  tools_updated{current_player.bonus_multiplier==2}:
+    l_bonus2x: MidnightBlue
+    l_bonus3x: off
+    l_bonus4x: off
+    l_bonus5x: off
+  tools_updated{current_player.bonus_multiplier==3}:
+    l_bonus2x: off
+    l_bonus3x: Silver
+    l_bonus4x: off
+    l_bonus5x: off
+  tools_updated{current_player.bonus_multiplier==4}:
+    l_bonus2x: off
+    l_bonus3x: off
+    l_bonus4x: Yellow
+    l_bonus5x: off
+  tools_updated{current_player.bonus_multiplier==5}:
+    l_bonus2x: off
+    l_bonus3x: off
+    l_bonus4x: off
+    l_bonus5x: Teal
+
+event_player:
+  mode_tooldisplay_started:
+    tools_updated
+
+  
+
+
+
+      
