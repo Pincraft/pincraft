@@ -91,88 +91,119 @@ widget_player:
     widget_toolaxe
     widget_toolpickaxe
     widget_toolsword
-    
-  tools_updated:
-    widget_toolshovel{current_player.shovel==1}:
+
+  tools_updated{current_player.shovel==1}:
+    widget_toolshovel:
       action: update
       widget_settings:
         image: Shovel_Small_1x
-    widget_toolshovel{current_player.shovel==2}:
+  tools_updated{current_player.shovel==2}:
+    widget_toolshovel:
       action: update
       widget_settings:
         image: Shovel_Small_2x
-    widget_toolshovel{current_player.shovel==3}:
+  tools_updated{current_player.shovel==3}:
+    widget_toolshovel:
       action: update
       widget_settings:
         image: Shovel_Small_3x
-    widget_toolshovel{current_player.shovel==4}:
+  tools_updated{current_player.shovel==4}:
+    widget_toolshovel:
       action: update
       widget_settings:
         image: Shovel_Small_4x
-    widget_toolshovel{current_player.shovel==5}:
+  tools_updated{current_player.shovel==5}:
+    widget_toolshovel:
       action: update
       widget_settings:
         image: Shovel_Small_5x
 
-    widget_toolpickaxe{current_player.pickaxe==1}:
+  tools_updated{current_player.pickaxe==1}:
+    widget_toolpickaxe:
       action: update
       widget_settings:
         image: PickAxe_Small_1x
-    widget_toolpickaxe{current_player.pickaxe==2}:
+
+  tools_updated{current_player.pickaxe==2}:
+    widget_toolpickaxe:
       action: update
       widget_settings:
         image: PickAxe_Small_2x
-    widget_toolpickaxe{current_player.pickaxe==3}:
+
+  tools_updated{current_player.pickaxe==3}:
+    widget_toolpickaxe:
       action: update
       widget_settings:
         image: PickAxe_Small_3x
-    widget_toolpickaxe{current_player.pickaxe==4}:
+
+  tools_updated{current_player.pickaxe==4}:
+    widget_toolpickaxe:
       action: update
       widget_settings:
         image: PickAxe_Small_4x
-    widget_toolpickaxe{current_player.pickaxe==5}:
+
+  tools_updated{current_player.pickaxe==5}:
+    widget_toolpickaxe:
       action: update
       widget_settings:
         image: PickAxe_Small_5x
 
-    widget_toolaxe{current_player.axe==1}:
+  tools_updated{current_player.axe==1}:
+    widget_toolaxe:
       action: update
       widget_settings:
         image: Axe_Small_1x
-    widget_toolaxe{current_player.axe==2}:
+
+  tools_updated{current_player.axe==2}:
+    widget_toolaxe:
       action: update
       widget_settings:
         image: Axe_Small_2x
-    widget_toolaxe{current_player.axe==3}:
+
+  tools_updated{current_player.axe==3}:
+    widget_toolaxe:
       action: update
       widget_settings:
         image: Axe_Small_3x
-    widget_toolaxe{current_player.axe==4}:
+
+  tools_updated{current_player.axe==4}:
+    widget_toolaxe:
       action: update
       widget_settings:
         image: Axe_Small_4x
-    widget_toolaxe{current_player.axe==5}:
+
+  tools_updated{current_player.axe==5}:
+    widget_toolaxe:
       action: update
       widget_settings:
         image: Axe_Small_5x
 
-    widget_toolsword{current_player.sword==1}:
+  tools_updated{current_player.sword==1}:
+    widget_toolsword:
       action: update
       widget_settings:
         image: Sword_Small_1x
-    widget_toolsword{current_player.sword==2}:
+
+  tools_updated{current_player.sword==2}:
+    widget_toolsword:
       action: update
       widget_settings:
         image: Sword_Small_2x
-    widget_toolsword{current_player.sword==3}:
+
+  tools_updated{current_player.sword==3}:
+    widget_toolsword:
       action: update
       widget_settings:
         image: Sword_Small_3x
-    widget_toolsword{current_player.sword==4}:
+
+  tools_updated{current_player.sword==4}:
+    widget_toolsword:
       action: update
       widget_settings:
         image: Sword_Small_4x
-    widget_toolsword{current_player.sword==5}:
+
+  tools_updated{current_player.sword==5}:
+    widget_toolsword:
       action: update
       widget_settings:
         image: Sword_Small_5x

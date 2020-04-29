@@ -276,7 +276,7 @@ variable_player:
   #WORLD JACKPOT
   recalculate_worldjackpot:
     world_jackpot:
-      int: current_player.world_jackpot_base * current_player.world_jackpot_items * current_player.world_jackpot_worlds * current_player.multiplier_mb
+      int: current_player.world_jackpot_base * current_player.world_jackpot_items * current_player.world_jackpot_worlds * current_player.sword
       action: set
 
   world_jackpot_hit:
@@ -518,7 +518,7 @@ widgets:
       x: left+15
       z: 10
     - type: text        #VILLAGER JACKPOT
-      text: Villager Jackpot - (player|villager_jackpot)
+      text: Villager Jackpot - (player|villager_jackpot) X Sword (player|sword)
       number_grouping: true
       min_digits: 2
       font_name: ARLRDBD
@@ -529,7 +529,7 @@ widgets:
       anchor_x: left
       anchor_y: top
     - type: text        #WORLD JACKPOT
-      text: World Jackpot - (player|world_jackpot_base) x Items (player|world_jackpot_items) x Traveled (player|world_jackpot_worlds) x MB (player|multiplier_mb) = (player|world_jackpot)
+      text: World Jackpot - (player|world_jackpot_base) x Items (player|world_jackpot_items) x Traveled (player|world_jackpot_worlds) x SWORD (player|sword) = (player|world_jackpot)
       number_grouping: true
       min_digits: 2
       font_name: ARLRDBD
@@ -610,17 +610,6 @@ widgets:
 
 slides:
   base_pincraft_slide:
-    - type: text        #MULTIBALL MULTIPLIER
-      text: MB - (player|multiplier_mb)x
-      number_grouping: true
-      min_digits: 2
-      font_name: ARLRDBD
-      font_size: 25
-      y: top-50
-      x: right-100
-      z: 100
-      anchor_x: left
-      anchor_y: top
     - type: text        #PLAYER 1 SCORE
       text: PLAYER 1 - (player1|score)
       number_grouping: true

@@ -17,7 +17,7 @@ variable_player:
       action: set
   villager_jackpot_hit:
     score: 
-      int: current_player.villager_jackpot
+      int: current_player.villager_jackpot * current_player.sword
       block: true
     villager_jackpot:
       int: 1000000
