@@ -2228,16 +2228,16 @@ player_vars:
 
 # SLIDES CONFIGURATION
 #--------------------------------------------
-slides:
-  welcome_slide:
-    widgets:
-      - type: text
-        font_name: lazer84
-        font_size: 70
-        text: "Pincraft"
+# slides:
+#   welcome_slide:
+#     widgets:
+#       - type: text
+#         font_name: lazer84
+#         font_size: 70
+#         text: "Pincraft"
           
-slide_player:
-  init_done: welcome_slide
+# slide_player:
+#   init_done: welcome_slide
  
 # MODES CONFIGURATION
 #--------------------------------------------

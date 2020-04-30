@@ -89,7 +89,6 @@ variable_player:
     #Mark World as Setup
     world1_setup: 1
 
-
 event_player:
   world_collected:
     world1_collected

@@ -100,8 +100,65 @@ variable_player:
   #TODO: Bug - Will receive move items and points than available items 
 
 
-event_player:
+widgets:
+  widget_item1needed:
+    - type: text        #ITEM 1 NEEDED
+      text: (player|world_item1_remaining)
+      font_name: ARLRDBD
+      font_size: 25
+      y: bottom+24
+      x: right-462
+      z: 100
+      anchor_x: center
+      anchor_y: bottom
+  widget_item2needed:
+    - type: text        #ITEM 2 NEEDED
+      text: (player|world_item2_remaining)
+      font_name: ARLRDBD
+      font_size: 25
+      y: bottom+24
+      x: right-373
+      z: 100
+      anchor_x: center
+      anchor_y: bottom
+  widget_item3needed:
+    - type: text        #ITEM 3 NEEDED
+      text: (player|world_item3_remaining)
+      font_name: ARLRDBD
+      font_size: 25
+      y: bottom+24
+      x: right-284
+      z: 100
+      anchor_x: center
+      anchor_y: bottom
+  widget_item4needed:
+    - type: text        #ITEM 4 NEEDED
+      text: (player|world_item4_remaining)
+      font_name: ARLRDBD
+      font_size: 25
+      y: bottom+24
+      x: right-196
+      z: 100
+      anchor_x: center
+      anchor_y: bottom
+  widget_itembackground:
+    - type: image        #ITEM BACKGROUND
+      image: item_background
+      anchor_x: left
+      anchor_y: bottom
+      y: bottom+15
+      x: left+860
+      z: 10
 
+widget_player:
+  mode_worldcontroller_started:
+    widget_itembackground
+    widget_item1needed
+    widget_item2needed
+    widget_item3needed
+    widget_item4needed
+
+event_player:
   mode_base_started:
     world_itemcheckcomplete
 

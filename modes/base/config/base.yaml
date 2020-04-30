@@ -505,11 +505,9 @@ achievement_groups:
 
 
 
-widget_player:
-  mode_world1_started: widgetdebug
 
 widgets:
-  widgetdebug:
+  widget_debug:
     - type: image        #SCORE BACKGROUND
       image: score_background
       anchor_x: left
@@ -518,46 +516,35 @@ widgets:
       x: left+15
       z: 10
     - type: text        #VILLAGER JACKPOT
-      text: Villager Jackpot - (player|villager_jackpot) X Sword (player|sword)
+      text: Villager Jackpot - (player|villager_jackpot) X S (player|sword)
       number_grouping: true
       min_digits: 2
       font_name: ARLRDBD
-      font_size: 25
+      font_size: 18
       y: top-25
-      x: left+100
+      x: left+50
       z: 100
       anchor_x: left
       anchor_y: top
     - type: text        #WORLD JACKPOT
-      text: World Jackpot - (player|world_jackpot_base) x Items (player|world_jackpot_items) x Traveled (player|world_jackpot_worlds) x SWORD (player|sword) = (player|world_jackpot)
+      text: W. Jackpot - B (player|world_jackpot_base) x I (player|world_jackpot_items) x W (player|world_jackpot_worlds) x S (player|sword) = (player|world_jackpot)
       number_grouping: true
       min_digits: 2
       font_name: ARLRDBD
-      font_size: 25
+      font_size: 18
       y: top-50
-      x: left+100
+      x: left+50
       z: 100
       anchor_x: left
       anchor_y: top
     - type: text        #WORLD JACKPOT
-      text: Crafting Enabled - (player|crafting_enabled)
+      text: Crafting Enabled - (player|crafting_enabled) | Crafting Full - (player|crafting_full)
       number_grouping: true
       min_digits: 2
       font_name: ARLRDBD
-      font_size: 25
+      font_size: 18
       y: top-75
-      x: left+100
-      z: 100
-      anchor_x: left
-      anchor_y: top
-    - type: text        #WORLD JACKPOT
-      text: Crafting Full - (player|crafting_full)
-      number_grouping: true
-      min_digits: 2
-      font_name: ARLRDBD
-      font_size: 25
-      y: top-100
-      x: left+100
+      x: left+50
       z: 100
       anchor_x: left
       anchor_y: top
@@ -566,131 +553,77 @@ widgets:
       number_grouping: true
       min_digits: 2
       font_name: ARLRDBD
-      font_size: 25
+      font_size: 18
+      y: top-100
+      x: left+50
+      z: 100
+      anchor_x: left
+      anchor_y: top
+    - type: text        #WORLD JACKPOT
+      text: Villager Ready - (player|villagermb_ready) | Travel Ready - (player|travel_enabled)
+      number_grouping: true
+      min_digits: 2
+      font_name: ARLRDBD
+      font_size: 18
       y: top-125
-      x: left+100
+      x: left+50
       z: 100
       anchor_x: left
       anchor_y: top
     - type: text        #WORLD JACKPOT
-      text: Villager MB Ready - (player|villagermb_ready)
+      text: Current Diverter State - (player|diverter_state)
       number_grouping: true
       min_digits: 2
       font_name: ARLRDBD
-      font_size: 25
+      font_size: 18
       y: top-150
-      x: left+100
-      z: 100
-      anchor_x: left
-      anchor_y: top
-    - type: text        #WORLD JACKPOT
-      text: Travel Ready - (player|travel_enabled)
-      number_grouping: true
-      min_digits: 2
-      font_name: ARLRDBD
-      font_size: 25
-      y: top-175
-      x: left+100
-      z: 100
-      anchor_x: left
-      anchor_y: top
-    - type: text        #WORLD JACKPOT
-      text: Diverter State - (player|diverter_state)
-      number_grouping: true
-      min_digits: 2
-      font_name: ARLRDBD
-      font_size: 25
-      y: top-200
-      x: left+100
+      x: left+50
       z: 100
       anchor_x: left
       anchor_y: top
 
- 
+  widget_scorebackground:
+    - type: image        #SCORE BACKGROUND
+      image: score_background
+      anchor_x: left
+      anchor_y: bottom
+      y: bottom+15
+      x: left+15
+      z: 10
 
-slides:
-  base_pincraft_slide:
-    - type: text        #PLAYER 1 SCORE
-      text: PLAYER 1 - (player1|score)
-      number_grouping: true
-      min_digits: 2
+  widget_ball1:
+    - type: text        #BALL TEXT
+      text: BALL (ball)
       font_name: ARLRDBD
       font_size: 25
-      y: bottom+260
-      x: left+50
-      z: 100
-      anchor_x: left
-      anchor_y: top
-    - type: text        #PLAYER 2 SCORE
-      text: PLAYER 2 - (player2|score)
-      number_grouping: true
-      min_digits: 2
-      font_name: ARLRDBD
-      font_size: 25
-      y: bottom+200
-      x: left+50
-      z: 100
-      anchor_x: left
-      anchor_y: top
-    - type: text        #PLAYER 3 SCORE
-      text: PLAYER 3 - (player3|score)
-      number_grouping: true
-      min_digits: 2
-      font_name: ARLRDBD
-      font_size: 25
-      y: bottom+140
-      x: left+50
-      z: 100
-      anchor_x: left
-      anchor_y: top
-    - type: text        #PLAYER 4 SCORE
-      text: PLAYER 4 - (player4|score)
-      number_grouping: true
-      min_digits: 2
-      font_name: ARLRDBD
-      font_size: 25
-      y: bottom+80
-      x: left+50
-      z: 100
-      anchor_x: left
-      anchor_y: top
-   
-    - type: text        #ITEM 1 NEEDED
-      text: (player|world_item1_remaining)
-      font_name: ARLRDBD
-      font_size: 25
-      y: bottom+24
-      x: right-462
+      y: bottom+50
+      x: right-60
       z: 100
       anchor_x: center
       anchor_y: bottom
-    - type: text        #ITEM 2 NEEDED
-      text: (player|world_item2_remaining)
-      font_name: ARLRDBD
-      font_size: 25
-      y: bottom+24
-      x: right-373
-      z: 100
-      anchor_x: center
+    - type: image        #BALL1
+      image: heart_full
+      anchor_x: right
       anchor_y: bottom
-    - type: text        #ITEM 3 NEEDED
-      text: (player|world_item3_remaining)
-      font_name: ARLRDBD
-      font_size: 25
-      y: bottom+24
-      x: right-284
-      z: 100
-      anchor_x: center
+      y: bottom+15
+      x: right-15
+      z: 10
+    - type: image        #BALL2
+      image: heart_full
+      anchor_x: right
       anchor_y: bottom
-    - type: text        #ITEM 4 NEEDED
-      text: (player|world_item4_remaining)
-      font_name: ARLRDBD
-      font_size: 25
-      y: bottom+24
-      x: right-196
-      z: 100
-      anchor_x: center
+      y: bottom+15
+      x: right-45 
+      z: 10
+    - type: image        #BALL3
+      image: heart_full
+      anchor_x: right
       anchor_y: bottom
+      y: bottom+15
+      x: right-75 
+      z: 10
+
+  widget_ball2:
     - type: text        #BALL TEXT
       text: BALL (ball)
       font_name: ARLRDBD
@@ -721,25 +654,175 @@ slides:
       y: bottom+15
       x: right-75 
       z: 10
-    
-    - type: image        #ITEM BACKGROUND
-      image: item_background
-      anchor_x: left
+
+  widget_ball3:
+    - type: text        #BALL TEXT
+      text: BALL (ball)
+      font_name: ARLRDBD
+      font_size: 25
+      y: bottom+50
+      x: right-60
+      z: 100
+      anchor_x: center
+      anchor_y: bottom
+    - type: image        #BALL1
+      image: heart_empty
+      anchor_x: right
       anchor_y: bottom
       y: bottom+15
-      x: left+860
+      x: right-15
       z: 10
-    - type: image        #SCORE BACKGROUND
-      image: score_background
-      anchor_x: left
+    - type: image        #BALL2
+      image: heart_empty
+      anchor_x: right
       anchor_y: bottom
       y: bottom+15
-      x: left+15
+      x: right-45 
       z: 10
+    - type: image        #BALL3
+      image: heart_full
+      anchor_x: right
+      anchor_y: bottom
+      y: bottom+15
+      x: right-75 
+      z: 10
+  widget_player1score:
+    - type: text        #PLAYER 1 SCORE
+      text: PLAYER 1 - (player1|score)
+      number_grouping: true
+      min_digits: 2
+      font_name: ARLRDBD
+      font_size: 24
+      y: bottom+250
+      x: left+50
+      z: 100
+      anchor_x: left
+      anchor_y: center
+  widget_player2score:
+    - type: text        #PLAYER 2 SCORE
+      text: PLAYER 2 - (player2|score)
+      number_grouping: true
+      min_digits: 2
+      font_name: ARLRDBD
+      font_size: 24
+      y: bottom+190
+      x: left+50
+      z: 100
+      anchor_x: left
+      anchor_y: center
+  widget_player3score:
+    - type: text        #PLAYER 3 SCORE
+      text: PLAYER 3 - (player3|score)
+      number_grouping: true
+      min_digits: 2
+      font_name: ARLRDBD
+      font_size: 24
+      y: bottom+130
+      x: left+50
+      z: 100
+      anchor_x: left
+      anchor_y: center
+  widget_player4score:
+    - type: text        #PLAYER 4 SCORE
+      text: PLAYER 4 - (player4|score)
+      number_grouping: true
+      min_digits: 2
+      font_name: ARLRDBD
+      font_size: 24
+      y: bottom+70
+      x: left+50
+      z: 100
+      anchor_x: left
+      anchor_y: center
+  widget_screenbackground:
     - type: image        #WORLD BACKGROUND
       image: world1_background
       z: 0
 
-slide_player:
-  mode_base_started: base_pincraft_slide
+widget_player:
+  mode_base_started: 
+    widget_debug
+    widget_scorebackground
+    widget_screenbackground
+
+  #BALL COUNT WIDGETS
+  mode_base_started{current_player.ball==1}:
+    widget_ball1:
+      action: add
+    widget_ball2:
+      action: remove
+    widget_ball3:
+      action: remove
+  mode_base_started{current_player.ball==2}:
+    widget_ball1:
+      action: remove
+    widget_ball2:
+      action: add
+    widget_ball3:
+      action: remove
+  mode_base_started{current_player.ball==3}:
+    widget_ball1:
+      action: remove
+    widget_ball2:
+      action: remove
+    widget_ball3:
+      action: add
+  player_added{num==2}:
+    widget_player2score
+  player_added{num==3}:
+    widget_player3score
+  player_added{num==4}:
+    widget_player4score
+
+
+  #DISPLAY ONLY SCORES FOR ADDED PLAYERS AND BOLD CURRENT PLAYER
+  mode_base_started{current_player.number!=1}:
+    widget_player1score:
+      action: update
+      widget_settings:
+        font_size: 24
+
+  mode_base_started{current_player.number!=2 and game.num_players>=2}:
+    widget_player2score:
+      action: update
+      widget_settings:
+        font_size: 24
+
+  mode_base_started{current_player.number!=3 and game.num_players>=3}:
+    widget_player3score:
+      action: update
+      widget_settings:
+        font_size: 24
+
+  mode_base_started{current_player.number!=4 and game.num_players>=4}:
+    widget_player4score:
+      action: update
+      widget_settings:
+        font_size: 24
+
+  mode_base_started{current_player.number==1}:
+    widget_player1score:
+      action: update
+      widget_settings:
+        font_size: 36
+
+  mode_base_started{current_player.number==2 and game.num_players>=2}:
+    widget_player2score:
+      action: update
+      widget_settings:
+        font_size: 36
+
+  mode_base_started{current_player.number==3 and game.num_players>=3}:
+     widget_player3score:
+      action: update
+      widget_settings:
+        font_size: 36
+
+  mode_base_started{current_player.number==4 and game.num_players>=4}:
+    widget_player4score:
+      action: update
+      widget_settings:
+        font_size: 36
+
+
 
