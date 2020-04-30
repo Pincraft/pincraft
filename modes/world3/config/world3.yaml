@@ -89,6 +89,12 @@ variable_player:
     #Mark World as Setup
     world3_setup: 1
 
+widget_player:
+  mode_world3_started:
+    widget_screenbackground:
+      action: update
+      image: world3_background
+
 event_player:
    world_collected:
     world3_collected

@@ -89,6 +89,12 @@ variable_player:
     #Mark World as Setup
     world5_setup: 1
 
+widget_player:
+  mode_world5_started:
+    widget_screenbackground:
+      action: update
+      image: world5_background
+
 event_player:
    world_collected:
     world5_collected
