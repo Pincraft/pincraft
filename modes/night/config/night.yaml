@@ -282,6 +282,7 @@ widget_player:
   mode_night_started:
     widget_screenbackground:
       action: update
+      slide: base_slide
       widget_settings:
         image: nightmode_background
 

@@ -14,6 +14,7 @@ widget_player:
   mode_theend_started:
     widget_screenbackground:
       action: update
+      slide: base_slide
       widget_settings:
         image: theend_background
 

@@ -504,6 +504,17 @@ achievement_groups:
     rotate_right_events: rotate_mission_rotator
 
 
+slides:
+  base_slide:
+    widgets:
+      - type: text
+        font_name: lazer84
+        font_size: 70
+        text: "Pincraft"
+        z-index: 0
+
+slide_player:
+  mode_base_started: base_slide
 
 
 widgets:
@@ -737,7 +748,7 @@ widgets:
   widget_screenbackground:
     - type: image        #WORLD BACKGROUND
       image: world1_background
-      z: 0
+      z: 5
 
 widget_player:
   mode_base_started: 
@@ -747,78 +758,101 @@ widget_player:
   mode_base_started{current_player.ball==1}:
     widget_ball1:
       action: add
+      slide: base_slide
     widget_ball2:
       action: remove
+      slide: base_slide
     widget_ball3:
       action: remove
+      slide: base_slide
   mode_base_started{current_player.ball==2}:
     widget_ball1:
       action: remove
+      slide: base_slide
     widget_ball2:
       action: add
+      slide: base_slide
     widget_ball3:
       action: remove
+      slide: base_slide
   mode_base_started{current_player.ball==3}:
     widget_ball1:
       action: remove
+      slide: base_slide
     widget_ball2:
       action: remove
+      slide: base_slide
     widget_ball3:
       action: add
+      slide: base_slide
   player_added{num==2}:
-    widget_player2score
+    widget_player2score:
+      action: add
+      slide: base_slide
   player_added{num==3}:
-    widget_player3score
+    widget_player3score:
+      action: add
+      slide: base_slide
   player_added{num==4}:
-    widget_player4score
+    widget_player4score:
+      action: add
+      slide: base_slide
 
 
   #DISPLAY ONLY SCORES FOR ADDED PLAYERS AND BOLD CURRENT PLAYER
   mode_base_started{current_player.number!=1}:
     widget_player1score:
       action: update
+      slide: base_slide
       widget_settings:
         font_size: 24
 
   mode_base_started{current_player.number!=2 and game.num_players>=2}:
     widget_player2score:
       action: update
+      slide: base_slide
       widget_settings:
         font_size: 24
 
   mode_base_started{current_player.number!=3 and game.num_players>=3}:
     widget_player3score:
       action: update
+      slide: base_slide
       widget_settings:
         font_size: 24
 
   mode_base_started{current_player.number!=4 and game.num_players>=4}:
     widget_player4score:
       action: update
+      slide: base_slide
       widget_settings:
         font_size: 24
 
   mode_base_started{current_player.number==1}:
     widget_player1score:
       action: update
+      slide: base_slide
       widget_settings:
         font_size: 36
 
   mode_base_started{current_player.number==2 and game.num_players>=2}:
     widget_player2score:
       action: update
+      slide: base_slide
       widget_settings:
         font_size: 36
 
   mode_base_started{current_player.number==3 and game.num_players>=3}:
      widget_player3score:
       action: update
+      slide: base_slide
       widget_settings:
         font_size: 36
 
   mode_base_started{current_player.number==4 and game.num_players>=4}:
     widget_player4score:
       action: update
+      slide: base_slide
       widget_settings:
         font_size: 36
 

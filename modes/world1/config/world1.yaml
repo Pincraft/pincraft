@@ -93,6 +93,7 @@ widget_player:
   mode_world1_started:
     widget_screenbackground:
       action: update
+      slide: base_slide
       widget_settings:
         image: world1_background
 
