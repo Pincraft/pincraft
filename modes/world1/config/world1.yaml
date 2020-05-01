@@ -93,7 +93,8 @@ widget_player:
   mode_world1_started:
     widget_screenbackground:
       action: update
-      image: world1_background
+      widget_settings:
+        image: world1_background
 
 event_player:
   world_collected:

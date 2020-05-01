@@ -741,9 +741,7 @@ widgets:
 
 widget_player:
   mode_base_started: 
-    widget_debug
     widget_scorebackground
-    widget_screenbackground
 
   #BALL COUNT WIDGETS
   mode_base_started{current_player.ball==1}:
