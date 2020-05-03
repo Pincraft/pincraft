@@ -1,11 +1,8 @@
 #config_version=5
 mode:
-    start_events:  mode_world1_started, mode_world2_started, mode_world3_started, mode_world4_started, mode_world5_started
+    start_events:  mode_world1_starting, mode_world2_starting, mode_world3_starting, mode_world4_starting, mode_world5_starting
     stop_events:  mode_world1_stopped, mode_world2_stopped, mode_world3_stopped, mode_world4_stopped, mode_world5_stopped
     priority: 550
-
-
-# TODO: Travel was disable between balls
 
 shot_profiles:
   collectshot:
@@ -150,13 +147,33 @@ widgets:
       x: left+860
       z: 10
 
+
+
+slides:
+  world_slide:
+    widgets:
+      - type: text
+        font_name: lazer84
+        font_size: 70
+        text: "Pincraft"
+        z: 0
+
+slide_player:
+  mode_worldcontroller_started:
+    world_slide
+
 widget_player:
   mode_worldcontroller_started:
-    widget_itembackground
-    widget_item1needed
-    widget_item2needed
-    widget_item3needed
-    widget_item4needed
+    widget_itembackground:
+      slide: world_slide
+    widget_item1needed:
+      slide: world_slide
+    widget_item2needed:
+      slide: world_slide
+    widget_item3needed:
+      slide: world_slide
+    widget_item4needed:
+      slide: world_slide
 
 event_player:
   mode_base_started:
@@ -164,6 +181,9 @@ event_player:
 
   mode_worldcontroller_started:
     world_itemcheckcomplete
+    show_player_score
+    show_ball_count
+    show_tools
 
   collectitem1_hit:
     world_itemcheckcomplete

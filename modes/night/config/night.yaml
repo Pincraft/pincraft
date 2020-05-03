@@ -25,44 +25,6 @@ sound_player:
   mb_jackpot_hit: night_super_jackpot
   mb_superjackpot_hit: night_mega_jackpot
 
-slides:
-  slide_night:
-    priority: 200
-    widgets:
-      - type: text
-        text: (score)
-        number_grouping: true
-        min_digits: 2
-        font_name: lazer84
-        font_size: 75
-      - type: text
-        text: NIGHT MODE
-        font_name: lazer84
-        font_size: 60
-        anchor_y: middle
-        anchor_x: middle
-        y: center+100
-        x: center
-     
-      - type: text
-        text: PLAYER (number)
-        y: 10
-        x: 10
-        font_name: lazer84
-        font_size: 50
-        anchor_x: left
-        anchor_y: bottom
-      - type: text
-        text: BALL (ball)
-        y: 10
-        x: right-10
-        anchor_x: right
-        anchor_y: bottom
-        font_name: lazer84
-        font_size: 50
-
-slide_player:
-  #mode_night_started: slide_night
 
 show_player:
   mb_drop1_hit:
@@ -278,17 +240,75 @@ shot_groups:
     disable_events: mode_night_started
     enable_events: nightmb_phase3_started
 
+widgets:
+  widget_swordplayer:
+    - type: image        #SCORE BACKGROUND
+      image: Sword_FullScreen_Dark_1x
+      anchor_x: right
+      anchor_y: bottom
+      y: bottom
+      x: right
+      z: 10
+
+slides:
+  night_slide:
+    widgets:
+      - type: text
+        font_name: lazer84
+        font_size: 70
+        text: "Night Mode"
+        z: 0
+
+
+slide_player:
+  mode_night_started: night_slide
+
 widget_player:
   mode_night_started:
     widget_screenbackground:
-      action: update
-      slide: base_slide
+      action: add
+      slide: night_slide
       widget_settings:
         image: nightmode_background
+  
+  #SHOW LARGE SWORD
+  mode_night_started{current_player.sword==1}:
+    widget_swordplayer:
+      action: update
+      slide: night_slide
+      widget_settings:
+        image: Sword_FullScreen_1x
+  mode_night_started{current_player.sword==2}:
+    widget_swordplayer:
+      action: update
+      slide: night_slide
+      widget_settings:
+        image: Sword_FullScreen_2x
+  mode_night_started{current_player.sword==3}:
+    widget_swordplayer:
+      action: update
+      slide: night_slide
+      widget_settings:
+        image: Sword_FullScreen_3x
+  mode_night_started{current_player.sword==4}:
+    widget_swordplayer:
+      action: update
+      slide: night_slide
+      widget_settings:
+        image: Sword_FullScreen_4x
+  mode_night_started{current_player.sword==5}:
+    widget_swordplayer:
+      action: update
+      slide: night_slide
+      widget_settings:
+        image: Sword_FullScreen_5x
+  
 
 event_player:
   mode_night_started:
     outlanegate_close
+    show_ball_count
+    show_player_score
   mb_jackpot_hit:
     outlanegate_open
   mb_super_jackpot_hit:

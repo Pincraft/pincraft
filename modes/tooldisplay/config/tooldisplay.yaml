@@ -85,7 +85,7 @@ widgets:
       z: 200
 
 widget_player:
-  mode_tooldisplay_started:
+  show_tools:
     widget_tooldisplay
     widget_toolshovel
     widget_toolaxe
@@ -276,7 +276,7 @@ light_player:
     l_bonus5x: Teal
 
 event_player:
-  mode_tooldisplay_started:
+  show_tools:
     tools_updated
 
   

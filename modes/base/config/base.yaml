@@ -39,6 +39,8 @@ event_player:
     item_collected
     recalculate_worldjackpot
     collectitem_special_enabled
+    show_ball_count
+    show_player_score
   
   collectitem1_hit:
     item_collected
@@ -504,17 +506,17 @@ achievement_groups:
     rotate_right_events: rotate_mission_rotator
 
 
-slides:
-  base_slide:
-    widgets:
-      - type: text
-        font_name: lazer84
-        font_size: 70
-        text: "Pincraft"
-        z-index: 0
+# slides:
+#   base_slide:
+#     widgets:
+#       - type: text
+#         font_name: lazer84
+#         font_size: 70
+#         text: "Pincraft"
+#         z: 0
 
-slide_player:
-  mode_base_started: base_slide
+#slide_player:
+  #mode_base_started: base_slide
 
 
 widgets:
@@ -618,21 +620,21 @@ widgets:
       anchor_y: bottom
       y: bottom+15
       x: right-15
-      z: 10
+      z: 100
     - type: image        #BALL2
       image: heart_full
       anchor_x: right
       anchor_y: bottom
       y: bottom+15
       x: right-45 
-      z: 10
+      z: 100
     - type: image        #BALL3
       image: heart_full
       anchor_x: right
       anchor_y: bottom
       y: bottom+15
       x: right-75 
-      z: 10
+      z: 100
 
   widget_ball2:
     - type: text        #BALL TEXT
@@ -650,21 +652,21 @@ widgets:
       anchor_y: bottom
       y: bottom+15
       x: right-15
-      z: 10
+      z: 100
     - type: image        #BALL2
       image: heart_full
       anchor_x: right
       anchor_y: bottom
       y: bottom+15
       x: right-45 
-      z: 10
+      z: 100
     - type: image        #BALL3
       image: heart_full
       anchor_x: right
       anchor_y: bottom
       y: bottom+15
       x: right-75 
-      z: 10
+      z: 100
 
   widget_ball3:
     - type: text        #BALL TEXT
@@ -682,21 +684,21 @@ widgets:
       anchor_y: bottom
       y: bottom+15
       x: right-15
-      z: 10
+      z: 100
     - type: image        #BALL2
       image: heart_empty
       anchor_x: right
       anchor_y: bottom
       y: bottom+15
       x: right-45 
-      z: 10
+      z: 100
     - type: image        #BALL3
       image: heart_full
       anchor_x: right
       anchor_y: bottom
       y: bottom+15
       x: right-75 
-      z: 10
+      z: 100
   widget_player1score:
     - type: text        #PLAYER 1 SCORE
       text: PLAYER 1 - (player1|score)
@@ -750,109 +752,97 @@ widgets:
       image: world1_background
       z: 5
 
+
+
 widget_player:
-  mode_base_started: 
-    widget_scorebackground
+
 
   #BALL COUNT WIDGETS
-  mode_base_started{current_player.ball==1}:
+  show_ball_count{current_player.ball==1}:
     widget_ball1:
       action: add
-      slide: base_slide
     widget_ball2:
       action: remove
-      slide: base_slide
     widget_ball3:
       action: remove
-      slide: base_slide
-  mode_base_started{current_player.ball==2}:
+  show_ball_count{current_player.ball==2}:
     widget_ball1:
       action: remove
-      slide: base_slide
     widget_ball2:
       action: add
-      slide: base_slide
     widget_ball3:
       action: remove
-      slide: base_slide
-  mode_base_started{current_player.ball==3}:
+  show_ball_count{current_player.ball==3}:
     widget_ball1:
       action: remove
-      slide: base_slide
     widget_ball2:
       action: remove
-      slide: base_slide
     widget_ball3:
       action: add
-      slide: base_slide
+
+  #ADD PLAYERS IF PLAYERS ARE ADDED
   player_added{num==2}:
     widget_player2score:
       action: add
-      slide: base_slide
   player_added{num==3}:
     widget_player3score:
       action: add
-      slide: base_slide
   player_added{num==4}:
     widget_player4score:
       action: add
-      slide: base_slide
 
+  #SHOW SCORE BACKGROUND
+  show_player_score: 
+    widget_scorebackground:
+      action: add
 
   #DISPLAY ONLY SCORES FOR ADDED PLAYERS AND BOLD CURRENT PLAYER
-  mode_base_started{current_player.number!=1}:
+  show_player_score{current_player.number!=1}:
     widget_player1score:
       action: update
-      slide: base_slide
       widget_settings:
         font_size: 24
 
-  mode_base_started{current_player.number!=2 and game.num_players>=2}:
+  show_player_score{current_player.number!=2 and game.num_players>=2}:
     widget_player2score:
       action: update
-      slide: base_slide
       widget_settings:
         font_size: 24
 
-  mode_base_started{current_player.number!=3 and game.num_players>=3}:
+  show_player_score{current_player.number!=3 and game.num_players>=3}:
     widget_player3score:
       action: update
-      slide: base_slide
       widget_settings:
         font_size: 24
 
-  mode_base_started{current_player.number!=4 and game.num_players>=4}:
+  show_player_score{current_player.number!=4 and game.num_players>=4}:
     widget_player4score:
       action: update
-      slide: base_slide
       widget_settings:
         font_size: 24
 
-  mode_base_started{current_player.number==1}:
+  #MAKE LARGER PLAYER BOLD
+  show_player_score{current_player.number==1}:
     widget_player1score:
       action: update
-      slide: base_slide
       widget_settings:
         font_size: 36
 
-  mode_base_started{current_player.number==2 and game.num_players>=2}:
+  show_player_score{current_player.number==2 and game.num_players>=2}:
     widget_player2score:
       action: update
-      slide: base_slide
       widget_settings:
         font_size: 36
 
-  mode_base_started{current_player.number==3 and game.num_players>=3}:
+  show_player_score{current_player.number==3 and game.num_players>=3}:
      widget_player3score:
       action: update
-      slide: base_slide
       widget_settings:
         font_size: 36
 
-  mode_base_started{current_player.number==4 and game.num_players>=4}:
+  show_player_score{current_player.number==4 and game.num_players>=4}:
     widget_player4score:
       action: update
-      slide: base_slide
       widget_settings:
         font_size: 36
 
