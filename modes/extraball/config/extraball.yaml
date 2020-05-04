@@ -1,7 +1,7 @@
 #config_version=5
 mode:
-    start_events: ball_started, multiball_nightmb_ended
-    stop_events: ball_ended, multiball_nightmb_started
+    start_events: mode_worldcontroller_starting, multiball_nightmb_ended
+    stop_events: mode_worldcontroller_ended, multiball_nightmb_started
     priority: 1000
 
 shot_profiles:
@@ -23,7 +23,7 @@ shots:
     profile: collectebshot
     show_tokens:
       leds: l_collectitem3
-    enable_events: collectitem_special_enabled
+    enable_events: mode_extraball_started
     disable_events: collectitem_special_disabled
   award_extraball:
     switch: s_captiveball
@@ -38,9 +38,10 @@ counters:
       count_events: collectitem_special_hit
       starting_count: 0
       count_interval: 1
-      count_complete_value: 10
-      enable_events: mode_base_started
+      count_complete_value: 12
+      enable_events: mode_extraball_started
       persist_state: true
+      events_when_hit: extraball_progress
 
 event_player:
   award_extraball_hit:
@@ -48,6 +49,11 @@ event_player:
   logicblock_counter_meatextraball_complete:
     - collectitem_special_disabled
     - meatextraball_light
+    - show_extraball
+  extraball_progress:
+    show_extraball
+  mode_extraball_started:
+    show_extraball
   
 sound_player:
   collectitem_special_hit:
@@ -60,3 +66,247 @@ sound_player:
 light_player:
   extra_ball_meatextraball_awarded:
     l_shootagain: red
+
+widgets:
+  widget_meat1:
+    - type: image        #MEAT 1
+      image: meat_empty
+      anchor_x: left
+      anchor_y: bottom
+      y: bottom+140
+      x: left+860
+      z: 50
+  widget_meat2:
+    - type: image        #MEAT 2
+      image: meat_empty
+      anchor_x: left
+      anchor_y: bottom
+      y: bottom+140
+      x: left+890
+      z: 50
+  widget_meat3:
+    - type: image        #MEAT 3
+      image: meat_empty
+      anchor_x: left
+      anchor_y: bottom
+      y: bottom+140
+      x: left+920
+      z: 50
+  widget_meat4:
+    - type: image        #MEAT 4
+      image: meat_empty
+      anchor_x: left
+      anchor_y: bottom
+      y: bottom+140
+      x: left+950
+      z: 50
+  widget_meat5:
+    - type: image        #MEAT 5
+      image: meat_empty
+      anchor_x: left
+      anchor_y: bottom
+      y: bottom+140
+      x: left+980
+      z: 50
+  widget_meat6: 
+    - type: image        #MEAT 6
+      image: meat_empty
+      anchor_x: left
+      anchor_y: bottom
+      y: bottom+140
+      x: left+1010
+      z: 50
+  widget_meat7: 
+    - type: image        #MEAT 7
+      image: meat_empty
+      anchor_x: left
+      anchor_y: bottom
+      y: bottom+140
+      x: left+1040
+      z: 50
+  widget_meat8:
+    - type: image        #MEAT 8
+      image: meat_empty
+      anchor_x: left
+      anchor_y: bottom
+      y: bottom+140
+      x: left+1070
+      z: 50
+  widget_meat9:
+    - type: image        #MEAT 9
+      image: meat_empty
+      anchor_x: left
+      anchor_y: bottom
+      y: bottom+140
+      x: left+1100
+      z: 50
+  widget_meat10:
+    - type: image        #MEAT 10
+      image: meat_empty
+      anchor_x: left
+      anchor_y: bottom
+      y: bottom+140
+      x: left+1130
+      z: 50
+  widget_meat11:
+    - type: image        #MEAT 11
+      image: meat_empty
+      anchor_x: left
+      anchor_y: bottom
+      y: bottom+140
+      x: left+1160
+      z: 50
+  widget_meat12:
+    - type: image        #MEAT 12
+      image: meat_empty
+      anchor_x: left
+      anchor_y: bottom
+      y: bottom+140
+      x: left+1190
+      z: 50
+
+widget_player:
+  #COUNTER IS AT 1
+  show_extraball{device.counters.counter_meatextraball.value>=1}:
+    widget_meat1:
+      action: update
+      widget_settings:
+        image: meat_full_bg
+  show_extraball{device.counters.counter_meatextraball.value<1}:
+    widget_meat1:
+      action: update
+      widget_settings:
+        image: meat_empty
+
+  #COUNTER IS AT 2
+  show_extraball{device.counters.counter_meatextraball.value>=2}:
+    widget_meat2:
+      action: update
+      widget_settings:
+        image: meat_full_bg
+  show_extraball{device.counters.counter_meatextraball.value<2}:
+    widget_meat2:
+      action: update
+      widget_settings:
+        image: meat_empty
+
+  #COUNTER IS AT 3
+  show_extraball{device.counters.counter_meatextraball.value>=3}:
+    widget_meat3:
+      action: update
+      widget_settings:
+        image: meat_full_bg
+  show_extraball{device.counters.counter_meatextraball.value<3}:
+    widget_meat3:
+      action: update
+      widget_settings:
+        image: meat_empty
+
+  #COUNTER IS AT 4
+  show_extraball{device.counters.counter_meatextraball.value>=4}:
+    widget_meat4:
+      action: update
+      widget_settings:
+        image: meat_full_bg
+  show_extraball{device.counters.counter_meatextraball.value<4}:
+    widget_meat4:
+      action: update
+      widget_settings:
+        image: meat_empty
+
+  #COUNTER IS AT 5
+  show_extraball{device.counters.counter_meatextraball.value>=5}:
+    widget_meat5:
+      action: update
+      widget_settings:
+        image: meat_full_bg
+  show_extraball{device.counters.counter_meatextraball.value<5}:
+    widget_meat5:
+      action: update
+      widget_settings:
+        image: meat_empty
+
+  #COUNTER IS AT 6
+  show_extraball{device.counters.counter_meatextraball.value>=6}:
+    widget_meat6:
+      action: update
+      widget_settings:
+        image: meat_full_bg
+  show_extraball{device.counters.counter_meatextraball.value<6}:
+    widget_meat6:
+      action: update
+      widget_settings:
+        image: meat_empty
+
+  #COUNTER IS AT 7
+  show_extraball{device.counters.counter_meatextraball.value>=7}:
+    widget_meat7:
+      action: update
+      widget_settings:
+        image: meat_full_bg
+  show_extraball{device.counters.counter_meatextraball.value<7}:
+    widget_meat7:
+      action: update
+      widget_settings:
+        image: meat_empty
+
+  #COUNTER IS AT 8
+  show_extraball{device.counters.counter_meatextraball.value>=8}:
+    widget_meat8:
+      action: update
+      widget_settings:
+        image: meat_full_bg
+  show_extraball{device.counters.counter_meatextraball.value<8}:
+    widget_meat8:
+      action: update
+      widget_settings:
+        image: meat_empty
+
+  #COUNTER IS AT 9
+  show_extraball{device.counters.counter_meatextraball.value>=9}:
+    widget_meat9:
+      action: update
+      widget_settings:
+        image: meat_full_bg
+  show_extraball{device.counters.counter_meatextraball.value<9}:
+    widget_meat9:
+      action: update
+      widget_settings:
+        image: meat_empty
+
+  #COUNTER IS AT 10
+  show_extraball{device.counters.counter_meatextraball.value>=10}:
+    widget_meat10:
+      action: update
+      widget_settings:
+        image: meat_full_bg
+  show_extraball{device.counters.counter_meatextraball.value<10}:
+    widget_meat10:
+      action: update
+      widget_settings:
+        image: meat_empty
+
+  #COUNTER IS AT 11
+  show_extraball{device.counters.counter_meatextraball.value>=11}:
+    widget_meat11:
+      action: update
+      widget_settings:
+        image: meat_full_bg
+  show_extraball{device.counters.counter_meatextraball.value<11}:
+    widget_meat11:
+      action: update
+      widget_settings:
+        image: meat_empty
+
+  #COUNTER IS AT 12
+  show_extraball{device.counters.counter_meatextraball.value>=12}:
+    widget_meat12:
+      action: update
+      widget_settings:
+        image: meat_full_bg
+  show_extraball{device.counters.counter_meatextraball.value<12}:
+    widget_meat12:
+      action: update
+      widget_settings:
+        image: meat_empty
+  

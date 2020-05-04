@@ -7,9 +7,6 @@
     lbackbox:
       color: green
       fade: 200ms
-    lactionbar:
-      color: green
-      fade: 200ms
     lfeature: 
       color: green
       fade: 200ms
@@ -23,15 +20,19 @@
     l_world5: off
     l_world6: off
     l_worldtarget: off
+    lactionbar: off
+    l_actionbar1: green
+    l_actionbar2: green
+    l_actionbar3: green
+    l_actionbar4: green
+    l_actionbar5: green
+    l_actionbar6: green
 - duration: 1
   lights:
     lundercab: 
       color: yellow
       fade: 200ms
     lbackbox:
-      color: yellow
-      fade: 200ms
-    lactionbar:
       color: yellow
       fade: 200ms
     lfeature:
@@ -47,15 +48,20 @@
     l_world5: off
     l_world6: off
     l_worldtarget: off
+    lactionbar: off
+    l_actionbar7: yellow
+    l_actionbar8: yellow
+    l_actionbar9: yellow
+    l_actionbar10: yellow
+    l_actionbar11: yellow
+    l_actionbar12: yellow
+
 - duration: 1
   lights:
     lundercab: 
       color: blue
       fade: 200ms
     lbackbox:
-      color: blue
-      fade: 200ms
-    lactionbar:
       color: blue
       fade: 200ms
     lfeature:
@@ -71,15 +77,20 @@
     l_world5: off
     l_world6: off
     l_worldtarget: off
+    lactionbar: off
+    l_actionbar13: blue
+    l_actionbar14: blue
+    l_actionbar15: blue
+    l_actionbar16: blue
+    l_actionbar17: blue
+    l_actionbar18: blue
+
 - duration: 1
   lights:
     lundercab: 
       color: brown
       fade: 200ms
     lbackbox:
-      color: brown
-      fade: 200ms
-    lactionbar:
       color: brown
       fade: 200ms
     lfeature:
@@ -95,15 +106,20 @@
     l_world5: off
     l_world6: off
     l_worldtarget: off
+    lactionbar: off
+    l_actionbar19: brown
+    l_actionbar20: brown
+    l_actionbar21: brown
+    l_actionbar22: brown
+    l_actionbar23: brown
+    l_actionbar24: brown
+  
 - duration: 1
   lights:
     lundercab: 
       color: red
       fade: 200ms
     lbackbox:
-      color: red
-      fade: 200ms
-    lactionbar:
       color: red
       fade: 200ms
     lfeature:
@@ -119,15 +135,19 @@
     l_world5: red
     l_world6: off
     l_worldtarget: off
+    lactionbar: off
+    l_actionbar25: brown
+    l_actionbar26: brown
+    l_actionbar27: brown
+    l_actionbar28: brown
+    l_actionbar29: brown
+    l_actionbar30: brown
 - duration: 1
   lights:
     lundercab: 
       color: purple
       fade: 200ms
     lbackbox:
-      color: purple
-      fade: 200ms
-    lactionbar:
       color: purple
       fade: 200ms
     lfeature:
@@ -143,3 +163,10 @@
     l_world5: off
     l_world6: purple
     l_worldtarget: off
+    lactionbar: off
+    l_actionbar31: purple
+    l_actionbar32: purple
+    l_actionbar33: purple
+    l_actionbar34: purple
+    l_actionbar35: purple
+    l_actionbar36: purple

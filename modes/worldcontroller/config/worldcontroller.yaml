@@ -147,7 +147,7 @@ widgets:
       x: left+860
       z: 10
   widget_item1icon:
-    - type: image
+    - type: image       #ITEM 1 ICON
       image: Grass_Small
       anchor_x: center
       anchor_y: center
@@ -155,7 +155,7 @@ widgets:
       x: left + 904
       z: 100
   widget_item2icon:
-    - type: image
+    - type: image       #ITEM 2 ICON
       image: Grass_Small
       anchor_x: center
       anchor_y: center
@@ -163,7 +163,7 @@ widgets:
       x: left + 993
       z: 100
   widget_item3icon:
-    - type: image
+    - type: image       #ITEM 3 ICON
       image: Grass_Small
       anchor_x: center
       anchor_y: center
@@ -171,7 +171,7 @@ widgets:
       x: left + 1082
       z: 100
   widget_item4icon:
-    - type: image
+    - type: image       #ITEM 4 ICON
       image: Grass_Small
       anchor_x: center
       anchor_y: center
@@ -187,7 +187,7 @@ slides:
       - type: text
         font_name: lazer84
         font_size: 70
-        text: "Pincraft"
+        text: "Pincraft\nLoading"
         z: 0
 
 slide_player:
@@ -216,6 +216,7 @@ event_player:
     show_player_score
     show_ball_count
     show_tools
+    show_extraball
 
   collectitem1_hit:
     world_itemcheckcomplete

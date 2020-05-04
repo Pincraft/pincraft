@@ -38,7 +38,6 @@ event_player:
     outlanegate_close
     item_collected
     recalculate_worldjackpot
-    collectitem_special_enabled
     show_ball_count
     show_player_score
   
