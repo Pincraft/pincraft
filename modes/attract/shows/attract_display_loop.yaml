@@ -29,7 +29,7 @@
     mission_pinball:
       widgets:
       - type: Text
-        text: "Created by\nConnor and Brian Smith"
+        text: "Created by\nBrian Smith\nConnor Smith\nGwen Smith"
         font_size: 60
         font_name: lazer84
         color: white

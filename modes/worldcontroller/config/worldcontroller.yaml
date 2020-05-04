@@ -146,6 +146,38 @@ widgets:
       y: bottom+15
       x: left+860
       z: 10
+  widget_item1icon:
+    - type: image
+      image: Grass_Small
+      anchor_x: center
+      anchor_y: center
+      y: bottom+ 93
+      x: left + 904
+      z: 100
+  widget_item2icon:
+    - type: image
+      image: Grass_Small
+      anchor_x: center
+      anchor_y: center
+      y: bottom+ 93
+      x: left + 993
+      z: 100
+  widget_item3icon:
+    - type: image
+      image: Grass_Small
+      anchor_x: center
+      anchor_y: center
+      y: bottom+ 93
+      x: left + 1082
+      z: 100
+  widget_item4icon:
+    - type: image
+      image: Grass_Small
+      anchor_x: center
+      anchor_y: center
+      y: bottom+ 93
+      x: left + 1171
+      z: 100
 
 
 

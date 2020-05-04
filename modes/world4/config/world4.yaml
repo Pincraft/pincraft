@@ -96,6 +96,26 @@ widget_player:
       slide: world_slide
       widget_settings:
         image: world4_background
+    widget_item1icon:
+      action: update
+      slide: world_slide
+      widget_settings:
+        image: Podzol_Small
+    widget_item2icon:
+      action: update
+      slide: world_slide
+      widget_settings:
+        image: MossyCobblestone_Small
+    widget_item3icon:
+      action: update
+      slide: world_slide
+      widget_settings:
+        image: EmeraldOre_Small
+    widget_item4icon:
+      action: update
+      slide: world_slide
+      widget_settings:
+        image: WoodJungle_Small
 
 event_player:
    world_collected:
