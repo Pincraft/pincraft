@@ -217,6 +217,7 @@ event_player:
     show_ball_count
     show_tools
     show_extraball
+    show_debug
 
   collectitem1_hit:
     world_itemcheckcomplete

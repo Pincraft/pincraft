@@ -23,7 +23,7 @@ shots:
     profile: collectebshot
     show_tokens:
       leds: l_collectitem3
-    enable_events: mode_extraball_started
+    enable_events: enable_extraball
     disable_events: collectitem_special_disabled
   award_extraball:
     switch: s_captiveball
@@ -39,21 +39,51 @@ counters:
       starting_count: 0
       count_interval: 1
       count_complete_value: 12
-      enable_events: mode_extraball_started
+      enable_events: enable_extraball
+      disable_events: disable_extraball
       persist_state: true
       events_when_hit: extraball_progress
+      reset_on_complete: false
+      restart_events: enable_extraball2
+
+
+
+variable_player:
+  meatextraball_light:
+    earned_ebcount: 
+      int: 1
+      action: add
 
 event_player:
   award_extraball_hit:
     meatextraball_award
-  logicblock_counter_meatextraball_complete:
-    - collectitem_special_disabled
-    - meatextraball_light
-    - show_extraball
+
   extraball_progress:
     show_extraball
-  mode_extraball_started:
+
+  extraball_progress{current_player.earned_ebcount==0 and device.counters.counter_meatextraball.value==6}:
+    - show_extraball
+    - disable_extraball
+    - collectitem_special_disabled
+    - meatextraball_light
+
+  extraball_progress{current_player.earned_ebcount==1 and device.counters.counter_meatextraball.value==12}:
+    - show_extraball
+    - disable_extraball
+    - collectitem_special_disabled
+    - meatextraball_light
+
+  mode_extraball_started{current_player.earned_ebcount==0}:
+    enable_extraball
     show_extraball
+  mode_extraball_started{current_player.earned_ebcount==1}:
+    enable_extraball2
+    show_extraball
+  mode_extraball_started{current_player.earned_ebcount==2}:
+    disable_extraball
+    remove_extraball
+
+
   
 sound_player:
   collectitem_special_hit:
@@ -166,6 +196,32 @@ widgets:
       z: 50
 
 widget_player:
+  remove_extraball:
+    widget_meat1:
+      action: remove
+    widget_meat2:
+      action: remove
+    widget_meat3:
+      action: remove
+    widget_meat4:
+      action: remove
+    widget_meat5:
+      action: remove
+    widget_meat6:
+      action: remove
+    widget_meat7:
+      action: remove
+    widget_meat8:
+      action: remove
+    widget_meat9:
+      action: remove
+    widget_meat10:
+      action: remove
+    widget_meat11:
+      action: remove
+    widget_meat12:
+      action: remove
+
   #COUNTER IS AT 1
   show_extraball{device.counters.counter_meatextraball.value>=1}:
     widget_meat1:
@@ -239,74 +295,73 @@ widget_player:
         image: meat_empty
 
   #COUNTER IS AT 7
-  show_extraball{device.counters.counter_meatextraball.value>=7}:
+  show_extraball{device.counters.counter_meatextraball.value>=7 and current_player.earned_ebcount==1}:
     widget_meat7:
       action: update
       widget_settings:
         image: meat_full_bg
-  show_extraball{device.counters.counter_meatextraball.value<7}:
+  show_extraball{device.counters.counter_meatextraball.value<7 and current_player.earned_ebcount==1}:
     widget_meat7:
       action: update
       widget_settings:
         image: meat_empty
 
   #COUNTER IS AT 8
-  show_extraball{device.counters.counter_meatextraball.value>=8}:
+  show_extraball{device.counters.counter_meatextraball.value>=8 and current_player.earned_ebcount==1}:
     widget_meat8:
       action: update
       widget_settings:
         image: meat_full_bg
-  show_extraball{device.counters.counter_meatextraball.value<8}:
+  show_extraball{device.counters.counter_meatextraball.value<8 and current_player.earned_ebcount==1}:
     widget_meat8:
       action: update
       widget_settings:
         image: meat_empty
 
   #COUNTER IS AT 9
-  show_extraball{device.counters.counter_meatextraball.value>=9}:
+  show_extraball{device.counters.counter_meatextraball.value>=9 and current_player.earned_ebcount==1}:
     widget_meat9:
       action: update
       widget_settings:
         image: meat_full_bg
-  show_extraball{device.counters.counter_meatextraball.value<9}:
+  show_extraball{device.counters.counter_meatextraball.value<9 and current_player.earned_ebcount==1}:
     widget_meat9:
       action: update
       widget_settings:
         image: meat_empty
 
   #COUNTER IS AT 10
-  show_extraball{device.counters.counter_meatextraball.value>=10}:
+  show_extraball{device.counters.counter_meatextraball.value>=10 and current_player.earned_ebcount==1}:
     widget_meat10:
       action: update
       widget_settings:
         image: meat_full_bg
-  show_extraball{device.counters.counter_meatextraball.value<10}:
+  show_extraball{device.counters.counter_meatextraball.value<10 and current_player.earned_ebcount==1}:
     widget_meat10:
       action: update
       widget_settings:
         image: meat_empty
 
   #COUNTER IS AT 11
-  show_extraball{device.counters.counter_meatextraball.value>=11}:
+  show_extraball{device.counters.counter_meatextraball.value>=11 and current_player.earned_ebcount==1}:
     widget_meat11:
       action: update
       widget_settings:
         image: meat_full_bg
-  show_extraball{device.counters.counter_meatextraball.value<11}:
+  show_extraball{device.counters.counter_meatextraball.value<11 and current_player.earned_ebcount==1}:
     widget_meat11:
       action: update
       widget_settings:
         image: meat_empty
 
   #COUNTER IS AT 12
-  show_extraball{device.counters.counter_meatextraball.value>=12}:
+  show_extraball{device.counters.counter_meatextraball.value>=12 and current_player.earned_ebcount==1}:
     widget_meat12:
       action: update
       widget_settings:
         image: meat_full_bg
-  show_extraball{device.counters.counter_meatextraball.value<12}:
+  show_extraball{device.counters.counter_meatextraball.value<12 and current_player.earned_ebcount==1}:
     widget_meat12:
       action: update
       widget_settings:
         image: meat_empty
-  

@@ -2061,6 +2061,12 @@ player_vars:
     initial_value: "start"
     value_type: str
 
+  #Extra Ball Progress
+  earned_ebcount:
+    initial_value: 0
+    value_type: int
+
+
   #Multiball Multiplier
   multiplier_mb:
     initial_value: 1
