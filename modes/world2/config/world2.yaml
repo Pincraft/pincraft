@@ -91,6 +91,8 @@ variable_player:
 
 widget_player:
   mode_world2_started:
+    widget_videobackground:
+      action: remove
     widget_screenbackground:
       action: update
       slide: world_slide

@@ -94,11 +94,13 @@ widget_player:
     widget_videobackground:
       action: add
       slide: world_slide
-    widget_screenbackground:
-      action: update
-      slide: world_slide
       widget_settings:
-        image: world1_background
+        video: world1_overview
+    # widget_screenbackground:
+    #   action: update
+    #   slide: world_slide
+    #   widget_settings:
+    #     image: world1_background
     widget_item1icon:
       action: update
       slide: world_slide

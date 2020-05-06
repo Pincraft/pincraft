@@ -768,7 +768,7 @@ widgets:
       auto_play: true
       volume: 0
       end_behavior: loop
-      z: 10
+      z: 6
 
 
 
