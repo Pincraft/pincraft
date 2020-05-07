@@ -2007,6 +2007,12 @@ sounds:
     loops: -1
     track: music
 
+  stronghold_music:
+    file: stronghold_music.wav
+    volume: 1
+    loops: -1
+    track: music
+
   endmode_prepare_music:
     file: endmode_prepare.wav
     volume: 1
@@ -2264,8 +2270,8 @@ modes:
   - tooldisplay
   - villagermb
   - night
+  - stronghold
   - divertercontrol
-  
   - extraball
   - skillshot
   

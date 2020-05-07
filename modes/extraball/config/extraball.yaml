@@ -44,7 +44,7 @@ counters:
       persist_state: true
       events_when_hit: extraball_progress
       reset_on_complete: false
-      restart_events: enable_extraball2
+      restart_events: meatextraball_award
 
 
 
@@ -57,6 +57,10 @@ variable_player:
 event_player:
   award_extraball_hit:
     meatextraball_award
+
+  award_extraball_hit{current_player.earned_ebcount==1}:
+    enable_extraball
+    show_extraball
 
   extraball_progress:
     show_extraball
@@ -77,7 +81,7 @@ event_player:
     enable_extraball
     show_extraball
   mode_extraball_started{current_player.earned_ebcount==1}:
-    enable_extraball2
+    enable_extraball
     show_extraball
   mode_extraball_started{current_player.earned_ebcount==2}:
     disable_extraball

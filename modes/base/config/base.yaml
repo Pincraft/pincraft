@@ -82,6 +82,10 @@ event_player:
   sw_playfield_active_active{device.multiball_locks.nightlock.locked_balls==1 and device.multiball_locks.nightlock.enabled}:
     nightmode_start
 
+  #START STRONGHOLD MULTIBALL ON PLUNGE
+  sw_playfield_active_active{device.multiball_locks.strongholdlock.locked_balls==1 and device.multiball_locks.strongholdlock.enabled}:
+    stronghold_start
+
   #START THE END MULTIBALL ON PLUNGE
   sw_playfield_active_active{device.multiball_locks.endlockright.locked_balls==1 and device.multiball_locks.endlockright.enabled}:
     theendmultiball_start
@@ -95,7 +99,7 @@ event_player:
     world3_completed
   multiball_nightmb_started{current_player.world_id==4}:
     world4_completed
-  multiball_nightmb_started{current_player.world_id==5}:
+  multiball_strongholdmb_started{current_player.world_id==5}:
     world5_completed
 
   #=========== CONTROLS WHEN WORLDS ARE STARTED ============
@@ -137,11 +141,15 @@ event_player:
     nightmode_ready
     villagermb_disable
   world5_collected{current_player.multiplier_mb==1}:
+    stronghold_ready
+    villagermb_disable
+
+  multiball_villagermb_ended{current_player.world_id != 5 and current_player.world_item1_remaining == 0 and current_player.world_item2_remaining == 0 and current_player.world_item3_remaining == 0 and current_player.world_item4_remaining == 0}:
     nightmode_ready
     villagermb_disable
 
-  multiball_villagermb_ended{current_player.world_item1_remaining == 0 and current_player.world_item2_remaining == 0 and current_player.world_item3_remaining == 0 and current_player.world_item4_remaining == 0}:
-    nightmode_ready
+  multiball_villagermb_ended{current_player.world_id == 5 and current_player.world_item1_remaining == 0 and current_player.world_item2_remaining == 0 and current_player.world_item3_remaining == 0 and current_player.world_item4_remaining == 0}:
+    stronghold_ready
     villagermb_disable
 
   multiball_villagermb_ended{current_player.world_jackpot_worlds>1}:
@@ -173,6 +181,12 @@ multiball_locks:
     lock_devices: bd_scoop 
     enable_events: nightmode_ready
     disable_events: nightmode_start, nightmode_disable
+  strongholdlock:
+    balls_to_lock: 1
+    locked_ball_counting_strategy: physical_only
+    lock_devices: bd_scoop 
+    enable_events: stronghold_ready
+    disable_events: stronghold_start, stronghold_disable
 
   endlocktop:
     balls_to_lock: 1
@@ -199,6 +213,12 @@ multiballs:
     ball_locks: bd_scoop
     enable_events: nightmode_ready
     start_events: nightmode_start
+    shoot_again: 0s
+  strongholdmb:
+    ball_count: 2
+    ball_locks: bd_scoop
+    enable_events: stronghold_ready
+    start_events: stronghold_start
     shoot_again: 0s
   endmb:
     ball_count: 3
@@ -252,6 +272,11 @@ variable_player:
       action: set
 
   nightmode_ready:
+    travel_enabled:
+      int: 1
+      action: set
+
+  stronghold_ready:
     travel_enabled:
       int: 1
       action: set

@@ -1,0 +1,93 @@
+#config_version=5
+mode:
+    start_events: multiball_strongholdmb_started
+    stop_events: multiball_strongholdmb_ended, ball_ending
+    priority: 1000
+
+sound_player:
+  mode_stronghold_started:
+    stronghold_music:
+      action: play
+      loops: -1
+      mode_end_action: stop 
+
+widgets:
+  widget_swordplayer:
+    - type: image        #SCORE BACKGROUND
+      image: Sword_FullScreen_Dark_1x
+      anchor_x: right
+      anchor_y: bottom
+      y: bottom
+      x: right
+      z: 10
+  widget_endportal:
+    - type: image
+      image: endportal_0resized
+      anchor_x: middle
+      anchor_y: middle
+      y: middle+100
+      x: middle
+      z: 100
+
+slides:
+  stronghold_slide:
+    widgets:
+      - type: text
+        font_name: lazer84
+        font_size: 70
+        text: "Pincraft\nLoading"
+        z: 0
+
+
+slide_player:
+    mode_stronghold_started: stronghold_slide
+
+widget_player:
+  mode_stronghold_started:
+    widget_endportal:
+      action: add
+      slide: stronghold_slide
+    widget_screenbackground:
+      action: add
+      slide: stronghold_slide
+      widget_settings:
+        image: stronghold_background
+  
+  #SHOW LARGE SWORD
+  # mode_stronghold_started{current_player.sword==1}:
+  #   widget_swordplayer:
+  #     action: update
+  #     slide: stronghold_slide
+  #     widget_settings:
+  #       image: Sword_FullScreen_1x
+  # mode_stronghold_started{current_player.sword==2}:
+  #   widget_swordplayer:
+  #     action: update
+  #     slide: stronghold_slide
+  #     widget_settings:
+  #       image: Sword_FullScreen_2x
+  # mode_stronghold_started{current_player.sword==3}:
+  #   widget_swordplayer:
+  #     action: update
+  #     slide: stronghold_slide
+  #     widget_settings:
+  #       image: Sword_FullScreen_3x
+  # mode_stronghold_started{current_player.sword==4}:
+  #   widget_swordplayer:
+  #     action: update
+  #     slide: stronghold_slide
+  #     widget_settings:
+  #       image: Sword_FullScreen_4x
+  # mode_stronghold_started{current_player.sword==5}:
+  #   widget_swordplayer:
+  #     action: update
+  #     slide: stronghold_slide
+  #     widget_settings:
+  #       image: Sword_FullScreen_5x
+  
+
+event_player:
+  mode_stronghold_started:
+    outlanegate_close
+    show_ball_count
+    show_player_score
