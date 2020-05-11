@@ -130,10 +130,10 @@ switches:
   s_troughjam:
     number: A2-B0-3
     type: NC
-  s_rightoutlane:
+  s_rightinlane:
     number: A2-B0-1
     tags: playfield_active
-  s_rightinlane:
+  s_rightoutlane:
     number: A2-B0-0
     tags: playfield_active
 
@@ -207,6 +207,10 @@ switches:
     number: A3-B1-4
   s_captiveball:
     number: A3-B1-6
+    tags: playfield_active
+  s_portal:
+    number: A3-B1-0
+    type: NC
     tags: playfield_active
 
 

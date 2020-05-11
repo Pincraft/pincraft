@@ -22,7 +22,7 @@ widgets:
       z: 10
   widget_endportal:
     - type: image
-      image: endportal_0resized
+      image: endportal_0
       anchor_x: middle
       anchor_y: middle
       y: middle+100
