@@ -50,7 +50,7 @@ variable_player:
       string: "GREEN"
       action: set 
     world_item1_remaining:
-      int: 25
+      int: 5
       action: set
 
     #Item 2 Settings
@@ -61,7 +61,7 @@ variable_player:
       string: "GRAY"
       action: set 
     world_item2_remaining:
-      int: 25
+      int: 5
       action: set
 
     #Item 3 Settings
@@ -72,7 +72,7 @@ variable_player:
       string: "BROWN"
       action: set 
     world_item3_remaining:
-      int: 25
+      int: 5
       action: set
 
     #Item 4 Settings
@@ -83,7 +83,7 @@ variable_player:
       string: "SLATEGRAY"
       action: set 
     world_item4_remaining:
-      int: 25
+      int: 5
       action: set
 
     #Mark World as Setup

@@ -1,0 +1,50 @@
+#config_version=5
+mode:
+    start_events: multiball_lock_nightlock_locked_ball
+    stop_events: multiball_nightmb_started, ball_ending
+    priority: 1000
+
+#play hurry up sound effect
+sound_player:
+  mode_nightready_started:
+    heatbeat_music:
+      action: play
+      loops: -1
+      track: music
+      mode_end_action: stop
+    night_mode_ready:
+      action: play
+      loops: 0
+      priority: 100
+      track: voice
+ 
+slides:
+  nightready_slide:
+    widgets:
+      - type: text
+        font_name: lazer84
+        font_size: 70
+        text: "Night Has Fallen"
+        anchor_x: center
+        anchor_y: center
+        y: center+75
+        z: 0
+      - type: Text
+        text: Plunge The Ball
+        anchor_x: center
+        anchor_y: center
+        y: center-75
+        z: 0
+        font_name: lazer84
+        font_size: 70
+        animations:
+          pre_show_slide:
+            - property: opacity
+              value: 0
+              duration: .5s
+            - property: opacity
+              value: 1
+              duration: .5s
+
+slide_player:
+  mode_nightready_started: nightready_slide

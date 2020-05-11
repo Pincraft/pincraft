@@ -1878,6 +1878,11 @@ sounds:
     track: voice
 
   #-- Night Mode
+  night_mode_ready:
+    file: NightModeReady.wav
+    volume: 1
+    track: voice
+
   night_mode_started:
     file: NightModeStarted.wav
     volume: 1
@@ -1963,6 +1968,7 @@ sounds:
     volume: 1
     track: sfx
 
+
   #MUSIC TRACKS
   basemode_music:
     file: basemode.wav
@@ -2040,6 +2046,14 @@ sounds:
     volume: 1
     loops: -1
     track: music
+    
+  heatbeat_music:
+    file: heartbeat_music.wav
+    volume: 1
+    loops: -1
+    track: music
+
+
 
 # SOUND POOLS
 #--------------------------------------------
@@ -2274,6 +2288,7 @@ modes:
   - tooldisplay
   - villagermb
   - night
+  - nightready
   - stronghold
   - divertercontrol
   - extraball

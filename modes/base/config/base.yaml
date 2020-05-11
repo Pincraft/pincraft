@@ -91,13 +91,13 @@ event_player:
     theendmultiball_start
 
   #COMPLETE WORLDS WHEN NIGHT MODE STARTS
-  multiball_nightmb_started{current_player.world_id==1}:
+  multiball_lock_nightlock_locked_ball{current_player.world_id==1}:
     world1_completed
-  multiball_nightmb_started{current_player.world_id==2}:
+  multiball_lock_nightlock_locked_ball{current_player.world_id==2}:
     world2_completed
-  multiball_nightmb_started{current_player.world_id==3}:
+  multiball_lock_nightlock_locked_ball{current_player.world_id==3}:
     world3_completed
-  multiball_nightmb_started{current_player.world_id==4}:
+  multiball_lock_nightlock_locked_ball{current_player.world_id==4}:
     world4_completed
   multiball_strongholdmb_started{current_player.world_id==5}:
     world5_completed
@@ -113,8 +113,8 @@ event_player:
 
   multiball_nightmb_ended{current_player.world_id==1}:
     #theend_start
-    #world5_start
-    world2_start   
+    world5_start
+    #world2_start   
   multiball_nightmb_ended{current_player.world_id==2}:
     world3_start   
   multiball_nightmb_ended{current_player.world_id==3}:

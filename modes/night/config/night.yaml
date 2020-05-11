@@ -5,11 +5,19 @@ mode:
     priority: 1000
 
 #play hurry up sound effect
+
+track_player:
+  mode_night_started:
+    music:
+      action: play
+      fade: 1 sec
+
 sound_player:
   mode_night_started:
     nightmode_music:
       action: play
       loops: -1
+      track: music
       mode_end_action: stop 
   mb_drop2_hit: zombie_death
   mb_drop5_hit: zombie_death
