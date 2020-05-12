@@ -105,7 +105,7 @@ event_player:
   #=========== CONTROLS WHEN WORLDS ARE STARTED ============
   #START WORLD 1
   mode_base_started{current_player.world_id==0}:
-    world1_start
+    world5_start
 
   #ENABLE NEXT WORLDS WHEN NIGHT MODE RETURNS
   multiball_nightmb_ended:
@@ -379,13 +379,7 @@ sound_player:
   s_leftinlane_active: lane_swish
   s_leftoutlane_active: lane_swish
 
-  #VILLAGER MULTIBALL
-  s_spinner_active: 
-    villagersp: 
-      action: play
-      loops: 1
-  villagermultiball_ready:
-    villager_multiball_ready
+
       
 show_player:
   mode_base_started:

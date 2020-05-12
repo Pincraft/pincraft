@@ -1,8 +1,56 @@
 #config_version=5
 mode:
     start_events: multiball_strongholdmb_started
-    stop_events: multiball_strongholdmb_ended, ball_ending
+    stop_events: stronghold_completed
+    restart_on_next_ball: true
     priority: 1000
+
+variable_player:
+  set1_left_flashing_hit:
+    score: 100000 * current_player.multiplier_mb * current_player.sword 
+  set1_center_flashing_hit:
+    score: 100000 * current_player.multiplier_mb * current_player.sword 
+  set1_right_flashing_hit:
+    score: 100000 * current_player.multiplier_mb * current_player.sword 
+  eyeset1_complete:
+    score: 250000 * current_player.multiplier_mb * current_player.sword 
+
+  set2_left_flashing_hit:
+    score: 100000 * current_player.multiplier_mb * current_player.sword 
+  set2_center_flashing_hit:
+    score: 100000 * current_player.multiplier_mb * current_player.sword 
+  set2_right_flashing_hit:
+    score: 100000 * current_player.multiplier_mb * current_player.sword 
+  eyeset2_complete:
+    score: 500000 * current_player.multiplier_mb * current_player.sword 
+
+  set3_left_flashing_hit:
+    score: 100000 * current_player.multiplier_mb * current_player.sword 
+  set3_center_flashing_hit:
+    score: 100000 * current_player.multiplier_mb * current_player.sword 
+  set3_right_flashing_hit:
+    score: 100000 * current_player.multiplier_mb * current_player.sword 
+  eyeset3_complete:
+    score: 750000 * current_player.multiplier_mb * current_player.sword 
+
+  set4_left_flashing_hit:
+    score: 100000 * current_player.multiplier_mb * current_player.sword 
+  set4_center_flashing_hit:
+    score: 100000 * current_player.multiplier_mb * current_player.sword 
+  set4_right_flashing_hit:
+    score: 100000 * current_player.multiplier_mb * current_player.sword 
+  eyeset4_complete:
+    score: 1000000 * current_player.multiplier_mb * current_player.sword 
+
+  mode_stronghold_started:
+    multiplier_mb:  #RESET MULTIBALL MULTIPLIER TO NONE
+      int: 2
+      action: set
+
+  multiball_strongholdmb_ended:
+    multiplier_mb:  #RESET MULTIBALL MULTIPLIER TO NONE
+      int: 1
+      action: set
 
 sound_player:
   mode_stronghold_started:
@@ -10,6 +58,136 @@ sound_player:
       action: play
       loops: -1
       mode_end_action: stop 
+  set1_left_flashing_hit: eyeplace1
+  set1_center_flashing_hit: eyeplace2
+  set1_right_flashing_hit: eyeplace3
+  set2_left_flashing_hit: eyeplace1
+  set2_center_flashing_hit: eyeplace2
+  set2_right_flashing_hit: eyeplace3
+  set3_left_flashing_hit: eyeplace1
+  set3_center_flashing_hit: eyeplace2
+  set3_right_flashing_hit: eyeplace3
+  set4_left_flashing_hit: eyeplace1
+  set4_center_flashing_hit: eyeplace2
+  set4_right_flashing_hit: eyeplace3
+  enable_endportal: endportal
+
+shot_profiles:
+  sp_eyeshot:
+    states:
+      - name: flashing  # step 2
+        show: flash
+      - name: lit  # step 3
+        show: on
+    loop: no
+
+
+shots:
+  set1_left:
+    switch: s_collectitem2
+    profile: sp_eyeshot
+    enable_events: enable_eyeset1
+    disable_events: eyeset1_complete
+    show_tokens:
+      leds: l_collectitem2
+  set1_center:
+    switch: s_tooltarget1
+    profile: sp_eyeshot
+    enable_events: enable_eyeset1
+    disable_events: eyeset1_complete
+    show_tokens:
+      leds: l_toolcollect1
+  set1_right:
+    switch: s_spinner
+    profile: sp_eyeshot
+    enable_events: enable_eyeset1
+    disable_events: eyeset1_complete
+    show_tokens:
+      leds: l_spinner4
+
+  set2_left:
+    switch: s_collectitem4
+    profile: sp_eyeshot
+    enable_events: enable_eyeset2
+    disable_events: eyeset2_complete
+    show_tokens:
+      leds: l_collectitem4
+  set2_center:
+    switch: s_tooltarget3
+    profile: sp_eyeshot
+    enable_events: enable_eyeset2
+    disable_events: eyeset2_complete
+    show_tokens:
+      leds: l_toolcollect3
+  set2_right:
+    switch: s_whitedot4
+    profile: sp_eyeshot
+    enable_events: enable_eyeset2
+    disable_events: eyeset2_complete
+    show_tokens:
+      leds: l_craft4
+
+  set3_left:
+    switch: s_collectitem5
+    profile: sp_eyeshot
+    enable_events: enable_eyeset3
+    disable_events: eyeset3_complete
+    show_tokens:
+      leds: l_collectitem5
+  set3_center:
+    switch: s_tooltarget2
+    profile: sp_eyeshot
+    enable_events: enable_eyeset3
+    disable_events: eyeset3_complete
+    show_tokens:
+      leds: l_toolcollect2
+  set3_right:
+    switch: s_whitedot2
+    profile: sp_eyeshot
+    enable_events: enable_eyeset3
+    disable_events: eyeset3_complete
+    show_tokens:
+      leds: l_craft2
+
+  set4_left:
+    switch: s_collectitem3
+    profile: sp_eyeshot
+    enable_events: enable_eyeset4
+    disable_events: eyeset4_complete
+    show_tokens:
+      leds: l_collectitem3
+  set4_center:
+    switch: s_topkicker
+    profile: sp_eyeshot
+    enable_events: enable_eyeset4
+    disable_events: eyeset4_complete
+    show_tokens:
+      leds: l_craftlit
+  set4_right:
+    switch: s_captiveball
+    profile: sp_eyeshot
+    enable_events: enable_eyeset4
+    disable_events: eyeset4_complete
+    show_tokens:
+      leds: l_captivejackpot
+
+shot_groups:
+  eyeset1:
+    shots: set1_left, set1_center, set1_right
+    enable_events: mode_stronghold_started
+    disable_events: eyeset1_complete
+  eyeset2:
+    shots: set2_left, set2_center, set2_right
+    enable_events: enable_eyeset2
+    disable_events: eyeset2_complete
+  eyeset3:
+    shots: set3_left, set3_center, set3_right
+    enable_events: enable_eyeset3
+    disable_events: eyeset3_complete
+  eyeset4:
+    shots: set4_left, set4_center, set4_right
+    enable_events: enable_eyeset4
+    disable_events: eyeset4_complete
 
 widgets:
   widget_swordplayer:
@@ -28,6 +206,110 @@ widgets:
       y: middle+100
       x: middle
       z: 100
+  widget_eye1:
+    - type: image
+      image: endportal_eye1
+      anchor_x: middle
+      anchor_y: middle
+      y: middle+100
+      x: middle
+      z: 120
+  widget_eye2:
+    - type: image
+      image: endportal_eye2
+      anchor_x: middle
+      anchor_y: middle
+      y: middle+100
+      x: middle
+      z: 120
+  widget_eye3:
+    - type: image
+      image: endportal_eye3
+      anchor_x: middle
+      anchor_y: middle
+      y: middle+100
+      x: middle
+      z: 120
+  widget_eye4:
+    - type: image
+      image: endportal_eye4
+      anchor_x: middle
+      anchor_y: middle
+      y: middle+100
+      x: middle
+      z: 120
+  widget_eye5:
+    - type: image
+      image: endportal_eye5
+      anchor_x: middle
+      anchor_y: middle
+      y: middle+100
+      x: middle
+      z: 120
+  widget_eye6:
+    - type: image
+      image: endportal_eye6
+      anchor_x: middle
+      anchor_y: middle
+      y: middle+100
+      x: middle
+      z: 120
+  widget_eye7:
+    - type: image
+      image: endportal_eye7
+      anchor_x: middle
+      anchor_y: middle
+      y: middle+100
+      x: middle
+      z: 120
+  widget_eye8:
+    - type: image
+      image: endportal_eye8
+      anchor_x: middle
+      anchor_y: middle
+      y: middle+100
+      x: middle
+      z: 120
+  widget_eye9:
+    - type: image
+      image: endportal_eye9
+      anchor_x: middle
+      anchor_y: middle
+      y: middle+100
+      x: middle
+      z: 120
+  widget_eye10:
+    - type: image
+      image: endportal_eye10
+      anchor_x: middle
+      anchor_y: middle
+      y: middle+100
+      x: middle
+      z: 120
+  widget_eye11:
+    - type: image
+      image: endportal_eye11
+      anchor_x: middle
+      anchor_y: middle
+      y: middle+100
+      x: middle
+      z: 120
+  widget_eye12:
+    - type: image
+      image: endportal_eye12
+      anchor_x: middle
+      anchor_y: middle
+      y: middle+100
+      x: middle
+      z: 120
+  widget_portalopen:
+    - type: image
+      image: endportal_active
+      anchor_x: middle
+      anchor_y: middle
+      y: middle+100
+      x: middle
+      z: 150
 
 slides:
   stronghold_slide:
@@ -38,9 +320,9 @@ slides:
         text: "Pincraft\nLoading"
         z: 0
 
-
 slide_player:
     mode_stronghold_started: stronghold_slide
+  
 
 widget_player:
   mode_stronghold_started:
@@ -52,6 +334,19 @@ widget_player:
       slide: stronghold_slide
       widget_settings:
         image: stronghold_background
+  set1_left_flashing_hit: widget_eye3
+  set1_center_flashing_hit: widget_eye2
+  set1_right_flashing_hit: widget_eye1
+  set2_left_flashing_hit: widget_eye4
+  set2_center_flashing_hit: widget_eye5
+  set2_right_flashing_hit: widget_eye6
+  set3_left_flashing_hit: widget_eye7
+  set3_center_flashing_hit: widget_eye8
+  set3_right_flashing_hit: widget_eye9
+  set4_left_flashing_hit: widget_eye12
+  set4_center_flashing_hit: widget_eye11
+  set4_right_flashing_hit: widget_eye10
+  enable_endportal: widget_portalopen
   
   #SHOW LARGE SWORD
   # mode_stronghold_started{current_player.sword==1}:
@@ -91,3 +386,12 @@ event_player:
     outlanegate_close
     show_ball_count
     show_player_score
+    enable_eyeset1
+  eyeset1_complete:
+    enable_eyeset2
+  eyeset2_complete:
+    enable_eyeset3
+  eyeset3_complete:
+    enable_eyeset4
+  eyeset4_complete:
+    enable_endportal

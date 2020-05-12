@@ -1,10 +1,9 @@
 #config_version=5
 mode:
-  start_events: mode_base_started, multiball_nightmb_ended
-  stop_events: mode_base_stopped, multiball_nightmb_started
+  start_events: mode_base_started, multiball_nightmb_ended, mode_stronghold_ended
+  stop_events: mode_base_stopped, multiball_nightmb_started, mode_stronghold_started
   priority: 300
 
-#TODO: Should not be able to collect level 6 tools
 
 shots:
   tool1:

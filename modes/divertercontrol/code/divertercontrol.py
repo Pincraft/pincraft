@@ -31,6 +31,8 @@ class Base(Mode):
             self.player.diverter_state="multiballvillager"
         elif self.machine.mode_controller.is_active("night"):
             self.player.diverter_state="multiballnight"
+        elif self.machine.mode_controller.is_active("stronghold"):
+            self.player.diverter_state="stronghold"
         elif self.machine.mode_controller.is_active("theend"):
             self.player.diverter_state="theend"
         elif self.player.travel_enabled==1:

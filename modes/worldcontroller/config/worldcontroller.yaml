@@ -40,6 +40,14 @@ shots:
     enable_events: collectitem4_enabled
     disable_events: collectitem4_disabled
 
+sound_player:
+  #VILLAGER MULTIBALL
+  s_spinner_active: 
+    villagersp: 
+      action: play
+      loops: 1
+  villagermultiball_ready:
+    villager_multiball_ready
 
 variable_player:
  #COLLECT ITEM 1 HIT

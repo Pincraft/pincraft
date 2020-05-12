@@ -1968,6 +1968,23 @@ sounds:
     volume: 1
     track: sfx
 
+  eyeplace1:
+    file: eyeplace1.ogg
+    volume: 1
+    track: sfx
+  eyeplace2:
+    file: eyeplace2.ogg
+    volume: 1
+    track: sfx
+  eyeplace3:
+    file: eyeplace3.ogg
+    volume: 1
+    track: sfx
+  endportal:
+    file: endportal.ogg
+    volume: 1
+    track: sfx
+
 
   #MUSIC TRACKS
   basemode_music:
