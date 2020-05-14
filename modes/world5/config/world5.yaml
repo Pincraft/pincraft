@@ -2,7 +2,7 @@
 mode:
     start_events: world5_started
     stop_events: world5_completed
-    priority: 500
+    priority: 300
 
 show_player:
   mode_world5_started:  #Setup GI Light Show
@@ -96,6 +96,11 @@ widget_player:
       slide: world_slide
       widget_settings:
         image: world5_background
+    # widget_videobackground:
+    #   action: add
+    #   slide: world_slide
+    #   widget_settings:
+    #     video: world5_overview
     widget_item1icon:
       action: update
       slide: world_slide

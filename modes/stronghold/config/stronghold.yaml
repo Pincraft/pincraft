@@ -1,9 +1,8 @@
 #config_version=5
 mode:
-    start_events: multiball_strongholdmb_started
+    start_events: stronghold_started
     stop_events: stronghold_completed
-    restart_on_next_ball: true
-    priority: 1000
+    priority: 200
 
 variable_player:
   set1_left_flashing_hit:
@@ -14,6 +13,9 @@ variable_player:
     score: 100000 * current_player.multiplier_mb * current_player.sword 
   eyeset1_complete:
     score: 250000 * current_player.multiplier_mb * current_player.sword 
+    stronghold_progress:
+      int: 1
+      action: set
 
   set2_left_flashing_hit:
     score: 100000 * current_player.multiplier_mb * current_player.sword 
@@ -23,6 +25,9 @@ variable_player:
     score: 100000 * current_player.multiplier_mb * current_player.sword 
   eyeset2_complete:
     score: 500000 * current_player.multiplier_mb * current_player.sword 
+    stronghold_progress:
+        int: 2
+        action: set
 
   set3_left_flashing_hit:
     score: 100000 * current_player.multiplier_mb * current_player.sword 
@@ -32,6 +37,10 @@ variable_player:
     score: 100000 * current_player.multiplier_mb * current_player.sword 
   eyeset3_complete:
     score: 750000 * current_player.multiplier_mb * current_player.sword 
+    stronghold_progress:
+        int: 3
+        action: set
+
 
   set4_left_flashing_hit:
     score: 100000 * current_player.multiplier_mb * current_player.sword 
@@ -41,6 +50,10 @@ variable_player:
     score: 100000 * current_player.multiplier_mb * current_player.sword 
   eyeset4_complete:
     score: 1000000 * current_player.multiplier_mb * current_player.sword 
+    stronghold_progress:
+        int: 4
+        action: set
+
 
   mode_stronghold_started:
     multiplier_mb:  #RESET MULTIBALL MULTIPLIER TO NONE

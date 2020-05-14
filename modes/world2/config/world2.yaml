@@ -2,7 +2,7 @@
 mode:
     start_events: world2_started
     stop_events: world2_completed
-    priority: 500
+    priority: 300
 
 show_player:
   mode_world2_started:  #Setup GI Light Show
@@ -91,8 +91,6 @@ variable_player:
 
 widget_player:
   mode_world2_started:
-    widget_videobackground:
-      action: remove
     widget_screenbackground:
       action: update
       slide: world_slide

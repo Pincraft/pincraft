@@ -16,6 +16,11 @@ mode:
 #   - Right Loop Open
 #   - Travel Diverter Enabled 
 
+# STRONGHOLD TRAVEL ("strongholdtravel")
+#   - Left Loop Open / Drop Down Down
+#   - Right Loop Open
+#   - Travel Diverter Enabled 
+
 # WORLD VILLAGER MB READY ("worldvillager")
 #   - Left Loop Closed / Drop Down Down
 #   - Right Loop Closed
@@ -29,6 +34,10 @@ mode:
 #    - Right Loop Closed 
 
 # WORLD IDLE ("worldidle")
+#    - Left Loop Closed / Drop Down Up
+#    - Right Loop Open
+
+# STRONGHOLD RUNNING ("strongholdidle")
 #    - Left Loop Closed / Drop Down Up
 #    - Right Loop Open
 
@@ -51,10 +60,15 @@ light_player:
     gi_loopupperleft: red
     gi_loopupperright: green
 
-  #Stronghold
-  divertercontrol_statechanged{current_player.diverter_state=="stronghold"}:
+  #Stronghold Idle
+  divertercontrol_statechanged{current_player.diverter_state=="strongholdidle"}:
     gi_loopupperleft: red
     gi_loopupperright: green
+
+  #Stronghold Travel
+  divertercontrol_statechanged{current_player.diverter_state=="strongholdtravel"}:
+    gi_loopupperleft: blue
+    gi_loopupperright: red
 
   #Night MB
   divertercontrol_statechanged{current_player.diverter_state=="multiballnight"}:
@@ -159,16 +173,17 @@ event_player:
   timer_leftdropreset_complete{current_player.diverter_state=="worldidle"}: diverter_resetupperdrop
   timer_leftdropreset_complete{current_player.diverter_state=="worldtools"}: diverter_resetupperdrop
   timer_leftdropreset_complete{current_player.diverter_state=="multiballvillager"}: diverter_resetupperdrop
-  timer_leftdropreset_complete{current_player.diverter_state=="stronghold"}: diverter_resetupperdrop
+  timer_leftdropreset_complete{current_player.diverter_state=="strongholdidle"}: diverter_resetupperdrop
   
   #Left Loop Drop Up Events
   divertercontrol_statechanged{current_player.diverter_state=="worldidle"}: diverter_resetupperdrop
   divertercontrol_statechanged{current_player.diverter_state=="worldtools"}: diverter_resetupperdrop
   divertercontrol_statechanged{current_player.diverter_state=="multiballvillager"}: diverter_resetupperdrop
-  divertercontrol_statechanged{current_player.diverter_state=="stronghold"}: diverter_resetupperdrop
+  divertercontrol_statechanged{current_player.diverter_state=="strongholdidle"}: diverter_resetupperdrop
 
   #Left Loop Drop Down Events
   divertercontrol_statechanged{current_player.diverter_state=="worldtravel"}: diverter_dropupperdrop
+  divertercontrol_statechanged{current_player.diverter_state=="strongholdtravel"}: diverter_dropupperdrop
   divertercontrol_statechanged{current_player.diverter_state=="worldvillager"}: diverter_dropupperdrop
   divertercontrol_statechanged{current_player.diverter_state=="worldtoolsfull"}: diverter_dropupperdrop
   divertercontrol_statechanged{current_player.diverter_state=="multiballnight"}: diverter_dropupperdrop
@@ -181,12 +196,13 @@ event_player:
   #Left Loop Hit Events:
   loopleft_hit{current_player.diverter_state=="multiballnight"}: diverter_leftloophit
   loopleft_hit{current_player.diverter_state=="worldtravel"}: diverter_leftloophit, diverter_leftlooptravelhit
+  loopleft_hit{current_player.diverter_state=="strongholdtravel"}: diverter_leftloophit, diverter_leftlooptravelhit
 
   #DIVERTER CONTROLS
-  divertercontrol_statechanged.1{current_player.diverter_state=="worldtravel"}:
+  divertercontrol_statechanged.1{current_player.diverter_state=="worldtravel" or current_player.diverter_state == "strongholdtravel"}:
     diverter_travel_enabled
 
-  divertercontrol_statechanged.2{current_player.diverter_state!="worldtravel"}:
+  divertercontrol_statechanged.2{current_player.diverter_state!="worldtravel" and current_player.diverter_state != "strongholdtravel"}:
     diverter_travel_disabled
 
 

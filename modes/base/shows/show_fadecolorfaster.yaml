@@ -1,0 +1,7 @@
+#show_version=5
+- duration: .5
+  lights:
+    (light): (color)-f400ms
+- duration: .5
+  lights:
+    (light): off-f400ms
