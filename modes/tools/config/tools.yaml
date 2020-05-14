@@ -1,7 +1,7 @@
 #config_version=5
 mode:
-  start_events: mode_base_started, multiball_nightmb_ended, mode_stronghold_ended
-  stop_events: mode_base_stopped, multiball_nightmb_started, mode_stronghold_started
+  start_events: mode_worldcontroller_started, multiball_nightmb_ended, mode_stronghold_ended
+  stop_events: mode_worldcontroller_stopped, multiball_nightmb_started, mode_stronghold_started
   priority: 500
 
 

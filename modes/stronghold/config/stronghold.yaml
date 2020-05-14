@@ -187,7 +187,7 @@ shots:
 shot_groups:
   eyeset1:
     shots: set1_left, set1_center, set1_right
-    enable_events: mode_stronghold_started
+    enable_events: enable_eyeset1
     disable_events: eyeset1_complete
   eyeset2:
     shots: set2_left, set2_center, set2_right
@@ -347,6 +347,24 @@ widget_player:
       slide: stronghold_slide
       widget_settings:
         image: stronghold_background
+  mode_stronghold_started{current_player.stronghold_progress >=1}:
+    widget_eye1
+    widget_eye2
+    widget_eye3
+  mode_stronghold_started{current_player.stronghold_progress >=2}:
+    widget_eye4
+    widget_eye5
+    widget_eye6
+  mode_stronghold_started{current_player.stronghold_progress >=3}:
+    widget_eye7
+    widget_eye8
+    widget_eye9
+  mode_stronghold_started{current_player.stronghold_progress >=4}:
+    widget_eye10
+    widget_eye11
+    widget_eye12
+    widget_portalopen
+
   set1_left_flashing_hit: widget_eye3
   set1_center_flashing_hit: widget_eye2
   set1_right_flashing_hit: widget_eye1
@@ -360,46 +378,26 @@ widget_player:
   set4_center_flashing_hit: widget_eye11
   set4_right_flashing_hit: widget_eye10
   enable_endportal: widget_portalopen
-  
-  #SHOW LARGE SWORD
-  # mode_stronghold_started{current_player.sword==1}:
-  #   widget_swordplayer:
-  #     action: update
-  #     slide: stronghold_slide
-  #     widget_settings:
-  #       image: Sword_FullScreen_1x
-  # mode_stronghold_started{current_player.sword==2}:
-  #   widget_swordplayer:
-  #     action: update
-  #     slide: stronghold_slide
-  #     widget_settings:
-  #       image: Sword_FullScreen_2x
-  # mode_stronghold_started{current_player.sword==3}:
-  #   widget_swordplayer:
-  #     action: update
-  #     slide: stronghold_slide
-  #     widget_settings:
-  #       image: Sword_FullScreen_3x
-  # mode_stronghold_started{current_player.sword==4}:
-  #   widget_swordplayer:
-  #     action: update
-  #     slide: stronghold_slide
-  #     widget_settings:
-  #       image: Sword_FullScreen_4x
-  # mode_stronghold_started{current_player.sword==5}:
-  #   widget_swordplayer:
-  #     action: update
-  #     slide: stronghold_slide
-  #     widget_settings:
-  #       image: Sword_FullScreen_5x
-  
+   
 
 event_player:
   mode_stronghold_started:
     outlanegate_close
     show_ball_count
     show_player_score
+    show_debug
+
+  mode_stronghold_started{current_player.stronghold_progress==0}:
     enable_eyeset1
+  mode_stronghold_started{current_player.stronghold_progress==1}:
+    eyeset1_complete
+  mode_stronghold_started{current_player.stronghold_progress==2}:
+    eyeset2_complete
+  mode_stronghold_started{current_player.stronghold_progress==3}:
+    eyeset3_complete
+  mode_stronghold_started{current_player.stronghold_progress==4}:
+    eyeset4_complete
+
   eyeset1_complete:
     enable_eyeset2
   eyeset2_complete:
@@ -408,3 +406,4 @@ event_player:
     enable_eyeset4
   eyeset4_complete:
     enable_endportal
+    outlanegate_open
