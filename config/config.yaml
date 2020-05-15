@@ -2090,6 +2090,14 @@ sound_pools:
       - meatextraball_cow
       - meatextraball_pig
       - meatextraball_chicken
+  eyeplacesp:
+    type: random_force_all
+    track: sfx
+    sounds:
+      - eyeplace1
+      - eyeplace2
+      - eyeplace3
+      
 
 # PLAYER VARIABLES
 #--------------------------------------------
@@ -2275,6 +2283,10 @@ player_vars:
 
   stronghold_progress:
     initial_value: 0
+    value_type: int
+
+  stronghold_jackpot:
+    initial_value: 1000000
     value_type: int
 
 #SLIDES CONFIGURATION

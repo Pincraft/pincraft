@@ -38,9 +38,9 @@ event_player:
     outlanegate_close
     item_collected
     recalculate_worldjackpot
-    show_ball_count
-    show_player_score
-    show_debug
+    # show_ball_count
+    # show_player_score
+    # show_debug
   
   collectitem1_hit:
     item_collected
@@ -107,8 +107,8 @@ event_player:
   #=========== CONTROLS WHEN WORLDS ARE STARTED ============
   #START WORLD 1
   mode_base_started{current_player.world_id==0}:
-    world1_start
-    #world5_start
+    #world1_start
+    world5_start
 
   #ENABLE NEXT WORLDS WHEN NIGHT MODE RETURNS
   multiball_nightmb_ended:
@@ -561,7 +561,7 @@ widgets:
       anchor_y: top
       y: top-15
       x: left+15
-      z: 10
+      z: 200
     - type: text        #VILLAGER JACKPOT
       text: Villager Jackpot - (player|villager_jackpot) X S (player|sword)
       number_grouping: true
@@ -570,7 +570,7 @@ widgets:
       font_size: 18
       y: top-25
       x: left+50
-      z: 100
+      z: 210
       anchor_x: left
       anchor_y: top
     - type: text        #WORLD JACKPOT
@@ -581,7 +581,7 @@ widgets:
       font_size: 18
       y: top-50
       x: left+50
-      z: 100
+      z: 210
       anchor_x: left
       anchor_y: top
     - type: text        #WORLD JACKPOT
@@ -592,7 +592,7 @@ widgets:
       font_size: 18
       y: top-75
       x: left+50
-      z: 100
+      z: 210
       anchor_x: left
       anchor_y: top
     - type: text        #WORLD JACKPOT
@@ -603,7 +603,7 @@ widgets:
       font_size: 18
       y: top-100
       x: left+50
-      z: 100
+      z: 210
       anchor_x: left
       anchor_y: top
     - type: text        #WORLD JACKPOT
@@ -614,7 +614,7 @@ widgets:
       font_size: 18
       y: top-125
       x: left+50
-      z: 100
+      z: 210
       anchor_x: left
       anchor_y: top
     - type: text        #WORLD JACKPOT
@@ -625,7 +625,7 @@ widgets:
       font_size: 18
       y: top-150
       x: left+50
-      z: 100
+      z: 210
       anchor_x: left
       anchor_y: top
     - type: text        #EARNED EB COUNT
@@ -636,18 +636,18 @@ widgets:
       font_size: 18
       y: top-175
       x: left+50
-      z: 100
+      z: 210
       anchor_x: left
       anchor_y: top
     - type: text        #STRONGHOLD PROGRESS
-      text: Stronghold Progress - (player|stronghold_progress)
+      text: Stronghold Progress - (player|stronghold_progress) | Jackpot - (player|stronghold_jackpot)
       number_grouping: true
       min_digits: 2
       font_name: ARLRDBD
       font_size: 18
       y: top-200
       x: left+50
-      z: 100
+      z: 210
       anchor_x: left
       anchor_y: top
     - type: text        #STRONGHOLD PROGRESS
@@ -658,7 +658,7 @@ widgets:
       font_size: 18
       y: top-225
       x: left+50
-      z: 100
+      z: 210
       anchor_x: left
       anchor_y: top
       

@@ -1,0 +1,13 @@
+#show_version=5
+- duration: .5
+  lights:
+    l_spinner1: blue-f400ms
+    l_spinner2: blue-f400ms
+    l_spinner3: blue-f400ms
+    l_spinner4: blue-f400ms
+- duration: .5
+  lights:
+    l_spinner1: off-f400ms
+    l_spinner2: off-f400ms
+    l_spinner3: off-f400ms
+    l_spinner4: off-f400ms

@@ -1,9 +1,9 @@
 events:
-  game_ended: 193
-  game_started: 872
+  game_ended: 196
+  game_started: 889
 player:
   score:
-    average: 7349626.291079811
+    average: 7298843.518518518
     top:
     - 492815500
     - 261271100
@@ -15,106 +15,107 @@ player:
     - 30421300
     - 28288400
     - 25586250
-    total: 213
+    total: 216
 shots:
   award_extraball: 75
-  captiveball: 721
+  captiveball: 725
   centertarget: 1541
-  collectitem1: 3959
-  collectitem2: 3876
-  collectitem3: 2709
-  collectitem4: 3671
+  collectitem1: 4034
+  collectitem2: 3950
+  collectitem3: 2783
+  collectitem4: 3747
   collectitem5: 1881
-  collectitem_special: 1510
-  craft1: 481
-  craft2: 515
-  craft3: 501
-  craft4: 493
-  leftslingshot: 4809
-  loopleft: 3586
-  loopright: 2709
-  mb_drop1: 378
-  mb_drop2: 1238
-  mb_drop3: 970
-  mb_drop4: 378
-  mb_drop5: 1602
+  collectitem_special: 1517
+  craft1: 483
+  craft2: 517
+  craft3: 502
+  craft4: 495
+  eyespinner: 136
+  leftslingshot: 4883
+  loopleft: 3621
+  loopright: 2767
+  mb_drop1: 379
+  mb_drop2: 1241
+  mb_drop3: 979
+  mb_drop4: 379
+  mb_drop5: 1607
   mb_drop6: 570
   mb_jackpot: 26
   mb_superjackpot: 45
-  popbumper1: 4379
-  popbumper2: 6370
-  popbumper3: 7645
-  rightslingshot: 3033
-  set1_center: 41
-  set1_left: 110
-  set1_right: 221
-  set2_center: 22
-  set2_left: 59
-  set2_right: 29
-  set3_center: 49
-  set3_left: 13
-  set3_right: 47
-  set4_center: 16
-  set4_left: 10
-  set4_right: 11
-  skill_scoup: 413
-  spinner: 17838
-  tool1: 1808
-  tool2: 2181
-  tool3: 1463
+  popbumper1: 4415
+  popbumper2: 6451
+  popbumper3: 7695
+  rightslingshot: 3067
+  set1_center: 56
+  set1_left: 134
+  set1_right: 261
+  set2_center: 31
+  set2_left: 73
+  set2_right: 58
+  set3_center: 64
+  set3_left: 31
+  set3_right: 73
+  set4_center: 31
+  set4_left: 24
+  set4_right: 55
+  skill_scoup: 422
+  spinner: 18214
+  tool1: 1814
+  tool2: 2197
+  tool3: 1468
   village_jackpot: 22
   villager_jackpot: 133
   villager_spinner: 114
-  world_jackpot: 307
+  world_jackpot: 311
 switches:
-  s_bumperrail: 1401
-  s_captiveball: 721
-  s_centertarget: 3545
-  s_collectitem1: 6387
-  s_collectitem2: 6372
-  s_collectitem3: 4056
-  s_collectitem4: 6021
-  s_collectitem5: 5714
+  s_bumperrail: 1416
+  s_captiveball: 725
+  s_centertarget: 3594
+  s_collectitem1: 6541
+  s_collectitem2: 6528
+  s_collectitem3: 4104
+  s_collectitem4: 6175
+  s_collectitem5: 5873
   s_credit_right: 0
-  s_drop1: 2493
-  s_drop2: 3883
-  s_drop3: 10435
-  s_drop4: 2450
-  s_drop5: 5489
-  s_drop6: 3412
-  s_left_flipper: 30670
-  s_leftinlane: 773
-  s_leftoutlane: 587
-  s_leftsling: 4811
-  s_loopleft: 3925
-  s_loopright: 3471
+  s_drop1: 2529
+  s_drop2: 3937
+  s_drop3: 10570
+  s_drop4: 2485
+  s_drop5: 5560
+  s_drop6: 3459
+  s_left_flipper: 30910
+  s_leftinlane: 774
+  s_leftoutlane: 595
+  s_leftsling: 4886
+  s_loopleft: 3960
+  s_loopright: 3529
   s_maint: 0
-  s_plungerlane: 3157
-  s_popbumper1: 4379
-  s_popbumper2: 6370
-  s_popbumper3: 7645
-  s_portal: 97
-  s_right_flipper: 25462
-  s_rightinlane: 27
+  s_plungerlane: 3211
+  s_popbumper1: 4415
+  s_popbumper2: 6451
+  s_popbumper3: 7695
+  s_portal: 111
+  s_right_flipper: 25705
+  s_rightinlane: 32
   s_rightoutlane: 391
-  s_rightsling: 3033
-  s_scoup: 1734
-  s_spinner: 17841
+  s_rightsling: 3067
+  s_scoup: 1766
+  s_spinner: 18217
   s_start: 63
   s_tilt: 0
-  s_tooltarget1: 2677
-  s_tooltarget2: 3193
-  s_tooltarget3: 2138
-  s_topbumperleft: 1299
-  s_topbumperright: 2000
-  s_topkicker: 4942
-  s_trough1: 2855
-  s_trough2: 2353
-  s_trough3: 2203
-  s_trough4: 1846
-  s_troughjam: 2391
-  s_upperdrop: 2320
-  s_whitedot1: 1029
-  s_whitedot2: 1143
-  s_whitedot3: 1194
-  s_whitedot4: 1174
+  s_tooltarget1: 2726
+  s_tooltarget2: 3228
+  s_tooltarget3: 2164
+  s_topbumperleft: 1328
+  s_topbumperright: 2038
+  s_topkicker: 5006
+  s_trough1: 2912
+  s_trough2: 2399
+  s_trough3: 2235
+  s_trough4: 1878
+  s_troughjam: 2440
+  s_upperdrop: 2363
+  s_whitedot1: 1042
+  s_whitedot2: 1162
+  s_whitedot3: 1202
+  s_whitedot4: 1190

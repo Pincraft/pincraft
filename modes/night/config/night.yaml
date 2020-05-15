@@ -317,6 +317,7 @@ event_player:
     outlanegate_close
     show_ball_count
     show_player_score
+    show_debug
   mb_jackpot_hit:
     outlanegate_open
   mb_super_jackpot_hit:
