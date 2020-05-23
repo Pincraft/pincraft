@@ -75,7 +75,17 @@ sound_player:
     stronghold_music:
       action: play
       loops: -1
-      mode_end_action: stop 
+      mode_end_action: stop
+    stronghold_collect:
+      action: play
+      loops: 0
+  eyeset4_complete{current_player.multiplier_mb==2}:
+    stronghold_travel_multiball
+  eyeset4_complete{current_player.multiplier_mb==1}:
+    stronghold_travel_single
+  award_strongholdjackpot:
+    stronghold_jackpot
+
   set1_left_flashing_hit: eyeplacesp
   set1_center_flashing_hit: eyeplacesp
   set1_right_flashing_hit: eyeplacesp

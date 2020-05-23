@@ -1907,6 +1907,33 @@ sounds:
     file: NightMegaJackpot.wav
     volume: 1
     track: voice
+
+  #-- Stronghold
+
+  stronghold_ready:
+    file: StrongholdStarted.wav
+    volume: 1
+    track: voice
+
+  stronghold_collect:
+    file: StrongholdCollect.wav
+    volume: 1
+    track: voice
+
+  stronghold_travel_single:
+    file: StrongholdTravelSingle.wav
+    volume: 1
+    track: voice
+
+  stronghold_travel_multiball:
+    file: StrongholdTravelMultiball.wav
+    volume: 1
+    track: voice
+
+  stronghold_jackpot:
+    file: StrongholdJackpot.wav
+    volume: 1
+    track: voice
   
   #-- Tools
   craft_ready:
@@ -2326,4 +2353,5 @@ modes:
   - night
   - nightready
   - stronghold
+  - strongholdready
 
