@@ -54,6 +54,9 @@ variable_player:
         int: 4
         action: set
 
+  award_strongholdjackpot:
+    score: current_player.stronghold_jackpot * current_player.sword
+
   eyespinner_hit:
     stronghold_jackpot: 100000
 
@@ -85,7 +88,7 @@ sound_player:
   set4_left_flashing_hit: eyeplacesp
   set4_center_flashing_hit: eyeplacesp
   set4_right_flashing_hit: eyeplacesp
-  eye_spinner_hit: eyeplacesp
+  eyespinner_hit: eyeplacesp
   enable_endportal: endportal
 
 shot_profiles:
@@ -192,10 +195,16 @@ shots:
       leds: l_spinner4
 
   eyespinner:
-    switch: s_spinner
+    switch: s_spinner  
     profile: sp_eyespinner
     enable_events: enable_eyespinner
     disable_events: disable_eyespinner
+
+  strongholdtravel:
+    switch: s_portal
+    profile: sp_eyeshot
+    enable_events: enable_endportal
+
 
 shot_groups:
   eyeset1:
@@ -349,6 +358,90 @@ slides:
 slide_player:
     mode_stronghold_started: stronghold_slide
   
+light_player:
+  mode_stronghold_started:
+    lactionbar: off
+  set1_left_flashing_hit: 
+    l_actionbar7: blue
+    l_actionbar8: blue
+    l_actionbar9: blue
+  set1_center_flashing_hit: 
+    l_actionbar4: blue
+    l_actionbar5: blue
+    l_actionbar6: blue
+  set1_right_flashing_hit: 
+    l_actionbar1: blue
+    l_actionbar2: blue
+    l_actionbar3: blue
+  set2_left_flashing_hit: 
+    l_actionbar10: blue
+    l_actionbar11: blue
+    l_actionbar12: blue
+  set2_center_flashing_hit: 
+    l_actionbar13: blue
+    l_actionbar14: blue
+    l_actionbar15: blue
+  set2_right_flashing_hit: 
+    l_actionbar16: blue
+    l_actionbar17: blue
+    l_actionbar18: blue
+  set3_left_flashing_hit: 
+    l_actionbar19: blue
+    l_actionbar20: blue
+    l_actionbar21: blue
+  set3_center_flashing_hit: 
+    l_actionbar22: blue
+    l_actionbar23: blue
+    l_actionbar24: blue
+  set3_right_flashing_hit: 
+    l_actionbar25: blue
+    l_actionbar26: blue
+    l_actionbar27: blue
+  set4_left_flashing_hit:
+    l_actionbar34: blue
+    l_actionbar35: blue
+    l_actionbar36: blue
+    l_actionbar37: blue
+  set4_center_flashing_hit: 
+    l_actionbar31: blue
+    l_actionbar32: blue
+    l_actionbar33: blue
+  set4_right_flashing_hit: 
+    l_actionbar28: blue
+    l_actionbar29: blue
+    l_actionbar30: blue
+  update_eye_display{current_player.stronghold_progress >=1}:
+    l_actionbar1: blue
+    l_actionbar2: blue
+    l_actionbar3: blue
+    l_actionbar4: blue
+    l_actionbar5: blue
+    l_actionbar6: blue
+    l_actionbar7: blue
+    l_actionbar8: blue
+    l_actionbar9: blue
+  update_eye_display{current_player.stronghold_progress >=2}:
+    l_actionbar10: blue
+    l_actionbar11: blue
+    l_actionbar12: blue
+    l_actionbar13: blue
+    l_actionbar14: blue
+    l_actionbar15: blue
+    l_actionbar16: blue
+    l_actionbar17: blue
+    l_actionbar18: blue
+  update_eye_display{current_player.stronghold_progress >=3}:
+    l_actionbar19: blue
+    l_actionbar20: blue
+    l_actionbar21: blue
+    l_actionbar22: blue
+    l_actionbar23: blue
+    l_actionbar24: blue
+    l_actionbar25: blue
+    l_actionbar26: blue
+    l_actionbar27: blue
+  update_eye_display{current_player.stronghold_progress >=4}:
+    lactionbar: blue
 
 widget_player:
   slide_stronghold_slide_active:
@@ -396,6 +489,10 @@ widget_player:
 event_player:
   mode_stronghold_started:
     outlanegate_close
+
+  strongholdtravel_hit:
+    award_strongholdjackpot
+    stronghold_completed
 
   slide_stronghold_slide_active:
     show_player_score

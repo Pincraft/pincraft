@@ -109,6 +109,7 @@ event_player:
   mode_base_started{current_player.world_id==0}:
     #world1_start
     world5_start
+    #theend_start
 
   #ENABLE NEXT WORLDS WHEN NIGHT MODE RETURNS
   multiball_nightmb_ended:
@@ -122,7 +123,7 @@ event_player:
     world4_start
   multiball_nightmb_ended{current_player.world_id==4}:
     world5_start
-  multiball_nightmb_ended{current_player.world_id==5}:
+  stronghold_completed:
     theend_start
 
   # world_collected{current_player.multiplier_mb==1}:
@@ -189,18 +190,6 @@ multiball_locks:
     enable_events: stronghold_ready
     disable_events: stronghold_start, stronghold_disable
 
-  endlocktop:
-    balls_to_lock: 1
-    locked_ball_counting_strategy: physical_only
-    lock_devices: bd_topkicker 
-    enable_events: theendmultiball_ready
-    disable_events: theendmultiball_start, endmode_disable
-  endlockright:
-    balls_to_lock: 1
-    locked_ball_counting_strategy: physical_only
-    lock_devices: bd_scoop 
-    enable_events: multiball_lock_endlocktop_full
-    disable_events: theendmultiball_start, endmode_disable
   
 multiballs:
   villagermb:
@@ -221,12 +210,6 @@ multiballs:
     enable_events: stronghold_ready
     start_events: stronghold_start
     shoot_again: 0s
-  endmb:
-    ball_count: 3
-    ball_locks: bd_topkicker, bd_scoop
-    enable_events: theendmultiball_ready
-    start_events: theendmultiball_start
-    shoot_again: 0s   
 
 #Player Variables
 variable_player:

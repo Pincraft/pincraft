@@ -136,12 +136,12 @@
     l_world6: off
     l_worldtarget: off
     lactionbar: off
-    l_actionbar25: brown
-    l_actionbar26: brown
-    l_actionbar27: brown
-    l_actionbar28: brown
-    l_actionbar29: brown
-    l_actionbar30: brown
+    l_actionbar25: red
+    l_actionbar26: red
+    l_actionbar27: red
+    l_actionbar28: red
+    l_actionbar29: red
+    l_actionbar30: red
 - duration: 1
   lights:
     lundercab: 

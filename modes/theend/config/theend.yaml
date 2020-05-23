@@ -10,14 +10,53 @@ show_player:
       loops: -1
       speed: 1
 
+multiball_locks:
+  endlocktop:
+    balls_to_lock: 1
+    locked_ball_counting_strategy: physical_only
+    lock_devices: bd_topkicker 
+    enable_events: theendmultiball_ready
+    disable_events: theendmultiball_start, endmode_disable
+  endlockright:
+    balls_to_lock: 1
+    locked_ball_counting_strategy: physical_only
+    lock_devices: bd_scoop 
+    enable_events: multiball_lock_endlocktop_full
+    disable_events: theendmultiball_start, endmode_disable
+
+multiballs:
+  endmb:
+    ball_count: 3
+    ball_locks: bd_topkicker, bd_scoop
+    enable_events: theendmultiball_ready
+    start_events: theendmultiball_start
+    shoot_again: 0s 
+
+slides:
+  theend_slide:
+    widgets:
+      - type: text
+        font_name: lazer84
+        font_size: 70
+        text: "Pincraft\nLoading"
+        z: 0
+
+slide_player:
+    mode_theend_started: theend_slide
+
 widget_player:
-  mode_theend_started:
+  slide_theend_slide_active:
     widget_screenbackground:
       action: update
       widget_settings:
         image: theend_background
 
 event_player:
+  slide_theend_slide_active:
+    show_player_score
+    show_debug
+    show_ball_count
+
   mode_theend_started:
     theendmultiball_ready
   mode_base_started:
