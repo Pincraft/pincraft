@@ -16,6 +16,14 @@ playfields:
     tags: default
     default_source_device: bd_plunger        #this was changed from bd_plunger / reverted back
 
+machine:
+  balls_installed: 3
+  min_balls: 3
+
+game:
+  balls_per_game: 3
+  max_players: 4
+
 # p_roc:
 #   pd_led_boards:
 #     4:       
