@@ -546,7 +546,7 @@ widgets:
       x: left+15
       z: 200
     - type: text        #VILLAGER JACKPOT
-      text: Villager Jackpot - (player|villager_jackpot) X S (player|sword)
+      text: VILLAGER | Ready=(player|villagermb_ready) / Jackpot=(player|villager_jackpot) x S(player|sword)
       number_grouping: true
       min_digits: 2
       font_name: ARLRDBD
@@ -557,7 +557,7 @@ widgets:
       anchor_x: left
       anchor_y: top
     - type: text        #WORLD JACKPOT
-      text: W. Jackpot - B (player|world_jackpot_base) x I (player|world_jackpot_items) x W (player|world_jackpot_worlds) x S (player|sword) = (player|world_jackpot)
+      text: WORLD | Jackpot B(player|world_jackpot_base) x I(player|world_jackpot_items) x W(player|world_jackpot_worlds) x S(player|sword)=(player|world_jackpot)
       number_grouping: true
       min_digits: 2
       font_name: ARLRDBD
@@ -567,8 +567,8 @@ widgets:
       z: 210
       anchor_x: left
       anchor_y: top
-    - type: text        #WORLD JACKPOT
-      text: Crafting Enabled - (player|crafting_enabled) | Crafting Full - (player|crafting_full)
+    - type: text        #Crafting
+      text: CRAFT | Enabled=(player|crafting_enabled) / Full=(player|crafting_full) / Ready=(player|crafting_ready)
       number_grouping: true
       min_digits: 2
       font_name: ARLRDBD
@@ -578,8 +578,8 @@ widgets:
       z: 210
       anchor_x: left
       anchor_y: top
-    - type: text        #WORLD JACKPOT
-      text: Crafting Ready - (player|crafting_ready)
+    - type: text        #Travel and Diverter
+      text: TRAVEL | Diverter=(player|diverter_state) / Ready=(player|travel_enabled)
       number_grouping: true
       min_digits: 2
       font_name: ARLRDBD
@@ -589,8 +589,8 @@ widgets:
       z: 210
       anchor_x: left
       anchor_y: top
-    - type: text        #WORLD JACKPOT
-      text: Villager Ready - (player|villagermb_ready) | Travel Ready - (player|travel_enabled)
+    - type: text        #EARNED EB COUNT
+      text: EXTRABALL | Earned=(player|earned_ebcount)
       number_grouping: true
       min_digits: 2
       font_name: ARLRDBD
@@ -600,8 +600,8 @@ widgets:
       z: 210
       anchor_x: left
       anchor_y: top
-    - type: text        #WORLD JACKPOT
-      text: Current Diverter State - (player|diverter_state)
+    - type: text        #STRONGHOLD PROGRESS
+      text: STRONGHOLD | Progress=(player|stronghold_progress) / Jackpot=(player|stronghold_jackpot)
       number_grouping: true
       min_digits: 2
       font_name: ARLRDBD
@@ -611,8 +611,8 @@ widgets:
       z: 210
       anchor_x: left
       anchor_y: top
-    - type: text        #EARNED EB COUNT
-      text: Earned EB Count - (player|earned_ebcount)
+    - type: text        #MULTIBALL MULTIPLIER
+      text: MULTIBALL | Multiplier=(player|multiplier_mb)
       number_grouping: true
       min_digits: 2
       font_name: ARLRDBD
@@ -622,8 +622,8 @@ widgets:
       z: 210
       anchor_x: left
       anchor_y: top
-    - type: text        #STRONGHOLD PROGRESS
-      text: Stronghold Progress - (player|stronghold_progress) | Jackpot - (player|stronghold_jackpot)
+    - type: text        #NIGHT MULTIBALL
+      text: NIGHT | Progress=(player|nightmb_progress) / Ready=(player|nightmb_ready)
       number_grouping: true
       min_digits: 2
       font_name: ARLRDBD
@@ -633,18 +633,6 @@ widgets:
       z: 210
       anchor_x: left
       anchor_y: top
-    - type: text        #STRONGHOLD PROGRESS
-      text: Multiball Multiplier - (player|multiplier_mb)
-      number_grouping: true
-      min_digits: 2
-      font_name: ARLRDBD
-      font_size: 18
-      y: top-225
-      x: left+50
-      z: 210
-      anchor_x: left
-      anchor_y: top
-      
 
   widget_scorebackground:
     - type: image        #SCORE BACKGROUND

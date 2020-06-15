@@ -50,6 +50,14 @@ sound_player:
     villager_multiball_ready
 
 variable_player:
+  popbumper1_hit:
+    nightmb_progress: 1
+  popbumper2_hit:
+    nightmb_progress: 1
+  popbumper3_hit:
+    nightmb_progress: 1
+
+
  #COLLECT ITEM 1 HIT
   collectitem1_hit:
     world_item1_remaining: -1 * current_player.shovel

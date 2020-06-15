@@ -2156,6 +2156,7 @@ player_vars:
     initial_value: 1
     value_type: int
 
+  #Villager Multiball Variables
   villagermb_ready:
     initial_value: 0
     value_type: int
@@ -2164,6 +2165,17 @@ player_vars:
     initial_value: 1
     value_type: int
 
+  #Night Multiball Variables
+  nightmb_ready:
+    initial_value: 0
+    value_type: int
+
+  nightmb_progress:
+    initial_value: 0
+    value_type: int
+  
+
+  #World Jackpot
   world_jackpot:
     initial_value: 0
     value_type: int
