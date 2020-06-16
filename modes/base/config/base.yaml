@@ -51,9 +51,7 @@ event_player:
   collectitem5_hit:
     item_collected
 
-  #ENABLE VILLAGER MULTIBALL 
-  logicblock_counter_villagermultiball_complete{current_player.world_item1_remaining > 0 or current_player.world_item2_remaining > 0 or current_player.world_item3_remaining > 0 or current_player.world_item4_remaining > 0}:
-    villagermultiball_ready
+
 
 
 
@@ -252,22 +250,7 @@ variable_player:
       action: set
 
 
-  #SPINNER SCORING
-  spinner_hit{device.counters.counter_villagermultiball.value<4}: #LEVEL 100
-    score: 100 * current_player.multiplier_mb
-    world_jackpot_base: 1000
-  spinner_hit{device.counters.counter_villagermultiball.value>=4 and device.counters.counter_villagermultiball.value<8}: #LEVEL 1000
-    score: 1000 * current_player.multiplier_mb
-    world_jackpot_base: 1000
-  spinner_hit{device.counters.counter_villagermultiball.value>=8 and device.counters.counter_villagermultiball.value<12}: #LEVEL 2000
-    score: 2000 * current_player.multiplier_mb
-    world_jackpot_base: 1000
-  spinner_hit{device.counters.counter_villagermultiball.value>=12 and device.counters.counter_villagermultiball.value<16}: #LEVEL 3000
-    score: 3000 * current_player.multiplier_mb
-    world_jackpot_base: 1000
-  spinner_hit{device.counters.counter_villagermultiball.value>=16}: #LEVEL 4000
-    score: 4000 * current_player.multiplier_mb
-    world_jackpot_base: 1000
+
 
   s_right_outlane_active:
     score: 5000 * current_player.multiplier_mb
@@ -329,36 +312,7 @@ light_player:
     lgi:
       color: white
     lfeature: off
-  spinner_hit{device.counters.counter_villagermultiball.value>=4 and device.counters.counter_villagermultiball.value<8}: #LEVEL 1000
-    l_spinner1: green
-    l_spinner2: off
-    l_spinner3: off
-    l_spinner4: off
-  spinner_hit{device.counters.counter_villagermultiball.value>=8 and device.counters.counter_villagermultiball.value<12}: #LEVEL 1000
-    l_spinner1: off
-    l_spinner2: green
-    l_spinner3: off
-    l_spinner4: off
-  spinner_hit{device.counters.counter_villagermultiball.value>=12 and device.counters.counter_villagermultiball.value<16}: #LEVEL 1000
-    l_spinner1: off
-    l_spinner2: off
-    l_spinner3: green
-    l_spinner4: off
-  spinner_hit{device.counters.counter_villagermultiball.value>=16}:
-    l_spinner3: off 
-    l_spinner2: off 
-    l_spinner1: off
-    l_spinner4: green 
-  multiball_villagermb_started:
-    l_spinner1: green
-    l_spinner2: green
-    l_spinner3: green
-    l_spinner4: green
-  multiball_villagermb_ended:
-    l_spinner1: off
-    l_spinner2: off
-    l_spinner3: off
-    l_spinner4: off
+  
 
 
 #This is for achieving the worlds
