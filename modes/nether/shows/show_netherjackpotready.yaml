@@ -2,23 +2,23 @@
 - duration: 1
   lights:
     lgi:
-      color: blue
+      color: red
       fade: 500ms
     lbackbox:
-      color: blue
+      color: red
       fade: 500ms
     lundercab:
-      color: blue
+      color: red
       fade: 500ms
 - duration: 1
   lights:
     lgi:
-      color: purple
+      color: orange
       fade: 500ms
     lbackbox:
-      color: purple
+      color: orange
       fade: 500ms
     lundercab:
-      color: purple
+      color: orange
       fade: 500ms
 

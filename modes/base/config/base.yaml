@@ -74,14 +74,6 @@ event_player:
     world_jackpot_enable
    
   # -- MULTIBALL START LOGIC
-  
-  #START VILLAGER MULTIBALL ON PLUNGE
-  sw_playfield_active_active{device.multiball_locks.villagerlock.locked_balls==1 and device.multiball_locks.villagerlock.enabled}:
-    villagermultiball_start
-
-  #START NETHER MULTIBALL ON PLUNGE
-  sw_playfield_active_active{device.multiball_locks.netherlock.locked_balls==1 and device.multiball_locks.netherlock.enabled}:
-    nethermode_start
 
   #START STRONGHOLD MULTIBALL ON PLUNGE
   sw_playfield_active_active{device.multiball_locks.strongholdlock.locked_balls==1 and device.multiball_locks.strongholdlock.enabled}:
@@ -90,6 +82,10 @@ event_player:
   #START THE END MULTIBALL ON PLUNGE
   sw_playfield_active_active{device.multiball_locks.endlockright.locked_balls==1 and device.multiball_locks.endlockright.enabled}:
     theendmultiball_start
+  
+  #START NETHER MULTIBALL ON PLUNGE
+  sw_playfield_active_active{device.multiball_locks.netherlock.locked_balls==1 and device.multiball_locks.netherlock.enabled}:
+    nethermode_start
 
   #COMPLETE WORLDS WHEN NETHER MODE STARTS
   multiball_lock_netherlock_locked_ball{current_player.world_id==1}:
@@ -103,6 +99,10 @@ event_player:
   multiball_lock_strongholdlock_locked_ball{current_player.world_id==5}:
     world5_completed
     #stronghold_start
+
+
+
+  
 
   #=========== CONTROLS WHEN WORLDS ARE STARTED ============
   #START WORLD 1
@@ -156,55 +156,34 @@ event_player:
   multiball_villagermb_ended{current_player.world_jackpot_worlds==1}:
     outlanegate_close
 
-counters:
-   counter_villagermultiball:
-      count_events: spinner_hit
-      starting_count: 0
-      count_interval: 1
-      count_complete_value: 20
-      restart_events: multiball_nethermb_ended,multiball_villagermb_ended, mode_base_started
-      disable_events: villagermb_disable
-      enable_events: mode_base_started
+
 
 multiball_locks:
-  villagerlock:
-    balls_to_lock: 1
-    locked_ball_counting_strategy: physical_only
-    lock_devices: bd_topkicker 
-    enable_events: villagermultiball_ready
-    disable_events: villagermultiball_start, villagermb_disable
-  netherlock:
-    balls_to_lock: 1
-    locked_ball_counting_strategy: physical_only
-    lock_devices: bd_scoop 
-    enable_events: nethermode_ready
-    disable_events: nethermode_start, nethermode_disable
   strongholdlock:
     balls_to_lock: 1
     locked_ball_counting_strategy: physical_only
     lock_devices: bd_scoop 
     enable_events: stronghold_ready
     disable_events: stronghold_start, stronghold_disable
-
+  netherlock:
+    balls_to_lock: 1
+    locked_ball_counting_strategy: physical_only
+    lock_devices: bd_scoop 
+    enable_events: nethermode_ready
+    disable_events: nethermode_start, nethermode_disable
   
 multiballs:
-  villagermb:
+  strongholdmb:
     ball_count: 2
-    ball_locks: bd_topkicker
-    enable_events: villagermultiball_ready
-    start_events: villagermultiball_start
+    ball_locks: bd_scoop
+    enable_events: stronghold_ready
+    start_events: stronghold_start
     shoot_again: 0s
   nethermb:
     ball_count: 2
     ball_locks: bd_scoop
     enable_events: nethermode_ready
     start_events: nethermode_start
-    shoot_again: 0s
-  strongholdmb:
-    ball_count: 2
-    ball_locks: bd_scoop
-    enable_events: stronghold_ready
-    start_events: stronghold_start
     shoot_again: 0s
 
 #Player Variables
@@ -226,57 +205,12 @@ variable_player:
     world_jackpot_items:  #RESET WORLD JACKPOT ITEMS
       int: 0
       action: set
-    villagermb_ready:
-      int: 0
-      action: set
     travel_enabled:
       int: 0
-      action: set
-
-  multiball_villagermb_started: #VILLAGER MULTIBALL STARTED
-    multiplier_mb:
-      int: 2
-      action: set
-    villagermb_ready:
-      int: 0
-      action: set
-
-  multiball_villagermb_ended: #VILLAGER MULTIBALL ENDED
-    multiplier_mb:
-      int: 1
-      action: set
-
-  villagermb_disable:
-    villagermb_ready:
-      int: 0
-      action: set
-
-  nethermode_ready:
-    travel_enabled:
-      int: 1
       action: set
 
   stronghold_ready:
     travel_enabled:
-      int: 1
-      action: set
-
-  multiball_nethermb_started: #NETHER MULTIBALL STARTED
-    multiplier_mb:
-      int: 2
-      action: set
-
-  multiball_nethermb_ended: #VILLAGER MULTIBALL ENDED
-    world_jackpot_worlds: 1  #FOR WORLD JACKPOT / INCREASE WORLDS TRAVELED
-    multiplier_mb:
-      int: 1
-      action: set
-    travel_enabled:
-      int: 0
-      action: set
-
-  villagermultiball_ready:
-    villagermb_ready:
       int: 1
       action: set
 
@@ -296,6 +230,25 @@ variable_player:
       action: set
     world_jackpot_items:
       int: 1
+      action: set
+
+  nethermode_ready:
+    travel_enabled:
+      int: 1
+      action: set
+
+  multiball_nethermb_started: #NETHER MULTIBALL STARTED
+    multiplier_mb:
+      int: 2
+      action: set
+
+  multiball_nethermb_ended: #VILLAGER MULTIBALL ENDED
+    world_jackpot_worlds: 1  #FOR WORLD JACKPOT / INCREASE WORLDS TRAVELED
+    multiplier_mb:
+      int: 1
+      action: set
+    travel_enabled:
+      int: 0
       action: set
 
 
@@ -518,20 +471,6 @@ achievement_groups:
     enable_while_no_achievement_started: true
     rotate_right_events: rotate_mission_rotator
 
-
-# slides:
-#   base_slide:
-#     widgets:
-#       - type: text
-#         font_name: lazer84
-#         font_size: 70
-#         text: "Pincraft"
-#         z: 0
-
-#slide_player:
-  #mode_base_started: base_slide
-
-
 widgets:
   widget_debug:
     - type: image        #SCORE BACKGROUND
@@ -619,7 +558,7 @@ widgets:
       anchor_x: left
       anchor_y: top
     - type: text        #NIGHT MULTIBALL
-      text: NIGHT | Progress=(player|nightmb_progress) / Ready=(player|nightmb_ready)
+      text: NIGHT | Ready=(player|nightmb_ready)
       number_grouping: true
       min_digits: 2
       font_name: ARLRDBD

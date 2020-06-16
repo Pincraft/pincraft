@@ -19,61 +19,46 @@ sound_player:
       loops: -1
       track: music
       mode_end_action: stop 
-  mb_drop2_hit: zombie_death
-  mb_drop5_hit: zombie_death
-  mb_drop1_hit: creeper_death
-  mb_drop3_hit: creeper_death
-  mb_drop4_hit: creeper_death
-  mb_drop6_hit: creeper_death
+  mbnether_drop2_hit: zombie_death
+  mbnether_drop5_hit: zombie_death
+  mbnether_drop3_hit: creeper_death
+  mbnether_drop4_hit: creeper_death
 
   # nethermb_phase1_active: night_mode_started
   # nethermb_phase2_active: night_zombie_jackpot
   # nethermb_phase3_active: night_creeper_jackpot
   # nethermb_jackpot_active: night_all_jackpot
-  # mb_jackpot_hit: night_super_jackpot
-  # mb_superjackpot_hit: night_mega_jackpot
+  # mbnether_jackpot_hit: night_super_jackpot
+  # mbnether_superjackpot_hit_hit: night_mega_jackpot
 
 
 show_player:
-  mb_drop1_hit:
-    show_flashactionbareven:
-      show_tokens:
-        color: green
-      loops: 0
-      speed: 4
   
-  mb_drop2_hit:
+  mbnether_drop2_hit:
     show_flashactionbarodd:
       show_tokens:
         color: purple
       loops: 0
       speed: 4
   
-  mb_drop3_hit:
+  mbnether_drop3_hit:
     show_flashactionbareven:
       show_tokens:
-        color: green
+        color: red
       loops: 0
       speed: 4
 
-  mb_drop4_hit:
+  mbnether_drop4_hit:
     show_flashactionbareven:
       show_tokens:
-        color: green
+        color: red
       loops: 0
       speed: 4
 
-  mb_drop5_hit:
+  mbnether_drop5_hit:
     show_flashactionbarodd:
       show_tokens:
         color: purple
-      loops: 0
-      speed: 4
-
-  mb_drop6_hit:
-    show_flashactionbareven:
-      show_tokens:
-        color: green
       loops: 0
       speed: 4
     
@@ -81,6 +66,7 @@ show_player:
     show_nethersetup:
       loops: -1
       speed: 4
+
   nethermb_phase1_started:
     show_netherphase1setup:
       loops: 0
@@ -88,6 +74,7 @@ show_player:
     show_nethersetup:
       loops: -1
       speed: 4
+
   nethermb_phase2_started:
     show_netherphase2setup:
       loops: 0
@@ -95,6 +82,7 @@ show_player:
     show_nethersetup:
       loops: -1
       speed: 2
+
   nethermb_phase3_started:
     show_netherphase3setup:
       loops: 0
@@ -102,6 +90,7 @@ show_player:
     show_nethersetup:
       loops: -1
       speed: 1
+      
   nethermb_jackpot_active:
     show_netherjackpotready:
       loops: -1
@@ -119,7 +108,7 @@ state_machines:
   nethermb_state:
     states:
       start:
-        label: Night Mode Started
+        label: Nether Mode Started
       phase1started:
         events_when_started: nethermb_phase1_started
       phase1running:
@@ -158,7 +147,7 @@ state_machines:
         events: mballdrops_complete
       - source: jackpotrunning
         target: phase1started
-        events: mb_jackpot_hit, mb_superjackpot_hit
+        events: mbnether_jackpot_hit, mbnether_superjackpot_hit
 
 shot_profiles:
   mbtarget:
@@ -177,74 +166,74 @@ variable_player:
   nethermb_alldrops_complete:
     score: 1000000
 
-  mb_jackpot_hit:
+  mbnether_jackpot_hit:
     score: 5000000
-  mb_superjackpot_hit:
+  mbnether_superjackpot_hit:
     score: 10000000
 
 shots:
-  mb_jackpot:
+  mbnether_jackpot:
     switch: s_collectitem3
     profile: mbtarget
     show_tokens:
       light: l_collectitem3
     disable_events: mode_nether_started, nethermb_phase1_started
     enable_events: nethermb_jackpot_active
-  mb_superjackpot:
+  mbnether_superjackpot:
     switch: s_captiveball
     profile: mbtarget
     show_tokens:
       light: l_captivejackpot
     disable_events: mode_nether_started, nethermb_phase1_started
     enable_events: nethermb_jackpot_active
-  mb_drop1:
-    switch: s_drop1  
-    profile: mbtarget
-    show_tokens:
-      light: l_drop1
-    reset_events: nethermb_phase1_started, nethermb_phase2_started, nethermb_phase3_started
-  mb_drop2:
+  # mbnether_drop1:
+  #   switch: s_drop1  
+  #   profile: mbtarget
+  #   show_tokens:
+  #     light: l_drop1
+  #   reset_events: nethermb_phase1_started, nethermb_phase2_started, nethermb_phase3_started
+  mbnether_drop2:
     switch: s_drop2
     profile: mbtarget
     show_tokens:
       light: l_drop2
     reset_events: nethermb_phase1_started, nethermb_phase2_started, nethermb_phase3_started
-  mb_drop3:
+  mbnether_drop3:
     switch: s_drop3
     profile: mbtarget
     show_tokens:
       light: l_drop3
     reset_events: nethermb_phase1_started, nethermb_phase2_started, nethermb_phase3_started
-  mb_drop4:
+  mbnether_drop4:
     switch: s_drop4
     profile: mbtarget
     show_tokens:
       light: l_drop4
     reset_events: nethermb_phase1_started, nethermb_phase2_started, nethermb_phase3_started
-  mb_drop5:
+  mbnether_drop5:
     switch: s_drop5
     profile: mbtarget
     show_tokens:
       light: l_drop5
     reset_events: nethermb_phase1_started, nethermb_phase2_started, nethermb_phase3_started
-  mb_drop6:
-    switch: s_drop6
-    profile: mbtarget
-    show_tokens:
-      light: l_drop6
-    reset_events: nethermb_phase1_started, nethermb_phase2_started, nethermb_phase3_started
+  # mb_drop6:
+  #   switch: s_drop6
+  #   profile: mbtarget
+  #   show_tokens:
+  #     light: l_drop6
+  #   reset_events: nethermb_phase1_started, nethermb_phase2_started, nethermb_phase3_started
 
 shot_groups:
   mbskeletons:
-    shots: mb_drop2, mb_drop5
+    shots: mbnether_drop2, mbnether_drop5
     disable_events: mode_nether_started
     enable_events: nethermb_phase1_started
   mbghast:
-    shots: mb_drop3, mb_drop4
+    shots: mbnether_drop3, mbnether_drop4
     disable_events: mode_nether_started
     enable_events: nethermb_phase2_started
   mballdrops:
-    shots: mb_drop2, mb_drop3, mb_drop4, mb_drop5
+    shots: mbnether_drop2, mbnether_drop3, mbnether_drop4, mbnether_drop5
     disable_events: mode_nether_started
     enable_events: nethermb_phase3_started
 
@@ -318,7 +307,7 @@ event_player:
     show_ball_count
     show_player_score
     show_debug
-  mb_jackpot_hit:
+  mbnether_jackpot_hit:
     outlanegate_open
   mb_super_jackpot_hit:
     outlanegate_open

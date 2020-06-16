@@ -2,69 +2,69 @@
 - duration: 1
   lights:
     lgi:
-      color: blue
+      color: red
       fade: 500ms
     lbackbox_chase1:
-      color: blue
+      color: red
       fade: 500ms
     lbackbox_chase2:
-      color: blue
+      color: red
       fade: 500ms
     lbackbox_chase3:
-      color: purple
+      color: orange
       fade: 500ms
     lbackbox_chase4:
-      color: purple
+      color: orange
       fade: 500ms
 - duration: 1
   lights:
     lgi: 
-      color: white
+      color: orange
       fade: 500ms
     lbackbox_chase1:
-      color: blue
+      color: red
       fade: 500ms
     lbackbox_chase2:
-      color: purple
+      color: orange
       fade: 500ms
     lbackbox_chase3:
-      color: purple
+      color: orange
       fade: 500ms
     lbackbox_chase4:
-      color: blue
+      color: red
       fade: 500ms
 - duration: 1
   lights:
     lgi:
-      color: purple
+      color: red
       fade: 500ms
     lbackbox_chase1:
-      color: purple
+      color: orange
       fade: 500ms
     lbackbox_chase2:
-      color: purple
+      color: orange
       fade: 500ms
     lbackbox_chase3:
-      color: blue
+      color: red
       fade: 500ms
     lbackbox_chase4:
-      color: blue
+      color: red
       fade: 500ms
 - duration: 1
   lights:
     lgi: 
-      color: white
+      color: orange
       fade: 500ms
     lbackbox_chase1:
-      color: purple
+      color: orange
       fade: 500ms
     lbackbox_chase2:
-      color: blue
+      color: red
       fade: 500ms
     lbackbox_chase3:
-      color: blue
+      color: red
       fade: 500ms
     lbackbox_chase4:
-      color: purple
+      color: orange
       fade: 500ms
 
