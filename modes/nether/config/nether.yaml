@@ -14,7 +14,7 @@ track_player:
 
 sound_player:
   mode_nether_started:
-    nightmode_music:
+    nether_music:
       action: play
       loops: -1
       track: music
@@ -149,13 +149,13 @@ state_machines:
         events: netherphase2setup_complete
       - source: phase2running
         target: phase3start
-        events: mbcreepers_complete
+        events: mbghast_complete
       - source: phase3start
         target: phase3running 
         events: netherphase3setup_complete
       - source: phase3running
         target: jackpotrunning
-        events: nethermb_alldrops_complete
+        events: mballdrops_complete
       - source: jackpotrunning
         target: phase1started
         events: mb_jackpot_hit, mb_superjackpot_hit
@@ -172,7 +172,7 @@ shot_profiles:
 variable_player:
   mbskeletons_complete:
     score: 500000
-  mbcreepers_complete:
+  mbghast_complete:
     score: 750000
   nethermb_alldrops_complete:
     score: 1000000
@@ -239,12 +239,12 @@ shot_groups:
     shots: mb_drop2, mb_drop5
     disable_events: mode_nether_started
     enable_events: nethermb_phase1_started
-  mbcreepers:
-    shots: mb_drop1, mb_drop3, mb_drop4, mb_drop6
+  mbghast:
+    shots: mb_drop3, mb_drop4
     disable_events: mode_nether_started
     enable_events: nethermb_phase2_started
   mballdrops:
-    shots: mb_drop1, mb_drop2, mb_drop3, mb_drop4, mb_drop5, mb_drop6
+    shots: mb_drop2, mb_drop3, mb_drop4, mb_drop5
     disable_events: mode_nether_started
     enable_events: nethermb_phase3_started
 
@@ -277,7 +277,7 @@ widget_player:
       action: add
       slide: nether_slide
       widget_settings:
-        image: nightmode_background
+        image: nether_background
   
   #SHOW LARGE SWORD
   mode_nether_started{current_player.sword==1}:

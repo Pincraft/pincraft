@@ -1885,6 +1885,8 @@ sounds:
     volume: 1
     track: voice
 
+  #-- Nether Mode
+
   #-- Night Mode
   night_mode_ready:
     file: NightModeReady.wav
@@ -2049,6 +2051,12 @@ sounds:
     track: music
   world5mode_music:
     file: world5mode.wav
+    volume: 0.50
+    loops: -1
+    track: music
+
+  nether_music:
+    file: nether_music.wav
     volume: 0.50
     loops: -1
     track: music
