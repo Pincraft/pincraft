@@ -29,8 +29,8 @@ class Base(Mode):
         oldstate = self.player.diverter_state
         if self.machine.mode_controller.is_active("villagermb"):
             self.player.diverter_state="multiballvillager"
-        elif self.machine.mode_controller.is_active("night"):
-            self.player.diverter_state="multiballnight"
+        elif self.machine.mode_controller.is_active("nether"):
+            self.player.diverter_state="multiballnether"
         elif self.machine.mode_controller.is_active("stronghold"):
             if (self.player.stronghold_progress == 4 and self.player.multiplier_mb == 1):
                 self.player.diverter_state="strongholdtravel"

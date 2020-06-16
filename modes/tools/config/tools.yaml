@@ -171,7 +171,7 @@ event_player:
     - crafting_lit
    
 
-  multiball_nightmb_ended{current_player.crafting_enabled==1}:
+  multiball_nethermb_ended{current_player.crafting_enabled==1}:
     - crafting_lit
     - tools_updated
 

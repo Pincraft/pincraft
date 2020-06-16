@@ -79,9 +79,9 @@ event_player:
   sw_playfield_active_active{device.multiball_locks.villagerlock.locked_balls==1 and device.multiball_locks.villagerlock.enabled}:
     villagermultiball_start
 
-  #START NIGHT MULTIBALL ON PLUNGE
-  sw_playfield_active_active{device.multiball_locks.nightlock.locked_balls==1 and device.multiball_locks.nightlock.enabled}:
-    nightmode_start
+  #START NETHER MULTIBALL ON PLUNGE
+  sw_playfield_active_active{device.multiball_locks.netherlock.locked_balls==1 and device.multiball_locks.netherlock.enabled}:
+    nethermode_start
 
   #START STRONGHOLD MULTIBALL ON PLUNGE
   sw_playfield_active_active{device.multiball_locks.strongholdlock.locked_balls==1 and device.multiball_locks.strongholdlock.enabled}:
@@ -91,14 +91,14 @@ event_player:
   sw_playfield_active_active{device.multiball_locks.endlockright.locked_balls==1 and device.multiball_locks.endlockright.enabled}:
     theendmultiball_start
 
-  #COMPLETE WORLDS WHEN NIGHT MODE STARTS
-  multiball_lock_nightlock_locked_ball{current_player.world_id==1}:
+  #COMPLETE WORLDS WHEN NETHER MODE STARTS
+  multiball_lock_netherlock_locked_ball{current_player.world_id==1}:
     world1_completed
-  multiball_lock_nightlock_locked_ball{current_player.world_id==2}:
+  multiball_lock_netherlock_locked_ball{current_player.world_id==2}:
     world2_completed
-  multiball_lock_nightlock_locked_ball{current_player.world_id==3}:
+  multiball_lock_netherlock_locked_ball{current_player.world_id==3}:
     world3_completed
-  multiball_lock_nightlock_locked_ball{current_player.world_id==4}:
+  multiball_lock_netherlock_locked_ball{current_player.world_id==4}:
     world4_completed
   multiball_lock_strongholdlock_locked_ball{current_player.world_id==5}:
     world5_completed
@@ -111,43 +111,39 @@ event_player:
     #world5_start
     #theend_start
 
-  #ENABLE NEXT WORLDS WHEN NIGHT MODE RETURNS
-  multiball_nightmb_ended:
+  #ENABLE NEXT WORLDS WHEN NETHER MODE RETURNS
+  multiball_nethermb_ended:
     outlanegate_open
 
-  multiball_nightmb_ended{current_player.world_id==1}:
+  multiball_nethermb_ended{current_player.world_id==1}:
     world2_start   
-  multiball_nightmb_ended{current_player.world_id==2}:
+  multiball_nethermb_ended{current_player.world_id==2}:
     world3_start   
-  multiball_nightmb_ended{current_player.world_id==3}:
+  multiball_nethermb_ended{current_player.world_id==3}:
     world4_start
-  multiball_nightmb_ended{current_player.world_id==4}:
+  multiball_nethermb_ended{current_player.world_id==4}:
     world5_start
   stronghold_completed:
     theend_start
 
-  # world_collected{current_player.multiplier_mb==1}:
-  #  nightmode_ready
-  #  villagermb_disable
-
   world1_collected{current_player.multiplier_mb==1}:
-    nightmode_ready
+    nethermode_ready
     villagermb_disable
   world2_collected{current_player.multiplier_mb==1}:
-    nightmode_ready
+    nethermode_ready
     villagermb_disable
   world3_collected{current_player.multiplier_mb==1}:
-    nightmode_ready
+    nethermode_ready
     villagermb_disable
   world4_collected{current_player.multiplier_mb==1}:
-    nightmode_ready
+    nethermode_ready
     villagermb_disable
   world5_collected{current_player.multiplier_mb==1}:
     stronghold_ready
     villagermb_disable
 
   multiball_villagermb_ended{current_player.world_id != 5 and current_player.world_item1_remaining == 0 and current_player.world_item2_remaining == 0 and current_player.world_item3_remaining == 0 and current_player.world_item4_remaining == 0}:
-    nightmode_ready
+    nethermode_ready
     villagermb_disable
 
   multiball_villagermb_ended{current_player.world_id == 5 and current_player.world_item1_remaining == 0 and current_player.world_item2_remaining == 0 and current_player.world_item3_remaining == 0 and current_player.world_item4_remaining == 0}:
@@ -166,7 +162,7 @@ counters:
       starting_count: 0
       count_interval: 1
       count_complete_value: 20
-      restart_events: multiball_nightmb_ended,multiball_villagermb_ended, mode_base_started
+      restart_events: multiball_nethermb_ended,multiball_villagermb_ended, mode_base_started
       disable_events: villagermb_disable
       enable_events: mode_base_started
 
@@ -177,12 +173,12 @@ multiball_locks:
     lock_devices: bd_topkicker 
     enable_events: villagermultiball_ready
     disable_events: villagermultiball_start, villagermb_disable
-  nightlock:
+  netherlock:
     balls_to_lock: 1
     locked_ball_counting_strategy: physical_only
     lock_devices: bd_scoop 
-    enable_events: nightmode_ready
-    disable_events: nightmode_start, nightmode_disable
+    enable_events: nethermode_ready
+    disable_events: nethermode_start, nethermode_disable
   strongholdlock:
     balls_to_lock: 1
     locked_ball_counting_strategy: physical_only
@@ -198,11 +194,11 @@ multiballs:
     enable_events: villagermultiball_ready
     start_events: villagermultiball_start
     shoot_again: 0s
-  nightmb:
+  nethermb:
     ball_count: 2
     ball_locks: bd_scoop
-    enable_events: nightmode_ready
-    start_events: nightmode_start
+    enable_events: nethermode_ready
+    start_events: nethermode_start
     shoot_again: 0s
   strongholdmb:
     ball_count: 2
@@ -255,7 +251,7 @@ variable_player:
       int: 0
       action: set
 
-  nightmode_ready:
+  nethermode_ready:
     travel_enabled:
       int: 1
       action: set
@@ -265,12 +261,12 @@ variable_player:
       int: 1
       action: set
 
-  multiball_nightmb_started: #NIGHT MULTIBALL STARTED
+  multiball_nethermb_started: #NETHER MULTIBALL STARTED
     multiplier_mb:
       int: 2
       action: set
 
-  multiball_nightmb_ended: #VILLAGER MULTIBALL ENDED
+  multiball_nethermb_ended: #VILLAGER MULTIBALL ENDED
     world_jackpot_worlds: 1  #FOR WORLD JACKPOT / INCREASE WORLDS TRAVELED
     multiplier_mb:
       int: 1
@@ -370,7 +366,7 @@ show_player:
     show_dropcreepers:  #Drop the Creepers
       loops: 0
       speed: 1
-  multiball_nightmb_ended:
+  multiball_nethermb_ended:
     show_dropcreepers:  #Drop the Creepers
       loops: 0
       speed: 1

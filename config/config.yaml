@@ -2370,8 +2370,11 @@ modes:
   - world5
   - theend
   - villagermb
-  - night
-  - nightready
+  - nether
+  - netherready
   - stronghold
   - strongholdready
+
+  # - night
+  # - nightready
 

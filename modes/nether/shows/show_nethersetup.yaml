@@ -1,0 +1,70 @@
+#show_version=5
+- duration: 1
+  lights:
+    lgi:
+      color: blue
+      fade: 500ms
+    lbackbox_chase1:
+      color: blue
+      fade: 500ms
+    lbackbox_chase2:
+      color: blue
+      fade: 500ms
+    lbackbox_chase3:
+      color: purple
+      fade: 500ms
+    lbackbox_chase4:
+      color: purple
+      fade: 500ms
+- duration: 1
+  lights:
+    lgi: 
+      color: white
+      fade: 500ms
+    lbackbox_chase1:
+      color: blue
+      fade: 500ms
+    lbackbox_chase2:
+      color: purple
+      fade: 500ms
+    lbackbox_chase3:
+      color: purple
+      fade: 500ms
+    lbackbox_chase4:
+      color: blue
+      fade: 500ms
+- duration: 1
+  lights:
+    lgi:
+      color: purple
+      fade: 500ms
+    lbackbox_chase1:
+      color: purple
+      fade: 500ms
+    lbackbox_chase2:
+      color: purple
+      fade: 500ms
+    lbackbox_chase3:
+      color: blue
+      fade: 500ms
+    lbackbox_chase4:
+      color: blue
+      fade: 500ms
+- duration: 1
+  lights:
+    lgi: 
+      color: white
+      fade: 500ms
+    lbackbox_chase1:
+      color: purple
+      fade: 500ms
+    lbackbox_chase2:
+      color: blue
+      fade: 500ms
+    lbackbox_chase3:
+      color: blue
+      fade: 500ms
+    lbackbox_chase4:
+      color: purple
+      fade: 500ms
+

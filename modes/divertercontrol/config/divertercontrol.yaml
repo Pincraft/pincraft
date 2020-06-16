@@ -45,7 +45,7 @@ mode:
 #   - Left Loop Closed / Drop Down Up
 #   - Right Loop Open
 
-# MULTIBALL NIGHT RUNNING ("multiballnight")
+# MULTIBALL NETHER RUNNING ("multiballnether")
 #   - Left Loop Open / Drop Down Down
 #   - Right Loop Open
 
@@ -70,8 +70,8 @@ light_player:
     gi_loopupperleft: blue
     gi_loopupperright: red
 
-  #Night MB
-  divertercontrol_statechanged{current_player.diverter_state=="multiballnight"}:
+  #Nether MB
+  divertercontrol_statechanged{current_player.diverter_state=="multiballnether"}:
     gi_loopupperleft: green
     gi_loopupperright: green
 
@@ -186,15 +186,15 @@ event_player:
   divertercontrol_statechanged{current_player.diverter_state=="strongholdtravel"}: diverter_dropupperdrop
   divertercontrol_statechanged{current_player.diverter_state=="worldvillager"}: diverter_dropupperdrop
   divertercontrol_statechanged{current_player.diverter_state=="worldtoolsfull"}: diverter_dropupperdrop
-  divertercontrol_statechanged{current_player.diverter_state=="multiballnight"}: diverter_dropupperdrop
+  divertercontrol_statechanged{current_player.diverter_state=="multiballnether"}: diverter_dropupperdrop
 
   #Right Loop Hit Events:
   loopright_hit{current_player.diverter_state=="worldidle"}: diverter_rightloophit, diverter_dropupperdrop
-  loopright_hit{current_player.diverter_state=="multiballnight"}: diverter_rightloophit, diverter_dropupperdrop
+  loopright_hit{current_player.diverter_state=="multiballnether"}: diverter_rightloophit, diverter_dropupperdrop
   loopright_hit{current_player.diverter_state=="multiballvillager"}: diverter_rightloophit, diverter_dropupperdrop
    
   #Left Loop Hit Events:
-  loopleft_hit{current_player.diverter_state=="multiballnight"}: diverter_leftloophit
+  loopleft_hit{current_player.diverter_state=="multiballnether"}: diverter_leftloophit
   loopleft_hit{current_player.diverter_state=="worldtravel"}: diverter_leftloophit, diverter_leftlooptravelhit
   loopleft_hit{current_player.diverter_state=="strongholdtravel"}: diverter_leftloophit, diverter_leftlooptravelhit
 
