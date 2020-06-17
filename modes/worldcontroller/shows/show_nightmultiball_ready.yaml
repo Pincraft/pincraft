@@ -1,0 +1,9 @@
+#show_version=5
+- duration: 5
+  lights:
+    lgi:
+      color: purple
+      fade: 5000ms
+    lbackboxodd: 
+      color: purple
+      fade: 5000ms

@@ -26,7 +26,7 @@ counters:
     count_events: popbumper1_hit, popbumper2_hit, popbumper3_hit
     starting_count: 0
     count_interval: 1
-    count_complete_value: 100
+    count_complete_value: 20
     persist_state: true
     restart_events: multiball_nightmb_ended
     disable_events: nightmb_disable
@@ -49,6 +49,12 @@ multiballs:
     start_events: villagermultiball_start
     shoot_again: 0s
 
+  # nightmb:
+  #   ball_count: 2
+  #   ball_locks: bd_scoup
+  #   enable_events: nightmultiball_ready
+  #   start_events: nightmultiball_start
+  #   shoot_again: 0s
 
 
 shots:
@@ -87,8 +93,12 @@ sound_player:
     villagersp: 
       action: play
       loops: 1
+
   villagermultiball_ready:
     villager_multiball_ready
+
+  nightmultiball_ready:
+    night_mode_ready
 
 light_player:
   spinner_hit{device.counters.counter_villagermultiball.value>=4 and device.counters.counter_villagermultiball.value<8}: #LEVEL 1000
@@ -121,6 +131,21 @@ light_player:
     l_spinner2: off
     l_spinner3: off
     l_spinner4: off
+
+  nightmultiball_ready:
+    lgi: 
+      color: purple
+      fade: 5000ms
+    lactionbar: 
+      color: purple
+      fade: 5000ms
+
+# show_player:
+#   nightmultiball_ready:
+#     show_nightmultiball_ready:
+#       loops: 0
+#       speed: 1
+ 
 
 variable_player:
 
@@ -163,6 +188,11 @@ variable_player:
 
   villagermultiball_ready:
     villagermb_ready:
+      int: 1
+      action: set
+
+  nightmultiball_ready:
+    nightmb_ready:
       int: 1
       action: set
 
@@ -352,6 +382,12 @@ event_player:
     show_extraball
     show_debug
 
+  mode_worldcontroller_started{current_player.villagermb_ready==1}:
+    villagermultiball_ready
+
+  mode_worldcontroller_started{current_player.nightmb_ready==1}:
+    nightmultiball_ready
+
   collectitem1_hit:
     world_itemcheckcomplete
 
@@ -390,8 +426,12 @@ event_player:
 
 
   #ENABLE VILLAGER MULTIBALL 
-  logicblock_counter_villagermultiball_complete{current_player.world_item1_remaining > 0 or current_player.world_item2_remaining > 0 or current_player.world_item3_remaining > 0 or current_player.world_item4_remaining > 0}:
+  logicblock_counter_villagermultiball_complete:
     villagermultiball_ready
+
+  logicblock_counter_nightmultiball_complete:
+    nightmultiball_ready
+  
 
   #START VILLAGER MULTIBALL ON PLUNGE
   sw_playfield_active_active{device.multiball_locks.villagerlock.locked_balls==1 and device.multiball_locks.villagerlock.enabled}:
