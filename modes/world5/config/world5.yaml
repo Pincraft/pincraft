@@ -26,6 +26,11 @@ sound_player:
       action: play
       loops: -1
       mode_end_action: stop
+  mode_night_stopped:
+    world5mode_music:
+      action: play
+      loops: -1
+      mode_end_action: stop
   world5_collected: travel_ready
 
 variable_player:

@@ -1,7 +1,86 @@
 #show_version=5
 - duration: 1
   lights:
-    lgi:
+    gi_scoup:
+      color: blue
+      fade: 500ms
+    gi_rightsling: 
+      color: blue
+      fade: 500ms
+    gi_leftsling: 
+      color: blue
+      fade: 500ms
+    gi_drop2: 
+      color: blue
+      fade: 500ms
+    gi_drop3: 
+      color: blue
+      fade: 500ms
+    gi_spinner: 
+      color: blue
+      fade: 500ms
+    lbackbox_chase1:
+      color: purple
+      fade: 500ms
+    lbackbox_chase2:
+      color: purple
+      fade: 500ms
+    lbackbox_chase3:
+      color: blue
+      fade: 500ms
+    lbackbox_chase4:
+      color: blue
+      fade: 500ms
+- duration: 1
+  lights:
+    gi_scoup:
+      color: purple
+      fade: 500ms
+    gi_rightsling: 
+      color: purple
+      fade: 500ms
+    gi_leftsling: 
+      color: purple
+      fade: 500ms
+    gi_drop2: 
+      color: purple
+      fade: 500ms
+    gi_drop3: 
+      color: purple
+      fade: 500ms
+    gi_spinner: 
+      color: purple
+      fade: 500ms
+    lbackbox_chase1:
+      color: blue
+      fade: 500ms
+    lbackbox_chase2:
+      color: purple
+      fade: 500ms
+    lbackbox_chase3:
+      color: purple
+      fade: 500ms
+    lbackbox_chase4:
+      color: blue
+      fade: 500ms
+- duration: 1
+  lights:
+    gi_scoup:
+      color: blue
+      fade: 500ms
+    gi_rightsling: 
+      color: blue
+      fade: 500ms
+    gi_leftsling: 
+      color: blue
+      fade: 500ms
+    gi_drop2: 
+      color: blue
+      fade: 500ms
+    gi_drop3: 
+      color: blue
+      fade: 500ms
+    gi_spinner: 
       color: blue
       fade: 500ms
     lbackbox_chase1:
@@ -18,42 +97,23 @@
       fade: 500ms
 - duration: 1
   lights:
-    lgi: 
-      color: white
-      fade: 500ms
-    lbackbox_chase1:
-      color: blue
-      fade: 500ms
-    lbackbox_chase2:
+    gi_scoup:
       color: purple
       fade: 500ms
-    lbackbox_chase3:
+    gi_rightsling: 
       color: purple
       fade: 500ms
-    lbackbox_chase4:
-      color: blue
-      fade: 500ms
-- duration: 1
-  lights:
-    lgi:
+    gi_leftsling: 
       color: purple
       fade: 500ms
-    lbackbox_chase1:
+    gi_drop2: 
       color: purple
       fade: 500ms
-    lbackbox_chase2:
+    gi_drop3: 
       color: purple
       fade: 500ms
-    lbackbox_chase3:
-      color: blue
-      fade: 500ms
-    lbackbox_chase4:
-      color: blue
-      fade: 500ms
-- duration: 1
-  lights:
-    lgi: 
-      color: white
+    gi_spinner: 
+      color: purple
       fade: 500ms
     lbackbox_chase1:
       color: purple
@@ -67,4 +127,3 @@
     lbackbox_chase4:
       color: purple
       fade: 500ms
-

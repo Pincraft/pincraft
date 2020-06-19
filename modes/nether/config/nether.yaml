@@ -238,7 +238,7 @@ shot_groups:
     enable_events: nethermb_phase3_started
 
 widgets:
-  widget_swordplayer:
+  widget_netherswordplayer:
     - type: image        #SCORE BACKGROUND
       image: Sword_FullScreen_Dark_1x
       anchor_x: right
@@ -270,31 +270,31 @@ widget_player:
   
   #SHOW LARGE SWORD
   mode_nether_started{current_player.sword==1}:
-    widget_swordplayer:
+    widget_netherswordplayer:
       action: update
       slide: nether_slide
       widget_settings:
         image: Sword_FullScreen_1x
   mode_nether_started{current_player.sword==2}:
-    widget_swordplayer:
+    widget_netherswordplayer:
       action: update
       slide: nether_slide
       widget_settings:
         image: Sword_FullScreen_2x
   mode_nether_started{current_player.sword==3}:
-    widget_swordplayer:
+    widget_netherswordplayer:
       action: update
       slide: nether_slide
       widget_settings:
         image: Sword_FullScreen_3x
   mode_nether_started{current_player.sword==4}:
-    widget_swordplayer:
+    widget_netherswordplayer:
       action: update
       slide: nether_slide
       widget_settings:
         image: Sword_FullScreen_4x
   mode_nether_started{current_player.sword==5}:
-    widget_swordplayer:
+    widget_netherswordplayer:
       action: update
       slide: nether_slide
       widget_settings:

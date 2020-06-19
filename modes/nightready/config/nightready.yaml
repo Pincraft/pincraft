@@ -6,7 +6,23 @@ mode:
 
 #play hurry up sound effect
 sound_player:
-  mode_nightready_started:
+  mode_nightready_started{current_player.world_id==1}:
+    world1mode_music:
+      action: stop
+  mode_nightready_started{current_player.world_id==2}:
+    world2mode_music:
+      action: stop
+  mode_nightready_started{current_player.world_id==3}:
+    world3mode_music:
+      action: stop
+  mode_nightready_started{current_player.world_id==4}:
+    world4mode_music:
+      action: stop
+  mode_nightready_started{current_player.world_id==5}:
+    world5mode_music:
+      action: stop
+
+  mode_nightready_started.1:
     heatbeat_music:
       action: play
       loops: -1

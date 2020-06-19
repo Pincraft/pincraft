@@ -2377,7 +2377,6 @@ modes:
   - netherready
   - stronghold
   - strongholdready
-
-  # - night
-  # - nightready
+  - nightready
+  - night
 
