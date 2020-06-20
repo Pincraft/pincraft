@@ -5,9 +5,3 @@ show_player:
   mode_attract_started.1: 
     attract_mode_shows:
       loops: -1
-
-sound_player:
-  mode_attract_started:
-      synthwave_kit:
-          action: stop
-          loops: -1

@@ -4,11 +4,54 @@ mode:
     stop_events: theend_completed
     priority: 500
 
+#TODO: Return to Travel State if awarded but ball drains
+#TODO: Ensure all balls are ejected to trough when ball drains
+
 show_player:
   mode_theend_started:  #Setup GI Light Show
     show_theendgi:
       loops: -1
       speed: 1
+
+state_machines:
+  statemachine_theend:
+    persist_state: false
+    states:
+      start:
+        label: Start state
+      state_prepare:
+        label: prepare state
+        events_when_started: state_prepare_started
+        events_when_stopped: state_prepare_stopped
+      state_battle:
+        label: battle state
+        events_when_started: state_battle_started
+        events_when_stopped: state_battle_stopped
+      state_victory:
+        label: victory state
+        events_when_started: state_victory_started
+        events_when_stopped: state_victory_stopped
+      state_travel:
+        label: travel state
+        events_when_started: state_travel_started
+    transitions:
+      - source: start
+        target: state_prepare
+        events: mode_theend_started, ball_started
+      - source: state_prepare
+        target: state_battle
+        events: multiball_endmb_started
+      - source: state_battle
+        target: state_prepare
+        events: multiball_endmb_ended
+      - source: state_battle
+        target: state_victory
+        events: theend_dragon_defeated
+      - source: state_victory
+        target: state_travel
+        events: multiball_endmb_ended
+
+
 
 multiball_locks:
   endlocktop:
@@ -63,17 +106,21 @@ event_player:
     theendmultiball_ready
 
 light_player:
-  mode_theend_started:
+  state_prepare_started:
     lbackbox: purple
     lundercab: purple
+  state_battle_started:
+    lbackbox: red
+    lundercab: red
 
 sound_player:
-  mode_theend_started:
+  state_prepare_started:
+    endmode_battle_music: stop
     endmode_prepare_music:
       action: play
       loops: -1
       mode_end_action: stop
-  theendmultiball_start:
+  state_battle_started:
      endmode_prepare_music: stop
      endmode_battle_music:
       action: play

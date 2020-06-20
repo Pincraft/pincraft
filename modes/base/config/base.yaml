@@ -105,9 +105,9 @@ event_player:
   #=========== CONTROLS WHEN WORLDS ARE STARTED ============
   #START WORLD 1
   mode_base_started{current_player.world_id==0}:
-    world1_start
+    #world1_start
     #world5_start
-    #theend_start
+    theend_start
 
   #ENABLE NEXT WORLDS WHEN NETHER MODE RETURNS
   multiball_nethermb_ended:
