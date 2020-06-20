@@ -1750,6 +1750,7 @@ ball_devices:
     ball_switches: s_topkicker
     eject_coil: c_topkicker
     eject_timeouts: 1s
+    eject_events: eject_topkicker
 
 diverters:
   right_divertergate_fire:

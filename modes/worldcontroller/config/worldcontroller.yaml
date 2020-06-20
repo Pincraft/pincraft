@@ -18,9 +18,9 @@ counters:
     count_interval: 1
     count_complete_value: 20
     persist_state: true
-    restart_events: multiball_villagermb_ended
-    disable_events: villagermb_disable
-    enable_events: mode_worldcontroller_started
+    restart_events: multiball_villagermb_ended, multiball_nightvillagermb_ended
+    disable_events: villagermb_disable, multiball_nightmb_started
+    enable_events: mode_worldcontroller_started, multiball_nightmb_ended
 
   counter_nightmultiball:
     count_events: popbumper1_hit, popbumper2_hit, popbumper3_hit
@@ -28,9 +28,9 @@ counters:
     count_interval: 1
     count_complete_value: 10
     persist_state: true
-    restart_events: multiball_nightmb_ended
-    disable_events: nightmb_disable
-    enable_events: mode_worldcontroller_started    
+    restart_events: multiball_nightmb_ended, multiball_nightvillagermb_ended
+    disable_events: nightmb_disable, multiball_villagermb_started
+    enable_events: mode_worldcontroller_started, multiball_villagermb_ended
 
 multiball_locks:
   villagerlock:
@@ -38,21 +38,35 @@ multiball_locks:
     locked_ball_counting_strategy: physical_only
     lock_devices: bd_topkicker 
     enable_events: villagermultiball_ready
-    disable_events: villagermultiball_start, villagermb_disable
+    disable_events: nightvillagermultiball_ready, villagermultiball_start, villagermb_disable
 
   nightlock:
     balls_to_lock: 1
     locked_ball_counting_strategy: physical_only
     lock_devices: bd_scoop 
     enable_events: nightmultiball_ready
-    disable_events: nightmultiball_start, nightmb_disable
+    disable_events: nightvillagermultiball_ready, nightmultiball_start, nightmb_disable
 
+  nightvillagerlock1:
+    balls_to_lock: 1
+    locked_ball_counting_strategy: physical_only
+    lock_devices: bd_topkicker 
+    enable_events: nightvillagermultiball_ready
+    disable_events: nightvillagermultiball_disable, nightvillagermultiball_start
+
+  nightvillagerlock2:
+    balls_to_lock: 1
+    locked_ball_counting_strategy: physical_only
+    lock_devices: bd_scoop 
+    enable_events: nightvillagermultiball_enablelock2
+    disable_events: nightvillagermultiball_disable, nightvillagermultiball_start
 
 multiballs:
   villagermb:
     ball_count: 2
     ball_locks: bd_topkicker
     enable_events: villagermultiball_ready
+    disable_events: nightvillagermultiball_ready
     start_events: villagermultiball_start
     shoot_again: 0s
 
@@ -60,7 +74,15 @@ multiballs:
     ball_count: 2
     ball_locks: bd_scoop
     enable_events: nightmultiball_ready
+    disable_events: nightvillagermultiball_ready
     start_events: nightmultiball_start
+    shoot_again: 0s
+
+  nightvillagermb:
+    ball_count: 3
+    ball_locks: bd_topkicker, bd_scoop
+    enable_events: nightvillagermultiball_ready
+    start_events: nightvillagermultiball_start
     shoot_again: 0s
 
 
@@ -204,13 +226,34 @@ variable_player:
     multiplier_mb:
       int: 2
       action: set
+    nightmb_ready:
+      int: 0
+      action: set
 
   multiball_nightmb_ended:
     multiplier_mb:
       int: 1
       action: set
+
+  multiball_nightvillager_started:
+    multiplier_mb:
+      int: 3
+      action: set
     nightmb_ready:
       int: 0
+      action: set
+    villagermb_ready:
+      int: 0
+      action: set
+
+  multiball_nightvillager_ended:
+    multiplier_mb:
+      int: 1
+      action: set
+
+  multiball_nightvillagermb_lost_ball:
+    multiplier_mb:
+      int: 2
       action: set
 
   villagermb_disable:
@@ -225,6 +268,14 @@ variable_player:
 
   nightmultiball_ready:
     nightmb_ready:
+      int: 1
+      action: set
+
+  nightvillagermultiball_ready:
+    nightmb_ready:
+      int: 1
+      action: set
+    villagermb_ready:
       int: 1
       action: set
 
@@ -423,11 +474,16 @@ event_player:
   worldspinner_hit:
     show_spinner_progress
 
-  mode_worldcontroller_started{current_player.villagermb_ready==1}:
+  mode_worldcontroller_started{current_player.villagermb_ready==1 and current_player.nightmb_ready==0}:
     villagermultiball_ready
 
-  mode_worldcontroller_started{current_player.nightmb_ready==1}:
+  mode_worldcontroller_started{current_player.nightmb_ready==1 and current_player.villagermb_ready==0}:
     nightmultiball_ready
+
+  mode_worldcontroller_started{current_player.nightmb_ready==1 and current_player.villagermb_ready==1}:
+    villagermultiball_ready
+    nightmultiball_ready
+    nightvillagermultiball_ready
 
   collectitem1_hit:
     world_itemcheckcomplete
@@ -440,7 +496,6 @@ event_player:
 
   collectitem4_hit:
     world_itemcheckcomplete
-
 
   world_itemcheckcomplete{current_player.world_item1_remaining <= 0 and current_player.world_item2_remaining <= 0 and current_player.world_item3_remaining <= 0 and current_player.world_item4_remaining <= 0}:
     world_collected
@@ -472,6 +527,13 @@ event_player:
 
   logicblock_counter_nightmultiball_complete:
     nightmultiball_ready
+
+  #STACK MULTIBALLS
+  nightmultiball_ready{current_player.villagermb_ready==1}:
+    nightvillagermultiball_ready
+
+  villagermultiball_ready{current_player.nightmb_ready==1}:
+    nightvillagermultiball_ready  
   
 
   #START VILLAGER MULTIBALL ON PLUNGE
@@ -480,7 +542,23 @@ event_player:
 
   #START NIGHT MULTIBALL ON PLUNGE
   sw_playfield_active_active{device.multiball_locks.nightlock.locked_balls==1 and device.multiball_locks.nightlock.enabled}:
-   nightmultiball_start
+    nightmultiball_start
 
+  #START NIGHT/VILLAGER MULTIBALL ON PLUNGE
+  sw_playfield_active_active{device.multiball_locks.nightvillagerlock1.locked_balls==1 and device.multiball_locks.nightvillagerlock1.enabled and device.multiball_locks.nightvillagerlock2.locked_balls==1 and device.multiball_locks.nightvillagerlock2.enabled}:
+    nightvillagermultiball_start
 
- 
+  multiball_lock_nightvillagerlock1_full:
+    nightvillagermultiball_enablelock2
+
+  ball_drain{device.multiball_locks.nightvillagerlock1.locked_balls==1}:
+    eject_topkicker
+    nightvillagermultiball_disable
+
+  # balldevice_bd_trough_ball_count_changed{device.ball_devices.bd_trough.balls==3}:
+  #   trough_allballs
+
+  # queue_relay_player:
+  #  ball_will_end{device.multiball_locks.nightvillagerlock1.locked_balls==1}:
+  #     post: eject_topkicker
+  #     wait_for: trough_allballs
