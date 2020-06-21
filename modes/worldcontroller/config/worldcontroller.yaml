@@ -178,6 +178,11 @@ light_player:
       fade: 5000ms
     lactionbar: off
 
+  multiball_nightvillagermb_ended:
+    lgi:
+      color: white
+      fade: 5000ms
+    lactionbar: off
 
 
 variable_player:
@@ -235,7 +240,7 @@ variable_player:
       int: 1
       action: set
 
-  multiball_nightvillager_started:
+  multiball_nightvillagermb_started:
     multiplier_mb:
       int: 3
       action: set
@@ -246,7 +251,7 @@ variable_player:
       int: 0
       action: set
 
-  multiball_nightvillager_ended:
+  multiball_nightvillagermb_ended:
     multiplier_mb:
       int: 1
       action: set
@@ -551,14 +556,14 @@ event_player:
   multiball_lock_nightvillagerlock1_full:
     nightvillagermultiball_enablelock2
 
-  ball_drain{device.multiball_locks.nightvillagerlock1.locked_balls==1}:
-    eject_topkicker
-    nightvillagermultiball_disable
+  # ball_drain{device.multiball_locks.nightvillagerlock1.locked_balls==1}:
+  #   eject_topkicker
+  #   nightvillagermultiball_disable
 
-  # balldevice_bd_trough_ball_count_changed{device.ball_devices.bd_trough.balls==3}:
-  #   trough_allballs
+  balldevice_bd_trough_ball_count_changed{device.ball_devices.bd_trough.balls==3}:
+    trough_allballs
 
-  # queue_relay_player:
-  #  ball_will_end{device.multiball_locks.nightvillagerlock1.locked_balls==1}:
-  #     post: eject_topkicker
-  #     wait_for: trough_allballs
+queue_relay_player:
+  ball_ending{device.multiball_locks.nightvillagerlock1.locked_balls==1}:
+    post: eject_topkicker
+    wait_for: trough_allballs

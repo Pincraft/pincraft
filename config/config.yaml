@@ -2077,6 +2077,11 @@ sounds:
     volume: 0.80
     loops: -1
     track: music
+  nightvillager_music:
+    file: nightvillager_music.wav
+    volume: 0.80
+    loops: -1
+    track: music
 
   stronghold_music:
     file: stronghold_music.wav
@@ -2373,11 +2378,16 @@ modes:
   - world4
   - world5
   - theend
-  - villagermb
   - nether
   - netherready
   - stronghold
   - strongholdready
   - nightready
+  - nightcontroller
   - night
+  - villagercontroller
+  - villagerready
+  - villagermb
+  - nightvillagercontroller
+  - nightvillagerready
 

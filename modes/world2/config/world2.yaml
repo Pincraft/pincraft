@@ -21,12 +21,7 @@ sound_player:
       action: play
       loops: -1
       mode_end_action: stop
-  mode_villagermb_stopped:
-    world2mode_music:
-      action: play
-      loops: -1
-      mode_end_action: stop
-  mode_night_stopped:
+  worldmultiball_ended:
     world2mode_music:
       action: play
       loops: -1
@@ -125,3 +120,9 @@ widget_player:
 event_player:
   world_collected:
     world2_collected
+  mode_villagercontroller_stopped:
+    worldmultiball_ended
+  mode_nightcontroller_stopped:
+    worldmultiball_ended
+  mode_nightvillagercontroller_stopped:
+    worldmultiball_ended

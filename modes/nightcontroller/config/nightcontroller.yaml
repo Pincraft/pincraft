@@ -1,0 +1,30 @@
+#config_version=5
+mode:
+    start_events: multiball_nightmb_started
+    stop_events: multiball_nightmb_ended, ball_ending
+    priority: 500
+
+#play hurry up sound effect
+
+sound_player:
+  mode_night_started:
+    nightmode_music:
+      action: play
+      loops: -1
+      mode_end_action: stop
+
+show_player:
+   mode_night_started:
+    show_nightsetup:
+      loops: -1
+      speed: 1
+ 
+
+
+event_player:
+  mode_night_started:
+    outlanegate_close
+    #show_ball_count
+    #show_player_score
+    #show_debug
+  

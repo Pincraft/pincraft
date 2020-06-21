@@ -21,12 +21,7 @@ sound_player:
       action: play
       loops: -1
       mode_end_action: stop
-  mode_villagermb_stopped:
-    world4mode_music:
-      action: play
-      loops: -1
-      mode_end_action: stop
-  mode_night_stopped:
+  worldmultiball_ended:
     world4mode_music:
       action: play
       loops: -1
@@ -128,5 +123,11 @@ widget_player:
         image: WoodJungle_Small
 
 event_player:
-   world_collected:
+  world_collected:
     world4_collected
+  mode_villagercontroller_stopped:
+    worldmultiball_ended
+  mode_nightcontroller_stopped:
+    worldmultiball_ended
+  mode_nightvillagercontroller_stopped:
+    worldmultiball_ended

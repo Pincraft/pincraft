@@ -1,0 +1,67 @@
+#config_version=5
+mode:
+    start_events: multiball_lock_villagerlock_locked_ball
+    stop_events: mode_villagercontroller_started, ball_ending
+    priority: 1000
+
+#play hurry up sound effect
+sound_player:
+  mode_villagerready_started{current_player.world_id==1}:
+    world1mode_music:
+      action: stop
+  mode_villagerready_started{current_player.world_id==2}:
+    world2mode_music:
+      action: stop
+  mode_villagerready_started{current_player.world_id==3}:
+    world3mode_music:
+      action: stop
+  mode_villagerready_started{current_player.world_id==4}:
+    world4mode_music:
+      action: stop
+  mode_villagerready_started{current_player.world_id==5}:
+    world5mode_music:
+      action: stop
+
+  mode_villagerready_started.1:
+    heatbeat_music:
+      action: play
+      loops: -1
+      track: music
+      mode_end_action: stop
+    villager_multiball_ready:
+      action: play
+      loops: 0
+      priority: 100
+      track: voice
+ 
+slides:
+  villagerready_slide:
+    widgets:
+      - type: text
+        font_name: lazer84
+        font_size: 70
+        text: "Villager is Ready"
+        anchor_x: center
+        anchor_y: center
+        y: center+75
+        z: 0
+      - type: Text
+        text: Plunge The Ball
+        anchor_x: center
+        anchor_y: center
+        y: center-75
+        z: 0
+        font_name: lazer84
+        font_size: 70
+        animations:
+          pre_show_slide:
+            - property: opacity
+              value: 0
+              duration: .5s
+            - property: opacity
+              value: 1
+              duration: .5s
+              repeat: true   
+
+slide_player:
+  mode_villagerready_started: villagerready_slide

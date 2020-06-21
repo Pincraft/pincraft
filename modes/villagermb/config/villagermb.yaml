@@ -1,14 +1,8 @@
 #config_version=5
 mode:
-    start_events: multiball_villagermb_started
-    stop_events: multiball_villagermb_ended, ball_ending
+    start_events: mode_villagercontroller_started, mode_nightvillagercontroller_started
+    stop_events: mode_villagercontroller_stopped, mode_nightvillagercontroller_stopped
     priority: 1000
-
-show_player:
-  mode_villagermb_started:
-    villagembshow:
-      loops: -1
-      speed: 10
 
 variable_player:
   mode_villagermb_started:
@@ -45,28 +39,6 @@ event_player:
     
 #play hurry up sound effect
 sound_player:
-  villager_jackpot_hit:
-    villager_jackpot
-  mode_villagermb_started{current_player.world_id==1}:
-    world1mode_music:
-      action: stop
-  mode_villagermb_started{current_player.world_id==2}:
-    world2mode_music:
-      action: stop
-  mode_villagermb_started{current_player.world_id==3}:
-    world3mode_music:
-      action: stop
-  mode_villagermb_started{current_player.world_id==4}:
-    world4mode_music:
-      action: stop
-  mode_villagermb_started{current_player.world_id==5}:
-    world5mode_music:
-      action: stop
-  mode_villagermb_started:
-    villagermb_music:
-      action: play
-      loops: -1
-      mode_end_action: stop
   mode_villagermb_started.1:
     villager_multiball:
       action: play
@@ -75,7 +47,6 @@ sound_player:
     villagersp: 
       action: play
       loops: 1
-
-
-
+  villager_jackpot_hit:
+    villager_jackpot
 

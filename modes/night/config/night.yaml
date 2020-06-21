@@ -1,47 +1,14 @@
 #config_version=5
 mode:
-    start_events: multiball_nightmb_started
-    stop_events: multiball_nightmb_ended, ball_ending
+    start_events: mode_nightcontroller_started, mode_nightvillagercontroller_started
+    stop_events: mode_nightcontroller_stopped, mode_nightvillagercontroller_stopped
     priority: 500
 
-#play hurry up sound effect
 
-track_player:
-  mode_night_started:
-    music:
-      action: play
-      fade: 1 sec
-
-sound_player:
-  villager_jackpot_hit:
-    villager_jackpot
-  mode_night_started:
-    nightmode_music:
-      action: play
-      loops: -1
-      mode_end_action: stop
-  # mode_night_started.1:
-  #   villager_multiball:
-  #     action: play
-  #     loops: 0
-  # sw_playfield_active_active:
-  #   villagersp: 
-  #     action: play
-  #     loops: 1
-
-
-show_player:
-   mode_night_started:
-    show_nightsetup:
-      loops: -1
-      speed: 4
- 
 
 
 event_player:
   mode_night_started:
     outlanegate_close
-    #show_ball_count
-    #show_player_score
-    #show_debug
+
   

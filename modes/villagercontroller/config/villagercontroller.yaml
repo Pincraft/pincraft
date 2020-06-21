@@ -1,0 +1,23 @@
+#config_version=5
+mode:
+    start_events: multiball_villagermb_started
+    stop_events: multiball_villagermb_ended, ball_ending
+    priority: 1000
+
+show_player:
+  mode_villagermb_started:
+    villagembshow:
+      loops: -1
+      speed: 10
+
+#play hurry up sound effect
+sound_player:
+  mode_villagermb_started:
+    villagermb_music:
+      action: play
+      loops: -1
+      mode_end_action: stop
+ 
+
+
+

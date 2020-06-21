@@ -1,0 +1,37 @@
+#show_version=5
+- duration: 1
+  lights:
+    gi_scoup:
+      color: purple
+    gi_rightsling: 
+      color: green
+- duration: 1
+  lights:
+    gi_rightsling:
+      color: purple
+    gi_leftsling: 
+        color: green
+- duration: 1
+  lights:
+    gi_leftsling:
+      color: purple
+    gi_drop2: 
+        color: green
+- duration: 1
+  lights:
+    gi_drop2:
+      color: purple
+    gi_drop3: 
+        color: green
+- duration: 1
+  lights:
+    gi_drop3:
+      color: purple
+    gi_spinner: 
+        color: green
+- duration: 1
+  lights:
+    gi_spinner:
+      color: purple
+    gi_scoup: 
+        color: green
