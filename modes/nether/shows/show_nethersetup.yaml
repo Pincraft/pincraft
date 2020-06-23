@@ -16,6 +16,18 @@
     lbackbox_chase4:
       color: orange
       fade: 500ms
+    lundercab_chase1:
+      color: red
+      fade: 500ms
+    lundercab_chase2:
+      color: red
+      fade: 500ms
+    lundercab_chase3:
+      color: orange
+      fade: 500ms
+    lundercab_chase4:
+      color: orange
+      fade: 500ms  
 - duration: 1
   lights:
     lgi: 
@@ -31,6 +43,18 @@
       color: orange
       fade: 500ms
     lbackbox_chase4:
+      color: red
+      fade: 500ms
+    lundercab_chase1:
+      color: red
+      fade: 500ms
+    lundercab_chase2:
+      color: orange
+      fade: 500ms
+    lundercab_chase3:
+      color: orange
+      fade: 500ms
+    lundercab_chase4:
       color: red
       fade: 500ms
 - duration: 1
@@ -50,6 +74,18 @@
     lbackbox_chase4:
       color: red
       fade: 500ms
+    lundercab_chase1:
+      color: orange
+      fade: 500ms
+    lundercab_chase2:
+      color: orange
+      fade: 500ms
+    lundercab_chase3:
+      color: red
+      fade: 500ms
+    lundercab_chase4:
+      color: red
+      fade: 500ms
 - duration: 1
   lights:
     lgi: 
@@ -67,4 +103,15 @@
     lbackbox_chase4:
       color: orange
       fade: 500ms
-
+    lundercab_chase1:
+      color: orange
+      fade: 500ms
+    lundercab_chase2:
+      color: red
+      fade: 500ms
+    lundercab_chase3:
+      color: red
+      fade: 500ms
+    lundercab_chase4:
+      color: orange
+      fade: 500ms

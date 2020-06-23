@@ -1,9 +1,9 @@
 events:
-  game_ended: 229
-  game_started: 1003
+  game_ended: 232
+  game_started: 1018
 player:
   score:
-    average: 9140745.381526105
+    average: 9044481.944444444
     top:
     - 492815500
     - 353326850
@@ -15,25 +15,25 @@ player:
     - 35334500
     - 35303850
     - 34361450
-    total: 249
+    total: 252
 shots:
-  award_extraball: 90
-  captiveball: 866
+  award_extraball: 92
+  captiveball: 884
   centertarget: 1541
-  collectitem1: 4450
-  collectitem2: 4379
-  collectitem3: 3205
-  collectitem4: 4157
+  collectitem1: 4569
+  collectitem2: 4509
+  collectitem3: 3336
+  collectitem4: 4290
   collectitem5: 1881
-  collectitem_special: 1846
-  craft1: 561
-  craft2: 607
-  craft3: 582
-  craft4: 591
-  eyespinner: 565
-  leftslingshot: 5727
-  loopleft: 4415
-  loopright: 3548
+  collectitem_special: 1908
+  craft1: 586
+  craft2: 635
+  craft3: 609
+  craft4: 622
+  eyespinner: 594
+  leftslingshot: 5806
+  loopleft: 4522
+  loopright: 3666
   mb_drop1: 474
   mb_drop2: 1474
   mb_drop3: 1271
@@ -42,87 +42,87 @@ shots:
   mb_drop6: 694
   mb_jackpot: 31
   mb_superjackpot: 55
-  mbnether_drop2: 88
-  mbnether_drop3: 92
-  mbnether_drop4: 30
-  mbnether_drop5: 99
-  mbnether_superjackpot: 5
-  popbumper1: 5694
-  popbumper2: 8293
-  popbumper3: 10181
-  rightslingshot: 3983
-  set1_center: 74
-  set1_left: 155
-  set1_right: 314
-  set2_center: 46
-  set2_left: 93
-  set2_right: 141
-  set3_center: 78
-  set3_left: 45
-  set3_right: 117
-  set4_center: 57
-  set4_left: 40
-  set4_right: 113
-  skill_scoup: 508
-  spinner: 22410
-  strongholdtravel: 35
-  tool1: 2103
-  tool2: 2711
-  tool3: 1661
+  mbnether_drop2: 178
+  mbnether_drop3: 157
+  mbnether_drop4: 53
+  mbnether_drop5: 194
+  mbnether_superjackpot: 7
+  popbumper1: 5853
+  popbumper2: 8545
+  popbumper3: 10501
+  rightslingshot: 4097
+  set1_center: 76
+  set1_left: 158
+  set1_right: 322
+  set2_center: 48
+  set2_left: 96
+  set2_right: 147
+  set3_center: 80
+  set3_left: 47
+  set3_right: 119
+  set4_center: 61
+  set4_left: 43
+  set4_right: 127
+  skill_scoup: 523
+  spinner: 22847
+  strongholdtravel: 37
+  tool1: 2167
+  tool2: 2816
+  tool3: 1719
   village_jackpot: 22
-  villager_jackpot: 151
+  villager_jackpot: 155
   villager_spinner: 114
-  world_jackpot: 411
-  worldspinner: 1227
+  world_jackpot: 433
+  worldspinner: 1571
 switches:
-  s_bumperrail: 6998
-  s_captiveball: 867
-  s_centertarget: 4319
-  s_collectitem1: 7346
-  s_collectitem2: 7371
-  s_collectitem3: 4682
-  s_collectitem4: 6988
-  s_collectitem5: 6684
+  s_bumperrail: 7699
+  s_captiveball: 885
+  s_centertarget: 4417
+  s_collectitem1: 7591
+  s_collectitem2: 7581
+  s_collectitem3: 4782
+  s_collectitem4: 7201
+  s_collectitem5: 6912
   s_credit_right: 0
-  s_drop1: 2977
-  s_drop2: 4657
-  s_drop3: 14919
-  s_drop4: 2929
-  s_drop5: 6375
-  s_drop6: 4062
-  s_left_flipper: 39045
-  s_leftinlane: 884
-  s_leftoutlane: 737
-  s_leftsling: 5730
-  s_loopleft: 4754
-  s_loopright: 4311
+  s_drop1: 3064
+  s_drop2: 4795
+  s_drop3: 15693
+  s_drop4: 3016
+  s_drop5: 6544
+  s_drop6: 4179
+  s_left_flipper: 39920
+  s_leftinlane: 902
+  s_leftoutlane: 745
+  s_leftsling: 5809
+  s_loopleft: 4861
+  s_loopright: 4429
   s_maint: 0
-  s_plungerlane: 3833
-  s_popbumper1: 5694
-  s_popbumper2: 8293
-  s_popbumper3: 10181
-  s_portal: 341
-  s_right_flipper: 32810
-  s_rightinlane: 158
+  s_plungerlane: 3966
+  s_popbumper1: 5853
+  s_popbumper2: 8545
+  s_popbumper3: 10501
+  s_portal: 386
+  s_right_flipper: 33720
+  s_rightinlane: 177
   s_rightoutlane: 391
-  s_rightsling: 3983
-  s_scoup: 2233
-  s_spinner: 22413
+  s_rightsling: 4097
+  s_scoup: 2311
+  s_spinner: 22850
   s_start: 63
   s_tilt: 0
-  s_tooltarget1: 3139
-  s_tooltarget2: 3859
-  s_tooltarget3: 2442
-  s_topbumperleft: 1743
-  s_topbumperright: 2577
-  s_topkicker: 6436
-  s_trough1: 3514
-  s_trough2: 2892
-  s_trough3: 2613
-  s_trough4: 2253
-  s_troughjam: 2932
-  s_upperdrop: 2880
-  s_whitedot1: 1203
-  s_whitedot2: 1369
-  s_whitedot3: 1376
-  s_whitedot4: 1392
+  s_tooltarget1: 3227
+  s_tooltarget2: 4026
+  s_tooltarget3: 2523
+  s_topbumperleft: 1811
+  s_topbumperright: 2674
+  s_topkicker: 6643
+  s_trough1: 3623
+  s_trough2: 2972
+  s_trough3: 2681
+  s_trough4: 2321
+  s_troughjam: 3015
+  s_upperdrop: 2956
+  s_whitedot1: 1243
+  s_whitedot2: 1422
+  s_whitedot3: 1417
+  s_whitedot4: 1447

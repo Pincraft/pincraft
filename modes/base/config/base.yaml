@@ -52,7 +52,12 @@ event_player:
     item_collected
 
 
-
+  mode_nightcontroller_ended:
+    event_nightorvillagermultiball_ended
+  mode_villagercontroller_ended:
+    event_nightorvillagermultiball_ended
+  mode_nightvillagercontroller_ended:
+    event_nightorvillagermultiball_ended
 
 
   #RECALCULATE WORLD JACKPOT
@@ -140,18 +145,18 @@ event_player:
     stronghold_ready
     villagermb_disable
 
-  multiball_villagermb_ended{current_player.world_id != 5 and current_player.world_item1_remaining == 0 and current_player.world_item2_remaining == 0 and current_player.world_item3_remaining == 0 and current_player.world_item4_remaining == 0}:
+  event_nightorvillagermultiball_ended{current_player.world_id != 5 and current_player.world_item1_remaining == 0 and current_player.world_item2_remaining == 0 and current_player.world_item3_remaining == 0 and current_player.world_item4_remaining == 0}:
     nethermode_ready
     villagermb_disable
 
-  multiball_villagermb_ended{current_player.world_id == 5 and current_player.world_item1_remaining == 0 and current_player.world_item2_remaining == 0 and current_player.world_item3_remaining == 0 and current_player.world_item4_remaining == 0}:
+  event_nightorvillagermultiball_ended{current_player.world_id == 5 and current_player.world_item1_remaining == 0 and current_player.world_item2_remaining == 0 and current_player.world_item3_remaining == 0 and current_player.world_item4_remaining == 0}:
     stronghold_ready
     villagermb_disable
 
-  multiball_villagermb_ended{current_player.world_jackpot_worlds>1}:
+  event_nightorvillagermultiball_ended{current_player.world_jackpot_worlds>1}:
     outlanegate_open
 
-  multiball_villagermb_ended{current_player.world_jackpot_worlds==1}:
+  event_nightorvillagermultiball_ended{current_player.world_jackpot_worlds==1}:
     outlanegate_close
 
 

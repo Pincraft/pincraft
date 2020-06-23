@@ -2027,44 +2027,44 @@ sounds:
   #MUSIC TRACKS
   basemode_music:
     file: basemode.wav
-    volume: 0.50
+    volume: 0.60
     loops: -1
     track: music
   world1mode_music:
     file: world1mode.wav
-    volume: 0.50
+    volume: 0.60
     loops: -1
     track: music
   world2mode_music:
     file: world2mode.wav
-    volume: 0.50
+    volume: 0.60
     loops: -1
     track: music
   world3mode_music:
     file: world3mode.wav
-    volume: 0.50
+    volume: 0.60
     loops: -1
     track: music
   world4mode_music:
     file: world4mode.wav
-    volume: 0.50
+    volume: 0.60
     loops: -1
     track: music
   world5mode_music:
     file: world5mode.wav
-    volume: 0.50
+    volume: 0.60
     loops: -1
     track: music
 
   nether_music:
     file: nether_music.wav
-    volume: 0.50
+    volume: 0.80
     loops: -1
     track: music
 
   nightmode_music:
     file: nightmode_kit.wav
-    volume: 0.50
+    volume: 0.80
     loops: -1
     track: music
   nighthurryup_music:
