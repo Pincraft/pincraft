@@ -51,7 +51,9 @@ state_machines:
         target: state_travel
         events: multiball_endmb_ended
 
-
+shots:
+  enderdragon_shot:
+    switch: s_centertarget
 
 multiball_locks:
   endlocktop:
@@ -75,6 +77,23 @@ multiballs:
     start_events: theendmultiball_start
     shoot_again: 0s 
 
+
+timers:
+  enderdragon_restore_timer:
+    start_value: 0
+    end_value: 100
+    direction: up
+    tick_interval: 1s
+    start_running: true
+    restart_on_complete: true 
+    control_events:
+      - event: mode_theend_started
+        action: start
+      - event: multiball_endmb_started
+        action: stop
+      - event: multiball_endmb_ended
+        action: restart
+
 slides:
   theend_slide:
     widgets:
@@ -87,12 +106,84 @@ slides:
 slide_player:
     mode_theend_started: theend_slide
 
+widgets:
+  widget_dragonhealth:
+    - type: text        #Dragon Health
+      text: DRAGON HEALTH (player|enderdragon_health)
+      number_grouping: true
+      min_digits: 2
+      font_name: ARLRDBD
+      font_size: 20
+      y: center
+      x: center
+      z: 210
+      anchor_x: middle
+      anchor_y: middle
+  widget_theendswordplayer:
+    - type: image        #SCORE BACKGROUND
+      image: Sword_FullScreen_Dark_1x
+      anchor_x: right
+      anchor_y: bottom
+      y: bottom
+      x: right
+      z: 10
+
 widget_player:
   slide_theend_slide_active:
     widget_screenbackground:
       action: update
       widget_settings:
-        image: theend_background
+        image: theend_background   
+
+    widget_dragonhealth:
+      action: add
+
+#SHOW LARGE SWORD
+  slide_theend_slide_active{current_player.sword==1}:
+    widget_theendswordplayer:
+      action: update
+      slide: theend_slide
+      widget_settings:
+        image: Sword_FullScreen_1x
+  slide_theend_slide_active{current_player.sword==2}:
+    widget_theendswordplayer:
+      action: update
+      slide: theend_slide
+      widget_settings:
+        image: Sword_FullScreen_2x
+  slide_theend_slide_active{current_player.sword==3}:
+    widget_theendswordplayer:
+      action: update
+      slide: theend_slide
+      widget_settings:
+        image: Sword_FullScreen_3x
+  slide_theend_slide_active{current_player.sword==4}:
+    widget_theendswordplayer:
+      action: update
+      slide: theend_slide
+      widget_settings:
+        image: Sword_FullScreen_4x
+  slide_theend_slide_active{current_player.sword==5}:
+    widget_theendswordplayer:
+      action: update
+      slide: theend_slide
+      widget_settings:
+        image: Sword_FullScreen_5x
+
+
+variable_player:
+  mode_theend_started:
+    enderdragon_health:
+      int: 100
+      action: set
+  enderdragon_shot_hit{current_player.enderdragon_health > 0}:
+    enderdragon_health: -1 * current_player.multiplier_mb * current_player.sword
+  enderdragon_shot_hit{current_player.enderdragon_health < 0}:
+    enderdragon_health: 
+      int: 0
+      action: set 
+  timer_enderdragon_restore_timer_tick{current_player.enderdragon_health < 100}:
+    enderdragon_health: 1
 
 event_player:
   slide_theend_slide_active:
@@ -126,8 +217,7 @@ sound_player:
       action: play
       loops: -1
       mode_end_action: stop
-
-
+  timer_enderdragon_restore_timer_tick: enderdragon_wings
  
 
 

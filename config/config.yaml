@@ -2023,6 +2023,30 @@ sounds:
     volume: 1
     track: sfx
 
+  enderdragon_wings1:
+    file: enderdragon_wings1.wav
+    volume: 1
+    track: sfx
+  enderdragon_wings2:
+    file: enderdragon_wings2.wav
+    volume: 1
+    track: sfx
+  enderdragon_wings3:
+    file: enderdragon_wings3.wav
+    volume: 1
+    track: sfx
+  enderdragon_wings4:
+    file: enderdragon_wings4.wav
+    volume: 1
+    track: sfx
+  enderdragon_wings5:
+    file: enderdragon_wings5.wav
+    volume: 1
+    track: sfx
+  enderdragon_wings6:
+    file: enderdragon_wings6.wav
+    volume: 1
+    track: sfx
 
   #MUSIC TRACKS
   basemode_music:
@@ -2146,7 +2170,16 @@ sound_pools:
       - eyeplace1
       - eyeplace2
       - eyeplace3
-      
+  enderdragon_wings:
+    type: random_force_all
+    track: sfx
+    sounds:
+      - enderdragon_wings1
+      - enderdragon_wings2
+      - enderdragon_wings3
+      - enderdragon_wings4
+      - enderdragon_wings5
+      - enderdragon_wings6
 
 # PLAYER VARIABLES
 #--------------------------------------------
@@ -2337,12 +2370,18 @@ player_vars:
     initial_value: 0
     value_type: int
 
+  #Stronghold Variables
   stronghold_progress:
     initial_value: 0
     value_type: int
 
   stronghold_jackpot:
     initial_value: 1000000
+    value_type: int
+
+  #TheEnd Variables
+  enderdragon_health:
+    initial_value: 100
     value_type: int
 
 #SLIDES CONFIGURATION

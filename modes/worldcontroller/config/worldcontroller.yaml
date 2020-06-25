@@ -38,28 +38,28 @@ multiball_locks:
     locked_ball_counting_strategy: physical_only
     lock_devices: bd_topkicker 
     enable_events: villagermultiball_ready
-    disable_events: nightvillagermultiball_ready, villagermultiball_start, villagermb_disable
+    disable_events: nightvillagermultiball_ready, villagermultiball_start, villagermb_disable, villagerornightmb_disable
 
   nightlock:
     balls_to_lock: 1
     locked_ball_counting_strategy: physical_only
     lock_devices: bd_scoop 
     enable_events: nightmultiball_ready
-    disable_events: nightvillagermultiball_ready, nightmultiball_start, nightmb_disable
+    disable_events: nightvillagermultiball_ready, nightmultiball_start, nightmb_disable, villagerornightmb_disable
 
   nightvillagerlock1:
     balls_to_lock: 1
     locked_ball_counting_strategy: physical_only
     lock_devices: bd_topkicker 
     enable_events: nightvillagermultiball_ready
-    disable_events: nightvillagermultiball_disable, nightvillagermultiball_start
+    disable_events: nightvillagermultiball_disable, nightvillagermultiball_start, villagerornightmb_disable
 
   nightvillagerlock2:
     balls_to_lock: 1
     locked_ball_counting_strategy: physical_only
     lock_devices: bd_scoop 
     enable_events: nightvillagermultiball_enablelock2
-    disable_events: nightvillagermultiball_disable, nightvillagermultiball_start
+    disable_events: nightvillagermultiball_disable, nightvillagermultiball_start, villagerornightmb_disable
 
 multiballs:
   villagermb:
