@@ -1985,6 +1985,8 @@ sounds:
     file: village_trade.wav
     volume: 1
     track: sfx
+
+  #SFX: Extra Ball
   meatextraball_cow:
     file: meatextraball_cow.wav
     volume: 1
@@ -2006,6 +2008,7 @@ sounds:
     volume: 1
     track: sfx
 
+  #SFX: STRONGHOLD
   eyeplace1:
     file: eyeplace1.ogg
     volume: 1
@@ -2023,28 +2026,68 @@ sounds:
     volume: 1
     track: sfx
 
+  #SFX: THE END
   enderdragon_wings1:
-    file: enderdragon_wings1.wav
+    file: enderdragon_wings1.ogg
     volume: 1
     track: sfx
   enderdragon_wings2:
-    file: enderdragon_wings2.wav
+    file: enderdragon_wings2.ogg
     volume: 1
     track: sfx
   enderdragon_wings3:
-    file: enderdragon_wings3.wav
+    file: enderdragon_wings3.ogg
     volume: 1
     track: sfx
   enderdragon_wings4:
-    file: enderdragon_wings4.wav
+    file: enderdragon_wings4.ogg
     volume: 1
     track: sfx
   enderdragon_wings5:
-    file: enderdragon_wings5.wav
+    file: enderdragon_wings5.ogg
     volume: 1
     track: sfx
   enderdragon_wings6:
-    file: enderdragon_wings6.wav
+    file: enderdragon_wings6.ogg
+    volume: 1
+    track: sfx
+
+  enderdragon_growl1:
+    file: enderdragon_growl1.ogg
+    volume: 1
+    track: sfx
+  enderdragon_growl2:
+    file: enderdragon_growl2.ogg
+    volume: 1
+    track: sfx
+  enderdragon_growl3:
+    file: enderdragon_growl3.ogg
+    volume: 1
+    track: sfx
+  enderdragon_growl4:
+    file: enderdragon_growl4.ogg
+    volume: 1
+    track: sfx
+
+  enderdragon_hit1:
+    file: enderdragon_hit1.ogg
+    volume: 1
+    track: sfx
+  enderdragon_hit2:
+    file: enderdragon_hit2.ogg
+    volume: 1
+    track: sfx
+  enderdragon_hit3:
+    file: enderdragon_hit3.ogg
+    volume: 1
+    track: sfx
+  enderdragon_hit4:
+    file: enderdragon_hit4.ogg
+    volume: 1
+    track: sfx
+
+  enderdragon_end:
+    file: enderdragon_end.ogg
     volume: 1
     track: sfx
 
@@ -2180,6 +2223,22 @@ sound_pools:
       - enderdragon_wings4
       - enderdragon_wings5
       - enderdragon_wings6
+  enderdragon_growl:
+    type: random_force_all
+    track: sfx
+    sounds:
+      - enderdragon_growl1
+      - enderdragon_growl2
+      - enderdragon_growl3
+      - enderdragon_growl4
+  enderdragon_hit:
+    type: random_force_all
+    track: sfx
+    sounds:
+      - enderdragon_hit1
+      - enderdragon_hit2
+      - enderdragon_hit3
+      - enderdragon_hit4
 
 # PLAYER VARIABLES
 #--------------------------------------------

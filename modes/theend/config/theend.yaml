@@ -35,7 +35,7 @@ state_machines:
         label: travel state
         events_when_started: state_travel_started
     transitions:
-      - source: start
+      - source: start 
         target: state_prepare
         events: mode_theend_started, ball_started
       - source: state_prepare
@@ -198,6 +198,20 @@ timers:
         action: stop
       - event: multiball_endmb_ended
         action: restart
+  enderdragon_growl_timer:
+    start_value: 0
+    end_value: 17
+    direction: up
+    tick_interval: 1s
+    start_running: true
+    restart_on_complete: true 
+    control_events:
+      - event: mode_theend_started
+        action: start
+#      - event: multiball_endmb_started
+#        action: stop
+#      - event: multiball_endmb_ended
+#        action: restart
 
 slides:
   theend_slide:
@@ -323,6 +337,7 @@ sound_player:
       loops: -1
       mode_end_action: stop
   timer_enderdragon_restore_timer_tick: enderdragon_wings
+  timer_enderdragon_growl_timer_complete: enderdragon_growl
  
 
 
