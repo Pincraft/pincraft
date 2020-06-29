@@ -55,92 +55,92 @@ shots:
   enderdragon_shot:
     switch: s_centertarget
   enderdragon_shot1:                      #DROP TARGETS
-        switch: s_collectitem1
-        profile: sp_enderdragon
-        advance_events: mode_theend_started
-        show_tokens:
-            light: l_collectitem1
+    switch: s_collectitem1
+    profile: sp_enderdragon
+    advance_events: endermultiball_started
+    show_tokens:
+        light: l_collectitem1
   enderdragon_shot2:
-        switch: s_collectitem2
-        profile: sp_enderdragon
-        advance_events: mode_theend_started
-        show_tokens:
-            light: l_collectitem2
+    switch: s_collectitem2
+    profile: sp_enderdragon
+    advance_events: endermultiball_started
+    show_tokens:
+        light: l_collectitem2
   enderdragon_shot3:
-        switch: s_collectitem3
-        profile: sp_enderdragon
-        show_tokens:
-            light: l_collectitem3
+    switch: s_collectitem3
+    profile: sp_enderdragon
+    show_tokens:
+        light: l_collectitem3
   enderdragon_shot4:
-        switch: s_collectitem4
-        profile: sp_enderdragon
-        show_tokens:
-            light: l_collectitem4
+    switch: s_collectitem4
+    profile: sp_enderdragon
+    show_tokens:
+        light: l_collectitem4
   enderdragon_shot5:
-        switch: s_collectitem5
-        profile: sp_enderdragon
-        show_tokens:
-            light: l_collectitem5
+    switch: s_collectitem5
+    profile: sp_enderdragon
+    show_tokens:
+        light: l_collectitem5
   enderdragon_shot6:                   #TOOLS
-        switch: s_tooltarget3
-        profile: sp_enderdragon
-        show_tokens:
-            light: l_toolcollect3
+    switch: s_tooltarget3
+    profile: sp_enderdragon
+    show_tokens:
+        light: l_toolcollect3
   enderdragon_shot7:
-        switch: s_tooltarget2
-        profile: sp_enderdragon
-        show_tokens:
-            light: l_toolcollect2
+    switch: s_tooltarget2
+    profile: sp_enderdragon
+    show_tokens:
+        light: l_toolcollect2
   enderdragon_shot8:
-        switch: s_tooltarget1
-        profile: sp_enderdragon
-        show_tokens:
-            light: l_toolcollect1
+    switch: s_tooltarget1
+    profile: sp_enderdragon
+    show_tokens:
+        light: l_toolcollect1
   enderdragon_shot9:                   #CRAFT
-        switch: s_whitedot1
-        profile: sp_enderdragon
-        show_tokens:
-            light: l_craft1
+    switch: s_whitedot1
+    profile: sp_enderdragon
+    show_tokens:
+        light: l_craft1
   enderdragon_shot10:
-        switch: s_whitedot2
-        profile: sp_enderdragon
-        show_tokens:
-            light: l_craft2
+    switch: s_whitedot2
+    profile: sp_enderdragon
+    show_tokens:
+        light: l_craft2
   enderdragon_shot11:
-        switch: s_whitedot3
-        profile: sp_enderdragon
-        show_tokens:
-            light: l_craft3
+    switch: s_whitedot3
+    profile: sp_enderdragon
+    show_tokens:
+        light: l_craft3
   enderdragon_shot12:
-        switch: s_whitedot4
-        profile: sp_enderdragon
-        show_tokens:
-            light: l_craft4
+    switch: s_whitedot4
+    profile: sp_enderdragon
+    show_tokens:
+        light: l_craft4
   enderdragon_shot13:               #SPINNER
-        switch: s_spinner
-        profile: sp_enderdragon
-        show_tokens:
-            light: l_spinner4
-  enderdragon_shot14:               
-        switch: s_spinner
-        profile: sp_enderdragon
-        show_tokens:
-            light: l_spinner3
-  enderdragon_shot15:               
-        switch: s_spinner
-        profile: sp_enderdragon
-        show_tokens:
-            light: l_spinner2
-  enderdragon_shot16:               
-        switch: s_spinner
-        profile: sp_enderdragon
-        show_tokens:
-            light: l_spinner1
-  enderdragon_shot17:               
-        switch: s_centertarget
-        profile: sp_enderdragon
-        show_tokens:
-            light: l_worldtarget
+    switch: s_spinner
+    profile: sp_enderdragon
+    show_tokens:
+        light: l_spinner4
+  enderdragon_shot14:           
+    switch: s_spinner
+    profile: sp_enderdragon
+    show_tokens:
+        light: l_spinner3
+  enderdragon_shot15:                  
+    switch: s_spinner
+    profile: sp_enderdragon
+    show_tokens:
+        light: l_spinner2
+  enderdragon_shot16:                   
+    switch: s_spinner
+    profile: sp_enderdragon
+    show_tokens:
+        light: l_spinner1
+  enderdragon_shot17:                   
+    switch: s_centertarget
+    profile: sp_enderdragon
+    show_tokens:
+        light: l_worldtarget
 
 
 shot_profiles:
@@ -154,11 +154,11 @@ shot_profiles:
     advance_on_hit: false
 
 shot_groups:
-    upper_lanes:
-        shots: enderdragon_shot1, enderdragon_shot2, enderdragon_shot3, enderdragon_shot4, enderdragon_shot5, enderdragon_shot6, enderdragon_shot7, enderdragon_shot8, enderdragon_shot9, enderdragon_shot10, enderdragon_shot11, enderdragon_shot12, enderdragon_shot13, enderdragon_shot14, enderdragon_shot15, enderdragon_shot16, enderdragon_shot17
-        enable_events: mode_theend_started
-        disable_events: mode_theend_ending
-        rotate_events: timer_enderdragon_restore_timer_tick
+  sg_enderdragon:
+    shots: enderdragon_shot1, enderdragon_shot2, enderdragon_shot3, enderdragon_shot4, enderdragon_shot5, enderdragon_shot6, enderdragon_shot7, enderdragon_shot8, enderdragon_shot9, enderdragon_shot10, enderdragon_shot11, enderdragon_shot12, enderdragon_shot13, enderdragon_shot14, enderdragon_shot15, enderdragon_shot16, enderdragon_shot17
+    restart_events: multiball_endmb_started
+    disable_events: multiball_endmb_ended, mode_theend_started
+    rotate_events: timer_enderdragon_multiball_timer_tick
 
 multiball_locks:
   endlocktop:
@@ -192,11 +192,23 @@ timers:
     start_running: true
     restart_on_complete: true 
     control_events:
-      - event: mode_theend_started
-        action: start
-      - event: multiball_endmb_started
+      - event: state_battle_started
         action: stop
-      - event: multiball_endmb_ended
+      - event: state_prepare_started
+        action: restart
+  enderdragon_multiball_timer:
+    start_value: 0
+    end_value: 100
+    direction: up
+    tick_interval: 1s
+    start_running: false
+    restart_on_complete: true 
+    control_events:
+      - event: state_prepare_started
+        action: stop
+      - event: state_victory_started
+        action: stop        
+      - event: state_battle_started
         action: restart
   enderdragon_growl_timer:
     start_value: 0
@@ -206,12 +218,10 @@ timers:
     start_running: true
     restart_on_complete: true 
     control_events:
-      - event: mode_theend_started
+      - event: state_prepare_started
         action: start
-#      - event: multiball_endmb_started
-#        action: stop
-#      - event: multiball_endmb_ended
-#        action: restart
+      - event: state_victory_started
+        action: stop
 
 slides:
   theend_slide:
@@ -295,9 +305,9 @@ variable_player:
     enderdragon_health:
       int: 100
       action: set
-  enderdragon_shot_hit{current_player.enderdragon_health > 0}:
+  sg_enderdragon_lit_hit{current_player.enderdragon_health > 0}:
     enderdragon_health: -1 * current_player.multiplier_mb * current_player.sword
-  enderdragon_shot_hit{current_player.enderdragon_health < 0}:
+  sg_enderdragon_lit_hit{current_player.enderdragon_health < 0}:
     enderdragon_health: 
       int: 0
       action: set 
@@ -307,13 +317,18 @@ variable_player:
 event_player:
   slide_theend_slide_active:
     show_player_score
-    show_debug
     show_ball_count
+    #show_debug
 
   mode_theend_started:
     theendmultiball_ready
   mode_base_started:
     theendmultiball_ready
+
+  multiball_endmb_started:
+    endermultiball_started
+  timer_enderdragon_multiball_timer_tick{current_player.enderdragon_health == 0}:
+    theend_dragon_defeated
 
 light_player:
   state_prepare_started:
@@ -336,9 +351,16 @@ sound_player:
       action: play
       loops: -1
       mode_end_action: stop
+  state_victory_started:
+    enderdragon_end: play
+    endmode_battle_music: stop
+    endmode_victory2_music:
+      action: play
+      loops: -1
+      mode_end_action: stop
   timer_enderdragon_restore_timer_tick: enderdragon_wings
   timer_enderdragon_growl_timer_complete: enderdragon_growl
- 
-
+  timer_enderdragon_multiball_timer_tick: enderdragon_wings
+  sg_enderdragon_lit_hit: enderdragon_hit
 
 
