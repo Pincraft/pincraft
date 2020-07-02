@@ -42,7 +42,16 @@ class Base(Mode):
             else:
                 self.player.diverter_state="strongholdidle"    
         elif self.machine.mode_controller.is_active("theend"):
-            self.player.diverter_state="theend"
+            if self.machine.state_machines.statemachine_theend.state == "state_prepare":
+                self.player.diverter_state="theendprepare"
+            elif self.machine.state_machines.statemachine_theend.state  == "state_battle":
+                self.player.diverter_state="theendbattle"
+            elif self.machine.state_machines.statemachine_theend.state  == "state_victory":
+                self.player.diverter_state="theendvictory"
+            elif self.machine.state_machines.statemachine_theend.state  == "state_travel":
+                self.player.diverter_state="theendtravel"
+            else:
+                self.player.diverter_state="theendunknown"
         #WORLD TRAVEL
         elif self.player.travel_enabled==1:
             self.player.diverter_state="worldtravel"

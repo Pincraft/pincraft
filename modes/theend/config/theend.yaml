@@ -43,7 +43,7 @@ state_machines:
         events: multiball_endmb_started
       - source: state_battle
         target: state_prepare
-        events: multiball_endmb_ended
+        events: multiball_endmb_ended, ball_started
       - source: state_battle
         target: state_victory
         events: theend_dragon_defeated
@@ -52,18 +52,27 @@ state_machines:
         events: multiball_endmb_ended
 
 shots:
+  victoryloopleft_shot:
+    switch: s_loopleft
+    enable_events: state_victory_started
+    disable_events: state_victory_stopped
+  victoryloopright_shot:
+    switch: s_loopright
+    enable_events: state_victory_started
+    disable_events: state_victory_stopped
+
   enderdragon_shot:
     switch: s_centertarget
   enderdragon_shot1:                      #DROP TARGETS
     switch: s_collectitem1
     profile: sp_enderdragon
-    advance_events: endermultiball_started
+    advance_events: advance_dragon_shots
     show_tokens:
         light: l_collectitem1
   enderdragon_shot2:
     switch: s_collectitem2
     profile: sp_enderdragon
-    advance_events: endermultiball_started
+    advance_events: advance_dragon_shots
     show_tokens:
         light: l_collectitem2
   enderdragon_shot3:
@@ -156,8 +165,8 @@ shot_profiles:
 shot_groups:
   sg_enderdragon:
     shots: enderdragon_shot1, enderdragon_shot2, enderdragon_shot3, enderdragon_shot4, enderdragon_shot5, enderdragon_shot6, enderdragon_shot7, enderdragon_shot8, enderdragon_shot9, enderdragon_shot10, enderdragon_shot11, enderdragon_shot12, enderdragon_shot13, enderdragon_shot14, enderdragon_shot15, enderdragon_shot16, enderdragon_shot17
-    restart_events: multiball_endmb_started
-    disable_events: multiball_endmb_ended, mode_theend_started
+    restart_events: state_battle_started
+    disable_events: state_battle_stopped
     rotate_events: timer_enderdragon_multiball_timer_tick
 
 multiball_locks:
@@ -165,7 +174,7 @@ multiball_locks:
     balls_to_lock: 1
     locked_ball_counting_strategy: physical_only
     lock_devices: bd_topkicker 
-    enable_events: theendmultiball_ready
+    enable_events: state_prepare_started
     disable_events: theendmultiball_start, endmode_disable
   endlockright:
     balls_to_lock: 1
@@ -178,7 +187,7 @@ multiballs:
   endmb:
     ball_count: 3
     ball_locks: bd_topkicker, bd_scoop
-    enable_events: theendmultiball_ready
+    enable_events: state_prepare_started
     start_events: theendmultiball_start
     shoot_again: 0s 
 
@@ -192,7 +201,7 @@ timers:
     start_running: true
     restart_on_complete: true 
     control_events:
-      - event: state_battle_started
+      - event: state_prepare_stopped
         action: stop
       - event: state_prepare_started
         action: restart
@@ -204,10 +213,8 @@ timers:
     start_running: false
     restart_on_complete: true 
     control_events:
-      - event: state_prepare_started
-        action: stop
-      - event: state_victory_started
-        action: stop        
+      - event: state_battle_stopped
+        action: stop  
       - event: state_battle_started
         action: restart
   enderdragon_growl_timer:
@@ -301,34 +308,58 @@ widget_player:
 
 
 variable_player:
+
+  #Enderdragon Health Init
   mode_theend_started:
     enderdragon_health:
       int: 100
       action: set
+  
+  #Enderdragon Health Damage and Scoring
   sg_enderdragon_lit_hit{current_player.enderdragon_health > 0}:
     enderdragon_health: -1 * current_player.multiplier_mb * current_player.sword
+    score: 10000 * current_player.multiplier_mb * current_player.sword
+
   sg_enderdragon_lit_hit{current_player.enderdragon_health < 0}:
     enderdragon_health: 
       int: 0
       action: set 
+  
+  #Enderdragon Health Restore
   timer_enderdragon_restore_timer_tick{current_player.enderdragon_health < 100}:
-    enderdragon_health: 1
+    enderdragon_health: 1 
 
-event_player:
-  slide_theend_slide_active:
-    show_player_score
-    show_ball_count
-    #show_debug
-
-  mode_theend_started:
-    theendmultiball_ready
-  mode_base_started:
-    theendmultiball_ready
+  #Multiball Multiplier
+  ball_started:
+    multiplier_mb:
+      int: 1
+      action: set
 
   multiball_endmb_started:
-    endermultiball_started
-  timer_enderdragon_multiball_timer_tick{current_player.enderdragon_health == 0}:
-    theend_dragon_defeated
+    multiplier_mb:
+      int: 3
+      action: set
+
+  multiball_endmb_ended:
+    multiplier_mb:
+      int: 1
+      action: set
+
+  multiball_endmb_lost_ball:
+    multiplier_mb:
+      int: 2
+      action: set 
+
+
+  #Victory Loop Scoring
+  victoryloopleft_shot_hit: 
+    score: 100000 * current_player.multiplier_mb * current_player.sword
+  victoryloopright_shot_hit: 
+    score: 100000 * current_player.multiplier_mb * current_player.sword
+
+  #Dragon Defeated Scoring
+  theend_dragon_defeated:
+    score: 1000000 * current_player.multiplier_mb * current_player.sword
 
 light_player:
   state_prepare_started:
@@ -337,6 +368,12 @@ light_player:
   state_battle_started:
     lbackbox: red
     lundercab: red
+  state_victory_started:
+    lbackbox: green
+    lundercab: green
+  state_travel_started:
+    lbackbox: blue
+    lundercab: blue 
 
 sound_player:
   state_prepare_started:
@@ -364,3 +401,33 @@ sound_player:
   sg_enderdragon_lit_hit: enderdragon_hit
 
 
+event_player:
+  slide_theend_slide_active:
+    show_player_score
+    show_ball_count
+    show_debug
+
+  state_battle_started:
+    advance_dragon_shots
+
+  #mode_theend_started:
+  #  theendmultiball_ready
+  #mode_base_started:
+  #  theendmultiball_ready
+
+  #START THE END MULTIBALL ON PLUNGE
+  sw_playfield_active_active{device.multiball_locks.endlockright.locked_balls==1 and device.multiball_locks.endlockright.enabled}:
+    theendmultiball_start
+
+  multiball_endmb_started:
+    endermultiball_started
+  timer_enderdragon_multiball_timer_tick{current_player.enderdragon_health == 0}:
+    theend_dragon_defeated
+
+  balldevice_bd_trough_ball_count_changed{device.ball_devices.bd_trough.balls==3}:
+    trough_allballs
+
+queue_relay_player:
+  ball_ending{device.multiball_locks.endlocktop.locked_balls==1}:
+    post: eject_topkicker
+    wait_for: trough_allballs
