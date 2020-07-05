@@ -1,0 +1,15 @@
+#config_version=5
+mode:
+    start_events: travel_ready, nethermode_ready
+    stop_events: travel_collected
+    priority: 2100
+
+
+show_player:
+  mode_travelready_started:
+    show_travelloop:    
+      loops: -1
+      speed: 10
+    show_travelblinking:    
+      loops: -1
+      speed: 2

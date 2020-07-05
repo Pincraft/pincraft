@@ -1,0 +1,17 @@
+#show_version=5
+- duration: 1
+  lights:
+    gi_loopupperleft: 
+      color: blue
+      fade: 500ms
+    gi_scoup:
+      color: blue
+      fade: 500ms
+- duration: 1
+  lights:
+    gi_loopupperleft:
+      color: off
+      fade: 500ms 
+    gi_scoup:
+      color: off
+      fade: 500ms
