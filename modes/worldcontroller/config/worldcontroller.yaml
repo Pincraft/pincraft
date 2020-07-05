@@ -153,12 +153,22 @@ light_player:
     l_spinner2: off 
     l_spinner1: off
     l_spinner4: green 
+  multiball_nightvillagermb_started:
+    l_spinner1: green
+    l_spinner2: green
+    l_spinner3: green
+    l_spinner4: green
   multiball_villagermb_started:
     l_spinner1: green
     l_spinner2: green
     l_spinner3: green
     l_spinner4: green
   multiball_villagermb_ended:
+    l_spinner1: off
+    l_spinner2: off
+    l_spinner3: off
+    l_spinner4: off
+  multiball_nightvillager_ended:
     l_spinner1: off
     l_spinner2: off
     l_spinner3: off
@@ -257,6 +267,11 @@ variable_player:
       action: set
 
   multiball_nightvillagermb_lost_ball:
+    multiplier_mb:
+      int: 2
+      action: set
+
+  multiball_lost_ball{current_player.multiplier_mb==3}:
     multiplier_mb:
       int: 2
       action: set
@@ -559,6 +574,9 @@ event_player:
   # ball_drain{device.multiball_locks.nightvillagerlock1.locked_balls==1}:
   #   eject_topkicker
   #   nightvillagermultiball_disable
+
+  balldevice_bd_trough_ball_count_changed{device.ball_devices.bd_trough.balls==1}:
+    multiball_lost_ball
 
   balldevice_bd_trough_ball_count_changed{device.ball_devices.bd_trough.balls==3}:
     trough_allballs

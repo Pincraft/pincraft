@@ -28,12 +28,11 @@ class Base(Mode):
     def checkdiverterstate(self, **kwargs):
         oldstate = self.player.diverter_state
         #MULTIBALLS
-        if self.machine.mode_controller.is_active("villagermb") and self.machine.mode_controller.is_active("nightmb"):
-            self.player.diverter_state="multiballnightvillager"
-        elif self.machine.mode_controller.is_active("villagermb"):
-            self.player.diverter_state="multiballvillager"
-        elif self.machine.mode_controller.is_active("night"):
-            self.player.diverter_state="multiballnight"
+        if self.machine.mode_controller.is_active("villagermb") or self.machine.mode_controller.is_active("night"):
+            if self.player.crafting_full == 1:
+                self.player.diverter_state="multiballhelpertools"
+            else:
+                self.player.diverter_state="multiballhelpernotools"    
         elif self.machine.mode_controller.is_active("nether"):
             self.player.diverter_state="multiballnether"
         elif self.machine.mode_controller.is_active("stronghold"):
@@ -57,7 +56,10 @@ class Base(Mode):
             self.player.diverter_state="worldtravel"
         #NIGHT AND VILLAGER MULTIBALLS
         elif self.player.villagermb_ready == 1 and self.player.nightmb_ready==1:
-            self.player.diverter_state="worldnightvillager"
+            if self.machine.multiball_locks.nightvillagerlock1.locked_balls==1:
+                self.player.diverter_state="worldnightvillagersidelock"
+            else:
+                self.player.diverter_state="worldnightvillagertoplock"
         elif self.player.villagermb_ready == 1:
             self.player.diverter_state="worldvillager"
         elif self.player.nightmb_ready==1:

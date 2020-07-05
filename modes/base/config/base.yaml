@@ -52,11 +52,11 @@ event_player:
     item_collected
 
 
-  mode_nightcontroller_ended:
+  mode_nightcontroller_stopped:
     event_nightorvillagermultiball_ended
-  mode_villagercontroller_ended:
+  mode_villagercontroller_stopped:
     event_nightorvillagermultiball_ended
-  mode_nightvillagercontroller_ended:
+  mode_nightvillagercontroller_stopped:
     event_nightorvillagermultiball_ended
 
 
@@ -108,9 +108,9 @@ event_player:
   #=========== CONTROLS WHEN WORLDS ARE STARTED ============
   #START WORLD 1
   mode_base_started{current_player.world_id==0}:
-    #world1_start
+    world1_start
     #world5_start
-    theend_start
+    #theend_start
 
   #ENABLE NEXT WORLDS WHEN NETHER MODE RETURNS
   multiball_nethermb_ended:
@@ -171,7 +171,7 @@ multiball_locks:
     locked_ball_counting_strategy: physical_only
     lock_devices: bd_scoop 
     enable_events: nethermode_ready
-    disable_events: nethermode_start, nethermode_disable
+    disable_events: nethermode_start, nethermode_disable, multiball_villagermb_started, multiball_nightmb_started, multiball_nightvillagermb_started, multiball_lock_nightvillagerlock1_full
   
 multiballs:
   strongholdmb:

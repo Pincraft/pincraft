@@ -41,8 +41,12 @@ mode:
 #    - Left Loop Closed / Drop Down Up
 #    - Right Loop Open
 
-# MULTIBALL VILLAGER RUNNING ("multiballvillager")
+# MULTIBALL VILLAGER RUNNING ("multiballhelpernotools")
 #   - Left Loop Closed / Drop Down Up
+#   - Right Loop Open
+
+# MULTIBALL VILLAGER RUNNING ("multiballhelpertools")
+#   - Left Loop Closed / Drop Down Down
 #   - Right Loop Open
 
 # MULTIBALL NETHER RUNNING ("multiballnether")
@@ -55,8 +59,13 @@ mode:
 
 
 light_player:
-  #Villager MB
-  divertercontrol_statechanged{current_player.diverter_state=="multiballvillager"}:
+  #Helper Multiball Tools Enable
+  divertercontrol_statechanged{current_player.diverter_state=="multiballhelpertools"}:
+    gi_loopupperleft: yellow
+    gi_loopupperright: green
+
+  #Helper Multiball No Tools Enabled
+  divertercontrol_statechanged{current_player.diverter_state=="multiballhelpernotools"}:
     gi_loopupperleft: red
     gi_loopupperright: green
 
@@ -85,12 +94,27 @@ light_player:
     gi_loopupperleft: blue
     gi_loopupperright: red
 
-  #WORLD VILLAGER MB
+  #WORLD VILLAGER MB READY
   divertercontrol_statechanged{current_player.diverter_state=="worldvillager"}:
     gi_loopupperleft: purple
     gi_loopupperright: purple
 
-  #WORLD TOOLS FULL
+  #WORLD NIGHT READY MB
+  divertercontrol_statechanged{current_player.diverter_state=="worldnight"}:
+    gi_loopupperleft: purple
+    gi_loopupperright: red
+
+  #WORLD NIGHT VILLAGER READY TOP LOCK MB
+  divertercontrol_statechanged{current_player.diverter_state=="worldnightvillagertoplock"}:
+    gi_loopupperleft: purple
+    gi_loopupperright: purple
+
+  #WORLD NIGHT VILLAGER READY SIDE LOCK MB
+  divertercontrol_statechanged{current_player.diverter_state=="worldnightvillagersidelock"}:
+    gi_loopupperleft: purple
+    gi_loopupperright: red
+
+   #WORLD TOOLS FULL
   divertercontrol_statechanged{current_player.diverter_state=="worldtoolsfull"}:
     gi_loopupperleft: yellow
     gi_loopupperright: yellow
@@ -190,13 +214,13 @@ event_player:
   #Left Loop Drop Reset Events
   timer_leftdropreset_complete{current_player.diverter_state=="worldidle"}: diverter_resetupperdrop
   timer_leftdropreset_complete{current_player.diverter_state=="worldtools"}: diverter_resetupperdrop
-  timer_leftdropreset_complete{current_player.diverter_state=="multiballvillager"}: diverter_resetupperdrop
+  timer_leftdropreset_complete{current_player.diverter_state=="multiballhelpernotools"}: diverter_resetupperdrop
   timer_leftdropreset_complete{current_player.diverter_state=="strongholdidle"}: diverter_resetupperdrop
   
   #Left Loop Drop Up Events
   divertercontrol_statechanged{current_player.diverter_state=="worldidle"}: diverter_resetupperdrop
   divertercontrol_statechanged{current_player.diverter_state=="worldtools"}: diverter_resetupperdrop
-  divertercontrol_statechanged{current_player.diverter_state=="multiballvillager"}: diverter_resetupperdrop
+  divertercontrol_statechanged{current_player.diverter_state=="multiballhelpernotools"}: diverter_resetupperdrop
   divertercontrol_statechanged{current_player.diverter_state=="strongholdidle"}: diverter_resetupperdrop
 
   #Left Loop Drop Down Events
@@ -205,28 +229,37 @@ event_player:
   divertercontrol_statechanged{current_player.diverter_state=="worldvillager"}: diverter_dropupperdrop
   divertercontrol_statechanged{current_player.diverter_state=="worldtoolsfull"}: diverter_dropupperdrop
   divertercontrol_statechanged{current_player.diverter_state=="multiballnether"}: diverter_dropupperdrop
+  divertercontrol_statechanged{current_player.diverter_state=="multiballhelpertools"}: diverter_dropupperdrop
   divertercontrol_statechanged{current_player.diverter_state=="theendbattle"}: diverter_dropupperdrop
   divertercontrol_statechanged{current_player.diverter_state=="theendvictory"}: diverter_dropupperdrop
   divertercontrol_statechanged{current_player.diverter_state=="theendtravel"}: diverter_dropupperdrop
-
+  divertercontrol_statechanged{current_player.diverter_state=="worldnight"}: diverter_dropupperdrop
+  divertercontrol_statechanged{current_player.diverter_state=="worldnightvillagersidelock"}: diverter_dropupperdrop
+  
   #Right Loop Hit Events:
   loopright_hit{current_player.diverter_state=="worldidle"}: diverter_rightloophit, diverter_dropupperdrop
   loopright_hit{current_player.diverter_state=="multiballnether"}: diverter_rightloophit, diverter_dropupperdrop
-  loopright_hit{current_player.diverter_state=="multiballvillager"}: diverter_rightloophit, diverter_dropupperdrop
+  loopright_hit{current_player.diverter_state=="multiballhelpernotools"}: diverter_rightloophit, diverter_dropupperdrop
+  loopright_hit{current_player.diverter_state=="multiballhelpertools"}: diverter_rightloophit, diverter_dropupperdrop
   loopright_hit{current_player.diverter_state=="theendvictory"}: diverter_rightloophit, diverter_dropupperdrop
+  loopright_hit{current_player.diverter_state=="multiballnight"}: diverter_rightloophit, diverter_dropupperdrop
    
   #Left Loop Hit Events:
   loopleft_hit{current_player.diverter_state=="multiballnether"}: diverter_leftloophit
   loopleft_hit{current_player.diverter_state=="worldtravel"}: diverter_leftloophit, diverter_leftlooptravelhit
   loopleft_hit{current_player.diverter_state=="strongholdtravel"}: diverter_leftloophit, diverter_leftlooptravelhit
   loopleft_hit{current_player.diverter_state=="theendvictory"}: diverter_leftloophit
+  loopleft_hit{current_player.diverter_state=="multiballnight"}: diverter_leftloophit
   loopleft_hit{current_player.diverter_state=="theendtravel"}: diverter_leftloophit, diverter_leftlooptravelhit
+  loopleft_hit{current_player.diverter_state=="worldnight"}: diverter_leftloophit, diverter_leftlooptravelhit
+  loopleft_hit{current_player.diverter_state=="worldnightvillagersidelock"}: diverter_leftloophit, diverter_leftlooptravelhit
+  
 
   #DIVERTER CONTROLS
-  divertercontrol_statechanged.1{current_player.diverter_state=="worldtravel" or current_player.diverter_state == "strongholdtravel" or current_player.diverter_state == "theendtravel"}:
+  divertercontrol_statechanged.1{current_player.diverter_state=="worldtravel" or current_player.diverter_state == "strongholdtravel" or current_player.diverter_state == "theendtravel" or current_player.diverter_state == "worldnight" or current_player.diverter_state == "worldnightvillagersidelock"}:
     diverter_travel_enabled
 
-  divertercontrol_statechanged.2{current_player.diverter_state!="worldtravel" and current_player.diverter_state != "strongholdtravel" and current_player.diverter_state != "theendtravel"}:
+  divertercontrol_statechanged.2{current_player.diverter_state!="worldtravel" and current_player.diverter_state != "strongholdtravel" and current_player.diverter_state != "theendtravel" and current_player.diverter_state != "worldnight" and current_player.diverter_state != "worldnightvillagersidelock"}:
     diverter_travel_disabled
 
 

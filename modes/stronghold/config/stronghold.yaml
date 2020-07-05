@@ -506,9 +506,9 @@ event_player:
 
   slide_stronghold_slide_active:
     show_player_score
-    show_debug
     show_ball_count
     update_eye_display
+   # show_debug
 
   mode_stronghold_started{current_player.stronghold_progress==0}:
     enable_eyeset1
