@@ -226,15 +226,15 @@ shots:
 shot_groups:
   mbskeletons:
     shots: mbnether_drop2, mbnether_drop5
-    disable_events: mode_nether_started
+    disable_events: mode_nether_started, nethermb_phase2_started
     enable_events: nethermb_phase1_started
   mbghast:
     shots: mbnether_drop3, mbnether_drop4
-    disable_events: mode_nether_started
+    disable_events: mode_nether_started, nethermb_phase3_started
     enable_events: nethermb_phase2_started
   mballdrops:
     shots: mbnether_drop2, mbnether_drop3, mbnether_drop4, mbnether_drop5
-    disable_events: mode_nether_started
+    disable_events: mode_nether_started, nethermb_jackpot_active
     enable_events: nethermb_phase3_started
 
 widgets:

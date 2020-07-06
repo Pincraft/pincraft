@@ -11,6 +11,15 @@ extra_balls:
     award_events: meatextraball_award
     max_per_game: 2
 
+#LOOP SEQUENCE SHOTS
+sequence_shots:
+  sshot_loopleft:
+    switch_sequence: s_loopleft, s_loopright
+    sequence_timeout: 2s
+  sshot_loopright:
+    switch_sequence: s_loopright, s_loopleft
+    sequence_timeout: 2s
+
 #Shots
 shots:
   spinner:
@@ -25,7 +34,6 @@ event_player:
   #BALL STARTING EVENTS
   mode_base_started:
     outlanegate_close
-    recalculate_worldjackpot
     # show_ball_count
     # show_player_score
     # show_debug
@@ -72,8 +80,8 @@ event_player:
   #=========== CONTROLS WHEN WORLDS ARE STARTED ============
   #START WORLD 1
   mode_base_started{current_player.world_id==0}:
-    world1_start
-    #world5_start
+    #world1_start
+    world5_start
     #theend_start
 
   #ENABLE NEXT WORLDS WHEN NETHER MODE RETURNS

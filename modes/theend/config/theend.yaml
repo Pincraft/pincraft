@@ -5,7 +5,6 @@ mode:
     priority: 500
 
 #TODO: Return to Travel State if awarded but ball drains
-#TODO: Ensure all balls are ejected to trough when ball drains
 
 show_player:
   mode_theend_started:  #Setup GI Light Show
@@ -51,27 +50,17 @@ state_machines:
         target: state_travel
         events: multiball_endmb_ended
 
-sequence_shots:
+
+
+shots:
   shot_victoryloopleft:
-    switch_sequence: s_loopleft, s_loopright
-    sequence_timeout: 2s
+    hit_events: sshot_loopleft_hit
     enable_events: state_victory_started
     disable_events: state_victory_stopped
   shot_victoryloopright:
-    switch_sequence: s_loopright, s_loopleft
-    sequence_timeout: 2s
+    hit_events: sshot_loopright_hit
     enable_events: state_victory_started
     disable_events: state_victory_stopped
-
-shots:
-  # victoryloopleft_shot:
-  #   switch: s_loopleft
-  #   enable_events: state_victory_started
-  #   disable_events: state_victory_stopped
-  # victoryloopright_shot:
-  #   switch: s_loopright
-  #   enable_events: state_victory_started
-  #   disable_events: state_victory_stopped
 
   enderdragon_shot:
     switch: s_centertarget

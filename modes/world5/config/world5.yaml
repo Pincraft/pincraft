@@ -33,7 +33,7 @@ variable_player:
   mode_world5_started{current_player.world5_setup==0}:  
     #World Settings
     world_id:
-      int: 25
+      int: 5
       action: set
     world_name: 
       string: "World 5"

@@ -24,10 +24,16 @@ variable_player:
       int: 100000
       action: add
 
+shot_profiles:
+  sp_villagerjackpot:
+    states:
+      - name: lit
+        show: "flash"
+
 shots:
   villager_jackpot:
     switch: s_captiveball
-    profile: flash
+    profile: sp_villagerjackpot
     show_tokens:
       leds: l_captivejackpot
     

@@ -490,6 +490,7 @@ event_player:
 
   mode_worldcontroller_started:
     world_itemcheckcomplete
+    recalculate_worldjackpot
     show_player_score
     show_ball_count
     show_tools
@@ -529,7 +530,7 @@ event_player:
     show_bonus_items  #Used for Bonus Display
 
   world_itemcheckcomplete{current_player.world_item1_remaining <= 0 and current_player.world_item2_remaining <= 0 and current_player.world_item3_remaining <= 0 and current_player.world_item4_remaining <= 0}:
-    show_bonus_items
+    world_collected
 
   world_itemcheckcomplete{current_player.world_item1_remaining > 0}:
     collectitem1_enabled

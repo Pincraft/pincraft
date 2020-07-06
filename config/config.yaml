@@ -1757,14 +1757,14 @@ diverters:
     activation_coil: c_flipper_gate_main
     type: pulse
     activation_time: 1s
-    activation_switches: s_loopleft
+    activate_events: sshot_loopleft_hit
     enable_events: diverter_travel_enabled
     disable_events: diverter_travel_disabled
   right_divertergate_hold:
     activation_coil: c_flipper_gate_hold
     type: hold
     activation_time: 2s
-    activation_switches: s_loopleft
+    activate_events: sshot_loopleft_hit
     enable_events: diverter_travel_enabled
     disable_events: diverter_travel_disabled
 
