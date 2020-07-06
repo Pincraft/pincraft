@@ -131,6 +131,11 @@ sound_player:
   nightmultiball_ready:
     night_mode_ready
   
+  collectitem1_hit: collect_tool
+  collectitem2_hit: collect_tool
+  collectitem3_hit: collect_tool
+  collectitem4_hit: collect_tool
+  collectitem5_hit: collect_tool
 
 light_player:
   show_spinner_progress{device.counters.counter_villagermultiball.value>=4 and device.counters.counter_villagermultiball.value<8}: #LEVEL 1000

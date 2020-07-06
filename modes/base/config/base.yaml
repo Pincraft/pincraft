@@ -222,11 +222,6 @@ variable_player:
 
 sound_player:
   skill_success: skillshot_awarded
-  collectitem1_hit: collect_tool
-  collectitem2_hit: collect_tool
-  collectitem3_hit: collect_tool
-  collectitem4_hit: collect_tool
-  collectitem5_hit: collect_tool
   s_rightinlane_active: lane_swish
   s_rightoutlane_active: lane_swish
   s_leftinlane_active: lane_swish

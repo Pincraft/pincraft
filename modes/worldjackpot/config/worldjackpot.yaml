@@ -5,7 +5,7 @@ mode:
     priority: 200
 
 shot_profiles:
-  flashjackpot:
+  sp_flashworldjackpot:
     states:
       - name: lit
         show: "flash"
@@ -13,7 +13,7 @@ shot_profiles:
 shots:
   world_jackpot:
     switch: s_centertarget
-    profile: flashjackpot
+    profile: sp_flashworldjackpot
     show_tokens:
       leds: l_worldtarget
     enable_events: world_jackpot_enable
