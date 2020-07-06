@@ -51,15 +51,27 @@ state_machines:
         target: state_travel
         events: multiball_endmb_ended
 
+sequence_shots:
+  shot_victoryloopleft:
+    switch_sequence: s_loopleft, s_loopright
+    sequence_timeout: 2s
+    enable_events: state_victory_started
+    disable_events: state_victory_stopped
+  shot_victoryloopright:
+    switch_sequence: s_loopright, s_loopleft
+    sequence_timeout: 2s
+    enable_events: state_victory_started
+    disable_events: state_victory_stopped
+
 shots:
-  victoryloopleft_shot:
-    switch: s_loopleft
-    enable_events: state_victory_started
-    disable_events: state_victory_stopped
-  victoryloopright_shot:
-    switch: s_loopright
-    enable_events: state_victory_started
-    disable_events: state_victory_stopped
+  # victoryloopleft_shot:
+  #   switch: s_loopleft
+  #   enable_events: state_victory_started
+  #   disable_events: state_victory_stopped
+  # victoryloopright_shot:
+  #   switch: s_loopright
+  #   enable_events: state_victory_started
+  #   disable_events: state_victory_stopped
 
   enderdragon_shot:
     switch: s_centertarget
@@ -352,9 +364,9 @@ variable_player:
 
 
   #Victory Loop Scoring
-  victoryloopleft_shot_hit: 
+  shot_victoryloopleft_hit: 
     score: 100000 * current_player.multiplier_mb * current_player.sword
-  victoryloopright_shot_hit: 
+  shot_victoryloopright_hit: 
     score: 100000 * current_player.multiplier_mb * current_player.sword
 
   #Dragon Defeated Scoring
