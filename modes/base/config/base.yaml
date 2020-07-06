@@ -25,21 +25,10 @@ event_player:
   #BALL STARTING EVENTS
   mode_base_started:
     outlanegate_close
-    item_collected
     recalculate_worldjackpot
     # show_ball_count
     # show_player_score
     # show_debug
-  
-  collectitem1_hit:
-    item_collected
-  collectitem2_hit:
-    item_collected
-  collectitem4_hit:
-    item_collected
-  collectitem5_hit:
-    item_collected
-
 
   mode_nightcontroller_stopped:
     event_nightorvillagermultiball_ended

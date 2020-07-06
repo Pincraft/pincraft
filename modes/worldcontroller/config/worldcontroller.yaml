@@ -491,6 +491,7 @@ event_player:
     show_extraball
     show_debug
     show_spinner_progress
+    show_bonus_items
 
   worldspinner_hit:
     show_spinner_progress
@@ -508,18 +509,22 @@ event_player:
 
   collectitem1_hit:
     world_itemcheckcomplete
+    show_bonus_items  #Used for Bonus Display
 
   collectitem2_hit:
     world_itemcheckcomplete
+    show_bonus_items  #Used for Bonus Display
 
   collectitem3_hit:
     world_itemcheckcomplete
+    show_bonus_items  #Used for Bonus Display
 
   collectitem4_hit:
     world_itemcheckcomplete
+    show_bonus_items  #Used for Bonus Display
 
   world_itemcheckcomplete{current_player.world_item1_remaining <= 0 and current_player.world_item2_remaining <= 0 and current_player.world_item3_remaining <= 0 and current_player.world_item4_remaining <= 0}:
-    world_collected
+    show_bonus_items
 
   world_itemcheckcomplete{current_player.world_item1_remaining > 0}:
     collectitem1_enabled
