@@ -3,11 +3,6 @@ mode:
     start_events: ball_started
     priority: 100
 
-shot_profiles:
-  flashjackpot:
-    states:
-      - name: lit
-        show: "flash"
 
 #Extra Balls
 extra_balls:
@@ -22,13 +17,7 @@ shots:
     switch: s_spinner
   captiveball:
     switch: s_captiveball
-  world_jackpot:
-    switch: s_centertarget
-    profile: flashjackpot
-    show_tokens:
-      leds: l_worldtarget
-    enable_events: world_jackpot_enable
-    disable_events: world_jackpot_disable
+ 
  
   # Collect Item Special moved to Extra Ball Mode
 
@@ -60,21 +49,7 @@ event_player:
     event_nightorvillagermultiball_ended
 
 
-  #RECALCULATE WORLD JACKPOT
-  player_world_jackpot_base:
-    recalculate_worldjackpot
-  player_world_jackpot_items:
-    recalculate_worldjackpot
-  player_world_jackpot_worlds:
-    recalculate_worldjackpot
-  player_multiplier_mb:
-    recalculate_worldjackpot
-  world_jackpot_hit:
-    recalculate_worldjackpot
-  recalculate_worldjackpot{current_player.world_jackpot < 100000}:
-    world_jackpot_disable
-  recalculate_worldjackpot{current_player.world_jackpot > 100000}:
-    world_jackpot_enable
+  
    
   # -- MULTIBALL START LOGIC
 
@@ -197,39 +172,12 @@ variable_player:
     bonus_items:  #RESET BONUS COUNT ON END OF EACH BALL
       int: 0
       action: set
-    world_jackpot_worlds:  #RESET WORLDS TRAVELED
-      int: 1
-      action: set
-    world_jackpot_base:  #RESET WORLD JACKPOT BASE
-      int: 10000
-      action: set
-    world_jackpot_items:  #RESET WORLD JACKPOT ITEMS
-      int: 0
-      action: set
     travel_enabled:
       int: 0
       action: set
 
   stronghold_ready:
     travel_enabled:
-      int: 1
-      action: set
-
-  #WORLD JACKPOT
-  recalculate_worldjackpot:
-    world_jackpot:
-      int: current_player.world_jackpot_base * current_player.world_jackpot_items * current_player.world_jackpot_worlds * current_player.sword
-      action: set
-
-  world_jackpot_hit:
-    score: current_player.world_jackpot
-    world_jackpot_base:
-      int: 10000
-      action: set
-    world_jackpot_worlds:
-      int: 1
-      action: set
-    world_jackpot_items:
       int: 1
       action: set
 
@@ -243,7 +191,7 @@ variable_player:
       int: 2
       action: set
 
-  multiball_nethermb_ended: #VILLAGER MULTIBALL ENDED
+  multiball_nethermb_ended: #NETHER MULTIBALL ENDED
     world_jackpot_worlds: 1  #FOR WORLD JACKPOT / INCREASE WORLDS TRAVELED
     multiplier_mb:
       int: 1
@@ -252,9 +200,7 @@ variable_player:
       int: 0
       action: set
 
-
-
-
+  #BASE ITEM SCORING
   s_right_outlane_active:
     score: 5000 * current_player.multiplier_mb
   s_rightsling_active:
@@ -287,7 +233,6 @@ variable_player:
 
 sound_player:
   skill_success: skillshot_awarded
-  world_jackpot_hit: world_jackpot
   collectitem1_hit: collect_tool
   collectitem2_hit: collect_tool
   collectitem3_hit: collect_tool
@@ -297,9 +242,7 @@ sound_player:
   s_rightoutlane_active: lane_swish
   s_leftinlane_active: lane_swish
   s_leftoutlane_active: lane_swish
-
-
-      
+     
 show_player:
   mode_base_started:
     show_dropcreepers:  #Drop the Creepers

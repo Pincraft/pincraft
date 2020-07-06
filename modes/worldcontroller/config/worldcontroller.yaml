@@ -10,7 +10,6 @@ shot_profiles:
       - name: lit
         show: on
 
-
 counters:
   counter_villagermultiball:
     count_events: worldspinner_hit
@@ -131,6 +130,7 @@ sound_player:
 
   nightmultiball_ready:
     night_mode_ready
+  
 
 light_player:
   show_spinner_progress{device.counters.counter_villagermultiball.value>=4 and device.counters.counter_villagermultiball.value<8}: #LEVEL 1000
@@ -195,6 +195,7 @@ light_player:
     lactionbar: off
 
 
+
 variable_player:
 
   #RESET VARIABLES
@@ -220,7 +221,7 @@ variable_player:
     score: 4000 * current_player.multiplier_mb
     world_jackpot_base: 1000
 
-
+ 
 
   #MULTIBALL VARIABLES
 

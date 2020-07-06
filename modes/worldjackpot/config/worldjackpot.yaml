@@ -1,0 +1,70 @@
+#config_version=5
+mode:
+    start_events:  mode_world1_starting, mode_world2_starting, mode_world3_starting, mode_world4_starting, mode_world5_starting
+    stop_events:  mode_world1_stopped, mode_world2_stopped, mode_world3_stopped, mode_world4_stopped, mode_world5_stopped
+    priority: 200
+
+shot_profiles:
+  flashjackpot:
+    states:
+      - name: lit
+        show: "flash"
+
+shots:
+  world_jackpot:
+    switch: s_centertarget
+    profile: flashjackpot
+    show_tokens:
+      leds: l_worldtarget
+    enable_events: world_jackpot_enable
+    disable_events: world_jackpot_disable
+
+variable_player:
+ #WORLD JACKPOT
+  mode_worldjackpot_started:
+    world_jackpot_worlds:  #RESET WORLDS TRAVELED
+      int: 1
+      action: set
+    world_jackpot_base:  #RESET WORLD JACKPOT BASE
+      int: 10000
+      action: set
+    world_jackpot_items:  #RESET WORLD JACKPOT ITEMS
+      int: 0
+      action: set
+
+  recalculate_worldjackpot:
+    world_jackpot:
+      int: current_player.world_jackpot_base * current_player.world_jackpot_items * current_player.world_jackpot_worlds * current_player.sword * current_player.multiplier_mb
+      action: set
+
+  world_jackpot_hit:
+    score: current_player.world_jackpot
+    world_jackpot_base:
+      int: 10000
+      action: set
+    world_jackpot_worlds:
+      int: 1
+      action: set
+    world_jackpot_items:
+      int: 1
+      action: set
+
+event_player:
+  #RECALCULATE WORLD JACKPOT
+  player_world_jackpot_base:
+    recalculate_worldjackpot
+  player_world_jackpot_items:
+    recalculate_worldjackpot
+  player_world_jackpot_worlds:
+    recalculate_worldjackpot
+  player_multiplier_mb:
+    recalculate_worldjackpot
+  world_jackpot_hit:
+    recalculate_worldjackpot
+  recalculate_worldjackpot{current_player.world_jackpot < 100000}:
+    world_jackpot_disable
+  recalculate_worldjackpot{current_player.world_jackpot > 100000}:
+    world_jackpot_enable
+
+sound_player:
+  world_jackpot_hit: world_jackpot
