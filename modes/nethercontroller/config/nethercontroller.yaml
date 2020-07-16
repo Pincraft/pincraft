@@ -1,0 +1,49 @@
+#config_version=5
+mode:
+    start_events: nether_started
+    stop_events: multiball_nethermb_ended
+    priority: 1000
+
+event_player:
+  #COMPLETE WORLDS WHEN NETHER MODE STARTS
+  mode_nethercontroller_started{current_player.world_id==1}:
+    world1_completed
+  mode_nethercontroller_started{current_player.world_id==2}:
+    world2_completed
+  mode_nethercontroller_started{current_player.world_id==3}:
+    world3_completed
+  mode_nethercontroller_started{current_player.world_id==4}:
+    world4_completed
+  mode_nethercontroller_started{current_player.world_id==5}:
+    world5_completed
+
+  #START NETHER MULTIBALL ON PLUNGE
+  sw_playfield_active_active{device.multiball_locks.netherlock.locked_balls==1 and device.multiball_locks.netherlock.enabled}:
+    nethermode_start
+
+  multiball_nethermb_started: #NETHER MULTIBALL STARTED
+    multiplier_mb:
+      int: 2
+      action: set
+
+  multiball_nethermb_ended: #NETHER MULTIBALL ENDED
+    multiplier_mb:
+      int: 1
+      action: set
+
+multiballs:
+  nethermb:
+    ball_count: 2
+    ball_locks: bd_scoop
+    enable_events: mode_nethercontroller_started
+    start_events: nethermode_start
+    shoot_again: 0s
+
+multiball_locks:
+  netherlock:
+    balls_to_lock: 1
+    locked_ball_counting_strategy: physical_only
+    lock_devices: bd_scoop 
+    enable_events: mode_nethercontroller_started
+    disable_events: nethermode_start, nethermode_disable, multiball_villagermb_started, multiball_nightmb_started, multiball_nightvillagermb_started, multiball_lock_nightvillagerlock1_full
+  

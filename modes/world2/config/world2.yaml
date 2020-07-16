@@ -26,7 +26,6 @@ sound_player:
       action: play
       loops: -1
       mode_end_action: stop
-  world2_collected: travel_ready  
   
 variable_player:
   #setup environment variables
@@ -91,11 +90,12 @@ variable_player:
 
 widget_player:
   mode_world2_started:
-    widget_screenbackground:
+    widget_videobackground:
       action: update
       slide: world_slide
       widget_settings:
-        image: world2_background
+        video: video_world2_overview
+        auto_play: true
     widget_item1icon:
       action: update
       slide: world_slide

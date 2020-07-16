@@ -11,14 +11,7 @@ extra_balls:
     award_events: meatextraball_award
     max_per_game: 2
 
-#LOOP SEQUENCE SHOTS
-sequence_shots:
-  sshot_loopleft:
-    switch_sequence: s_loopleft, s_loopright
-    sequence_timeout: 2s
-  sshot_loopright:
-    switch_sequence: s_loopright, s_loopleft
-    sequence_timeout: 2s
+
 
 #Shots
 shots:
@@ -44,9 +37,7 @@ event_player:
     event_nightorvillagermultiball_ended
   mode_nightvillagercontroller_stopped:
     event_nightorvillagermultiball_ended
-
-
-  
+ 
    
   # -- MULTIBALL START LOGIC
 
@@ -54,28 +45,6 @@ event_player:
   sw_playfield_active_active{device.multiball_locks.strongholdlock.locked_balls==1 and device.multiball_locks.strongholdlock.enabled}:
     stronghold_start
 
-
-  
-  #START NETHER MULTIBALL ON PLUNGE
-  sw_playfield_active_active{device.multiball_locks.netherlock.locked_balls==1 and device.multiball_locks.netherlock.enabled}:
-    nethermode_start
-
-  #COMPLETE WORLDS WHEN NETHER MODE STARTS
-  multiball_lock_netherlock_locked_ball{current_player.world_id==1}:
-    world1_completed
-  multiball_lock_netherlock_locked_ball{current_player.world_id==2}:
-    world2_completed
-  multiball_lock_netherlock_locked_ball{current_player.world_id==3}:
-    world3_completed
-  multiball_lock_netherlock_locked_ball{current_player.world_id==4}:
-    world4_completed
-  multiball_lock_strongholdlock_locked_ball{current_player.world_id==5}:
-    world5_completed
-    #stronghold_start
-
-
-
-  
 
   #=========== CONTROLS WHEN WORLDS ARE STARTED ============
   #START WORLD 1
@@ -138,13 +107,7 @@ multiball_locks:
     lock_devices: bd_scoop 
     enable_events: stronghold_ready
     disable_events: stronghold_start, stronghold_disable
-  netherlock:
-    balls_to_lock: 1
-    locked_ball_counting_strategy: physical_only
-    lock_devices: bd_scoop 
-    enable_events: nethermode_ready
-    disable_events: nethermode_start, nethermode_disable, multiball_villagermb_started, multiball_nightmb_started, multiball_nightvillagermb_started, multiball_lock_nightvillagerlock1_full
-  
+
 multiballs:
   strongholdmb:
     ball_count: 2
@@ -152,12 +115,7 @@ multiballs:
     enable_events: stronghold_ready
     start_events: stronghold_start
     shoot_again: 0s
-  nethermb:
-    ball_count: 2
-    ball_locks: bd_scoop
-    enable_events: nethermode_ready
-    start_events: nethermode_start
-    shoot_again: 0s
+
 
 #Player Variables
 variable_player:
@@ -167,33 +125,6 @@ variable_player:
       int: 1
       action: set
     bonus_items:  #RESET BONUS COUNT ON END OF EACH BALL
-      int: 0
-      action: set
-    travel_enabled:
-      int: 0
-      action: set
-
-  stronghold_ready:
-    travel_enabled:
-      int: 1
-      action: set
-
-  nethermode_ready:
-    travel_enabled:
-      int: 1
-      action: set
-
-  multiball_nethermb_started: #NETHER MULTIBALL STARTED
-    multiplier_mb:
-      int: 2
-      action: set
-
-  multiball_nethermb_ended: #NETHER MULTIBALL ENDED
-    world_jackpot_worlds: 1  #FOR WORLD JACKPOT / INCREASE WORLDS TRAVELED
-    multiplier_mb:
-      int: 1
-      action: set
-    travel_enabled:
       int: 0
       action: set
 
@@ -250,8 +181,6 @@ light_player:
     lgi:
       color: white
     lfeature: off
-  
-
 
 #This is for achieving the worlds
 achievements:
@@ -406,7 +335,7 @@ widgets:
       anchor_x: left
       anchor_y: top
     - type: text        #Travel and Diverter
-      text: TRAVEL | Diverter=(player|diverter_state) / Ready=(player|travel_enabled)
+      text: DIVERTER | Diverter=(player|diverter_state)
       number_grouping: true
       min_digits: 2
       font_name: ARLRDBD

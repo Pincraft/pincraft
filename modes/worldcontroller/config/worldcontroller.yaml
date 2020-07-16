@@ -447,13 +447,13 @@ widgets:
       x: left + 1171
       z: 100
 
-  # widget_videobackground:
-  #   - type: video
-  #     video: world1_overview
-  #     auto_play: true
-  #     volume: 0
-  #     end_behavior: loop
-  #     z: 6
+  widget_videobackground:
+    - type: video
+      video: world1_overview
+      auto_play: false
+      volume: 0
+      end_behavior: loop
+      z: 6
 
 
 

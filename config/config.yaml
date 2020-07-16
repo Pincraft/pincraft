@@ -1871,7 +1871,8 @@ sounds:
     file: WorldJackpot.wav
     volume: 1
     track: voice
-  travel_ready:
+  #-- Travel Ready
+  voice_travel_ready:
     file: TravelReady.wav
     volume: 1
     track: voice
@@ -2425,10 +2426,6 @@ player_vars:
     initial_value: 0
     value_type: int
 
-  travel_enabled:
-    initial_value: 0
-    value_type: int
-
   #Stronghold Variables
   stronghold_progress:
     initial_value: 0
@@ -2455,6 +2452,15 @@ slides:
           
 slide_player:
   init_done: welcome_slide
+
+#LOOP SEQUENCE SHOTS
+sequence_shots:
+  sshot_loopleft:
+    switch_sequence: s_loopleft, s_loopright
+    sequence_timeout: 2s
+  sshot_loopright:
+    switch_sequence: s_loopright, s_loopleft
+    sequence_timeout: 2s
  
 # MODES CONFIGURATION
 #--------------------------------------------
@@ -2477,6 +2483,7 @@ modes:
   - world4
   - world5
   - theend
+  - nethercontroller
   - nether
   - netherready
   - stronghold

@@ -6,6 +6,7 @@ mode:
 
 #play hurry up sound effect
 
+
 track_player:
   mode_nether_started:
     music:
@@ -262,11 +263,12 @@ slide_player:
 
 widget_player:
   mode_nether_started:
-    widget_screenbackground:
-      action: add
-      slide: nether_slide
+    widget_videobackground:
+      action: update
+      slide: world_slide
       widget_settings:
-        image: nether_background
+        video: video_nether_overview
+        auto_play: true
   
   #SHOW LARGE SWORD
   mode_nether_started{current_player.sword==1}:

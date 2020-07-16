@@ -52,7 +52,7 @@ class Base(Mode):
             else:
                 self.player.diverter_state="theendunknown"
         #WORLD TRAVEL
-        elif self.player.travel_enabled==1:
+        elif self.machine.mode_controller.is_active("travelready"):
             self.player.diverter_state="worldtravel"
         #NIGHT AND VILLAGER MULTIBALLS
         elif self.player.villagermb_ready == 1 and self.player.nightmb_ready==1:

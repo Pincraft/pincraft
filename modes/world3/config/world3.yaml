@@ -26,7 +26,6 @@ sound_player:
       action: play
       loops: -1
       mode_end_action: stop
-  world3_collected: travel_ready
 
 variable_player:
   #setup environment variables
@@ -91,16 +90,12 @@ variable_player:
 
 widget_player:
   mode_world3_started:
-    widget_screenbackground:
+    widget_videobackground:
       action: update
       slide: world_slide
       widget_settings:
-        image: world3_background
-    # widget_videobackground:
-    #   action: add
-    #   slide: world_slide
-    #   widget_settings:
-    #     video: world3_overview
+        video: video_world3_overview
+        auto_play: true
     widget_item1icon:
       action: update
       slide: world_slide
