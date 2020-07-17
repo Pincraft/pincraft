@@ -1,0 +1,22 @@
+#show_version=5
+- duration: 1s
+  sounds: block_axe
+  lights:
+    gi_drop2: 
+      color: green
+  widgets:
+    widget_item2collected:
+      action: add
+      key: world4_item2
+    widget_item2collected_image:
+      action: add
+      key: world4_item2_image
+      widget_settings:
+        image: MossyCobblestone_Large
+- duration: 500ms
+  lights:
+    gi_drop2:
+      color: white
+      fade: 500ms
+
+

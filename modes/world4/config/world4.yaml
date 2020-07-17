@@ -9,6 +9,18 @@ show_player:
     show_world4gi:
       loops: -1
       speed: 1
+  collectitem1_hit: 
+    show_itemcollected_world4item1:
+      loops: 0
+  collectitem2_hit:
+    show_itemcollected_world4item2:
+      loops: 0
+  collectitem3_hit:
+    show_itemcollected_world4item3:
+      loops: 0
+  collectitem4_hit:
+    show_itemcollected_world4item4:
+      loops: 0
 
 light_player:
   mode_world4_started:
@@ -43,7 +55,7 @@ variable_player:
 
     #Item 1 Settings
     world_item1_name:
-      string: "Leaves"
+      string: "Podzol"
       action: set 
     world_item1_color:
       string: "GREEN"
@@ -54,7 +66,7 @@ variable_player:
 
     #Item 2 Settings
     world_item2_name:
-      string: "Stone"
+      string: "Mossy Cobble"
       action: set 
     world_item2_color:
       string: "GRAY"
@@ -65,7 +77,7 @@ variable_player:
 
     #Item 3 Settings
     world_item3_name:
-      string: "Ore"
+      string: "Emerald Ore"
       action: set 
     world_item3_color:
       string: "BROWN"
@@ -76,7 +88,7 @@ variable_player:
 
     #Item 4 Settings
     world_item4_name:
-      string: "Wood"
+      string: "Jungle Log"
       action: set 
     world_item4_color:
       string: "SLATEGRAY"
@@ -88,14 +100,19 @@ variable_player:
     #Mark World as Setup
     world4_setup: 1
 
+widgets:
+  widget_world4videobackground:
+    - type: video
+      video: video_world4_overview
+      auto_play: true
+      end_behavior: loop
+      z: 6
+
 widget_player:
   mode_world4_started:
-    widget_videobackground:
-      action: update
+    widget_world4videobackground:
+      action: add
       slide: world_slide
-      widget_settings:
-        video: video_world4_overview
-        auto_play: true
     widget_item1icon:
       action: update
       slide: world_slide

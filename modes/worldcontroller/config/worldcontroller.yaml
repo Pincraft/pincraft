@@ -130,12 +130,6 @@ sound_player:
 
   nightmultiball_ready:
     night_mode_ready
-  
-  collectitem1_hit: collect_tool
-  collectitem2_hit: collect_tool
-  collectitem3_hit: collect_tool
-  collectitem4_hit: collect_tool
-  collectitem5_hit: collect_tool
 
 light_player:
   show_spinner_progress{device.counters.counter_villagermultiball.value>=4 and device.counters.counter_villagermultiball.value<8}: #LEVEL 1000
@@ -364,8 +358,115 @@ variable_player:
 
   #TODO: Bug - Will receive move items and points than available items 
 
-
 widgets:
+  widget_item1collected:  #ITEM 1 COLLECTED DIALOG
+    - type: text       
+      text: (player|shovel)x (player|world_item1_name) Collected
+      font_name: ARLRDBD
+      font_size: 36
+      color: white
+      y: center + 50
+      x: center + 50
+      z: 105
+      anchor_x: center
+      anchor_y: center    
+    - type: image       
+      image: popup_background
+      anchor_x: center
+      anchor_y: center
+      y: center + 50
+      x: center
+      z: 100
+  widget_item1collected_image:
+    - type: image       
+      image: Coal_Large
+      anchor_x: center
+      anchor_y: center
+      y: center + 50
+      x: center - 300
+      z: 105
+
+  widget_item2collected:  #ITEM 2 COLLECTED DIALOG
+    - type: text       
+      text: (player|pickaxe)x (player|world_item2_name) Collected
+      font_name: ARLRDBD
+      font_size: 36
+      color: white
+      y: center + 50
+      x: center + 50
+      z: 115
+      anchor_x: center
+      anchor_y: center    
+    - type: image       
+      image: popup_background
+      anchor_x: center
+      anchor_y: center
+      y: center + 50
+      x: center
+      z: 110
+  widget_item2collected_image:
+    - type: image       
+      image: Coal_Large
+      anchor_x: center
+      anchor_y: center
+      y: center + 50
+      x: center - 300
+      z: 115
+
+  widget_item3collected:  #ITEM 3 COLLECTED DIALOG
+    - type: text       
+      text: (player|pickaxe)x (player|world_item3_name) Collected
+      font_name: ARLRDBD
+      font_size: 36
+      color: white
+      y: center + 50
+      x: center + 50
+      z: 125
+      anchor_x: center
+      anchor_y: center    
+    - type: image       
+      image: popup_background
+      anchor_x: center
+      anchor_y: center
+      y: center + 50
+      x: center
+      z: 120
+  widget_item3collected_image:
+    - type: image       
+      image: Coal_Large
+      anchor_x: center
+      anchor_y: center
+      y: center + 50
+      x: center - 300
+      z: 125
+
+  widget_item4collected:  #ITEM 4 COLLECTED DIALOG
+    - type: text       
+      text: (player|axe)x (player|world_item4_name) Collected
+      font_name: ARLRDBD
+      font_size: 36
+      color: white
+      y: center + 50
+      x: center + 50
+      z: 135
+      anchor_x: center
+      anchor_y: center    
+    - type: image       
+      image: popup_background
+      anchor_x: center
+      anchor_y: center
+      y: center + 50
+      x: center
+      z: 130
+  widget_item4collected_image:
+    - type: image       
+      image: Coal_Large
+      anchor_x: center
+      anchor_y: center
+      y: center + 50
+      x: center - 300
+      z: 135
+
   widget_item1needed:
     - type: text        #ITEM 1 NEEDED
       text: (player|world_item1_remaining)
@@ -447,24 +548,11 @@ widgets:
       x: left + 1171
       z: 100
 
-  widget_videobackground:
-    - type: video
-      video: world1_overview
-      auto_play: false
-      volume: 0
-      end_behavior: loop
-      z: 6
-
-
-
 slides:
   world_slide:
     widgets:
-      - type: text
-        font_name: lazer84
-        font_size: 70
-        text: "Pincraft\nLoading"
-        z: 0
+      - type: image
+        image: Pincraft_Logo_Icon
 
 slide_player:
   mode_worldcontroller_started:
@@ -483,7 +571,6 @@ widget_player:
     widget_item4needed:
       slide: world_slide
 
-
 event_player:
   mode_base_started:
     world_itemcheckcomplete
@@ -495,9 +582,10 @@ event_player:
     show_ball_count
     show_tools
     show_extraball
-    show_debug
     show_spinner_progress
     show_bonus_items
+    show_worldjackpot
+    #show_debug
 
   worldspinner_hit:
     show_spinner_progress

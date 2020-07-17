@@ -2091,6 +2091,42 @@ sounds:
     file: enderdragon_end.ogg
     volume: 1
     track: sfx
+  
+  #SFX: Blocks
+  block_dig1:
+    file: dig1.ogg
+    volume: 1
+    track: sfx
+  block_dig2:
+    file: dig2.ogg
+    volume: 1
+    track: sfx
+  block_dig3:
+    file: dig3.ogg
+    volume: 1
+    track: sfx
+  block_dig4:
+    file: dig4.ogg
+    volume: 1
+    track: sfx
+
+  block_axe1:
+    file: axe1.ogg
+    volume: 1
+    track: sfx
+  block_axe2:
+    file: axe2.ogg
+    volume: 1
+    track: sfx
+  block_axe3:
+    file: axe3.ogg
+    volume: 1
+    track: sfx
+  block_axe4:
+    file: axe4.ogg
+    volume: 1
+    track: sfx
+
 
   #MUSIC TRACKS
   basemode_music:
@@ -2240,6 +2276,22 @@ sound_pools:
       - enderdragon_hit2
       - enderdragon_hit3
       - enderdragon_hit4
+  block_dig:
+    type: random_force_all
+    track: sfx
+    sounds:
+      - block_dig1
+      - block_dig2
+      - block_dig3
+      - block_dig4
+  block_axe:
+    type: random_force_all
+    track: sfx
+    sounds:
+      - block_axe1
+      - block_axe2
+      - block_axe3
+      - block_axe4
 
 # PLAYER VARIABLES
 #--------------------------------------------
@@ -2445,10 +2497,8 @@ player_vars:
 slides:
   welcome_slide:
     widgets:
-      - type: text
-        font_name: lazer84
-        font_size: 70
-        text: "Pincraft\nLoading"
+      - type: image
+        image: Pincraft_Logo_Icon
           
 slide_player:
   init_done: welcome_slide

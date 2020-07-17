@@ -1,0 +1,22 @@
+#show_version=5
+- duration: 1s
+  sounds: block_axe
+  lights:
+    gi_drop3: 
+      color: brown
+  widgets:
+    widget_item4collected:
+      action: add
+      key: world3_item4
+    widget_item4collected_image:
+      action: add
+      key: world3_item4_image
+      widget_settings:
+        image: WoodSpruce_Large
+- duration: 500ms
+  lights:
+    gi_drop2:
+      color: white
+      fade: 500ms
+
+

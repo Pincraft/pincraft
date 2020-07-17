@@ -1,0 +1,9 @@
+#show_version=5
+- duration: 3s
+  sounds: world_jackpot
+  widgets:
+    widget_worldjackpot_collected:
+      action: add
+
+
+

@@ -88,14 +88,19 @@ variable_player:
     #Mark World as Setup
     world5_setup: 1
 
+widgets:
+  widget_world5videobackground:
+    - type: video
+      video: video_world5_overview
+      auto_play: true
+      end_behavior: loop
+      z: 6
+
 widget_player:
   mode_world5_started:
-    widget_videobackground:
-      action: update
+    widget_world5videobackground:
+      action: add
       slide: world_slide
-      widget_settings:
-        video: video_world5_overview
-        auto_play: true
     widget_item1icon:
       action: update
       slide: world_slide

@@ -1,0 +1,22 @@
+#show_version=5
+- duration: 1s
+  sounds: block_axe
+  lights:
+    gi_drop3: 
+      color: purple
+  widgets:
+    widget_item3collected:
+      action: add
+      key: world1_item3
+    widget_item3collected_image:
+      action: add
+      key: world1_item3_image
+      widget_settings:
+        image: IronOre_Large
+- duration: 500ms
+  lights:
+    gi_drop2:
+      color: white
+      fade: 500ms
+
+

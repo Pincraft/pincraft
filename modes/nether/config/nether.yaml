@@ -247,6 +247,12 @@ widgets:
       y: bottom
       x: right
       z: 10
+  widget_nethervideobackground:
+    - type: video
+      video: video_nether_overview
+      auto_play: true
+      end_behavior: loop
+      z: 6
 
 slides:
   nether_slide:
@@ -263,12 +269,9 @@ slide_player:
 
 widget_player:
   mode_nether_started:
-    widget_videobackground:
-      action: update
-      slide: world_slide
-      widget_settings:
-        video: video_nether_overview
-        auto_play: true
+    widget_nethervideobackground:
+      action: add
+      slide: nether_slide
   
   #SHOW LARGE SWORD
   mode_nether_started{current_player.sword==1}:

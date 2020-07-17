@@ -1,0 +1,139 @@
+#show_version=5
+- duration: 200ms
+  lights:
+    l_worldtarget: 
+      color: white
+    l_world5:
+      color: white
+    l_world4:
+      color: white
+    lactionbar_chase1: white
+    
+- duration: 200ms
+  lights:
+    l_worldtarget: 
+      color: off
+    l_world5:
+      color: off
+    l_world4:
+      color: off
+    l_world6:
+      color: white
+    l_world3:
+      color: white
+    lactionbar_chase1: off
+    lactionbar_chase2: white
+
+- duration: 200ms
+  lights:
+    l_worldtarget: 
+      color: white
+    l_world6:
+      color: off
+    l_world3:
+      color: off
+    l_world1:
+      color: white
+    l_world2:
+      color: white
+    lactionbar_chase2: off
+    lactionbar_chase3: white
+
+- duration: 200ms
+  lights:
+    l_worldtarget: 
+      color: off
+    l_world1:
+      color: off
+    l_world2:
+      color: off
+    l_world6:
+      color: white
+    l_world3:
+      color: white   
+    lactionbar_chase3: off
+    lactionbar_chase4: white
+- duration: 200ms
+  lights:
+    l_worldtarget: 
+      color: white
+    l_world6:
+      color: off
+    l_world3:
+      color: off   
+    l_world5:
+      color: white
+    l_world4:
+      color: white   
+    lactionbar_chase3: white
+    lactionbar_chase4: white
+- duration: 200ms
+  lights:
+    l_worldtarget: 
+      color: off
+    l_world5:
+      color: white
+    l_world4:
+      color: white 
+    l_world6:
+      color: white
+    l_world3:
+      color: white  
+    lactionbar_chase2: white
+    lactionbar_chase3: white
+    lactionbar_chase4: white
+- duration: 200ms
+  lights:
+    l_worldtarget: 
+      color: white
+    l_world1:
+      color: white
+    l_world2:
+      color: white
+    l_world5:
+      color: white
+    l_world4:
+      color: white 
+    l_world6:
+      color: white
+    l_world3:
+      color: white 
+    lactionbar_chase1: white
+    lactionbar_chase2: white
+    lactionbar_chase3: white
+    lactionbar_chase4: white
+- duration: 200ms
+  lights:
+    l_worldtarget: 
+      color: off
+      fade: 200ms
+    l_world1:
+      color: off
+      fade: 200ms
+    l_world2:
+      color: off
+      fade: 200ms
+    l_world5:
+      color: off
+      fade: 200ms
+    l_world4:
+      color: off
+      fade: 200ms
+    l_world6:
+      color: off
+      fade: 200ms
+    l_world3:
+      color: off
+      fade: 200ms   
+    lactionbar_chase1: 
+      color: off
+      fade: 200ms 
+    lactionbar_chase2: 
+      color: off
+      fade: 200ms 
+    lactionbar_chase3:
+      color: off
+      fade: 200ms 
+    lactionbar_chase4:
+      color: off
+      fade: 200ms 

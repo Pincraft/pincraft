@@ -9,6 +9,18 @@ show_player:
     show_world2gi:
       loops: -1
       speed: 1
+  collectitem1_hit: 
+    show_itemcollected_world2item1:
+      loops: 0
+  collectitem2_hit:
+    show_itemcollected_world2item2:
+      loops: 0
+  collectitem3_hit:
+    show_itemcollected_world2item3:
+      loops: 0
+  collectitem4_hit:
+    show_itemcollected_world2item4:
+      loops: 0
 
 light_player:
   mode_world2_started:
@@ -54,7 +66,7 @@ variable_player:
 
     #Item 2 Settings
     world_item2_name:
-      string: "Stone"
+      string: "Sand Stone"
       action: set 
     world_item2_color:
       string: "GRAY"
@@ -65,7 +77,7 @@ variable_player:
 
     #Item 3 Settings
     world_item3_name:
-      string: "Ore"
+      string: "Coal Ore"
       action: set 
     world_item3_color:
       string: "BROWN"
@@ -76,7 +88,7 @@ variable_player:
 
     #Item 4 Settings
     world_item4_name:
-      string: "Wood"
+      string: "Arcadia Log"
       action: set 
     world_item4_color:
       string: "SLATEGRAY"
@@ -88,14 +100,20 @@ variable_player:
     #Mark World as Setup
     world2_setup: 1
 
+
+widgets:
+  widget_world2videobackground:
+    - type: video
+      video: video_world2_overview
+      auto_play: true
+      end_behavior: loop
+      z: 6
+
 widget_player:
   mode_world2_started:
-    widget_videobackground:
-      action: update
+    widget_world2videobackground:
+      action: add
       slide: world_slide
-      widget_settings:
-        video: video_world2_overview
-        auto_play: true
     widget_item1icon:
       action: update
       slide: world_slide

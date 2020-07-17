@@ -21,7 +21,7 @@ shots:
 
 variable_player:
  #WORLD JACKPOT
-  mode_worldjackpot_started:
+  ball_ending:
     world_jackpot_worlds:  #RESET WORLDS TRAVELED
       int: 1
       action: set
@@ -34,11 +34,11 @@ variable_player:
 
   recalculate_worldjackpot:
     world_jackpot:
-      int: current_player.world_jackpot_base * current_player.world_jackpot_items * current_player.world_jackpot_worlds * current_player.sword * current_player.multiplier_mb
+      int: current_player.world_jackpot_base * current_player.world_jackpot_items * current_player.world_jackpot_worlds * current_player.sword
       action: set
 
-  world_jackpot_hit:
-    score: current_player.world_jackpot
+  world_jackpot_collect:
+    score: current_player.world_jackpot * current_player.multiplier_mb
     world_jackpot_base:
       int: 10000
       action: set
@@ -48,6 +48,82 @@ variable_player:
     world_jackpot_items:
       int: 1
       action: set
+
+widget_player:
+  show_worldjackpot:
+    widget_worldjackpot:
+      action: add
+
+show_player:
+  world_jackpot_hit:
+    show_worldjackpot_collected:
+      loops: 0
+      speed: 1
+      events_when_completed: world_jackpot_collect
+    show_worldjackpot_lightshow:
+      loops: 0
+      speed: 1
+
+widgets:
+  widget_worldjackpot_collected:  #WORLD JACKPOT
+    - type: text       
+      text: WORLD JACKPOT COLLECTED
+      font_name: ARLRDBD
+      font_size: 36
+      color: white
+      y: center + 75
+      x: center + 75
+      z: 205
+      anchor_x: center
+      anchor_y: center   
+    - type: text       
+      text: (player|world_jackpot)
+      number_grouping: true
+      font_name: ARLRDBD
+      font_size: 52
+      color: white
+      y: center + 25
+      x: center + 50
+      z: 205
+      anchor_x: center
+      anchor_y: center     
+    - type: image       
+      image: popup_background
+      anchor_x: center
+      anchor_y: center
+      y: center + 50
+      x: center
+      z: 200
+    - type: image       
+      image: chest_large
+      anchor_x: center
+      anchor_y: center
+      y: center + 50
+      x: center - 300
+      z: 205
+
+
+  widget_worldjackpot:
+    - type: image        #ITEM BACKGROUND
+      image: jackpot_world
+      anchor_x: center
+      anchor_y: center
+      y: bottom+100
+      x: center+35
+      z: 15    
+    - type: text        #PLAYER 1 SCORE
+      text: (player|world_jackpot)
+      number_grouping: true
+      min_digits: 2
+      font_name: ARLRDBD
+      font_size: 24
+      y: bottom+75
+      x: center+35
+      z: 100
+      anchor_x: center
+      anchor_y: center
+
+  
 
 event_player:
   #RECALCULATE WORLD JACKPOT
@@ -59,12 +135,10 @@ event_player:
     recalculate_worldjackpot
   player_multiplier_mb:
     recalculate_worldjackpot
-  world_jackpot_hit:
+  world_jackpot_collect:
     recalculate_worldjackpot
   recalculate_worldjackpot{current_player.world_jackpot < 100000}:
     world_jackpot_disable
   recalculate_worldjackpot{current_player.world_jackpot > 100000}:
     world_jackpot_enable
 
-sound_player:
-  world_jackpot_hit: world_jackpot

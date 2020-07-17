@@ -9,6 +9,18 @@ show_player:
     show_world3gi:
       loops: -1
       speed: 1
+  collectitem1_hit: 
+    show_itemcollected_world3item1:
+      loops: 0
+  collectitem2_hit:
+    show_itemcollected_world3item2:
+      loops: 0
+  collectitem3_hit:
+    show_itemcollected_world3item3:
+      loops: 0
+  collectitem4_hit:
+    show_itemcollected_world3item4:
+      loops: 0
 
 light_player:
   mode_world3_started:
@@ -43,7 +55,7 @@ variable_player:
 
     #Item 1 Settings
     world_item1_name:
-      string: "Ice"
+      string: "Snow"
       action: set 
     world_item1_color:
       string: "BLUE"
@@ -54,10 +66,10 @@ variable_player:
 
     #Item 2 Settings
     world_item2_name:
-      string: "Stone"
+      string: "Cobble Stone"
       action: set 
     world_item2_color:
-      string: "GRAY"
+      string: "BROWN"
       action: set 
     world_item2_remaining:
       int: 9
@@ -65,10 +77,10 @@ variable_player:
 
     #Item 3 Settings
     world_item3_name:
-      string: "Ore"
+      string: "Packed Ice"
       action: set 
     world_item3_color:
-      string: "BROWN"
+      string: "LIGHTBLUE"
       action: set 
     world_item3_remaining:
       int: 9
@@ -76,10 +88,10 @@ variable_player:
 
     #Item 4 Settings
     world_item4_name:
-      string: "Wood"
+      string: "Spruce Log"
       action: set 
     world_item4_color:
-      string: "SLATEGRAY"
+      string: "BROWN"
       action: set 
     world_item4_remaining:
       int: 9
@@ -88,14 +100,19 @@ variable_player:
     #Mark World as Setup
     world3_setup: 1
 
+widgets:
+  widget_world3videobackground:
+    - type: video
+      video: video_world3_overview
+      auto_play: true
+      end_behavior: loop
+      z: 6
+
 widget_player:
   mode_world3_started:
-    widget_videobackground:
-      action: update
+    widget_world3videobackground:
+      action: add
       slide: world_slide
-      widget_settings:
-        video: video_world3_overview
-        auto_play: true
     widget_item1icon:
       action: update
       slide: world_slide
