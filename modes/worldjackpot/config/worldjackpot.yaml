@@ -2,7 +2,7 @@
 mode:
     start_events:  mode_world1_starting, mode_world2_starting, mode_world3_starting, mode_world4_starting, mode_world5_starting
     stop_events:  mode_world1_stopped, mode_world2_stopped, mode_world3_stopped, mode_world4_stopped, mode_world5_stopped
-    priority: 200
+    priority: 500
 
 shot_profiles:
   sp_flashworldjackpot:
