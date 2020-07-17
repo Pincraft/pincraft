@@ -1,7 +1,7 @@
 #config_version=5
 mode:
     start_events: travel_ready, nethermode_ready
-    stop_events: nether_started
+    stop_events: nether_started, stronghold_started
     priority: 2100
     restart_on_next_ball: true
 
@@ -13,8 +13,10 @@ sound_player:
  mode_travelready_started: voice_travel_ready
 
 event_player:
-  shot_travel_hit:
+  shot_travel_hit{current_player.world_id != 5}:
     nether_started
+  shot_travel_hit{current_player.world_id==5}:
+    stronghold_started
 
 
 show_player:
