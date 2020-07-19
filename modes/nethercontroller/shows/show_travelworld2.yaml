@@ -1,0 +1,14 @@
+#show_version=5
+- duration: 6
+  sounds:
+    voice_portal_travel:
+      loops: 0
+  slides:
+    travel_slide:
+      widgets:
+        - type: video
+          video: video_world2_travel
+          auto_play: true
+          end_behavior: stop
+          z: 6
+

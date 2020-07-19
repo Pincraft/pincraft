@@ -1876,6 +1876,15 @@ sounds:
     file: TravelReady.wav
     volume: 1
     track: voice
+  voice_portal_travel:
+    file: PortalTravel.wav
+    volume: 1
+    track: voice
+
+  voice_portal_stronghold:
+    file: PortalStronghold.wav
+    volume: 1
+    track: voice
 
   #-- Extra Ball
   extraball_lit:
@@ -2157,6 +2166,12 @@ sounds:
   world5mode_music:
     file: world5mode.wav
     volume: 0.60
+    loops: -1
+    track: music
+
+  portal_music:
+    file: portal_travel.wav
+    volume: .80
     loops: -1
     track: music
 

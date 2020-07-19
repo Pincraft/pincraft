@@ -1,26 +1,25 @@
 #config_version=5
 mode:
-    start_events: multiball_lock_netherlock_locked_ball
+    start_events: nether_ready
     stop_events: multiball_nethermb_started, ball_ending
     priority: 1000
 
 #play hurry up sound effect
 sound_player:
   mode_netherready_started:
-    heatbeat_music:
+    portal_music:
       action: play
       loops: -1
       track: music
       mode_end_action: stop
-    # night_mode_ready:
-    #   action: play
-    #   loops: 0
-    #   priority: 100
-    #   track: voice
  
 slides:
   netherready_slide:
-    widgets:
+      - type: video
+        video: video_portal
+        auto_play: true
+        end_behavior: loop
+        z: 6      
       - type: text
         font_name: lazer84
         font_size: 70
@@ -28,13 +27,13 @@ slides:
         anchor_x: center
         anchor_y: center
         y: center+75
-        z: 0
+        z: 10
       - type: Text
         text: Plunge The Ball
         anchor_x: center
         anchor_y: center
         y: center-75
-        z: 0
+        z: 10
         font_name: lazer84
         font_size: 70
         animations:

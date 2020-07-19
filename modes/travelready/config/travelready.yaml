@@ -40,9 +40,9 @@ show_player:
     show_travelblinking:    
       loops: -1
       speed: 2
-  balldevice_bd_scoop_ball_eject_attempt{num_attempts==0}:
-    show_travelworld1:
-      loops: 0
-      speed: 1
-      block_queue: true
+  # balldevice_bd_scoop_ball_eject_attempt{num_attempts==0}:
+  #   show_travelworld1:
+  #     loops: 0
+  #     speed: 1
+  #     block_queue: true
 #balldevice_(name)_ball_enter
