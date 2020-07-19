@@ -1,6 +1,6 @@
 events:
   game_ended: 259
-  game_started: 1178
+  game_started: 1182
 player:
   score:
     average: 14021646.797153024
@@ -20,16 +20,16 @@ shots:
   award_extraball: 99
   captiveball: 942
   centertarget: 1541
-  collectitem1: 5384
-  collectitem2: 5299
-  collectitem3: 4120
-  collectitem4: 5057
+  collectitem1: 5418
+  collectitem2: 5334
+  collectitem3: 4157
+  collectitem4: 5092
   collectitem5: 1881
-  collectitem_special: 2147
-  craft1: 677
-  craft2: 739
-  craft3: 714
-  craft4: 722
+  collectitem_special: 2159
+  craft1: 678
+  craft2: 740
+  craft3: 715
+  craft4: 723
   enderdragon_shot: 1334
   enderdragon_shot1: 208
   enderdragon_shot10: 193
@@ -49,9 +49,9 @@ shots:
   enderdragon_shot8: 104
   enderdragon_shot9: 112
   eyespinner: 672
-  leftslingshot: 6340
-  loopleft: 5602
-  loopright: 4666
+  leftslingshot: 6355
+  loopleft: 5632
+  loopright: 4694
   mb_drop1: 474
   mb_drop2: 1474
   mb_drop3: 1271
@@ -60,16 +60,16 @@ shots:
   mb_drop6: 694
   mb_jackpot: 31
   mb_superjackpot: 55
-  mbnether_drop2: 425
-  mbnether_drop3: 422
-  mbnether_drop4: 138
-  mbnether_drop5: 396
+  mbnether_drop2: 433
+  mbnether_drop3: 435
+  mbnether_drop4: 142
+  mbnether_drop5: 403
   mbnether_jackpot: 5
   mbnether_superjackpot: 13
-  popbumper1: 6909
-  popbumper2: 9903
-  popbumper3: 12867
-  rightslingshot: 4764
+  popbumper1: 6949
+  popbumper2: 9960
+  popbumper3: 12973
+  rightslingshot: 4785
   set1_center: 81
   set1_left: 181
   set1_right: 326
@@ -82,71 +82,71 @@ shots:
   set4_center: 69
   set4_left: 47
   set4_right: 165
-  shot_travel: 68
+  shot_travel: 72
   shot_victoryloopleft: 10
   shot_victoryloopright: 13
-  skill_scoup: 585
-  spinner: 26405
+  skill_scoup: 586
+  spinner: 26470
   strongholdtravel: 41
-  tool1: 2461
-  tool2: 3166
-  tool3: 2002
+  tool1: 2470
+  tool2: 3177
+  tool3: 2007
   victoryloopleft_shot: 179
   victoryloopright_shot: 106
   village_jackpot: 22
   villager_jackpot: 163
   villager_spinner: 114
-  world_jackpot: 545
-  worldspinner: 3131
+  world_jackpot: 551
+  worldspinner: 3181
 switches:
-  s_bumperrail: 8556
+  s_bumperrail: 8579
   s_captiveball: 943
-  s_centertarget: 6257
-  s_collectitem1: 9221
-  s_collectitem2: 9218
-  s_collectitem3: 5548
-  s_collectitem4: 8850
-  s_collectitem5: 8524
+  s_centertarget: 6276
+  s_collectitem1: 9269
+  s_collectitem2: 9261
+  s_collectitem3: 5568
+  s_collectitem4: 8902
+  s_collectitem5: 8575
   s_credit_right: 0
-  s_drop1: 3553
-  s_drop2: 5549
-  s_drop3: 19855
-  s_drop4: 3511
-  s_drop5: 7403
-  s_drop6: 4832
-  s_left_flipper: 44915
-  s_leftinlane: 996
-  s_leftoutlane: 843
-  s_leftsling: 6343
-  s_loopleft: 5941
-  s_loopright: 5429
+  s_drop1: 3568
+  s_drop2: 5570
+  s_drop3: 20047
+  s_drop4: 3526
+  s_drop5: 7434
+  s_drop6: 4854
+  s_left_flipper: 45149
+  s_leftinlane: 1003
+  s_leftoutlane: 844
+  s_leftsling: 6358
+  s_loopleft: 5971
+  s_loopright: 5457
   s_maint: 0
-  s_plungerlane: 4783
-  s_popbumper1: 6909
-  s_popbumper2: 9903
-  s_popbumper3: 12868
-  s_portal: 722
-  s_right_flipper: 38428
-  s_rightinlane: 250
+  s_plungerlane: 4796
+  s_popbumper1: 6949
+  s_popbumper2: 9960
+  s_popbumper3: 12974
+  s_portal: 731
+  s_right_flipper: 38680
+  s_rightinlane: 252
   s_rightoutlane: 391
-  s_rightsling: 4764
-  s_scoup: 2806
-  s_spinner: 26408
+  s_rightsling: 4785
+  s_scoup: 2818
+  s_spinner: 26473
   s_start: 64
   s_tilt: 0
-  s_tooltarget1: 3760
-  s_tooltarget2: 4700
-  s_tooltarget3: 3006
-  s_topbumperleft: 2289
-  s_topbumperright: 3285
-  s_topkicker: 8433
-  s_trough1: 4385
-  s_trough2: 3600
-  s_trough3: 3157
-  s_trough4: 2792
-  s_troughjam: 3649
-  s_upperdrop: 3443
-  s_whitedot1: 1545
-  s_whitedot2: 1870
-  s_whitedot3: 1863
-  s_whitedot4: 1791
+  s_tooltarget1: 3773
+  s_tooltarget2: 4714
+  s_tooltarget3: 3013
+  s_topbumperleft: 2300
+  s_topbumperright: 3301
+  s_topkicker: 8470
+  s_trough1: 4397
+  s_trough2: 3611
+  s_trough3: 3165
+  s_trough4: 2800
+  s_troughjam: 3660
+  s_upperdrop: 3464
+  s_whitedot1: 1552
+  s_whitedot2: 1875
+  s_whitedot3: 1871
+  s_whitedot4: 1798

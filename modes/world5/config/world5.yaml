@@ -122,17 +122,17 @@ widget_player:
       action: update
       slide: world_slide
       widget_settings:
-        image: NetherGold_Small
+        image: SmoothStone_Small
     widget_item3icon:
       action: update
       slide: world_slide
       widget_settings:
-        image: Netherrack_Small
+        image: GoldOre_Small
     widget_item4icon:
       action: update
       slide: world_slide
       widget_settings:
-        image: WoodNether_Small
+        image: WoodCrimson_Small
 
 event_player:
   world_collected:

@@ -2511,6 +2511,9 @@ sequence_shots:
   sshot_loopright:
     switch_sequence: s_loopright, s_loopleft
     sequence_timeout: 2s
+  sshot_travel:
+    switch_sequence: s_loopleft, s_loopright, s_portal
+    sequence_timeout: 5s
  
 # MODES CONFIGURATION
 #--------------------------------------------
