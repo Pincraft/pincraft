@@ -1,0 +1,22 @@
+#show_version=5
+- duration: 1s
+  sounds: block_dig
+  lights:
+    gi_drop2: 
+      color: brown
+  widgets:
+    widget_item1collected:
+      action: add
+      key: world5_item1
+    widget_item1collected_image:
+      action: add
+      key: world5_item1_image
+      widget_settings:
+        image: SoulSand_Large
+- duration: 500ms
+  lights:
+    gi_drop2:
+      color: white
+      fade: 500ms
+
+

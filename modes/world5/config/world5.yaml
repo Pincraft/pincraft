@@ -9,6 +9,18 @@ show_player:
     show_world5gi:
       loops: -1
       speed: 1
+  collectitem1_hit: 
+    show_itemcollected_world5item1:
+      loops: 0
+  collectitem2_hit:
+    show_itemcollected_world5item2:
+      loops: 0
+  collectitem3_hit:
+    show_itemcollected_world5item3:
+      loops: 0
+  collectitem4_hit:
+    show_itemcollected_world5item4:
+      loops: 0
 
 light_player:
   mode_world5_started:
@@ -43,10 +55,10 @@ variable_player:
 
     #Item 1 Settings
     world_item1_name:
-      string: "Dirt"
+      string: "Soul Sand"
       action: set 
     world_item1_color:
-      string: "GREEN"
+      string: "BROWN"
       action: set 
     world_item1_remaining:
       int: 25
@@ -54,10 +66,10 @@ variable_player:
 
     #Item 2 Settings
     world_item2_name:
-      string: "Stone"
+      string: "Smooth Stone"
       action: set 
     world_item2_color:
-      string: "GRAY"
+      string: "BLUE"
       action: set 
     world_item2_remaining:
       int: 25
@@ -65,10 +77,10 @@ variable_player:
 
     #Item 3 Settings
     world_item3_name:
-      string: "Ore"
+      string: "Gold Ore"
       action: set 
     world_item3_color:
-      string: "BROWN"
+      string: "YELLOW"
       action: set 
     world_item3_remaining:
       int: 25
@@ -76,10 +88,10 @@ variable_player:
 
     #Item 4 Settings
     world_item4_name:
-      string: "Wood"
+      string: "Crimson Wood"
       action: set 
     world_item4_color:
-      string: "SLATEGRAY"
+      string: "PURPLE"
       action: set 
     world_item4_remaining:
       int: 25

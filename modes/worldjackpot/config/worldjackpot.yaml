@@ -21,7 +21,7 @@ shots:
 
 variable_player:
  #WORLD JACKPOT
-  ball_ending:
+  reset_world_jackpot:
     world_jackpot_worlds:  #RESET WORLDS TRAVELED
       int: 1
       action: set
@@ -30,7 +30,7 @@ variable_player:
       action: set
     world_jackpot_items:  #RESET WORLD JACKPOT ITEMS
       int: 0
-      action: set
+      action: set 
 
   recalculate_worldjackpot:
     world_jackpot:
@@ -39,15 +39,6 @@ variable_player:
 
   world_jackpot_collect:
     score: current_player.world_jackpot * current_player.multiplier_mb
-    world_jackpot_base:
-      int: 10000
-      action: set
-    world_jackpot_worlds:
-      int: 1
-      action: set
-    world_jackpot_items:
-      int: 1
-      action: set
 
 widget_player:
   show_worldjackpot:
@@ -77,7 +68,7 @@ widgets:
       anchor_x: center
       anchor_y: center   
     - type: text       
-      text: (player|world_jackpot)
+      text: (player|world_jackpot) x (player|multiplier_mb)
       number_grouping: true
       font_name: ARLRDBD
       font_size: 52
@@ -126,6 +117,10 @@ widgets:
   
 
 event_player:
+  mode_worldjackpot_started{current_player.world_jackpot_base==0}:
+    reset_world_jackpot
+  mode_worldjackpot_started:
+    recalculate_worldjackpot
   #RECALCULATE WORLD JACKPOT
   player_world_jackpot_base:
     recalculate_worldjackpot
@@ -136,7 +131,10 @@ event_player:
   player_multiplier_mb:
     recalculate_worldjackpot
   world_jackpot_collect:
+    reset_world_jackpot
     recalculate_worldjackpot
+  ball_ending:
+    reset_world_jackpot
   recalculate_worldjackpot{current_player.world_jackpot < 100000}:
     world_jackpot_disable
   recalculate_worldjackpot{current_player.world_jackpot > 100000}:

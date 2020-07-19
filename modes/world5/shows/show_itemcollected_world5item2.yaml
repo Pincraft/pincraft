@@ -1,0 +1,22 @@
+#show_version=5
+- duration: 1s
+  sounds: block_axe
+  lights:
+    gi_drop2: 
+      color: blue
+  widgets:
+    widget_item2collected:
+      action: add
+      key: world5_item2
+    widget_item2collected_image:
+      action: add
+      key: world5_item2_image
+      widget_settings:
+        image: SmoothStone_Large
+- duration: 500ms
+  lights:
+    gi_drop2:
+      color: white
+      fade: 500ms
+
+
