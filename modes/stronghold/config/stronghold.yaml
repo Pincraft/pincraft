@@ -61,6 +61,9 @@ variable_player:
     stronghold_jackpot: 100000
 
   mode_stronghold_started:
+    world_id:
+      int: 6
+      action: set
     multiplier_mb:  #RESET MULTIBALL MULTIPLIER TO NONE
       int: 2
       action: set
@@ -500,10 +503,6 @@ event_player:
   mode_stronghold_started:
     outlanegate_close
 
-  strongholdtravel_hit:
-    award_strongholdjackpot
-    stronghold_completed
-
   slide_stronghold_slide_active:
     show_player_score
     show_ball_count
@@ -528,12 +527,13 @@ event_player:
     enable_eyeset3
   eyeset3_complete:
     enable_eyeset4
-  eyeset4_complete:
-    enable_endportal
-    outlanegate_open
+  # eyeset4_complete:
+  #   enable_endportal
   eyeset4_complete{current_player.multiplier_mb==2}:
     enable_eyespinner
   eyeset4_complete{current_player.multiplier_mb==1}:
     disable_eyespinner
+    theend_ready
+    enable_endportal
   multiball_strongholdmb_ended:
     disable_eyespinner

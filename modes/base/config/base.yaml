@@ -49,8 +49,8 @@ event_player:
   #=========== CONTROLS WHEN WORLDS ARE STARTED ============
   #START WORLD 1
   mode_base_started{current_player.world_id==0}:
-    #world1_start
-    world5_start
+    world1_start
+    #world5_start
     #theend_start
 
   #ENABLE NEXT WORLDS WHEN NETHER MODE RETURNS
@@ -119,11 +119,23 @@ multiballs:
 
 #Player Variables
 variable_player:
-  #MULTIBALL MULTIPLIER
-  mode_base_started:     #RESET ON BALL START
-    multiplier_mb:  #RESET MULTIBALL MULTIPLIER TO NONE
+  balls_in_play{balls==1}:
+    multiplier_mb:
       int: 1
       action: set
+  balls_in_play{balls==2}:
+    multiplier_mb:
+      int: 2
+      action: set
+  balls_in_play{balls==3}:
+    multiplier_mb:
+      int: 3
+      action: set
+
+
+
+  #MULTIBALL MULTIPLIER
+  mode_base_started:     #RESET ON BALL START
     bonus_items:  #RESET BONUS COUNT ON END OF EACH BALL
       int: 0
       action: set

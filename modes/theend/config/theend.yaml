@@ -330,28 +330,6 @@ variable_player:
   timer_enderdragon_restore_timer_tick{current_player.enderdragon_health < 100}:
     enderdragon_health: 1 
 
-  #Multiball Multiplier
-  ball_started:
-    multiplier_mb:
-      int: 1
-      action: set
-
-  multiball_endmb_started:
-    multiplier_mb:
-      int: 3
-      action: set
-
-  multiball_endmb_ended:
-    multiplier_mb:
-      int: 1
-      action: set
-
-  multiball_endmb_lost_ball:
-    multiplier_mb:
-      int: 2
-      action: set 
-
-
   #Victory Loop Scoring
   shot_victoryloopleft_hit: 
     score: 100000 * current_player.multiplier_mb * current_player.sword

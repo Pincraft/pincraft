@@ -225,55 +225,23 @@ variable_player:
   #MULTIBALL VARIABLES
 
   multiball_villagermb_started: #VILLAGER MULTIBALL STARTED
-    multiplier_mb:
-      int: 2
-      action: set
     villagermb_ready:
       int: 0
       action: set
 
-  multiball_villagermb_ended: #VILLAGER MULTIBALL ENDED
-    multiplier_mb:
-      int: 1
-      action: set
 
   multiball_nightmb_started:
-    multiplier_mb:
-      int: 2
-      action: set
     nightmb_ready:
       int: 0
       action: set
 
-  multiball_nightmb_ended:
-    multiplier_mb:
-      int: 1
-      action: set
 
   multiball_nightvillagermb_started:
-    multiplier_mb:
-      int: 3
-      action: set
     nightmb_ready:
       int: 0
       action: set
     villagermb_ready:
       int: 0
-      action: set
-
-  multiball_nightvillagermb_ended:
-    multiplier_mb:
-      int: 1
-      action: set
-
-  multiball_nightvillagermb_lost_ball:
-    multiplier_mb:
-      int: 2
-      action: set
-
-  multiball_lost_ball{current_player.multiplier_mb==3}:
-    multiplier_mb:
-      int: 2
       action: set
 
   villagermb_disable:
@@ -585,7 +553,7 @@ event_player:
     show_spinner_progress
     show_bonus_items
     show_worldjackpot
-    #show_debug
+    show_debug
 
   worldspinner_hit:
     show_spinner_progress

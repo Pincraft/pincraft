@@ -5,31 +5,9 @@ mode:
     priority: 1000
 
 event_player:
-  #COMPLETE WORLDS WHEN NETHER MODE STARTS
-  mode_nethercontroller_started{current_player.world_id==1}:
-    world1_completed
-  mode_nethercontroller_started{current_player.world_id==2}:
-    world2_completed
-  mode_nethercontroller_started{current_player.world_id==3}:
-    world3_completed
-  mode_nethercontroller_started{current_player.world_id==4}:
-    world4_completed
-  mode_nethercontroller_started{current_player.world_id==5}:
-    world5_completed
-
   #START NETHER MULTIBALL ON PLUNGE
   sw_playfield_active_active{device.multiball_locks.netherlock.locked_balls==1 and device.multiball_locks.netherlock.enabled}:
     nethermode_start
-
-  multiball_nethermb_started: #NETHER MULTIBALL STARTED
-    multiplier_mb:
-      int: 2
-      action: set
-
-  multiball_nethermb_ended: #NETHER MULTIBALL ENDED
-    multiplier_mb:
-      int: 1
-      action: set
 
 multiballs:
   nethermb:

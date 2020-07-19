@@ -1,6 +1,6 @@
 #config_version=5
 mode:
-    start_events: travel_ready, nethermode_ready, stronghold_ready
+    start_events: travel_ready, nethermode_ready, stronghold_ready, theend_ready
     stop_events: nether_started, stronghold_started
     priority: 2100
     restart_on_next_ball: true
@@ -13,10 +13,23 @@ sound_player:
  mode_travelready_started: voice_travel_ready
 
 event_player:
-  sshot_travel_hit{current_player.world_id != 5}:
+  sshot_travel_hit{current_player.world_id==1}:
+    world1_completed
+    nether_started
+  sshot_travel_hit{current_player.world_id==2}:
+    world2_completed
+    nether_started
+  sshot_travel_hit{current_player.world_id==3}:
+    world3_completed
+    nether_started
+  sshot_travel_hit{current_player.world_id==4}:
+    world4_completed
     nether_started
   sshot_travel_hit{current_player.world_id==5}:
+    world5_completed
     stronghold_started
+  sshot_travel_hit{current_player.world_id==6}:
+    stronghold_completed
 
 
 show_player:
@@ -27,3 +40,9 @@ show_player:
     show_travelblinking:    
       loops: -1
       speed: 2
+  balldevice_bd_scoop_ball_eject_attempt{num_attempts==0}:
+    show_travelworld1:
+      loops: 0
+      speed: 1
+      block_queue: true
+#balldevice_(name)_ball_enter
