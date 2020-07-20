@@ -4,6 +4,15 @@ mode:
     stop_events: multiball_nethermb_ended
     priority: 1000
 
+track_player:
+  mode_nethercontroller_started:    #Clear Any Queued Sounds
+    music:
+      action: stop_all_sounds  
+    sfx:
+      action: stop_all_sounds 
+    voice:
+      action: stop_all_sounds 
+
 event_player:
   #START NETHER MULTIBALL ON PLUNGE
   sw_playfield_active_active{device.multiball_locks.netherlock.locked_balls==1 and device.multiball_locks.netherlock.enabled}:
