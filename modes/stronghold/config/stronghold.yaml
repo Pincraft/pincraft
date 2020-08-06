@@ -64,14 +64,6 @@ variable_player:
     world_id:
       int: 6
       action: set
-    multiplier_mb:  #RESET MULTIBALL MULTIPLIER TO NONE
-      int: 2
-      action: set
-
-  multiball_strongholdmb_ended:
-    multiplier_mb:  #RESET MULTIBALL MULTIPLIER TO NONE
-      int: 1
-      action: set
 
 sound_player:
   mode_stronghold_started:
@@ -506,6 +498,7 @@ event_player:
   slide_stronghold_slide_active:
     show_player_score
     show_ball_count
+    show_multiplier
     update_eye_display
    # show_debug
 

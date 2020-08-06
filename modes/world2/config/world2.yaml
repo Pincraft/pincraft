@@ -88,7 +88,7 @@ variable_player:
 
     #Item 4 Settings
     world_item4_name:
-      string: "Arcadia Log"
+      string: "Acacia Log"
       action: set 
     world_item4_color:
       string: "SLATEGRAY"

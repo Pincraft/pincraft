@@ -256,10 +256,10 @@ event_player:
   
 
   #DIVERTER CONTROLS
-  divertercontrol_statechanged.1{current_player.diverter_state=="worldtravel" or current_player.diverter_state == "strongholdtravel" or current_player.diverter_state == "theendtravel" or current_player.diverter_state == "worldnight" or current_player.diverter_state == "worldnightvillagersidelock"}:
+  divertercontrol_statechanged{current_player.diverter_state=="worldtravel" or current_player.diverter_state == "strongholdtravel" or current_player.diverter_state == "theendtravel" or current_player.diverter_state == "worldnight" or current_player.diverter_state == "worldnightvillagersidelock"}:
     diverter_travel_enabled
 
-  divertercontrol_statechanged.2{current_player.diverter_state!="worldtravel" and current_player.diverter_state != "strongholdtravel" and current_player.diverter_state != "theendtravel" and current_player.diverter_state != "worldnight" and current_player.diverter_state != "worldnightvillagersidelock"}:
+  divertercontrol_statechanged{current_player.diverter_state!="worldtravel" and current_player.diverter_state != "strongholdtravel" and current_player.diverter_state != "theendtravel" and current_player.diverter_state != "worldnight" and current_player.diverter_state != "worldnightvillagersidelock"}:
     diverter_travel_disabled
 
 

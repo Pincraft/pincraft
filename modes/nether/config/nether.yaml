@@ -25,12 +25,12 @@ sound_player:
   mbnether_drop3_hit: creeper_death
   mbnether_drop4_hit: creeper_death
 
-  # nethermb_phase1_active: night_mode_started
-  # nethermb_phase2_active: night_zombie_jackpot
-  # nethermb_phase3_active: night_creeper_jackpot
-  # nethermb_jackpot_active: night_all_jackpot
-  # mbnether_jackpot_hit: night_super_jackpot
-  # mbnether_superjackpot_hit_hit: night_mega_jackpot
+  nethermb_phase1_active: voice_nether_arrival
+  nethermb_phase2_active: voice_nether_skeletonjackpot
+  nethermb_phase3_active: voice_nether_ghastjackpot
+  nethermb_jackpot_active: voice_nether_jackpot
+  #mbnether_jackpot_hit: voice_nether_superjackpot
+  #mbnether_superjackpot_hit: voice_nether_supermegajackpot
 
 
 show_player:
@@ -97,6 +97,21 @@ show_player:
       loops: -1
       speed: 1
 
+  mbnether_jackpot_hit: 
+    show_nethersuperjackpot_lightshow:
+      loops: 3
+      speed: 2
+    show_nethersuperjackpot_collected:
+      loops: 0
+      speed: 1
+  mbnether_superjackpot_hit:
+    show_nethersuperjackpot_lightshow:
+      loops: 8
+      speed: 5
+    show_nethersupermegajackpot_collected:
+      loops: 0
+      speed: 1
+
 light_player:
   nethermb_phase1_active:
     l_droparrow: green
@@ -161,16 +176,16 @@ shot_profiles:
 
 variable_player:
   mbskeletons_complete:
-    score: 500000
+    score: 200000 * current_player.sword 
   mbghast_complete:
-    score: 750000
+    score: 300000 *  current_player.sword 
   nethermb_alldrops_complete:
-    score: 1000000
+    score: 400000 * current_player.sword 
 
   mbnether_jackpot_hit:
-    score: 5000000
+    score: 500000 * current_player.sword 
   mbnether_superjackpot_hit:
-    score: 10000000
+    score: 1000000 *  current_player.sword 
 
 shots:
   mbnether_jackpot:
@@ -187,12 +202,6 @@ shots:
       light: l_captivejackpot
     disable_events: mode_nether_started, nethermb_phase1_started
     enable_events: nethermb_jackpot_active
-  # mbnether_drop1:
-  #   switch: s_drop1  
-  #   profile: mbtarget
-  #   show_tokens:
-  #     light: l_drop1
-  #   reset_events: nethermb_phase1_started, nethermb_phase2_started, nethermb_phase3_started
   mbnether_drop2:
     switch: s_drop2
     profile: mbtarget
@@ -217,12 +226,6 @@ shots:
     show_tokens:
       light: l_drop5
     reset_events: nethermb_phase1_started, nethermb_phase2_started, nethermb_phase3_started
-  # mb_drop6:
-  #   switch: s_drop6
-  #   profile: mbtarget
-  #   show_tokens:
-  #     light: l_drop6
-  #   reset_events: nethermb_phase1_started, nethermb_phase2_started, nethermb_phase3_started
 
 shot_groups:
   mbskeletons:
@@ -254,6 +257,80 @@ widgets:
       end_behavior: loop
       z: 6
 
+  widget_superjackpot_collected:  #WORLD JACKPOT
+    - type: text       
+      text: SUPER JACKPOT
+      font_name: ARLRDBD
+      font_size: 36
+      color: white
+      y: center + 75
+      x: center + 75
+      z: 205
+      anchor_x: center
+      anchor_y: center   
+    - type: text       
+      text: 500000 x (player|sword) sword
+      number_grouping: true
+      font_name: ARLRDBD
+      font_size: 52
+      color: white
+      y: center + 25
+      x: center + 50
+      z: 205
+      anchor_x: center
+      anchor_y: center     
+    - type: image       
+      image: popup_background
+      anchor_x: center
+      anchor_y: center
+      y: center + 50
+      x: center
+      z: 200
+    - type: image       
+      image: chest_large
+      anchor_x: center
+      anchor_y: center
+      y: center + 50
+      x: center - 300
+      z: 205
+
+  widget_supermegajackpot_collected:  #WORLD JACKPOT
+    - type: text       
+      text: MEGA SUPER JACKPOT
+      font_name: ARLRDBD
+      font_size: 36
+      color: white
+      y: center + 75
+      x: center + 75
+      z: 205
+      anchor_x: center
+      anchor_y: center   
+    - type: text       
+      text: 1000000 x (player|sword) sword
+      number_grouping: true
+      font_name: ARLRDBD
+      font_size: 52
+      color: white
+      y: center + 25
+      x: center + 50
+      z: 205
+      anchor_x: center
+      anchor_y: center     
+    - type: image       
+      image: popup_background
+      anchor_x: center
+      anchor_y: center
+      y: center + 50
+      x: center
+      z: 200
+    - type: image       
+      image: chest_large
+      anchor_x: center
+      anchor_y: center
+      y: center + 50
+      x: center - 300
+      z: 205
+
 slides:
   nether_slide:
     widgets:
@@ -268,37 +345,37 @@ slide_player:
   mode_nether_started: nether_slide
 
 widget_player:
-  mode_nether_started:
+  slide_nether_slide_active:
     widget_nethervideobackground:
       action: add
       slide: nether_slide
   
   #SHOW LARGE SWORD
-  mode_nether_started{current_player.sword==1}:
+  slide_nether_slide_active{current_player.sword==1}:
     widget_netherswordplayer:
       action: update
       slide: nether_slide
       widget_settings:
         image: Sword_FullScreen_1x
-  mode_nether_started{current_player.sword==2}:
+  slide_nether_slide_active{current_player.sword==2}:
     widget_netherswordplayer:
       action: update
       slide: nether_slide
       widget_settings:
         image: Sword_FullScreen_2x
-  mode_nether_started{current_player.sword==3}:
+  slide_nether_slide_active{current_player.sword==3}:
     widget_netherswordplayer:
       action: update
       slide: nether_slide
       widget_settings:
         image: Sword_FullScreen_3x
-  mode_nether_started{current_player.sword==4}:
+  slide_nether_slide_active{current_player.sword==4}:
     widget_netherswordplayer:
       action: update
       slide: nether_slide
       widget_settings:
         image: Sword_FullScreen_4x
-  mode_nether_started{current_player.sword==5}:
+  slide_nether_slide_active{current_player.sword==5}:
     widget_netherswordplayer:
       action: update
       slide: nether_slide
@@ -309,9 +386,12 @@ widget_player:
 event_player:
   mode_nether_started:
     outlanegate_close
+
+  slide_nether_slide_active:
     show_ball_count
     show_player_score
-    show_debug
+    show_multiplier
+    #show_debug
   mbnether_jackpot_hit:
     outlanegate_open
   mb_super_jackpot_hit:

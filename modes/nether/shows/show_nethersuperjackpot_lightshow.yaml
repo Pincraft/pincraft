@@ -1,0 +1,48 @@
+#show_version=5
+- duration: 200ms
+  lights:
+    lactionbar_chase1: red
+    
+- duration: 200ms
+  lights:
+    lactionbar_chase1: off
+    lactionbar_chase2: orange
+
+- duration: 200ms
+  lights:
+    lactionbar_chase2: off
+    lactionbar_chase3: red
+
+- duration: 200ms
+  lights:
+    lactionbar_chase3: off
+    lactionbar_chase4: orange
+- duration: 200ms
+  lights:
+    lactionbar_chase3: orange
+    lactionbar_chase4: red
+- duration: 200ms
+  lights:
+    lactionbar_chase2: orange
+    lactionbar_chase3: red
+    lactionbar_chase4: orange
+- duration: 200ms
+  lights:
+    lactionbar_chase1: orange
+    lactionbar_chase2: red
+    lactionbar_chase3: orange
+    lactionbar_chase4: red
+- duration: 200ms
+  lights:
+    lactionbar_chase1: 
+      color: off
+      fade: 200ms 
+    lactionbar_chase2: 
+      color: off
+      fade: 200ms 
+    lactionbar_chase3:
+      color: off
+      fade: 200ms 
+    lactionbar_chase4:
+      color: off
+      fade: 200ms 

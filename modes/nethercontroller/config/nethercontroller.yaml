@@ -59,3 +59,4 @@ show_player:
       speed: 1
       block_queue: true
       events_when_completed: nether_ready
+  

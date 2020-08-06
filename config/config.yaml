@@ -1897,7 +1897,35 @@ sounds:
     track: voice
 
   #-- Nether Mode
-
+  voice_nether_arrival:
+    file: nether_arrival.wav
+    volume: 1
+    track: voice
+  voice_nether_ghastjackpot:
+    file: nether_ghastjackpot.wav
+    volume: 1
+    track: voice
+  voice_nether_jackpot:
+    file: nether_jackpot.wav
+    volume: 1
+    track: voice
+  voice_nether_skeletonjackpot:
+    file: nether_skeletonjackpot.wav
+    volume: 1
+    track: voice
+  voice_nether_skeletons:
+    file: nether_skeletons.wav
+    volume: 1
+    track: voice
+  voice_nether_superjackpot:
+    file: nether_superjackpot.wav
+    volume: 1
+    track: voice
+  voice_nether_supermegajackpot:
+    file: nether_supermegajackpot.wav
+    volume: 1
+    track: voice
+    
   #-- Night Mode
   night_mode_ready:
     file: NightModeReady.wav

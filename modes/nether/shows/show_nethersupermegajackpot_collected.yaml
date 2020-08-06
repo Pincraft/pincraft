@@ -1,0 +1,9 @@
+#show_version=5
+- duration: 3s
+  sounds: voice_nether_supermegajackpot
+  widgets:
+    widget_supermegajackpot_collected:
+      action: add
+
+
+

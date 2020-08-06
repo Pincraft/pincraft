@@ -38,7 +38,9 @@ event_player:
   mode_nightvillagercontroller_stopped:
     event_nightorvillagermultiball_ended
  
-   
+  player_multiplier_mb:
+    show_multiplier
+    
   # -- MULTIBALL START LOGIC
 
   #START STRONGHOLD MULTIBALL ON PLUNGE
@@ -305,6 +307,14 @@ achievement_groups:
     rotate_right_events: rotate_mission_rotator
 
 widgets:
+  widget_multiplier:
+    - type: image        #TOOL BACKGROUND
+      image: multiball_2x
+      anchor_x: center
+      anchor_y: bottom
+      y: bottom+690
+      x: right-65
+      z: 100
   widget_debug:
     - type: image        #SCORE BACKGROUND
       image: score_background
@@ -566,6 +576,21 @@ widget_player:
   show_debug:
     widget_debug:
       action: add
+
+  #MULTIPLIER MULTIBALL
+  show_multiplier{current_player.multiplier_mb==1}:
+    widget_multiplier:
+      action: remove
+  show_multiplier{current_player.multiplier_mb==2}:
+    widget_multiplier:
+      action: update
+      widget_settings:
+          image: multiball_2x
+  show_multiplier{current_player.multiplier_mb==3}:
+    widget_multiplier:
+      action: update
+      widget_settings:
+          image: multiball_3x
 
   #BALL COUNT WIDGETS
   show_ball_count{current_player.ball==1}:
