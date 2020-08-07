@@ -1758,15 +1758,19 @@ diverters:
     type: pulse
     activation_time: 1s
     activate_events: sshot_loopleft_hit
+    deactivation_switches: s_portal
     enable_events: diverter_travel_enabled
-    disable_events: diverter_travel_disabled
+    disable_events: diverter_travel_disabled, mode_nether_started
+    reset_events: diverter_travel_disabled
   right_divertergate_hold:
     activation_coil: c_flipper_gate_hold
     type: hold
     activation_time: 2s
     activate_events: sshot_loopleft_hit
+    deactivation_switches: s_portal
     enable_events: diverter_travel_enabled
-    disable_events: diverter_travel_disabled
+    disable_events: diverter_travel_disabled, mode_nether_started
+    reset_events: diverter_travel_disabled
 
       
 # DROP TARGET CONFIGURATION

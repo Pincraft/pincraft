@@ -3,13 +3,13 @@
   coils:
     c_drop_target_reset: pulse
 - duration: .1
-  events: drop_drop1
+  events: 
+    - drop_drop1
+    - drop_drop6
 - duration: .1
-  events: drop_drop3
-- duration: .1
-  events: drop_drop4
-- duration: .1
-  events: drop_drop6
+  events: 
+    - drop_drop3
+    - drop_drop4
 - duration: .1
   events:
-    netherphase1setup_complete
+    netherphase1setup_attempted

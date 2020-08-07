@@ -76,6 +76,11 @@ show_player:
       loops: -1
       speed: 4
 
+  nethermb_phase1_retry:
+    show_netherphase1setup:
+      loops: 0
+      speed: 1
+
   nethermb_phase2_started:
     show_netherphase2setup:
       loops: 0
@@ -84,12 +89,22 @@ show_player:
       loops: -1
       speed: 2
 
+  nethermb_phase2_retry:
+    show_netherphase2setup:
+      loops: 0
+      speed: 1
+
   nethermb_phase3_started:
     show_netherphase3setup:
       loops: 0
       speed: 1
     show_nethersetup:
       loops: -1
+      speed: 1
+
+  nethermb_phase3_retry:
+    show_netherphase3setup:
+      loops: 0
       speed: 1
       
   nethermb_jackpot_active:
@@ -207,39 +222,39 @@ shots:
     profile: mbtarget
     show_tokens:
       light: l_drop2
-    reset_events: nethermb_phase1_started, nethermb_phase2_started, nethermb_phase3_started
+    reset_events: netherphase1setup_complete, netherphase2setup_complete, netherphase3setup_complete
   mbnether_drop3:
     switch: s_drop3
     profile: mbtarget
     show_tokens:
       light: l_drop3
-    reset_events: nethermb_phase1_started, nethermb_phase2_started, nethermb_phase3_started
+    reset_events: netherphase1setup_complete, netherphase2setup_complete, netherphase3setup_complete
   mbnether_drop4:
     switch: s_drop4
     profile: mbtarget
     show_tokens:
       light: l_drop4
-    reset_events: nethermb_phase1_started, nethermb_phase2_started, nethermb_phase3_started
+    reset_events: netherphase1setup_complete, netherphase2setup_complete, netherphase3setup_complete
   mbnether_drop5:
     switch: s_drop5
     profile: mbtarget
     show_tokens:
       light: l_drop5
-    reset_events: nethermb_phase1_started, nethermb_phase2_started, nethermb_phase3_started
+    reset_events: netherphase1setup_complete, netherphase2setup_complete, netherphase3setup_complete
 
 shot_groups:
   mbskeletons:
     shots: mbnether_drop2, mbnether_drop5
     disable_events: mode_nether_started, nethermb_phase2_started
-    enable_events: nethermb_phase1_started
+    enable_events: netherphase1setup_complete
   mbghast:
     shots: mbnether_drop3, mbnether_drop4
     disable_events: mode_nether_started, nethermb_phase3_started
-    enable_events: nethermb_phase2_started
+    enable_events: netherphase2setup_complete
   mballdrops:
     shots: mbnether_drop2, mbnether_drop3, mbnether_drop4, mbnether_drop5
     disable_events: mode_nether_started, nethermb_jackpot_active
-    enable_events: nethermb_phase3_started
+    enable_events: netherphase3setup_complete
 
 widgets:
   widget_netherswordplayer:
@@ -384,6 +399,22 @@ widget_player:
   
 
 event_player:
+  netherphase1setup_attempted{device.switches.s_drop2.state==0 and device.switches.s_drop5.state==0}:
+    netherphase1setup_complete
+  netherphase1setup_attempted{device.switches.s_drop2.state==1 or device.switches.s_drop5.state==1}:
+    nethermb_phase1_retry
+
+  netherphase2setup_attempted{device.switches.s_drop3.state==0 and device.switches.s_drop4.state==0}:
+    netherphase2setup_complete
+  netherphase2setup_attempted{device.switches.s_drop3.state==1 or device.switches.s_drop4.state==1}:
+    nethermb_phase2_retry
+
+  netherphase3setup_attempted{device.switches.s_drop2.state==0 and device.switches.s_drop5.state==0 and device.switches.s_drop3.state==0 and device.switches.s_drop4.state==0}:
+    netherphase3setup_complete
+  netherphase3setup_attempted{device.switches.s_drop2.state==1 or device.switches.s_drop5.state==1 or device.switches.s_drop3.state==1 or device.switches.s_drop4.state==1}:
+    nethermb_phase3_retry
+
+
   mode_nether_started:
     outlanegate_close
 
