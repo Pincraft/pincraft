@@ -553,7 +553,7 @@ event_player:
     show_spinner_progress
     show_bonus_items
     show_worldjackpot
-    show_debug
+    #show_debug
 
   worldspinner_hit:
     show_spinner_progress

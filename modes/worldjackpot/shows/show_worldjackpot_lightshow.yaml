@@ -2,12 +2,12 @@
 - duration: 200ms
   lights:
     l_worldtarget: 
-      color: white
+      color: (color)
     l_world5:
-      color: white
+      color: (color)
     l_world4:
-      color: white
-    lactionbar_chase1: white
+      color: (color)
+    lactionbar_chase1: (color)
     
 - duration: 200ms
   lights:
@@ -18,26 +18,26 @@
     l_world4:
       color: off
     l_world6:
-      color: white
+      color: (color)
     l_world3:
-      color: white
+      color: (color)
     lactionbar_chase1: off
-    lactionbar_chase2: white
+    lactionbar_chase2: (color)
 
 - duration: 200ms
   lights:
     l_worldtarget: 
-      color: white
+      color: (color)
     l_world6:
       color: off
     l_world3:
       color: off
     l_world1:
-      color: white
+      color: (color)
     l_world2:
-      color: white
+      color: (color)
     lactionbar_chase2: off
-    lactionbar_chase3: white
+    lactionbar_chase3: (color)
 
 - duration: 200ms
   lights:
@@ -48,60 +48,60 @@
     l_world2:
       color: off
     l_world6:
-      color: white
+      color: (color)
     l_world3:
-      color: white   
+      color: (color)   
     lactionbar_chase3: off
-    lactionbar_chase4: white
+    lactionbar_chase4: (color)
 - duration: 200ms
   lights:
     l_worldtarget: 
-      color: white
+      color: (color)
     l_world6:
       color: off
     l_world3:
       color: off   
     l_world5:
-      color: white
+      color: (color)
     l_world4:
-      color: white   
-    lactionbar_chase3: white
-    lactionbar_chase4: white
+      color: (color)   
+    lactionbar_chase3: (color)
+    lactionbar_chase4: (color)
 - duration: 200ms
   lights:
     l_worldtarget: 
       color: off
     l_world5:
-      color: white
+      color: (color)
     l_world4:
-      color: white 
+      color: (color) 
     l_world6:
-      color: white
+      color: (color)
     l_world3:
-      color: white  
-    lactionbar_chase2: white
-    lactionbar_chase3: white
-    lactionbar_chase4: white
+      color: (color)  
+    lactionbar_chase2: (color)
+    lactionbar_chase3: (color)
+    lactionbar_chase4: (color)
 - duration: 200ms
   lights:
     l_worldtarget: 
-      color: white
+      color: (color)
     l_world1:
-      color: white
+      color: (color)
     l_world2:
-      color: white
+      color: (color)
     l_world5:
-      color: white
+      color: (color)
     l_world4:
-      color: white 
+      color: (color) 
     l_world6:
-      color: white
+      color: (color)
     l_world3:
-      color: white 
-    lactionbar_chase1: white
-    lactionbar_chase2: white
-    lactionbar_chase3: white
-    lactionbar_chase4: white
+      color: (color) 
+    lactionbar_chase1: (color)
+    lactionbar_chase2: (color)
+    lactionbar_chase3: (color)
+    lactionbar_chase4: (color)
 - duration: 200ms
   lights:
     l_worldtarget: 

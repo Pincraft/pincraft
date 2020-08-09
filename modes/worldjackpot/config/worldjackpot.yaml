@@ -51,9 +51,36 @@ show_player:
       loops: 0
       speed: 1
       events_when_completed: world_jackpot_collect
+  world_jackpot_hit{current_player.world_id==1}:
     show_worldjackpot_lightshow:
       loops: 0
       speed: 1
+      show_tokens:
+        color: green
+  world_jackpot_hit{current_player.world_id==2}:
+    show_worldjackpot_lightshow:
+      loops: 0
+      speed: 1
+      show_tokens:
+        color: yellow
+  world_jackpot_hit{current_player.world_id==3}:
+    show_worldjackpot_lightshow:
+      loops: 0
+      speed: 1
+      show_tokens:
+        color: blue
+  world_jackpot_hit{current_player.world_id==4}:
+    show_worldjackpot_lightshow:
+      loops: 0
+      speed: 1
+      show_tokens:
+        color: brown
+  world_jackpot_hit{current_player.world_id==5}:
+    show_worldjackpot_lightshow:
+      loops: 0
+      speed: 1
+      show_tokens:
+        color: red
 
 widgets:
   widget_worldjackpot_collected:  #WORLD JACKPOT

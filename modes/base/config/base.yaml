@@ -573,6 +573,10 @@ widgets:
 
 
 widget_player:
+  s_maint_active:
+    widget_debug:
+      action: add
+
   show_debug:
     widget_debug:
       action: add
