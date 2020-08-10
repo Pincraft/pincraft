@@ -139,10 +139,10 @@ switches:
     number: A2-B0-3
     type: NC
   s_rightinlane:
-    number: A2-B0-1
+    number: A2-B0-0
     tags: playfield_active
   s_rightoutlane:
-    number: A2-B0-0
+    number: A2-B0-1
     tags: playfield_active
 
 #P2 - Bank 1
@@ -957,6 +957,14 @@ lights:
     platform: p3_roc
     tags: lfeature, ltoolcollect
     number: 5-69-70-71
+    platform_settings:
+      polarity: True
+
+  gi_upperflipper:
+    type: rgb
+    platform: p3_roc
+    tags: lgi
+    number: 5-60-61-62
     platform_settings:
       polarity: True
   

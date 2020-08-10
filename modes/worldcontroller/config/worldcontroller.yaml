@@ -118,6 +118,23 @@ shots:
     enable_events: collectitem4_enabled
     disable_events: collectitem4_disabled
 
+  collectleftoutlane:
+    switch: s_leftoutlane
+    profile: collectshot
+    show_tokens:
+      leds: l_leftoutlane
+    enable_events: collectitem1_enabled, collectitem2_enabled, collectitem3_enabled ,collectitem4_enabled
+    disable_events: world_collected
+
+  collectrightinlane:
+    switch: s_rightinlane
+    profile: collectshot
+    show_tokens:
+      leds: l_rightinlane
+    enable_events: collectitem1_enabled, collectitem2_enabled, collectitem3_enabled ,collectitem4_enabled
+    disable_events: world_collected
+
+
 sound_player:
   #VILLAGER MULTIBALL
   s_spinner_active: 
@@ -553,7 +570,6 @@ event_player:
     show_spinner_progress
     show_bonus_items
     show_worldjackpot
-    #show_debug
 
   worldspinner_hit:
     show_spinner_progress
@@ -569,6 +585,7 @@ event_player:
     nightmultiball_ready
     nightvillagermultiball_ready
 
+  # COLLECT ITEM HIT
   collectitem1_hit:
     world_itemcheckcomplete
     show_bonus_items  #Used for Bonus Display
@@ -585,6 +602,29 @@ event_player:
     world_itemcheckcomplete
     show_bonus_items  #Used for Bonus Display
 
+
+  # INLANE / OUTLANE ITEM COLLECTORS
+  collectleftoutlane_hit{current_player.world_item1_remaining > 0}:
+    collectitem1_hit
+  collectleftoutlane_hit{current_player.world_item1_remaining == 0 and current_player.world_item2_remaining > 0}:
+    collectitem2_hit
+  collectleftoutlane_hit{current_player.world_item1_remaining == 0 and current_player.world_item2_remaining == 0 and current_player.world_item3_remaining > 0}:
+    collectitem3_hit
+  collectleftoutlane_hit{current_player.world_item1_remaining == 0 and current_player.world_item2_remaining == 0 and current_player.world_item3_remaining == 0 and current_player.world_item4_remaining > 0}:
+    collectitem4_hit
+
+
+  collectrightinlane_hit{current_player.world_item4_remaining > 0}:
+    collectitem4_hit
+  collectrightinlane_hit{current_player.world_item4_remaining == 0 and current_player.world_item3_remaining > 0}:
+    collectitem3_hit
+  collectrightinlane_hit{current_player.world_item4_remaining == 0 and current_player.world_item3_remaining == 0 and current_player.world_item2_remaining > 0}:
+    collectitem2_hit
+  collectrightinlane_hit{current_player.world_item4_remaining == 0 and current_player.world_item3_remaining == 0 and current_player.world_item2_remaining == 0 and current_player.world_item1_remaining > 0}:
+    collectitem1_hit
+  
+
+  # CHECK IF ITEMS ARE COMPLETED
   world_itemcheckcomplete{current_player.world_item1_remaining <= 0 and current_player.world_item2_remaining <= 0 and current_player.world_item3_remaining <= 0 and current_player.world_item4_remaining <= 0}:
     world_collected
 
@@ -643,6 +683,9 @@ event_player:
   #   eject_topkicker
   #   nightvillagermultiball_disable
 
+
+
+#TODO:  MAKE THIS A MODE TO RESET LOCKED BALLS
   balldevice_bd_trough_ball_count_changed{device.ball_devices.bd_trough.balls==1}:
     multiball_lost_ball
 
