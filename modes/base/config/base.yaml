@@ -323,13 +323,24 @@ widgets:
       y: top-15
       x: left+15
       z: 200
+    - type: text        #GAME MODE
+      text: GAME MODE (player|game_mode)
+      number_grouping: true
+      min_digits: 2
+      font_name: ARLRDBD
+      font_size: 18
+      y: top-25
+      x: left+50
+      z: 210
+      anchor_x: left
+      anchor_y: top
     - type: text        #VILLAGER JACKPOT
       text: VILLAGER | Ready=(player|villagermb_ready) / Jackpot=(player|villager_jackpot) x S(player|sword)
       number_grouping: true
       min_digits: 2
       font_name: ARLRDBD
       font_size: 18
-      y: top-25
+      y: top-50
       x: left+50
       z: 210
       anchor_x: left
@@ -340,7 +351,7 @@ widgets:
       min_digits: 2
       font_name: ARLRDBD
       font_size: 18
-      y: top-50
+      y: top-75
       x: left+50
       z: 210
       anchor_x: left
@@ -351,7 +362,7 @@ widgets:
       min_digits: 2
       font_name: ARLRDBD
       font_size: 18
-      y: top-75
+      y: top-100
       x: left+50
       z: 210
       anchor_x: left
@@ -362,7 +373,7 @@ widgets:
       min_digits: 2
       font_name: ARLRDBD
       font_size: 18
-      y: top-100
+      y: top-125
       x: left+50
       z: 210
       anchor_x: left
@@ -373,7 +384,7 @@ widgets:
       min_digits: 2
       font_name: ARLRDBD
       font_size: 18
-      y: top-125
+      y: top-150
       x: left+50
       z: 210
       anchor_x: left
@@ -384,7 +395,7 @@ widgets:
       min_digits: 2
       font_name: ARLRDBD
       font_size: 18
-      y: top-150
+      y: top-175
       x: left+50
       z: 210
       anchor_x: left
@@ -395,7 +406,7 @@ widgets:
       min_digits: 2
       font_name: ARLRDBD
       font_size: 18
-      y: top-175
+      y: top-200
       x: left+50
       z: 210
       anchor_x: left
@@ -406,11 +417,23 @@ widgets:
       min_digits: 2
       font_name: ARLRDBD
       font_size: 18
-      y: top-200
+      y: top-225
       x: left+50
       z: 210
       anchor_x: left
       anchor_y: top
+    - type: text        #debug variable
+      text: DEBUG | Variable=NONE
+      number_grouping: true
+      min_digits: 2
+      font_name: ARLRDBD
+      font_size: 18
+      y: top-250
+      x: left+50
+      z: 210
+      anchor_x: left
+      anchor_y: top
+     
 
   widget_scorebackground:
     - type: image        #SCORE BACKGROUND

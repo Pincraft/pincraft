@@ -1,0 +1,13 @@
+#config_version=5
+
+mode:
+  start_events: ball_will_start
+  stop_events: game_ended
+  code: gamecontroller.Base
+  priority: 2000
+
+
+queue_relay_player:
+  ball_starting{ball==1 and player==1}:
+    post: select_game
+    wait_for: mode_selected

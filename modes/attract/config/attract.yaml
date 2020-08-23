@@ -6,6 +6,9 @@ show_player:
     attract_mode_shows:
       loops: -1
 
+event_player:
+  s_start_active: request_to_start_game
+
 slides:
   attract_slide:
     widgets:

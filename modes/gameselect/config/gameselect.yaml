@@ -1,0 +1,198 @@
+#config_version=5
+
+mode:
+  start_events: select_game
+  stop_events: mode_selected
+  code: mpf.modes.carousel.code.carousel.Carousel
+  priority: 1000
+
+
+mode_settings:
+  selectable_items: Easy, Normal, Hardcore, Competition, COOP, Story
+  select_item_events: s_start_active
+  next_item_events: s_right_flipper_active
+  previous_item_events: s_left_flipper_active
+
+slide_player:
+  gameselect_Easy_highlighted: select_EasyMode
+  gameselect_Normal_highlighted: select_NormalMode
+  gameselect_Hardcore_highlighted: select_HardcoreMode
+  gameselect_Competition_highlighted: select_CompetitionMode
+  gameselect_COOP_highlighted: select_COOPMode
+  gameselect_Story_highlighted: select_StoryMode
+
+slides:
+  select_EasyMode:
+    widgets:
+        - type: text
+          text: SELECT MODE
+          font_name: lazer84
+          font_size: 100
+          y: middle+200
+          color: white
+        - type: text
+          text: Easy Mode
+          font_name: ARLRDBD
+          font_size: 100
+          y: middle
+          color: lightgreen
+        - type: text
+          text: "Outlane Gates Always Closed\nSimple Tools Collect\nEasy Extra Ball"
+          font_name: ARLRDBD
+          font_size: 36
+          y: middle-200
+          color: white
+    transition:
+      type: move_in
+      direction: right
+  select_NormalMode:
+    widgets:
+        - type: text
+          text: SELECT MODE
+          font_name: lazer84
+          font_size: 100
+          y: middle+200
+          color: white
+        - type: text
+          text: Normal Mode
+          font_name: ARLRDBD
+          font_size: 100
+          y: middle
+          color: yellow
+        - type: text
+          text: "Outlane Gates Skill Based\nNormal Tool Collect\nNormal Extra Ball"
+          font_name: ARLRDBD
+          font_size: 36
+          y: middle-200
+          color: white
+    transition:
+      type: move_in
+      direction: right
+  select_HardcoreMode:
+    widgets:
+        - type: text
+          text: SELECT MODE
+          font_name: lazer84
+          font_size: 100
+          y: middle+200
+          color: white
+        - type: text
+          text: Hardcore Mode
+          font_name: ARLRDBD
+          font_size: 100
+          y: middle
+          color: red
+        - type: text
+          text: "Outlane Gates Always Open\nNormal Tool Collect\nNormal Extra Ball\nNo Collect Helpers"
+          font_name: ARLRDBD
+          font_size: 36
+          y: middle-200
+          color: white
+    transition:
+      type: move_in
+      direction: right
+  select_CompetitionMode:
+    widgets:
+        - type: text
+          text: SELECT MODE
+          font_name: lazer84
+          font_size: 100
+          y: middle+200
+          color: white
+        - type: text
+          text: Competition Mode
+          font_name: ARLRDBD
+          font_size: 100
+          y: middle
+          color: lightblue
+        - type: text
+          text: "Outlane Gates Always Open\nNormal Tool Collect\nNo Extra Balls\nNo Collect Helpers\nNo Random Awards"
+          font_name: ARLRDBD
+          font_size: 36
+          y: middle-200
+          color: white
+    transition:
+      type: move_in
+      direction: right
+  select_COOPMode:
+    widgets:
+        - type: text
+          text: SELECT MODE
+          font_name: lazer84
+          font_size: 100
+          y: middle+200
+          color: white
+        - type: text
+          text: Cooperative Mode
+          font_name: ARLRDBD
+          font_size: 100
+          y: middle
+          color: violet
+        - type: text
+          text: "Work Together to beat the Ender Dragon\nSingle Score for All Players\nNormal Skill Level\nNo Extra Balls"
+          font_name: ARLRDBD
+          font_size: 36
+          y: middle-200
+          color: white
+    transition:
+      type: move_in
+      direction: right
+  select_StoryMode:
+    widgets:
+        - type: text
+          text: SELECT MODE
+          font_name: lazer84
+          font_size: 100
+          y: middle+200
+          color: white
+        - type: text
+          text: Story Mode
+          font_name: ARLRDBD
+          font_size: 100
+          y: middle
+          color: orange
+        - type: text
+          text: "Play until you beat the Ender Dragon\nNo Scoring / Fastest Time Wins\nEasy Difficulty Level\nUnlimited Balls"
+          font_name: ARLRDBD
+          font_size: 36
+          y: middle-200
+          color: white
+    transition:
+      type: move_in
+      direction: right
+
+#EASY / NORMAL / HARDCORE / COMPETITION / COOP / STORY
+
+variable_player:
+  gameselect_Easy_highlighted: 
+    game_mode:
+      string: "EASY"
+      action: set
+  gameselect_Normal_highlighted:
+    game_mode:
+      string: "NORMAL"
+      action: set 
+  gameselect_Hardcore_highlighted: 
+    game_mode:
+      string: "HARDCORE"
+      action: set
+  gameselect_Competition_highlighted:
+    game_mode:
+      string: "COMPETITION"
+      action: set
+  gameselect_COOP_highlighted: 
+    game_mode:
+      string: "COOP"
+      action: set
+  gameselect_Story_highlighted:
+    game_mode:
+      string: "STORY"
+      action: set
+
+event_player:
+  gameselect_Easy_selected: mode_selected
+  gameselect_Normal_selected: mode_selected
+  gameselect_Hardcore_selected: mode_selected
+  gameselect_Competition_selected: mode_selected
+  gameselect_COOP_selected: mode_selected
+  gameselect_Story_selected: mode_selected

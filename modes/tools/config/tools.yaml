@@ -5,6 +5,14 @@ mode:
   priority: 500
 
 
+shot_profiles:
+  craftprofile:
+    states:
+      - name: unlit
+        show: off
+      - name: lit
+        show: on
+
 shots:
   tool1:
     switch: s_tooltarget1
@@ -21,18 +29,26 @@ shots:
 
   craft1: 
     switch: s_whitedot1
+    profile: craftprofile
+    hit_events: craft1_collect
     show_tokens:
       light: l_craft1
   craft2:
     switch: s_whitedot2
+    profile: craftprofile
+    hit_events: craft2_collect
     show_tokens:
       light: l_craft2
   craft3:
     switch: s_whitedot3
+    profile: craftprofile
+    hit_events: craft3_collect
     show_tokens:
       light: l_craft3
   craft4:
     switch: s_whitedot4
+    profile: craftprofile
+    hit_events: craft4_collect
     show_tokens:
       light: l_craft4
 
@@ -135,6 +151,18 @@ sound_player:
   tool3_hit: collect_tool
   crafting_lit{current_player.tools_ready<=1}: craft_ready
 
+
+show_player:
+  crafting_isready:
+    show_craftingready:
+      loops: -1
+      speed: 3
+      priority: 501
+      action: play
+  crafting_disable:
+    show_craftingready:
+      action: stop
+
 light_player:
   tools_updated:
     l_tool1ready: off
@@ -155,15 +183,25 @@ light_player:
     l_craftlit: white
   crafting_disable:
     l_craftlit: off
+  crafting_isready:
+    l_craftlit: yellow
 
 event_player:
   mode_tools_started{current_player.crafting_enabled==0}:
     - crafting_disable
     - tools_updated
 
-  mode_tools_started{current_player.crafting_enabled==1}:
+  mode_tools_started{current_player.crafting_enabled==1 and current_player.crafting_ready==0}:
     - crafting_lit
     - tools_updated
+
+  mode_tools_started{current_player.crafting_enabled==1 and current_player.crafting_ready==1}:
+    - crafting_lit
+    - crafting_isready
+    - tools_updated
+
+  craftcollect_complete:
+    - crafting_isready
 
   toolcollect_complete:
     - recalculate_tools
@@ -185,6 +223,19 @@ event_player:
     - tools_updated
     - crafting_disable
     - check_craftingcomplete
+
+
+  #LIT A CRAFT LIGHT IF NOT ALL COLLECTED YET
+  balldevice_bd_topkicker_ball_enter{current_player.crafting_ready==0 and current_player.crafting_enabled==1 and current_player.shot_craft1==0}:
+    craft1_collect
+  balldevice_bd_topkicker_ball_enter{current_player.crafting_ready==0 and current_player.crafting_enabled==1 and current_player.shot_craft1==1 and current_player.shot_craft2==0}:
+    craft2_collect
+  balldevice_bd_topkicker_ball_enter{current_player.crafting_ready==0 and current_player.crafting_enabled==1 and current_player.shot_craft1==1 and current_player.shot_craft2==1  and current_player.shot_craft3==0}:
+    craft3_collect
+  balldevice_bd_topkicker_ball_enter{current_player.crafting_ready==0 and current_player.crafting_enabled==1 and current_player.shot_craft1==1  and current_player.shot_craft2==1  and current_player.shot_craft3==1  and current_player.shot_craft4==0}:
+    craft4_collect
+
+
 
   #Check if all 4 tools are collected
   check_craftingcomplete{current_player.tools_collected==4}:

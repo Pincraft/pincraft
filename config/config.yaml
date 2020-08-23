@@ -2351,6 +2351,10 @@ sound_pools:
 # PLAYER VARIABLES
 #--------------------------------------------
 player_vars:
+  game_mode:
+    initial_value: "NORMAL"   # EASY / NORMAL / HARDCORE / COMPETITION / COOP / STORY
+    value_type: str
+
   gate_open:
     initial_value: 0
     value_type: int
@@ -2573,6 +2577,8 @@ sequence_shots:
 # MODES CONFIGURATION
 #--------------------------------------------
 modes:
+  - gamecontroller
+  - gameselect
   - base
   - lightoverlay
   - outlanegate

@@ -1,0 +1,40 @@
+#show_version=5
+- duration: 1
+  lights:
+    l_craft1:
+      color: yellow
+    l_craft4:
+      color: yellow
+    l_craftlit: 
+      color: white
+      fade: 200ms
+- duration: 1
+  lights:
+    l_craft1:
+      color: white
+      fade: 200ms
+    l_craft4:
+      color: white
+      fade: 200ms
+    l_craft2:
+      color: yellow
+    l_craft3:
+      color: yellow
+    l_craftlit: 
+      color: white
+      fade: 200ms
+- duration: 1
+  lights:
+    l_craft2:
+      color: white
+      fade: 200ms
+    l_craft3:
+      color: white
+      fade: 200ms
+    l_craftlit: 
+      color: yellow
+- duration: 1
+  lights:
+    l_craftlit: 
+      color: white
+      fade: 200ms
