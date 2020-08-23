@@ -1,6 +1,6 @@
 events:
   game_ended: 286
-  game_started: 1294
+  game_started: 1298
 player:
   score:
     average: 14973069.4533762
@@ -52,8 +52,8 @@ shots:
   enderdragon_shot9: 113
   eyespinner: 917
   leftslingshot: 6655
-  loopleft: 6464
-  loopright: 5302
+  loopleft: 6465
+  loopright: 5303
   mb_drop1: 474
   mb_drop2: 1474
   mb_drop3: 1271
@@ -88,7 +88,7 @@ shots:
   shot_victoryloopleft: 36
   shot_victoryloopright: 28
   skill_scoup: 644
-  spinner: 28336
+  spinner: 28337
   strongholdtravel: 46
   tool1: 2834
   tool2: 3589
@@ -99,7 +99,7 @@ shots:
   villager_jackpot: 173
   villager_spinner: 114
   world_jackpot: 733
-  worldspinner: 4405
+  worldspinner: 4406
 switches:
   s_bumperrail: 9784
   s_captiveball: 1020
@@ -110,31 +110,31 @@ switches:
   s_collectitem4: 9690
   s_collectitem5: 9365
   s_credit_right: 0
-  s_drop1: 4036
-  s_drop2: 6292
-  s_drop3: 23227
-  s_drop4: 3988
-  s_drop5: 8268
-  s_drop6: 5474
+  s_drop1: 4044
+  s_drop2: 6304
+  s_drop3: 23268
+  s_drop4: 3996
+  s_drop5: 8283
+  s_drop6: 5481
   s_left_flipper: 51200
   s_leftinlane: 1094
   s_leftoutlane: 988
   s_leftsling: 6658
-  s_loopleft: 6803
-  s_loopright: 6065
+  s_loopleft: 6804
+  s_loopright: 6066
   s_maint: 64
-  s_plungerlane: 5274
+  s_plungerlane: 5284
   s_popbumper1: 7811
   s_popbumper2: 11207
   s_popbumper3: 14909
   s_portal: 1024
-  s_right_flipper: 43800
+  s_right_flipper: 43820
   s_rightinlane: 393
   s_rightoutlane: 414
   s_rightsling: 5382
   s_scoup: 3215
-  s_spinner: 28339
-  s_start: 179
+  s_spinner: 28340
+  s_start: 204
   s_tilt: 0
   s_tooltarget1: 4228
   s_tooltarget2: 5259
@@ -142,12 +142,12 @@ switches:
   s_topbumperleft: 2552
   s_topbumperright: 3657
   s_topkicker: 9629
-  s_trough1: 4772
-  s_trough2: 3944
-  s_trough3: 3425
-  s_trough4: 3054
-  s_troughjam: 4004
-  s_upperdrop: 3957
+  s_trough1: 4781
+  s_trough2: 3953
+  s_trough3: 3430
+  s_trough4: 3059
+  s_troughjam: 4013
+  s_upperdrop: 3958
   s_whitedot1: 1766
   s_whitedot2: 2058
   s_whitedot3: 2072

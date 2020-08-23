@@ -42,9 +42,6 @@ slides:
           font_size: 36
           y: middle-200
           color: white
-    transition:
-      type: move_in
-      direction: right
   select_NormalMode:
     widgets:
         - type: text
@@ -65,9 +62,6 @@ slides:
           font_size: 36
           y: middle-200
           color: white
-    transition:
-      type: move_in
-      direction: right
   select_HardcoreMode:
     widgets:
         - type: text
@@ -88,9 +82,6 @@ slides:
           font_size: 36
           y: middle-200
           color: white
-    transition:
-      type: move_in
-      direction: right
   select_CompetitionMode:
     widgets:
         - type: text
@@ -111,9 +102,6 @@ slides:
           font_size: 36
           y: middle-200
           color: white
-    transition:
-      type: move_in
-      direction: right
   select_COOPMode:
     widgets:
         - type: text
@@ -134,9 +122,6 @@ slides:
           font_size: 36
           y: middle-200
           color: white
-    transition:
-      type: move_in
-      direction: right
   select_StoryMode:
     widgets:
         - type: text
@@ -157,9 +142,6 @@ slides:
           font_size: 36
           y: middle-200
           color: white
-    transition:
-      type: move_in
-      direction: right
 
 #EASY / NORMAL / HARDCORE / COMPETITION / COOP / STORY
 
