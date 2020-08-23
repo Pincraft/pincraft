@@ -54,7 +54,7 @@ slides:
         font_name: lazer84
         font_size: 70
         animations:
-          pre_show_slide:
+          nightready_slide:
             - property: opacity
               value: 0
               duration: .5s

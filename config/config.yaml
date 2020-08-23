@@ -2348,13 +2348,20 @@ sound_pools:
       - block_axe3
       - block_axe4
 
+
+
+# MACHINE VARIABLES
+machine_vars:
+  game_mode:
+    initial_value: "NORMAL"   # EASY / NORMAL / HARDCORE / COMPETITION / COOP / STORY
+    value_type: str 
+  game_mode_display:
+    initial_value: "Normal Mode"
+    value_type: str
+    
 # PLAYER VARIABLES
 #--------------------------------------------
 player_vars:
-  game_mode:
-    initial_value: "NORMAL"   # EASY / NORMAL / HARDCORE / COMPETITION / COOP / STORY
-    value_type: str
-
   gate_open:
     initial_value: 0
     value_type: int

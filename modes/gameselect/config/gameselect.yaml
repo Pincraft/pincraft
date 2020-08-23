@@ -8,7 +8,7 @@ mode:
 
 
 mode_settings:
-  selectable_items: Easy, Normal, Hardcore, Competition, COOP, Story
+  selectable_items: Normal, Hardcore, Competition, COOP, Story, Easy
   select_item_events: s_start_active
   next_item_events: s_right_flipper_active
   previous_item_events: s_left_flipper_active
@@ -28,19 +28,39 @@ slides:
           text: SELECT MODE
           font_name: lazer84
           font_size: 100
-          y: middle+200
+          y: middle+250
           color: white
         - type: text
           text: Easy Mode
           font_name: ARLRDBD
           font_size: 100
-          y: middle
+          y: middle + 50
           color: lightgreen
         - type: text
           text: "Outlane Gates Always Closed\nSimple Tools Collect\nEasy Extra Ball"
           font_name: ARLRDBD
           font_size: 36
-          y: middle-200
+          y: middle-150
+          color: white
+        - type: text
+          text: "Use Flipper Buttons to Choose Mode, Press Start Again to Select"
+          font_name: Arial
+          font_size: 36
+          y: bottom+50
+          color: white
+        - type: text
+          text: "<"
+          font_name: lazer84
+          font_size: 72
+          y: middle + 50
+          x: left + 75
+          color: white
+        - type: text
+          text: ">"
+          font_name: lazer84
+          font_size: 72
+          y: middle + 50
+          x: right - 75
           color: white
   select_NormalMode:
     widgets:
@@ -48,19 +68,39 @@ slides:
           text: SELECT MODE
           font_name: lazer84
           font_size: 100
-          y: middle+200
+          y: middle+250
           color: white
         - type: text
           text: Normal Mode
           font_name: ARLRDBD
           font_size: 100
-          y: middle
+          y: middle + 50
           color: yellow
         - type: text
           text: "Outlane Gates Skill Based\nNormal Tool Collect\nNormal Extra Ball"
           font_name: ARLRDBD
           font_size: 36
-          y: middle-200
+          y: middle-150
+          color: white
+        - type: text
+          text: "Use Flipper Buttons to Choose Mode, Press Start Again to Select"
+          font_name: Arial
+          font_size: 36
+          y: bottom+50
+          color: white
+        - type: text
+          text: "<"
+          font_name: lazer84
+          font_size: 72
+          y: middle + 50
+          x: left + 75
+          color: white
+        - type: text
+          text: ">"
+          font_name: lazer84
+          font_size: 72
+          y: middle + 50
+          x: right - 75
           color: white
   select_HardcoreMode:
     widgets:
@@ -68,19 +108,39 @@ slides:
           text: SELECT MODE
           font_name: lazer84
           font_size: 100
-          y: middle+200
+          y: middle+250
           color: white
         - type: text
           text: Hardcore Mode
           font_name: ARLRDBD
           font_size: 100
-          y: middle
+          y: middle + 50
           color: red
         - type: text
           text: "Outlane Gates Always Open\nNormal Tool Collect\nNormal Extra Ball\nNo Collect Helpers"
           font_name: ARLRDBD
           font_size: 36
-          y: middle-200
+          y: middle-150
+          color: white
+        - type: text
+          text: "Use Flipper Buttons to Choose Mode, Press Start Again to Select"
+          font_name: Arial
+          font_size: 36
+          y: bottom+50
+          color: white
+        - type: text
+          text: "<"
+          font_name: lazer84
+          font_size: 72
+          y: middle + 50
+          x: left + 75
+          color: white
+        - type: text
+          text: ">"
+          font_name: lazer84
+          font_size: 72
+          y: middle + 50
+          x: right - 75
           color: white
   select_CompetitionMode:
     widgets:
@@ -88,19 +148,39 @@ slides:
           text: SELECT MODE
           font_name: lazer84
           font_size: 100
-          y: middle+200
+          y: middle+250
           color: white
         - type: text
           text: Competition Mode
           font_name: ARLRDBD
           font_size: 100
-          y: middle
+          y: middle + 50
           color: lightblue
         - type: text
           text: "Outlane Gates Always Open\nNormal Tool Collect\nNo Extra Balls\nNo Collect Helpers\nNo Random Awards"
           font_name: ARLRDBD
           font_size: 36
-          y: middle-200
+          y: middle-150
+          color: white
+        - type: text
+          text: "Use Flipper Buttons to Choose Mode, Press Start Again to Select"
+          font_name: Arial
+          font_size: 36
+          y: bottom+50
+          color: white
+        - type: text
+          text: "<"
+          font_name: lazer84
+          font_size: 72
+          y: middle + 50
+          x: left + 75
+          color: white
+        - type: text
+          text: ">"
+          font_name: lazer84
+          font_size: 72
+          y: middle + 50
+          x: right - 75
           color: white
   select_COOPMode:
     widgets:
@@ -108,19 +188,39 @@ slides:
           text: SELECT MODE
           font_name: lazer84
           font_size: 100
-          y: middle+200
+          y: middle+250
           color: white
         - type: text
           text: Cooperative Mode
           font_name: ARLRDBD
           font_size: 100
-          y: middle
+          y: middle + 50
           color: violet
         - type: text
           text: "Work Together to beat the Ender Dragon\nSingle Score for All Players\nNormal Skill Level\nNo Extra Balls"
           font_name: ARLRDBD
           font_size: 36
-          y: middle-200
+          y: middle-150
+          color: white
+        - type: text
+          text: "Use Flipper Buttons to Choose Mode, Press Start Again to Select"
+          font_name: Arial
+          font_size: 36
+          y: bottom+50
+          color: white
+        - type: text
+          text: "<"
+          font_name: lazer84
+          font_size: 72
+          y: middle + 50
+          x: left + 75
+          color: white
+        - type: text
+          text: ">"
+          font_name: lazer84
+          font_size: 72
+          y: middle + 50
+          x: right - 75
           color: white
   select_StoryMode:
     widgets:
@@ -128,48 +228,42 @@ slides:
           text: SELECT MODE
           font_name: lazer84
           font_size: 100
-          y: middle+200
+          y: middle+250
           color: white
         - type: text
           text: Story Mode
           font_name: ARLRDBD
           font_size: 100
-          y: middle
+          y: middle + 50
           color: orange
         - type: text
           text: "Play until you beat the Ender Dragon\nNo Scoring / Fastest Time Wins\nEasy Difficulty Level\nUnlimited Balls"
           font_name: ARLRDBD
           font_size: 36
-          y: middle-200
+          y: middle-150
+          color: white
+        - type: text
+          text: "Use Flipper Buttons to Choose Mode, Press Start Again to Select"
+          font_name: Arial
+          font_size: 36
+          y: bottom+50
+          color: white
+        - type: text
+          text: "<"
+          font_name: lazer84
+          font_size: 72
+          y: middle + 50
+          x: left + 75
+          color: white
+        - type: text
+          text: ">"
+          font_name: lazer84
+          font_size: 72
+          y: middle + 50
+          x: right - 75
           color: white
 
 #EASY / NORMAL / HARDCORE / COMPETITION / COOP / STORY
-
-variable_player:
-  gameselect_Easy_highlighted: 
-    game_mode:
-      string: "EASY"
-      action: set
-  gameselect_Normal_highlighted:
-    game_mode:
-      string: "NORMAL"
-      action: set 
-  gameselect_Hardcore_highlighted: 
-    game_mode:
-      string: "HARDCORE"
-      action: set
-  gameselect_Competition_highlighted:
-    game_mode:
-      string: "COMPETITION"
-      action: set
-  gameselect_COOP_highlighted: 
-    game_mode:
-      string: "COOP"
-      action: set
-  gameselect_Story_highlighted:
-    game_mode:
-      string: "STORY"
-      action: set
 
 event_player:
   gameselect_Easy_selected: mode_selected
