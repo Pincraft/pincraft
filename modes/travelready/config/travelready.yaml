@@ -13,22 +13,27 @@ sound_player:
  mode_travelready_started: voice_travel_ready
 
 event_player:
-  sshot_travel_hit{current_player.world_id==1}:
+  sshot_travel_hit:
+    travel_hit
+  skill_success:
+    travel_hit
+
+  travel_hit{current_player.world_id==1}:
     world1_completed
     nether_started
-  sshot_travel_hit{current_player.world_id==2}:
+  travel_hit{current_player.world_id==2}:
     world2_completed
     nether_started
-  sshot_travel_hit{current_player.world_id==3}:
+  travel_hit{current_player.world_id==3}:
     world3_completed
     nether_started
-  sshot_travel_hit{current_player.world_id==4}:
+  travel_hit{current_player.world_id==4}:
     world4_completed
     nether_started
-  sshot_travel_hit{current_player.world_id==5}:
+  travel_hit{current_player.world_id==5}:
     world5_completed
     stronghold_started
-  sshot_travel_hit{current_player.world_id==6}:
+  travel_hit{current_player.world_id==6}:
     stronghold_completed
 
 

@@ -6,7 +6,7 @@ mode:
 
 shots:
   skill_scoup:
-    switch: s_scoup
+    switch: s_portal
     profile: skillflash
     advance_events: mode_skill_shot_started
     show_tokens:

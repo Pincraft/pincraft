@@ -315,7 +315,7 @@ widgets:
       x: left+15
       z: 200
     - type: text        #GAME MODE
-      text: GAME MODE (player|game_mode)
+      text: GAME MODE (machine|game_mode)
       number_grouping: true
       min_digits: 2
       font_name: ARLRDBD

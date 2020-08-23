@@ -92,7 +92,10 @@ variable_player:
 
 
   recalculate_tools:
-    tools_ready: 1      #increase tool count by 1
+    tools_ready: machine.difficulty_tools      #increase tool count by 1
+
+  recalculate_tools{current_player.tools_ready>4}:
+    tools_ready: 4
 
   #Lite Crafting Full if all 4 tools are ready to be collected
   recalculate_tools{current_player.tools_ready==4}:
@@ -149,7 +152,8 @@ sound_player:
   tool1_hit: collect_tool
   tool2_hit: collect_tool
   tool3_hit: collect_tool
-  crafting_lit{current_player.tools_ready<=1}: craft_ready
+  crafting_lit{current_player.tools_ready<=1 and machine.difficulty_tools==1}: craft_ready
+  crafting_lit{machine.difficulty_tools==4}: craft_ready
 
 
 show_player:

@@ -1,6 +1,15 @@
+difficulty_night:
+  expire: null
+  value: 50
+difficulty_villager:
+  expire: null
+  value: 10
+game_mode:
+  expire: null
+  value: EASY
+game_mode_display:
+  expire: null
+  value: Easy Mode
 player1_score:
   expire: null
-  value: 409200
-player2_score:
-  expire: null
-  value: 177800
+  value: 121050

@@ -32,6 +32,7 @@ class Base(Mode):
         self.machine.variables.set_machine_var("game_mode_display", "Easy Mode")
         self.machine.variables.set_machine_var("difficulty_villager", 10)
         self.machine.variables.set_machine_var("difficulty_night", 50)
+        self.machine.variables.set_machine_var("difficulty_tools", 4)
         self.machine.game.balls_per_game==3
 
     #NORMAL MODE SELECTED
@@ -40,6 +41,7 @@ class Base(Mode):
         self.machine.variables.set_machine_var("game_mode_display", "Normal Mode")
         self.machine.variables.set_machine_var("difficulty_villager", 20)
         self.machine.variables.set_machine_var("difficulty_night", 75)
+        self.machine.variables.set_machine_var("difficulty_tools", 1)
         self.machine.game.balls_per_game==3
     
     #HARDCORE MODE SELECTED
@@ -48,6 +50,7 @@ class Base(Mode):
         self.machine.variables.set_machine_var("game_mode_display", "Hardcore Mode")
         self.machine.variables.set_machine_var("difficulty_villager", 40)
         self.machine.variables.set_machine_var("difficulty_night", 100)
+        self.machine.variables.set_machine_var("difficulty_tools", 1)
         self.machine.game.balls_per_game==3
 
     #COMPETITION MODE SELECTED
@@ -56,6 +59,7 @@ class Base(Mode):
         self.machine.variables.set_machine_var("game_mode_display", "Competition Mode")
         self.machine.variables.set_machine_var("difficulty_villager", 40)
         self.machine.variables.set_machine_var("difficulty_night", 100)
+        self.machine.variables.set_machine_var("difficulty_tools", 1)
         self.machine.game.balls_per_game==3
 
     #COOPERATIVE MODE SELECTED
@@ -64,6 +68,7 @@ class Base(Mode):
         self.machine.variables.set_machine_var("game_mode_display", "Cooperative Mode")
         self.machine.variables.set_machine_var("difficulty_villager", 20)
         self.machine.variables.set_machine_var("difficulty_night", 75)
+        self.machine.variables.set_machine_var("difficulty_tools", 1)
         self.machine.game.balls_per_game==3
 
     #STORY MODE SELECTED
@@ -72,6 +77,7 @@ class Base(Mode):
         self.machine.variables.set_machine_var("game_mode_display", "Story Mode")
         self.machine.variables.set_machine_var("difficulty_villager", 10)
         self.machine.variables.set_machine_var("difficulty_night", 50)
+        self.machine.variables.set_machine_var("difficulty_tools", 4)
         self.machine.game.balls_per_game==1
 
     #PLAYER ADDING - Do not allow adding of player if game select screen is active, or certain critera applies

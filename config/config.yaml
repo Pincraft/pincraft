@@ -2367,6 +2367,10 @@ machine_vars:
     initial_value: 100
     value_type: int
 
+  difficulty_tools:
+    initial_value: 1
+    value_type: int
+
     
 # PLAYER VARIABLES
 #--------------------------------------------
