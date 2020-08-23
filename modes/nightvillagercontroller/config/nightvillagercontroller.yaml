@@ -19,7 +19,5 @@ show_player:
       loops: -1
       speed:  10
 
-event_player:
-  mode_nightvillager_started:
-    outlanegate_close
+
   

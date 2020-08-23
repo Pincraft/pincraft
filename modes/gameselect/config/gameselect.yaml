@@ -37,7 +37,7 @@ slides:
           y: middle + 50
           color: lightgreen
         - type: text
-          text: "Outlane Gates Always Closed\nSimple Tools Collect\nEasy Extra Ball"
+          text: "Outlane Gates Always Closed\nSimple Tools Collect\nEasier Extra Ball\nEasier Multiballs"
           font_name: ARLRDBD
           font_size: 36
           y: middle-150
@@ -77,7 +77,7 @@ slides:
           y: middle + 50
           color: yellow
         - type: text
-          text: "Outlane Gates Skill Based\nNormal Tool Collect\nNormal Extra Ball"
+          text: "Outlane Gates Skill Based\nNormal Tool Collect\nNormal Extra Ball\nNormal Multiballs"
           font_name: ARLRDBD
           font_size: 36
           y: middle-150
@@ -117,7 +117,7 @@ slides:
           y: middle + 50
           color: red
         - type: text
-          text: "Outlane Gates Always Open\nNormal Tool Collect\nNormal Extra Ball\nNo Collect Helpers"
+          text: "Outlane Gates Always Open\nNormal Tool Collect\nNormal Extra Ball\nNo Collect Helpers\nHarder Multiballs"
           font_name: ARLRDBD
           font_size: 36
           y: middle-150
@@ -157,7 +157,7 @@ slides:
           y: middle + 50
           color: lightblue
         - type: text
-          text: "Outlane Gates Always Open\nNormal Tool Collect\nNo Extra Balls\nNo Collect Helpers\nNo Random Awards"
+          text: "Outlane Gates Always Open\nNormal Tool Collect\nNo Extra Balls\nNo Collect Helpers\nHarder Multiballs\nNo Random Awards"
           font_name: ARLRDBD
           font_size: 36
           y: middle-150
@@ -197,7 +197,7 @@ slides:
           y: middle + 50
           color: violet
         - type: text
-          text: "Work Together to beat the Ender Dragon\nSingle Score for All Players\nNormal Skill Level\nNo Extra Balls"
+          text: "Work Together to beat the Ender Dragon\nSingle Score for All Players\nNormal Difficulty Level\nNo Extra Balls"
           font_name: ARLRDBD
           font_size: 36
           y: middle-150

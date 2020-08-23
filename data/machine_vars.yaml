@@ -1,3 +1,6 @@
 player1_score:
   expire: null
-  value: 107348300
+  value: 409200
+player2_score:
+  expire: null
+  value: 177800

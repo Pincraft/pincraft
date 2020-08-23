@@ -414,16 +414,8 @@ event_player:
   netherphase3setup_attempted{device.switches.s_drop2.state==1 or device.switches.s_drop5.state==1 or device.switches.s_drop3.state==1 or device.switches.s_drop4.state==1}:
     nethermb_phase3_retry
 
-
-  mode_nether_started:
-    outlanegate_close
-
   slide_nether_slide_active:
     show_ball_count
     show_player_score
     show_multiplier
     #show_debug
-  mbnether_jackpot_hit:
-    outlanegate_open
-  mb_super_jackpot_hit:
-    outlanegate_open

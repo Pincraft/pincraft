@@ -2358,6 +2358,15 @@ machine_vars:
   game_mode_display:
     initial_value: "Normal Mode"
     value_type: str
+
+  difficulty_villager:
+    initial_value: 20
+    value_type: int
+  
+  difficulty_night:
+    initial_value: 100
+    value_type: int
+
     
 # PLAYER VARIABLES
 #--------------------------------------------
@@ -2369,6 +2378,10 @@ player_vars:
   diverter_state:
     initial_value: "start"
     value_type: str
+
+  spinner_level: 
+    initial_value: 0
+    value_type: int
 
   #Extra Ball Progress
   earned_ebcount:

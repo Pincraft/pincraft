@@ -39,10 +39,7 @@ shots:
     
 event_player:
   mode_villagermb_started:
-    outlanegate_close
     show_multiplier
-  villager_jackpot_hit:
-    outlanegate_open
     
 #play hurry up sound effect
 sound_player:

@@ -26,30 +26,52 @@ class Base(Mode):
         
         self.add_mode_event_handler('player_added', self.gc_playeradded)
 
-    #MODE IS SELECTED
+    #EASY MODE SELECTED
     def gc_modeeasyselected(self, **kwargs):
         self.machine.variables.set_machine_var("game_mode", "EASY")
         self.machine.variables.set_machine_var("game_mode_display", "Easy Mode")
+        self.machine.variables.set_machine_var("difficulty_villager", 10)
+        self.machine.variables.set_machine_var("difficulty_night", 50)
         self.machine.game.balls_per_game==3
+
+    #NORMAL MODE SELECTED
     def gc_modenormalselected(self, **kwargs):
         self.machine.variables.set_machine_var("game_mode", "NORMAL")
         self.machine.variables.set_machine_var("game_mode_display", "Normal Mode")
+        self.machine.variables.set_machine_var("difficulty_villager", 20)
+        self.machine.variables.set_machine_var("difficulty_night", 75)
         self.machine.game.balls_per_game==3
+    
+    #HARDCORE MODE SELECTED
     def gc_modehardselected(self, **kwargs):
         self.machine.variables.set_machine_var("game_mode", "HARDCORE")
         self.machine.variables.set_machine_var("game_mode_display", "Hardcore Mode")
+        self.machine.variables.set_machine_var("difficulty_villager", 40)
+        self.machine.variables.set_machine_var("difficulty_night", 100)
         self.machine.game.balls_per_game==3
+
+    #COMPETITION MODE SELECTED
     def gc_modecompetitionselected(self, **kwargs):
         self.machine.variables.set_machine_var("game_mode", "COMPETITION")
         self.machine.variables.set_machine_var("game_mode_display", "Competition Mode")
+        self.machine.variables.set_machine_var("difficulty_villager", 40)
+        self.machine.variables.set_machine_var("difficulty_night", 100)
         self.machine.game.balls_per_game==3
+
+    #COOPERATIVE MODE SELECTED
     def gc_modecoopselected(self, **kwargs):
         self.machine.variables.set_machine_var("game_mode", "COOP")
         self.machine.variables.set_machine_var("game_mode_display", "Cooperative Mode")
+        self.machine.variables.set_machine_var("difficulty_villager", 20)
+        self.machine.variables.set_machine_var("difficulty_night", 75)
         self.machine.game.balls_per_game==3
+
+    #STORY MODE SELECTED
     def gc_modestoryselected(self, **kwargs):
         self.machine.variables.set_machine_var("game_mode", "STORY")
         self.machine.variables.set_machine_var("game_mode_display", "Story Mode")
+        self.machine.variables.set_machine_var("difficulty_villager", 10)
+        self.machine.variables.set_machine_var("difficulty_night", 50)
         self.machine.game.balls_per_game==1
 
     #PLAYER ADDING - Do not allow adding of player if game select screen is active, or certain critera applies

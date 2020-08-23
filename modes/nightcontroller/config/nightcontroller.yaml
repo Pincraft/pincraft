@@ -21,10 +21,3 @@ show_player:
  
 
 
-event_player:
-  mode_night_started:
-    outlanegate_close
-    #show_ball_count
-    #show_player_score
-    #show_debug
-  

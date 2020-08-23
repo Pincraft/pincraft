@@ -5,16 +5,6 @@ mode:
     priority: 200
 
 timers:
-  warn_gate:
-    start_value: 0
-    end_value: 6
-    direction: up
-    tick_interval: 1s
-    control_events:
-      - action: restart
-        event: outlanegate_open
-      - action: stop
-        event: outlanegate_close
   open_left_gate:
     start_value: 0
     end_value: 1
@@ -24,8 +14,32 @@ timers:
       - action: restart
         event: leftgate_open
 
+#   warn_gate:
+#     start_value: 0
+#     end_value: 6
+#     direction: up
+#     tick_interval: 1s
+#     control_events:
+#       - action: restart
+#         event: outlanegate_open
+#       - action: stop
+#         event: outlanegate_close
+
+
 
 event_player:
+  mode_outlanegate_started{machine.game_mode=="EASY"}:
+    outlanegate_close
+  mode_outlanegate_started{machine.game_mode=="NORMAL"}:
+    outlanegate_close
+  mode_outlanegate_started{machine.game_mode=="HARDCORE"}:
+    outlanegate_open
+  mode_outlanegate_started{machine.game_mode=="COMPETITION"}:
+    outlanegate_open
+  mode_outlanegate_started{machine.game_mode=="COOP"}:
+    outlanegate_close
+  mode_outlanegate_started{machine.game_mode=="STORY"}:
+    outlanegate_close
   s_leftinlane_active{current_player.gate_open==1}:
     leftgate_open
 
@@ -40,7 +54,7 @@ coil_player:
       action: disable 
   outlanegate_open:    #request to open gate, but not yet finished
     c_rightinlanegate:
-      action: disable
+      action: enable
     c_leftinlanegate:
       action: disable  
   leftgate_open:
@@ -60,12 +74,12 @@ variable_player:
       action: set
   outlanegate_open:    
     gate_open:
-      int: 0
-      action: set
-  timer_warn_gate_complete:
-    gate_open:
       int: 1
       action: set
+  # timer_warn_gate_complete:
+  #   gate_open:
+  #     int: 1
+  #     action: set
 
 light_player:
   outlanegate_close:
@@ -75,23 +89,23 @@ light_player:
       color: green
   outlanegate_open:
     l_rightoutlane:
-      color: green
+      color: red
     l_leftgate:
-      color: green
-  timer_warn_gate_complete:
-    l_rightoutlane: 
-      color: red 
-      fade: 200ms
-    l_leftgate: 
-      color: red 
-      fade: 200ms
+      color: red
+  # timer_warn_gate_complete:
+  #   l_rightoutlane: 
+  #     color: red 
+  #     fade: 200ms
+  #   l_leftgate: 
+  #     color: red 
+  #     fade: 200ms
 
-show_player:
-  timer_warn_gate_started:
-    show_blinklight:
-      loops: 9 
-      speed: 1
-      show_tokens:
-        led: l_rightoutlane
-        color: orange
+# show_player:
+#   timer_warn_gate_started:
+#     show_blinklight:
+#       loops: 9 
+#       speed: 1
+#       show_tokens:
+#         led: l_rightoutlane
+#         color: orange
   

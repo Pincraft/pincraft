@@ -9,7 +9,6 @@ mode:
 
 event_player:
   mode_night_started:
-    outlanegate_close
     show_multiplier
 
   

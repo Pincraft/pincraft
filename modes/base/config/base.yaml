@@ -25,8 +25,7 @@ shots:
 
 event_player:
   #BALL STARTING EVENTS
-  mode_base_started:
-    outlanegate_close
+  #mode_base_started:
     # show_ball_count
     # show_player_score
     # show_debug
@@ -56,9 +55,6 @@ event_player:
     #theend_start
 
   #ENABLE NEXT WORLDS WHEN NETHER MODE RETURNS
-  multiball_nethermb_ended:
-    outlanegate_open
-
   multiball_nethermb_ended{current_player.world_id==1}:
     world2_start   
   multiball_nethermb_ended{current_player.world_id==2}:
@@ -94,11 +90,6 @@ event_player:
     stronghold_ready
     villagerornightmb_disable
 
-  event_nightorvillagermultiball_ended{current_player.world_jackpot_worlds>1}:
-    outlanegate_open
-
-  event_nightorvillagermultiball_ended{current_player.world_jackpot_worlds==1}:
-    outlanegate_close
 
 
 

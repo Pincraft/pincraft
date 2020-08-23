@@ -492,9 +492,6 @@ widget_player:
    
 
 event_player:
-  mode_stronghold_started:
-    outlanegate_close
-
   slide_stronghold_slide_active:
     show_player_score
     show_ball_count
