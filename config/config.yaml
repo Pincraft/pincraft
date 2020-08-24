@@ -2355,9 +2355,14 @@ machine_vars:
   game_mode:
     initial_value: "NORMAL"   # EASY / NORMAL / HARDCORE / COMPETITION / COOP / STORY
     value_type: str 
+
   game_mode_display:
     initial_value: "Normal Mode"
     value_type: str
+
+  game_num_players:
+    initial_value: 1
+    value_type: int
 
   difficulty_villager:
     initial_value: 20
@@ -2371,6 +2376,13 @@ machine_vars:
     initial_value: 1
     value_type: int
 
+  difficulty_extraball1:
+    initial_value: 6
+    value_type: int
+
+  difficulty_extraball2:
+    initial_value: 12
+    value_type: int
     
 # PLAYER VARIABLES
 #--------------------------------------------

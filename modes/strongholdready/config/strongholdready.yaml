@@ -4,6 +4,11 @@ mode:
     stop_events: multiball_strongholdmb_started, ball_ending
     priority: 1000
 
+event_player:
+ #START STRONGHOLD MULTIBALL ON PLUNGE
+  sw_playfield_active_active{device.multiball_locks.strongholdlock.locked_balls==1 and device.multiball_locks.strongholdlock.enabled}:
+    stronghold_start
+
 #play hurry up sound effect
 sound_player:
   mode_strongholdready_started:

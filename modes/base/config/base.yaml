@@ -11,7 +11,13 @@ extra_balls:
     award_events: meatextraball_award
     max_per_game: 2
 
-
+#BALL SAVES
+ball_saves:
+  story_mode:
+    active_time: 0
+    enable_events: enable_endless_ballsave
+    only_last_ball: true
+    balls_to_save: -1
 
 #Shots
 shots:
@@ -19,16 +25,11 @@ shots:
     switch: s_spinner
   captiveball:
     switch: s_captiveball
- 
- 
-  # Collect Item Special moved to Extra Ball Mode
 
 event_player:
-  #BALL STARTING EVENTS
-  #mode_base_started:
-    # show_ball_count
-    # show_player_score
-    # show_debug
+  #Story Mode Ball Save
+  mode_base_started{machine.game_mode=="STORY"}:
+    enable_endless_ballsave
 
   mode_nightcontroller_stopped:
     event_nightorvillagermultiball_ended
@@ -40,13 +41,6 @@ event_player:
   player_multiplier_mb:
     show_multiplier
     
-  # -- MULTIBALL START LOGIC
-
-  #START STRONGHOLD MULTIBALL ON PLUNGE
-  sw_playfield_active_active{device.multiball_locks.strongholdlock.locked_balls==1 and device.multiball_locks.strongholdlock.enabled}:
-    stronghold_start
-
-
   #=========== CONTROLS WHEN WORLDS ARE STARTED ============
   #START WORLD 1
   mode_base_started{current_player.world_id==0}:
@@ -89,9 +83,6 @@ event_player:
   event_nightorvillagermultiball_ended{current_player.world_id == 5 and current_player.world_item1_remaining == 0 and current_player.world_item2_remaining == 0 and current_player.world_item3_remaining == 0 and current_player.world_item4_remaining == 0}:
     stronghold_ready
     villagerornightmb_disable
-
-
-
 
 multiball_locks:
   strongholdlock:
@@ -611,21 +602,21 @@ widget_player:
           image: multiball_3x
 
   #BALL COUNT WIDGETS
-  show_ball_count{current_player.ball==1}:
+  show_ball_count{current_player.ball==1 and machine.game_mode != "COOP"}:
     widget_ball1:
       action: add
     widget_ball2:
       action: remove
     widget_ball3:
       action: remove
-  show_ball_count{current_player.ball==2}:
+  show_ball_count{current_player.ball==2 and machine.game_mode != "COOP"}:
     widget_ball1:
       action: remove
     widget_ball2:
       action: add
     widget_ball3:
       action: remove
-  show_ball_count{current_player.ball==3}:
+  show_ball_count{current_player.ball==3 and machine.game_mode != "COOP"}:
     widget_ball1:
       action: remove
     widget_ball2:
@@ -644,6 +635,16 @@ widget_player:
     widget_player4score:
       action: add
 
+  coop_player_added{machine.game_num_players==2}:
+    widget_player2score:
+      action: add
+  coop_player_added{machine.game_num_players==3}:
+    widget_player3score:
+      action: add
+  coop_player_added{machine.game_num_players==4}:
+    widget_player4score:
+      action: add
+
   #SHOW SCORE BACKGROUND
   show_player_score: 
     widget_scorebackground:
@@ -656,19 +657,19 @@ widget_player:
       widget_settings:
         font_size: 24
 
-  show_player_score{current_player.number!=2 and game.num_players>=2}:
+  show_player_score{current_player.number!=2 and machine.game_num_players >=2}:
     widget_player2score:
       action: update
       widget_settings:
         font_size: 24
 
-  show_player_score{current_player.number!=3 and game.num_players>=3}:
+  show_player_score{current_player.number!=3 and machine.game_num_players >=3}:
     widget_player3score:
       action: update
       widget_settings:
         font_size: 24
 
-  show_player_score{current_player.number!=4 and game.num_players>=4}:
+  show_player_score{current_player.number!=4 and machine.game_num_players >=4}:
     widget_player4score:
       action: update
       widget_settings:
@@ -681,19 +682,19 @@ widget_player:
       widget_settings:
         font_size: 36
 
-  show_player_score{current_player.number==2 and game.num_players>=2}:
+  show_player_score{current_player.number==2 and machine.game_num_players>=2}:
     widget_player2score:
       action: update
       widget_settings:
         font_size: 36
 
-  show_player_score{current_player.number==3 and game.num_players>=3}:
+  show_player_score{current_player.number==3 and machine.game_num_players>=3}:
      widget_player3score:
       action: update
       widget_settings:
         font_size: 36
 
-  show_player_score{current_player.number==4 and game.num_players>=4}:
+  show_player_score{current_player.number==4 and machine.game_num_players>=4}:
     widget_player4score:
       action: update
       widget_settings:
