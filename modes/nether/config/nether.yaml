@@ -20,25 +20,22 @@ sound_player:
       loops: -1
       track: music
       mode_end_action: stop 
-  mbnether_drop2_hit: zombie_death
-  mbnether_drop5_hit: zombie_death
-  mbnether_drop3_hit: creeper_death
-  mbnether_drop4_hit: creeper_death
+  mbnether_drop2_hit: skeleton_death
+  mbnether_drop5_hit: skeleton_death
+  mbnether_drop3_hit: ghast_death
+  mbnether_drop4_hit: ghast_death
 
   nethermb_phase1_active: voice_nether_arrival
   nethermb_phase2_active: voice_nether_skeletonjackpot
   nethermb_phase3_active: voice_nether_ghastjackpot
   nethermb_jackpot_active: voice_nether_jackpot
-  #mbnether_jackpot_hit: voice_nether_superjackpot
-  #mbnether_superjackpot_hit: voice_nether_supermegajackpot
-
 
 show_player:
   
   mbnether_drop2_hit:
     show_flashactionbarodd:
       show_tokens:
-        color: purple
+        color: orange
       loops: 0
       speed: 4
   
@@ -59,7 +56,7 @@ show_player:
   mbnether_drop5_hit:
     show_flashactionbarodd:
       show_tokens:
-        color: purple
+        color: orange
       loops: 0
       speed: 4
     
@@ -346,15 +343,53 @@ widgets:
       x: center - 300
       z: 205
 
+  widget_leftskeleton:
+    - type: image        
+      image: SkeletonLeft
+      anchor_x: middle
+      anchor_y: top
+      y: top-50
+      x: middle-500
+      z: 10
+
+  widget_leftghast:
+    - type: image        
+      image: GhastLeftAnimated
+      anchor_x: middle
+      anchor_y: top
+      y: top-150
+      x: middle-225
+      z: 10
+
+  widget_rightskeleton:
+    - type: image        
+      image: SkeletonRight
+      anchor_x: middle
+      anchor_y: top
+      y: top-50
+      x: middle+350
+      z: 10
+
+  widget_rightghast:
+    - type: image        
+      image: GhastRightAnimated
+      anchor_x: middle
+      anchor_y: top
+      y: top-150
+      x: middle+75
+      z: 10
+
+
+
+
+
+
 slides:
   nether_slide:
     widgets:
-      - type: text
-        font_name: lazer84
-        font_size: 70
-        text: "Nether Mode"
-        z: 0
-
+      - type: image
+        image: Pincraft_Logo_Icon
+        z: 1
 
 slide_player:
   mode_nether_started: nether_slide
@@ -364,7 +399,54 @@ widget_player:
     widget_nethervideobackground:
       action: add
       slide: nether_slide
+
+  #Show Skeletons Mobs
+  netherphase1setup_complete:
+    widget_leftskeleton:
+      action: add
+      slide: nether_slide
+    widget_rightskeleton:
+      action: add
+      slide: nether_slide
   
+  #Show Ghasts Mobs:
+  netherphase2setup_complete:
+    widget_leftghast:
+      action: add
+      slide: nether_slide
+    widget_rightghast:
+      action: add
+      slide: nether_slide
+
+  #Show Skelenton and Ghasts Mobs:
+  netherphase3setup_complete:
+    widget_leftghast:
+      action: add
+      slide: nether_slide
+    widget_rightghast:
+      action: add
+      slide: nether_slide
+    widget_leftskeleton:
+      action: add
+      slide: nether_slide
+    widget_rightskeleton:
+      action: add
+      slide: nether_slide
+  
+  #Remove Mobs When Hit
+  mbnether_drop2_hit:
+    widget_leftskeleton:
+      action: remove
+  mbnether_drop3_hit:
+    widget_leftghast:
+      action: remove
+  mbnether_drop4_hit:
+    widget_rightghast:
+      action: remove
+  mbnether_drop5_hit:
+    widget_rightskeleton:
+      action: remove
+
   #SHOW LARGE SWORD
   slide_nether_slide_active{current_player.sword==1}:
     widget_netherswordplayer:

@@ -2058,6 +2058,17 @@ sounds:
     volume: 1
     track: sfx
 
+  #SFX: Nether
+  ghast_death:
+    file: ghast_death.ogg
+    volume: 1
+    track: sfx
+  
+  skeleton_death:
+    file: skeleton_death.ogg
+    volume: 1
+    track: sfx
+
   #SFX: STRONGHOLD
   eyeplace1:
     file: eyeplace1.ogg

@@ -6,84 +6,84 @@
 - duration: 1
   lights:
     l_tool2ready: 
-      color: off
+      color: stop
       fade: 500ms
     l_tool1ready: 
       color: blue
 - duration: 1
   lights:
     l_tool1ready: 
-      color: off
+      color: stop
       fade: 500ms
     l_toolcollect1: 
       color: blue
 - duration: 1
   lights:
     l_toolcollect1: 
-      color: off
+      color: stop
       fade: 500ms
     l_craft1: 
       color: blue
 - duration: 1
   lights:
     l_craft1: 
-      color: off
+      color: stop
       fade: 500ms
     l_craft2: 
       color: blue
 - duration: 1
   lights:
     l_craft2: 
-      color: off
+      color: stop
       fade: 500ms
     l_craft3: 
       color: blue
 - duration: 1
   lights:
     l_craft3: 
-      color: off
+      color: stop
       fade: 500ms
     l_craft4: 
       color: blue
 - duration: 1
   lights:
     l_craft4: 
-      color: off
+      color: stop
       fade: 500ms
     gi_captivetop: 
       color: blue
 - duration: 1
   lights:
     gi_captivetop: 
-      color: off
+      color: stop
       fade: 500ms
     l_spinner4: 
       color: blue
 - duration: 1
   lights:
     l_spinner4: 
-      color: off
+      color: stop
       fade: 500ms
     l_spinner3: 
       color: blue
 - duration: 1
   lights:
     l_spinner3: 
-      color: off
+      color: stop
       fade: 500ms
     l_spinner2: 
       color: blue
 - duration: 1
   lights:
     l_spinner2: 
-      color: off
+      color: stop
       fade: 500ms
     l_spinner1: 
       color: blue
 - duration: 1
   lights:
     l_spinner1: 
-      color: off
+      color: stop
       fade: 500ms  
 - duration: 10
 
