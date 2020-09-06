@@ -1,17 +1,17 @@
 #show_version=5
 - duration: .25
   lights:
-    l_spinner4: off-f50ms
-    l_spinner1: 417266
+    l_spinner4: white-f50ms
+    l_spinner1: stop
 - duration: .25
   lights:
-    l_spinner1: off-f50ms
-    l_spinner2: 417266
+    l_spinner1: white-f50ms
+    l_spinner2: stop
 - duration: .25
   lights:
-    l_spinner2: off-f50ms
-    l_spinner3: 417266
+    l_spinner2: white-f50ms
+    l_spinner3: stop
 - duration: .25
   lights:
-    l_spinner3: off-f50ms
-    l_spinner4: 417266
+    l_spinner3: white-f50ms
+    l_spinner4: stop

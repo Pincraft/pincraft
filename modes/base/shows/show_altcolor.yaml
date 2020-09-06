@@ -1,7 +1,7 @@
 #show_version=5
 - duration: 1
   lights:
-    (light): (color1)
+    (light): (color1)-f250ms
 - duration: .25
   lights:
-    (light): (color2)
+    (light): (color2)-f250ms

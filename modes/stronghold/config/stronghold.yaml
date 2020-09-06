@@ -69,7 +69,7 @@ variable_player:
 
   mode_stronghold_started:
     world_id:
-      int: 6
+      int: 51
       action: set
     stronghold_progress:
       int: 0
@@ -112,8 +112,8 @@ shot_profiles:
       - name: flashing  # step 2
         show: show_altcolor
         show_tokens:
-          color1: white
-          color2: 417266
+          color1: 417266
+          color2: white
       - name: turnon  # step 3
         show: show_singlelight
         show_tokens:
@@ -123,6 +123,7 @@ shot_profiles:
     states:
       - name: flashing  # step 2
         show: show_spinnerenabled
+        priority: 10
     loop: yes
 
 shots:
@@ -150,7 +151,6 @@ shots:
     show_tokens:
       leds: l_spinner1
       light: l_spinner1
-
   set2_left:
     switch: s_collectitem2
     profile: sp_eyeshot
@@ -232,10 +232,10 @@ shots:
     enable_events: enable_eyespinner
     disable_events: disable_eyespinner
 
-  strongholdtravel:
-    switch: s_portal
-    profile: sp_eyeshot
-    enable_events: enable_endportal
+  # strongholdtravel:
+  #   switch: s_portal
+  #   profile: sp_eyeshot
+  #   enable_events: enable_endportal
 
 
 shot_groups:
@@ -472,6 +472,9 @@ light_player:
     l_actionbar7: 417266
     l_actionbar8: 417266
     l_actionbar9: 417266
+    l_collectitem1: 417266
+    l_toolcollect1: 417266
+    l_spinner1: 417266
   update_eye_display{current_player.stronghold_progress >=2}:
     l_actionbar10: 417266
     l_actionbar11: 417266
@@ -482,6 +485,9 @@ light_player:
     l_actionbar16: 417266
     l_actionbar17: 417266
     l_actionbar18: 417266
+    l_collectitem2: 417266
+    l_toolcollect2: 417266
+    l_spinner2: 417266
   update_eye_display{current_player.stronghold_progress >=3}:
     l_actionbar19: 417266
     l_actionbar20: 417266
@@ -492,8 +498,14 @@ light_player:
     l_actionbar25: 417266
     l_actionbar26: 417266
     l_actionbar27: 417266
+    l_collectitem4: 417266
+    l_toolcollect3: 417266
+    l_spinner3: 417266
   update_eye_display{current_player.stronghold_progress >=4}:
     lactionbar: 417266
+    l_collectitem5: 417266
+    l_craftlit: 417266
+    l_spinner4: 417266
 
 widget_player:
   slide_stronghold_slide_active:
@@ -524,7 +536,6 @@ widget_player:
     widget_eye10
     widget_eye11
     widget_eye12
-    widget_portalopen
 
   set1_left_flashing_hit: widget_eye3
   set1_center_flashing_hit: widget_eye2
@@ -564,17 +575,23 @@ event_player:
   
   eyeset1_complete:
     enable_eyeset2
+    update_eye_display
   eyeset2_complete:
     enable_eyeset3
+    update_eye_display
   eyeset3_complete:
     enable_eyeset4
-  # eyeset4_complete:
-  #   enable_endportal
+    update_eye_display
+
   eyeset4_complete{current_player.multiplier_mb==2}:
     enable_eyespinner
+    update_eye_display
   eyeset4_complete{current_player.multiplier_mb==1}:
+    update_eye_display
     disable_eyespinner
     theend_ready
     enable_endportal
   multiball_strongholdmb_ended:
     disable_eyespinner
+    theend_ready
+    enable_endportal

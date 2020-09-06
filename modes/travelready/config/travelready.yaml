@@ -1,7 +1,7 @@
 #config_version=5
 mode:
-    start_events: travel_ready, nethermode_ready, strongholdmode_ready #, theend_ready
-    stop_events: nether_started, stronghold_started
+    start_events: travel_ready, nethermode_ready, strongholdmode_ready, theend_ready
+    stop_events: nether_started, stronghold_started, theend_started
     priority: 2100
     restart_on_next_ball: true
 
@@ -33,8 +33,9 @@ event_player:
   travel_hit{current_player.world_id==5}:
     world5_completed
     stronghold_start
-  travel_hit{current_player.world_id==6}:
+  travel_hit{current_player.world_id==51}:
     stronghold_completed
+    theend_started
 
 
 show_player:
