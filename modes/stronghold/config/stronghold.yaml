@@ -8,50 +8,55 @@ mode:
 
 variable_player:
   set1_left_flashing_hit:
-    score: 100000 * current_player.multiplier_mb * current_player.sword 
+    score: 10000 * current_player.multiplier_mb * current_player.sword 
   set1_center_flashing_hit:
-    score: 100000 * current_player.multiplier_mb * current_player.sword 
+    score: 10000 * current_player.multiplier_mb * current_player.sword 
   set1_right_flashing_hit:
-    score: 100000 * current_player.multiplier_mb * current_player.sword 
+    score: 10000 * current_player.multiplier_mb * current_player.sword 
   eyeset1_complete:
-    score: 250000 * current_player.multiplier_mb * current_player.sword 
+    score: 50000 * current_player.multiplier_mb * current_player.sword 
+    stronghold_jackpot: 250000
     stronghold_progress:
       int: 1
       action: set
+    
 
   set2_left_flashing_hit:
-    score: 100000 * current_player.multiplier_mb * current_player.sword 
+    score: 10000 * current_player.multiplier_mb * current_player.sword 
   set2_center_flashing_hit:
-    score: 100000 * current_player.multiplier_mb * current_player.sword 
+    score: 10000 * current_player.multiplier_mb * current_player.sword 
   set2_right_flashing_hit:
-    score: 100000 * current_player.multiplier_mb * current_player.sword 
+    score: 10000 * current_player.multiplier_mb * current_player.sword 
   eyeset2_complete:
-    score: 500000 * current_player.multiplier_mb * current_player.sword 
+    score: 50000 * current_player.multiplier_mb * current_player.sword 
+    stronghold_jackpot: 250000
     stronghold_progress:
         int: 2
         action: set
 
   set3_left_flashing_hit:
-    score: 100000 * current_player.multiplier_mb * current_player.sword 
+    score: 10000 * current_player.multiplier_mb * current_player.sword 
   set3_center_flashing_hit:
-    score: 100000 * current_player.multiplier_mb * current_player.sword 
+    score: 10000 * current_player.multiplier_mb * current_player.sword 
   set3_right_flashing_hit:
-    score: 100000 * current_player.multiplier_mb * current_player.sword 
+    score: 10000 * current_player.multiplier_mb * current_player.sword 
   eyeset3_complete:
-    score: 750000 * current_player.multiplier_mb * current_player.sword 
+    score: 50000 * current_player.multiplier_mb * current_player.sword 
+    stronghold_jackpot: 250000
     stronghold_progress:
         int: 3
         action: set
 
 
   set4_left_flashing_hit:
-    score: 100000 * current_player.multiplier_mb * current_player.sword 
+    score: 10000 * current_player.multiplier_mb * current_player.sword 
   set4_center_flashing_hit:
-    score: 100000 * current_player.multiplier_mb * current_player.sword 
+    score: 10000 * current_player.multiplier_mb * current_player.sword 
   set4_right_flashing_hit:
-    score: 100000 * current_player.multiplier_mb * current_player.sword 
+    score: 10000 * current_player.multiplier_mb * current_player.sword 
   eyeset4_complete:
-    score: 1000000 * current_player.multiplier_mb * current_player.sword 
+    score: 50000 * current_player.multiplier_mb * current_player.sword 
+    stronghold_jackpot: 250000
     stronghold_progress:
         int: 4
         action: set
@@ -105,14 +110,19 @@ shot_profiles:
   sp_eyeshot:
     states:
       - name: flashing  # step 2
-        show: flash
-      - name: lit  # step 3
-        show: on
+        show: show_altcolor
+        show_tokens:
+          color1: white
+          color2: 417266
+      - name: turnon  # step 3
+        show: show_singlelight
+        show_tokens:
+          color: 417266
     loop: no
   sp_eyespinner:
     states:
       - name: flashing  # step 2
-        show: show_superspinner
+        show: show_spinnerenabled
     loop: yes
 
 shots:
@@ -123,6 +133,7 @@ shots:
     disable_events: eyeset1_complete
     show_tokens:
       leds: l_collectitem1
+      light: l_collectitem1
   set1_center:
     switch: s_tooltarget1
     profile: sp_eyeshot
@@ -130,6 +141,7 @@ shots:
     disable_events: eyeset1_complete
     show_tokens:
       leds: l_toolcollect1
+      light: l_toolcollect1
   set1_right:
     switch: s_spinner
     profile: sp_eyeshot
@@ -137,6 +149,7 @@ shots:
     disable_events: eyeset1_complete
     show_tokens:
       leds: l_spinner1
+      light: l_spinner1
 
   set2_left:
     switch: s_collectitem2
@@ -145,6 +158,7 @@ shots:
     disable_events: eyeset2_complete
     show_tokens:
       leds: l_collectitem2
+      light: l_collectitem2
   set2_center:
     switch: s_tooltarget2
     profile: sp_eyeshot
@@ -152,6 +166,7 @@ shots:
     disable_events: eyeset2_complete
     show_tokens:
       leds: l_toolcollect2
+      light: l_toolcollect2
   set2_right:
     switch: s_spinner
     profile: sp_eyeshot
@@ -159,6 +174,7 @@ shots:
     disable_events: eyeset2_complete
     show_tokens:
       leds: l_spinner2
+      light: l_spinner2
 
   set3_left:
     switch: s_collectitem4
@@ -167,6 +183,7 @@ shots:
     disable_events: eyeset3_complete
     show_tokens:
       leds: l_collectitem4
+      light: l_collectitem4
   set3_center:
     switch: s_tooltarget3
     profile: sp_eyeshot
@@ -174,6 +191,7 @@ shots:
     disable_events: eyeset3_complete
     show_tokens:
       leds: l_toolcollect3
+      light: l_toolcollect3
   set3_right:
     switch: s_spinner
     profile: sp_eyeshot
@@ -181,6 +199,7 @@ shots:
     disable_events: eyeset3_complete
     show_tokens:
       leds: l_spinner3
+      light: l_spinner3
 
   set4_left:
     switch: s_collectitem5
@@ -189,6 +208,7 @@ shots:
     disable_events: eyeset4_complete
     show_tokens:
       leds: l_collectitem5
+      light: l_collectitem5
   set4_center:
     switch: s_topkicker
     profile: sp_eyeshot
@@ -196,6 +216,7 @@ shots:
     disable_events: eyeset4_complete
     show_tokens:
       leds: l_craftlit
+      light: l_craftlit
   set4_right:
     switch: s_spinner
     profile: sp_eyeshot
@@ -203,6 +224,7 @@ shots:
     disable_events: eyeset4_complete
     show_tokens:
       leds: l_spinner4
+      light: l_spinner4
 
   eyespinner:
     switch: s_spinner  
@@ -356,6 +378,26 @@ widgets:
       x: middle
       z: 150
 
+  widget_strongholdjackpot:
+    - type: image        #STRONGHOLD JACKPOT TEXT
+      image: jackpot_stronghold
+      anchor_x: center
+      anchor_y: center
+      y: bottom+100
+      x: center+35
+      z: 15    
+    - type: text        #STRONGHOLD JACKPOT VALUE
+      text: (player|stronghold_jackpot)
+      number_grouping: true
+      min_digits: 2
+      font_name: ARLRDBD
+      font_size: 24
+      y: bottom+75
+      x: center+35
+      z: 100
+      anchor_x: center
+      anchor_y: center
+
 slides:
   stronghold_slide:
     widgets:
@@ -372,86 +414,86 @@ light_player:
   mode_stronghold_started:
     lactionbar: off
   set1_left_flashing_hit: 
-    l_actionbar7: blue
-    l_actionbar8: blue
-    l_actionbar9: blue
+    l_actionbar7: 417266
+    l_actionbar8: 417266
+    l_actionbar9: 417266
   set1_center_flashing_hit: 
-    l_actionbar4: blue
-    l_actionbar5: blue
-    l_actionbar6: blue
+    l_actionbar4: 417266
+    l_actionbar5: 417266
+    l_actionbar6: 417266
   set1_right_flashing_hit: 
-    l_actionbar1: blue
-    l_actionbar2: blue
-    l_actionbar3: blue
+    l_actionbar1: 417266
+    l_actionbar2: 417266
+    l_actionbar3: 417266
   set2_left_flashing_hit: 
-    l_actionbar10: blue
-    l_actionbar11: blue
-    l_actionbar12: blue
+    l_actionbar10: 417266
+    l_actionbar11: 417266
+    l_actionbar12: 417266
   set2_center_flashing_hit: 
-    l_actionbar13: blue
-    l_actionbar14: blue
-    l_actionbar15: blue
+    l_actionbar13: 417266
+    l_actionbar14: 417266
+    l_actionbar15: 417266
   set2_right_flashing_hit: 
-    l_actionbar16: blue
-    l_actionbar17: blue
-    l_actionbar18: blue
+    l_actionbar16: 417266
+    l_actionbar17: 417266
+    l_actionbar18: 417266
   set3_left_flashing_hit: 
-    l_actionbar19: blue
-    l_actionbar20: blue
-    l_actionbar21: blue
+    l_actionbar19: 417266
+    l_actionbar20: 417266
+    l_actionbar21: 417266
   set3_center_flashing_hit: 
-    l_actionbar22: blue
-    l_actionbar23: blue
-    l_actionbar24: blue
+    l_actionbar22: 417266
+    l_actionbar23: 417266
+    l_actionbar24: 417266
   set3_right_flashing_hit: 
-    l_actionbar25: blue
-    l_actionbar26: blue
-    l_actionbar27: blue
+    l_actionbar25: 417266
+    l_actionbar26: 417266
+    l_actionbar27: 417266
   set4_left_flashing_hit:
-    l_actionbar34: blue
-    l_actionbar35: blue
-    l_actionbar36: blue
-    l_actionbar37: blue
+    l_actionbar34: 417266
+    l_actionbar35: 417266
+    l_actionbar36: 417266
+    l_actionbar37: 417266
   set4_center_flashing_hit: 
-    l_actionbar31: blue
-    l_actionbar32: blue
-    l_actionbar33: blue
+    l_actionbar31: 417266
+    l_actionbar32: 417266
+    l_actionbar33: 417266
   set4_right_flashing_hit: 
-    l_actionbar28: blue
-    l_actionbar29: blue
-    l_actionbar30: blue
+    l_actionbar28: 417266
+    l_actionbar29: 417266
+    l_actionbar30: 417266
   update_eye_display{current_player.stronghold_progress >=1}:
-    l_actionbar1: blue
-    l_actionbar2: blue
-    l_actionbar3: blue
-    l_actionbar4: blue
-    l_actionbar5: blue
-    l_actionbar6: blue
-    l_actionbar7: blue
-    l_actionbar8: blue
-    l_actionbar9: blue
+    l_actionbar1: 417266
+    l_actionbar2: 417266
+    l_actionbar3: 417266
+    l_actionbar4: 417266
+    l_actionbar5: 417266
+    l_actionbar6: 417266
+    l_actionbar7: 417266
+    l_actionbar8: 417266
+    l_actionbar9: 417266
   update_eye_display{current_player.stronghold_progress >=2}:
-    l_actionbar10: blue
-    l_actionbar11: blue
-    l_actionbar12: blue
-    l_actionbar13: blue
-    l_actionbar14: blue
-    l_actionbar15: blue
-    l_actionbar16: blue
-    l_actionbar17: blue
-    l_actionbar18: blue
+    l_actionbar10: 417266
+    l_actionbar11: 417266
+    l_actionbar12: 417266
+    l_actionbar13: 417266
+    l_actionbar14: 417266
+    l_actionbar15: 417266
+    l_actionbar16: 417266
+    l_actionbar17: 417266
+    l_actionbar18: 417266
   update_eye_display{current_player.stronghold_progress >=3}:
-    l_actionbar19: blue
-    l_actionbar20: blue
-    l_actionbar21: blue
-    l_actionbar22: blue
-    l_actionbar23: blue
-    l_actionbar24: blue
-    l_actionbar25: blue
-    l_actionbar26: blue
-    l_actionbar27: blue
+    l_actionbar19: 417266
+    l_actionbar20: 417266
+    l_actionbar21: 417266
+    l_actionbar22: 417266
+    l_actionbar23: 417266
+    l_actionbar24: 417266
+    l_actionbar25: 417266
+    l_actionbar26: 417266
+    l_actionbar27: 417266
   update_eye_display{current_player.stronghold_progress >=4}:
-    lactionbar: blue
+    lactionbar: 417266
 
 widget_player:
   slide_stronghold_slide_active:
@@ -463,6 +505,9 @@ widget_player:
       slide: stronghold_slide
       widget_settings:
         image: stronghold_background
+    widget_strongholdjackpot:
+      action: add
+      slide: stronghold_slide
   update_eye_display{current_player.stronghold_progress >=1}:
     widget_eye1
     widget_eye2
@@ -496,6 +541,7 @@ widget_player:
   enable_endportal: widget_portalopen
    
 
+
 event_player:
   slide_stronghold_slide_active:
     show_player_score
@@ -504,7 +550,7 @@ event_player:
     update_eye_display
    # show_debug
 
-  mode_stronghold_started{current_player.stronghold_progress==0}:
+  mode_stronghold_started{current_player.stronghold_progress==0 or current_player.stronghold_progress==-1}:
     enable_eyeset1
   mode_stronghold_started{current_player.stronghold_progress==1}:
     eyeset1_complete
