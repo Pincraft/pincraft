@@ -1,8 +1,10 @@
 #config_version=5
 mode:
-    start_events: stronghold_started
+    start_events: strongholdmb_start
     stop_events: stronghold_completed
+    restart_on_next_ball: true
     priority: 200
+
 
 variable_player:
   set1_left_flashing_hit:
@@ -63,6 +65,9 @@ variable_player:
   mode_stronghold_started:
     world_id:
       int: 6
+      action: set
+    stronghold_progress:
+      int: 0
       action: set
 
 sound_player:

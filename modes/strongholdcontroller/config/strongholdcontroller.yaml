@@ -1,0 +1,51 @@
+#config_version=5
+mode:
+    start_events: stronghold_started
+    stop_events: stronghold_completed
+    priority: 1000
+
+track_player:
+  mode_strongholdontroller_started:    #Clear Any Queued Sounds
+    music:
+      action: stop_all_sounds  
+    sfx:
+      action: stop_all_sounds 
+    voice:
+      action: stop_all_sounds 
+
+event_player:
+  #START STRONGHOLD MULTIBALL ON PLUNGE
+  sw_playfield_active_active{device.multiball_locks.strongholdlock.locked_balls==1 and device.multiball_locks.strongholdlock.enabled}:
+    strongholdmb_start
+
+  #ENABLE MB / BUT ONLY ON FIRST BALL    
+  mode_strongholdcontroller_started{current_player.stronghold_progress==-1}:
+    stronghold_enablemb
+
+multiball_locks:
+  strongholdlock:
+    balls_to_lock: 1
+    locked_ball_counting_strategy: physical_only
+    lock_devices: bd_scoop 
+    enable_events: stronghold_enablemb
+    disable_events: strongholdmb_start
+
+multiballs:
+  strongholdmb:
+    ball_count: 2
+    ball_locks: bd_scoop
+    enable_events: stronghold_enablemb
+    start_events: strongholdmb_start
+    shoot_again: 0s
+
+
+## REFACTOR
+show_player:
+  balldevice_bd_trough_ball_eject_attempt{num_attempts==0 and device.multiball_locks.strongholdlock.locked_balls==1}:
+    show_travelstronghold:
+      loops: 0
+      speed: 1
+      block_queue: true
+      events_when_completed: stronghold_ready
+
+  

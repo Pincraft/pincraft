@@ -44,8 +44,8 @@ event_player:
   #=========== CONTROLS WHEN WORLDS ARE STARTED ============
   #START WORLD 1
   mode_base_started{current_player.world_id==0}:
-    world1_start
-    #world5_start
+    #world1_start
+    world5_start
     #theend_start
 
   #ENABLE NEXT WORLDS WHEN NETHER MODE RETURNS
@@ -73,7 +73,7 @@ event_player:
     nethermode_ready
     villagerornightmb_disable
   world5_collected{current_player.multiplier_mb==1}:
-    stronghold_ready
+    strongholdmode_ready
     villagerornightmb_disable
 
   event_nightorvillagermultiball_ended{current_player.world_id != 5 and current_player.world_item1_remaining == 0 and current_player.world_item2_remaining == 0 and current_player.world_item3_remaining == 0 and current_player.world_item4_remaining == 0}:
@@ -81,24 +81,10 @@ event_player:
     villagerornightmb_disable
 
   event_nightorvillagermultiball_ended{current_player.world_id == 5 and current_player.world_item1_remaining == 0 and current_player.world_item2_remaining == 0 and current_player.world_item3_remaining == 0 and current_player.world_item4_remaining == 0}:
-    stronghold_ready
+    strongholdmode_ready
     villagerornightmb_disable
 
-multiball_locks:
-  strongholdlock:
-    balls_to_lock: 1
-    locked_ball_counting_strategy: physical_only
-    lock_devices: bd_scoop 
-    enable_events: stronghold_ready
-    disable_events: stronghold_start, stronghold_disable
 
-multiballs:
-  strongholdmb:
-    ball_count: 2
-    ball_locks: bd_scoop
-    enable_events: stronghold_ready
-    start_events: stronghold_start
-    shoot_again: 0s
 
 
 #Player Variables

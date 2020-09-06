@@ -1971,7 +1971,7 @@ sounds:
 
   #-- Stronghold
 
-  stronghold_ready:
+  voice_stronghold_travel:
     file: StrongholdStarted.wav
     volume: 1
     track: voice
@@ -2586,7 +2586,7 @@ player_vars:
 
   #Stronghold Variables
   stronghold_progress:
-    initial_value: 0
+    initial_value: -1
     value_type: int
 
   stronghold_jackpot:
@@ -2647,6 +2647,7 @@ modes:
   - nethercontroller
   - nether
   - netherready
+  - strongholdcontroller
   - stronghold
   - strongholdready
   - nightready

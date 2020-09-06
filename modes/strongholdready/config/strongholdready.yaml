@@ -1,13 +1,10 @@
 #config_version=5
 mode:
-    start_events: multiball_lock_strongholdlock_locked_ball
+    start_events: stronghold_ready
     stop_events: multiball_strongholdmb_started, ball_ending
     priority: 1000
 
 event_player:
- #START STRONGHOLD MULTIBALL ON PLUNGE
-  sw_playfield_active_active{device.multiball_locks.strongholdlock.locked_balls==1 and device.multiball_locks.strongholdlock.enabled}:
-    stronghold_start
 
 #play hurry up sound effect
 sound_player:
@@ -33,13 +30,13 @@ slides:
         anchor_x: center
         anchor_y: center
         y: center+75
-        z: 0
+        z: 100
       - type: Text
         text: Plunge The Ball
         anchor_x: center
         anchor_y: center
         y: center-75
-        z: 0
+        z: 100
         font_name: lazer84
         font_size: 70
         animations:
@@ -51,6 +48,14 @@ slides:
               value: 1
               duration: .5s
               repeat: true   
+
+widget_player:
+  slide_strongholdready_slide_active:
+    widget_screenbackground:
+      action: add
+      slide: strongholdready_slide
+      widget_settings:
+        image: stronghold_background
 
 slide_player:
   mode_strongholdready_started: strongholdready_slide
