@@ -6,7 +6,10 @@ difficulty_villager:
   value: 21
 game_mode:
   expire: null
-  value: NORMAL
+  value: COOP
 game_mode_display:
   expire: null
-  value: Normal Mode
+  value: Cooperative Mode
+player1_score:
+  expire: null
+  value: 83168250
