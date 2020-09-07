@@ -2800,6 +2800,10 @@ player_vars:
     initial_value: 1000000
     value_type: int
 
+  jackpot_countdown:
+    initial_value: 0
+    value_type: int
+
   #TheEnd Variables
   enderdragon_health:
     initial_value: 100
@@ -2857,6 +2861,7 @@ modes:
   - strongholdcontroller
   - stronghold
   - strongholdready
+  - strongholdjackpot
   - nightready
   - nightcontroller
   - night

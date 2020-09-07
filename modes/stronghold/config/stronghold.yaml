@@ -401,11 +401,8 @@ widgets:
 slides:
   stronghold_slide:
     widgets:
-      - type: text
-        font_name: lazer84
-        font_size: 70
-        text: "Pincraft\nLoading"
-        z: 0
+      - type: image
+        image: Pincraft_Logo_Icon
 
 slide_player:
     mode_stronghold_started: stronghold_slide

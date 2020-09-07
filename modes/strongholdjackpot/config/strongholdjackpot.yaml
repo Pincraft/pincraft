@@ -1,0 +1,131 @@
+#config_version=5
+mode:
+    start_events: stronghold_jackpotcollect
+    stop_events: stronghold_jackpotcollected
+    priority: 1100
+
+sound_player:
+  stronghold_collectjackpot: stronghold_jackpot
+  timer_timer_jackpot_collect_tick: eyeplacesp
+
+track_player:
+  mode_strongholdjackpot_started:    #Clear Any Queued Sounds
+    music:
+      action: stop_all_sounds  
+    sfx:
+      action: stop_all_sounds 
+    voice:
+      action: stop_all_sounds 
+  stronghold_jackpotcollected:
+    music:
+      action: stop_all_sounds  
+    sfx:
+      action: stop_all_sounds 
+    voice:
+      action: stop_all_sounds   
+
+queue_relay_player:
+  balldevice_bd_scoop_ball_eject_attempt{num_attempts==0}:
+    post: stronghold_collectjackpot
+    wait_for: stronghold_jackpotcollected
+
+slides:
+  strongholdjackpot_slide:
+    widgets:
+      - type: image
+        image: Pincraft_Logo_Icon
+
+slide_player:
+    mode_strongholdjackpot_started: strongholdjackpot_slide
+
+widget_player:
+  slide_strongholdjackpot_slide_active:
+    widget_screenbackground:
+      action: add
+      slide: strongholdjackpot_slide
+      widget_settings:
+        image: stronghold_background
+    widget_strongholdjackpot_collected:
+      action: add
+      slide: strongholdjackpot_slide
+
+timers:
+  timer_jackpot_collect:
+      start_value: (current_player.stronghold_jackpot * current_player.sword) / 100000
+      end_value: 0
+      direction: down
+      tick_interval: 100ms
+      control_events:
+         - event: stronghold_collectjackpot
+           action: start
+
+variable_player:
+  mode_strongholdjackpot_started:
+    jackpot_countdown:
+      int: current_player.stronghold_jackpot * current_player.sword
+      action: set
+
+  timer_timer_jackpot_collect_tick:
+    jackpot_countdown: 
+        int: -100000
+        action: add
+    score: 100000
+
+event_player:
+  stronghold_jackpotcollected:
+    theend_start
+  slide_strongholdjackpot_slide_active:
+    show_player_score
+    show_ball_count
+  timer_timer_jackpot_collect_complete:
+    stronghold_jackpotcollected
+
+
+widgets:
+ widget_strongholdjackpot_collected:  #WORLD JACKPOT
+    - type: text       
+      text: STRONGHOLD JACKPOT
+      font_name: ARLRDBD
+      font_size: 48
+      color: white
+      y: center + 100
+      x: center + 75
+      z: 205
+      anchor_x: center
+      anchor_y: center   
+    - type: text       
+      text: (player|stronghold_jackpot) x (player|sword) sword
+      number_grouping: true
+      font_name: ARLRDBD
+      font_size: 36
+      color: white
+      y: center + 45
+      x: center + 50
+      z: 205
+      anchor_x: center
+      anchor_y: center  
+    - type: text       
+      text: (player|jackpot_countdown)
+      number_grouping: true
+      font_name: ARLRDBD
+      font_size: 52
+      color: white
+      y: center -10
+      x: center + 50
+      z: 205
+      anchor_x: center
+      anchor_y: center     
+    - type: image       
+      image: popup_background
+      anchor_x: center
+      anchor_y: center
+      y: center + 50
+      x: center
+      z: 200
+    - type: image       
+      image: chest_large
+      anchor_x: center
+      anchor_y: center
+      y: center + 50
+      x: center - 300
+      z: 205    

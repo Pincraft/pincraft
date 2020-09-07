@@ -1,7 +1,7 @@
 #config_version=5
 mode:
     start_events: stronghold_started
-    stop_events: stronghold_completed
+    stop_events: stronghold_jackpotcollect
     priority: 1000
 
 track_player:
@@ -38,8 +38,6 @@ multiballs:
     start_events: strongholdmb_start
     shoot_again: 0s
 
-
-## REFACTOR
 show_player:
   balldevice_bd_trough_ball_eject_attempt{num_attempts==0 and device.multiball_locks.strongholdlock.locked_balls==1}:
     show_travelstronghold:
