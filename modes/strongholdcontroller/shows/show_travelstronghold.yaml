@@ -1,7 +1,7 @@
 #show_version=5
 - duration: 6
   sounds:
-    voice_stronghold_travel:
+    voice_portal_stronghold:
       loops: 0
   slides:
     travel_slide:

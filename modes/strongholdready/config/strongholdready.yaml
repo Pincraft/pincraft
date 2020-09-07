@@ -14,7 +14,7 @@ sound_player:
       loops: -1
       track: music
       mode_end_action: stop
-    stronghold_ready:
+    voice_stronghold_travel:
       action: play
       loops: 0
       priority: 100

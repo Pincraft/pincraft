@@ -2466,6 +2466,12 @@ sounds:
     loops: -1
     track: music
 
+  strongholdjackpot_music:
+    file: strongholdjackpot_music.wav
+    volume: 1
+    loops: -1
+    track: music
+
   endmode_prepare_music:
     file: endmode_prepare.wav
     volume: 1

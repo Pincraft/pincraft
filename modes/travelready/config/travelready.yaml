@@ -34,6 +34,7 @@ event_player:
     world5_completed
     stronghold_start
   travel_hit{current_player.world_id==51}:
+    stronghold_completed
     stronghold_jackpotcollect
 
 show_player:

@@ -57,7 +57,7 @@ event_player:
     world4_start
   multiball_nethermb_ended{current_player.world_id==4}:
     world5_start
-  stronghold_completed:
+  stronghold_jackpotcollected:
     theend_start
 
   world1_collected{current_player.multiplier_mb==1}:

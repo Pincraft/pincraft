@@ -5,7 +5,9 @@ mode:
     priority: 1100
 
 sound_player:
-  stronghold_collectjackpot: stronghold_jackpot
+  stronghold_collectjackpot: 
+    stronghold_jackpot
+    strongholdjackpot_music
   timer_timer_jackpot_collect_tick: eyeplacesp
 
 track_player:
@@ -51,7 +53,7 @@ widget_player:
 
 timers:
   timer_jackpot_collect:
-      start_value: (current_player.stronghold_jackpot * current_player.sword) / 100000
+      start_value: 200
       end_value: 0
       direction: down
       tick_interval: 100ms
@@ -67,9 +69,9 @@ variable_player:
 
   timer_timer_jackpot_collect_tick:
     jackpot_countdown: 
-        int: -100000
+        int: (current_player.stronghold_jackpot * current_player.sword) / 200 * -1
         action: add
-    score: 100000
+    score: (current_player.stronghold_jackpot * current_player.sword) / 200
 
 event_player:
   stronghold_jackpotcollected:
@@ -77,8 +79,8 @@ event_player:
   slide_strongholdjackpot_slide_active:
     show_player_score
     show_ball_count
-  timer_timer_jackpot_collect_complete:
-    stronghold_jackpotcollected
+#  timer_timer_jackpot_collect_complete:
+#    stronghold_jackpotcollected
 
 
 widgets:
