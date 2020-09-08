@@ -53,7 +53,7 @@ widget_player:
 
 timers:
   timer_jackpot_collect:
-      start_value: 200
+      start_value: 100
       end_value: 0
       direction: down
       tick_interval: 100ms
@@ -69,9 +69,9 @@ variable_player:
 
   timer_timer_jackpot_collect_tick:
     jackpot_countdown: 
-        int: (current_player.stronghold_jackpot * current_player.sword) / 200 * -1
+        int: (current_player.stronghold_jackpot * current_player.sword) / 100 * -1
         action: add
-    score: (current_player.stronghold_jackpot * current_player.sword) / 200
+    score: (current_player.stronghold_jackpot * current_player.sword) / 100
 
 event_player:
   stronghold_jackpotcollected:

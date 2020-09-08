@@ -1,15 +1,15 @@
 difficulty_night:
   expire: null
-  value: 76
+  value: 101
 difficulty_villager:
   expire: null
-  value: 21
+  value: 41
 game_mode:
   expire: null
-  value: COOP
+  value: COMPETITION
 game_mode_display:
   expire: null
-  value: Cooperative Mode
+  value: Competition Mode
 player1_score:
   expire: null
-  value: 83168250
+  value: 1635000

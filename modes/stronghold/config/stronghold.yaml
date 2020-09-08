@@ -29,7 +29,7 @@ variable_player:
     score: 10000 * current_player.multiplier_mb * current_player.sword 
   eyeset2_complete:
     score: 50000 * current_player.multiplier_mb * current_player.sword 
-    stronghold_jackpot: 250000
+    stronghold_jackpot: 500000
     stronghold_progress:
         int: 2
         action: set
@@ -42,7 +42,7 @@ variable_player:
     score: 10000 * current_player.multiplier_mb * current_player.sword 
   eyeset3_complete:
     score: 50000 * current_player.multiplier_mb * current_player.sword 
-    stronghold_jackpot: 250000
+    stronghold_jackpot: 750000
     stronghold_progress:
         int: 3
         action: set
@@ -56,7 +56,7 @@ variable_player:
     score: 10000 * current_player.multiplier_mb * current_player.sword 
   eyeset4_complete:
     score: 50000 * current_player.multiplier_mb * current_player.sword 
-    stronghold_jackpot: 250000
+    stronghold_jackpot: 1000000
     stronghold_progress:
         int: 4
         action: set
@@ -65,7 +65,7 @@ variable_player:
     score: current_player.stronghold_jackpot * current_player.sword
 
   eyespinner_hit:
-    stronghold_jackpot: 100000
+    stronghold_jackpot: 50000
 
   mode_stronghold_started:
     world_id:
@@ -548,6 +548,11 @@ widget_player:
   set4_right_flashing_hit: widget_eye10
   enable_endportal: widget_portalopen
    
+show_player:
+  mode_stronghold_started:  #Setup GI Light Show
+    show_strongholdgi:
+      loops: -1
+      speed: 4
 
 
 event_player:
@@ -588,7 +593,7 @@ event_player:
     disable_eyespinner
     theend_ready
     enable_endportal
-  multiball_strongholdmb_ended:
+  multiball_strongholdmb_ended{current_player.stronghold_progress==4}:
     disable_eyespinner
     theend_ready
     enable_endportal
