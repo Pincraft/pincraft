@@ -1,0 +1,15 @@
+#show_version=5
+- duration: 1  
+  coils:
+    c_drop_target_reset: pulse
+- duration: .1
+  events: 
+    - drop_drop2
+    - drop_drop5 
+- duration: .1
+  events: 
+    - drop_drop3
+    - drop_drop4
+- duration: 1
+  events:
+    creepersetup_attempted

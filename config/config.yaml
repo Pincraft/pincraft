@@ -63,7 +63,7 @@ light_settings:
         linear_slope: 1.0
         linear_cutoff: 0.0
     correction_profile_p3led:
-      whitepoint: [1.0, 1.0, .9]
+      whitepoint: [1.0, 1.0, 1.0]
       gamma: 2.5
       linear_slope: 1.0
       linear_cutoff: 0.0
@@ -92,21 +92,33 @@ switches:
   s_drop6:
     number: A1-B0-2
     tags: s_playfield, s_drop
+    debounce: normal
+    ignore_window_ms: 100
   s_drop5:
     number: A1-B0-5
     tags: s_playfield, s_drop
+    debounce: normal
+    ignore_window_ms: 100
   s_drop4:
     number: A1-B0-7
     tags: s_playfield, s_drop
+    debounce: normal
+    ignore_window_ms: 100
   s_drop3:
     number: A1-B0-3
     tags: s_playfield, s_drop
+    debounce: normal
+    ignore_window_ms: 100
   s_drop2:
     number: A1-B0-6
     tags: s_playfield, s_drop
+    debounce: normal
+    ignore_window_ms: 100
   s_drop1:
     number: A1-B0-4
     tags: s_playfield, s_drop
+    debounce: normal
+    ignore_window_ms: 100
   s_leftoutlane:
     number: A1-B0-1
     tags: s_playfield, s_drop
@@ -190,12 +202,15 @@ switches:
   s_tooltarget1:
     number: A3-B0-5
     tags: playfield_active
+    ignore_window_ms: 100
   s_tooltarget2:
     number: A3-B0-6
     tags: playfield_active
+    ignore_window_ms: 100
   s_tooltarget3:
     number: A3-B0-7
     tags: playfield_active
+    ignore_window_ms: 100
   s_upperdrop:
     number: A3-B0-1
   s_topbumperleft:
@@ -2643,9 +2658,14 @@ player_vars:
     initial_value: 1
     value_type: int
 
+
   #Night Multiball Variables
   nightmb_ready:
     initial_value: 0
+    value_type: int
+
+  night_jackpot:
+    initial_value: 1
     value_type: int
 
   #World Jackpot

@@ -5,10 +5,129 @@ mode:
     priority: 500
 
 
+sound_player:
+  night_drop1_hit: creeper_death
+  night_drop6_hit: creeper_death
+
+variable_player:
+  mode_night_started:
+    night_jackpot: 
+      int: 1000000
+      action: set
+
+  night_drop1_hit:
+    score: 10000 * current_player.multiplier_mb * current_player.sword
+    night_jackpot: 100000
+  night_drop6_hit:
+    score: 10000 * current_player.multiplier_mb * current_player.sword
+    night_jackpot: 100000
+
+show_player:
+  mode_night_started:
+    show_creepersetup:
+      loops: 0
+      speed: 1
+
+  mbcreepers_complete:
+    show_creepersetup:
+      loops: 0
+      speed: 1
+
+  nightsetup_retry:
+    show_creepersetup:
+      loops: 0
+      speed: 1
+
+shots:
+  night_drop1:
+    switch: s_drop1
+    profile: mbtarget
+    show_tokens:
+      light: l_drop1
+    reset_events: creepersetup_complete
+    enable_events: creepersetup_complete
+    disable_events: mode_night_started
+  night_drop6:
+    switch: s_drop6
+    profile: mbtarget
+    show_tokens:
+      light: l_drop6
+    reset_events: creepersetup_complete
+    enable_events: creepersetup_complete
+    disable_events: mode_night_started
+
+shot_groups:
+  mbcreepers:
+    shots: night_drop1, night_drop6
+    disable_events: mode_night_started
+    reset_events: creepersetup_complete
+    enable_events: creepersetup_complete
+
+widget_player:
+  mode_night_started:
+    widget_nightjackpot:
+      action: add
+  creepersetup_complete:
+    widget_leftcreeper:
+      action: add
+    widget_rightcreeper:
+      action: add
+
+#Remove Mobs When Hit
+  night_drop1_hit:
+    widget_leftcreeper:
+      action: remove
+  night_drop6_hit:
+    widget_rightcreeper:
+      action: remove
+
+widgets:
+  widget_leftcreeper:
+    - type: image        
+      image: CreeperLeft
+      anchor_x: middle
+      anchor_y: top
+      y: top-50
+      x: middle-500
+      z: 10
+
+  widget_rightcreeper:
+    - type: image        
+      image: CreeperRight
+      anchor_x: middle
+      anchor_y: top
+      y: top-50
+      x: middle+350
+      z: 10
+
+  widget_nightjackpot:
+    - type: image        #ITEM BACKGROUND
+      image: jackpot_night
+      anchor_x: center
+      anchor_y: center
+      y: bottom+200
+      x: center+35
+      z: 15    
+    - type: text        #PLAYER 1 SCORE
+      text: (player|night_jackpot)
+      number_grouping: true
+      min_digits: 2
+      font_name: ARLRDBD
+      font_size: 24
+      y: bottom+175
+      x: center+35
+      z: 100
+      anchor_x: center
+      anchor_y: center
 
 
 event_player:
   mode_night_started:
     show_multiplier
+
+  creepersetup_attempted{device.switches.s_drop1.state==0 and device.switches.s_drop6.state==0}:
+    creepersetup_complete
+  creepersetup_attempted{device.switches.s_drop1.state==1 or device.switches.s_drop6.state==1}:
+    creepersetup_retry
 
   

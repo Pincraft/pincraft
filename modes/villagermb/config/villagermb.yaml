@@ -40,6 +40,32 @@ shots:
 event_player:
   mode_villagermb_started:
     show_multiplier
+
+widget_player:
+  mode_villagermb_started:
+    widget_villagerjackpot:
+      action: add
+
+widgets:
+  widget_villagerjackpot:
+    - type: image        #ITEM BACKGROUND
+      image: jackpot_villager
+      anchor_x: center
+      anchor_y: center
+      y: bottom+150
+      x: center+35
+      z: 15    
+    - type: text        #PLAYER 1 SCORE
+      text: (player|villager_jackpot)
+      number_grouping: true
+      min_digits: 2
+      font_name: ARLRDBD
+      font_size: 24
+      y: bottom+125
+      x: center+35
+      z: 100
+      anchor_x: center
+      anchor_y: center
     
 #play hurry up sound effect
 sound_player:

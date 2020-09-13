@@ -32,7 +32,7 @@ class Base(Mode):
         self.machine.variables.set_machine_var("game_mode", "EASY")
         self.machine.variables.set_machine_var("game_mode_display", "Easy Mode")
         self.machine.variables.set_machine_var("difficulty_villager", 11)
-        self.machine.variables.set_machine_var("difficulty_night", 51)
+        self.machine.variables.set_machine_var("difficulty_night", 11)
         self.machine.variables.set_machine_var("difficulty_tools", 4)
         self.machine.variables.set_machine_var("difficulty_extraball1", 6)
         self.machine.variables.set_machine_var("difficulty_extraball2", 6)      

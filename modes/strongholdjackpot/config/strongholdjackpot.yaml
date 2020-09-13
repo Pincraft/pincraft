@@ -125,7 +125,7 @@ widgets:
       x: center
       z: 200
     - type: image       
-      image: chest_ender_animated
+      image: chest_large
       anchor_x: center
       anchor_y: center
       y: center + 50
