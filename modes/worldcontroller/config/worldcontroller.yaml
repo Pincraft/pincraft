@@ -207,6 +207,11 @@ light_player:
       color: purple
       fade: 5000ms
 
+  mode_night_started:
+    lactionbar:
+      color: off
+      fade: 1000ms
+
   multiball_nightmb_ended:
     lgi:
       color: white

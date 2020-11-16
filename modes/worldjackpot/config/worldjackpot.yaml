@@ -17,7 +17,7 @@ shots:
     show_tokens:
       leds: l_worldtarget
     enable_events: world_jackpot_enable
-    disable_events: world_jackpot_disable
+    disable_events: world_jackpot_disable, world_jackpot_hit
 
 variable_player:
  #WORLD JACKPOT

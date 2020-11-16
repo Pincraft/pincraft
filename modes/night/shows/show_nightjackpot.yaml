@@ -1,0 +1,19 @@
+#show_version=5
+- duration: 100ms
+  lights:
+    lactionbar: white
+- duration: 3s
+  sounds:   
+    night_super_jackpot
+  widgets:
+    widget_nightjackpot_collected:
+      action: add
+  lights:
+    lactionbar: purple
+- duration: 500ms
+  widgets:
+    widget_nightjackpot_collected:
+      action: remove
+  lights:
+    lactionbar: off
+  events: night_jackpot_collected
