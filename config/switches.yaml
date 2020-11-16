@@ -1,0 +1,186 @@
+#config_version=5
+
+# SWITCH CONFIGURATION
+#--------------------------------------------
+switches:
+  s_left_flipper:
+    number: A0-B0-7
+    tags: left_flipper
+  s_right_flipper:
+    number: A0-B0-6
+    tags: right_flipper
+  s_tilt:
+    number: A0-B0-5
+  s_start:
+    number: A0-B1-7
+    tags: start
+  s_maint:
+    number: A0-B1-6
+  s_credit_right:
+    number: A0-B1-4
+
+#P1 - Bank 0
+  s_drop6:
+    number: A1-B0-2
+    tags: s_playfield, s_drop
+    debounce: normal
+    ignore_window_ms: 100
+  s_drop5:
+    number: A1-B0-5
+    tags: s_playfield, s_drop
+    debounce: normal
+    ignore_window_ms: 100
+  s_drop4:
+    number: A1-B0-7
+    tags: s_playfield, s_drop
+    debounce: normal
+    ignore_window_ms: 100
+  s_drop3:
+    number: A1-B0-3
+    tags: s_playfield, s_drop
+    debounce: normal
+    ignore_window_ms: 100
+  s_drop2:
+    number: A1-B0-6
+    tags: s_playfield, s_drop
+    debounce: normal
+    ignore_window_ms: 100
+  s_drop1:
+    number: A1-B0-4
+    tags: s_playfield, s_drop
+    debounce: normal
+    ignore_window_ms: 100
+  s_leftoutlane:
+    number: A1-B0-1
+    tags: s_playfield, s_drop
+  s_leftinlane:
+    number: A1-B0-0
+    tags: playfield_active, s_playfield, s_drop
+
+#P1 - Bank 1
+  s_collectitem1:
+    number: A1-B1-7
+    tags: playfield_active
+    ignore_window_ms: 100
+    debounce: normal
+  s_collectitem2:
+    number: A1-B1-6
+    tags: playfield_active
+    ignore_window_ms: 100
+    debounce: normal
+  s_collectitem3:
+    number: A1-B1-5
+    tags: playfield_active
+    ignore_window_ms: 100
+    debounce: normal
+  s_collectitem4:
+    number: A1-B1-4
+    tags: playfield_active
+    ignore_window_ms: 100
+    debounce: normal
+  s_collectitem5:
+    number: A1-B1-3
+    tags: playfield_active
+    ignore_window_ms: 100
+    debounce: normal
+ 
+#P2 - Bank 0
+  s_plungerlane:
+    number: A2-B0-2
+  s_trough1:
+    number: A2-B0-4
+    type: NC
+  s_trough2:
+    number: A2-B0-5
+  s_trough3:
+    number: A2-B0-6
+  s_trough4:
+    number: A2-B0-7
+  s_troughjam:
+    number: A2-B0-3
+    type: NC
+  s_rightinlane:
+    number: A2-B0-0
+    tags: playfield_active
+  s_rightoutlane:
+    number: A2-B0-1
+    tags: playfield_active
+
+#P2 - Bank 1
+  s_leftsling:
+    number: A2-B1-0
+    tags: playfield_active
+  s_rightsling:
+    number: A2-B1-1
+  s_scoup:
+    number: A2-B1-2
+    type: NC
+  s_centertarget:
+    number: A2-B1-3
+    tags: playfield_active
+  s_bumperrail:
+    number: A2-B1-4
+    tags: playfield_active
+  s_popbumper1:
+    number: A2-B1-6
+  s_popbumper2:
+    number: A2-B1-7
+  s_popbumper3:
+    number: A2-B1-5
+
+
+#P3 - Bank 0
+  s_tooltarget1:
+    number: A3-B0-5
+    tags: playfield_active
+    ignore_window_ms: 100
+  s_tooltarget2:
+    number: A3-B0-6
+    tags: playfield_active
+    ignore_window_ms: 100
+  s_tooltarget3:
+    number: A3-B0-7
+    tags: playfield_active
+    ignore_window_ms: 100
+  s_upperdrop:
+    number: A3-B0-1
+  s_topbumperleft:
+    number: A3-B0-3
+    tags: playfield_active
+  s_whitedot1:
+    number: A3-B0-4
+    tags: playfield_active
+  s_whitedot2:
+    number: A3-B0-2
+    tags: playfield_active
+  s_loopleft:
+    number: A3-B0-0
+    type: NC
+    tags: playfield_active
+
+#P3 - Bank 1
+  s_loopright:
+    number: A3-B1-3
+    type: NC
+    tags: playfield_active
+  s_topbumperright:  
+    number: A3-B1-5
+    tags: playfield_active
+  s_whitedot3:
+    number: A3-B1-1
+    tags: playfield_active
+  s_whitedot4:
+    number: A3-B1-7
+    tags: playfield_active
+  s_spinner:
+    number: A3-B1-2
+    tags: playfield_active
+  s_topkicker:
+    number: A3-B1-4
+  s_captiveball:
+    number: A3-B1-6
+    tags: playfield_active
+  s_portal:
+    number: A3-B1-0
+    type: NC
+    tags: playfield_active

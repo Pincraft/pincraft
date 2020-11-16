@@ -27,6 +27,7 @@
     l_actionbar4: green
     l_actionbar5: green
     l_actionbar6: green
+    ltopper: green
 - duration: 1
   lights:
     lundercab: 
@@ -55,6 +56,7 @@
     l_actionbar10: yellow
     l_actionbar11: yellow
     l_actionbar12: yellow
+    ltopper: yellow
 
 - duration: 1
   lights:
@@ -84,7 +86,7 @@
     l_actionbar16: blue
     l_actionbar17: blue
     l_actionbar18: blue
-
+    ltopper: blue
 - duration: 1
   lights:
     lundercab: 
@@ -113,7 +115,7 @@
     l_actionbar22: brown
     l_actionbar23: brown
     l_actionbar24: brown
-  
+    ltopper: brown
 - duration: 1
   lights:
     lundercab: 
@@ -142,6 +144,7 @@
     l_actionbar28: red
     l_actionbar29: red
     l_actionbar30: red
+    ltopper: red
 - duration: 1
   lights:
     lundercab: 
@@ -170,3 +173,4 @@
     l_actionbar34: purple
     l_actionbar35: purple
     l_actionbar36: purple
+    ltopper: purple

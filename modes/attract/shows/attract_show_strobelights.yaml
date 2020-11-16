@@ -4,8 +4,10 @@
     lundercab: off
     lbackbox: off
     lactionbar: off
+    ltopper: off
     lundercab_chase1: (color)
     lbackbox_chasearound1: (color)
+    ltopper_chase1: (color)
     lfeature: off 
     lgi:
         color: white
@@ -29,8 +31,10 @@
     lundercab: off
     lbackbox: off
     lactionbar: off
+    ltopper: off
     lundercab_chase2: (color)
     lbackbox_chasearound2: (color)
+    ltopper_chase2: (color)
     lfeature: off 
     l_collect2: 
         color: (color)
@@ -52,8 +56,10 @@
     lundercab: off
     lbackbox: off
     lactionbar: off
+    ltopper: off
     lundercab_chase3: (color)
     lbackbox_chasearound3: (color)
+    ltopper_chase3: (color)
     lfeature: off 
     l_collect3:
         color: (color)
@@ -75,8 +81,10 @@
     lundercab: off
     lbackbox: off
     lactionbar: off
+    ltopper: off
     lundercab_chase4: (color)
     lbackbox_chasearound4: (color)
+    ltopper_chase4: (color)
     lfeature: off 
     l_collect4:
         color: (color)
@@ -98,8 +106,10 @@
     lundercab: off
     lbackbox: off
     lactionbar: off
+    ltopper: off
     lundercab_chase1: (color)
     lbackbox_chasearound1: (color)
+    ltopper_chase1: (color)
     lfeature: off 
     l_collect5:
         color: (color)
@@ -121,8 +131,10 @@
     lundercab: off
     lbackbox: off
     lactionbar: off
+    ltopper: off
     lundercab_chase2: (color)
     lbackbox_chasearound2: (color)
+    ltopper_chase2: (color)
     lfeature: off 
     l_collect6:
         color: (color)
@@ -144,8 +156,10 @@
     lundercab: off
     lbackbox: off
     lactionbar: off
+    ltopper: off
     lundercab_chase3: (color)
     lbackbox_chasearound3: (color)
+    ltopper_chase3: (color)
     lfeature: off 
     l_collect7:
         color: (color)  
@@ -167,8 +181,10 @@
     lundercab: off
     lbackbox: off
     lactionbar: off
+    ltopper: off
     lundercab_chase4: (color)
     lbackbox_chasearound4: (color)
+    ltopper_chase4: (color)
     lfeature: off 
     l_collect8:
         color: (color)
@@ -190,8 +206,10 @@
     lundercab: off
     lbackbox: off
     lactionbar: off
+    ltopper: off
     lundercab_chase1: (color)
     lbackbox_chasearound1: (color)
+    ltopper_chase1: (color)
     lfeature: off 
     l_collect9:
         color: (color)
@@ -213,8 +231,10 @@
     lundercab: off
     lbackbox: off
     lactionbar: off
+    ltopper: off
     lundercab_chase2: (color)
     lbackbox_chasearound2: (color)
+    ltopper_chase2: (color)
     lfeature: off 
     l_collect10:
         color: (color)
@@ -236,8 +256,10 @@
     lundercab: off
     lbackbox: off
     lactionbar: off
+    ltopper: off
     lundercab_chase3: (color)
     lbackbox_chasearound3: (color)
+    ltopper_chase3: (color)
     lfeature: off 
     l_collect11: 
         color: (color)
@@ -259,8 +281,10 @@
     lundercab: off
     lbackbox: off
     lactionbar: off
+    ltopper: off
     lundercab_chase4: (color)
     lbackbox_chasearound4: (color)
+    ltopper_chase4: (color)
     lfeature: off 
     l_collect12:
         color: (color)
@@ -282,8 +306,10 @@
     lundercab: off
     lbackbox: off
     lactionbar: off
+    ltopper: off
     lundercab_chase1: (color)
     lbackbox_chasearound1: (color)
+    ltopper_chase1: (color)
     lfeature: off 
     l_collect13:
         color: (color)
@@ -305,8 +331,10 @@
     lundercab: off
     lbackbox: off
     lactionbar: off
+    ltopper: off
     lundercab_chase2: (color)
     lbackbox_chasearound2: (color)
+    ltopper_chase2: (color)
     lfeature: off 
     l_collect14:
         color: (color)
@@ -328,8 +356,10 @@
     lundercab: off
     lbackbox: off
     lactionbar: off
+    ltopper: off
     lundercab_chase3: (color)
     lbackbox_chasearound3: (color)
+    ltopper_chase3: (color)
     lfeature: off 
     l_collect15:
         color: (color)
@@ -351,8 +381,10 @@
     lundercab: off
     lbackbox: off
     lactionbar: off
+    ltopper: off
     lundercab_chase4: (color)
     lbackbox_chasearound4: (color)
+    ltopper_chase4: (color)
     lfeature: off 
     l_collect16:
         color: (color)

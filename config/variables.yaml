@@ -1,0 +1,213 @@
+#config_version=5
+
+# PLAYER VARIABLES
+#--------------------------------------------
+player_vars:
+  gate_open:
+    initial_value: 0
+    value_type: int
+
+  diverter_state:
+    initial_value: "start"
+    value_type: str
+
+  spinner_level: 
+    initial_value: 0
+    value_type: int
+
+  #Extra Ball Progress
+  earned_ebcount:
+    initial_value: 0
+    value_type: int
+
+
+  #Multiball Multiplier
+  multiplier_mb:
+    initial_value: 1
+    value_type: int
+
+  #Villager Multiball Variables
+  villagermb_ready:
+    initial_value: 0
+    value_type: int
+
+  villager_jackpot:
+    initial_value: 1
+    value_type: int
+
+
+  #Night Multiball Variables
+  nightmb_ready:
+    initial_value: 0
+    value_type: int
+
+  night_jackpot:
+    initial_value: 1
+    value_type: int
+
+  #World Jackpot
+  world_jackpot:
+    initial_value: 0
+    value_type: int
+
+  world_jackpot_base:
+    initial_value: 0
+    value_type: int
+
+  world_jackpot_worlds:
+    initial_value: 0
+    value_type: int
+  
+  world_jackpot_items:
+    initial_value: 0
+    value_type: int
+
+  #World Variables
+  world_color:  #sets color of world for accent colors
+    initial_value: "white"
+    value_type: str
+
+  world_name:
+    initial_value: "none"
+    value_type: str
+
+  world_id:
+    initial_value: 0
+    value_type: int
+
+  world1_setup:
+    initial_value: 0
+    value_type: int
+
+  world2_setup:
+    initial_value: 0
+    value_type: int
+
+  world3_setup:
+    initial_value: 0
+    value_type: int
+
+  world4_setup:
+    initial_value: 0
+    value_type: int
+
+  world5_setup:
+    initial_value: 0
+    value_type: int
+
+  #Item 1 Variables
+  world_item1_name:
+    initial_value: "none"
+    value_type: str
+
+  world_item1_color:
+    initial_value: "white"
+    value_type: str
+
+  world_item1_remaining:
+    initial_value: 0
+    value_type: int
+
+  #Item 2 Variables
+  world_item2_name:
+    initial_value: "none"
+    value_type: str
+
+  world_item2_color:
+    initial_value: "white"
+    value_type: str
+
+  world_item2_remaining:
+    initial_value: 0
+    value_type: int
+
+  #Item 3 Variables
+  world_item3_name:
+    initial_value: "none"
+    value_type: str
+
+  world_item3_color:
+    initial_value: "white"
+    value_type: str
+
+  world_item3_remaining:
+    initial_value: 0
+    value_type: int
+
+  #Item 4 Variables
+  world_item4_name:
+    initial_value: "none"
+    value_type: str
+
+  world_item4_color:
+    initial_value: "white"
+    value_type: str
+
+  world_item4_remaining:
+    initial_value: 0
+    value_type: int
+
+  #Bonus
+  bonus_items:
+    initial_value: 0
+    value_type: int
+  bonus_multiplier:
+    initial_value: 1
+    value_type: int
+
+  #Tools
+  shovel:
+    initial_value: 1
+    value_type: int
+  pickaxe:
+    initial_value: 1
+    value_type: int
+  axe:
+    initial_value: 1
+    value_type: int
+  sword:
+    initial_value: 1
+    value_type: int 
+
+  #Tool Helpers
+  tools_ready:
+    initial_value: 0
+    value_type: int
+
+  tools_collected:
+    initial_value: 0
+    value_type: int
+
+  tools_available:
+    initial_value: 4
+    value_type: int
+
+  crafting_enabled:
+    initial_value: 0
+    value_type: int
+
+  crafting_ready:
+    initial_value: 0
+    value_type: int
+
+  crafting_full:
+    initial_value: 0
+    value_type: int
+
+  #Stronghold Variables
+  stronghold_progress:
+    initial_value: -1
+    value_type: int
+
+  stronghold_jackpot:
+    initial_value: 1000000
+    value_type: int
+
+  jackpot_countdown:
+    initial_value: 0
+    value_type: int
+
+  #TheEnd Variables
+  enderdragon_health:
+    initial_value: 100
+    value_type: int
