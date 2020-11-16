@@ -1558,121 +1558,121 @@ lights:
 ## TOP LIGHTS
 
   l_topper1:
-    tags: ltopper, ltopperodd, ltopperchase1
+    tags: ltopper, ltopperodd, ltopper_chase1
     number: 0-192
     platform: fadecandy
     #color_correction_profile: correction_profile_fadecandy
 
   l_topper2:
-    tags: ltopper, ltoppereven, ltopperchase2
+    tags: ltopper, ltoppereven, ltopper_chase2
     number: 0-193
     platform: fadecandy
     #color_correction_profile: correction_profile_fadecandy
 
   l_topper3:
-    tags: ltopper, ltopperodd, ltopperchase3
+    tags: ltopper, ltopperodd, ltopper_chase3
     number: 0-194
     platform: fadecandy
     #color_correction_profile: correction_profile_fadecandy
 
   l_topper4:
-    tags: ltopper, ltoppereven, ltopperchase4
+    tags: ltopper, ltoppereven, ltopper_chase4
     number: 0-195
     platform: fadecandy
     #color_correction_profile: correction_profile_fadecandy
 
   l_topper5:
-    tags: ltopper, ltopperodd, ltopperchase1
+    tags: ltopper, ltopperodd, ltopper_chase1
     number: 0-196
     platform: fadecandy
     #color_correction_profile: correction_profile_fadecandy
 
   l_topper6:
-    tags: ltopper, ltoppereven, ltopperchase2
+    tags: ltopper, ltoppereven, ltopper_chase2
     number: 0-197
     platform: fadecandy
     #color_correction_profile: correction_profile_fadecandy
 
   l_topper7:
-    tags: ltopper, ltopperodd, ltopperchase3
+    tags: ltopper, ltopperodd, ltopper_chase3
     number: 0-198
     platform: fadecandy
     #color_correction_profile: correction_profile_fadecandy
 
   l_topper8:
-    tags: ltopper, ltoppereven, ltopperchase4
+    tags: ltopper, ltoppereven, ltopper_chase4
     number: 0-199
     platform: fadecandy
     #color_correction_profile: correction_profile_fadecandy
 
   l_topper9:
-    tags: ltopper, ltopperodd, ltopperchase1
+    tags: ltopper, ltopperodd, ltopper_chase1
     number: 0-200
     platform: fadecandy
     #color_correction_profile: correction_profile_fadecandy
 
   l_topper10:
-    tags: ltopper, ltoppereven, ltopperchase2
+    tags: ltopper, ltoppereven, ltopper_chase2
     number: 0-201
     platform: fadecandy
     #color_correction_profile: correction_profile_fadecandy
 
   l_topper11:
-    tags: ltopper, ltopperodd, ltopperchase3
+    tags: ltopper, ltopperodd, ltopper_chase3
     number: 0-202
     platform: fadecandy
     #color_correction_profile: correction_profile_fadecandy
 
   l_topper12:
-    tags: ltopper, ltoppereven, ltopperchase4
+    tags: ltopper, ltoppereven, ltopper_chase4
     number: 0-203
     platform: fadecandy
     #color_correction_profile: correction_profile_fadecandy
 
   l_topper13:
-    tags: ltopper, ltopperodd, ltopperchase1
+    tags: ltopper, ltopperodd, ltopper_chase1
     number: 0-204
     platform: fadecandy
     #color_correction_profile: correction_profile_fadecandy
 
   l_topper14:
-    tags: ltopper, ltoppereven, ltopperchase2
+    tags: ltopper, ltoppereven, ltopper_chase2
     number: 0-205
     platform: fadecandy
     #color_correction_profile: correction_profile_fadecandy
 
   l_topper15:
-    tags: ltopper, ltopperodd, ltopperchase3
+    tags: ltopper, ltopperodd, ltopper_chase3
     number: 0-206
     platform: fadecandy
     #color_correction_profile: correction_profile_fadecandy
 
   l_topper16:
-    tags: ltopper, ltoppereven, ltopperchase4
+    tags: ltopper, ltoppereven, ltopper_chase4
     number: 0-207
     platform: fadecandy
     #color_correction_profile: correction_profile_fadecandy
 
   l_topper17:
-    tags: ltopper, ltopperodd, ltopperchase1
+    tags: ltopper, ltopperodd, ltopper_chase1
     number: 0-208
     platform: fadecandy
     #color_correction_profile: correction_profile_fadecandy
 
   l_topper18:
-    tags: ltopper, ltoppereven, ltopperchase2
+    tags: ltopper, ltoppereven, ltopper_chase2
     number: 0-209
     platform: fadecandy
     #color_correction_profile: correction_profile_fadecandy
 
   l_topper19:
-    tags: ltopper, ltopperodd, ltopperchase3
+    tags: ltopper, ltopperodd, ltopper_chase3
     number: 0-210
     platform: fadecandy
     #color_correction_profile: correction_profile_fadecandy
 
   l_topper20:
-    tags: ltopper, ltoppereven, ltopperchase4
+    tags: ltopper, ltoppereven, ltopper_chase4
     number: 0-211
     platform: fadecandy
     #color_correction_profile: correction_profile_fadecandy
