@@ -1676,3 +1676,63 @@ lights:
     number: 0-211
     platform: fadecandy
     #color_correction_profile: correction_profile_fadecandy
+
+  l_topper21:
+    tags: ltopper, ltopperodd, ltopper_chase1
+    number: 0-212
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
+
+  l_topper22:
+    tags: ltopper, ltoppereven, ltopper_chase2
+    number: 0-213
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
+
+  l_topper23:
+    tags: ltopper, ltopperodd, ltopper_chase3
+    number: 0-214
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
+
+  l_topper24:
+    tags: ltopper, ltoppereven, ltopper_chase4
+    number: 0-215
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
+
+  l_topper25:
+    tags: ltopper, ltopperodd, ltopper_chase1
+    number: 0-216
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
+
+  l_topper26:
+    tags: ltopper, ltoppereven, ltopper_chase2
+    number: 0-217
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
+
+  l_topper27:
+    tags: ltopper, ltopperodd, ltopper_chase3
+    number: 0-218
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
+
+  l_topper28:
+    tags: ltopper, ltoppereven, ltopper_chase4
+    number: 0-219
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
+
+  l_topper29:
+    tags: ltopper, ltopperodd, ltopper_chase1
+    number: 0-220
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
+
+  l_topper30:
+    tags: ltopper, ltoppereven, ltopper_chase2
+    number: 0-221
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
