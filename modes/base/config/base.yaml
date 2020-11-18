@@ -176,6 +176,8 @@ achievements:
     events_when_started: world1_started
     reset_events: reset_worlds
     enable_events: world1_start
+    start_events: world1_start
+    events_when_enabled: start_new_world
     complete_events: world1_completed
     events_when_completed: rotate_mission_rotator
     restart_on_next_ball_when_started: true
@@ -190,6 +192,7 @@ achievements:
     events_when_started: world2_started
     reset_events: reset_worlds
     enable_events: world2_start
+    start_events: world2_start
     complete_events: world2_completed
     events_when_completed: rotate_mission_rotator
     restart_on_next_ball_when_started: true
@@ -204,6 +207,7 @@ achievements:
     events_when_started: world3_started
     reset_events: reset_worlds
     enable_events: world3_start
+    start_events: world3_start
     complete_events: world3_completed
     events_when_completed: rotate_mission_rotator
     restart_on_next_ball_when_started: true
@@ -218,6 +222,7 @@ achievements:
     events_when_started: world4_started
     reset_events: reset_worlds
     enable_events: world4_start
+    start_events: world4_start 
     complete_events: world4_completed
     events_when_completed: rotate_mission_rotator
     restart_on_next_ball_when_started: true
@@ -232,6 +237,7 @@ achievements:
     events_when_started: world5_started
     reset_events: reset_worlds
     enable_events: world5_start
+    start_events: world5_start 
     complete_events: world5_completed
     events_when_completed: rotate_mission_rotator
     restart_on_next_ball_when_started: true
@@ -246,6 +252,7 @@ achievements:
     events_when_started: stronghold_started
     reset_events: reset_worlds
     enable_events: stronghold_start
+    start_events: stronghold_start 
     complete_events: stronghold_completed
     events_when_completed: rotate_mission_rotator
     restart_on_next_ball_when_started: true
@@ -260,6 +267,7 @@ achievements:
     events_when_started: theend_started
     reset_events: reset_worlds
     enable_events: theend_start
+    start_events: theend_start 
     complete_events: theend_completed
     events_when_completed: rotate_mission_rotator
     restart_on_next_ball_when_started: true
@@ -268,7 +276,6 @@ achievements:
 achievement_groups:
   worlds:
     achievements: world1, world2, world3, world4, world5, stronghold, world6
-    start_selected_events: world_start, world1_start, world2_start, world3_start, world4_start, stronghold_start, world5_start, theend_start
     events_when_enabled: mission_rotator_ready
     auto_select: true
     enable_while_no_achievement_started: true
