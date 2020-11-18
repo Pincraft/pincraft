@@ -59,11 +59,11 @@ event_player:
     meatextraball_award
 
   award_extraball_hit{current_player.earned_ebcount==1}:
-    enable_extraball
-    show_extraball
+    - enable_extraball
+    - show_extraball
 
   extraball_progress:
-    show_extraball
+    - show_extraball
 
   extraball_progress{current_player.earned_ebcount==0 and device.counters.counter_meatextraball.value==6}:
     - show_extraball
@@ -78,14 +78,14 @@ event_player:
     - meatextraball_light
 
   mode_extraball_started{current_player.earned_ebcount==0}:
-    enable_extraball
-    show_extraball
+    - enable_extraball
+    - show_extraball
   mode_extraball_started{current_player.earned_ebcount==1}:
-    enable_extraball
-    show_extraball
+    - enable_extraball
+    - show_extraball
   mode_extraball_started{current_player.earned_ebcount==2}:
-    disable_extraball
-    remove_extraball
+    - disable_extraball
+    - remove_extraball
 
 
   

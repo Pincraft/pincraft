@@ -77,8 +77,8 @@ event_player:
   stronghold_jackpotcollected:
     theend_start
   slide_strongholdjackpot_slide_active:
-    show_player_score
-    show_ball_count
+    - show_player_score
+    - show_ball_count
 #  timer_timer_jackpot_collect_complete:
 #    stronghold_jackpotcollected
 

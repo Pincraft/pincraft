@@ -4,7 +4,6 @@ mode:
     stop_events: multiball_strongholdmb_started, ball_ending
     priority: 1000
 
-event_player:
 
 #play hurry up sound effect
 sound_player:

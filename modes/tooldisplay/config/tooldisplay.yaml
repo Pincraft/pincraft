@@ -86,11 +86,14 @@ widgets:
 
 widget_player:
   show_tools:
-    widget_tooldisplay
-    widget_toolshovel
-    widget_toolaxe
-    widget_toolpickaxe
-    widget_toolsword
+    widget_tooldisplay:
+      action: add
+    widget_toolshovel:
+      action: add
+    widget_toolaxe:
+      action: add
+    widget_toolpickaxe:
+      action: add
 
   tools_updated{current_player.shovel==1}:
     widget_toolshovel:

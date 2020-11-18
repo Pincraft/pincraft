@@ -572,49 +572,49 @@ widget_player:
 
 event_player:
   mode_base_started:
-    world_itemcheckcomplete
+    - world_itemcheckcomplete
 
   mode_worldcontroller_started:
-    world_itemcheckcomplete
-    recalculate_worldjackpot
-    show_player_score
-    show_ball_count
-    show_tools
-    show_extraball
-    show_spinner_progress
-    show_bonus_items
-    show_worldjackpot
+    - world_itemcheckcomplete
+    - recalculate_worldjackpot
+    - show_player_score
+    - show_ball_count
+    - show_tools
+    - show_extraball
+    - show_spinner_progress
+    - show_bonus_items
+    - show_worldjackpot
 
   worldspinner_hit:
-    show_spinner_progress
+    - show_spinner_progress
 
   mode_worldcontroller_started{current_player.villagermb_ready==1 and current_player.nightmb_ready==0}:
-    villagermultiball_ready
+    - villagermultiball_ready
 
   mode_worldcontroller_started{current_player.nightmb_ready==1 and current_player.villagermb_ready==0}:
-    nightmultiball_ready
+    - nightmultiball_ready
 
   mode_worldcontroller_started{current_player.nightmb_ready==1 and current_player.villagermb_ready==1}:
-    villagermultiball_ready
-    nightmultiball_ready
-    nightvillagermultiball_ready
+    - villagermultiball_ready
+    - nightmultiball_ready
+    - nightvillagermultiball_ready
 
   # COLLECT ITEM HIT
   collectitem1_hit:
-    world_itemcheckcomplete
-    show_bonus_items  #Used for Bonus Display
+    - world_itemcheckcomplete
+    - show_bonus_items  #Used for Bonus Display
 
   collectitem2_hit:
-    world_itemcheckcomplete
-    show_bonus_items  #Used for Bonus Display
+    - world_itemcheckcomplete
+    - show_bonus_items  #Used for Bonus Display
 
   collectitem3_hit:
-    world_itemcheckcomplete
-    show_bonus_items  #Used for Bonus Display
+    - world_itemcheckcomplete
+    - show_bonus_items  #Used for Bonus Display
 
   collectitem4_hit:
-    world_itemcheckcomplete
-    show_bonus_items  #Used for Bonus Display
+    - world_itemcheckcomplete
+    - show_bonus_items  #Used for Bonus Display
 
 
   # INLANE / OUTLANE ITEM COLLECTORS
@@ -679,15 +679,15 @@ event_player:
   
 
   #START VILLAGER MULTIBALL ON PLUNGE
-  sw_playfield_active_active{device.multiball_locks.villagerlock.locked_balls==1 and device.multiball_locks.villagerlock.enabled}:
+  sw_s_multiballstart_active{device.multiball_locks.villagerlock.locked_balls==1 and device.multiball_locks.villagerlock.enabled}:
     villagermultiball_start
 
   #START NIGHT MULTIBALL ON PLUNGE
-  sw_playfield_active_active{device.multiball_locks.nightlock.locked_balls==1 and device.multiball_locks.nightlock.enabled}:
+  sw_s_multiballstart_active{device.multiball_locks.nightlock.locked_balls==1 and device.multiball_locks.nightlock.enabled}:
     nightmultiball_start
 
   #START NIGHT/VILLAGER MULTIBALL ON PLUNGE
-  sw_playfield_active_active{device.multiball_locks.nightvillagerlock1.locked_balls==1 and device.multiball_locks.nightvillagerlock1.enabled and device.multiball_locks.nightvillagerlock2.locked_balls==1 and device.multiball_locks.nightvillagerlock2.enabled}:
+  sw_s_multiballstart_active{device.multiball_locks.nightvillagerlock1.locked_balls==1 and device.multiball_locks.nightvillagerlock1.enabled and device.multiball_locks.nightvillagerlock2.locked_balls==1 and device.multiball_locks.nightvillagerlock2.enabled}:
     nightvillagermultiball_start
 
   multiball_lock_nightvillagerlock1_full:

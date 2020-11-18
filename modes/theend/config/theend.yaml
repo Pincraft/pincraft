@@ -382,9 +382,8 @@ sound_player:
 
 event_player:
   slide_theend_slide_active:
-    show_player_score
-    show_ball_count
-    #show_debug
+    - show_player_score
+    - show_ball_count
 
   state_battle_started:
     advance_dragon_shots
@@ -395,7 +394,7 @@ event_player:
   #  theendmultiball_ready
 
   #START THE END MULTIBALL ON PLUNGE
-  sw_playfield_active_active{device.multiball_locks.endlockright.locked_balls==1 and device.multiball_locks.endlockright.enabled}:
+  sw_s_multiballstart_active{device.multiball_locks.endlockright.locked_balls==1 and device.multiball_locks.endlockright.enabled}:
     theendmultiball_start
 
   multiball_endmb_started:

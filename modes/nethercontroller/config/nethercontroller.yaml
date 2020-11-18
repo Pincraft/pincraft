@@ -15,7 +15,7 @@ track_player:
 
 event_player:
   #START NETHER MULTIBALL ON PLUNGE
-  sw_playfield_active_active{device.multiball_locks.netherlock.locked_balls==1 and device.multiball_locks.netherlock.enabled}:
+  sw_s_multiballstart_active{device.multiball_locks.netherlock.locked_balls==1 and device.multiball_locks.netherlock.enabled}:
     nethermode_start
 
 multiballs:

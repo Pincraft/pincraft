@@ -73,7 +73,7 @@ sound_player:
     villager_multiball:
       action: play
       loops: 0
-  sw_playfield_active_active:
+  sw_s_multiballstart_active:
     villagersp: 
       action: play
       loops: 1

@@ -19,23 +19,23 @@ event_player:
     travel_hit
 
   travel_hit{current_player.world_id==1}:
-    world1_completed
-    nether_started
+    - world1_completed
+    - nether_started
   travel_hit{current_player.world_id==2}:
-    world2_completed
-    nether_started
+    - world2_completed
+    - nether_started
   travel_hit{current_player.world_id==3}:
-    world3_completed
-    nether_started
+    - world3_completed
+    - nether_started
   travel_hit{current_player.world_id==4}:
-    world4_completed
-    nether_started
+    - world4_completed
+    - nether_started
   travel_hit{current_player.world_id==5}:
-    world5_completed
-    stronghold_start
+    - world5_completed
+    - stronghold_start
   travel_hit{current_player.world_id==51}:
-    stronghold_completed
-    stronghold_jackpotcollect
+    - stronghold_completed
+    - stronghold_jackpotcollect
 
 show_player:
   mode_travelready_started:

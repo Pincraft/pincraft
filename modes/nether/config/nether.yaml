@@ -497,7 +497,7 @@ event_player:
     nethermb_phase3_retry
 
   slide_nether_slide_active:
-    show_ball_count
-    show_player_score
-    show_multiplier
+    - show_ball_count
+    - show_player_score
+    - show_multiplier
     #show_debug

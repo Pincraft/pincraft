@@ -60,29 +60,29 @@ switches:
 #P1 - Bank 1
   s_collectitem1:
     number: A1-B1-7
-    tags: playfield_active
     ignore_window_ms: 100
     debounce: normal
+    tags: s_multiballstart
   s_collectitem2:
     number: A1-B1-6
-    tags: playfield_active
     ignore_window_ms: 100
     debounce: normal
+    tags: s_multiballstart
   s_collectitem3:
     number: A1-B1-5
-    tags: playfield_active
     ignore_window_ms: 100
     debounce: normal
+    tags: s_multiballstart
   s_collectitem4:
     number: A1-B1-4
-    tags: playfield_active
     ignore_window_ms: 100
     debounce: normal
+    tags: s_multiballstart
   s_collectitem5:
     number: A1-B1-3
-    tags: playfield_active
     ignore_window_ms: 100
     debounce: normal
+    tags: s_multiballstart
  
 #P2 - Bank 0
   s_plungerlane:
@@ -101,86 +101,89 @@ switches:
     type: NC
   s_rightinlane:
     number: A2-B0-0
-    tags: playfield_active
+    tags: s_multiballstart
   s_rightoutlane:
     number: A2-B0-1
-    tags: playfield_active
+    tags: playfield_active, s_multiballstart
 
 #P2 - Bank 1
   s_leftsling:
     number: A2-B1-0
-    tags: playfield_active
+    tags: s_multiballstart
   s_rightsling:
     number: A2-B1-1
+    tags: s_multiballstart
   s_scoup:
     number: A2-B1-2
     type: NC
   s_centertarget:
     number: A2-B1-3
-    tags: playfield_active
+    tags: s_multiballstart
   s_bumperrail:
     number: A2-B1-4
-    tags: playfield_active
+    tags: playfield_active, s_multiballstart
   s_popbumper1:
     number: A2-B1-6
+    tags: s_multiballstart
   s_popbumper2:
     number: A2-B1-7
+    tags: s_multiballstart
   s_popbumper3:
     number: A2-B1-5
-
+    tags: s_multiballstart
 
 #P3 - Bank 0
   s_tooltarget1:
     number: A3-B0-5
-    tags: playfield_active
     ignore_window_ms: 100
+    tags: s_multiballstart
   s_tooltarget2:
     number: A3-B0-6
-    tags: playfield_active
     ignore_window_ms: 100
+    tags: s_multiballstart
   s_tooltarget3:
     number: A3-B0-7
-    tags: playfield_active
     ignore_window_ms: 100
+    tags: s_multiballstart
   s_upperdrop:
     number: A3-B0-1
   s_topbumperleft:
     number: A3-B0-3
-    tags: playfield_active
+    tags: playfield_active, s_multiballstart
   s_whitedot1:
     number: A3-B0-4
-    tags: playfield_active
+    tags: s_multiballstart
   s_whitedot2:
     number: A3-B0-2
-    tags: playfield_active
+    tags: s_multiballstart
   s_loopleft:
     number: A3-B0-0
     type: NC
-    tags: playfield_active
+    tags: s_multiballstart
 
 #P3 - Bank 1
   s_loopright:
     number: A3-B1-3
     type: NC
-    tags: playfield_active
+    tags: s_multiballstart
   s_topbumperright:  
     number: A3-B1-5
-    tags: playfield_active
+    tags: playfield_active, s_multiballstart
   s_whitedot3:
     number: A3-B1-1
-    tags: playfield_active
+    tags: s_multiballstart
   s_whitedot4:
     number: A3-B1-7
-    tags: playfield_active
+    tags: s_multiballstart
   s_spinner:
     number: A3-B1-2
-    tags: playfield_active
+    tags: s_multiballstart
   s_topkicker:
     number: A3-B1-4
   s_captiveball:
     number: A3-B1-6
-    tags: playfield_active
+    tags: s_multiballstart
   s_portal:
     number: A3-B1-0
     type: NC
-    tags: playfield_active
+    tags: s_multiballstart

@@ -518,21 +518,33 @@ widget_player:
       action: add
       slide: stronghold_slide
   update_eye_display{current_player.stronghold_progress >=1}:
-    widget_eye1
-    widget_eye2
-    widget_eye3
+    widget_eye1:
+      action: add
+    widget_eye2:
+      action: add
+    widget_eye3:
+      action: add
   update_eye_display{current_player.stronghold_progress >=2}:
-    widget_eye4
-    widget_eye5
-    widget_eye6
+    widget_eye4:
+      action: add
+    widget_eye5:
+      action: add
+    widget_eye6:
+      action: add
   update_eye_display{current_player.stronghold_progress >=3}:
-    widget_eye7
-    widget_eye8
-    widget_eye9
+    widget_eye7:
+      action: add
+    widget_eye8:
+      action: add
+    widget_eye9:
+      action: add
   update_eye_display{current_player.stronghold_progress >=4}:
-    widget_eye10
-    widget_eye11
-    widget_eye12
+    widget_eye10:
+      action: add
+    widget_eye11:
+      action: add
+    widget_eye12:
+      action: add
 
   set1_left_flashing_hit: widget_eye3
   set1_center_flashing_hit: widget_eye2
@@ -557,11 +569,10 @@ show_player:
 
 event_player:
   slide_stronghold_slide_active:
-    show_player_score
-    show_ball_count
-    show_multiplier
-    update_eye_display
-   # show_debug
+    - show_player_score
+    - show_ball_count
+    - show_multiplier
+    - update_eye_display
 
   mode_stronghold_started{current_player.stronghold_progress==0 or current_player.stronghold_progress==-1}:
     enable_eyeset1
@@ -576,24 +587,24 @@ event_player:
 
   
   eyeset1_complete:
-    enable_eyeset2
-    update_eye_display
+    - enable_eyeset2
+    - update_eye_display
   eyeset2_complete:
-    enable_eyeset3
-    update_eye_display
+    - enable_eyeset3
+    - update_eye_display
   eyeset3_complete:
-    enable_eyeset4
-    update_eye_display
+    - enable_eyeset4
+    - update_eye_display
 
   eyeset4_complete{current_player.multiplier_mb==2}:
-    enable_eyespinner
-    update_eye_display
+    - enable_eyespinner
+    - update_eye_display
   eyeset4_complete{current_player.multiplier_mb==1}:
-    update_eye_display
-    disable_eyespinner
-    theend_ready
-    enable_endportal
+    - update_eye_display
+    - disable_eyespinner
+    - theend_ready
+    - enable_endportal
   multiball_strongholdmb_ended{current_player.stronghold_progress==4}:
-    disable_eyespinner
-    theend_ready
-    enable_endportal
+    - disable_eyespinner
+    - theend_ready
+    - enable_endportal

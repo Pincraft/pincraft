@@ -61,28 +61,28 @@ event_player:
     theend_start
 
   world1_collected{current_player.multiplier_mb==1}:
-    nethermode_ready
-    villagerornightmb_disable
+    - nethermode_ready
+    - villagerornightmb_disable
   world2_collected{current_player.multiplier_mb==1}:
-    nethermode_ready
-    villagerornightmb_disable
+    - nethermode_ready
+    - villagerornightmb_disable
   world3_collected{current_player.multiplier_mb==1}:
-    nethermode_ready
-    villagerornightmb_disable
+    - nethermode_ready
+    - villagerornightmb_disable
   world4_collected{current_player.multiplier_mb==1}:
-    nethermode_ready
-    villagerornightmb_disable
+    - nethermode_ready
+    - villagerornightmb_disable
   world5_collected{current_player.multiplier_mb==1}:
-    strongholdmode_ready
-    villagerornightmb_disable
+    - strongholdmode_ready
+    - villagerornightmb_disable
 
   event_nightorvillagermultiball_ended{current_player.world_id != 5 and current_player.world_item1_remaining == 0 and current_player.world_item2_remaining == 0 and current_player.world_item3_remaining == 0 and current_player.world_item4_remaining == 0}:
-    nethermode_ready
-    villagerornightmb_disable
+    - nethermode_ready
+    - villagerornightmb_disable
 
   event_nightorvillagermultiball_ended{current_player.world_id == 5 and current_player.world_item1_remaining == 0 and current_player.world_item2_remaining == 0 and current_player.world_item3_remaining == 0 and current_player.world_item4_remaining == 0}:
-    strongholdmode_ready
-    villagerornightmb_disable
+    - strongholdmode_ready
+    - villagerornightmb_disable
 
 
 

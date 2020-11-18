@@ -15,7 +15,7 @@ track_player:
 
 event_player:
   #START STRONGHOLD MULTIBALL ON PLUNGE
-  sw_playfield_active_active{device.multiball_locks.strongholdlock.locked_balls==1 and device.multiball_locks.strongholdlock.enabled}:
+  sw_s_multiballstart_active{device.multiball_locks.strongholdlock.locked_balls==1 and device.multiball_locks.strongholdlock.enabled}:
     strongholdmb_start
 
   #ENABLE MB / BUT ONLY ON FIRST BALL    

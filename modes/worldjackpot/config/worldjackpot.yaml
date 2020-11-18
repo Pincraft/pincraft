@@ -158,8 +158,8 @@ event_player:
   player_multiplier_mb:
     recalculate_worldjackpot
   world_jackpot_collect:
-    reset_world_jackpot
-    recalculate_worldjackpot
+    - reset_world_jackpot
+    - recalculate_worldjackpot
   ball_ending:
     reset_world_jackpot
   recalculate_worldjackpot{current_player.world_jackpot < 100000}:
