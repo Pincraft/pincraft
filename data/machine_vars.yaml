@@ -10,3 +10,6 @@ difficulty_tools:
 game_num_players:
   expire: null
   value: 1
+player1_score:
+  expire: null
+  value: 366600

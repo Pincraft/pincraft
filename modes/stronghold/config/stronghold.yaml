@@ -410,91 +410,91 @@ slide_player:
 light_player:
   mode_stronghold_started:
     lactionbar: off
-  set1_left_flashing_hit: 
-    l_actionbar7: 417266
-    l_actionbar8: 417266
-    l_actionbar9: 417266
-  set1_center_flashing_hit: 
-    l_actionbar4: 417266
-    l_actionbar5: 417266
-    l_actionbar6: 417266
-  set1_right_flashing_hit: 
-    l_actionbar1: 417266
-    l_actionbar2: 417266
-    l_actionbar3: 417266
-  set2_left_flashing_hit: 
-    l_actionbar10: 417266
-    l_actionbar11: 417266
-    l_actionbar12: 417266
-  set2_center_flashing_hit: 
-    l_actionbar13: 417266
-    l_actionbar14: 417266
-    l_actionbar15: 417266
-  set2_right_flashing_hit: 
-    l_actionbar16: 417266
-    l_actionbar17: 417266
-    l_actionbar18: 417266
-  set3_left_flashing_hit: 
-    l_actionbar19: 417266
-    l_actionbar20: 417266
-    l_actionbar21: 417266
-  set3_center_flashing_hit: 
-    l_actionbar22: 417266
-    l_actionbar23: 417266
-    l_actionbar24: 417266
-  set3_right_flashing_hit: 
-    l_actionbar25: 417266
-    l_actionbar26: 417266
-    l_actionbar27: 417266
-  set4_left_flashing_hit:
-    l_actionbar34: 417266
-    l_actionbar35: 417266
-    l_actionbar36: 417266
-    l_actionbar37: 417266
-  set4_center_flashing_hit: 
-    l_actionbar31: 417266
-    l_actionbar32: 417266
-    l_actionbar33: 417266
-  set4_right_flashing_hit: 
-    l_actionbar28: 417266
-    l_actionbar29: 417266
-    l_actionbar30: 417266
+  # set1_left_flashing_hit: 
+  #   l_actionbar7: 417266
+  #   l_actionbar8: 417266
+  #   l_actionbar9: 417266
+  # set1_center_flashing_hit: 
+  #   l_actionbar4: 417266
+  #   l_actionbar5: 417266
+  #   l_actionbar6: 417266
+  # set1_right_flashing_hit: 
+  #   l_actionbar1: 417266
+  #   l_actionbar2: 417266
+  #   l_actionbar3: 417266
+  # set2_left_flashing_hit: 
+  #   l_actionbar10: 417266
+  #   l_actionbar11: 417266
+  #   l_actionbar12: 417266
+  # set2_center_flashing_hit: 
+  #   l_actionbar13: 417266
+  #   l_actionbar14: 417266
+  #   l_actionbar15: 417266
+  # set2_right_flashing_hit: 
+  #   l_actionbar16: 417266
+  #   l_actionbar17: 417266
+  #   l_actionbar18: 417266
+  # set3_left_flashing_hit: 
+  #   l_actionbar19: 417266
+  #   l_actionbar20: 417266
+  #   l_actionbar21: 417266
+  # set3_center_flashing_hit: 
+  #   l_actionbar22: 417266
+  #   l_actionbar23: 417266
+  #   l_actionbar24: 417266
+  # set3_right_flashing_hit: 
+  #   l_actionbar25: 417266
+  #   l_actionbar26: 417266
+  #   l_actionbar27: 417266
+  # set4_left_flashing_hit:
+  #   l_actionbar34: 417266
+  #   l_actionbar35: 417266
+  #   l_actionbar36: 417266
+  #   l_actionbar37: 417266
+  # set4_center_flashing_hit: 
+  #   l_actionbar31: 417266
+  #   l_actionbar32: 417266
+  #   l_actionbar33: 417266
+  # set4_right_flashing_hit: 
+  #   l_actionbar28: 417266
+  #   l_actionbar29: 417266
+  #   l_actionbar30: 417266
   update_eye_display{current_player.stronghold_progress >=1}:
-    l_actionbar1: 417266
-    l_actionbar2: 417266
-    l_actionbar3: 417266
-    l_actionbar4: 417266
-    l_actionbar5: 417266
-    l_actionbar6: 417266
-    l_actionbar7: 417266
-    l_actionbar8: 417266
-    l_actionbar9: 417266
+    # l_actionbar1: 417266
+    # l_actionbar2: 417266
+    # l_actionbar3: 417266
+    # l_actionbar4: 417266
+    # l_actionbar5: 417266
+    # l_actionbar6: 417266
+    # l_actionbar7: 417266
+    # l_actionbar8: 417266
+    # l_actionbar9: 417266
     l_collectitem1: 417266
     l_toolcollect1: 417266
     l_spinner1: 417266
   update_eye_display{current_player.stronghold_progress >=2}:
-    l_actionbar10: 417266
-    l_actionbar11: 417266
-    l_actionbar12: 417266
-    l_actionbar13: 417266
-    l_actionbar14: 417266
-    l_actionbar15: 417266
-    l_actionbar16: 417266
-    l_actionbar17: 417266
-    l_actionbar18: 417266
+    # l_actionbar10: 417266
+    # l_actionbar11: 417266
+    # l_actionbar12: 417266
+    # l_actionbar13: 417266
+    # l_actionbar14: 417266
+    # l_actionbar15: 417266
+    # l_actionbar16: 417266
+    # l_actionbar17: 417266
+    # l_actionbar18: 417266
     l_collectitem2: 417266
     l_toolcollect2: 417266
     l_spinner2: 417266
   update_eye_display{current_player.stronghold_progress >=3}:
-    l_actionbar19: 417266
-    l_actionbar20: 417266
-    l_actionbar21: 417266
-    l_actionbar22: 417266
-    l_actionbar23: 417266
-    l_actionbar24: 417266
-    l_actionbar25: 417266
-    l_actionbar26: 417266
-    l_actionbar27: 417266
+    # l_actionbar19: 417266
+    # l_actionbar20: 417266
+    # l_actionbar21: 417266
+    # l_actionbar22: 417266
+    # l_actionbar23: 417266
+    # l_actionbar24: 417266
+    # l_actionbar25: 417266
+    # l_actionbar26: 417266
+    # l_actionbar27: 417266
     l_collectitem4: 417266
     l_toolcollect3: 417266
     l_spinner3: 417266

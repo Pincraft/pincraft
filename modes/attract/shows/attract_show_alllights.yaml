@@ -21,12 +21,12 @@
     l_world6: off
     l_worldtarget: off
     lactionbar: off
-    l_actionbar1: green
-    l_actionbar2: green
-    l_actionbar3: green
-    l_actionbar4: green
-    l_actionbar5: green
-    l_actionbar6: green
+    # l_actionbar1: green
+    # l_actionbar2: green
+    # l_actionbar3: green
+    # l_actionbar4: green
+    # l_actionbar5: green
+    # l_actionbar6: green
     ltopper: green
 - duration: 1
   lights:
@@ -50,12 +50,12 @@
     l_world6: off
     l_worldtarget: off
     lactionbar: off
-    l_actionbar7: yellow
-    l_actionbar8: yellow
-    l_actionbar9: yellow
-    l_actionbar10: yellow
-    l_actionbar11: yellow
-    l_actionbar12: yellow
+    # l_actionbar7: yellow
+    # l_actionbar8: yellow
+    # l_actionbar9: yellow
+    # l_actionbar10: yellow
+    # l_actionbar11: yellow
+    # l_actionbar12: yellow
     ltopper: yellow
 
 - duration: 1
@@ -80,12 +80,12 @@
     l_world6: off
     l_worldtarget: off
     lactionbar: off
-    l_actionbar13: blue
-    l_actionbar14: blue
-    l_actionbar15: blue
-    l_actionbar16: blue
-    l_actionbar17: blue
-    l_actionbar18: blue
+    # l_actionbar13: blue
+    # l_actionbar14: blue
+    # l_actionbar15: blue
+    # l_actionbar16: blue
+    # l_actionbar17: blue
+    # l_actionbar18: blue
     ltopper: blue
 - duration: 1
   lights:
@@ -109,12 +109,12 @@
     l_world6: off
     l_worldtarget: off
     lactionbar: off
-    l_actionbar19: brown
-    l_actionbar20: brown
-    l_actionbar21: brown
-    l_actionbar22: brown
-    l_actionbar23: brown
-    l_actionbar24: brown
+    # l_actionbar19: brown
+    # l_actionbar20: brown
+    # l_actionbar21: brown
+    # l_actionbar22: brown
+    # l_actionbar23: brown
+    # l_actionbar24: brown
     ltopper: brown
 - duration: 1
   lights:
@@ -138,12 +138,12 @@
     l_world6: off
     l_worldtarget: off
     lactionbar: off
-    l_actionbar25: red
-    l_actionbar26: red
-    l_actionbar27: red
-    l_actionbar28: red
-    l_actionbar29: red
-    l_actionbar30: red
+    # l_actionbar25: red
+    # l_actionbar26: red
+    # l_actionbar27: red
+    # l_actionbar28: red
+    # l_actionbar29: red
+    # l_actionbar30: red
     ltopper: red
 - duration: 1
   lights:
@@ -167,10 +167,10 @@
     l_world6: purple
     l_worldtarget: off
     lactionbar: off
-    l_actionbar31: purple
-    l_actionbar32: purple
-    l_actionbar33: purple
-    l_actionbar34: purple
-    l_actionbar35: purple
-    l_actionbar36: purple
+    # l_actionbar31: purple
+    # l_actionbar32: purple
+    # l_actionbar33: purple
+    # l_actionbar34: purple
+    # l_actionbar35: purple
+    # l_actionbar36: purple
     ltopper: purple
