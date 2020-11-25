@@ -3,13 +3,13 @@ difficulty_extraball1:
   value: 6
 difficulty_extraball2:
   expire: null
-  value: 6
+  value: 12
 difficulty_tools:
   expire: null
-  value: 4
+  value: 1
 game_num_players:
   expire: null
   value: 1
 player1_score:
   expire: null
-  value: 366600
+  value: 45065200
