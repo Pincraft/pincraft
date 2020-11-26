@@ -36,7 +36,7 @@ class Base(Mode):
         elif self.machine.mode_controller.is_active("nether"):
             self.player.diverter_state="multiballnether"
         elif self.machine.mode_controller.is_active("stronghold"):
-            if (self.player.stronghold_progress == 4 and self.player.multiplier_mb == 1):
+            if (self.player.stronghold_progress == 1 and self.player.multiplier_mb == 1):
                 self.player.diverter_state="strongholdtravel"
             else:
                 self.player.diverter_state="strongholdidle"    

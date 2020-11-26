@@ -18,20 +18,20 @@ player:
     total: 336
 shots:
   award_extraball: 131
-  captiveball: 1181
+  captiveball: 1187
   centertarget: 1541
-  collectitem1: 7181
-  collectitem2: 7097
-  collectitem3: 5894
-  collectitem4: 6816
+  collectitem1: 7552
+  collectitem2: 7467
+  collectitem3: 6267
+  collectitem4: 7185
   collectitem5: 1881
-  collectitem_special: 2831
+  collectitem_special: 2854
   collectleftoutlane: 161
   collectrightinlane: 164
-  craft1: 1043
-  craft2: 1021
-  craft3: 1003
-  craft4: 1020
+  craft1: 1062
+  craft2: 1040
+  craft3: 1026
+  craft4: 1038
   enderdragon_shot: 1351
   enderdragon_shot1: 217
   enderdragon_shot10: 195
@@ -50,10 +50,10 @@ shots:
   enderdragon_shot7: 136
   enderdragon_shot8: 105
   enderdragon_shot9: 114
-  eyespinner: 1902
-  leftslingshot: 7232
-  loopleft: 7804
-  loopright: 6465
+  eyespinner: 2218
+  leftslingshot: 7251
+  loopleft: 7864
+  loopright: 6548
   mb_drop1: 474
   mb_drop2: 1474
   mb_drop3: 1271
@@ -73,10 +73,10 @@ shots:
   night_drop6: 104
   night_jackpot: 37
   night_super: 1
-  popbumper1: 9690
-  popbumper2: 13561
-  popbumper3: 18638
-  rightslingshot: 6538
+  popbumper1: 9752
+  popbumper2: 13632
+  popbumper3: 18701
+  rightslingshot: 6557
   set1_center: 129
   set1_left: 243
   set1_right: 433
@@ -89,71 +89,83 @@ shots:
   set4_center: 140
   set4_left: 97
   set4_right: 358
+  shot_eye1: 135
+  shot_eye10: 23
+  shot_eye11: 19
+  shot_eye12: 19
+  shot_eye2: 79
+  shot_eye3: 75
+  shot_eye4: 82
+  shot_eye5: 69
+  shot_eye6: 23
+  shot_eye7: 17
+  shot_eye8: 19
+  shot_eye9: 20
   shot_travel: 72
   shot_victoryloopleft: 37
   shot_victoryloopright: 28
-  skill_scoup: 703
-  spinner: 33337
+  skill_scoup: 706
+  spinner: 33672
   strongholdtravel: 50
-  tool1: 3153
-  tool2: 3989
-  tool3: 2643
+  tool1: 3200
+  tool2: 4043
+  tool3: 2689
   victoryloopleft_shot: 179
   victoryloopright_shot: 106
   village_jackpot: 22
   villager_jackpot: 210
   villager_spinner: 114
   world_jackpot: 1076
-  worldspinner: 7453
+  worldspinner: 7454
 switches:
-  s_bumperrail: 10887
-  s_captiveball: 1183
-  s_centertarget: 8040
-  s_collectitem1: 12301
-  s_collectitem2: 12217
-  s_collectitem3: 6886
-  s_collectitem4: 11727
-  s_collectitem5: 11376
+  s_bumperrail: 10903
+  s_captiveball: 1189
+  s_centertarget: 8075
+  s_collectitem1: 12939
+  s_collectitem2: 12785
+  s_collectitem3: 7015
+  s_collectitem4: 12315
+  s_collectitem5: 11946
   s_credit_right: 0
-  s_drop1: 4668
-  s_drop2: 7268
-  s_drop3: 30599
-  s_drop4: 4618
-  s_drop5: 9484
-  s_drop6: 6306
-  s_left_flipper: 62503
-  s_leftinlane: 1274
-  s_leftoutlane: 1185
-  s_leftsling: 7235
-  s_loopleft: 8143
-  s_loopright: 7229
+  s_drop1: 4699
+  s_drop2: 7311
+  s_drop3: 30638
+  s_drop4: 4648
+  s_drop5: 9535
+  s_drop6: 6348
+  s_left_flipper: 62654
+  s_leftinlane: 1278
+  s_leftoutlane: 1186
+  s_leftsling: 7254
+  s_loopleft: 8203
+  s_loopright: 7312
   s_maint: 75
-  s_plungerlane: 6082
-  s_popbumper1: 9690
-  s_popbumper2: 13561
-  s_popbumper3: 18639
-  s_portal: 1355
-  s_right_flipper: 53673
-  s_rightinlane: 592
-  s_rightoutlane: 570
-  s_rightsling: 6538
-  s_scoup: 3796
-  s_spinner: 33340
-  s_start: 379
+  s_plungerlane: 6139
+  s_popbumper1: 9752
+  s_popbumper2: 13632
+  s_popbumper3: 18702
+  s_portal: 1381
+  s_right_flipper: 53847
+  s_rightinlane: 594
+  s_rightoutlane: 573
+  s_rightsling: 6557
+  s_scoup: 3833
+  s_spinner: 33675
+  s_start: 398
   s_tilt: 1178
-  s_tooltarget1: 4795
-  s_tooltarget2: 6206
-  s_tooltarget3: 3958
-  s_topbumperleft: 3057
-  s_topbumperright: 4339
-  s_topkicker: 11489
-  s_trough1: 5490
-  s_trough2: 4571
-  s_trough3: 3929
-  s_trough4: 3558
-  s_troughjam: 4643
-  s_upperdrop: 4759
-  s_whitedot1: 2051
-  s_whitedot2: 2275
-  s_whitedot3: 2341
-  s_whitedot4: 2298
+  s_tooltarget1: 4877
+  s_tooltarget2: 6288
+  s_tooltarget3: 4034
+  s_topbumperleft: 3078
+  s_topbumperright: 4371
+  s_topkicker: 11649
+  s_trough1: 5550
+  s_trough2: 4617
+  s_trough3: 3960
+  s_trough4: 3589
+  s_troughjam: 4694
+  s_upperdrop: 4833
+  s_whitedot1: 2093
+  s_whitedot2: 2328
+  s_whitedot3: 2391
+  s_whitedot4: 2340

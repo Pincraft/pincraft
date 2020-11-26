@@ -7,72 +7,20 @@ mode:
 
 
 variable_player:
-  set1_left_flashing_hit:
+  shot_eye_flashing_hit:
     score: 10000 * current_player.multiplier_mb * current_player.sword 
-  set1_center_flashing_hit:
-    score: 10000 * current_player.multiplier_mb * current_player.sword 
-  set1_right_flashing_hit:
-    score: 10000 * current_player.multiplier_mb * current_player.sword 
-  eyeset1_complete:
-    score: 50000 * current_player.multiplier_mb * current_player.sword 
-    stronghold_jackpot: 250000
-    stronghold_progress:
-      int: 1
-      action: set
-    
-
-  set2_left_flashing_hit:
-    score: 10000 * current_player.multiplier_mb * current_player.sword 
-  set2_center_flashing_hit:
-    score: 10000 * current_player.multiplier_mb * current_player.sword 
-  set2_right_flashing_hit:
-    score: 10000 * current_player.multiplier_mb * current_player.sword 
-  eyeset2_complete:
-    score: 50000 * current_player.multiplier_mb * current_player.sword 
-    stronghold_jackpot: 500000
-    stronghold_progress:
-        int: 2
-        action: set
-
-  set3_left_flashing_hit:
-    score: 10000 * current_player.multiplier_mb * current_player.sword 
-  set3_center_flashing_hit:
-    score: 10000 * current_player.multiplier_mb * current_player.sword 
-  set3_right_flashing_hit:
-    score: 10000 * current_player.multiplier_mb * current_player.sword 
-  eyeset3_complete:
-    score: 50000 * current_player.multiplier_mb * current_player.sword 
-    stronghold_jackpot: 750000
-    stronghold_progress:
-        int: 3
-        action: set
-
-
-  set4_left_flashing_hit:
-    score: 10000 * current_player.multiplier_mb * current_player.sword 
-  set4_center_flashing_hit:
-    score: 10000 * current_player.multiplier_mb * current_player.sword 
-  set4_right_flashing_hit:
-    score: 10000 * current_player.multiplier_mb * current_player.sword 
-  eyeset4_complete:
-    score: 50000 * current_player.multiplier_mb * current_player.sword 
-    stronghold_jackpot: 1000000
-    stronghold_progress:
-        int: 4
-        action: set
-
+  
   award_strongholdjackpot:
     score: current_player.stronghold_jackpot * current_player.sword
 
   eyespinner_hit:
-    stronghold_jackpot: 50000
-
-  mode_stronghold_started:
-    world_id:
-      int: 51
-      action: set
+    stronghold_jackpot: 
+      int: 10000 * current_player.multiplier_mb
+      action: add
+      
+  eyeset_complete:
     stronghold_progress:
-      int: 0
+      int: 1
       action: set
 
 sound_player:
@@ -84,25 +32,14 @@ sound_player:
     stronghold_collect:
       action: play
       loops: 0
-  eyeset4_complete{current_player.multiplier_mb==2}:
+  eyeset_complete{current_player.multiplier_mb==2}: 
     stronghold_travel_multiball
-  eyeset4_complete{current_player.multiplier_mb==1}:
+  eyeset_complete{current_player.multiplier_mb==1}:
     stronghold_travel_single
   award_strongholdjackpot:
     stronghold_jackpot
 
-  set1_left_flashing_hit: eyeplacesp
-  set1_center_flashing_hit: eyeplacesp
-  set1_right_flashing_hit: eyeplacesp
-  set2_left_flashing_hit: eyeplacesp
-  set2_center_flashing_hit: eyeplacesp
-  set2_right_flashing_hit: eyeplacesp
-  set3_left_flashing_hit: eyeplacesp
-  set3_center_flashing_hit: eyeplacesp
-  set3_right_flashing_hit: eyeplacesp
-  set4_left_flashing_hit: eyeplacesp
-  set4_center_flashing_hit: eyeplacesp
-  set4_right_flashing_hit: eyeplacesp
+  eyeset_flashing_hit: eyeplacesp
   eyespinner_hit: eyeplacesp
   enable_endportal: endportal
 
@@ -112,8 +49,8 @@ shot_profiles:
       - name: flashing  # step 2
         show: show_altcolor
         show_tokens:
-          color1: 417266
-          color2: white
+          color1: white
+          color2: off
       - name: turnon  # step 3
         show: show_singlelight
         show_tokens:
@@ -127,134 +64,103 @@ shot_profiles:
     loop: yes
 
 shots:
-  set1_left:
+  shot_eye1:
     switch: s_collectitem1
     profile: sp_eyeshot
-    enable_events: enable_eyeset1
-    disable_events: eyeset1_complete
+    persist_enable: true
     show_tokens:
       leds: l_collectitem1
       light: l_collectitem1
-  set1_center:
-    switch: s_tooltarget1
-    profile: sp_eyeshot
-    enable_events: enable_eyeset1
-    disable_events: eyeset1_complete
-    show_tokens:
-      leds: l_toolcollect1
-      light: l_toolcollect1
-  set1_right:
-    switch: s_spinner
-    profile: sp_eyeshot
-    enable_events: enable_eyeset1
-    disable_events: eyeset1_complete
-    show_tokens:
-      leds: l_spinner1
-      light: l_spinner1
-  set2_left:
+  shot_eye2:
     switch: s_collectitem2
     profile: sp_eyeshot
-    enable_events: enable_eyeset2
-    disable_events: eyeset2_complete
+    persist_enable: true
     show_tokens:
       leds: l_collectitem2
       light: l_collectitem2
-  set2_center:
-    switch: s_tooltarget2
+  shot_eye3:
+    switch: s_collectitem3
     profile: sp_eyeshot
-    enable_events: enable_eyeset2
-    disable_events: eyeset2_complete
+    persist_enable: true
     show_tokens:
-      leds: l_toolcollect2
-      light: l_toolcollect2
-  set2_right:
-    switch: s_spinner
-    profile: sp_eyeshot
-    enable_events: enable_eyeset2
-    disable_events: eyeset2_complete
-    show_tokens:
-      leds: l_spinner2
-      light: l_spinner2
-
-  set3_left:
+      leds: l_collectitem3
+      light: l_collectitem3
+  shot_eye4:
     switch: s_collectitem4
     profile: sp_eyeshot
-    enable_events: enable_eyeset3
-    disable_events: eyeset3_complete
+    persist_enable: true
     show_tokens:
       leds: l_collectitem4
       light: l_collectitem4
-  set3_center:
-    switch: s_tooltarget3
-    profile: sp_eyeshot
-    enable_events: enable_eyeset3
-    disable_events: eyeset3_complete
-    show_tokens:
-      leds: l_toolcollect3
-      light: l_toolcollect3
-  set3_right:
-    switch: s_spinner
-    profile: sp_eyeshot
-    enable_events: enable_eyeset3
-    disable_events: eyeset3_complete
-    show_tokens:
-      leds: l_spinner3
-      light: l_spinner3
-
-  set4_left:
+  shot_eye5:
     switch: s_collectitem5
     profile: sp_eyeshot
-    enable_events: enable_eyeset4
-    disable_events: eyeset4_complete
+    persist_enable: true
     show_tokens:
       leds: l_collectitem5
       light: l_collectitem5
-  set4_center:
-    switch: s_topkicker
+  shot_eye6:
+    switch: s_tooltarget1
     profile: sp_eyeshot
-    enable_events: enable_eyeset4
-    disable_events: eyeset4_complete
+    persist_enable: true
     show_tokens:
-      leds: l_craftlit
-      light: l_craftlit
-  set4_right:
-    switch: s_spinner
+      leds: l_toolcollect1
+      light: l_toolcollect1
+  shot_eye7:
+    switch: s_tooltarget2
     profile: sp_eyeshot
-    enable_events: enable_eyeset4
-    disable_events: eyeset4_complete
+    persist_enable: true
     show_tokens:
-      leds: l_spinner4
-      light: l_spinner4
+      leds: l_toolcollect2
+      light: l_toolcollect2
+  shot_eye8:
+    switch: s_tooltarget3
+    profile: sp_eyeshot
+    persist_enable: true
+    show_tokens:
+      leds: l_toolcollect3
+      light: l_toolcollect3
+  shot_eye9:
+    switch: s_whitedot1
+    profile: sp_eyeshot
+    persist_enable: true
+    show_tokens:
+      leds: l_craft1
+      light: l_craft1
+    hit_events: eye9_helper
+  shot_eye10:
+    switch: s_whitedot2
+    profile: sp_eyeshot
+    persist_enable: true
+    show_tokens:
+      leds: l_craft2
+      light: l_craft2
+    hit_events: eye10_helper
+  shot_eye11:
+    switch: s_whitedot3
+    profile: sp_eyeshot
+    persist_enable: true
+    show_tokens:
+      leds: l_craft3
+      light: l_craft3
+    hit_events: eye11_helper
+  shot_eye12:
+    switch: s_whitedot4
+    profile: sp_eyeshot
+    persist_enable: true
+    show_tokens:
+      leds: l_craft4
+      light: l_craft4
+    hit_events: eye12_helper
 
   eyespinner:
     switch: s_spinner  
     profile: sp_eyespinner
-    enable_events: enable_eyespinner
     disable_events: disable_eyespinner
 
-  # strongholdtravel:
-  #   switch: s_portal
-  #   profile: sp_eyeshot
-  #   enable_events: enable_endportal
-
-
 shot_groups:
-  eyeset1:
-    shots: set1_left, set1_center, set1_right
-    restart_events: enable_eyeset1
-    disable_events: eyeset1_complete
-  eyeset2:
-    shots: set2_left, set2_center, set2_right
-    restart_events: enable_eyeset2
-    disable_events: eyeset2_complete
-  eyeset3:
-    shots: set3_left, set3_center, set3_right
-    restart_events: enable_eyeset3
-    disable_events: eyeset3_complete
-  eyeset4:
-    shots: set4_left, set4_center, set4_right
-    restart_events: enable_eyeset4
-    disable_events: eyeset4_complete
+  eyeset:
+    shots: shot_eye1, shot_eye2, shot_eye3, shot_eye4, shot_eye5, shot_eye6, shot_eye7, shot_eye8, shot_eye9, shot_eye10, shot_eye11, shot_eye12
 
 widgets:
   widget_swordplayer:
@@ -517,54 +423,39 @@ widget_player:
     widget_strongholdjackpot:
       action: add
       slide: stronghold_slide
-  update_eye_display{current_player.stronghold_progress >=1}:
-    widget_eye1:
-      action: add
-    widget_eye2:
-      action: add
-    widget_eye3:
-      action: add
-  update_eye_display{current_player.stronghold_progress >=2}:
-    widget_eye4:
-      action: add
-    widget_eye5:
-      action: add
-    widget_eye6:
-      action: add
-  update_eye_display{current_player.stronghold_progress >=3}:
-    widget_eye7:
-      action: add
-    widget_eye8:
-      action: add
-    widget_eye9:
-      action: add
-  update_eye_display{current_player.stronghold_progress >=4}:
-    widget_eye10:
-      action: add
-    widget_eye11:
-      action: add
-    widget_eye12:
-      action: add
 
-  set1_left_flashing_hit: widget_eye3
-  set1_center_flashing_hit: widget_eye2
-  set1_right_flashing_hit: widget_eye1
-  set2_left_flashing_hit: widget_eye4
-  set2_center_flashing_hit: widget_eye5
-  set2_right_flashing_hit: widget_eye6
-  set3_left_flashing_hit: widget_eye7
-  set3_center_flashing_hit: widget_eye8
-  set3_right_flashing_hit: widget_eye9
-  set4_left_flashing_hit: widget_eye12
-  set4_center_flashing_hit: widget_eye11
-  set4_right_flashing_hit: widget_eye10
+  update_eye_display{current_player.shot_shot_eye1==1}:
+    widget_eye1
+  update_eye_display{current_player.shot_shot_eye2==1}:
+    widget_eye2
+  update_eye_display{current_player.shot_shot_eye3==1}:
+    widget_eye3
+  update_eye_display{current_player.shot_shot_eye4==1}:
+    widget_eye4
+  update_eye_display{current_player.shot_shot_eye5==1}:
+    widget_eye5
+  update_eye_display{current_player.shot_shot_eye6==1}:
+    widget_eye6
+  update_eye_display{current_player.shot_shot_eye7==1}:
+    widget_eye7
+  update_eye_display{current_player.shot_shot_eye8==1}:
+    widget_eye8
+  update_eye_display{current_player.shot_shot_eye9==1}:
+    widget_eye9
+  update_eye_display{current_player.shot_shot_eye10==1}:
+    widget_eye10
+  update_eye_display{current_player.shot_shot_eye11==1}:
+    widget_eye11
+  update_eye_display{current_player.shot_shot_eye12==1}:
+    widget_eye12
+
   enable_endportal: widget_portalopen
    
 show_player:
   mode_stronghold_started:  #Setup GI Light Show
     show_strongholdgi:
       loops: -1
-      speed: 4
+      speed: 6
 
 
 event_player:
@@ -574,37 +465,29 @@ event_player:
     - show_multiplier
     - update_eye_display
 
-  mode_stronghold_started{current_player.stronghold_progress==0 or current_player.stronghold_progress==-1}:
-    enable_eyeset1
-  mode_stronghold_started{current_player.stronghold_progress==1}:
-    eyeset1_complete
-  mode_stronghold_started{current_player.stronghold_progress==2}:
-    eyeset2_complete
-  mode_stronghold_started{current_player.stronghold_progress==3}:
-    eyeset3_complete
-  mode_stronghold_started{current_player.stronghold_progress==4}:
-    eyeset4_complete
+  mode_stronghold_started:
+    update_eye_display
 
-  
-  eyeset1_complete:
-    - enable_eyeset2
-    - update_eye_display
-  eyeset2_complete:
-    - enable_eyeset3
-    - update_eye_display
-  eyeset3_complete:
-    - enable_eyeset4
-    - update_eye_display
+  eyeset_flashing_hit:
+    update_eye_display
 
-  eyeset4_complete{current_player.multiplier_mb==2}:
+  eyeset_complete{current_player.multiplier_mb==2}:
     - enable_eyespinner
-    - update_eye_display
-  eyeset4_complete{current_player.multiplier_mb==1}:
-    - update_eye_display
+  eyeset_complete{current_player.multiplier_mb==1}:
     - disable_eyespinner
     - theend_ready
     - enable_endportal
-  multiball_strongholdmb_ended{current_player.stronghold_progress==4}:
+  multiball_strongholdmb_ended{current_player.stronghold_progress==1}:
     - disable_eyespinner
     - theend_ready
     - enable_endportal
+
+  #LIT A EYE LIGHT IF NOT ALL COLLECTED YET
+  balldevice_bd_topkicker_ball_enter{current_player.shot_shot_eye9==0 }:
+    eye9_helper
+  balldevice_bd_topkicker_ball_enter{current_player.shot_shot_eye9==1 and current_player.shot_shot_eye10==0}:
+    eye10_helper
+  balldevice_bd_topkicker_ball_enter{current_player.shot_shot_eye9==1 and current_player.shot_shot_eye10==1 and current_player.shot_shot_eye11==0}:
+    eye11_helper
+  balldevice_bd_topkicker_ball_enter{current_player.shot_shot_eye9==1 and current_player.shot_shot_eye10==1 and current_player.shot_shot_eye11==1 and current_player.shot_shot_eye12==0}:
+    eye12_helper

@@ -19,7 +19,7 @@ event_player:
     strongholdmb_start
 
   #ENABLE MB / BUT ONLY ON FIRST BALL    
-  mode_strongholdcontroller_started{current_player.stronghold_progress==-1}:
+  mode_strongholdcontroller_started{current_player.stronghold_progress<=0}:
     stronghold_enablemb
 
 multiball_locks:

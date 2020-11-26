@@ -5,6 +5,18 @@ mode:
     priority: 1000
 
 
+variable_player:
+  mode_strongholdready_started:
+    world_id:
+      int: 51
+      action: set
+    stronghold_progress:
+      int: 0
+      action: set
+    stronghold_jackpot:
+      int: 1000000
+      action: set
+
 #play hurry up sound effect
 sound_player:
   mode_strongholdready_started:

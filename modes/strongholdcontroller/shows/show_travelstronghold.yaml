@@ -1,5 +1,5 @@
 #show_version=5
-- duration: 6
+- duration: 5
   sounds:
     voice_portal_stronghold:
       loops: 0

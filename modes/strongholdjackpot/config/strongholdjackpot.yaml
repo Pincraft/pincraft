@@ -5,9 +5,8 @@ mode:
     priority: 1100
 
 sound_player:
-  stronghold_collectjackpot: 
-    stronghold_jackpot
-    strongholdjackpot_music
+  stronghold_collectjackpot.1: stronghold_jackpot
+  stronghold_collectjackpot.2: strongholdjackpot_music
   timer_timer_jackpot_collect_tick: eyeplacesp
 
 track_player:
