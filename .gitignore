@@ -1,5 +1,2 @@
 *.log
 data/*
-videos/*
-data/audits.yaml
-data/machine_vars.yaml
