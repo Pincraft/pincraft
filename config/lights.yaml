@@ -885,152 +885,152 @@ lights:
     platform: fadecandy
     #color_correction_profile: correction_profile_fadecandy
 
-  # l_undercab5:
-  #   type: rgb
-  #   tags: lundercab, lundercab_odd, lundercab_chase1
-  #   number: 0-4
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_undercab5:
+    type: rgb
+    tags: lundercab, lundercab_odd, lundercab_chase1
+    number: 0-4
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_undercab6:
-  #   type: rgb
-  #   tags: lundercab, lundercab_even, lundercab_chase2
-  #   number: 0-5
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_undercab6:
+    type: rgb
+    tags: lundercab, lundercab_even, lundercab_chase2
+    number: 0-5
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_undercab7:
-  #   type: rgb
-  #   tags: lundercab, lundercab_odd, lundercab_chase3
-  #   number: 0-6
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_undercab7:
+    type: rgb
+    tags: lundercab, lundercab_odd, lundercab_chase3
+    number: 0-6
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_undercab8:
-  #   type: rgb
-  #   tags: lundercab, lundercab_even, lundercab_chase4
-  #   number: 0-7
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_undercab8:
+    type: rgb
+    tags: lundercab, lundercab_even, lundercab_chase4
+    number: 0-7
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_undercab9:
-  #   type: rgb
-  #   tags: lundercab, lundercab_odd, lundercab_chase1
-  #   number: 0-8
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_undercab9:
+    type: rgb
+    tags: lundercab, lundercab_odd, lundercab_chase1
+    number: 0-8
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_undercab10:
-  #   type: rgb
-  #   tags: lundercab, lundercab_even, lundercab_chase2
-  #   number: 0-9
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_undercab10:
+    type: rgb
+    tags: lundercab, lundercab_even, lundercab_chase2
+    number: 0-9
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_undercab11:
-  #   type: rgb
-  #   tags: lundercab, lundercab_odd, lundercab_chase3
-  #   number: 0-10
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_undercab11:
+    type: rgb
+    tags: lundercab, lundercab_odd, lundercab_chase3
+    number: 0-10
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_undercab12:
-  #   type: rgb
-  #   tags: lundercab, lundercab_even, lundercab_chase4
-  #   number: 0-11
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_undercab12:
+    type: rgb
+    tags: lundercab, lundercab_even, lundercab_chase4
+    number: 0-11
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_undercab13:
-  #   type: rgb
-  #   tags: lundercab, lundercab_odd, lundercab_chase1
-  #   number: 0-12
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_undercab13:
+    type: rgb
+    tags: lundercab, lundercab_odd, lundercab_chase1
+    number: 0-12
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_undercab14:
-  #   type: rgb
-  #   tags: lundercab, lundercab_even, lundercab_chase2
-  #   number: 0-13
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_undercab14:
+    type: rgb
+    tags: lundercab, lundercab_even, lundercab_chase2
+    number: 0-13
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_undercab15:
-  #   type: rgb
-  #   tags: lundercab, lundercab_odd, lundercab_chase3
-  #   number: 0-14
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_undercab15:
+    type: rgb
+    tags: lundercab, lundercab_odd, lundercab_chase3
+    number: 0-14
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_undercab16:
-  #   type: rgb
-  #   tags: lundercab, lundercab_even, lundercab_chase4
-  #   number: 0-15
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_undercab16:
+    type: rgb
+    tags: lundercab, lundercab_even, lundercab_chase4
+    number: 0-15
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_undercab17:
-  #   type: rgb
-  #   tags: lundercab, lundercab_odd, lundercab_chase1
-  #   number: 0-16
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_undercab17:
+    type: rgb
+    tags: lundercab, lundercab_odd, lundercab_chase1
+    number: 0-16
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_undercab18:
-  #   type: rgb
-  #   tags: lundercab, lundercab_even, lundercab_chase2
-  #   number: 0-17
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_undercab18:
+    type: rgb
+    tags: lundercab, lundercab_even, lundercab_chase2
+    number: 0-17
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_undercab19:
-  #   type: rgb
-  #   tags: lundercab, lundercab_odd, lundercab_chase3
-  #   number: 0-18
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_undercab19:
+    type: rgb
+    tags: lundercab, lundercab_odd, lundercab_chase3
+    number: 0-18
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_undercab20:
-  #   type: rgb
-  #   tags: lundercab, lundercab_even, lundercab_chase4
-  #   number: 0-19
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_undercab20:
+    type: rgb
+    tags: lundercab, lundercab_even, lundercab_chase4
+    number: 0-19
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_undercab21:
-  #   type: rgb
-  #   tags: lundercab, lundercab_odd, lundercab_chase1
-  #   number: 0-20
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_undercab21:
+    type: rgb
+    tags: lundercab, lundercab_odd, lundercab_chase1
+    number: 0-20
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_undercab22:
-  #   type: rgb
-  #   tags: lundercab, lundercab_even, lundercab_chase2
-  #   number: 0-21
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_undercab22:
+    type: rgb
+    tags: lundercab, lundercab_even, lundercab_chase2
+    number: 0-21
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_undercab23:
-  #   type: rgb
-  #   tags: lundercab, lundercab_odd, lundercab_chase3
-  #   number: 0-22
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_undercab23:
+    type: rgb
+    tags: lundercab, lundercab_odd, lundercab_chase3
+    number: 0-22
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_undercab24:
-  #   type: rgb
-  #   tags: lundercab, lundercab_even, lundercab_chase4
-  #   number: 0-23
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_undercab24:
+    type: rgb
+    tags: lundercab, lundercab_even, lundercab_chase4
+    number: 0-23
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_undercab25:
-  #   type: rgb
-  #   tags: lundercab, lundercab_odd
-  #   number: 0-24
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_undercab25:
+    type: rgb
+    tags: lundercab, lundercab_odd
+    number: 0-24
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
 
   l_backboxleft1:
@@ -1061,110 +1061,110 @@ lights:
     platform: fadecandy
     #color_correction_profile: correction_profile_fadecandy
 
-  # l_backboxleft5:
-  #   type: rgb
-  #   tags: lbackbox, lbackboxodd, lbackbox_chase2, lbackbox_chasearound2
-  #   number: 0-68
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_backboxleft5:
+    type: rgb
+    tags: lbackbox, lbackboxodd, lbackbox_chase2, lbackbox_chasearound2
+    number: 0-68
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_backboxleft6:
-  #   type: rgb
-  #   tags: lbackbox, lbackboxeven, lbackbox_chase3, lbackbox_chasearound3
-  #   number: 0-69
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_backboxleft6:
+    type: rgb
+    tags: lbackbox, lbackboxeven, lbackbox_chase3, lbackbox_chasearound3
+    number: 0-69
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_backboxleft7:
-  #   type: rgb
-  #   tags: lbackbox, lbackboxodd, lbackbox_chase4, lbackbox_chasearound4
-  #   number: 0-70
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_backboxleft7:
+    type: rgb
+    tags: lbackbox, lbackboxodd, lbackbox_chase4, lbackbox_chasearound4
+    number: 0-70
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_backboxleft8:
-  #   type: rgb
-  #   tags: lbackbox, lbackboxeven, lbackbox_chase1, lbackbox_chasearound1
-  #   number: 0-71
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_backboxleft8:
+    type: rgb
+    tags: lbackbox, lbackboxeven, lbackbox_chase1, lbackbox_chasearound1
+    number: 0-71
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_backboxleft9:
-  #   type: rgb
-  #   tags: lbackbox, lbackboxodd, lbackbox_chase2, lbackbox_chasearound2
-  #   number: 0-72
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_backboxleft9:
+    type: rgb
+    tags: lbackbox, lbackboxodd, lbackbox_chase2, lbackbox_chasearound2
+    number: 0-72
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_backboxleft10:
-  #   type: rgb
-  #   tags: lbackbox, lbackboxeven, lbackbox_chase3, lbackbox_chasearound3
-  #   number: 0-73
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_backboxleft10:
+    type: rgb
+    tags: lbackbox, lbackboxeven, lbackbox_chase3, lbackbox_chasearound3
+    number: 0-73
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_backboxleft11:
-  #   type: rgb
-  #   tags: lbackbox, lbackboxodd, lbackbox_chase4, lbackbox_chasearound4
-  #   number: 0-74
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_backboxleft11:
+    type: rgb
+    tags: lbackbox, lbackboxodd, lbackbox_chase4, lbackbox_chasearound4
+    number: 0-74
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_backboxleft12:
-  #   type: rgb
-  #   tags: lbackbox, lbackboxeven, lbackbox_chase1, lbackbox_chasearound1
-  #   number: 0-75
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_backboxleft12:
+    type: rgb
+    tags: lbackbox, lbackboxeven, lbackbox_chase1, lbackbox_chasearound1
+    number: 0-75
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_backboxleft13:
-  #   type: rgb
-  #   tags: lbackbox, lbackboxodd, lbackbox_chase2, lbackbox_chasearound2
-  #   number: 0-76
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_backboxleft13:
+    type: rgb
+    tags: lbackbox, lbackboxodd, lbackbox_chase2, lbackbox_chasearound2
+    number: 0-76
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_backboxleft14:
-  #   type: rgb
-  #   tags: lbackbox, lbackboxeven, lbackbox_chase3, lbackbox_chasearound3
-  #   number: 0-77
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_backboxleft14:
+    type: rgb
+    tags: lbackbox, lbackboxeven, lbackbox_chase3, lbackbox_chasearound3
+    number: 0-77
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_backboxleft15:
-  #   type: rgb
-  #   tags: lbackbox, lbackboxodd, lbackbox_chase4, lbackbox_chasearound4
-  #   number: 0-78
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_backboxleft15:
+    type: rgb
+    tags: lbackbox, lbackboxodd, lbackbox_chase4, lbackbox_chasearound4
+    number: 0-78
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_backboxleft16:
-  #   type: rgb
-  #   tags: lbackbox, lbackboxeven, lbackbox_chase1, lbackbox_chasearound1
-  #   number: 0-79
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_backboxleft16:
+    type: rgb
+    tags: lbackbox, lbackboxeven, lbackbox_chase1, lbackbox_chasearound1
+    number: 0-79
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_backboxleft17:
-  #   type: rgb
-  #   tags: lbackbox, lbackboxodd, lbackbox_chase2, lbackbox_chasearound2
-  #   number: 0-80
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_backboxleft17:
+    type: rgb
+    tags: lbackbox, lbackboxodd, lbackbox_chase2, lbackbox_chasearound2
+    number: 0-80
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_backboxleft18:
-  #   type: rgb
-  #   tags: lbackbox, lbackboxeven, lbackbox_chase3, lbackbox_chasearound3
-  #   number: 0-81
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_backboxleft18:
+    type: rgb
+    tags: lbackbox, lbackboxeven, lbackbox_chase3, lbackbox_chasearound3
+    number: 0-81
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_backboxleft19:
-  #   type: rgb
-  #   tags: lbackbox, lbackboxodd, lbackbox_chase4, lbackbox_chasearound4
-  #   number: 0-82
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_backboxleft19:
+    type: rgb
+    tags: lbackbox, lbackboxodd, lbackbox_chase4, lbackbox_chasearound4
+    number: 0-82
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
   l_actionbar1:
     type: rgb
@@ -1194,342 +1194,342 @@ lights:
     platform: fadecandy
     #color_correction_profile: correction_profile_fadecandy
 
-  # l_actionbar5:
-  #   type: rgb
-  #   tags: lactionbar, lactionbarodd, lactionbar_chase1, lbackbox_chasearound1
-  #   number: 0-87
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_actionbar5:
+    type: rgb
+    tags: lactionbar, lactionbarodd, lactionbar_chase1, lbackbox_chasearound1
+    number: 0-87
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_actionbar6:
-  #   type: rgb
-  #   tags: lactionbar, lactionbareven, lactionbar_chase2, lbackbox_chasearound2
-  #   number: 0-88
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_actionbar6:
+    type: rgb
+    tags: lactionbar, lactionbareven, lactionbar_chase2, lbackbox_chasearound2
+    number: 0-88
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_actionbar7:
-  #   type: rgb
-  #   tags: lactionbar, lactionbarodd, lactionbar_chase3, lbackbox_chasearound3
-  #   number: 0-89
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_actionbar7:
+    type: rgb
+    tags: lactionbar, lactionbarodd, lactionbar_chase3, lbackbox_chasearound3
+    number: 0-89
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_actionbar8:
-  #   type: rgb
-  #   tags: lactionbar, lactionbareven, lactionbar_chase4, lbackbox_chasearound4
-  #   number: 0-90
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_actionbar8:
+    type: rgb
+    tags: lactionbar, lactionbareven, lactionbar_chase4, lbackbox_chasearound4
+    number: 0-90
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_actionbar9:
-  #   type: rgb
-  #   tags: lactionbar, lactionbarodd, lactionbar_chase1, lbackbox_chasearound1
-  #   number: 0-91
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_actionbar9:
+    type: rgb
+    tags: lactionbar, lactionbarodd, lactionbar_chase1, lbackbox_chasearound1
+    number: 0-91
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_actionbar10:
-  #   type: rgb
-  #   tags: lactionbar, lactionbareven, lactionbar_chase2, lbackbox_chasearound2
-  #   number: 0-92
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_actionbar10:
+    type: rgb
+    tags: lactionbar, lactionbareven, lactionbar_chase2, lbackbox_chasearound2
+    number: 0-92
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_actionbar11:
-  #   type: rgb
-  #   tags: lactionbar, lactionbarodd, lactionbar_chase3, lbackbox_chasearound3
-  #   number: 0-93
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_actionbar11:
+    type: rgb
+    tags: lactionbar, lactionbarodd, lactionbar_chase3, lbackbox_chasearound3
+    number: 0-93
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_actionbar12:
-  #   type: rgb
-  #   tags: lactionbar, lactionbareven, lactionbar_chase4, lbackbox_chasearound4
-  #   number: 0-94
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_actionbar12:
+    type: rgb
+    tags: lactionbar, lactionbareven, lactionbar_chase4, lbackbox_chasearound4
+    number: 0-94
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_actionbar13:
-  #   type: rgb
-  #   tags: lactionbar, lactionbarodd, lactionbar_chase1, lbackbox_chasearound1
-  #   number: 0-95
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_actionbar13:
+    type: rgb
+    tags: lactionbar, lactionbarodd, lactionbar_chase1, lbackbox_chasearound1
+    number: 0-95
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_actionbar14:
-  #   type: rgb
-  #   tags: lactionbar, lactionbareven, lactionbar_chase2, lbackbox_chasearound2
-  #   number: 0-96
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_actionbar14:
+    type: rgb
+    tags: lactionbar, lactionbareven, lactionbar_chase2, lbackbox_chasearound2
+    number: 0-96
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_actionbar15:
-  #   type: rgb
-  #   tags: lactionbar, lactionbarodd, lactionbar_chase3, lbackbox_chasearound3
-  #   number: 0-97
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_actionbar15:
+    type: rgb
+    tags: lactionbar, lactionbarodd, lactionbar_chase3, lbackbox_chasearound3
+    number: 0-97
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_actionbar16:
-  #   type: rgb
-  #   tags: lactionbar, lactionbareven, lactionbar_chase4, lbackbox_chasearound4
-  #   number: 0-98
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_actionbar16:
+    type: rgb
+    tags: lactionbar, lactionbareven, lactionbar_chase4, lbackbox_chasearound4
+    number: 0-98
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_actionbar17:
-  #   type: rgb
-  #   tags: lactionbar, lactionbarodd, lactionbar_chase1, lbackbox_chasearound1
-  #   number: 0-99
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_actionbar17:
+    type: rgb
+    tags: lactionbar, lactionbarodd, lactionbar_chase1, lbackbox_chasearound1
+    number: 0-99
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_actionbar18:
-  #   type: rgb
-  #   tags: lactionbar, lactionbareven, lactionbar_chase2, lbackbox_chasearound2
-  #   number: 0-100
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_actionbar18:
+    type: rgb
+    tags: lactionbar, lactionbareven, lactionbar_chase2, lbackbox_chasearound2
+    number: 0-100
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_actionbar19:
-  #   type: rgb
-  #   tags: lactionbar, lactionbarodd, lactionbar_chase3, lbackbox_chasearound3
-  #   number: 0-101
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_actionbar19:
+    type: rgb
+    tags: lactionbar, lactionbarodd, lactionbar_chase3, lbackbox_chasearound3
+    number: 0-101
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_actionbar20:
-  #   type: rgb
-  #   tags: lactionbar, lactionbareven, lactionbar_chase4, lbackbox_chasearound4
-  #   number: 0-102
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_actionbar20:
+    type: rgb
+    tags: lactionbar, lactionbareven, lactionbar_chase4, lbackbox_chasearound4
+    number: 0-102
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_actionbar21:
-  #   type: rgb
-  #   tags: lactionbar, lactionbarodd, lactionbar_chase1, lbackbox_chasearound1
-  #   number: 0-103
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_actionbar21:
+    type: rgb
+    tags: lactionbar, lactionbarodd, lactionbar_chase1, lbackbox_chasearound1
+    number: 0-103
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_actionbar22:
-  #   type: rgb
-  #   tags: lactionbar, lactionbareven, lactionbar_chase2, lbackbox_chasearound2
-  #   number: 0-104
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_actionbar22:
+    type: rgb
+    tags: lactionbar, lactionbareven, lactionbar_chase2, lbackbox_chasearound2
+    number: 0-104
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_actionbar23:
-  #   type: rgb
-  #   tags: lactionbar, lactionbarodd, lactionbar_chase3, lbackbox_chasearound3
-  #   number: 0-105
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_actionbar23:
+    type: rgb
+    tags: lactionbar, lactionbarodd, lactionbar_chase3, lbackbox_chasearound3
+    number: 0-105
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_actionbar24:
-  #   type: rgb
-  #   tags: lactionbar, lactionbareven, lactionbar_chase4, lbackbox_chasearound4
-  #   number: 0-106
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_actionbar24:
+    type: rgb
+    tags: lactionbar, lactionbareven, lactionbar_chase4, lbackbox_chasearound4
+    number: 0-106
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_actionbar25:
-  #   type: rgb
-  #   tags: lactionbar, lactionbarodd, lactionbar_chase1, lbackbox_chasearound1
-  #   number: 0-107
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_actionbar25:
+    type: rgb
+    tags: lactionbar, lactionbarodd, lactionbar_chase1, lbackbox_chasearound1
+    number: 0-107
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_actionbar26:
-  #   type: rgb
-  #   tags: lactionbar, lactionbareven, lactionbar_chase2, lbackbox_chasearound2
-  #   number: 0-108
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_actionbar26:
+    type: rgb
+    tags: lactionbar, lactionbareven, lactionbar_chase2, lbackbox_chasearound2
+    number: 0-108
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_actionbar27:
-  #   type: rgb
-  #   tags: lactionbar, lactionbarodd, lactionbar_chase3, lbackbox_chasearound3
-  #   number: 0-109
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_actionbar27:
+    type: rgb
+    tags: lactionbar, lactionbarodd, lactionbar_chase3, lbackbox_chasearound3
+    number: 0-109
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_actionbar28:
-  #   type: rgb
-  #   tags: lactionbar, lactionbareven, lactionbar_chase4, lbackbox_chasearound4
-  #   number: 0-110
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_actionbar28:
+    type: rgb
+    tags: lactionbar, lactionbareven, lactionbar_chase4, lbackbox_chasearound4
+    number: 0-110
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_actionbar29:
-  #   type: rgb
-  #   tags: lactionbar, lactionbarodd, lactionbar_chase1, lbackbox_chasearound1
-  #   number: 0-111
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_actionbar29:
+    type: rgb
+    tags: lactionbar, lactionbarodd, lactionbar_chase1, lbackbox_chasearound1
+    number: 0-111
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_actionbar30:
-  #   type: rgb
-  #   tags: lactionbar, lactionbareven, lactionbar_chase2, lbackbox_chasearound2
-  #   number: 0-112
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_actionbar30:
+    type: rgb
+    tags: lactionbar, lactionbareven, lactionbar_chase2, lbackbox_chasearound2
+    number: 0-112
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_actionbar31:
-  #   type: rgb
-  #   tags: lactionbar, lactionbarodd, lactionbar_chase3, lbackbox_chasearound3
-  #   number: 0-113
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_actionbar31:
+    type: rgb
+    tags: lactionbar, lactionbarodd, lactionbar_chase3, lbackbox_chasearound3
+    number: 0-113
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_actionbar32:
-  #   type: rgb
-  #   tags: lactionbar, lactionbareven, lactionbar_chase4, lbackbox_chasearound4
-  #   number: 0-114
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_actionbar32:
+    type: rgb
+    tags: lactionbar, lactionbareven, lactionbar_chase4, lbackbox_chasearound4
+    number: 0-114
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_actionbar33:
-  #   type: rgb
-  #   tags: lactionbar, lactionbarodd, lactionbar_chase1, lbackbox_chasearound1
-  #   number: 0-115
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_actionbar33:
+    type: rgb
+    tags: lactionbar, lactionbarodd, lactionbar_chase1, lbackbox_chasearound1
+    number: 0-115
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_actionbar34:
-  #   type: rgb
-  #   tags: lactionbar, lactionbareven, lactionbar_chase2, lbackbox_chasearound2
-  #   number: 0-116
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_actionbar34:
+    type: rgb
+    tags: lactionbar, lactionbareven, lactionbar_chase2, lbackbox_chasearound2
+    number: 0-116
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_actionbar35:
-  #   type: rgb
-  #   tags: lactionbar, lactionbarodd, lactionbar_chase3, lbackbox_chasearound3
-  #   number: 0-117
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_actionbar35:
+    type: rgb
+    tags: lactionbar, lactionbarodd, lactionbar_chase3, lbackbox_chasearound3
+    number: 0-117
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_actionbar36:
-  #   type: rgb
-  #   tags: lactionbar, lactionbareven, lactionbar_chase4, lbackbox_chasearound4
-  #   number: 0-118
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_actionbar36:
+    type: rgb
+    tags: lactionbar, lactionbareven, lactionbar_chase4, lbackbox_chasearound4
+    number: 0-118
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_actionbar37:
-  #   type: rgb
-  #   tags: lactionbar, lactionbarodd, lactionbar_chase1, lbackbox_chasearound1
-  #   number: 0-119
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_actionbar37:
+    type: rgb
+    tags: lactionbar, lactionbarodd, lactionbar_chase1, lbackbox_chasearound1
+    number: 0-119
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
 
-  # l_backboxright19:
-  #   type: rgb
-  #   tags: lbackbox, lbackboxodd, lbackbox_chase4, lbackbox_chasearound2
-  #   number: 0-128
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_backboxright19:
+    type: rgb
+    tags: lbackbox, lbackboxodd, lbackbox_chase4, lbackbox_chasearound2
+    number: 0-128
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_backboxright18:
-  #   type: rgb
-  #   tags: lbackbox, lbackboxeven, lbackbox_chase3, lbackbox_chasearound3
-  #   number: 0-129
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_backboxright18:
+    type: rgb
+    tags: lbackbox, lbackboxeven, lbackbox_chase3, lbackbox_chasearound3
+    number: 0-129
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_backboxright17:
-  #   type: rgb
-  #   tags: lbackbox, lbackboxodd, lbackbox_chase2, lbackbox_chasearound4
-  #   number: 0-130
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_backboxright17:
+    type: rgb
+    tags: lbackbox, lbackboxodd, lbackbox_chase2, lbackbox_chasearound4
+    number: 0-130
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_backboxright16:
-  #   type: rgb
-  #   tags: lbackbox, lbackboxeven, lbackbox_chase1, lbackbox_chasearound1
-  #   number: 0-131
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_backboxright16:
+    type: rgb
+    tags: lbackbox, lbackboxeven, lbackbox_chase1, lbackbox_chasearound1
+    number: 0-131
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_backboxright15:
-  #   type: rgb
-  #   tags: lbackbox, lbackboxodd, lbackbox_chase4, lbackbox_chasearound2
-  #   number: 0-132
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_backboxright15:
+    type: rgb
+    tags: lbackbox, lbackboxodd, lbackbox_chase4, lbackbox_chasearound2
+    number: 0-132
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_backboxright14:
-  #   type: rgb
-  #   tags: lbackbox, lbackboxeven, lbackbox_chase3, lbackbox_chasearound3
-  #   number: 0-133
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_backboxright14:
+    type: rgb
+    tags: lbackbox, lbackboxeven, lbackbox_chase3, lbackbox_chasearound3
+    number: 0-133
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_backboxright13:
-  #   type: rgb
-  #   tags: lbackbox, lbackboxodd, lbackbox_chase2, lbackbox_chasearound4
-  #   number: 0-134
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_backboxright13:
+    type: rgb
+    tags: lbackbox, lbackboxodd, lbackbox_chase2, lbackbox_chasearound4
+    number: 0-134
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_backboxright12:
-  #   type: rgb
-  #   tags: lbackbox, lbackboxeven, lbackbox_chase1, lbackbox_chasearound1
-  #   number: 0-135
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_backboxright12:
+    type: rgb
+    tags: lbackbox, lbackboxeven, lbackbox_chase1, lbackbox_chasearound1
+    number: 0-135
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_backboxright11:
-  #   type: rgb
-  #   tags: lbackbox, lbackboxodd, lbackbox_chase4, lbackbox_chasearound2
-  #   number: 0-136
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_backboxright11:
+    type: rgb
+    tags: lbackbox, lbackboxodd, lbackbox_chase4, lbackbox_chasearound2
+    number: 0-136
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_backboxright10:
-  #   type: rgb
-  #   tags: lbackbox, lbackboxeven, lbackbox_chase3, lbackbox_chasearound3
-  #   number: 0-137
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_backboxright10:
+    type: rgb
+    tags: lbackbox, lbackboxeven, lbackbox_chase3, lbackbox_chasearound3
+    number: 0-137
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_backboxright9:
-  #   type: rgb
-  #   tags: lbackbox, lbackboxodd, lbackbox_chase2, lbackbox_chasearound4
-  #   number: 0-138
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_backboxright9:
+    type: rgb
+    tags: lbackbox, lbackboxodd, lbackbox_chase2, lbackbox_chasearound4
+    number: 0-138
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_backboxright8:
-  #   type: rgb
-  #   tags: lbackbox, lbackboxeven, lbackbox_chase1, lbackbox_chasearound1
-  #   number: 0-139
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_backboxright8:
+    type: rgb
+    tags: lbackbox, lbackboxeven, lbackbox_chase1, lbackbox_chasearound1
+    number: 0-139
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_backboxright7:
-  #   type: rgb
-  #   tags: lbackbox, lbackboxodd, lbackbox_chase4, lbackbox_chasearound2
-  #   number: 0-140
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_backboxright7:
+    type: rgb
+    tags: lbackbox, lbackboxodd, lbackbox_chase4, lbackbox_chasearound2
+    number: 0-140
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_backboxright6:
-  #   type: rgb
-  #   tags: lbackbox, lbackboxeven, lbackbox_chase3, lbackbox_chasearound3
-  #   number: 0-141
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_backboxright6:
+    type: rgb
+    tags: lbackbox, lbackboxeven, lbackbox_chase3, lbackbox_chasearound3
+    number: 0-141
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_backboxright5:
-  #   type: rgb
-  #   tags: lbackbox, lbackboxodd, lbackbox_chase2, lbackbox_chasearound4
-  #   number: 0-142
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_backboxright5:
+    type: rgb
+    tags: lbackbox, lbackboxodd, lbackbox_chase2, lbackbox_chasearound4
+    number: 0-142
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
   l_backboxright4:
     tags: lbackbox, lbackboxeven, lbackbox_chase1, lbackbox_chasearound1
@@ -1581,158 +1581,158 @@ lights:
     platform: fadecandy
     #color_correction_profile: correction_profile_fadecandy
 
-  # l_topper5:
-  #   tags: ltopper, ltopperodd, ltopper_chase1
-  #   number: 0-196
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_topper5:
+    tags: ltopper, ltopperodd, ltopper_chase1
+    number: 0-196
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_topper6:
-  #   tags: ltopper, ltoppereven, ltopper_chase2
-  #   number: 0-197
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_topper6:
+    tags: ltopper, ltoppereven, ltopper_chase2
+    number: 0-197
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_topper7:
-  #   tags: ltopper, ltopperodd, ltopper_chase3
-  #   number: 0-198
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_topper7:
+    tags: ltopper, ltopperodd, ltopper_chase3
+    number: 0-198
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_topper8:
-  #   tags: ltopper, ltoppereven, ltopper_chase4
-  #   number: 0-199
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_topper8:
+    tags: ltopper, ltoppereven, ltopper_chase4
+    number: 0-199
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_topper9:
-  #   tags: ltopper, ltopperodd, ltopper_chase1
-  #   number: 0-200
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_topper9:
+    tags: ltopper, ltopperodd, ltopper_chase1
+    number: 0-200
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_topper10:
-  #   tags: ltopper, ltoppereven, ltopper_chase2
-  #   number: 0-201
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_topper10:
+    tags: ltopper, ltoppereven, ltopper_chase2
+    number: 0-201
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_topper11:
-  #   tags: ltopper, ltopperodd, ltopper_chase3
-  #   number: 0-202
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_topper11:
+    tags: ltopper, ltopperodd, ltopper_chase3
+    number: 0-202
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_topper12:
-  #   tags: ltopper, ltoppereven, ltopper_chase4
-  #   number: 0-203
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_topper12:
+    tags: ltopper, ltoppereven, ltopper_chase4
+    number: 0-203
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_topper13:
-  #   tags: ltopper, ltopperodd, ltopper_chase1
-  #   number: 0-204
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_topper13:
+    tags: ltopper, ltopperodd, ltopper_chase1
+    number: 0-204
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_topper14:
-  #   tags: ltopper, ltoppereven, ltopper_chase2
-  #   number: 0-205
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_topper14:
+    tags: ltopper, ltoppereven, ltopper_chase2
+    number: 0-205
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_topper15:
-  #   tags: ltopper, ltopperodd, ltopper_chase3
-  #   number: 0-206
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_topper15:
+    tags: ltopper, ltopperodd, ltopper_chase3
+    number: 0-206
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_topper16:
-  #   tags: ltopper, ltoppereven, ltopper_chase4
-  #   number: 0-207
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_topper16:
+    tags: ltopper, ltoppereven, ltopper_chase4
+    number: 0-207
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_topper17:
-  #   tags: ltopper, ltopperodd, ltopper_chase1
-  #   number: 0-208
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_topper17:
+    tags: ltopper, ltopperodd, ltopper_chase1
+    number: 0-208
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_topper18:
-  #   tags: ltopper, ltoppereven, ltopper_chase2
-  #   number: 0-209
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_topper18:
+    tags: ltopper, ltoppereven, ltopper_chase2
+    number: 0-209
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_topper19:
-  #   tags: ltopper, ltopperodd, ltopper_chase3
-  #   number: 0-210
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_topper19:
+    tags: ltopper, ltopperodd, ltopper_chase3
+    number: 0-210
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_topper20:
-  #   tags: ltopper, ltoppereven, ltopper_chase4
-  #   number: 0-211
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_topper20:
+    tags: ltopper, ltoppereven, ltopper_chase4
+    number: 0-211
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_topper21:
-  #   tags: ltopper, ltopperodd, ltopper_chase1
-  #   number: 0-212
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_topper21:
+    tags: ltopper, ltopperodd, ltopper_chase1
+    number: 0-212
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_topper22:
-  #   tags: ltopper, ltoppereven, ltopper_chase2
-  #   number: 0-213
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_topper22:
+    tags: ltopper, ltoppereven, ltopper_chase2
+    number: 0-213
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_topper23:
-  #   tags: ltopper, ltopperodd, ltopper_chase3
-  #   number: 0-214
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_topper23:
+    tags: ltopper, ltopperodd, ltopper_chase3
+    number: 0-214
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_topper24:
-  #   tags: ltopper, ltoppereven, ltopper_chase4
-  #   number: 0-215
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_topper24:
+    tags: ltopper, ltoppereven, ltopper_chase4
+    number: 0-215
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_topper25:
-  #   tags: ltopper, ltopperodd, ltopper_chase1
-  #   number: 0-216
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_topper25:
+    tags: ltopper, ltopperodd, ltopper_chase1
+    number: 0-216
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_topper26:
-  #   tags: ltopper, ltoppereven, ltopper_chase2
-  #   number: 0-217
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_topper26:
+    tags: ltopper, ltoppereven, ltopper_chase2
+    number: 0-217
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_topper27:
-  #   tags: ltopper, ltopperodd, ltopper_chase3
-  #   number: 0-218
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_topper27:
+    tags: ltopper, ltopperodd, ltopper_chase3
+    number: 0-218
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_topper28:
-  #   tags: ltopper, ltoppereven, ltopper_chase4
-  #   number: 0-219
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_topper28:
+    tags: ltopper, ltoppereven, ltopper_chase4
+    number: 0-219
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_topper29:
-  #   tags: ltopper, ltopperodd, ltopper_chase1
-  #   number: 0-220
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_topper29:
+    tags: ltopper, ltopperodd, ltopper_chase1
+    number: 0-220
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
 
-  # l_topper30:
-  #   tags: ltopper, ltoppereven, ltopper_chase2
-  #   number: 0-221
-  #   platform: fadecandy
-  #   #color_correction_profile: correction_profile_fadecandy
+  l_topper30:
+    tags: ltopper, ltoppereven, ltopper_chase2
+    number: 0-221
+    platform: fadecandy
+    #color_correction_profile: correction_profile_fadecandy
